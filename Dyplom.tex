@@ -325,7 +325,7 @@ Listing \thelstlisting: #1\hfill%\hfill%
 % Redefinitions of labels for tables, figures and bibliography 
 %\AtBeginDocument{% 
         \addto\captionspolish{% 
-        \renewcommand{\lstlistlistingname}{Spis listingw}%
+        \renewcommand{\lstlistlistingname}{Spis listingów}%
 }%} 
 \newlistof{lstlistoflistings}{lol}{\lstlistlistingname}
 
@@ -588,7 +588,7 @@ Listing \thelstlisting: #1\hfill%\hfill%
 
 %\AtBeginDocument{% 
         \addto\captionspolish{% 
-        \renewcommand{\listfigurename}{Spis rysunkw}% 
+        \renewcommand{\listfigurename}{Spis rysunków}% 
 }%}
 
 %\AtBeginDocument{% 
@@ -620,7 +620,7 @@ Listing \thelstlisting: #1\hfill%\hfill%
 %% Niestety, nie da si skleja sw kluczowych, bo komendy nie s w preambule
 \newcommand\mykeywords[1]{\kvAdd{#1}\hspace{\absleftindent}%
 \parbox{\linewidth-2.0\absleftindent}{
-       \iflanguage{polish}{\textbf{Sowa kluczowe:} #1}{%
+       \iflanguage{polish}{\textbf{Słowa kluczowe:} #1}{%
 			  \iflanguage{english}{\textbf{Keywords:} #1}}{}}
 				}
 
@@ -755,7 +755,7 @@ Specjalno: & {\bfseries \@specjalnosc}\\
 }
 {\vskip 29pt\centering{\fontsize{24pt}{26pt}\selectfont%
 {\fontsize{26pt}{28pt}\selectfont P}RACA {\fontsize{26pt}{24pt}\selectfont D}YPLOMOWA\\[7pt]
-{\fontsize{26pt}{28pt}\selectfont I}NYNIERSKA}\\[2.5cm]
+{\fontsize{26pt}{28pt}\selectfont M}AGISTERSKA}\\[2.5cm]
 }
 \vfill
 {\centering
@@ -782,16 +782,16 @@ Specjalno: & {\bfseries \@specjalnosc}\\
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%  Metadane dokumentu 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\title{Szablon pracy dyplomowej inynierskiej/magisterskiej, wersja 0.7}
-\titleShort{Szablon pracy dyplomowej ...}
-\titleEN{Engineering/master thesis template, version 0.7}
-\author{Imi Nazwisko}
-\uczelnia{Politechnika Wrocawska}
-\wydzial{Wydzia Informatyki i Telekomunikacji}
+\title{Analiza wydajnościowa interfejsów API w technologiach C\# oraz NodeJS}
+\titleShort{Analiza wydajnościowa interfejsów API w technologiach C\# oraz NodeJS}
+\titleEN{Performance analysis of C\# and NodeJS APIs}
+\author{Maciej Grzela}
+\uczelnia{Politechnika Wrocławska}
+\wydzial{Wydział Informatyki i Telekomunikacji}
 \kierunek{Informatyka techniczna}
-\specjalnosc{Inynieria systemw informatycznych}
-\promotor{tytu/stopie naukowy, Imi Nazwisko}
-\date{WROCAW, 2021}
+\specjalnosc{Inżynieria systemów informatycznych}
+\promotor{dr inż., Michał Kucharzak}
+\date{WROCAW, 2022}
 
 % Ustawienie odstpu od gry w nienumerowanych rozdziaach oraz wykazach:
 % Spis treci, Spis tabel, Spis rysunkw, Indeks rzeczowy
@@ -827,35 +827,20 @@ Specjalno: & {\bfseries \@specjalnosc}\\
 %\typeoutstandardlayout    % wypisuje na stdout informacje o ustawieniach
 
 %\frontmatter
-\pdfbookmark[0]{Tytu}{Tytul.1}
+\pdfbookmark[0]{Tytuł}{Tytul.1}
 \maketitle
-\clearpage
-% INFO: Strona z licencj CC zdefiniowana poniej dotyczy tylko zredagowanej treci. 
-%       Z samego szablon mona korzystywa bez koniecznoci cytowania jego autora.
-%       Podczas pisania pracy dyplomowej stron t mona usun (a nawet naley).
-\thispagestyle{empty}
-\mbox{}\vfill
-\noindent\begin{tabular}{@{}ll} Opracowa: & Tomasz Kubik \texttt{<tomasz.kubik@pwr.edu.pl>}\\
- Data: & grudzie 2021 
- \end{tabular}\\[15mm]
-\noindent\includegraphics[width=3cm]{by-nc-sa}\newline
-{\normalfont 
-Tekst zawarty w niniejszym szablonie jest udostpniany na licencji Creative Commons: \emph{Uznanie autorstwa -- Uycie niekomercyjne -- Na tych samych warunkach, 3.0 Polska}, Wrocaw 2021. \\[2pt]
-Oznacza to, e wszystkie przekazane treci mona kopiowa i  wykorzystywa do celw niekomercyjnych, a take tworzy na ich podstawie utwory zalene pod warunkiem podania autora i~nazwy licencjodawcy oraz udzielania na utwory zalene takiej samej licencji. Tekst licencji jest dostpny pod adresem: \url{http://creativecommons.org/licenses/by-nc-sa/3.0/pl/}.\\[2pt]
-Podczas redakcji pracy dyplomowej stron t mona usun. Licencja dotyczy bowiem zredagowanego opisu, a nie samego latexowego szablonu. Latexowy szablon mona wykorzystywa bez wzmiankowania o jego autorze. 
-}
 \clearpage
 %\chapterstyle{noNumbered}
 \include{streszczenie} 
 \pagestyle{outer}
 
 \clearpage
-\pdfbookmark[0]{Spis treci}{spisTresci.1}%
+\pdfbookmark[0]{Spis treści}{spisTresci.1}%
 %%\phantomsection
 %%\addcontentsline{toc}{chapter}{Spis treci}
 \tableofcontents* 
 \clearpage
-\pdfbookmark[0]{Spis rysunkw}{spisRysunkow.1} % jeli chcemy mie w spisie treci, to zamarkowa t lini, a odmarkowa linie ponisze
+\pdfbookmark[0]{Spis rysunków}{spisRysunkow.1} % jeli chcemy mie w spisie treci, to zamarkowa t lini, a odmarkowa linie ponisze
 %%\phantomsection
 %%\addcontentsline{toc}{chapter}{Spis rysunkw}
 \listoffigures*
@@ -865,13 +850,11 @@ Podczas redakcji pracy dyplomowej stron t mona usun. Licencja dotyczy bowiem zre
 %%\addcontentsline{toc}{chapter}{Spis tabel}
 \listoftables*
 \clearpage
-\pdfbookmark[0]{Spis listingw}{spisListingow.1} %
+\pdfbookmark[0]{Spis listingów}{spisListingow.1} %
 %%\phantomsection
 %%\addcontentsline{toc}{chapter}{Spis listingw}
 \lstlistoflistings*
 \clearpage
-
-\include{skroty} %skrty mona sobie pomin
 
 
 %\mainmatter

@@ -3,8 +3,6 @@ Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
 The top-level auxiliary file: Dyplom.aux
 Reallocating 'name_of_file' (item size: 1) to 17 items.
 A level-1 auxiliary file: streszczenie.aux
-Reallocating 'name_of_file' (item size: 1) to 11 items.
-A level-1 auxiliary file: skroty.aux
 Reallocating 'name_of_file' (item size: 1) to 15 items.
 A level-1 auxiliary file: rozdzial01.aux
 Reallocating 'name_of_file' (item size: 1) to 15 items.
@@ -27,7 +25,7 @@ A level-1 auxiliary file: dodatekB.aux
 Database file #1: dokumentacja.bib
 You've used 2 entries,
             2129 wiz_defined-function locations,
-            525 strings with 4236 characters,
+            524 strings with 4226 characters,
 and the built_in function-call counts, 541 in all, are:
 = -- 51
 > -- 26
