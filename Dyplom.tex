@@ -1,0 +1,631 @@
+\documentclass[a4paper,onecolumn,oneside,12pt,extrafontsizes]{memoir}
+\usepackage[cp1250]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[polish]{babel}
+%\DisemulatePackage{setspace}
+\usepackage{setspace}
+\usepackage{tabularx}
+\usepackage[cache=false, newfloat]{minted}
+\usepackage{caption}
+\usepackage{longtable}
+\usepackage{color,calc}
+%\usepackage{soul} % pakiet z komendami do podkreœlania tekstu
+\usepackage{ebgaramond}
+\usepackage{tgtermes}   
+\renewcommand*\ttdefault{txtt}
+\usepackage{listings} 
+\newcommand{\listingcaption}[1]
+{%
+\vspace*{\abovecaptionskip}\small 
+\refstepcounter{lstlisting}\hfill%
+Listing \thelstlisting: #1\hfill%\hfill%
+\addcontentsline{lol}{lstlisting}{\protect\numberline{\thelstlisting}#1}
+}%
+
+% Styl zapewniaj¹cy numerowanie linii
+\lstset{
+  basicstyle=\footnotesize\ttfamily,
+  columns=fullflexible,
+	showstringspaces=false,
+	showspaces=false,
+  breaklines=true,
+  postbreak=\mbox{\textcolor{red}{$\hookrightarrow$}\space},
+  numbers=left,
+  firstnumber=1,
+  numberfirstline=true,
+	xleftmargin=17pt,
+  framexleftmargin=17pt,
+  framexrightmargin=5pt,
+  framexbottommargin=4pt,
+	belowskip=.5\baselineskip
+}
+
+% Styl bez numerownia linii
+%%\lstset{
+  %%basicstyle=\footnotesize\ttfamily,
+  %%columns=fullflexible,
+	%%showstringspaces=false,
+	%%showspaces=false,
+  %%breaklines=true,
+  %%postbreak=\mbox{\textcolor{red}{$\hookrightarrow$}\space},
+%%}
+
+%% Poni¿ej sposób ostylowania sposobu podœwietlania sk³adni wybranych jêzyków
+\lstloadlanguages{C,C++,csh,Java}
+\definecolor{listingBg}{RGB}{233,232,233}
+
+\lstdefinelanguage{JavaScript}{
+  morekeywords={typeof, async, await, new, true, false, catch, function, return, null, catch, switch, var, if, in, while, do, else, case, break},
+	otherkeywords={typeof, async, await, new, true, false, catch, function, return, null, catch, switch, var, if, in, while, do, else, case, break},
+	tabsize=2, 
+  morecomment=[s]{/*}{*/},
+  morecomment=[l]//,
+  morestring=[b]",
+  morestring=[b]',
+	numbers=left, 
+	numberstyle=\tiny, 
+	numbersep=5pt, 
+	backgroundcolor=\color{listingBg}
+}
+
+\lstdefinestyle{sharpcstyle}{
+language=csh,
+basicstyle=\footnotesize\ttfamily, 
+numbers=left, 
+numberstyle=\tiny, 
+numbersep=5pt, 
+tabsize=2, 
+extendedchars=true, 
+breaklines=true, 
+showspaces=false, 
+showtabs=false, 
+xleftmargin=17pt,
+framexleftmargin=17pt,
+framexrightmargin=5pt,
+framexbottommargin=4pt,
+morecomment=[l]{//}, %use comment-line-style!
+morecomment=[s]{/*}{*/}, %for multiline comments
+showstringspaces=false,
+otherkeywords={ abstract, async, await, var, event, new, struct,
+explicit, null, switch,
+base, extern, object, this,
+bool, false, operator, throw,
+break, finally, out, true,
+byte, fixed, override, try,
+case, float, params, typeof,
+catch, for, private, uint,
+char, foreach, protected, ulong,
+checked, goto, public, unchecked,
+class, if, readonly, unsafe,
+const, implicit, ref, ushort,
+continue, in, return, using,
+decimal, int, sbyte, virtual,
+default, interface, sealed, volatile,
+delegate, internal, short, void,
+is, sizeof, while,
+double, lock, stackalloc,
+else, long, static,
+enum, namespace, string},
+morekeywords={ abstract, async, await, var, event, new, struct, 
+explicit, null, switch,
+base, extern, object, this,
+bool, false, operator, throw,
+break, finally, out, true,
+byte, fixed, override, try,
+case, float, params, typeof,
+catch, for, private, uint,
+char, foreach, protected, ulong,
+checked, goto, public, unchecked,
+class, if, readonly, unsafe,
+const, implicit, ref, ushort,
+continue, in, return, using,
+decimal, int, sbyte, virtual,
+default, interface, sealed, volatile,
+delegate, internal, short, void, 
+is, sizeof, while,
+double, lock, stackalloc,
+else, long, static,
+enum, namespace, string},
+backgroundcolor=\color{listingBg}
+}
+
+\renewcommand\lstlistlistingname{Spis listingów}
+\makeatletter
+\g@addto@macro\insertchapterspace{\addtocontents{lol}{\protect\addvspace{10pt}}}
+\renewcommand*{\l@lstlisting}{\@dottedtocline{1}{0em}{2.3em}}
+\makeatother
+\renewcommand*{\lstlistlistingname}{Spis listingów} \newlistof{lstlistoflistings}{lol}{\lstlistlistingname}
+
+%\hyphenpenalty=10000		% nie dziel wyrazów zbyt czêsto
+\clubpenalty=10000      %kara za sierotki
+\widowpenalty=10000  % nie pozostawiaj wdów
+%\brokenpenalty=10000		% nie dziel wyrazów miêdzy stronami - trzeba by³o wy³¹czyæ, bo nie ³ama³y siê linie w lstlisting
+%\exhyphenpenalty=999999		% nie dziel s³ów z myœlnikiem - trzeba by³o wy³¹czyæ, bo nie ³ama³y siê linie w lstlisting
+\righthyphenmin=3			% dziel minimum 3 litery
+%\tolerance=4500
+%\pretolerance=250
+%\hfuzz=1.5pt
+%\hbadness=1450
+
+\renewcommand{\topfraction}{0.95}
+\renewcommand{\bottomfraction}{0.95}
+\renewcommand{\textfraction}{0.05}
+\renewcommand{\floatpagefraction}{0.35}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%  Ustawienia rozmiarów: tekstu, nag³ówka i stopki, marginesów
+%%  dla dokumentów klasy memoir 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\setlength{\headsep}{10pt} 
+\setlength{\headheight}{13.6pt} % wartoœæ baselineskip dla czcionki 11pt tj. \small wynosi 13.6pt
+\setlength{\footskip}{\headsep+\headheight}
+\setlength{\uppermargin}{\headheight+\headsep+1cm}
+\setlength{\textheight}{\paperheight-\uppermargin-\footskip-1.5cm}
+\setlength{\textwidth}{\paperwidth-5cm}
+\setlength{\spinemargin}{2.5cm}
+\setlength{\foremargin}{2.5cm}
+\setlength{\marginparsep}{2mm}
+\setlength{\marginparwidth}{2.3mm}
+%\settrimmedsize{297mm}{210mm}{*}
+%\settrims{0mm}{0mm}	
+\checkandfixthelayout[fixed] % konieczne, aby siê dobrze wszystko poustawia³o
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%  Ustawienia odleg³oœci linii, wciêæ, odstêpów
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\linespread{1}
+%\linespread{1.241}
+\setlength{\parindent}{14.5pt}
+%\setlength{\cftbeforechapterskip}{0.3em} % odstêpy w spisie treœci
+%\setbeforesecskip{10pt plus 0.5ex}%{-3.5ex \@plus -1ex \@minus -.2ex}
+%\setaftersecskip{10pt plus 0.5ex}%\onelineskip}
+%\setbeforesubsecskip{8pt plus 0.5ex}%{-3.5ex \@plus -1ex \@minus -.2ex}
+%\setaftersubsecskip{8pt plus 0.5ex}%\onelineskip}
+%\setlength\floatsep{6pt plus 2pt minus 2pt} 
+%\setlength\intextsep{12pt plus 2pt minus 2pt} 
+%\setlength\textfloatsep{12pt plus 2pt minus 2pt} 
+\usepackage{memlays}     % extra layout diagrams, zastosowane w szblonie do 'debuggowania', u¿ywa pakietu layouts
+%\usepackage{layouts}
+\usepackage{printlen} % pakiet do wyœwietlania wartoœci zdefiniowanych d³ugoœci, stosowany do 'debuggowania'
+\uselengthunit{pt}
+\makeatletter
+\newcommand{\showFontSize}{\f@size pt} % makro wypisuj¹ce wielkoœæ bie¿¹cej czcionki
+\makeatother
+% do pokazania ramek mo¿na by³oby u¿yæ:
+%\usepackage{showframe} 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%  Formatowanie list wyliczeniowych, wypunktowañ i w³asnych otoczeñ
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Domyœlnie wypunktowania maj¹ zadeklatorowane znaki, które nie wystêpuj¹ w tgtermes
+% Aby latex nie podstawia³ w ich miejsca znaków z czcionki standardowej mo¿na zrobiæ podstawienie:
+%    \DeclareTextCommandDefault{\textbullet}{\ensuremath{\bullet}}
+%    \DeclareTextCommandDefault{\textasteriskcentered}{\ensuremath{\ast}}
+%    \DeclareTextCommandDefault{\textperiodcentered}{\ensuremath{\cdot}}
+% Jednak jeszcze lepszym pomys³em jest zdefiniowanie otoczeñ z wykorzystaniem enumitem
+\usepackage{enumitem} % pakiet pozwalaj¹cy zarz¹dzaæ formatowaniem list wyliczeniowych
+\setlist{noitemsep,topsep=4pt,parsep=0pt,partopsep=4pt,leftmargin=*} % zadeklarowane parametry pozwalaj¹ uzyskaæ 'zwart¹' postaæ wypunktowania b¹dŸ wyliczenia
+\setenumerate{labelindent=0pt,itemindent=0pt,leftmargin=!,label=\arabic*.} % mo¿na zmieniæ \arabic na \alph, jeœli wyliczenia maj¹ byæ z literkami
+\setlistdepth{4} % definiujemy g³êbokoœæ zagnie¿d¿enia list wyliczeniowych do 4 poziomów
+\setlist[itemize,1]{label=$\bullet$}  % definiujemy, jaki symbol ma byæ u¿yty w wyliczeniu na danym poziomie
+\setlist[itemize,2]{label=\normalfont\bfseries\textendash}
+\setlist[itemize,3]{label=$\ast$}
+\setlist[itemize,4]{label=$\cdot$}
+\renewlist{itemize}{itemize}{4}
+
+%%%http://tex.stackexchange.com/questions/29322/how-to-make-enumerate-items-align-at-left-margin
+%\renewenvironment{enumerate}
+%{
+%\begin{list}{\arabic{enumi}.}
+%{
+%\usecounter{enumi}
+%%\setlength{\itemindent}{0pt}
+%%\setlength{\leftmargin}{1.8em}%{2zw} % 
+%%\setlength{\rightmargin}{0zw} %
+%%\setlength{\labelsep}{1zw} %
+%%\setlength{\labelwidth}{3zw} % 
+%\setlength{\topsep}{6pt}%
+%\setlength{\partopsep}{0pt}%
+%\setlength{\parskip}{0pt}%
+%\setlength{\parsep}{0em} % 
+%\setlength{\itemsep}{0em} % 
+%%\setlength{\listparindent}{1zw} % 
+%}
+%}{
+%\end{list}
+%}
+
+\makeatletter
+\renewenvironment{quote}{
+	\begin{list}{}
+	{
+	\setlength{\leftmargin}{1em}
+	\setlength{\topsep}{0pt}%
+	\setlength{\partopsep}{0pt}%
+	\setlength{\parskip}{0pt}%
+	\setlength{\parsep}{0pt}%
+	\setlength{\itemsep}{0pt}
+	}
+	}{
+	\end{list}}
+\makeatother
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%  Pakiet do generowania indeksu (wa¿ne, aby wstawiæ przed hyperref)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\DisemulatePackage{imakeidx}
+\usepackage[makeindex,noautomatic]{imakeidx} % tutaj mówimy, ¿eby indeks nie generowa³ siê automatycznie, 
+
+%\usepackage[noautomatic]{imakeidx} 
+\makeindex
+
+\makeatletter
+%%%\renewenvironment{theindex}
+							 %%%{\vskip 10pt\@makeschapterhead{\indexname}\vskip -3pt%
+								%%%\@mkboth{\MakeUppercase\indexname}%
+												%%%{\MakeUppercase\indexname}%
+								%%%\vspace{-3.2mm}\parindent\z@%
+								%%%\renewcommand\subitem{\par\hangindent 16\p@ \hspace*{0\p@}}%%
+								%%%\phantomsection%
+								%%%\begin{multicols}{2}
+								%%%%\thispagestyle{plain}
+								%%%\parindent\z@                
+								%%%%\parskip\z@ \@plus .3\p@\relax
+								%%%\let\item\@idxitem}
+							 %%%{\end{multicols}\clearpage}
+%%%
+\makeatother
+
+
+\usepackage{ifpdf}
+%\newif\ifpdf \ifx\pdfoutput\undefined
+%\pdffalse % we are not running PDFLaTeX
+%\else
+%\pdfoutput=1 % we are running PDFLaTeX
+%\pdftrue \fi
+\ifpdf
+ \usepackage[pdftex,bookmarks,breaklinks,unicode]{hyperref}
+ \usepackage[pdftex]{graphicx}
+ \DeclareGraphicsExtensions{.pdf,.jpg,.mps,.png}
+\pdfcompresslevel=9
+\pdfoutput=1
+\makeatletter
+\AtBeginDocument{  % Poni¿ej zdefiniowano metadane, jakie zapisane zostan¹ w dokumencie pdf - nale¿y je w³aœciwie uzupe³niæ
+  \hypersetup{
+	pdfinfo={
+    Title = {\@title},
+    Author = {\@author},
+    Subject={\@title},
+    Keywords={analiza wydajnoœciowa, interfejsy programowania aplikacji, testowanie rozproszone, wirtualizacja œrodowisk uruchamiania oprogramowania, œrodowisko .net, silnik nodejs},  
+		Producer={Maciej Grzela},
+		Creator={Maciej Grzela}
+	}}
+}
+\pdftrailerid{}
+\pdfsuppressptexinfo15
+\makeatother
+\else
+\usepackage{graphicx}
+\DeclareGraphicsExtensions{.eps,.ps,.jpg,.mps,.png}
+\fi
+\sloppy
+
+%\graphicspath{{rys01/}{rys02/}}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Metadane dla pdfa
+
+
+%\ifpdf
+%\pdfinfo{
+   %/Author (Nicola Talbot)
+   %/Title  (Creating a PDF document using PDFLaTeX)
+   %/CreationDate (D:20040502195600)
+   %/ModDate (D:\pdfdate)
+   %/Subject (PDFLaTeX)
+   %/Keywords (PDF;LaTeX)
+%}
+%\fi
+
+\usepackage{rotating}
+
+% Deklaracja g³êbokoœciu numeracji
+\setcounter{secnumdepth}{2}
+\setcounter{tocdepth}{2}
+\setsecnumdepth{subsection} % activating subsubsec numbering in doc
+
+
+% Kropki po numerach sekcji
+\makeatletter
+\def\@seccntformat#1{\csname the#1\endcsname.\quad}
+\def\numberline#1{\hb@xt@\@tempdima{#1\if&#1&\else.\fi\hfil}}
+\makeatother
+
+\renewcommand{\chapternumberline}[1]{#1.\quad}
+\renewcommand{\cftchapterdotsep}{\cftdotsep}
+
+
+% Czcionka do podpisów tabel i rysunków
+\captionnamefont{\small}
+\captiontitlefont{\small}
+% makro pozwalaj¹ce zmieniæ sposób wypisywania rozdzia³u
+%\def\printchaptertitle##1{\fonttitle \space \thechapter.\space ##1} 
+
+%\usepackage{ltcaption}
+% The ltcaption package supports \CaptionLabelFont & \CaptionTextFont introduced by the NTG document classes
+%\renewcommand\CaptionLabelFont{\small}
+%\renewcommand\CaptionTextFont{\small}
+
+% Przedefiniowanie etykiet w podpisach tabel i rysunków
+%\AtBeginDocument{% 
+        \addto\captionspolish{% 
+        \renewcommand{\tablename}{Tab.}% 
+}%} 
+
+%\AtBeginDocument{% 
+%        \addto\captionspolish{% 
+%        \renewcommand{\chaptername}{Rozdzia³}% 
+%}} 
+
+%\AtBeginDocument{% 
+        \addto\captionspolish{% 
+        \renewcommand{\figurename}{Rys.}% 
+}%}
+
+
+%\AtBeginDocument{% 
+        \addto\captionspolish{% 
+        \renewcommand{\bibname}{Literatura}% 
+}%}
+
+%\AtBeginDocument{% 
+        \addto\captionspolish{% 
+        \renewcommand{\listfigurename}{Spis rysunków}% 
+}%}
+
+%\AtBeginDocument{% 
+        \addto\captionspolish{% 
+        \renewcommand{\listtablename}{Spis tabel}% 
+}%}
+
+%\AtBeginDocument{% 
+        \addto\captionspolish{% 
+\renewcommand\indexname{Indeks rzeczowy}
+}%}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%                  
+%% Definicje stopek i nag³ówków
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%                  
+\addtopsmarks{headings}{%
+\nouppercaseheads % added at the beginning
+}{%
+\createmark{chapter}{both}{shownumber}{}{. \space}
+%\createmark{chapter}{left}{shownumber}{}{. \space}
+\createmark{section}{right}{shownumber}{}{. \space}
+}%use the new settings
+
+\makeatletter
+\copypagestyle{outer}{headings}
+\makeoddhead{outer}{}{}{\small\itshape\rightmark}
+\makeevenhead{outer}{\small\itshape\leftmark}{}{}
+\makeoddfoot{outer}{\small\@author:~\@titleShort}{}{\small\thepage}
+\makeevenfoot{outer}{\small\thepage}{}{\small\@author:~\@title}
+\makeheadrule{outer}{\linewidth}{\normalrulethickness}
+\makefootrule{outer}{\linewidth}{\normalrulethickness}{2pt}
+\makeatother
+
+% fix plain
+\copypagestyle{plain}{headings} % overwrite plain with outer
+\makeoddhead{plain}{}{}{} % remove right header
+\makeevenhead{plain}{}{}{} % remove left header
+\makeevenfoot{plain}{}{}{}
+\makeoddfoot{plain}{}{}{}
+
+\copypagestyle{empty}{headings} % overwrite plain with outer
+\makeoddhead{empty}{}{}{} % remove right header
+\makeevenhead{empty}{}{}{} % remove left header
+\makeevenfoot{empty}{}{}{}
+\makeoddfoot{empty}{}{}{}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Definicja strony tytu³owej 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\makeatletter
+%Uczelnia
+\newcommand\uczelnia[1]{\renewcommand\@uczelnia{#1}}
+\newcommand\@uczelnia{Politechnika Wroc³awska}
+%Wydzia³
+\newcommand\wydzial[1]{\renewcommand\@wydzial{#1}}
+\newcommand\@wydzial{Wydzia³ Informatyki i Telekomunikacji}
+%Kierunek
+\newcommand\kierunek[1]{\renewcommand\@kierunek{#1}}
+\newcommand\@kierunek{Informatyka}
+%Specjalnoœæ
+\newcommand\specjalnosc[1]{\renewcommand\@specjalnosc{#1}}
+\newcommand\@specjalnosc{Systemy i Sieci Komputerowe}
+%Tytu³ po angielsku
+\newcommand\titleEN[1]{\renewcommand\@titleEN{#1}}
+\newcommand\@titleEN{Performance analysis of C\# and NodeJS APIs}
+%Tytu³ krótki
+\newcommand\titleShort[1]{\renewcommand\@titleShort{#1}}
+\newcommand\@titleShort{Analiza wydajnoœciowa interfejsów API w technologiach C\# oraz NodeJS}
+%Promotor
+\newcommand\promotor[1]{\renewcommand\@promotor{#1}}
+\newcommand\@promotor{dr in¿. Micha³ Kucharzak}
+%Katedra
+\newcommand\katedra[1]{\renewcommand\@katedra{#1}}
+\newcommand\@katedra{Katedra Systemów i Sieci Komputerowych}
+
+%\usepackage[absolute]{textpos} % zamarkowano, bo ostatecznie wykorzystano otoczenie picture
+
+\def\maketitle{%
+  \pagestyle{empty}%
+%%\garamond 
+	\fontfamily{\ebgaramond@family}\selectfont % na stronie tytu³owej czcionka garamond
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%	
+%% Poni¿ej, w otoczniu picture, wstawiono tytu³ i autora. 
+%% Tytu³ (z autorem) musi znaleŸæ siê w obszarze 
+%% odpowiadaj¹cym okienku 110mmx75mm, którego lewy górny róg 
+%% jest w po³o¿eniu 77mm od lewej i 111mm od górnej  krawêdzi strony 
+%% (tak wynika z wyciêcia na ok³adce). 
+%% Poni¿szy kod musi byæ u¿yty dok³adnie w miejscu gdzie jest.
+%% Jeœli tytu³ nie mieœci siê w okienku, to nale¿y tak pozmieniaæ 
+%% parametry u¿ytych komend, aby ten przyd³ugi tytu³ jednak 
+%% upakowaæ go do okienka.
+%%
+%% Sama ok³adka (kolorowa strona z wyciêciem, do pobrania z dydaktyki) 
+%% powinna byæ przyciêta o 3mm od ka¿dej z krawêdzi.
+%% Te 3mm pewnie zostawiono na ewentualne spady czy te¿ specjaln¹ oprawê.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%	
+\newlength{\tmpfboxrule}
+\setlength{\tmpfboxrule}{\fboxrule}
+\setlength{\fboxsep}{2mm}
+\setlength{\fboxrule}{0mm} 
+%\setlength{\fboxrule}{0.1mm} %% jeœli chcemy zobaczyæ ramkê
+\setlength{\unitlength}{1mm}
+\begin{picture}(0,0)
+\put(26,-124){\fbox{
+\parbox[c][71mm][c]{104mm}{\centering%\lineskip=34pt 
+\fontsize{18pt}{18pt}\selectfont \@title\\[5mm]
+\fontsize{18pt}{18pt}\selectfont \@titleEN\\[20mm]
+\fontsize{16pt}{18pt}\selectfont AUTOR:\\[2mm]
+\fontsize{15pt}{16pt}\selectfont \@author}
+}
+}
+\end{picture}
+\setlength{\fboxrule}{\tmpfboxrule} 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Reszta strony z nazw¹ uczelni, wydzia³u, kierunkiem, specjalnoœci¹
+%% promotorem, ocen¹ pracy, miastem i rokiem
+	{\centering%\vspace{-1cm}
+		{\fontsize{22pt}{24pt}\selectfont \@uczelnia}\\[0.4cm]
+		{\fontsize{18pt}{20pt}\selectfont \@wydzial}\\[0.5cm]
+		  \hrule %\vspace*{0.7cm}
+	}
+{\flushleft\fontsize{14pt}{16pt}\selectfont%
+\begin{tabular}{ll}
+KIERUNEK: & \@kierunek\\
+SPECJALNOŒÆ: & \@specjalnosc\\
+\end{tabular}\\[1.3cm]
+}
+{\centering
+{\fontsize{32pt}{36pt}\selectfont PRACA DYPLOMOWA}\\[0.5cm]
+{\fontsize{32pt}{36pt}\selectfont MAGISTERSKA}\\[2.5cm]
+}
+\vfill
+\begin{tabularx}{\linewidth}{p{6cm}X}
+		&{\fontsize{16pt}{18pt}\selectfont PROWADZ¥CY PRACÊ:}\\[2mm] %UWAGA: tutaj jest miejsce na nazwisko promotora pracy
+		&{\fontsize{15pt}{16pt}\selectfont \@promotor}\\[2mm]
+		&{\fontsize{13pt}{16pt}\selectfont \@katedra}\\[10mm]
+		&{\fontsize{16pt}{18pt}\selectfont }\\[20mm]
+	\end{tabularx}
+\vspace{2cm}
+\hrule\vspace*{0.3cm}
+{\centering
+{\fontsize{16pt}{18pt}\selectfont \@date}\\[0cm]
+}
+%\ungaramond
+\normalfont
+ \cleardoublepage
+}
+\makeatother
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\AtBeginDocument{\addtocontents{toc}{\protect\thispagestyle{empty}}}
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%  Metadane dokumentu 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\title{Analiza wydajnoœciowa interfejsów API w technologiach C\# oraz NodeJS}
+\titleShort{Analiza wydajnoœciowa interfejsów API w technologiach C\# oraz NodeJS}
+\titleEN{Performance analysis of C\# and NodeJS APIs}
+\author{Maciej Grzela}
+\uczelnia{POLITECHNIKA WROC£AWSKA}
+\wydzial{WYDZIA£ INFORMATYKI I TELEKOMUNIKACJI}
+\kierunek{INFORMATYKA}
+\specjalnosc{SYSTEMY I SIECI KOMPUTEROWE}
+\promotor{dr in¿., Micha³ Kucharzak}
+\katedra{Katedra Systemów i Sieci Komputerowych}
+\date{WROC£AW, 2022}
+
+% Ustawienie odstêpu od góry w nienumerowanych rozdzia³ach oraz wykazach:
+% Spis treœci, Spis tabel, Spis rysunków, Indeks rzeczowy
+
+%\newlength{\linespace}
+%\setlength{\linespace}{-\beforechapskip-\topskip+\headheight+\topsep}
+%\makechapterstyle{noNumbered}{%
+%\renewcommand\chapterheadstart{\vspace*{\linespace}}
+%}
+
+%% powy¿sza komenda za³atwia to, co robi¹ komendy poni¿sze dla spisów
+%\renewcommand*{\tocheadstart}{\vspace*{\linespace}}
+%\renewcommand*{\lotheadstart}{\vspace*{\linespace}}
+%\renewcommand*{\lofheadstart}{\vspace*{\linespace}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                  Pocz¹tek dokumentu 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\includeonly{skroty,rozdzial01} % jeœli chcemy kompilowaæ tylko fragmenty, to mo¿na tu je wpisaæ
+
+\begin{document}
+% Tutaj mo¿na prze³¹czyæ odstêp miêdzy liniami
+%\SingleSpacing
+%\OnehalfSpacing
+%\DoubleSpacing
+
+%\settypeoutlayoutunit{cm} % do debugowania
+%\typeoutstandardlayout    % wypisuje na stdout informacje o ustawieniach
+\pdfbookmark[0]{Tytu³}{Tytul.1}
+\maketitle
+
+\chapterstyle{noNumbered}
+\pagestyle{outer}
+\mbox{}\pdfbookmark[0]{Spis treœci}{spisTresci.1}
+\tableofcontents* 
+
+\newpage
+\mbox{}\pdfbookmark[0]{Spis rysunków}{spisRysunkow.1}
+%\addcontentsline{toc}{chapter}{Spis rysunków}
+\listoffigures*
+
+\newpage
+\mbox{}\pdfbookmark[0]{Spis listingów}{spisListingow.1}
+%\addcontentsline{toc}{chapter}{Spis listingów}
+\lstlistoflistings*
+
+
+%{%
+%\let\oldnumberline\numberline%
+%\renewcommand{\numberline}{\figurename~\oldnumberline}%
+%\listoffigures%
+%}
+
+
+\newpage
+\mbox{}\pdfbookmark[0]{Spis tabel}{spisTabel.1}
+%\addcontentsline{toc}{chapter}{Spis tabel}
+\listoftables*
+
+\include{skroty} %skróty mo¿na sobie pomin¹æ
+\chapterstyle{default}
+\include{rozdzial01}
+\include{rozdzial023}
+\include{rozdzial03}
+\include{rozdzial04}
+\include{rozdzial05}
+\include{rozdzial06}
+
+%\bibliographystyle{plalpha}
+\bibliographystyle{plabbrv}
+
+%UWAGA: bibliotekê referencji nale¿y przygotowaæ samemu. Dobrym do tego narzêdziem jest JabRef.
+%       Nazwê przygotowanej biblioteki wpisuje siê poni¿ej bez rozszerzenia 
+%       (w tym przypadku jest to "dokumentacja.bib")
+\setlength{\bibitemsep}{2pt} % - by zacieœniæ wykaz literatury
+\bibliography{dokumentacja}
+
+\end{document}

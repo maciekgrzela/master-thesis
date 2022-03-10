@@ -1,0 +1,24 @@
+\chapter{Badania eksperymentalne}
+\section{Uzyskane efekty pracy}
+Z chwil¹ przyst¹pienia do realizacji oprogramowania, planowano stworzenie systemu zarz¹dzania dokumentami w obrêbie przedsiêbiorstwa. System ten, mia³ sk³adaæ siê z aplikacji klienckich (tj. aplikacji webowej oraz mobilnej), a tak¿e interfejsu API.
+
+W ramach strony webowej, u¿ytkownik, po poprawnym uwierzytelnieniu oraz autoryzacji, powinien posiadaæ mo¿liwoœci: przekazywania dokumentów, œledzenia ich aktualnego statusu, nadzorowania dostawców, przegl¹dania faktur archiwalnych, powiadamiania klientów o przetwarzaniu zamówienia, wyznaczania drogi dostawy towarów, prowadzenia wymiany wiadomoœci tekstowych z innymi u¿ytkownikami, a tak¿e zarz¹dzania zbiorami danych dotycz¹cych konfiguracji systemu.
+
+Ponadto, w obszarze aplikacji mobilnej, osoba korzystaj¹ca z programu, powinna móc: przekazywaæ dokumenty, wprowadzaæ uwagi dotycz¹ce faktur, powiadamiaæ klienta o dostawie, wyznaczaæ trasê dostawy, wprowadzaæ wpisy dotycz¹ce kilometrów pojazdu, definiowaæ notatki handlowe, a tak¿e prowadziæ konwersacje z wykorzystaniem komunikatora.
+
+W kontekœcie interfejsu API, zaimplementowany mia³ zostaæ wydajny, a tak¿e bezpieczny system pozyskiwania oraz modyfikacji wszystkich danych, zawartych w ramach oprogramowania, posiadaj¹cy mechanizmy uwierzytelniania oraz autoryzacji.
+
+Wszystkie z przedstawionych powy¿ej za³o¿eñ, zosta³y pomyœlnie zaimplementowane w ramach stworzonego projektu. Dziêki doborowi odpowiednich narzêdzi przed rozpoczêciem tworzenia oprogramowania, praca nad nim przebiega³a w sposób systematyczny, a tak¿e efektywny. Podjêta decyzja, zwi¹zana z wyborem bibliotek stylów Semantic-UI, a tak¿e Native-Base, odpowiednio dla aplikacji webowej oraz mobilnej, skutkowa³a powstaniem klarownych, ³atwych w obs³udze i modu³owych interfejsów u¿ytkownika obu aplikacji.
+
+Ponadto, wybór technologii .Net Core, jako œrodowiska dla interfejsu programowania aplikacji, przyczyni³ siê do budowy skalowalnego, wydajnego i bezpiecznego interfejsu API, który mo¿e byæ z ³atwoœci¹ rozszerzany o nowe funkcjonalnoœci.
+
+Wszystkie z tworzonych elementów systemu, zosta³y sprawdzone w kontekœcie ewentualnych b³êdów w kodzie programu. 
+\newpage
+\section{Mo¿liwoœci dalszego rozwoju}
+Struktury i interfejsy graficzne aplikacji webowej oraz mobilnej, stworzone zosta³y w taki sposób, aby umo¿liwiæ ³atwe wprowadzanie nowych funkcjonalnoœci, w zale¿noœci od potrzeb u¿ytkownika docelowego.
+
+Jedn¹ z takich potrzeb, mo¿e byæ modu³ efektywnego pakowania pojazdu. W ramach tego rozwi¹zania, system okreœla które z dokumentów, w zale¿noœci od ich zbiorów produktów, mog¹ byæ zapakowane do pojazdu, aby maksymalnie wype³niæ jego przestrzeñ ³adunkow¹. Z myœl¹ o tej perspektywie, w modelu danych, zdefiniowane zosta³y atrybuty wymiarów powierzchni ³adunkowej dla ka¿dego z pojazdów.
+
+Interesuj¹c¹ mo¿liwoœci¹ dalszego rozwoju oprogramowania jest implementacja algorytmu wyznaczania trasy dostawy, na podstawie informacji dotycz¹cych ruchu drogowego. W przypadku takiego algorytmu, aplikacja identyfikuje ulice po których bêdzie porusza³ siê pojazd, a tak¿e pobiera dla nich informacje zwi¹zane z aktualnym ruchem ulicznym, po czym uwzglêdnia je w kalkulacjach optymalnej trasy. Dziêki realizacji czêœci serwerowej systemu, jako interfejs programowania aplikacji bazuj¹cy na punktach koñcowych, proces tworzenia algorytmu mo¿e byæ realizowany w ca³kowicie odseparowanym œrodowisku. Po wykonaniu testów poprawnoœci dzia³ania algorytmu, mo¿e on zostaæ w prosty sposób zintegrowany z aplikacj¹, poprzez wprowadzenie jego kodu wewn¹trz endpointu.  
+
+Dodatkowo, w przypadku wykorzystania oprogramowania w kontekœcie komercyjnym, zastosowaæ mo¿na wybór p³atnego dostawcy danych lokalizacyjnych (np. Google Maps), w celu zwiêkszenia ich wiarygodnoœci oraz dok³adnoœci. Chc¹c zastosowaæ takie rozwi¹zanie w przygotowanym systemie, wystarczy wykupiæ us³ugê interfejsu lokalizowania od dostawcy, a nastêpnie wprowadziæ odpowiedni adres do tej us³ugi jako wartoœæ w³aœciwoœci dostawcy danych dla komponentów mapy.

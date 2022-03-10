@@ -1,0 +1,1980 @@
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.6.29) (preloaded format=pdflatex 2020.10.11)  7 MAR 2022 20:11
+entering extended mode
+**./Dyplom.tex
+(Dyplom.tex
+LaTeX2e <2020-02-02> patch level 5
+L3 programming layer <2020-06-18>
+("C:\Program Files\MiKTeX\tex/latex/memoir\memoir.cls"
+Document Class: memoir 2020/10/04 v3.7n configurable book, report, article docu
+ment class
+\onelineskip=\skip47
+\lxvchars=\skip48
+\xlvchars=\skip49
+\@memcnta=\count167
+\c@@memmarkcntra=\count168
+LaTeX Info: Redefining \InputIfFileExists on input line 219.
+("C:\Program Files\MiKTeX\tex/generic/iftex\iftex.sty"
+Package: iftex 2020/03/06 v1.0d TeX engine tests
+)
+\stockheight=\skip50
+\stockwidth=\skip51
+\trimtop=\skip52
+\trimedge=\skip53
+LaTeX Font Info:    Trying to load font information for T1+lmr on input line 70
+6.
+
+("C:\Program Files\MiKTeX\tex/latex/lm\t1lmr.fd"
+File: t1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+("C:\Program Files\MiKTeX\tex/latex/memoir\mem12.clo"
+File: mem12.clo 2010/10/19 v0.4b memoir class 12pt size option
+)
+("C:\Program Files\MiKTeX\tex/latex/lm\lmodern.sty"
+Package: lmodern 2009/10/30 v1.6 Latin Modern Fonts
+LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
+(Font)                  OT1/cmr/m/n --> OT1/lmr/m/n on input line 22.
+LaTeX Font Info:    Overwriting symbol font `letters' in version `normal'
+(Font)                  OML/cmm/m/it --> OML/lmm/m/it on input line 23.
+LaTeX Font Info:    Overwriting symbol font `symbols' in version `normal'
+(Font)                  OMS/cmsy/m/n --> OMS/lmsy/m/n on input line 24.
+LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `normal'
+(Font)                  OMX/cmex/m/n --> OMX/lmex/m/n on input line 25.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
+(Font)                  OT1/cmr/bx/n --> OT1/lmr/bx/n on input line 26.
+LaTeX Font Info:    Overwriting symbol font `letters' in version `bold'
+(Font)                  OML/cmm/b/it --> OML/lmm/b/it on input line 27.
+LaTeX Font Info:    Overwriting symbol font `symbols' in version `bold'
+(Font)                  OMS/cmsy/b/n --> OMS/lmsy/b/n on input line 28.
+LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `bold'
+(Font)                  OMX/cmex/m/n --> OMX/lmex/m/n on input line 29.
+LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
+(Font)                  OT1/cmr/bx/n --> OT1/lmr/bx/n on input line 31.
+LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
+(Font)                  OT1/cmss/m/n --> OT1/lmss/m/n on input line 32.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
+(Font)                  OT1/cmr/m/it --> OT1/lmr/m/it on input line 33.
+LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
+(Font)                  OT1/cmtt/m/n --> OT1/lmtt/m/n on input line 34.
+LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
+(Font)                  OT1/cmr/bx/n --> OT1/lmr/bx/n on input line 35.
+LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
+(Font)                  OT1/cmss/bx/n --> OT1/lmss/bx/n on input line 36.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
+(Font)                  OT1/cmr/bx/it --> OT1/lmr/bx/it on input line 37.
+LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
+(Font)                  OT1/cmtt/m/n --> OT1/lmtt/m/n on input line 38.
+)
+("C:\Program Files\MiKTeX\tex/latex/base\fontenc.sty"
+Package: fontenc 2020/02/11 v2.0o Standard LaTeX package
+)
+\binding=\skip54
+\spinemargin=\skip55
+\foremargin=\skip56
+\uppermargin=\skip57
+\lowermargin=\skip58
+\headdrop=\skip59
+\normalrulethickness=\skip60
+\mem@maxheadheight=\skip61
+\mem@maxfootheight=\skip62
+\headwidth=\skip63
+\c@storedpagenumber=\count169
+\memPD=\dimen134
+\m@mabparskip=\skip64
+\thanksmarkwidth=\skip65
+\thanksmarksep=\skip66
+\droptitle=\skip67
+\c@book=\count170
+\c@part=\count171
+\c@chapter=\count172
+\c@section=\count173
+\c@subsection=\count174
+\c@subsubsection=\count175
+\c@paragraph=\count176
+\c@subparagraph=\count177
+\beforechapskip=\skip68
+\midchapskip=\skip69
+\afterchapskip=\skip70
+\chapindent=\skip71
+\bottomsectionskip=\skip72
+\secindent=\skip73
+\beforesecskip=\skip74
+\aftersecskip=\skip75
+\subsecindent=\skip76
+\beforesubsecskip=\skip77
+\aftersubsecskip=\skip78
+\subsubsecindent=\skip79
+\beforesubsubsecskip=\skip80
+\aftersubsubsecskip=\skip81
+\paraindent=\skip82
+\beforeparaskip=\skip83
+\afterparaskip=\skip84
+\subparaindent=\skip85
+\beforesubparaskip=\skip86
+\aftersubparaskip=\skip87
+\pfbreakskip=\skip88
+\c@@ppsavesec=\count178
+\c@@ppsaveapp=\count179
+\ragrparindent=\dimen135
+\everylistparindent=\dimen136
+\parsepi=\skip89
+\topsepi=\skip90
+\itemsepi=\skip91
+\parsepii=\skip92
+\topsepii=\skip93
+\topsepiii=\skip94
+\itemsepii=\skip95
+\itemsepiii=\skip96
+\partopsepii=\skip97
+\partopsepiii=\skip98
+\m@msavetopsep=\skip99
+\m@msavepartopsep=\skip100
+\@enLab=\toks15
+\abstitleskip=\skip101
+\absleftindent=\skip102
+\abs@leftindent=\dimen137
+\absrightindent=\skip103
+\absparindent=\skip104
+\absparsep=\skip105
+\c@vslineno=\count180
+\c@poemline=\count181
+\c@modulo@vs=\count182
+\c@memfvsline=\count183
+\vleftskip=\skip106
+\vrightskip=\skip107
+\stanzaskip=\skip108
+\versewidth=\skip109
+\vgap=\skip110
+\vindent=\skip111
+\vleftmargin=\dimen138
+\c@verse=\count184
+\c@chrsinstr=\count185
+\beforepoemtitleskip=\skip112
+\afterpoemtitleskip=\skip113
+\c@poem=\count186
+\beforePoemTitleskip=\skip114
+\midPoemTitleskip=\skip115
+\afterPoemTitleskip=\skip116
+
+("C:\Program Files\MiKTeX\tex/latex/tools\array.sty"
+Package: array 2019/08/31 v2.4l Tabular extension package (FMi)
+\col@sep=\dimen139
+\ar@mcellbox=\box45
+\extrarowheight=\dimen140
+\NC@list=\toks16
+\extratabsurround=\skip117
+\backup@length=\skip118
+\ar@cellbox=\box46
+)
+("C:\Program Files\MiKTeX\tex/latex/tools\dcolumn.sty"
+Package: dcolumn 2014/10/28 v1.06 decimal alignment package (DPC)
+)
+("C:\Program Files\MiKTeX\tex/latex/tools\delarray.sty"
+Package: delarray 2014/10/28 v1.01 array delimiter package (DPC)
+)
+("C:\Program Files\MiKTeX\tex/latex/tools\tabularx.sty"
+Package: tabularx 2020/01/15 v2.11c `tabularx' package (DPC)
+\TX@col@width=\dimen141
+\TX@old@table=\dimen142
+\TX@old@col=\dimen143
+\TX@target=\dimen144
+\TX@delta=\dimen145
+\TX@cols=\count187
+\TX@ftn=\toks17
+)
+\heavyrulewidth=\dimen146
+\lightrulewidth=\dimen147
+\cmidrulewidth=\dimen148
+\belowrulesep=\dimen149
+\belowbottomsep=\dimen150
+\aboverulesep=\dimen151
+\abovetopsep=\dimen152
+\cmidrulesep=\dimen153
+\cmidrulekern=\dimen154
+\defaultaddspace=\dimen155
+\@cmidla=\count188
+\@cmidlb=\count189
+\@aboverulesep=\dimen156
+\@belowrulesep=\dimen157
+\@thisruleclass=\count190
+\@lastruleclass=\count191
+\@thisrulewidth=\dimen158
+\ctableftskip=\skip119
+\ctabrightskip=\skip120
+\abovecolumnspenalty=\count192
+\@linestogo=\count193
+\@cellstogo=\count194
+\@cellsincolumn=\count195
+\crtok=\toks18
+\@mincolumnwidth=\dimen159
+\c@newflo@tctr=\count196
+\mem@margin@floatbox=\box47
+\@contcwidth=\skip121
+\@contindw=\skip122
+\abovecaptionskip=\skip123
+\belowcaptionskip=\skip124
+\subfloattopskip=\skip125
+\subfloatcapskip=\skip126
+\subfloatcaptopadj=\skip127
+\subfloatbottomskip=\skip128
+\subfloatlabelskip=\skip129
+\subfloatcapmargin=\dimen160
+\c@@contsubnum=\count197
+\m@mscap@capbox=\box48
+\m@mscap@fbox=\box49
+\sidecapsep=\dimen161
+\sidecapwidth=\dimen162
+\m@m@tempdima=\dimen163
+\m@mscapraise=\dimen164
+\sidecapraise=\dimen165
+\m@mscapmainwidth=\dimen166
+\m@mscaplkern=\dimen167
+\beforeepigraphskip=\skip130
+\afterepigraphskip=\skip131
+\epigraphwidth=\skip132
+\epigraphrule=\skip133
+LaTeX Info: Redefining \em on input line 7678.
+LaTeX Info: Redefining \emph on input line 7686.
+\tocentryskip=\skip134
+\tocbaseline=\skip135
+\cftparskip=\skip136
+\cftbeforebookskip=\skip137
+\cftbookindent=\dimen168
+\cftbooknumwidth=\dimen169
+\cftbeforepartskip=\skip138
+\cftpartindent=\skip139
+\cftpartnumwidth=\skip140
+\cftbeforechapterskip=\skip141
+\cftchapterindent=\skip142
+\cftchapternumwidth=\skip143
+\cftbeforesectionskip=\skip144
+\cftsectionindent=\skip145
+\cftsectionnumwidth=\skip146
+\cftbeforesubsectionskip=\skip147
+\cftsubsectionindent=\skip148
+\cftsubsectionnumwidth=\skip149
+\cftbeforesubsubsectionskip=\skip150
+\cftsubsubsectionindent=\skip151
+\cftsubsubsectionnumwidth=\skip152
+\cftbeforeparagraphskip=\skip153
+\cftparagraphindent=\skip154
+\cftparagraphnumwidth=\skip155
+\cftbeforesubparagraphskip=\skip156
+\cftsubparagraphindent=\skip157
+\cftsubparagraphnumwidth=\skip158
+\prechapterprecisshift=\dimen170
+\c@maxsecnumdepth=\count198
+\bibindent=\dimen171
+\bibitemsep=\skip159
+\indexcolsep=\skip160
+\indexrule=\skip161
+\indexmarkstyle=\toks19
+\@indexbox=\insert199
+\glossarycolsep=\dimen172
+\glossaryrule=\dimen173
+\sideparvshift=\skip162
+\sideins=\insert252
+\sidebartopsep=\skip163
+\sidebarhsep=\skip164
+\sidebarvsep=\skip165
+\sidebarwidth=\skip166
+\footmarkwidth=\skip167
+\footmarksep=\skip168
+\footparindent=\skip169
+\footinsdim=\skip170
+\footinsv@r=\insert251
+\@mpfootinsv@r=\insert250
+\m@m@k=\count266
+\m@m@h=\dimen174
+\m@mipn@skip=\skip171
+\sidefootins=\insert249
+\sidefootadjust=\skip172
+\sidefootheight=\skip173
+\sidefoothsep=\skip174
+\sidefootvsep=\skip175
+\sidefootwidth=\skip176
+\m@mdownsf=\skip177
+\c@sidefootnote=\count267
+\sidefootmarkwidth=\skip178
+\sidefootmarksep=\skip179
+\sidefootparindent=\skip180
+\c@pagenote=\count268
+\c@pagenoteshadow=\count269
+\mem@pn@lastkern=\skip181
+\every@verbatim=\toks20
+\afterevery@verbatim=\toks21
+\verbatim@line=\toks22
+\tab@position=\count270
+\verbatim@in@stream=\read2
+\verbatimindent=\skip182
+\verbatim@out=\write3
+\bvboxsep=\skip183
+\c@memfbvline=\count271
+\c@bvlinectr=\count272
+\bvnumlength=\skip184
+\fb@frw=\dimen175
+\fb@frh=\dimen176
+\FrameRule=\dimen177
+\FrameSep=\dimen178
+\c@cp@cntr=\count273
+LaTeX Info: Redefining \: on input line 12231.
+LaTeX Info: Redefining \! on input line 12231.
+\c@ism@mctr=\count274
+\c@xsm@mctr=\count275
+\c@csm@mctr=\count276
+\c@ksm@mctr=\count277
+\c@xksm@mctr=\count278
+\c@cksm@mctr=\count279
+\c@msm@mctr=\count280
+\c@xmsm@mctr=\count281
+\c@cmsm@mctr=\count282
+\c@bsm@mctr=\count283
+\c@workm@mctr=\count284
+\c@sheetsequence=\count285
+\c@lastsheet=\count286
+\c@lastpage=\count287
+
+("C:\Program Files\MiKTeX\tex/latex/textcase\textcase.sty"
+Package: textcase 2019/09/14 v1.00 Text only upper/lower case changing (DPC)
+)
+\c@figure=\count288
+\c@lofdepth=\count289
+\cftbeforefigureskip=\skip185
+\cftfigureindent=\skip186
+\cftfigurenumwidth=\skip187
+\c@table=\count290
+\c@lotdepth=\count291
+\cftbeforetableskip=\skip188
+\cfttableindent=\skip189
+\cfttablenumwidth=\skip190
+Package abstract [2008/07/23] emulated by memoir.
+Package appendix [2008/07/23] emulated by memoir.
+Package booktabs [2016/05/16] emulated by memoir.
+Package ccaption [2008/07/23] emulated by memoir.
+Package changepage [2008/07/23] emulated by memoir.
+Package chngcntr [2008/07/23] emulated by memoir.
+Package chngpage [2008/07/23] emulated by memoir.
+Package crop emulated by memoir.
+Package enumerate [2008/07/23] emulated by memoir.
+Package epigraph [2008/07/23] emulated by memoir.
+Package ifmtarg [2008/07/23] emulated by memoir.
+Package index [2008/07/23] emulated by memoir.
+Package makeidx [2008/07/23] emulated by memoir.
+Package moreverb [2008/07/23] emulated by memoir.
+Package mparhack [2008/07/23] emulated by memoir.
+Package needspace [2008/07/23] emulated by memoir.
+Package newfile [2008/07/23] emulated by memoir.
+Package nextpage [2008/07/23] emulated by memoir.
+Package pagenote [2008/07/23] emulated by memoir.
+Package parskip [2008/07/23] emulated by memoir.
+Package patchcmd [2008/07/23] emulated by memoir.
+Package setspace [2008/07/23] emulated by memoir.
+Package shortvrb [2008/07/23] emulated by memoir.
+Package showidx [2008/07/23] emulated by memoir.
+Package titleref [2008/07/23] emulated by memoir.
+Package titling [2008/07/23] emulated by memoir.
+Package tocbibind [2008/07/23] emulated by memoir.
+Package tocloft [2008/07/23] emulated by memoir.
+Package tocvsec2 [2008/07/23] emulated by memoir.
+Package verbatim [2008/07/23] emulated by memoir.
+Package verse [2008/07/23] emulated by memoir.
+)
+("C:\Program Files\MiKTeX\tex/latex/base\inputenc.sty"
+Package: inputenc 2018/08/11 v1.3c Input encoding file
+\inpenc@prehook=\toks23
+\inpenc@posthook=\toks24
+
+("C:\Program Files\MiKTeX\tex/latex/base\cp1250.def"
+File: cp1250.def 2018/08/11 v1.3c Input encoding file
+))
+("C:\Program Files\MiKTeX\tex/latex/base\fontenc.sty"
+Package: fontenc 2020/02/11 v2.0o Standard LaTeX package
+)
+("C:\Program Files\MiKTeX\tex/generic/babel\babel.sty"
+Package: babel 2020/06/10 3.45 The Babel package
+
+("C:\Program Files\MiKTeX\tex/generic/babel\babel.def"
+File: babel.def 2020/06/10 3.45 Babel common definitions
+\babel@savecnt=\count292
+\U@D=\dimen179
+\l@babelnohyphens=\language79
+
+("C:\Program Files\MiKTeX\tex/generic/babel\txtbabel.def")
+\bbl@readstream=\read3
+)
+\bbl@dirlevel=\count293
+
+*************************************
+* Local config file bblopts.cfg used
+*
+("C:\Program Files\MiKTeX\tex/latex/arabi\bblopts.cfg"
+File: bblopts.cfg 2005/09/08 v0.1 add Arabic and Farsi to "declared" options of
+ babel
+)
+("C:\Program Files\MiKTeX\tex/latex/babel-polish\polish.ldf"
+Language: polish 2005/03/31 v1.2l Polish support from the babel system
+Package babel Info: Making " an active character on input line 83.
+\pl@left=\dimen180
+\pl@down=\dimen181
+\pl@right=\dimen182
+\pl@temp=\dimen183
+))
+("C:\Program Files\MiKTeX\tex/latex/minted\minted.sty"
+Package: minted 2021/12/24 v2.6 Yet another Pygments shim for LaTeX
+
+("C:\Program Files\MiKTeX\tex/latex/graphics\keyval.sty"
+Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
+\KV@toks@=\toks25
+)
+("C:\Program Files\MiKTeX\tex/latex/kvoptions\kvoptions.sty"
+Package: kvoptions 2019/11/29 v3.13 Key value format for package options (HO)
+
+("C:\Program Files\MiKTeX\tex/generic/ltxcmds\ltxcmds.sty"
+Package: ltxcmds 2020-05-10 v1.25 LaTeX kernel commands for general use (HO)
+)
+("C:\Program Files\MiKTeX\tex/generic/kvsetkeys\kvsetkeys.sty"
+Package: kvsetkeys 2019/12/15 v1.18 Key value parser (HO)
+))
+("C:\Program Files\MiKTeX\tex/latex/fvextra\fvextra.sty"
+Package: fvextra 2019/02/04 v1.4 fvextra - extensions and patches for fancyvrb
+
+("C:\Program Files\MiKTeX\tex/latex/base\ifthen.sty"
+Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
+)
+("C:\Program Files\MiKTeX\tex/latex/etoolbox\etoolbox.sty"
+Package: etoolbox 2019/09/21 v2.5h e-TeX tools for LaTeX (JAW)
+\etb@tempcnta=\count294
+)
+("C:\Program Files\MiKTeX\tex/latex/fancyvrb\fancyvrb.sty"
+Package: fancyvrb 2021/12/21 4.1b verbatim text (tvz,hv)
+\FV@CodeLineNo=\count295
+\FV@InFile=\read4
+\FV@TabBox=\box50
+\c@FancyVerbLine=\count296
+\FV@StepNumber=\count297
+\FV@OutFile=\write4
+)
+("C:\Program Files\MiKTeX\tex/latex/upquote\upquote.sty"
+Package: upquote 2012/04/19 v1.3 upright-quote and grave-accent glyphs in verba
+tim
+
+("C:\Program Files\MiKTeX\tex/latex/base\textcomp.sty"
+Package: textcomp 2020/02/02 v2.0n Standard LaTeX package
+))
+("C:\Program Files\MiKTeX\tex/latex/lineno\lineno.sty"
+Package: lineno 2005/11/02 line numbers on paragraphs v4.41
+\linenopenalty=\count298
+\output=\toks26
+\linenoprevgraf=\count299
+\linenumbersep=\dimen184
+\linenumberwidth=\dimen185
+\c@linenumber=\count300
+\c@pagewiselinenumber=\count301
+\c@LN@truepage=\count302
+\c@internallinenumber=\count303
+\c@internallinenumbers=\count304
+\quotelinenumbersep=\dimen186
+\bframerule=\dimen187
+\bframesep=\dimen188
+\bframebox=\box51
+LaTeX Info: Redefining \\ on input line 3056.
+)
+\c@FV@TrueTabGroupLevel=\count305
+\c@FV@TrueTabCounter=\count306
+\FV@TabBox@Group=\box52
+\FV@TmpLength=\skip191
+\c@FV@HighlightLinesStart=\count307
+\c@FV@HighlightLinesStop=\count308
+\FV@LoopCount=\count309
+\FV@NCharsBox=\box53
+\FV@BreakIndent=\dimen189
+\FV@BreakIndentNChars=\count310
+\FV@BreakSymbolSepLeft=\dimen190
+\FV@BreakSymbolSepLeftNChars=\count311
+\FV@BreakSymbolSepRight=\dimen191
+\FV@BreakSymbolSepRightNChars=\count312
+\FV@BreakSymbolIndentLeft=\dimen192
+\FV@BreakSymbolIndentLeftNChars=\count313
+\FV@BreakSymbolIndentRight=\dimen193
+\FV@BreakSymbolIndentRightNChars=\count314
+\c@FancyVerbLineBreakLast=\count315
+\FV@LineBox=\box54
+\FV@LineIndentBox=\box55
+\FV@LineWidth=\dimen194
+)
+("C:\Program Files\MiKTeX\tex/latex/tools\calc.sty"
+Package: calc 2017/05/25 v4.3 Infix arithmetic (KKT,FJ)
+\calc@Acount=\count316
+\calc@Bcount=\count317
+\calc@Adimen=\dimen195
+\calc@Bdimen=\dimen196
+\calc@Askip=\skip192
+\calc@Bskip=\skip193
+LaTeX Info: Redefining \setlength on input line 80.
+LaTeX Info: Redefining \addtolength on input line 81.
+\calc@Ccount=\count318
+\calc@Cskip=\skip194
+)
+("C:\Program Files\MiKTeX\tex/latex/tools\shellesc.sty"
+Package: shellesc 2019/11/08 v1.0c unified shell escape interface for LaTeX
+Package shellesc Info: Unrestricted shell escape enabled on input line 75.
+)
+("C:\Program Files\MiKTeX\tex/latex/ifplatform\ifplatform.sty"
+Package: ifplatform 2017/10/13 v0.4a Testing for the operating system
+
+("C:\Program Files\MiKTeX\tex/generic/pdftexcmds\pdftexcmds.sty"
+Package: pdftexcmds 2020-06-27 v0.33 Utility functions of pdfTeX for LuaTeX (HO
+)
+
+("C:\Program Files\MiKTeX\tex/generic/infwarerr\infwarerr.sty"
+Package: infwarerr 2019/12/03 v1.5 Providing info/warning/error messages (HO)
+)
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+)
+("C:\Program Files\MiKTeX\tex/generic/catchfile\catchfile.sty"
+Package: catchfile 2019/12/09 v1.8 Catch the contents of a file (HO)
+
+("C:\Program Files\MiKTeX\tex/generic/etexcmds\etexcmds.sty"
+Package: etexcmds 2019/12/15 v1.7 Avoid name clashes with e-TeX commands (HO)
+))
+("C:\Program Files\MiKTeX\tex/generic/iftex\ifluatex.sty"
+Package: ifluatex 2019/10/25 v1.5 ifluatex legacy package. Use iftex instead.
+))
+("C:\Program Files\MiKTeX\tex/latex/xstring\xstring.sty"
+("C:\Program Files\MiKTeX\tex/generic/xstring\xstring.tex"
+\integerpart=\count319
+\decimalpart=\count320
+)
+Package: xstring 2021/07/21 v1.84 String manipulations (CT)
+)
+("C:\Program Files\MiKTeX\tex/latex/framed\framed.sty"
+Package: framed 2011/10/22 v 0.96: framed or shaded text with page breaks
+\OuterFrameSep=\skip195
+\fb@frw=\dimen197
+\fb@frh=\dimen198
+)
+("C:\Program Files\MiKTeX\tex/latex/newfloat\newfloat.sty"
+Package: newfloat 2019/09/02 v1.1l Defining new floating environments (AR)
+)
+\minted@appexistsfile=\read5
+\minted@bgbox=\box56
+\minted@code=\write5
+\c@minted@FancyVerbLineTemp=\count321
+\c@minted@pygmentizecounter=\count322
+Package newfloat Info: New float `listing' with options `fileext=lol,placement=
+tbp' on input line 1190.
+\c@listing=\count323
+Package newfloat Info: float type `listing'=4 on input line 1190.
+\c@loldepth=\count324
+)
+Class memoir Info: For the caption package to function properly with memoir, we
+ will now reset \caption and friends to kernel defaults and then let the
+caption package take over. Remember: all caption configuration now goes via the
+ caption package interface, not the interface from the memoir class.  on input 
+line 10.
+
+("C:\Program Files\MiKTeX\tex/latex/caption\caption.sty"
+Package: caption 2022/02/20 v3.6 Customizing captions (AR)
+
+("C:\Program Files\MiKTeX\tex/latex/caption\caption3.sty"
+Package: caption3 2022/01/07 v2.3 caption3 kernel (AR)
+\caption@tempdima=\dimen256
+\captionmargin=\dimen257
+\caption@leftmargin=\dimen258
+\caption@rightmargin=\dimen259
+\caption@width=\dimen260
+\caption@indent=\dimen261
+\caption@parindent=\dimen262
+\caption@hangindent=\dimen263
+Package caption Info: memoir document class detected.
+
+("C:\Program Files\MiKTeX\tex/latex/caption\caption-memoir.sto"
+File: caption-memoir.sto 2021/06/30 v2.2 Adaption of the caption package to the
+ memoir document class (AR)
+))
+\c@caption@flags=\count325
+\c@continuedfloat=\count326
+Package caption Info: changepage package is loaded.
+\caption@adjustwidth@hsize=\dimen264
+\caption@adjustwidth@linewidth=\dimen265
+)
+("C:\Program Files\MiKTeX\tex/latex/tools\longtable.sty"
+Package: longtable 2020/01/07 v4.13 Multi-page Table package (DPC)
+\LTleft=\skip196
+\LTright=\skip197
+\LTpre=\skip198
+\LTpost=\skip256
+\LTchunksize=\count327
+\LTcapwidth=\dimen266
+\LT@head=\box57
+\LT@firsthead=\box58
+\LT@foot=\box59
+\LT@lastfoot=\box60
+\LT@cols=\count328
+\LT@rows=\count329
+\c@LT@tables=\count330
+\c@LT@chunks=\count331
+\LT@p@ftn=\toks27
+)
+("C:\Program Files\MiKTeX\tex/latex/graphics\color.sty"
+Package: color 2019/11/23 v1.2a Standard LaTeX Color (DPC)
+
+("C:\Program Files\MiKTeX\tex/latex/graphics-cfg\color.cfg"
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package color Info: Driver file: pdftex.def on input line 147.
+
+("C:\Program Files\MiKTeX\tex/latex/graphics-def\pdftex.def"
+File: pdftex.def 2018/01/08 v1.0l Graphics/color driver for pdftex
+))
+("C:\Program Files\MiKTeX\tex/latex/ebgaramond\ebgaramond.sty"
+Package: ebgaramond 2020/04/12 (Bob Tennent and autoinst) Style file for EB Gar
+amond fonts.
+
+("C:\Program Files\MiKTeX\tex/generic/iftex\ifxetex.sty"
+Package: ifxetex 2019/10/25 v0.7 ifxetex legacy package. Use iftex instead.
+)
+("C:\Program Files\MiKTeX\tex/latex/xkeyval\xkeyval.sty"
+Package: xkeyval 2014/12/03 v2.7a package option processing (HA)
+
+("C:\Program Files\MiKTeX\tex/generic/xkeyval\xkeyval.tex"
+("C:\Program Files\MiKTeX\tex/generic/xkeyval\xkvutils.tex"
+\XKV@toks=\toks28
+\XKV@tempa@toks=\toks29
+)
+\XKV@depth=\count332
+File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
+))
+("C:\Program Files\MiKTeX\tex/latex/base\fontenc.sty"
+Package: fontenc 2020/02/11 v2.0o Standard LaTeX package
+)
+("C:\Program Files\MiKTeX\tex/latex/fontaxes\fontaxes.sty"
+Package: fontaxes 2020/07/21 v1.0e Font selection axes
+LaTeX Info: Redefining \upshape on input line 29.
+LaTeX Info: Redefining \itshape on input line 31.
+LaTeX Info: Redefining \slshape on input line 33.
+LaTeX Info: Redefining \swshape on input line 35.
+LaTeX Info: Redefining \scshape on input line 37.
+LaTeX Info: Redefining \sscshape on input line 39.
+LaTeX Info: Redefining \ulcshape on input line 41.
+LaTeX Info: Redefining \textsw on input line 47.
+LaTeX Info: Redefining \textssc on input line 48.
+LaTeX Info: Redefining \textulc on input line 49.
+)
+LaTeX Info: Redefining \oldstylenums on input line 179.
+LaTeX Info: Redefining \textsw on input line 187.
+)
+("C:\Program Files\MiKTeX\tex/latex/tex-gyre\tgtermes.sty"
+Package: tgtermes 2009/09/27 v1.2 TeX Gyre Termes as default roman family
+)
+("C:\Program Files\MiKTeX\tex/latex/listings\listings.sty"
+\lst@mode=\count333
+\lst@gtempboxa=\box61
+\lst@token=\toks30
+\lst@length=\count334
+\lst@currlwidth=\dimen267
+\lst@column=\count335
+\lst@pos=\count336
+\lst@lostspace=\dimen268
+\lst@width=\dimen269
+\lst@newlines=\count337
+\lst@lineno=\count338
+\lst@maxwidth=\dimen270
+
+("C:\Program Files\MiKTeX\tex/latex/listings\lstmisc.sty"
+File: lstmisc.sty 2020/03/24 1.8d (Carsten Heinz)
+\c@lstnumber=\count339
+\lst@skipnumbers=\count340
+\lst@framebox=\box62
+)
+("C:\Program Files\MiKTeX\tex/latex/listings\listings.cfg"
+File: listings.cfg 2020/03/24 1.8d listings configuration
+))
+Package: listings 2020/03/24 1.8d (Carsten Heinz)
+
+("C:\Program Files\MiKTeX\tex/latex/listings\lstlang1.sty"
+File: lstlang1.sty 2020/03/24 1.8d listings language file
+)
+("C:\Program Files\MiKTeX\tex/latex/listings\lstmisc.sty"
+File: lstmisc.sty 2020/03/24 1.8d (Carsten Heinz)
+)
+
+******************************************************
+Stock height and width: 845.04684pt by 597.50787pt
+Top and edge trims: 0pt and 0pt
+Page height and width: 845.04684pt by 597.50787pt
+Text height and width: 726.71497pt by 455pt
+Spine and edge margins: 71.13188pt and 71.13188pt
+Upper and lower margins: 52.05275pt and 66.27913pt
+Headheight and headsep: 13.6pt and 10pt
+Footskip: 23.6pt
+Columnsep and columnseprule: 10pt and 0pt
+Marginparsep and marginparwidth: 5.69054pt and 59.75081pt
+Sidecapsep and sidecapwidth: 7pt and 42pt
+Sidebarhsep and sidebarwidth: 7pt and 42pt
+Sidebarvsep and sidebartopsep: 14.5pt and 0pt
+Sidebarheight: 590.14995pt
+Sidefoothsep and sidefootwidth: 7pt and 42pt
+Sidefootvsep and sidefootheight: 14.5pt and 590.14995pt
+******************************************************
+
+(memlays.sty
+Package: memlays 2002/08/10 v1.0 Extra membook layouts
+ ("C:\Program Files\MiKTeX\tex/latex/layouts\layouts.sty"
+Package: layouts 2009/09/02 v2.6d graphical depiction of document elements
+\l@ylen=\skip257
+\layoutsbox=\box63
+\l@youtunitlength=\skip258
+\l@youtlinethick=\skip259
+\l@youtlinethickii=\skip260
+\l@ysetupparskip=\skip261
+\l@ysetupbaselineskip=\skip262
+\l@yonem=\skip263
+\l@yonex=\skip264
+\l@ylmarg=\skip265
+\l@yrmarg=\skip266
+\l@yitmindent=\skip267
+\l@ylblwidth=\skip268
+\l@ylblsep=\skip269
+\l@ylparindent=\skip270
+\l@ytsep=\skip271
+\l@ypskip=\skip272
+\l@yptsep=\skip273
+\l@ypsep=\skip274
+\l@yitmsep=\skip275
+\l@ytok=\toks31
+\l@youtpw=\count341
+\l@youtph=\count342
+\l@youthpi=\count343
+\l@youthpii=\count344
+\l@youthpiii=\count345
+\l@youthpiv=\count346
+\l@youthpv=\count347
+\l@youthpvi=\count348
+\l@youthpvii=\count349
+\l@youtparskip=\count350
+\l@youtvpi=\count351
+\l@youtvpii=\count352
+\l@youtvpiii=\count353
+\l@youtvpiv=\count354
+\l@youtvpv=\count355
+\l@youtvpvi=\count356
+\l@youtvpvii=\count357
+\l@youthdo=\count358
+\l@youthdi=\count359
+\l@youthdii=\count360
+\l@youthdiii=\count361
+\l@youthdiv=\count362
+\l@youthdv=\count363
+\l@youthdvi=\count364
+\l@youthdvii=\count365
+\l@youtvdo=\count366
+\l@youtvdi=\count367
+\l@youtvdii=\count368
+\l@youtvdiii=\count369
+\l@youtvdiv=\count370
+\l@youtvdv=\count371
+\l@youtvdvi=\count372
+\l@youtvdvii=\count373
+\l@youtvdviii=\count374
+\l@youtxci=\count375
+\l@youtxcii=\count376
+\l@youtxciii=\count377
+\l@youtxciv=\count378
+\l@youtxcv=\count379
+\l@youtxcvi=\count380
+\l@youtyci=\count381
+\l@youtycii=\count382
+\l@youtyciii=\count383
+\l@youtyciv=\count384
+\l@youtycv=\count385
+\l@youtycvi=\count386
+\l@youtycvii=\count387
+\l@youtycviii=\count388
+\l@youtxco=\count389
+\l@youtyco=\count390
+\l@ytempdima=\skip276
+))
+("C:\Program Files\MiKTeX\tex/latex/printlen\printlen.sty"
+Package: printlen 2009/09/03 v1.1a print lengths with units
+)
+("C:\Program Files\MiKTeX\tex/latex/enumitem\enumitem.sty"
+Package: enumitem 2019/06/20 v3.9 Customized lists
+\labelindent=\skip277
+\enit@outerparindent=\dimen271
+\enit@toks=\toks32
+\enit@inbox=\box64
+\enit@count@id=\count391
+\enitdp@description=\count392
+)
+("C:\Program Files\MiKTeX\tex/latex/imakeidx\imakeidx.sty"
+Package: imakeidx 2016/10/15 v1.3e Package for typesetting indices in a synchro
+nous mode
+
+("C:\Program Files\MiKTeX\tex/latex/tools\multicol.sty"
+Package: multicol 2019/12/09 v1.8y multicolumn formatting (FMi)
+\c@tracingmulticols=\count393
+\mult@box=\box65
+\multicol@leftmargin=\dimen272
+\c@unbalance=\count394
+\c@collectmore=\count395
+\doublecol@number=\count396
+\multicoltolerance=\count397
+\multicolpretolerance=\count398
+\full@width=\dimen273
+\page@free=\dimen274
+\premulticols=\dimen275
+\postmulticols=\dimen276
+\multicolsep=\skip278
+\multicolbaselineskip=\skip279
+\partial@page=\box66
+\last@line=\box67
+\maxbalancingoverflow=\dimen277
+\mult@rightbox=\box68
+\mult@grightbox=\box69
+\mult@gfirstbox=\box70
+\mult@firstbox=\box71
+\@tempa=\box72
+\@tempa=\box73
+\@tempa=\box74
+\@tempa=\box75
+\@tempa=\box76
+\@tempa=\box77
+\@tempa=\box78
+\@tempa=\box79
+\@tempa=\box80
+\@tempa=\box81
+\@tempa=\box82
+\@tempa=\box83
+\@tempa=\box84
+\@tempa=\box85
+\@tempa=\box86
+\@tempa=\box87
+\@tempa=\box88
+\@tempa=\box89
+\@tempa=\box90
+\@tempa=\box91
+\@tempa=\box92
+\@tempa=\box93
+\@tempa=\box94
+\@tempa=\box95
+\@tempa=\box96
+\@tempa=\box97
+\@tempa=\box98
+\@tempa=\box99
+\@tempa=\box100
+\@tempa=\box101
+\@tempa=\box102
+\@tempa=\box103
+\@tempa=\box104
+\@tempa=\box105
+\@tempa=\box106
+\@tempa=\box107
+\@tempa=\box108
+\c@minrows=\count399
+\c@columnbadness=\count400
+\c@finalcolumnbadness=\count401
+\last@try=\dimen278
+\multicolovershoot=\dimen279
+\multicolundershoot=\dimen280
+\mult@nat@firstbox=\box109
+\colbreak@box=\box110
+\mc@col@check@num=\count402
+))
+\Dyplom@idxfile=\write6
+\openout6 = `Dyplom.idx'.
+
+
+Writing index file Dyplom.idx
+("C:\Program Files\MiKTeX\tex/generic/iftex\ifpdf.sty"
+Package: ifpdf 2019/10/25 v3.4 ifpdf legacy package. Use iftex instead.
+)
+("C:\Program Files\MiKTeX\tex/latex/hyperref\hyperref.sty"
+Package: hyperref 2020-05-15 v7.00e Hypertext links for LaTeX
+
+("C:\Program Files\MiKTeX\tex/generic/kvdefinekeys\kvdefinekeys.sty"
+Package: kvdefinekeys 2019-12-19 v1.6 Define keys (HO)
+)
+("C:\Program Files\MiKTeX\tex/generic/pdfescape\pdfescape.sty"
+Package: pdfescape 2019/12/09 v1.15 Implements pdfTeX's escape features (HO)
+)
+("C:\Program Files\MiKTeX\tex/latex/hycolor\hycolor.sty"
+Package: hycolor 2020-01-27 v1.10 Color options for hyperref/bookmark (HO)
+)
+("C:\Program Files\MiKTeX\tex/latex/letltxmacro\letltxmacro.sty"
+Package: letltxmacro 2019/12/03 v1.6 Let assignment for LaTeX macros (HO)
+)
+("C:\Program Files\MiKTeX\tex/latex/auxhook\auxhook.sty"
+Package: auxhook 2019-12-17 v1.6 Hooks for auxiliary files (HO)
+)
+\@linkdim=\dimen281
+\Hy@linkcounter=\count403
+\Hy@pagecounter=\count404
+
+("C:\Program Files\MiKTeX\tex/latex/hyperref\pd1enc.def"
+File: pd1enc.def 2020-05-15 v7.00e Hyperref: PDFDocEncoding definition (HO)
+Now handling font encoding PD1 ...
+... no UTF-8 mapping file for font encoding PD1
+)
+("C:\Program Files\MiKTeX\tex/generic/intcalc\intcalc.sty"
+Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
+)
+\Hy@SavedSpaceFactor=\count405
+Package hyperref Info: Option `bookmarks' set `true' on input line 4338.
+Package hyperref Info: Option `breaklinks' set `true' on input line 4338.
+Package hyperref Info: Option `unicode' set `true' on input line 4338.
+
+("C:\Program Files\MiKTeX\tex/latex/hyperref\puenc.def"
+File: puenc.def 2020-05-15 v7.00e Hyperref: PDF Unicode definition (HO)
+Now handling font encoding PU ...
+... no UTF-8 mapping file for font encoding PU
+)
+Package hyperref Info: Hyper figures OFF on input line 4464.
+Package hyperref Info: Link nesting OFF on input line 4469.
+Package hyperref Info: Hyper index ON on input line 4472.
+Package hyperref Info: Plain pages OFF on input line 4479.
+Package hyperref Info: Backreferencing OFF on input line 4484.
+Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
+Package hyperref Info: Bookmarks ON on input line 4717.
+\c@Hy@tempcnt=\count406
+
+("C:\Program Files\MiKTeX\tex/latex/url\url.sty"
+\Urlmuskip=\muskip16
+Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
+)
+LaTeX Info: Redefining \url on input line 5076.
+\XeTeXLinkMargin=\dimen282
+
+("C:\Program Files\MiKTeX\tex/generic/bitset\bitset.sty"
+Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
+
+("C:\Program Files\MiKTeX\tex/generic/bigintcalc\bigintcalc.sty"
+Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO
+)
+))
+\Fld@menulength=\count407
+\Field@Width=\dimen283
+\Fld@charsize=\dimen284
+Package hyperref Info: Hyper figures OFF on input line 6347.
+Package hyperref Info: Link nesting OFF on input line 6352.
+Package hyperref Info: Hyper index ON on input line 6355.
+Package hyperref Info: backreferencing OFF on input line 6362.
+Package hyperref Info: Link coloring OFF on input line 6367.
+Package hyperref Info: Link coloring with OCG OFF on input line 6372.
+Package hyperref Info: PDF/A mode OFF on input line 6377.
+LaTeX Info: Redefining \ref on input line 6417.
+LaTeX Info: Redefining \pageref on input line 6421.
+
+("C:\Program Files\MiKTeX\tex/generic/atbegshi\atbegshi.sty"
+Package: atbegshi 2019/12/05 v1.19 At begin shipout hook (HO)
+)
+\Hy@abspage=\count408
+\c@Item=\count409
+\c@Hfootnote=\count410
+)
+("C:\Program Files\MiKTeX\tex/latex/memoir\memhfixc.sty"
+Package: memhfixc 2019/10/24 v1.18 nameref/hyperref package fixes for memoir cl
+ass
+\c@memhycontfloat=\count411
+\c@Hpagenote=\count412
+)
+Package hyperref Info: Driver: hpdftex.
+
+("C:\Program Files\MiKTeX\tex/latex/hyperref\hpdftex.def"
+File: hpdftex.def 2020-05-15 v7.00e Hyperref driver for pdfTeX
+
+("C:\Program Files\MiKTeX\tex/latex/atveryend\atveryend.sty"
+Package: atveryend 2019-12-11 v1.11 Hooks at the very end of document (HO)
+)
+\Fld@listcount=\count413
+\c@bookmark@seq@number=\count414
+
+("C:\Program Files\MiKTeX\tex/latex/rerunfilecheck\rerunfilecheck.sty"
+Package: rerunfilecheck 2019/12/05 v1.9 Rerun checks for auxiliary files (HO)
+
+("C:\Program Files\MiKTeX\tex/generic/uniquecounter\uniquecounter.sty"
+Package: uniquecounter 2019/12/15 v1.4 Provide unlimited unique counter (HO)
+)
+Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
+86.
+)
+\Hy@SectionHShift=\skip280
+)
+("C:\Program Files\MiKTeX\tex/latex/graphics\graphicx.sty"
+Package: graphicx 2019/11/30 v1.2a Enhanced LaTeX Graphics (DPC,SPQR)
+
+("C:\Program Files\MiKTeX\tex/latex/graphics\graphics.sty"
+Package: graphics 2019/11/30 v1.4a Standard LaTeX Graphics (DPC,SPQR)
+
+("C:\Program Files\MiKTeX\tex/latex/graphics\trig.sty"
+Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
+)
+("C:\Program Files\MiKTeX\tex/latex/graphics-cfg\graphics.cfg"
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: pdftex.def on input line 105.
+)
+\Gin@req@height=\dimen285
+\Gin@req@width=\dimen286
+)
+("C:\Program Files\MiKTeX\tex/latex/graphics\rotating.sty"
+Package: rotating 2016/08/11 v2.16d rotated objects in LaTeX
+\c@r@tfl@t=\count415
+\rotFPtop=\skip281
+\rotFPbot=\skip282
+\rot@float@box=\box111
+\rot@mess@toks=\toks33
+)
+runsystem(for ^%i in (pygmentize.exe pygmentize.bat pygmentize.cmd) do set > Dy
+plom.aex <nul: /p x=^%~$PATH:i>> Dyplom.aex)...executed.
+
+runsystem(del Dyplom.aex)...executed.
+
+
+("C:\Program Files\MiKTeX\tex/latex/l3backend\l3backend-pdfmode.def"
+File: l3backend-pdfmode.def 2020-06-29 L3 backend support: PDF mode
+\l__kernel_color_stack_int=\count416
+\l__pdf_internal_box=\box112
+)
+(Dyplom.aux (skroty.aux) (rozdzial01.aux) (rozdzial023.aux) (rozdzial03.aux)
+(rozdzial04.aux
+
+LaTeX Warning: Label `lst:road-plan-generate-others' multiply defined.
+
+
+LaTeX Warning: Label `lst:road-plan-generate-others' multiply defined.
+
+) (rozdzial05.aux) (rozdzial06.aux))
+\openout1 = `Dyplom.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 574.
+LaTeX Font Info:    ... okay on input line 574.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 574.
+LaTeX Font Info:    ... okay on input line 574.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 574.
+LaTeX Font Info:    ... okay on input line 574.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 574.
+LaTeX Font Info:    ... okay on input line 574.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 574.
+LaTeX Font Info:    ... okay on input line 574.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 574.
+LaTeX Font Info:    ... okay on input line 574.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 574.
+LaTeX Font Info:    ... okay on input line 574.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 574.
+LaTeX Font Info:    ... okay on input line 574.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 574.
+LaTeX Font Info:    ... okay on input line 574.
+LaTeX Font Info:    Trying to load font information for T1+qtm on input line 57
+4.
+
+("C:\Program Files\MiKTeX\tex/latex/tex-gyre\t1qtm.fd"
+File: t1qtm.fd 2009/09/25 v1.2 font definition file for T1/qtm
+)
+Package newfloat Info: `rotating' package detected.
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: hyperref package is loaded.
+Package caption Info: listings package is loaded.
+Package caption Info: longtable package is loaded.
+
+("C:\Program Files\MiKTeX\tex/latex/caption\ltcaption.sty"
+Package: ltcaption 2021/01/08 v1.4c longtable captions (AR)
+)
+Package caption Info: rotating package is loaded.
+Package caption Info: End \AtBeginDocument code.
+
+("C:\Program Files\MiKTeX\tex/context/base/mkii\supp-pdf.mkii"
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count417
+\scratchdimen=\dimen287
+\scratchbox=\box113
+\nofMPsegments=\count418
+\nofMParguments=\count419
+\everyMPshowfont=\toks34
+\MPscratchCnt=\count420
+\MPscratchDim=\dimen288
+\MPnumerator=\count421
+\makeMPintoPDFobject=\count422
+\everyMPtoPDFconversion=\toks35
+) ("C:\Program Files\MiKTeX\tex/latex/epstopdf-pkg\epstopdf-base.sty"
+Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
+85.
+)
+\c@mv@tabular=\count423
+\c@mv@boldtabular=\count424
+\c@lstlisting=\count425
+
+
+Package layouts Warning: Layout scale set to 0.5 on input line 574.
+
+\AtBeginShipoutBox=\box114
+Package hyperref Info: Link coloring OFF on input line 574.
+("C:\Program Files\MiKTeX\tex/latex/hyperref\nameref.sty"
+Package: nameref 2019/09/16 v2.46 Cross-referencing by name of section
+
+("C:\Program Files\MiKTeX\tex/latex/refcount\refcount.sty"
+Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
+)
+("C:\Program Files\MiKTeX\tex/generic/gettitlestring\gettitlestring.sty"
+Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
+)
+\c@section@level=\count426
+)
+Redoing nameref's sectioning
+Redoing nameref's label
+LaTeX Info: Redefining \nameref on input line 574.
+LaTeX Info: Redefining \ref on input line 574.
+LaTeX Info: Redefining \pageref on input line 574.
+LaTeX Info: Redefining \nameref on input line 574.
+(Dyplom.out) (Dyplom.out)
+\@outlinefile=\write7
+\openout7 = `Dyplom.out'.
+
+LaTeX Font Info:    Trying to load font information for T1+EBGaramond-OsF on in
+put line 583.
+
+("C:\Program Files\MiKTeX\tex/latex/ebgaramond\t1ebgaramond-osf.fd"
+File: T1EBGaramond-OsF.fd 2019/10/22 (autoinst) Font definitions for T1/EBGaram
+ond-OsF.
+)
+LaTeX Font Info:    Font shape `T1/EBGaramond-OsF/m/n' in size <12> not availab
+le
+(Font)              Font shape `T1/EBGaramond-OsF/regular/n' tried instead on i
+nput line 583.
+LaTeX Font Info:    Font shape `T1/EBGaramond-OsF/regular/n' will be
+(Font)              scaled to size 12.0pt on input line 583.
+\tmpfboxrule=\skip283
+LaTeX Font Info:    Font shape `T1/EBGaramond-OsF/m/n' in size <18> not availab
+le
+(Font)              Font shape `T1/EBGaramond-OsF/regular/n' tried instead on i
+nput line 583.
+LaTeX Font Info:    Font shape `T1/EBGaramond-OsF/regular/n' will be
+(Font)              scaled to size 18.0pt on input line 583.
+LaTeX Font Info:    Font shape `T1/EBGaramond-OsF/m/n' in size <16> not availab
+le
+(Font)              Font shape `T1/EBGaramond-OsF/regular/n' tried instead on i
+nput line 583.
+LaTeX Font Info:    Font shape `T1/EBGaramond-OsF/regular/n' will be
+(Font)              scaled to size 16.0pt on input line 583.
+LaTeX Font Info:    Font shape `T1/EBGaramond-OsF/m/n' in size <15> not availab
+le
+(Font)              Font shape `T1/EBGaramond-OsF/regular/n' tried instead on i
+nput line 583.
+LaTeX Font Info:    Font shape `T1/EBGaramond-OsF/regular/n' will be
+(Font)              scaled to size 15.0pt on input line 583.
+LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 5
+83.
+
+("C:\Program Files\MiKTeX\tex/latex/lm\ot1lmr.fd"
+File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+LaTeX Font Info:    Trying to load font information for OML+lmm on input line 5
+83.
+
+("C:\Program Files\MiKTeX\tex/latex/lm\omllmm.fd"
+File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 
+583.
+
+("C:\Program Files\MiKTeX\tex/latex/lm\omslmsy.fd"
+File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 
+583.
+
+("C:\Program Files\MiKTeX\tex/latex/lm\omxlmex.fd"
+File: omxlmex.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <12> on input line 583.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <8> on input line 583.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <6> on input line 583.
+LaTeX Font Info:    Font shape `T1/EBGaramond-OsF/m/n' in size <22> not availab
+le
+(Font)              Font shape `T1/EBGaramond-OsF/regular/n' tried instead on i
+nput line 583.
+LaTeX Font Info:    Font shape `T1/EBGaramond-OsF/regular/n' will be
+(Font)              scaled to size 22.0pt on input line 583.
+LaTeX Font Info:    Font shape `T1/EBGaramond-OsF/m/n' in size <14> not availab
+le
+(Font)              Font shape `T1/EBGaramond-OsF/regular/n' tried instead on i
+nput line 583.
+LaTeX Font Info:    Font shape `T1/EBGaramond-OsF/regular/n' will be
+(Font)              scaled to size 14.0pt on input line 583.
+LaTeX Font Info:    Calculating math sizes for size <14> on input line 583.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <14> on input line 583.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <9.79996> on input line 583.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <7> on input line 583.
+LaTeX Font Info:    Font shape `T1/EBGaramond-OsF/m/n' in size <32> not availab
+le
+(Font)              Font shape `T1/EBGaramond-OsF/regular/n' tried instead on i
+nput line 583.
+LaTeX Font Info:    Font shape `T1/EBGaramond-OsF/regular/n' will be
+(Font)              scaled to size 32.0pt on input line 583.
+
+Overfull \hbox (14.5pt too wide) in paragraph at lines 583--583
+[][]
+ []
+
+
+Class memoir Warning: The material used in the headers is too large
+(14.49998pt) for the given head height (13.6pt), it is recommended to
+either increase the head height or redesign the header
+(in both cases you will find help in the memoir manual). on input line 583.
+
+
+Overfull \vbox (0.89998pt too high) has occurred while \output is active []
+
+
+[1
+
+{C:/Users/Maciek/AppData/Local/MiKTeX/pdftex/config/pdftex.map}] (Dyplom.toc
+Overfull \vbox (0.89998pt too high) has occurred while \output is active []
+
+
+[2
+
+])
+Overfull \vbox (0.89998pt too high) has occurred while \output is active []
+
+
+[3] (Dyplom.lof)
+Overfull \vbox (0.89998pt too high) has occurred while \output is active []
+
+
+[4] (Dyplom.lol)
+Overfull \vbox (0.89998pt too high) has occurred while \output is active []
+
+
+[5] (Dyplom.lot)
+Overfull \vbox (0.89998pt too high) has occurred while \output is active []
+
+
+[6]
+\openout2 = `skroty.aux'.
+
+ (skroty.tex)
+\openout2 = `rozdzial01.aux'.
+
+ (rozdzial01.tex
+Overfull \vbox (0.89998pt too high) has occurred while \output is active []
+
+
+[7
+
+
+
+
+]
+Overfull \vbox (0.89998pt too high) has occurred while \output is active []
+
+
+[8]
+Overfull \vbox (0.89998pt too high) has occurred while \output is active []
+
+
+[9])
+Overfull \vbox (0.89998pt too high) has occurred while \output is active []
+
+
+[10]
+\openout2 = `rozdzial023.aux'.
+
+ (rozdzial023.tex
+Overfull \vbox (0.89998pt too high) has occurred while \output is active []
+
+
+[11
+
+
+
+]
+Overfull \vbox (0.89998pt too high) has occurred while \output is active []
+
+
+[12]
+Overfull \vbox (0.89998pt too high) has occurred while \output is active []
+
+
+[13]
+Overfull \vbox (0.89998pt too high) has occurred while \output is active []
+
+
+[14]
+Overfull \vbox (0.89998pt too high) has occurred while \output is active []
+
+
+[15]
+Underfull \hbox (badness 1845) in paragraph at lines 134--134
+[]|\T1/qtm/m/n/10.95 Typ za-war-to-±ci, któr¡ jest w
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 134--134
+\T1/qtm/m/n/10.95 sta-nie prze-twa-rza¢ apli-ka-cja
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 134--134
+[]|\T1/qtm/m/n/10.95 Identyfikator typu MIME
+ []
+
+
+Underfull \hbox (badness 1931) in paragraph at lines 134--134
+\T1/qtm/m/n/10.95 (\T1/qtm/m/it/10.95 ang. Mul-ti-pur-pose In-ter-net
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 134--134
+\T1/qtm/m/it/10.95 Mail Exten-sions\T1/qtm/m/n/10.95 ) lub za-pis
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 134--134
+\T1/qtm/m/n/10.95 */* ozna-cza-j¡cy do-woln¡
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 134--134
+[]|\T1/qtm/m/n/10.95 Zbiór for-ma-tów ko-do-wa-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 134--134
+\T1/qtm/m/n/10.95 nia zde-fi-nio-wany w ra-mach
+ []
+
+
+Underfull \hbox (badness 3568) in paragraph at lines 134--134
+[]|\T1/qtm/m/n/10.95 J¦zyk na-tu-ralny, pre-fe-ro-wany
+ []
+
+
+Underfull \hbox (badness 1331) in paragraph at lines 134--134
+[]|\T1/qtm/m/n/10.95 Pojedyncza war-to±¢ re-pre-zen-
+ []
+
+
+Underfull \hbox (badness 1931) in paragraph at lines 134--134
+\T1/qtm/m/n/10.95 tu-j¡ca okre-±lony kraj lub re-
+ []
+
+
+Underfull \hbox (badness 3803) in paragraph at lines 134--134
+\T1/qtm/m/n/10.95 war-to-±ci wraz z pa-ra-me-trem
+ []
+
+
+Underfull \hbox (badness 3323) in paragraph at lines 134--134
+[]|\T1/qtm/m/n/10.95 Dªugo±¢ ciaªa »¡-da-nia wy-ra-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 134--134
+[]|\T1/qtm/m/n/10.95 Zestaw par klucz-warto±¢,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 134--134
+\T1/qtm/m/n/10.95 gdzie klucz jest war-to-±ci¡
+ []
+
+
+Underfull \hbox (badness 1990) in paragraph at lines 134--134
+[]|\T1/qtm/m/n/10.95 Informacja de-ter-mi-nu-j¡ca po-
+ []
+
+
+Underfull \hbox (badness 1789) in paragraph at lines 134--134
+\T1/qtm/m/n/10.95 wer-sji, plat-for-mie sprz¦-to-wej,
+ []
+
+
+Underfull \hbox (badness 5847) in paragraph at lines 153--153
+[]|\T1/qtm/m/n/10.95 Informacja do-ty-cz¡ca po-cho-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 153--153
+\T1/qtm/m/n/10.95 dze-nia klienta, który mo»e
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 153--153
+\T1/qtm/m/n/10.95 ubie-ga¢ si¦ o otrzy-ma-nie
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 153--153
+[]|\T1/qtm/m/n/10.95 adres ho-sta klienc-kiego lub
+ []
+
+
+Underfull \hbox (badness 1320) in paragraph at lines 153--153
+\T1/qtm/m/n/10.95 sym-bol gwiazdki ozna-cza-j¡cy
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 153--153
+\T1/qtm/m/n/10.95 ze-zwo-le-nie dla wszyst-kich
+ []
+
+
+Underfull \hbox (badness 1424) in paragraph at lines 153--153
+\T1/qtm/m/n/10.95 ±la-j¡-cych za-cho-wa-nie pa-mi¦ci
+ []
+
+
+Underfull \hbox (badness 5133) in paragraph at lines 153--153
+[]|\T1/qtm/m/n/10.95 Polecenie igno-ro-wa-nia »¡-da«
+ []
+
+
+Underfull \hbox (badness 3503) in paragraph at lines 153--153
+\T1/qtm/m/n/10.95 re-ali-zo-wa-nych po-mi¦-dzy ¹ró-
+ []
+
+
+Underfull \hbox (badness 4582) in paragraph at lines 153--153
+[]|\T1/qtm/m/n/10.95 Nazwa ho-sta do-star-cza-j¡-cego
+ []
+
+
+Overfull \vbox (0.89998pt too high) has occurred while \output is active []
+
+
+[16]
+Overfull \vbox (0.89998pt too high) has occurred while \output is active []
+
+
+[17]
+Overfull \vbox (0.89998pt too high) has occurred while \output is active []
+
+
+[18]
+<rys03/architektura-api.png, id=449, 683.4333pt x 639.1077pt>
+File: rys03/architektura-api.png Graphic file (type png)
+<use rys03/architektura-api.png>
+Package pdftex.def Info: rys03/architektura-api.png  used on input line 181.
+(pdftex.def)             Requested size: 273.00278pt x 255.29723pt.
+
+Overfull \vbox (0.89998pt too high) has occurred while \output is active []
+
+
+[19 <./rys03/architektura-api.png
+
+pdfTeX warning: pdflatex.exe (file ./rys03/architektura-api.png): large interla
+ced PNG might cause out of memory (use non-interlaced PNG to fix this)
+>]
+<rys03/orm-wyjasnienie.png, id=459, 1596.71532pt x 473.51906pt>
+File: rys03/orm-wyjasnienie.png Graphic file (type png)
+<use rys03/orm-wyjasnienie.png>
+Package pdftex.def Info: rys03/orm-wyjasnienie.png  used on input line 195.
+(pdftex.def)             Requested size: 455.0pt x 134.93265pt.
+
+Overfull \vbox (0.89998pt too high) has occurred while \output is active []
+
+
+[20 <./rys03/orm-wyjasnienie.png>]
+
+LaTeX Warning: Reference `fig:uwierzytelnianie-autoryzacja' on page 21 undefine
+d on input line 213.
+
+<rys03/uwierzytelnianie-autoryzacja.png, id=467, 844.5954pt x 711.1368pt>
+File: rys03/uwierzytelnianie-autoryzacja.png Graphic file (type png)
+<use rys03/uwierzytelnianie-autoryzacja.png>
+Package pdftex.def Info: rys03/uwierzytelnianie-autoryzacja.png  used on input 
+line 217.
+(pdftex.def)             Requested size: 273.00278pt x 229.86885pt.
+
+Overfull \vbox (0.89998pt too high) has occurred while \output is active []
+
+
+[21 <./rys03/uwierzytelnianie-autoryzacja.png
+
+pdfTeX warning: pdflatex.exe (file ./rys03/uwierzytelnianie-autoryzacja.png): l
+arge interlaced PNG might cause out of memory (use non-interlaced PNG to fix th
+is)
+>]
+Overfull \vbox (0.89998pt too high) has occurred while \output is active []
+
+
+[22]
+Overfull \vbox (0.89998pt too high) has occurred while \output is active []
+
+
+[23]
+Overfull \vbox (0.89998pt too high) has occurred while \output is active []
+
+
+[24]
+Overfull \vbox (0.89998pt too high) has occurred while \output is active []
+
+
+[25]
+Overfull \vbox (0.89998pt too high) has occurred while \output is active []
+
+
+[26])
+Overfull \vbox (0.89998pt too high) has occurred while \output is active []
+
+
+[27]
+\openout2 = `rozdzial03.aux'.
+
+ (rozdzial03.tex)
+Overfull \vbox (0.89998pt too high) has occurred while \output is active []
+
+
+[28
+
+
+
+]
+\openout2 = `rozdzial04.aux'.
+
+ (rozdzial04.tex
+
+LaTeX Warning: Reference `subsec:architektura-aplikacji' on page 29 undefined o
+n input line 15.
+
+LaTeX Font Info:    Trying to load font information for T1+txtt on input line 2
+3.
+("C:\Program Files\MiKTeX\tex/latex/txfonts\t1txtt.fd"
+File: t1txtt.fd 2000/12/15 v3.1
+)
+Underfull \hbox (badness 5203) in paragraph at lines 23--24
+[]\T1/qtm/m/n/12 Poni»ej przed-sta-wiono spo-sób ob-sªugi »¡-da-nia typu POST d
+la punktu ko«-co-wego
+ []
+
+
+Underfull \hbox (badness 1259) in paragraph at lines 23--24
+\T1/txtt/m/n/12 /api/documents/forwards/worker\T1/qtm/m/n/12 , od-po-wie-dzial-
+nego za re-ali-za-cj¦ prze-ka-za-nia do-ku-
+ []
+
+
+Overfull \vbox (0.89998pt too high) has occurred while \output is active []
+
+
+[29
+
+
+
+] ("C:\Program Files\MiKTeX\tex/latex/listings\lstlang1.sty"
+File: lstlang1.sty 2020/03/24 1.8d listings language file
+)
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <10> on input line 34.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <5> on input line 34.
+LaTeX Font Info:    Font shape `T1/txtt/b/n' in size <10> not available
+(Font)              Font shape `T1/txtt/bx/n' tried instead on input line 35.
+
+Overfull \vbox (0.89998pt too high) has occurred while \output is active []
+
+
+[30]
+
+LaTeX Warning: Reference `subsec:architektura-aplikacji' on page 31 undefined o
+n input line 62.
+
+
+Overfull \vbox (0.89998pt too high) has occurred while \output is active []
+
+
+[31]
+Overfull \vbox (0.89998pt too high) has occurred while \output is active []
+
+
+[32]
+Overfull \vbox (0.89998pt too high) has occurred while \output is active []
+
+
+[33]
+Overfull \vbox (0.89998pt too high) has occurred while \output is active []
+
+
+[34]
+Overfull \vbox (0.89998pt too high) has occurred while \output is active []
+
+
+[35]
+LaTeX Font Info:    Trying to load font information for TS1+txtt on input line 
+239.
+ ("C:\Program Files\MiKTeX\tex/latex/txfonts\ts1txtt.fd"
+File: ts1txtt.fd 2000/12/15 v3.1
+)
+Overfull \vbox (0.89998pt too high) has occurred while \output is active []
+
+
+[36]
+Overfull \vbox (0.89998pt too high) has occurred while \output is active []
+
+
+[37]
+Overfull \vbox (0.89998pt too high) has occurred while \output is active []
+
+
+[38]
+Overfull \vbox (0.89998pt too high) has occurred while \output is active []
+
+
+[39]
+Overfull \vbox (0.89998pt too high) has occurred while \output is active []
+
+
+[40]
+Overfull \vbox (0.89998pt too high) has occurred while \output is active []
+
+
+[41]
+Overfull \vbox (0.89998pt too high) has occurred while \output is active []
+
+
+[42]
+Overfull \vbox (0.89998pt too high) has occurred while \output is active []
+
+
+[43]
+Overfull \vbox (0.89998pt too high) has occurred while \output is active []
+
+
+[44]
+Underfull \hbox (badness 10000) in paragraph at lines 630--631
+[]\T1/qtm/m/n/12 Na li-stingu []4.19[] przed-sta-wiona zo-staªa me-toda ge-ne-r
+ycz-nej klasy
+ []
+
+
+Overfull \vbox (0.89998pt too high) has occurred while \output is active []
+
+
+[45]
+Underfull \hbox (badness 3803) in paragraph at lines 650--651
+[]\T1/qtm/m/n/12 Posiadaj¡c tak przy-go-to-wan¡ me-tod¦, mo»-liwe jest sko-rzy-
+sta-nie z niej, w kon-tek-
+ []
+
+
+Underfull \hbox (badness 1062) in paragraph at lines 650--651
+\T1/qtm/m/n/12 ±cie wy-wo-ªa-nia ser-wisu wia-do-mo-±ci e-mail. Po-czy-niono ta
+k we-wn¡trz klasy kon-tro-lera
+ []
+
+
+Overfull \vbox (0.89998pt too high) has occurred while \output is active []
+
+
+[46]
+
+LaTeX Warning: Reference `subsec:TSPwprowadzenie' on page 47 undefined on input
+ line 697.
+
+
+Overfull \vbox (0.89998pt too high) has occurred while \output is active []
+
+
+[47]
+Underfull \hbox (badness 10000) in paragraph at lines 744--745
+[]\T1/qtm/m/n/12 Kluczowym ele-men-tem oma-wia-nej me-tody jest funk-cja skªa-d
+owa o na-zwie
+ []
+
+
+Underfull \hbox (badness 2277) in paragraph at lines 744--745
+\T1/txtt/m/n/12 PerformEvolution\T1/qtm/m/n/12 . We-wn¡trz tej funk-cji, wy-bie
+-rane zo-staj¡ osob-niki do-mi-nu-j¡ce z
+ []
+
+
+Overfull \vbox (0.89998pt too high) has occurred while \output is active []
+
+
+[48]
+Overfull \vbox (0.89998pt too high) has occurred while \output is active []
+
+
+[49]
+Overfull \vbox (0.89998pt too high) has occurred while \output is active []
+
+
+[50]
+Overfull \vbox (0.89998pt too high) has occurred while \output is active []
+
+
+[51]
+Overfull \vbox (0.89998pt too high) has occurred while \output is active []
+
+
+[52]pdfTeX warning (ext4): destination with the same identifier (name{lstnumber
+.\\z@\040.4}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.920 	foreach
+               (var worker in workers) {
+Overfull \vbox (0.89998pt too high) has occurred while \output is active []
+
+
+[53]
+Overfull \vbox (0.89998pt too high) has occurred while \output is active []
+
+
+[54]
+Overfull \vbox (0.89998pt too high) has occurred while \output is active []
+
+
+[55]
+Underfull \hbox (badness 2435) in paragraph at lines 1040--1041
+[]\T1/qtm/m/n/12 W ra-mach tej pro-ce-dury, wy-ko-rzy-sty-wana jest me-toda \T1
+/txtt/m/n/12 getCurrentPosition \T1/qtm/m/n/12 klasy
+ []
+
+
+Overfull \vbox (0.89998pt too high) has occurred while \output is active []
+
+
+[56]
+
+LaTeX Warning: Reference `lst:skrypt-historia-lokalizacji' on page 57 undefined
+ on input line 1073.
+
+<rys04/zrzut1.png, id=1182, 1445.4pt x 730.98094pt>
+File: rys04/zrzut1.png Graphic file (type png)
+<use rys04/zrzut1.png>
+Package pdftex.def Info: rys04/zrzut1.png  used on input line 1080.
+(pdftex.def)             Requested size: 432.24861pt x 218.59328pt.
+
+Overfull \vbox (0.89998pt too high) has occurred while \output is active []
+
+
+[57]
+<rys04/zrzut2.png, id=1204, 1445.4pt x 730.98094pt>
+File: rys04/zrzut2.png Graphic file (type png)
+<use rys04/zrzut2.png>
+Package pdftex.def Info: rys04/zrzut2.png  used on input line 1087.
+(pdftex.def)             Requested size: 432.24861pt x 218.59328pt.
+<rys04/zrzut3.png, id=1207, 1445.4pt x 730.98094pt>
+File: rys04/zrzut3.png Graphic file (type png)
+<use rys04/zrzut3.png>
+Package pdftex.def Info: rys04/zrzut3.png  used on input line 1096.
+(pdftex.def)             Requested size: 432.24861pt x 218.59328pt.
+<rys04/zrzut4.png, id=1209, 1445.4pt x 730.98094pt>
+File: rys04/zrzut4.png Graphic file (type png)
+<use rys04/zrzut4.png>
+Package pdftex.def Info: rys04/zrzut4.png  used on input line 1105.
+(pdftex.def)             Requested size: 432.24861pt x 218.59328pt.
+
+Overfull \vbox (0.89998pt too high) has occurred while \output is active []
+
+
+[58 <./rys04/zrzut1.png> <./rys04/zrzut2.png>]
+<rys04/zrzut5.png, id=1217, 1445.4pt x 730.98094pt>
+File: rys04/zrzut5.png Graphic file (type png)
+<use rys04/zrzut5.png>
+Package pdftex.def Info: rys04/zrzut5.png  used on input line 1114.
+(pdftex.def)             Requested size: 432.24861pt x 218.59328pt.
+<rys04/zrzut6.png, id=1219, 1445.4pt x 730.22812pt>
+File: rys04/zrzut6.png Graphic file (type png)
+<use rys04/zrzut6.png>
+Package pdftex.def Info: rys04/zrzut6.png  used on input line 1123.
+(pdftex.def)             Requested size: 432.24861pt x 218.36815pt.
+
+Overfull \vbox (0.89998pt too high) has occurred while \output is active []
+
+
+[59 <./rys04/zrzut3.png> <./rys04/zrzut4.png>]
+Overfull \vbox (0.89998pt too high) has occurred while \output is active []
+
+
+[60 <./rys04/zrzut5.png> <./rys04/zrzut6.png>]
+<rys04/zrzut7.png, id=1233, 1445.4pt x 729.47531pt>
+File: rys04/zrzut7.png Graphic file (type png)
+<use rys04/zrzut7.png>
+Package pdftex.def Info: rys04/zrzut7.png  used on input line 1134.
+(pdftex.def)             Requested size: 432.24861pt x 218.14304pt.
+<rys04/zrzut8.png, id=1235, 1445.4pt x 731.73375pt>
+File: rys04/zrzut8.png Graphic file (type png)
+<use rys04/zrzut8.png>
+Package pdftex.def Info: rys04/zrzut8.png  used on input line 1143.
+(pdftex.def)             Requested size: 432.24861pt x 218.8184pt.
+
+Overfull \vbox (0.89998pt too high) has occurred while \output is active []
+
+
+[61 <./rys04/zrzut7.png> <./rys04/zrzut8.png>]
+<rys04/mobilna/zrzut1.png, id=1244, 242.70676pt x 509.5035pt>
+File: rys04/mobilna/zrzut1.png Graphic file (type png)
+<use rys04/mobilna/zrzut1.png>
+Package pdftex.def Info: rys04/mobilna/zrzut1.png  used on input line 1156.
+(pdftex.def)             Requested size: 136.50139pt x 286.54836pt.
+<rys04/mobilna/zrzut2.png, id=1245, 241.50224pt x 509.5035pt>
+File: rys04/mobilna/zrzut2.png Graphic file (type png)
+<use rys04/mobilna/zrzut2.png>
+Package pdftex.def Info: rys04/mobilna/zrzut2.png  used on input line 1157.
+(pdftex.def)             Requested size: 136.50139pt x 287.97885pt.
+<rys04/mobilna/zrzut3.png, id=1248, 242.70676pt x 509.5035pt>
+File: rys04/mobilna/zrzut3.png Graphic file (type png)
+<use rys04/mobilna/zrzut3.png>
+Package pdftex.def Info: rys04/mobilna/zrzut3.png  used on input line 1169.
+(pdftex.def)             Requested size: 122.85194pt x 257.89973pt.
+<rys04/mobilna/zrzut4.png, id=1249, 242.1045pt x 509.5035pt>
+File: rys04/mobilna/zrzut4.png Graphic file (type png)
+<use rys04/mobilna/zrzut4.png>
+Package pdftex.def Info: rys04/mobilna/zrzut4.png  used on input line 1170.
+(pdftex.def)             Requested size: 122.85194pt x 258.53725pt.
+<rys04/mobilna/zrzut5.png, id=1250, 242.1045pt x 509.5035pt>
+File: rys04/mobilna/zrzut5.png Graphic file (type png)
+<use rys04/mobilna/zrzut5.png>
+Package pdftex.def Info: rys04/mobilna/zrzut5.png  used on input line 1171.
+(pdftex.def)             Requested size: 122.85194pt x 258.53725pt.
+
+Overfull \vbox (0.89998pt too high) has occurred while \output is active []
+
+
+[62 <./rys04/mobilna/zrzut1.png> <./rys04/mobilna/zrzut2.png> <./rys04/mobilna/
+zrzut3.png> <./rys04/mobilna/zrzut4.png> <./rys04/mobilna/zrzut5.png>]
+<rys04/mobilna/zrzut6.png, id=1263, 242.1045pt x 509.5035pt>
+File: rys04/mobilna/zrzut6.png Graphic file (type png)
+<use rys04/mobilna/zrzut6.png>
+Package pdftex.def Info: rys04/mobilna/zrzut6.png  used on input line 1183.
+(pdftex.def)             Requested size: 122.85194pt x 258.53725pt.
+<rys04/mobilna/zrzut8.png, id=1264, 242.1045pt x 509.5035pt>
+File: rys04/mobilna/zrzut8.png Graphic file (type png)
+<use rys04/mobilna/zrzut8.png>
+Package pdftex.def Info: rys04/mobilna/zrzut8.png  used on input line 1184.
+(pdftex.def)             Requested size: 122.85194pt x 258.53725pt.
+<rys04/mobilna/zrzut7.png, id=1265, 242.70676pt x 509.5035pt>
+File: rys04/mobilna/zrzut7.png Graphic file (type png)
+<use rys04/mobilna/zrzut7.png>
+Package pdftex.def Info: rys04/mobilna/zrzut7.png  used on input line 1185.
+(pdftex.def)             Requested size: 122.85194pt x 257.89973pt.
+
+Overfull \vbox (0.89998pt too high) has occurred while \output is active []
+
+
+[63 <./rys04/mobilna/zrzut6.png> <./rys04/mobilna/zrzut8.png> <./rys04/mobilna/
+zrzut7.png>]
+<rys04/mobilna/zrzut9.png, id=1276, 242.1045pt x 509.5035pt>
+File: rys04/mobilna/zrzut9.png Graphic file (type png)
+<use rys04/mobilna/zrzut9.png>
+Package pdftex.def Info: rys04/mobilna/zrzut9.png  used on input line 1199.
+(pdftex.def)             Requested size: 136.50139pt x 287.27138pt.
+<rys04/mobilna/zrzut10.png, id=1277, 242.1045pt x 509.5035pt>
+File: rys04/mobilna/zrzut10.png Graphic file (type png)
+<use rys04/mobilna/zrzut10.png>
+Package pdftex.def Info: rys04/mobilna/zrzut10.png  used on input line 1200.
+(pdftex.def)             Requested size: 136.50139pt x 287.27138pt.
+)
+Overfull \vbox (0.89998pt too high) has occurred while \output is active []
+
+
+[64 <./rys04/mobilna/zrzut9.png> <./rys04/mobilna/zrzut10.png>]
+\openout2 = `rozdzial05.aux'.
+
+ (rozdzial05.tex
+Overfull \vbox (0.89998pt too high) has occurred while \output is active []
+
+
+[65
+
+
+
+])
+Overfull \vbox (0.89998pt too high) has occurred while \output is active []
+
+
+[66]
+\openout2 = `rozdzial06.aux'.
+
+ (rozdzial06.tex)
+Overfull \vbox (0.89998pt too high) has occurred while \output is active []
+
+
+[67
+
+
+
+] (Dyplom.bbl
+bibitemlist
+
+LaTeX Warning: Empty `thebibliography' environment on input line 3.
+
+)
+
+Class memoir Warning: The material used in the headers is too large
+(14.49998pt) for the given head height (13.6pt), it is recommended to
+either increase the head height or redesign the header
+(in both cases you will find help in the memoir manual). on input line 631.
+
+
+Overfull \vbox (0.89998pt too high) has occurred while \output is active []
+
+
+[68
+
+
+]
+\tf@toc=\write8
+\openout8 = `Dyplom.toc'.
+
+\tf@lof=\write9
+\openout9 = `Dyplom.lof'.
+
+\tf@lol=\write10
+\openout10 = `Dyplom.lol'.
+
+\tf@lot=\write11
+\openout11 = `Dyplom.lot'.
+
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 631.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 631.
+ (Dyplom.aux (skroty.aux) (rozdzial01.aux) (rozdzial023.aux)
+(rozdzial03.aux) (rozdzial04.aux) (rozdzial05.aux) (rozdzial06.aux))
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 631.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 631.
+Package rerunfilecheck Info: File `Dyplom.out' has not changed.
+(rerunfilecheck)             Checksum: 49B794920A1229E15D05BA51B1964791;7445.
+
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: There were multiply-defined labels.
+
+ ) 
+Here is how much of TeX's memory you used:
+ 22589 strings out of 480790
+ 355456 string characters out of 2907051
+ 1005268 words of memory out of 3000000
+ 37445 multiletter control sequences out of 15000+200000
+ 661969 words of font info for 90 fonts, out of 3000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 51i,13n,101p,2043b,2126s stack positions out of 5000i,500n,10000p,200000b,50000s
+{C:/Program Files/MiKTeX/fonts/enc/dvips/lm/lm-mathsy.enc}{C:/Program Files/M
+iKTeX/fonts/enc/dvips/lm/lm-mathit.enc}{C:/Program Files/MiKTeX/fonts/enc/dvips
+/tex-gyre/q-ec.enc}{C:/Program Files/MiKTeX/fonts/enc/dvips/ebgaramond/ebgm_tcd
+nmr.enc}<C:/Program Files/MiKTeX/fonts/type1/public/ebgaramond/EBGaramond-Regul
+ar.pfb><C:/Program Files/MiKTeX/fonts/type1/public/lm/lmmi10.pfb><C:/Program Fi
+les/MiKTeX/fonts/type1/public/lm/lmsy10.pfb><C:/Program Files/MiKTeX/fonts/type
+1/public/tex-gyre/qtmb.pfb><C:/Program Files/MiKTeX/fonts/type1/public/tex-gyre
+/qtmbi.pfb><C:/Program Files/MiKTeX/fonts/type1/public/tex-gyre/qtmr.pfb><C:/Pr
+ogram Files/MiKTeX/fonts/type1/public/tex-gyre/qtmri.pfb><C:/Program Files/MiKT
+eX/fonts/type1/public/txfonts/t1xbtt.pfb><C:/Program Files/MiKTeX/fonts/type1/p
+ublic/txfonts/t1xtt.pfb><C:/Program Files/MiKTeX/fonts/type1/public/txfonts/tcx
+tt.pfb>
+Output written on Dyplom.pdf (68 pages, 6057195 bytes).
+PDF statistics:
+ 1493 PDF objects out of 1728 (max. 8388607)
+ 743 named destinations out of 1000 (max. 500000)
+ 442 words of extra memory for PDF output out of 10000 (max. 10000000)
+

@@ -1,0 +1,278 @@
+\chapter{Wprowadzenie teoretyczne}
+\section{Wykorzystywane terminy}
+\label{sec:terminy}
+W niniejszej pracy, pos³u¿ono siê terminologi¹ dystynktywn¹ z punktu widzenia realizacji, rozwoju oraz ewaluacji us³ug sieciowych. Najbardziej istotne spoœród wykorzystywanych terminów wymieniono poni¿ej. Dla ka¿dego z pojêæ, przedstawiono obcojêzyczne t³umaczenie, a tak¿e zdefiniowano spójny oraz zwiêz³y opis.
+
+\subsection*{Us³uga sieciowa}
+\subsubsection{\textit{Web Service}}
+Rodzaj systemu informatycznego cechuj¹cego siê permanentnym wykonywaniem zdefiniowanych funkcji, tu¿ po uzyskaniu ¿¹dania. ¯¹danie to, przybiera postaæ danych, przekazanych w ramach systematycznej struktury. Sposób dostarczenia ¿¹dania, jego format, a tak¿e metoda odpowiedzi na ¿¹danie, definiowane s¹ poprzez protokó³ sieciowy z którego korzysta dana us³uga.
+
+\subsection*{Interfejs Programowania Aplikacji (API) - OPIS Z IN¯.}
+\subsubsection{\textit{Application Programming Interface}}
+Zbiór zasad oraz procedur determinuj¹cy sposób komunikacji pomiêdzy wieloma aplikacjami. Aplikacjami tymi mog¹ byæ zarówno programy klienckie (np. strona webowa), jak i serwery danych.
+
+\subsection*{API wykonane w technologii REST - OPIS Z IN¯.}
+\subsubsection{\textit{RESTful API}}
+Interfejs programowania aplikacji opieraj¹cy swoj¹ budowê oraz sposób funkcjonowania o zbiór ustalonych regu³. Regu³y te, dotycz¹ miêdzy innymi: struktury ¿¹dañ wysy³anych od klienta do serwera, budowy zasobu odpowiedzi serwera, a tak¿e kodów statusów zwracanych z chwil¹ odpowiedzi w zale¿noœci od wykonanej akcji.
+
+\subsection*{Kontroler - OPIS Z IN¯.}
+\subsubsection{\textit{Controller}}
+Klasa, której zadaniem jest obs³u¿enie ¿¹dania aplikacji klienckiej, weryfikacja jego poprawnoœci, a nastêpnie wywo³anie kodu logiki biznesowej w ramach struktur serwisów. Po otrzymaniu rezultatu obliczeñ z warstwy logiki biznesowej, odpowiedzialnoœci¹ metody kontrolera jest zwrócenie przetworzonego zasobu do systemu klienta.
+
+\subsection*{Serwis - OPIS Z IN¯.}
+\subsubsection{\textit{Service}}
+Klasa, zawieraj¹ca metody odpowiedzialne za realizacjê logiki biznesowej w ramach interfejsu programowania aplikacji. Obiekt tej struktury danych, wywo³ywany jest bezpoœrednio przed metody klas kontrolerów.  
+
+\subsection*{Repozytorium - OPIS Z IN¯.}
+\subsubsection{\textit{Repository}}
+Struktura danych, wykorzystywana do komunikacji interfejsu API z serwerem bazodanowym. Metody, w ramach klas repozytoriów, operuj¹ na modelu danych, przechowywanym w ramach API, a nastêpnie, odwzorowuj¹ ten model za pomoc¹ narzêdzia ORM, na fizyczn¹ zawartoœæ bazodanow¹.
+
+\subsection*{Mapper obiektowo-relacyjny (ORM)}
+\subsubsection{\textit{Object-relational mapper (ORM)}}
+Oprogramowanie, którego g³ównym zadaniem jest konwersja struktury klas modelu danych do fizycznej organizacji tabel w ramach systemu bazodanowego. Ponadto, mapper obiektowo-relacyjny dostarcza zbiór w³aœciwoœci oraz metod stanowi¹cych fasadê dla niskopoziomowych procedur dostêpu do bazy danych, a tak¿e modyfikacji danych w niej zawartych.
+
+
+\subsection*{Pamiêæ podrêczna}
+\subsubsection{\textit{Cache}}
+Wydzielony fragment pamiêci cechuj¹cy siê szybkim czasem dostêpu, wysok¹ przepustowoœci¹ transmisji, a tak¿e ograniczonym okresem trwa³ego przechowywania danych. Pamiêæ ta, w kontekœcie webowego interfejsu programowania aplikacji, wykorzystywana jest w celu przechowywania wyników czêsto realizowanych operacji, a tak¿e magazynowania uprzednio dostarczonych do klienta fragmentów odpowiedzi na ¿¹dania.
+
+\subsection*{Wielow¹tkowoœæ - OPIS Z IN¯.}
+\subsubsection{\textit{Multithreading}}
+Technika programowania, zak³adaj¹ca wykorzystanie wielu odrêbnie wykonywanych procesów w ramach jednej aplikacji. W przypadku interfejsu API implementuj¹cego tê technikê, ka¿dy z punktów koñcowych stanowi osobny w¹tek, bêd¹cy czêœci¹ sk³adow¹ pojedynczego procesu. Dziêki temu, aplikacja jest dostêpna, niezale¿nie od wywo³anych, niekiedy d³ugo trwaj¹cych zadañ.
+
+\subsection*{Algorytm metaheurystyczny}
+\subsubsection{\textit{Metaheuristic algorithm}}
+Technika projektowania algorytmów nie zapewniaj¹cych gwarancji uzyskania optimum dla rozwa¿anego problemu, jednak¿e pozwalaj¹ca na zbudowanie systemu, dostarczaj¹cego rozwi¹zanie z³o¿onego zagadnienia w akceptowalnym czasie, a tak¿e uzyskiwanego przy wykorzystaniu akceptowalnej iloœci zasobów sprzêtowych. Algorytm metaheurystyczny, poza konwencjonalnymi regu³ami stosowanymi w ramach standardowych wzorców programowania, implementuje regu³y rozwi¹zywania problemów oparte na losowoœci, b¹dŸ te¿ wywnioskowane na podstawie zjawisk fizycznych.
+
+\subsection*{Punkt koñcowy us³ugi sieci Web - OPIS Z IN¯.}
+\subsubsection{\textit{Endpoint}}
+Metoda klasy kontrolera, uruchamiana w momencie okreœlenia ¿¹dania klienta. Do ka¿dego z punktów koñcowych, przypisany jest adres wywo³ania, zbiór wymaganych parametrów, a tak¿e obs³ugiwany typ metody protoko³u hipertekstowego. Dziêki temu, bazuj¹c na strukturze otrzymanego ¿¹dania, interfejs API jest w stanie stwierdziæ który z punktów koñcowych powinien zostaæ wywo³any.
+
+\subsection*{¯¹danie realizowane w ramach us³ugi protoko³u hipertekstowego}
+\subsubsection{\textit{HTTP Request}}
+Struktura danych, wysy³ana od aplikacji klienckiej (tj. aplikacji internetowej, przegl¹darki, czy te¿ programu klienta HTTP) w kierunku us³ugi sieciowej. ¯¹danie protoko³u hipertekstowego charakteryzuje siê jednoznacznie zdefiniowan¹ struktur¹, uwzglêdniaj¹c¹ m.in. unikalny identyfikator zasobu, listê zdefiniowanych nag³ówków, cia³o ¿¹dania oraz jedn¹ z dziewiêciu dopuszczalnych metod HTTP. 
+
+\subsection*{OdpowiedŸ us³ugi protoko³u hipertekstowego}
+\subsubsection{\textit{HTTP Response}}
+Struktura danych, wysy³ana przez us³ugê sieciow¹ w kierunku aplikacji klienckiej. OdpowiedŸ HTTP, ma na celu poinformowanie klienta serwisu webowego o statusie realizacji, wys³anego przez niego uprzednio ¿¹dania. Podstawowymi elementami odpowiedzi us³ugi protoko³u hipertekstowego s¹: cia³o odpowiedzi (zdefiniowane najczêœciej z wykorzystaniem notacji JSON lub jêzyka XML), kod odpowiedzi (liczba determinuj¹ca stan wykonania ¿¹dania), a tak¿e zbiór informacji nag³ówkowych dotycz¹cych typu danych zawartych w odpowiedzi, czy te¿ fizycznych informacji o serwerze us³ugi sieciowej.
+
+\subsection*{Kod odpowiedzi us³ugi protoko³u hipertekstowego}
+\subsubsection{\textit{HTTP Response Code}}
+Liczba determinuj¹ca status realizacji ¿¹dania wys³anego przez aplikacjê klienck¹. Kod odpowiedzi stanowi jedn¹ z wymaganych sk³adowych dotycz¹cych standardowego rezultatu zwracanego w ramach us³ugi opartej o protokó³ hipertekstowy. Wyró¿niæ mo¿emy piêæ kategorii kodów odpowiedzi, nios¹cych ze sob¹ odmienn¹ informacje. Kategoriami tymi s¹: kody informacyjnej odpowiedzi (100-199), kody poprawnej odpowiedzi (200-299), kody wiadomoœci o przekierowaniu (300-399), kody b³êdu aplikacji klienckiej (400-499), oraz kody b³êdu aplikacji serwerowej (500-599).
+
+\subsection*{Czas odpowiedzi us³ugi protoko³u hipertekstowego}
+\subsubsection{\textit{HTTP Response Time}}
+Wyra¿ony w milisekundach, przedzia³ czasu od momentu otrzymania ¿¹dania wygenerowanego przez aplikacjê klienck¹, do chwili zwrócenia rezultatu wykonywanych przez us³ugê sieciow¹ obliczeñ. Liczba ta, stanowi jedn¹ z wartoœci pomiarowych, w kontekœcie efektywnoœci dzia³ania interfejsu programowania aplikacji.  
+
+\subsection*{Obiektowa notacja JavaScript (JSON) - OPIS Z IN¯.}
+\subsubsection{\textit{JavaScript Object Notation}}
+Niezale¿ny od jêzyka programowania format prezentacji, definicji oraz wymiany danych w formie obiektów. Powszechnie stosowany jako sposób generowania cia³a ¿¹dania wysy³anego do interfejsu API, a tak¿e odpowiedzi od niego uzyskiwanej.
+
+\subsection*{Testy wzorcowe}
+\subsubsection{\textit{Benchmark}}
+Rodzaj ewaluacji oprogramowania, której zadaniem jest okreœlenie referencyjnego poziomu wydajnoœci dla testowanego systemu. Metryki, uzyskane w ramach testów wzorcowych, mog¹ zostaæ wykorzystane jako wartoœci ograniczeñ wzglêdem testów obci¹¿eniowych oraz przeci¹¿eniowych. 
+
+\subsection*{Testy dymne}
+\subsubsection{\textit{Smoke testing}}
+Metoda testowania oprogramowania, której celem jest sprawdzenie poprawnoœci funkcjonowania poszczególnych elementów systemu. Testy dymne, wykonywane s¹ przed testami wydajnoœciowymi, po to aby upewniæ siê co do braku b³êdów implementacyjnych w ramach analizowanego oprogramowania.
+
+\subsection*{Testy wydajnoœci podstawowej}
+\subsubsection{\textit{Baseline performance testing}}
+Metoda ewaluacji oprogramowania, pozwalaj¹ca na weryfikacjê dzia³ania systemu w warunkach analogicznych do realiów standardowego dzia³ania. Na podstawie testów wydajnoœci podstawowej, okreœliæ mo¿na wartoœci metryk, które bêd¹ mia³y zastosowanie jako punkt odniesienia dla kolejnych rodzajów testów. Ponadto, wykorzystuj¹c standard pomiaru wydajnoœci aplikacji internetowych (taki jak np. APDEX), wartoœci uzyskane w ramach ewaluacji podstawowych, mog¹ pos³u¿yæ w celu okreœlenia punktów satysfakcji, tolerancji oraz frustracji.
+
+\subsection*{Testy obci¹¿eniowe}
+\subsubsection{\textit{Load testing}}
+Rodzaj testów, które maj¹ na celu okreœlenie maksymalnego poziomu natê¿enia operacji, jakie mog¹ byæ generowane w kierunku oprogramowania. W kontekœcie niniejszej pracy, operacjami tymi s¹ ¿¹dania wysy³ane do interfejsu programowania aplikacji. Kluczowym aspektem testu obci¹¿eniowego jest zdefiniowanie progu obci¹¿enia aplikacji, powy¿ej którego system jest nie w stanie generowaæ poprawnych odpowiedzi w akceptowalnym czasie.
+
+\subsection*{Testy przeci¹¿eniowe}
+\subsubsection{\textit{Stress testing}}
+Metoda ewaluacji oprogramowania, w ramach której natê¿enie operacji generowanych w kierunku testowanego oprogramowania zwiêkszone jest ponad ustalony próg tolerancji. Celem testu przeci¹¿eniowego jest obserwacja sposobu dzia³ania systemu, w momencie, w którym nie jest on w stanie przetwarzaæ otrzymywanych ¿¹dañ w sposób poprawny.
+
+\subsection*{Asercja}
+\subsubsection{\textit{Assertion}}
+Wyra¿enie typu prawda/fa³sz, zdefiniowane w dowolnym miejscu programu, które przyjmuje wartoœæ prawdziw¹ w momencie spe³nienia hipotezy zawartej w ramach okreœlonego przypadku testowego. Praktyczne podejœcie do procesu testowania funkcjonalnoœci oprogramowania, sprowadza siê do definiowania hipotez oraz ci¹gów operacji w kontekœcie przypadków testowych, a nastêpnie weryfikacji tych hipotez z wykorzystaniem asercji.
+
+\section{Interfejsy programowania aplikacji}
+Webowy interfejs programowania aplikacji to us³uga sieciowa, której celem jest realizacja zadañ zleconych przez oprogramowanie klienta. Zadania te, dotycz¹ operacji wykonywanych w kontekœcie okreœlonych zasobów. Wyró¿niæ mo¿emy operacje zwane zapytaniami (tj. dotycz¹ce pozyskiwania danych z ich Ÿróde³), a tak¿e komendami (tj. zwi¹zane z wykonywaniem operacji na danych).
+
+Interfejsy API, budowane s¹ z wykorzystaniem protoko³u HTTP, dlatego te¿ w ich kontekœcie mo¿emy mówiæ o komunikacji bezstanowej definiuj¹cej pojêcia ¿¹dania oraz odpowiedzi. W zwi¹zku z charakterystyk¹ protoko³u hipertekstowego, zarówno ¿¹danie jak i odpowiedŸ cechuje siê regularn¹ struktur¹ zawieraj¹c¹ predefiniowane elementy.
+
+¯¹danie protoko³u http wysy³ane jest od aplikacji klienta do interfejsu API. Podstawow¹ sk³adow¹ tego polecenia stanowi unikalny identyfikator zasobu URI (\textit{ang. Uniform Resource Identifier}), na podstawie którego mo¿liwe jest okreœlenie fragmentu dziedziny obs³ugiwanego modelu danych. Informacja ta jednak, nie jest wystarczaj¹ca w kontekœcie realizacji jednej z funkcjonalnoœci, zdefiniowanych w ramach API. ¯¹danie klienta, musi zostaæ uzupe³nione o jedn¹ z dziewiêciu ustalonych metod http, obs³ugiwan¹ wersjê protoko³u, a tak¿e zbiór linii nag³ówkowych. Opcjonalnie, informacja wysy³ana w kierunku interfejsu, mo¿e zostaæ wzbogacona o zawartoœæ tekstow¹ okreœlan¹ cia³em ¿¹dania (\textit{ang. Request body}). Taki zbiór informacji, pozwala na jednoznaczn¹ identyfikacje fragmentu kodu programu, który ma zostaæ wykonany wewn¹trz interfejsu programowania aplikacji. W tabelach \ref{tab:metody-http} oraz \ref{tab:naglowki-zadanie} przedstawiono kolejno listê zdefiniowanych metod protoko³u hipertekstowego wraz z wyjaœnieniem ich przeznaczenia, a tak¿e zbiór najczêœciej wykorzystywanych linii nag³ówkowych, w kontekœcie realizacji ¿¹dañ.
+
+\begin{table}[htbp] \small
+\centering
+\caption{Zbiór dozwolonych metod protoko³u hipertekstowego}
+\label{tab:metody-http}
+\begin{tabularx}{\linewidth}{|p{3cm}|X|} \hline\
+Nazwa metody & Opis \\ \hline\hline
+GET & Pozyskanie danych dotycz¹cych pojedynczej instancji okreœlonego zasobu lub grupy instancji z opcjonalnym uwzglêdnieniem warunków kwalifikacji poszczególnej instancji do grupy. \\ \hline
+POST & Definiowanie nowej instancji dotycz¹cej okreœlonego typu zasobu. Przy zastosowaniu metody POST, wymagane jest zdefiniowanie cia³a ¿¹dania, jako czêœci sk³adowej generowanej instrukcji. \\ \hline
+PUT & Aktualizacja pe³ni zawartoœci instancji wystêpuj¹cej w ramach odwo³ania siê do okreœlonego zasobu. Przy zastosowaniu metody PUT, wymagane jest zdefiniowanie cia³a ¿¹dania, jako czêœci sk³adowej generowanej instrukcji. \\ \hline
+DELETE & Usuniêcie istniej¹cej instancji dotycz¹cej okreœlonego typu zasobu. \\ \hline
+PATCH & Aktualizacja fragmentu zawartoœci instancji wystêpuj¹cej w ramach odwo³ania siê do okreœlonego zasobu. Przy zastosowaniu metody PATCH, wymagane jest zdefiniowanie cia³a ¿¹dania, jako czêœci sk³adowej generowanej instrukcji. \\ \hline
+HEAD & Pozyskanie zbioru linii nag³ówkowych, które by³yby dostarczone wraz z cia³em odpowiedzi w ramach ¿¹dania wykorzystuj¹cego metodê GET. Wygenerowanie ¿¹dania HEAD umo¿liwia okreœlenie charakteru danych, przed ich ewentualnym pozyskaniem. \\ \hline
+OPTIONS & Pozyskanie informacji dotycz¹cych charakterystyki oraz struktury serwera. Definiuj¹c ¿¹danie typu OPTIONS, klient mo¿e dowiedzieæ siê o dopuszczalnych metodach HTTP obs³ugiwanych przez serwer, czy te¿ uzyskaæ informacje o nazwie serwera oraz wykorzystywanym systemie operacyjnym. \\ \hline
+CONNECT & Ustanowienie dwukierunkowej komunikacji pomiêdzy klientem a serwerem. W przypadku realizacji komunikacji szyfrowanej, ¿¹danie typu CONNECT pozwala na zestawienie zabezpieczonego tunelu pomiêdzy hostami. \\ \hline
+TRACE & Wygenerowanie komunikatu diagnostycznego w ramach pêtli zwrotnej, którego celem jest osi¹gniêcie ka¿dego z hostów, bior¹cych udzia³ w komunikacji. \\ \hline
+\end{tabularx}
+\end{table}
+
+\begin{table}[htbp] \small
+\centering
+\caption{Zbiór najczêœciej wykorzystywanych linii nag³ówkowych w kontekœcie ¿¹dania protoko³u hipertekstowego}
+\label{tab:naglowki-zadanie}
+\begin{tabularx}{\linewidth}{|p{5cm}|X|X|} \hline\
+Linia nag³ówkowa & Znaczenie & Dopuszczalna zawartoœæ \\ \hline\hline
+accept & Typ zawartoœci, któr¹ jest w stanie przetwarzaæ aplikacja kliencka & Identyfikator typu MIME (\textit{ang. Multipurpose Internet Mail Extensions}) lub zapis */* oznaczaj¹cy dowoln¹ zawartoœæ  \\ \hline
+accept-encoding & Sposób kodowania znaków, rozumiany przez stronê klienta & Zbiór formatów kodowania zdefiniowany w ramach rejestru formatów IANA\\ \hline
+accept-language & Jêzyk naturalny, preferowany przez stronê klienck¹ & Pojedyncza wartoœæ reprezentuj¹ca okreœlony kraj lub region, b¹dŸ te¿ lista niniejszych wartoœci wraz z parametrem istotnoœci poszczególnego kodu lokalizacji\\ \hline
+content-length & D³ugoœæ cia³a ¿¹dania wyra¿ona w bajtach & Liczba naturalna\\ \hline
+content-type & Format zawartoœci cia³a ¿¹dania & Identyfikator typu MIME wraz ze sposobem kodowania wiadomoœci\\ \hline
+cookie & Zbiór informacji pozwalaj¹cych na wprowadzenie oraz utrzymanie stanowego charakteru transmisji & Zestaw par klucz-wartoœæ, gdzie klucz jest wartoœci¹ tekstow¹, a wartoœæ przyjmuje postaæ dowoln¹\\ \hline
+origin & Informacja determinuj¹ca pochodzenie ¿¹dania & Ci¹g tekstowy sk³adaj¹cy siê z nazwy protoko³u, nazwy hosta oraz numeru portu\\ \hline
+user-agent & Specyfikacja techniczna oprogramowania klienta & Ci¹g znaków zawieraj¹cy informacje o nazwie produktu, jego wersji, platformie sprzêtowej, czy te¿ systemie operacyjnym \\ \hline
+\end{tabularx}
+\end{table}
+
+Po wykonaniu kodu programu przypisanego do okreœlonego rodzaju polecenia generowanego przez aplikacje klienck¹, z interfejsu programowania aplikacji zwracana jest odpowiedŸ na ¿¹danie (\textit{ang. HTTP response}). Analogicznie do instrukcji realizacji danej czynnoœci, tak¿e odpowiedŸ dotycz¹ca statusu jej wykonania jest ustrukturyzowana zgodnie z wytycznymi zawartymi w definicji protoko³u hipertekstowego. W ramach rezultatu zwróconego przez API wyró¿niæ nale¿y: adres docelowy klienta, kod statusu, cia³o odpowiedzi, a tak¿e zbiór linii nag³ówkowych. Informacja zawarta w ramach kodu statusu, determinuje powodzenie realizowanej operacji, a treœæ dostarczanych linii nag³ówkowych, mo¿e zostaæ wykorzystana w celu wnioskowania o charakterystyce odbywaj¹cej siê komunikacji. Cia³o odpowiedzi powinno zawieraæ dane dotycz¹ce definiowanego w ramach identyfikatora ¿¹dania zasobu, w przypadku ¿¹dañ wykorzystuj¹cych metodê GET. W kontekœcie pozosta³ych ¿¹dañ, zgodnie z wytycznymi dokumentów RFC (\textit{ang. Request For Comments}) o numerach 7230 do 7237, powinno ono posiadaæ charakter informacji pomocniczej, b¹dŸ te¿ pozostaæ puste. W ramach tabel \ref{tab:naglowki-odpowiedz} oraz \ref{tab:kody-odpowiedzi}, wymienione zosta³y kolejno: zbiór najczêœciej zwracanych linii nag³ówkowych w kontekœcie odpowiedzi na ¿¹danie, a tak¿e przedzia³y liczbowe dla kodów statusu odpowiedzi, wraz z ich semantyk¹.
+
+\begin{table}[htbp] \small
+\centering
+\caption{Zbiór najczêœciej zwracanych linii nag³ówkowych w kontekœcie odpowiedzi protoko³u hipertekstowego}
+\label{tab:naglowki-odpowiedz}
+\begin{tabularx}{\linewidth}{|p{5cm}|X|X|} \hline\
+Linia nag³ówkowa & Znaczenie & Dopuszczalna zawartoœæ \\ \hline\hline
+access-control-allow-credentials & Okreœlenie, czy odpowiedŸ serwera ma byæ osi¹galna z kodu JavaScript aplikacji klienckiej, w momencie gdy nag³ówek ¿¹dania dotycz¹cy poœwiadczeñ, zezwala na ich do³¹czenie & Wartoœæ prawda/fa³sz \\ \hline
+access-control-allow-origin & Informacja dotycz¹ca pochodzenia klienta, który mo¿e ubiegaæ siê o otrzymanie odpowiedzi od serwera & adres hosta klienckiego lub symbol gwiazdki oznaczaj¹cy zezwolenie dla wszystkich hostów\\ \hline
+cache-control & Dane konfiguracyjne dotycz¹ce obs³ugi pamiêci podrêcznej & Zbiór par klucz-wartoœæ okreœlaj¹cych zachowanie pamiêci cache w kontekœcie okreœlonej komunikacji\\ \hline
+content-length & D³ugoœæ cia³a odpowiedzi wyra¿ona w bajtach & Liczba naturalna\\ \hline
+content-type & Format zawartoœci cia³a odpowiedzi & Identyfikator typu MIME wraz ze sposobem kodowania wiadomoœci\\ \hline
+cross-origin-resource-policy & Polecenie ignorowania ¿¹dañ realizowanych pomiêdzy Ÿród³ami b¹dŸ witrynami w kontekœcie okreœlonego zasobu  & Wartoœæ prawda/fa³sz \\ \hline
+expires & Data wygaœniêcia wa¿noœci niniejszej odpowiedzi & Okreœlona data \\ \hline
+server & Nazwa hosta dostarczaj¹cego odpowiedŸ klientowi & Ci¹g znaków \\ \hline
+\end{tabularx}
+\end{table}
+
+\begin{table}[htbp] \small
+\centering
+\caption{Zbiór kodów statusu odpowiedzi protoko³u hipertekstowego}
+\label{tab:kody-odpowiedzi}
+\begin{tabularx}{\linewidth}{|p{4cm}|X|X|} \hline\
+Przedzia³ liczbowy & Semantyka w kontekœcie odpowiedzi\\ \hline\hline
+100 - 199 & Zbiór kodów informacyjnych - ¿¹danie jest aktualnie przetwarzanie\\ \hline
+200 - 299 & Zbiór kodów poprawnej odpowiedzi - wystosowane ¿¹danie zosta³o zrealizowane poprawnie \\ \hline
+300 - 399 & Zbiór kodów przekierowañ - istnieæ mo¿e wiele akceptowalnych odpowiedzi dla ¿¹dania b¹dŸ realizacja okreœlonej operacji wymusza odwo³anie siê pod adres identyfikuj¹cy odmienny zasób \\ \hline
+400 - 499 & Zbiór kodów b³êdu po stronie klienta - wygenerowane ¿¹danie zawiera b³êdy, oczekiwany zasób nie istnieje, klient nie jest uwierzytelniony lub nie posiada okreœlonego poziomu uprawnieñ \\ \hline
+500 - 599 & Zbiór kodów b³êdu po stronie serwera - pomimo poprawnej struktury wygenerowanego ¿¹dania, serwer nie jest w stanie zrealizowaæ przydzielonej mu operacji\\ \hline
+\end{tabularx}
+\end{table}
+
+Przedstawiony w niniejszy sposób interfejs programowania aplikacji scharakteryzowaæ nale¿y jako deterministyczny system wejœciowo-wyjœciowy. Ponadto, nale¿y zauwa¿yæ, ¿e w ramach systemu tego, wystêpuje zjawisko inercji, powodowane koniecznoœci¹ realizacji zdefiniowanego w ramach API kodu programu. Na podstawie tego za³o¿enia, ewaluacjê dzia³ania oraz wydajnoœci interfejsu programowania aplikacji przeprowadziæ mo¿na poprzez wprowadzanie okreœlonego wejœcia (tj. generowanie ¿¹dania) oraz obserwacjê wartoœci zwróconej na wyjœciu (tj. uzyskana odpowiedŸ).
+
+\subsection*{Proces przetwarzania ¿¹dania wewn¹trz interfejsu API}
+Po uzyskaniu ¿¹dania otrzymanego od strony klienta, zadaniem interfejsu programowania aplikacji jest wybór okreœlonej klasy kontrolera, a tak¿e zawartej w niej metody. Ka¿da z klas kontrolerów stworzona jest w celu obs³ugi operacji zwi¹zanych z konkretnym zasobem, a poszczególna metoda tej klasy implementuje zachowanie które ma zostaæ wywo³ane w kontekœcie dostarczonego typu oraz identyfikatora polecenia.
+
+Wewn¹trz metody klasy warstwy kontrolerów, wywo³ywane zostaj¹ operacje zdefiniowane w us³ugach warstwy biznesowej. Us³ugi te, realizowane mog¹ byæ zarówno wewn¹trz api jak i stanowiæ odrêbny system internetowy. Klasy warstwy logiki biznesowej, zwane serwisami, z³o¿one s¹ z metod, których g³ównym celem jest weryfikacja poprawnoœci otrzymanych informacji w kontekœcie obs³ugiwanych zasobów, a tak¿e pozyskiwanie danych oraz wykonywanie operacji na nich, poprzez odwo³ywanie siê do metod warstwy dostêpu do danych.
+
+Zbiór klas warstwy dostêpu do danych, stanowi ostatni z logicznych poziomów, definiowanych w ramach architektury API. Fragmenty kodu zdefiniowane w tej warstwie, zwane repozytoriami, maj¹ za zadanie obs³u¿yæ komunikacjê pomiêdzy interfejsem programowania aplikacji, a okreœlonym Ÿród³em danych. Ponadto, metody klas repozytoriów, dostarczaj¹ warstwie logiki biznesowej interfejs operacji na danych. Dziêki temu, ¿¹danie mo¿e byæ przetwarzane od warstw najwy¿szych (tj. warstwy kontrolerów) do warstwy najni¿szej (tj. warstwy dostêpu do danych), natomiast odpowiedŸ na ¿¹danie jest konsolidowana w kierunku odwrotnym. Na ilustracji \ref{fig:architektura-api} przedstawiono przep³yw informacji wewn¹trz interfejsu API, od momentu wygenerowania ¿¹dania do chwili uzyskania odpowiedzi.
+
+\begin{figure}[ht]
+ \centering
+  \includegraphics[width=0.6\linewidth]{rys03/architektura-api}
+ \caption{Proces przetwarzania ¿¹dania wewn¹trz interfejsu API}
+ \label{fig:architektura-api}
+\end{figure}
+ 
+\subsection*{Mapowanie obiektowo-relacyjne oraz podejœcie Code-First}
+W celu uproszczenia procesu pozyskiwania oraz modyfikacji danych z zewnêtrznych Ÿróde³, a tak¿e unifikacji sposobu interakcji z nimi, w ramach interfejsów programowania aplikacji, powszechnie wykorzystywane jest oprogramowanie zwane mapperem obiektowo-relacyjnym (\textit{ang. Object-Relational Mapper}). Za³o¿eniem oprogramowania tego, jest zdefiniowanie warstwy abstrakcji pomiêdzy interfejsem programowania aplikacji a jêzykiem programowania b¹dŸ zbiorem poleceñ, wykorzystywanym w ramach obs³ugi Ÿród³a danych.
+
+Podstawowe sk³adowe oprogramowania typu ORM to jednolity interfejs operacji na zbiorze danych, klasy kontekstu bazodanowego, a tak¿e metody obs³ugi komunikacji z baz¹ danych.
+
+Dziêki wprowadzeniu jednolitego interfejsu operacji na danych, niezale¿nie od Ÿród³a informacji z jakim komunikuje siê API, wydanie konkretnego polecenia do dowolnego systemu bazodanowego równoznaczne jest z ka¿dorazowym wywo³aniem funkcji o takiej samej sygnaturze. Stosuj¹c takie podejœcie, konstruktor interfejsu programowania aplikacji nie staje siê uzale¿niony od Ÿród³a danych z którym pracuje. Ponadto, istnieje mo¿liwoœæ zamiany lub po³¹czenia dodatkowego systemu bazodanowego, a operacja ta, nie wp³ywa w jakikolwiek sposób na dzia³anie interfejsu API. Niniejsza zale¿noœæ zosta³a zilustrowana na rysunku \ref{fig:orm-wyjasnienie}
+
+\begin{figure}[ht]
+ \centering
+  \includegraphics[width=1\linewidth]{rys03/orm-wyjasnienie}
+ \caption{Zasada dzia³ania oprogramowania mappera obiektowo-relacyjnego w kontekœcie jednolitego interfejsu operacji na zbiorze danych}
+ \label{fig:orm-wyjasnienie}
+\end{figure}
+
+Dystynktywnym elementem oprogramowania mappera obiektowo-relacyjnego jest klasa kontekstu bazodanowego. Klasa ta, jest kontenerem struktur w ramach których wyró¿niæ mo¿emy zbiory elementów modelu danych, a tak¿e konfiguracjê poszczególnych ich w³aœciwoœci. Podstawow¹ ide¹ omawianej konwersji dziedziny obiektowej do domeny relacyjnej jest zdefiniowanie zbioru klas, opisuj¹cych wykorzystywane zasoby, a nastêpnie odwzorowanie ich w relacyjnym modelu danych, obs³ugiwanym przez wybrany system bazodanowy. Klasa kontekstu pozwala na okreœlenie, które spoœród struktur danych zdefiniowanych w ramach API powinny zostaæ rzutowane na obiekty tabel generowanych w obrêbie bazy danych. Ponadto, dla w³aœciwoœci ka¿dej z klas modelu danych, zdefiniowaæ nale¿y konfiguracjê, która zostanie przetransformowana do modelu relacyjnego. W zakresie klasy kontekstu bazy danych, opisywane s¹ tak¿e relacje, jakie maj¹ zostaæ wygenerowane pomiêdzy poszczególnymi elementami modelu.
+
+W celu nawi¹zania, utrzymania, a tak¿e zakoñczenia komunikacji z zewnêtrznym Ÿród³em danych, oprogramowanie ORM wykorzystuje klasy zwane konektorami. Klasy te, dostarczaj¹ przejrzysty interfejs obs³ugi po³¹czenia, który nastêpnie jest opakowywany w zunifikowany interfejs, dostêpny bezpoœrednio dla twórcy API.
+
+\subsection*{Uwierzytelnienie oraz autoryzacja}
+Proces uwierzytelnienia oraz autoryzacji u¿ytkownika odwo³uj¹cego siê do interfejsu programowania aplikacji, przedstawiæ nale¿y w trzech nastêpuj¹cych krokach.
+
+Pierwszym z nich, jest wygenerowanie ¿¹dania odwo³uj¹cego siê do punktu koñcowego odpowiedzialnego za obs³ugê uwierzytelnienia wewn¹trz API. ¯¹danie to, musi posiadaæ cia³o, zawieraj¹ce informacje poœwiadczaj¹ce o konkretnymi u¿ytkowniku. Najczêœciej, informacj¹ t¹, jest nazwa u¿ytkownika oraz has³o.
+
+Nastêpnie, dostarczone referencje s¹ analizowane przez mechanizmy uwierzytelniania implementowane w ramach API. W rezultacie tych operacji, zwrócona zostaje pozytywna odpowiedŸ zawieraj¹ca token autoryzuj¹cy b¹dŸ te¿ negatywna, posiadaj¹ca w sobie informacjê o b³êdzie uwierzytelnienia klienta.
+
+Strona kliencka mo¿e autoryzowaæ dysponowane operacje przed interfejsem programowania aplikacji, uwzglêdniaj¹c w ramach linii nag³ówkowej ¿¹dania token uwierzytelniaj¹cy. Dostarczona w ten sposób informacja, pozwala na identyfikacjê u¿ytkownika w ramach interfejsu API, a tak¿e na okreœlenie przypisanego u¿ytkownikowi poziomu uprawnieñ. W ramach struktury tokenu, zawarta jest tak¿e informacja o jego czasie wa¿noœci, dlatego te¿, procedura uwierzytelniania musi byæ regularnie ponawiana.
+
+Na rysunku \ref{fig:uwierzytelnianie-autoryzacja}, zilustrowany zosta³ proces uwierzytelnienia i autoryzacji aplikacji klienta przez interfejsem programowania aplikacji. 
+
+\begin{figure}[ht]
+ \centering
+  \includegraphics[width=0.6\linewidth]{rys03/uwierzytelnianie-autoryzacja}
+ \caption{Proces uwierzytelnienia oraz autoryzacji u¿ytkownika przed interfejsem API}
+ \label{fig:uwierzytelnienie-autoryzacja}
+\end{figure}
+
+
+\subsection*{Segregacja zapytañ oraz komend w kontekœcie odwo³añ do Ÿród³a danych}
+\subsection*{Konwencja REST}
+
+
+\section{Testowanie us³ug sieciowych}
+\section{Wykorzystywane technologie}
+\section{Przegl¹d literatury}
+W niniejszym rozdziale przedstawione zostan¹ pozycje literaturowe, do których odnosiæ siê bêdzie opisywana praca dyplomowa. Pozycje te, podzielone zosta³y na oddzielne grupy, zwi¹zane z okreœlon¹ tematyk¹.
+
+Na pocz¹tku, przedstawiona zostanie literatura powi¹zana z aspektem budowy interfejsów programowania aplikacji oraz bêd¹ca wprowadzeniem do wykorzystywanych technologii. Nastêpnie, opisane zostan¹ pozycje traktuj¹ce o wydajnoœci interfejsów API, a tak¿e o analizie dzia³ania powszechnie dostêpnych serwisów internetowych opartych o metodologiê REST. Kolejne prace, skupiaæ siê bêd¹ na tematyce testowania us³ug sieciowych, teorii testowania, a tak¿e konfiguracji narzêdzi dla testów rozproszonych. W nastêpnej kolejnoœci, wspomniane zostan¹ prace naukowe oraz dokumenty standaryzacyjne dotycz¹ce sposobu dzia³ania protoko³u przesy³ania danych hipertekstowych. Ostatni¹ grup¹ pozycji literaturowych bêd¹ prace referencyjne dotycz¹ce badañ wydajnoœci systemów internetowych.
+
+Pozycja [1] stanowi wprowadzenie do zaawansowanych konceptów jêzyka C\#, a tak¿e dostarcza informacji zwi¹zanych z wykorzystaniem tego jêzyka w œrodowiskach uruchomieniowych .NET oraz .NET Core. W pocz¹tkowych rozdzia³ach przedstawiono sposób budowy, kompilacji oraz wykonywania programu w œrodowisku .NET. Kolejno opisana zosta³a struktura bazowych aplikacji uruchamianych w tym w³aœnie œrodowisku i tworzonych za pomoc¹ jêzyka C\#. Ostatnim elementem wprowadzenia do opisywanej technologii by³o przedstawienie struktur jêzyka w kontekœcie obiektowego paradygmatu programowania.    W nastêpnych sekcjach literatury, w sposób wyczerpuj¹cy poruszono tematykê bardziej zaawansowanych aspektów programowania w jêzyku C\#, którymi s¹ miêdzy innymi: kolekcje i typy generyczne, delegaty i wyra¿enia lambda, czy te¿ cykl ¿ycia obiektu w pamiêci programu. Wa¿nym tematem, poruszonym w ramach tej ksi¹¿ki jest struktura oraz zasada dzia³ania œrodowiska .net core, bêd¹cego podstawowym elementem interfejsów programowania aplikacji tworzonych w jêzyku C\#.
+
+Analogiczn¹ do przedstawionej powy¿ej pozycji literaturowej, dotycz¹c¹ jednak technologii NodeJS oraz jêzyka JavaScript jest [2]. W ramach tej pracy zawarto obszerne wprowadzenie do platformy NodeJS uwzglêdniaj¹ce ponadto kwestie obs³ugi operacji wejœcia/wyjœcia, wykonywania natywnego kodu JS, czy te¿ przetwarzania operacji przez silnik NodeJS oraz bibliotekê libuv. Znaczna czêœæ pracy, obejmuje przedstawienie zaawansowanych wzorców projektowych, których g³ównym przeznaczeniem jest obs³uga zdarzeñ oraz operacji asynchronicznych. Wspomniane zosta³y tak¿e rozwi¹zania dotycz¹ce skalowalnoœci aplikacji z wykorzystaniem mechanizmów kolejkowania wiadomoœci.
+
+Niezale¿nie od wykorzystywanej technologii, interfejsy programowania aplikacji, które zosta³y zbudowane na potrzeby tej pracy dyplomowej, oparte s¹ o styl architektoniczny RESTful. Styl ten, jest pewnym zbiorem zasad projektowania us³ug sieciowych, okreœlaj¹cym zarówno aspekty sposobu komunikacji klienta z us³ug¹ sieciow¹, jak i techniczne wymagania dotycz¹ce przetwarzania ¿¹dañ. Dobre praktyki, które uwzglêdnia metodologia REST, zawarte zosta³y w pozycji literaturowej [3]. Autorzy tego dokumentu, na wstêpie dokonuj¹ porównania architektury zorientowanej na zasoby, bêd¹cej podstaw¹ konwencji REST, z popularn¹ uprzednio architektur¹ zorientowan¹ na us³ugi. Nastêpnie, przedstawiane s¹ najlepsze praktyki, cele oraz regu³y REST dotycz¹ce projektowania interfejsu programowania aplikacji. Co wiêcej, w omawianej ksi¹¿ce zawarte zosta³y tak¿e podstawowe oraz zaawansowane wzorce projektowania API, uwzglêdniaj¹ce aspekty bezstanowoœci, paginacji, osi¹galnoœci, a tak¿e identyfikacji zasobów interfejsu. Koñcowe rozdzia³y ksi¹¿ki, wprowadzaj¹ w kwestie testowania oraz bezpieczeñstwa REST API, omawiaj¹ technikê kompozycji us³ug RESTful, a tak¿e przedstawiaj¹ rozwi¹zania (biblioteki oraz jêzyki programowania) pozwalaj¹ce na tworzenie interfejsów API zgodnych z metodologi¹ REST.
+
+Podstawowym celem dzia³ania interfejsu programowania aplikacji jest dostarczenie danych do konsumenta, b¹dŸ te¿ ich manipulacja zgodnie z jego ¿¹daniem. Aby operowaæ na danych, interfejs API musi komunikowaæ siê ze Ÿród³em danych, którym najczêœciej jest serwer bazodanowy. W celu dostarczenia metod komunikacji pomiêdzy API a Ÿród³em danych, które jednoczeœnie s¹ niezale¿ne od wykorzystywanego Ÿród³a, a tak¿e pozwalaj¹ na zarz¹dzanie danymi z poziomu struktur jêzyka, stworzone zosta³y biblioteki zwane maperami obiektowo-relacyjnymi (ang. Object-Relational Mappers). Dla API napisanego w jêzyku C\# podstawowym rozwi¹zaniem ORM jest biblioteka Entity Framework Core, która przedstawiona zosta³a w pozycji [4]. Pozycja ta, uwzglêdnia zarówno opis dzia³ania najczêœciej wykorzystywanych metod s³u¿¹cych do manipulacji danymi, jak i rolê klasy kontekstu bazodanowego w procesie t³umaczenia operacji programistycznych na polecenia bazodanowe. Ponadto, dowiedzieæ mo¿emy siê jak przetwarzaæ zaawansowane typy danych (takie jak np. DateTime), czy te¿ w jaki sposób wykorzystywaæ zapytania LINQ do budowania kwerend.
+
+Dla interfejsu programowania aplikacji napisanego w jêzyku JavaScript i uruchamianego w œrodowisku NodeJS, w przeciwieñstwie do platformy .NET, zastosowaæ mo¿emy zdecydowanie wiêksz¹ liczbê bibliotek pe³ni¹cych rolê maperów obiektowo-relacyjnych. Biblioteki te, zosta³y opisane w pozycjach [5] i [6]. Pozycja [5] pe³ni rolê ca³oœciowego wprowadzenia do tematyki tworzenia interfejsów API, korzystaj¹c z platformy NodeJS, frameworka ExpressJS oraz nierelacyjnej bazy danych MongoDB. Rodzia³ pi¹ty tej pracy, traktuj¹cy o wykorzystaniu baz danych NoSQL, przybli¿a tematykê jednego z najczêœciej wykorzystywanych maperów obiektowo-relacyjnych dla Node czyli mongoose. Przedstawiono tutaj sposób zestawienia po³¹czenia z serwerem bazodanowym, tworzenia encji modelu, przekszta³canego nastêpnie na struktury bazy danych, a tak¿e wykonywania operacji dostêpu do danych i ich modyfikacji. W pracy [6] natomiast, porównano nierelacyjne podejœcie do sk³adowania danych typu geograficznego z podejœciem relacyjnym, wykorzystuj¹c w tym przypadku biblioteki mongoose i sequelize. Oba mapery obiektowo relacyjne zosta³y u¿yte w ramach interfejsu API wykorzystuj¹cego technologie NodeJS/ExpressJS. Celem opisywanej pracy by³o przedstawienie ró¿nic w czasach odpowiedzi API na uzyskane ¿¹danie, dla ró¿nej liczby danych geolokalizacyjnych, uwzglêdniaj¹c zastosowanie relacyjnych i nierelacyjnych baz danych.
+
+Nastêpne pozycje literaturowe, zwi¹zane s¹ z analiz¹ us³ug REST oraz wydajnoœci¹ webowych interfejsów programowania aplikacji.
+
+Pozycja [7] stanowi analizê 500 serwisów internetowych z listy alexa.com4000 najpopularniejszych dostêpnych publicznie us³ug sieciowych. Twórcy ka¿dego z 500 serwisów deklaruj¹ zgodnoœæ swoich produktów z konwencj¹ REST. Przeprowadzona analiza dotyczy³a kluczowych aspektów technicznych zwi¹zanych z funkcjonowaniem API, stopnia zgodnoœci API z regu³ami dotycz¹cymi metodologii REST, a tak¿e przestrzegania najlepszych praktyk projektowania interfejsów programowania aplikacji, takich jak m.in. zastosowanie mechanizmu wersjonowania. W trakcie analizy, zaobserwowano okreœlone trendy dla aplikacji REST API, takie jak m.in. rozpowszechnione wsparcie notacji JSON, czy wykorzystywanie narzêdzi do dokumentacji generowanej programowo. Ponadto, zauwa¿ono, ¿e tylko ok. 0.8\% analizowanych serwisów webowych przestrzega w sposób œcis³y regu³ zawartych w ramach konwencji REST.
+
+Wydajnoœæ interfejsów programowania aplikacji, jako jeden z elementów miary jakoœci API zosta³a przedstawiona w pozycji [8]. Na pocz¹tku pracy, jej autorzy wskazuj¹ na interakcjê interfejsu programowania aplikacji z systemami klienckimi. Opisany zosta³ tutaj zestaw protoko³ów sieciowych wykorzystywanych podczas formu³owania i transmisji ¿¹dania, system zunifikowanych lokacji zasobów, a tak¿e semantyka interakcji w zale¿noœci od wykorzystywanych typów ¿¹dañ protoko³u hipertekstowego. Ponadto, wskazano najczêstsze przyczyny b³êdów przep³ywu danych dla http, uwzglêdniaj¹c dzia³anie us³ugi DNS, b³êdy po³¹czenia, b³êdy le¿¹ce po stronie klienta, a tak¿e b³êdy wynikaj¹ce z dzia³ania serwera. Kolejna czêœæ pracy, zwi¹zana jest ze sk³adowymi metryki jakoœci, do których wed³ug autorów, poza wydajnoœci¹, zaliczyæ mo¿emy: dostêpnoœæ, procent ¿¹dañ dla których uzyskano pozytywn¹ odpowiedŸ, osi¹galnoœæ, a tak¿e mo¿liwoœæ sprawdzenia stanu us³ugi w dowolnym momencie jej dzia³ania. Dodatkowo, w niniejszej pracy zaproponowano podejœcie oraz zestaw narzêdzi pozwalaj¹cych na dokonanie ewaluacji jakoœci interfejsu programowania aplikacji, zgodnie z przyjêt¹ norm¹ jakoœci.
+
+Kolejnym etapem nastêpuj¹cym po zdefiniowaniu metryki wydajnoœci, jest ustalenie wartoœci tej¿e metryki w kontekœcie testowanych us³ug sieciowych. Przytoczone poni¿ej pozycje literaturowe, zwi¹zane s¹ z wykonywaniem pomiarów wydajnoœci API, czyli testowaniem.
+
+Pozycja [9] stanowi obszerne wprowadzenie do teorii testowania oprogramowania. W pierwszych rozdzia³ach tego dokumentu, wyjaœniono czym jest testowanie, dlaczego jest ono niezbêdne podczas tworzenia oprogramowania, a tak¿e jak wygl¹da podstawowy proces wykonywania testów. Nastêpnie przedstawiono proces testowania w kontekœcie tworzenia oprogramowania. Uwzglêdniono tu zarówno modele cyklu ¿ycia rozwoju systemów w powi¹zaniu z testowaniem, poziomy realizowanych testów, ich typy, jak i sposoby zarz¹dzania testami. Kolejne rozdzia³y tycz¹ siê testowania statycznego (tj. testowania funkcjonalnoœci lub modu³u na poziomie jego specyfikacji lub implementacji bez wykonywania kodu testowanego oprogramowania), dostarczaj¹ teorii zwi¹zanej z poszczególnymi technikami testowania rozwi¹zañ oraz przedstawiaj¹ aspekt organizacji, planowania, monitorowania oraz uwzglêdniania ryzyka w czasie dokonywania ewaluacji systemów. W ostatnim z rozdzia³ów dokumentu, autorzy przedstawiaj¹ narzêdzia przydatne w procesie testowania, a tak¿e sposób ich efektywnego wykorzystania w codziennej pracy.
+
+Pozycja [10] zawiera wiele analogicznych treœci do pracy opisanej powy¿ej, jednak¿e rozwija ona w sposób wyczerpuj¹cy, wspomniane tylko w poprzedniej pracy aspekty. W czêœci drugiej dokumentu zawarto dog³êbn¹ analizê zagadnienia testowania statycznego, uwzglêdniaj¹c m.in. testowanie zgodnoœci ze standardami oprogramowania, symboliczne wykonywanie kodu, a nawet wprowadzaj¹c aparat matematyczny do formalnego dowodzenia poprawnoœci fragmentów oprogramowania. W ramach tej ksi¹¿ki, przedstawiono tak¿e dynamiczn¹ analizê systemu (tj. testowanie funkcjonalnoœci lub modu³u na poziomie wykonywanego kodu) uwzglêdniaj¹c czêsto wystêpuj¹ce b³êdy zwi¹zane m.in. z nieumiejêtnym zarz¹dzaniem strukturami pamiêci programu. Ponadto, uwzglêdniono zagadnienie priorytetyzacji przypadków testowych, wprowadzaj¹c pojêcie miary œredniego procenta wykrytych usterek. Autor dokumentu przedstawia tak¿e testowanie charakterystyk jakoœciowych zgodnie z norm¹ ISO 9126 oraz ISO 25010, tworzenie dokumentacji w ramach zarz¹dzania testowaniem, czy chocia¿by zarz¹dzanie incydentami wystêpuj¹cymi w ramach procesu ewaluacji oprogramowania.
+
+W ramach pozycji [11], dowiedzieæ mo¿emy siê ponadto o testowaniu us³ug internetowych. Przedstawiono tutaj podstawow¹ strukturê standardowej us³ugi sieciowej (w tym przypadku – us³ugi e-commerce) cechuj¹cej siê architektur¹ trójwarstwow¹. Ponadto, wyjaœniono rolê ka¿dej z warstw systemu, a tak¿e przedstawiono aspekty testowania oprogramowania w kontekœcie ka¿dej z nich. Dodatkowo, zawarte zosta³y przyk³adowe przypadki testowe, dotycz¹ce zarówno prezentacji danych w systemie, jak i dostêpu do danych poprzez serwer webowy. Dla zaprezentowanych przypadków testowych, przedstawione zosta³y tak¿e scenariusze realizacji testów w postaci listy czynnoœci jakie nale¿y podj¹æ, aby dokonaæ ewaluacji systemu.
+
+Aspekty technologii testowania oprogramowania ujête zosta³y tak¿e w pozycji [12]. Artyku³ ten, stanowi sekcjê wprowadzaj¹c¹ do ksi¹¿ki pt. Tutorial: Software Testing and Valdation Techniques, tego samego autora. Pozycja ta, przedstawia przekrój technik oraz technologii testowania oprogramowania wykorzystywanych na przestrzeni ostatnich ok. 30 lat. Opisane zosta³y tutaj zarówno teoretyczne podstawy testowania, narzêdzia i techniki analizy statycznej i dynamicznej, oceny efektywnoœci przeprowadzanych testów, a tak¿e badania przeprowadzane w dziedzinie testowania i walidacji oprogramowania. Omawiany artyku³, wyszczególnia pozytywne oraz negatywne aspekty poszczególnych technik oraz wskazuje przydatnoœæ okreœlonych rozwi¹zañ do testowania oprogramowania ró¿nego typu.
+
+Ostatni¹ przytoczon¹ w ramach tego przegl¹du literaturowego pozycj¹, dotycz¹c¹ teorii ewaluacji oprogramowania jest [13]. Pozycja ta, stanowi normê miêdzynarodowej organizacji normalizacyjnej (ang. International Organization for Standardization) dotycz¹c¹ weryfikacji jakoœci oprogramowania. Uwzglêdniono tu przede wszystkim znaczenie pojêæ stosowanych w dziedzinie testowania oprogramowania, wprowadzono definicje dla okreœlonych terminów oraz zjawisk wystêpuj¹cych w ramach ewaluacji systemów, a tak¿e okreœlono zgodnoœæ wprowadzanych przez standard konceptów, z konceptami zawartymi w standardach pochodnych. G³ówn¹ czêœæ dokumentu, stanowi wprowadzenie szkieletu modelu jakoœci, uwzglêdniaj¹cego okreœlone modele jakoœciowe, modele jakoœci w u¿yciu, a tak¿e modele jakoœci produktu. Dodatkowo, przedstawiono cel oraz sposób wykorzystania modeli jakoœciowych, wyjaœniono ró¿nicê w postrzeganiu modeli jakoœciowych z punktu widzenia ró¿nych interesariuszy, a tak¿e zdefiniowano relacje pomiêdzy okreœlonymi modelami. Dokument ten, wraz z norm¹ ISO 9126, stanowi¹ definicjê pojêcia jakoœci w kontekœcie testowania oprogramowania.
+
+Pozycja [14] stanowi przegl¹d narzêdzi wykorzystywanych do testowania dzia³ania systemów komputerowych. Na pocz¹tku ksi¹¿ki, wprowadzany jest termin zapewnienia jakoœci (ang. Quality Assurance), który w dzisiejszych czasach definiuje zakres odpowiedzialnoœci osoby testuj¹cej oprogramowanie. Kolejno, przedstawiane s¹ kryteria sukcesu dotycz¹ce tworzonego systemu, a tak¿e fazy poszczególnych modeli rozwoju oprogramowania zorientowanych na procesy. Analogicznie do pozycji literaturowych przedstawionych uprzednio, w ramach tej pozycji okreœlone zosta³y metryki i definicje jakoœci oprogramowania oraz omówiony zosta³ proces realizacji testów. G³ówna czêœæ omawianego dokumentu skupiona jest wokó³ narzêdzi stosowanych do realizacji ewaluacji oprogramowania. Wyszczególniono tutaj narzêdzie WinRunner, przedstawiaj¹c miêdzy innymi wykorzystywany w tym programie skryptowy jêzyk testów (ang. Test Script Language). Ponadto, przedstawiono architekturê oraz najwa¿niejsze funkcjonalnoœci narzêdzi SilkTest, SQA Robot, LoadRunner, TestDirector, QuickTest Professional a tak¿e Apache JMeter. Ostatni z wymienionych programów, wykorzystywany zostanie w ramach niniejszej pracy dyplomowej, dlatego te¿ dalszy przegl¹d tej pozycji literaturowej skupiony bêdzie na rozdziale dotycz¹cym w³aœnie tego narzêdzia. Opis funkcjonalnoœci aplikacji JMeter zosta³ w niniejszej pozycji podzielony na sekcje zwi¹zane z testowaniem rozwi¹zañ bazodanowych wykorzystuj¹cych interfejs JDBC (ang. Java DataBase Connectivity), a tak¿e sekcjê dotycz¹c¹ testowania aplikacji bazuj¹cych w swoim dzia³aniu na protokole hipertekstowym. Przedstawiono tutaj sposób tworzenia grup w¹tków reprezentuj¹cych u¿ytkowników aplikacji, generowania ¿¹dania protoko³u hipertekstowego, uruchomienia mechanizmu nas³uchiwania na odpowiedŸ serwisu, dodawania licznika czasu, a tak¿e zapisywania i przegl¹dania rezultatów przeprowadzonego testu.
+
+W ramach dokumentów [15] oraz [16] przedstawiono pe³en zakres funkcjonalnoœci dostêpnych w ramach narzêdzia Apache JMeter. Pierwsza z prac (tj. [15]), skupia siê na wykorzystaniu narzêdzia w celu wykonywania testów wydajnoœci us³ug sieciowych, natomiast druga z pozycji (tj. [16]), przedstawia aplikacjê JMeter dla ró¿nych kontekstów jej potencjalnego u¿ycia. W obu pracach wyszczególnione zostaj¹ podstawowe elementy, na które sk³ada siê œrodowisko testowe. Elementami tymi s¹: grupy w¹tków, komponenty próbkuj¹ce, kontrolery, komponenty nas³uchuj¹ce, liczniki czasu oraz asercje. Ponadto,  omówiono elementy graficznego interfejsu u¿ytkownika dla aplikacji, przedstawiono proces instalacji oraz uruchamiania narzêdzia JMeter, a tak¿e zdefiniowano pojêcie planu testów. W kontekœcie pracy [15], poza wymienionymi uprzednio kwestiami, zobrazowany zosta³ tak¿e proces wykonywania testu przeci¹¿eniowego dla us³ugi zorientowanej na serwisy (ang. Service-Oriented Application). Proces ten uwzglêdnia³: tworzenie grupy w¹tków, konfiguracjê struktury ¿¹dania wysy³anego do us³ugi, uruchomienie testu, a tak¿e pozyskanie wyniku. W pracy [16] natomiast, analogiczny proces, mo¿emy zaobserwowaæ dla monolitycznej aplikacji internetowej oraz interfejsu programowania aplikacji. Ponadto, przedstawione zosta³y zaawansowane opcje konfiguracji elementów nas³uchuj¹cych oraz liczników czasu, a tak¿e pokazany zosta³ proces wykorzystania poœrednicz¹cego serwera http, w celu dokumentowania realizowanych ¿¹dañ.
+
+Nastêpne pozycje literaturowe omówione w ramach tej pracy, dotycz¹ budowy oraz zasady dzia³ania internetowego protoko³u hipertekstowego (ang. Hypertext Transfer Protocol), a tak¿e implementacji mechanizmu zarz¹dzania stanem. Mechanizm ten, w zwi¹zku z natur¹ protoko³u http, nie jest w nim domyœlnie realizowany.
+
+Pozycja [17] stanowi techniczny dokument dotycz¹cy semantyki oraz budowy internetowego protoko³u hipertekstowego w wersji 1.1. Zdefiniowano w nim pojêcie zasobu ¿¹dania oraz omówiono cykl ¿ycia jego przetwarzania. Wskazano tak¿e moment, w którym zasób rekonstruowany jest przez serwer na podstawie jego efektywnego identyfikatora URI (ang. Uniform Resource Identifier). Ponadto, nakreœlono pojêcie reprezentacji danych przesy³anych za pomoc¹ protoko³u http, definiuj¹c okreœlone pola nag³ówkowe dotycz¹ce: typu danych, sposobu kodowania, jêzyka danych, a tak¿e lokalizacji zasobu. Kolejne rozdzia³y dokumentu zawieraj¹ informacje dotycz¹ce definicji dozwolonych metod protoko³u http oraz znaczenia jakie te metody wprowadzaj¹ w kontekœcie operacji na zasobie. W dokumencie przedstawiono tak¿e kody statusu odpowiedzi na ¿¹dnie, grupuj¹c je w sposób semantyczny. Dla ka¿dego z przedstawionych kodów statusu nakreœlono kontekst, w jakim odpowiedŸ, oznaczona tym w³aœnie kodem, powinna byæ zwracana klientowi. Na koñcu pracy, omówiono kwestie zwi¹zane z bezpieczeñstwem protoko³u takie jak: ataki bazuj¹ce na wstrzykiwaniu kodu czy ochrona przed ujawnianiem informacji wra¿liwych w identyfikatorach zasobów.
+
+Pozycja [18] pozwala na poszerzenie wiedzy dotycz¹cej protoko³u hipertekstowego w bardziej praktycznym kontekœcie. Podobnie jak w dokumencie [17], przedstawiono tutaj informacje teoretyczne dotycz¹ce architektury protoko³u, definicji zasobów czy te¿ ujednoliconego formatu ich adresowania. Ponadto, wskazano i scharakteryzowano okreœlone typy po³¹czeñ realizowanych z wykorzystaniem protoko³u hipertekstowego. Co wiêcej, dla ka¿dego z nich rozwa¿ono kwestie zwi¹zane z wydajnoœci¹ po³¹czenia pomiêdzy klientem a serwerem. Kolejne rozdzia³y pracy [18] traktuj¹ o identyfikacji klienta w ramach serwera, jego uwierzytelniania przed serwerem, a tak¿e szyfrowania danych przesy³anych pomiêdzy tymi dwiema jednostkami.  W niniejszej pracy wspomniano tak¿e o internacjonalizacji ¿¹dañ w kontekœcie zastosowania nag³ówka ‘Accept-Language’. Ostatnie rozdzia³y dokumentu dotycz¹ kwestii publikowania i dystrybucji zawartoœci. Wyszczególnione zosta³y tu takie elementy jak: web hosting, systemy publikacji treœci, czy te¿ mechanizm przekierowañ oraz równowa¿enia obci¹¿eñ.
+
+Zgodnie z charakterystyk¹ protoko³u http, realizuje on komunikacjê w sposób bezstanowy. Oznacza to, ¿e domyœlnie, pomiêdzy klientem a serwerem nie jest utrzymywana sesja po³¹czeniowa, a ka¿de ¿¹danie generowane przez klienta w kierunku serwera rozpatrywane jest indywidualnie. Rozwi¹zanie takie, pozwala na znacz¹ce przyspieszenie dzia³ania protoko³u hipertekstowego, a tak¿e uproszczenie jego konstrukcji. Jednak¿e, szczególnie w przypadku aplikacji internetowych komunikuj¹cych siê z serwerem http, bezstanowy charakter protoko³u bywa problematyczny w aspekcie kontekstu wysy³anych sekwencyjnie ¿¹dañ. Dlatego te¿, do protoko³u http wprowadzono mechanizm zarz¹dzania stanem opisany w dokumencie [19]. Dokument ten, definiuje pola nag³ówkowe o nazwach ‘HTTP Cookie’ oraz ‘Set-Cookie’. Pola te, mog¹ byæ u¿ywane przez serwery http w celu przechowywania stanu w ramach aplikacji klienckich, daj¹c serwerom tym mo¿liwoœæ zarz¹dzania, zawieraj¹c¹ stan sesj¹, przy wykorzystaniu protoko³u bezstanowego. W niniejszym dokumencie, dla obu przedstawionych pól wyszczególniono atrybuty sk³adowe pola, a tak¿e okreœlono znaczenie ka¿dego z nich. Ponadto, dokument definiuje wymagania dla klienta http, dotycz¹ce mo¿liwoœci wykorzystania mechanizmu zarz¹dzania stanem. Pod uwagê wziête zosta³y tak¿e kwestie bezpieczeñstwa takie jak identyfikatory sesji, s³aba poufnoœæ danych, czy te¿ zaufanie do us³ugi nazw domenowych w celu prawid³owego dzia³ania mechanizmu zarz¹dzania stanem.
+
+Ostatnia grupa pozycji literaturowych, zawartych w ramach niniejszego przegl¹du literaturowego dotyczy badañ zwi¹zanych z testowaniem wydajnoœci aplikacji internetowych w œrodowisku rozproszonym. Pozycje przedstawione poni¿ej, bêd¹ stanowiæ prace referencyjne wzglêdem niniejszej pracy dyplomowej.
+
+Artyku³ [20] dotyczy porównania wydajnoœci dzia³ania interfejsów programowania aplikacji tworzonych z wykorzystaniem platform .NET Core 3.1 oraz .NET 5. Celem powstania tego dokumentu by³a weryfikacja zjawiska wzrostu wydajnoœci dzia³ania programów, tworzonych i uruchamianych z wykorzystaniem nowszej z platform firmy Microsoft. Praca ta, ma tak¿e na celu pomóc pozwoliæ odpowiedzieæ na pytanie, czy kod Ÿród³owy interfejsu programowania aplikacji o okreœlonych funkcjonalnoœciach, a tak¿e korzystaj¹cy z okreœlonych narzêdzi, powinien zostaæ zaktualizowany w taki sposób, aby wspieraæ najnowsz¹, stabiln¹ wersjê œrodowiska .NET. W ramach dokumentu, w celu realizowania pomiarów wydajnoœci wykorzystano opisane w poprzednich akapitach narzêdzie Apache JMeter, a tak¿e dedykowan¹ œrodowisku .NET, bibliotekê BenchmarkDotNet. Kolejne rozdzia³y artyku³u przedstawiaj¹ przygotowane œrodowisko testowe, plan wykonywanych testów, a tak¿e uzyskane rezultaty wraz z ich analiz¹. Autor pracy, zobrazowa³ wyniki szeœciu testów wydajnoœciowych, bior¹cych pod uwagê proces serializacji oraz deserializacji obiektów typu JSON za pomoc¹ bibliotek NewtonsoftJson, a tak¿e System.Text.Json. Ponadto, przygotowany zosta³ test wyszukiwania wzorca z obszernym ci¹gu tekstowym oraz test wykorzystania punktu koñcowego jako klienta zewnêtrznego API. Na podstawie otrzymanych rezultatów, wnioskowaæ mo¿emy o oko³o 24 procentowym œrednim wzroœcie wydajnoœci wykonywania operacji realizowanych w ramach testów. Ponadto, wykazano tak¿e doœæ znacz¹cy (oko³o 35 procentowy) œredni spadek wydajnoœci nowego rozwi¹zania wzglêdem poprzednika, w kontekœcie testów obci¹¿eniowych.
+
+Analogiczne badania przeprowadzono w ramach pracy [21]. W tym przypadku jednak, nie skupia³y siê one na aspekcie porównania technologii, a na sposobie wykonywania pomiarów, a tak¿e definiowaniu kryteriów oceny jakoœci. W pracy tej, interfejs programowania aplikacji zbudowany w oparciu o metodologiê REST poddawany by³ zmiennym obci¹¿eniom (tj. testy linii bazowej, testy obci¹¿eniowe oraz testy przeci¹¿eniowe). W czasie dokonywania ewaluacji monitorowano œredni czas odpowiedzi serwera, zgodnoœæ kodów statusu zawartych w ramach uzyskiwanych odpowiedzi, informacje o zu¿yciu zasobów sprzêtowych serwera, czy te¿ wartoœæ wskaŸnika satysfakcji klienta. Rezultaty przeprowadzonych badañ wykaza³y kluczowe znaczenie optymalizacji kodu Ÿród³owego aplikacji, w kontekœcie realizacji rozbudowanych i skalowalnych us³ug sieciowych.
