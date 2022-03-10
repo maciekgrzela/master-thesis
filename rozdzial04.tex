@@ -1,36 +1,36 @@
-\chapter{Projekt i implementacja œrodowiska badawczego}
+\chapter{Projekt i implementacja Å›rodowiska badawczego}
 \label{chap:implementacja-systemu}
-W niniejszym rozdziale opisana zosta³a implementacja kluczowych funkcjonalnoœci systemu. W ramach opisu, przedstawiono elementy kodu Ÿród³owego programu wraz z ich wyjaœnieniami.
+W niniejszym rozdziale opisana zostaÅ‚a implementacja kluczowych funkcjonalnoÅ›ci systemu. W ramach opisu, przedstawiono elementy kodu ÅºrÃ³dÅ‚owego programu wraz z ich wyjaÅ›nieniami.
 
-W pierwszych dwóch podrozdzia³ach, omówiona zosta³a zasada dzia³ania interfejsu programowania aplikacji. Ukazano w nich miêdzy innymi pe³ny przep³yw wykonywanych operacji w momencie wywo³ania punktu koñcowego API.
+W pierwszych dwÃ³ch podrozdziaÅ‚ach, omÃ³wiona zostaÅ‚a zasada dziaÅ‚ania interfejsu programowania aplikacji. Ukazano w nich miÄ™dzy innymi peÅ‚ny przepÅ‚yw wykonywanych operacji w momencie wywoÅ‚ania punktu koÅ„cowego API.
 
-W podrozdziale trzecim, przeanalizowano koncepcjê mechanizmu zarz¹dzania stanem aplikacji oraz aktualizacji treœci bez prze³adowywania strony. Koncepcje ta, s¹ okreœlone w sposób identyczny, zarówno dla aplikacji mobilnej jak i webowej.
+W podrozdziale trzecim, przeanalizowano koncepcjÄ™ mechanizmu zarzÄ…dzania stanem aplikacji oraz aktualizacji treÅ›ci bez przeÅ‚adowywania strony. Koncepcje ta, sÄ… okreÅ›lone w sposÃ³b identyczny, zarÃ³wno dla aplikacji mobilnej jak i webowej.
 
-Nastêpne czêœci odnosz¹ siê kolejno do funkcjonalnoœci aplikacji webowej oraz mobilnej. Niektóre spoœród tych funkcjonalnoœci s¹ wspólne dla obu aplikacji, dlatego te¿ przedstawione zostan¹ tylko w kontekœcie danego elementu systemu.
+NastÄ™pne czÄ™Å›ci odnoszÄ… siÄ™ kolejno do funkcjonalnoÅ›ci aplikacji webowej oraz mobilnej. NiektÃ³re spoÅ›rÃ³d tych funkcjonalnoÅ›ci sÄ… wspÃ³lne dla obu aplikacji, dlatego teÅ¼ przedstawione zostanÄ… tylko w kontekÅ›cie danego elementu systemu.
 
-Ostatni z podrozdzia³ów stanowi o implementacji graficznego interfejsu u¿ytkownika. Poza kodem Ÿród³owym widoków systemu, zaprezentowane s¹ w nim równie¿ ilustracje przedstawiaj¹ce gotowy interfejs.
+Ostatni z podrozdziaÅ‚Ã³w stanowi o implementacji graficznego interfejsu uÅ¼ytkownika. Poza kodem ÅºrÃ³dÅ‚owym widokÃ³w systemu, zaprezentowane sÄ… w nim rÃ³wnieÅ¼ ilustracje przedstawiajÄ…ce gotowy interfejs.
 
 \section{Interfejs programowania aplikacji (API)}
 \label{sec:api-implementacja}
-Zgodnie z informacjami wprowadzonymi w podrozdziale \ref{subsec:architektura-aplikacji}, interfejs programowania aplikacji API, zbudowany zosta³ w oparciu o architekturê trójwarstwow¹. W strukturze tej, po wys³aniu ¿¹dania z wykorzystaniem protoko³u hipertekstowego, zostaje ono obs³u¿one przez okreœlon¹ metodê klasy kontrolera. Metoda ta, w celu ustalenia odpowiedzi na ¿¹danie klienta, komunikowaæ siê musi z klasami ni¿szych warstw modelu, okreœlanymi jako serwisy.
+Zgodnie z informacjami wprowadzonymi w podrozdziale \ref{subsec:architektura-aplikacji}, interfejs programowania aplikacji API, zbudowany zostaÅ‚ w oparciu o architekturÄ™ trÃ³jwarstwowÄ…. W strukturze tej, po wysÅ‚aniu Å¼Ä…dania z wykorzystaniem protokoÅ‚u hipertekstowego, zostaje ono obsÅ‚uÅ¼one przez okreÅ›lonÄ… metodÄ™ klasy kontrolera. Metoda ta, w celu ustalenia odpowiedzi na Å¼Ä…danie klienta, komunikowaÄ‡ siÄ™ musi z klasami niÅ¼szych warstw modelu, okreÅ›lanymi jako serwisy.
 
-Wewn¹trz klas serwisów, wykonywane s¹ operacje z dziedziny logiki biznesowej. W operacjach tych, wymagane s¹ najczêœciej dane, które metoda serwisu mog³aby przetwarzaæ. Aby te dane uzyskaæ, podobnie jak metody kontrolerów, tak i metody warstwy logiki biznesowej odwo³ywaæ siê musz¹ do klas warstw ni¿szych. Takie klasy, w kontekœcie zrealizowanego oprogramowania nazywane s¹ repozytoriami.
+WewnÄ…trz klas serwisÃ³w, wykonywane sÄ… operacje z dziedziny logiki biznesowej. W operacjach tych, wymagane sÄ… najczÄ™Å›ciej dane, ktÃ³re metoda serwisu mogÅ‚aby przetwarzaÄ‡. Aby te dane uzyskaÄ‡, podobnie jak metody kontrolerÃ³w, tak i metody warstwy logiki biznesowej odwoÅ‚ywaÄ‡ siÄ™ muszÄ… do klas warstw niÅ¼szych. Takie klasy, w kontekÅ›cie zrealizowanego oprogramowania nazywane sÄ… repozytoriami.
 
-Mechanizm odwo³añ do klas warstw ni¿szych w celu pozyskiwania niezbêdnych do przetwarzania informacji umo¿liwia proste rozdzielenie odpowiedzialnoœci w ramach realizowanych funkcji. Ponadto, pozwala on na implementacjê elastycznego mechanizmu obs³ugi b³êdów oraz ³atwiejsze wykrywanie potencjalnych problemów.
+Mechanizm odwoÅ‚aÅ„ do klas warstw niÅ¼szych w celu pozyskiwania niezbÄ™dnych do przetwarzania informacji umoÅ¼liwia proste rozdzielenie odpowiedzialnoÅ›ci w ramach realizowanych funkcji. Ponadto, pozwala on na implementacjÄ™ elastycznego mechanizmu obsÅ‚ugi bÅ‚Ä™dÃ³w oraz Å‚atwiejsze wykrywanie potencjalnych problemÃ³w.
 
-Na listingach \ref{lst:endpoint-forward-worker}, \ref{lst:service-forward-worker} i \ref{lst:repository-forward-worker}, okreœlone zosta³y fragmenty kodu Ÿród³owego metod, dla klas z poszczególnych warstw architektury aplikacji. Wszystkie z listingów s¹ ze sob¹ powi¹zanie, poniewa¿ stanowi¹ fragmenty realizacji odpowiedzi na to samo ¿¹danie klienta.
+Na listingach \ref{lst:endpoint-forward-worker}, \ref{lst:service-forward-worker} i \ref{lst:repository-forward-worker}, okreÅ›lone zostaÅ‚y fragmenty kodu ÅºrÃ³dÅ‚owego metod, dla klas z poszczegÃ³lnych warstw architektury aplikacji. Wszystkie z listingÃ³w sÄ… ze sobÄ… powiÄ…zanie, poniewaÅ¼ stanowiÄ… fragmenty realizacji odpowiedzi na to samo Å¼Ä…danie klienta.
 
-Poni¿ej przedstawiono sposób obs³ugi ¿¹dania typu POST dla punktu koñcowego \texttt{/api/documents/forwards/worker}, odpowiedzialnego za realizacjê przekazania dokumentu pracownikowi.
+PoniÅ¼ej przedstawiono sposÃ³b obsÅ‚ugi Å¼Ä…dania typu POST dla punktu koÅ„cowego \texttt{/api/documents/forwards/worker}, odpowiedzialnego za realizacjÄ™ przekazania dokumentu pracownikowi.
 
-Po wys³aniu ¿¹dania HTTP, dla okreœlonego w akapicie powy¿ej adresu punktu koñcowego, wykonany zostanie kod metody z listingu \ref{lst:endpoint-forward-worker}. W pierwszym wierszu tej metody, okreœlona zosta³a adnotacja \textit{(ang. Data Annotation)} dotycz¹ca typu obs³ugiwanego ¿¹dania, oraz fragmentu jego adresu. Metoda jest asynchroniczna (tj. uruchamiana jest jako oddzielny w¹tek programu i cechuje siê sekwencyjnoœci¹ realizacji operacji niezale¿nie od czasu ich trwania).
+Po wysÅ‚aniu Å¼Ä…dania HTTP, dla okreÅ›lonego w akapicie powyÅ¼ej adresu punktu koÅ„cowego, wykonany zostanie kod metody z listingu \ref{lst:endpoint-forward-worker}. W pierwszym wierszu tej metody, okreÅ›lona zostaÅ‚a adnotacja \textit{(ang. Data Annotation)} dotyczÄ…ca typu obsÅ‚ugiwanego Å¼Ä…dania, oraz fragmentu jego adresu. Metoda jest asynchroniczna (tj. uruchamiana jest jako oddzielny wÄ…tek programu i cechuje siÄ™ sekwencyjnoÅ›ciÄ… realizacji operacji niezaleÅ¼nie od czasu ich trwania).
 
-Funkcja punktu koñcowego przyjmuje jako argument zasób \textit{(ang. Resource)}. Element ten, definiuje parametry zwi¹zane z nadawc¹, odbiorc¹ oraz przekazywanym dokumentem. Wartoœæ zasobu, mo¿na przekazaæ metodzie endpoint'u poprzez zdefiniowanie cia³a ¿¹dania HTTP \textit{(ang. HTTP Body)}. W przypadku realizowanego API, cia³o ¿¹dania posiada formê obiektu JSON.
+Funkcja punktu koÅ„cowego przyjmuje jako argument zasÃ³b \textit{(ang. Resource)}. Element ten, definiuje parametry zwiÄ…zane z nadawcÄ…, odbiorcÄ… oraz przekazywanym dokumentem. WartoÅ›Ä‡ zasobu, moÅ¼na przekazaÄ‡ metodzie endpoint'u poprzez zdefiniowanie ciaÅ‚a Å¼Ä…dania HTTP \textit{(ang. HTTP Body)}. W przypadku realizowanego API, ciaÅ‚o Å¼Ä…dania posiada formÄ™ obiektu JSON.
 
-Na pocz¹tku metody, przekazany argument (zasób) poddawany jest walidacji. Walidacja mo¿e przebiec niepomyœlnie w sytuacji, w której elementy obiektu JSON bêd¹ posiada³y niepoprawne typy danych, lub wymagane wartoœci nie zostan¹ w nim zdefiniowane. Po pomyœlnym przejœciu procedury walidacji, obiekt zasobu oraz zagnie¿d¿ony w nim zasób dokumentu odwzorowywane s¹ na obiekty klas modelu danych. Pozwala to, na przekazanie ich jako parametry do metody klasy warstwy ni¿szej - serwisu.
+Na poczÄ…tku metody, przekazany argument (zasÃ³b) poddawany jest walidacji. Walidacja moÅ¼e przebiec niepomyÅ›lnie w sytuacji, w ktÃ³rej elementy obiektu JSON bÄ™dÄ… posiadaÅ‚y niepoprawne typy danych, lub wymagane wartoÅ›ci nie zostanÄ… w nim zdefiniowane. Po pomyÅ›lnym przejÅ›ciu procedury walidacji, obiekt zasobu oraz zagnieÅ¼dÅ¼ony w nim zasÃ³b dokumentu odwzorowywane sÄ… na obiekty klas modelu danych. Pozwala to, na przekazanie ich jako parametry do metody klasy warstwy niÅ¼szej - serwisu.
 
-Po uzyskaniu wartoœci zwróconej przez serwis, w metodzie kontrolera sprawdzana jest jej poprawnoœæ. W zale¿noœci od wyniku tego sprawdzenia, wysy³ana jest odpowiedŸ HTTP sygnalizuj¹ca b³¹d wykonywanej operacji lub jej powodzenie. Zgodnie ze standardem REST \textit{(ang. Representational State Transfer)}, wykorzystywanym przez system jako zbiór zasad dotycz¹cych dzia³ania API, w przypadku poprawnoœci metody punktu koñcowego dla typu operacji POST, zwracana jest pusta zawartoœæ \textit{(ang. No Content)}.
+Po uzyskaniu wartoÅ›ci zwrÃ³conej przez serwis, w metodzie kontrolera sprawdzana jest jej poprawnoÅ›Ä‡. W zaleÅ¼noÅ›ci od wyniku tego sprawdzenia, wysyÅ‚ana jest odpowiedÅº HTTP sygnalizujÄ…ca bÅ‚Ä…d wykonywanej operacji lub jej powodzenie. Zgodnie ze standardem REST \textit{(ang. Representational State Transfer)}, wykorzystywanym przez system jako zbiÃ³r zasad dotyczÄ…cych dziaÅ‚ania API, w przypadku poprawnoÅ›ci metody punktu koÅ„cowego dla typu operacji POST, zwracana jest pusta zawartoÅ›Ä‡ \textit{(ang. No Content)}.
 
-\begin{lstlisting}[label=lst:endpoint-forward-worker,caption=Kod metody punktu koñcowego przekazywania dokumentów pracownikowi, captionpos=b,basicstyle=\footnotesize\ttfamily,style=sharpcstyle,language={[Sharp]C}]
+\begin{lstlisting}[label=lst:endpoint-forward-worker,caption=Kod metody punktu koÅ„cowego przekazywania dokumentÃ³w pracownikowi, captionpos=b,basicstyle=\footnotesize\ttfamily,style=sharpcstyle,language={[Sharp]C}]
 [HttpPost("worker")]
 public async Task<IActionResult> ForwardToWorkerAsync([FromBody] ForwardToWorkerResource res) {
 	
@@ -49,21 +49,21 @@ public async Task<IActionResult> ForwardToWorkerAsync([FromBody] ForwardToWorker
 }
 \end{lstlisting}
 
-W linii dziewi¹tej listingu \ref{lst:endpoint-forward-worker} metoda kontrolera API wywo³uje metodê serwisu. Linia ta, jest kluczowym fragmentem kodu Ÿród³owego punktu koñcowego, poniewa¿ w³aœnie w metodzie serwisu wykonywane s¹ operacje zwi¹zane z faktycznym przekazaniem dokumentu pracownikowi. Omawiana w nastêpnym akapicie funkcja serwisu przedstawiona jest na listingu \ref{lst:service-forward-worker}.
+W linii dziewiÄ…tej listingu \ref{lst:endpoint-forward-worker} metoda kontrolera API wywoÅ‚uje metodÄ™ serwisu. Linia ta, jest kluczowym fragmentem kodu ÅºrÃ³dÅ‚owego punktu koÅ„cowego, poniewaÅ¼ wÅ‚aÅ›nie w metodzie serwisu wykonywane sÄ… operacje zwiÄ…zane z faktycznym przekazaniem dokumentu pracownikowi. Omawiana w nastÄ™pnym akapicie funkcja serwisu przedstawiona jest na listingu \ref{lst:service-forward-worker}.
 
-Do metody przekazania dokumentu, dostarczane s¹ dwa argumenty. Pierwszym z nich jest obiekt zasobu, natomiast drugi stanowi zasób faktury. Elementy te, zgodnie z informacjami przedstawionymi uprzednio, zosta³y wczeœniej przekszta³cone z obiektowej notacji JavaScript na klasy modelu danych.
+Do metody przekazania dokumentu, dostarczane sÄ… dwa argumenty. Pierwszym z nich jest obiekt zasobu, natomiast drugi stanowi zasÃ³b faktury. Elementy te, zgodnie z informacjami przedstawionymi uprzednio, zostaÅ‚y wczeÅ›niej przeksztaÅ‚cone z obiektowej notacji JavaScript na klasy modelu danych.
 
-Pocz¹tkowo, weryfikowane jest istnienie dokumentu w systemie na podstawie jego identyfikatora. Je¿eli dany rachunek nie zosta³ znaleziony, jest on generowany w oparciu o dane zawarte w zasobie dokumentu.
+PoczÄ…tkowo, weryfikowane jest istnienie dokumentu w systemie na podstawie jego identyfikatora. JeÅ¼eli dany rachunek nie zostaÅ‚ znaleziony, jest on generowany w oparciu o dane zawarte w zasobie dokumentu.
 
-Nastêpnie, weryfikowane s¹ informacje zwi¹zane z nadawc¹ oraz adresatem faktury. Dla prawid³owego przekazania dokumentu, dane obu pracowników (tj. ich identyfikatory) musz¹ byæ prawid³owe. W sytuacji wykrycia nieprawid³owoœci dla danych o pracownikach, metoda serwisu zwraca sterowanie do metody kontrolera, przekazuj¹c nowy obiekt odpowiedzi \textit{(ang. Response)}. Gdy w obiekcie tym, przypisana zostaje w³aœciwoœæ wiadomoœci b³êdu \textit{(ang. Message)}, logiczny atrybut powodzenia wykonania funkcji \textit{(ang. Success)} przyjmuje wartoœæ \texttt{false}. Pozwala to, na okreœlenie poprawnoœci realizacji zadania serwisu wewn¹trz metody kontrolera.
+NastÄ™pnie, weryfikowane sÄ… informacje zwiÄ…zane z nadawcÄ… oraz adresatem faktury. Dla prawidÅ‚owego przekazania dokumentu, dane obu pracownikÃ³w (tj. ich identyfikatory) muszÄ… byÄ‡ prawidÅ‚owe. W sytuacji wykrycia nieprawidÅ‚owoÅ›ci dla danych o pracownikach, metoda serwisu zwraca sterowanie do metody kontrolera, przekazujÄ…c nowy obiekt odpowiedzi \textit{(ang. Response)}. Gdy w obiekcie tym, przypisana zostaje wÅ‚aÅ›ciwoÅ›Ä‡ wiadomoÅ›ci bÅ‚Ä™du \textit{(ang. Message)}, logiczny atrybut powodzenia wykonania funkcji \textit{(ang. Success)} przyjmuje wartoÅ›Ä‡ \texttt{false}. Pozwala to, na okreÅ›lenie poprawnoÅ›ci realizacji zadania serwisu wewnÄ…trz metody kontrolera.
 
-Kolejno, pobierane s¹ wszystkie przekazania przypisane do dokumentu. Je¿eli ich liczba, jest wiêksza od zera, nale¿y sprawdziæ, czy osoba chc¹ca przekazaæ dokument, aktualnie znajduje siê w jego posiadaniu. W tym celu, uzyskiwany zostaje ostatni element listy przekazañ. Aby zweryfikowaæ przynale¿noœæ dokumentu do pracownika, identyfikator odbiorcy w ostatnim z przekazañ musi byæ zgodny z numerem pracownika stanowi¹cego nadawcê dla nowego przekazania. W przeciwnym razie, generowany jest obiekt odpowiedzi i przekazywane zostaje sterowanie do metody kontrolera.
+Kolejno, pobierane sÄ… wszystkie przekazania przypisane do dokumentu. JeÅ¼eli ich liczba, jest wiÄ™ksza od zera, naleÅ¼y sprawdziÄ‡, czy osoba chcÄ…ca przekazaÄ‡ dokument, aktualnie znajduje siÄ™ w jego posiadaniu. W tym celu, uzyskiwany zostaje ostatni element listy przekazaÅ„. Aby zweryfikowaÄ‡ przynaleÅ¼noÅ›Ä‡ dokumentu do pracownika, identyfikator odbiorcy w ostatnim z przekazaÅ„ musi byÄ‡ zgodny z numerem pracownika stanowiÄ…cego nadawcÄ™ dla nowego przekazania. W przeciwnym razie, generowany jest obiekt odpowiedzi i przekazywane zostaje sterowanie do metody kontrolera.
 
-W ostatnim fragmencie kodu Ÿród³owego funkcji serwisu, definiowany jest nowy obiekt przekazania dokumentu. Po jego utworzeniu, wywo³ywana zostaje metoda klasy repozytorium zapisuj¹ca przekazanie do kontekstu bazy danych. Aby zmiana danych w obrêbie kontekstu, odwzorowana zosta³a w bazie danych wykonana musi zostaæ metoda \texttt{CommitTransactionAsync} dla instancji klasy \texttt{UnitOfWork}. Klasa ta, jest implementacj¹ wzorca projektowego \textit{Jednostka pracy}, opisanego w rozdziale \ref{subsec:architektura-aplikacji}.
+W ostatnim fragmencie kodu ÅºrÃ³dÅ‚owego funkcji serwisu, definiowany jest nowy obiekt przekazania dokumentu. Po jego utworzeniu, wywoÅ‚ywana zostaje metoda klasy repozytorium zapisujÄ…ca przekazanie do kontekstu bazy danych. Aby zmiana danych w obrÄ™bie kontekstu, odwzorowana zostaÅ‚a w bazie danych wykonana musi zostaÄ‡ metoda \texttt{CommitTransactionAsync} dla instancji klasy \texttt{UnitOfWork}. Klasa ta, jest implementacjÄ… wzorca projektowego \textit{Jednostka pracy}, opisanego w rozdziale \ref{subsec:architektura-aplikacji}.
 
-Instrukcj¹ koñcz¹c¹ metodê serwisu jest zwrócenie nowego obiektu odpowiedzi. W tym przypadku, obiekt ten zamiast tekstem wiadomoœci b³êdu, jest inicjalizowany struktur¹ przekazania dokumentu. Dziêki temu, atrybut poprawnoœci wykonania metody przyjmuje wartoœæ true.
+InstrukcjÄ… koÅ„czÄ…cÄ… metodÄ™ serwisu jest zwrÃ³cenie nowego obiektu odpowiedzi. W tym przypadku, obiekt ten zamiast tekstem wiadomoÅ›ci bÅ‚Ä™du, jest inicjalizowany strukturÄ… przekazania dokumentu. DziÄ™ki temu, atrybut poprawnoÅ›ci wykonania metody przyjmuje wartoÅ›Ä‡ true.
 
-\begin{lstlisting}[label=lst:service-forward-worker,caption=Kod metody serwisu przekazywania dokumentów pracownikowi, captionpos=b,basicstyle=\footnotesize\ttfamily,style=sharpcstyle,language={[Sharp]C}]
+\begin{lstlisting}[label=lst:service-forward-worker,caption=Kod metody serwisu przekazywania dokumentÃ³w pracownikowi, captionpos=b,basicstyle=\footnotesize\ttfamily,style=sharpcstyle,language={[Sharp]C}]
 public async Task<Response<DocumentsForward>> ForwardToWorker(DocumentsForward forward, ForwardDocument document) {		
 			
 	var existingDocument = await documentService.GetDocumentAsync(document.Id);
@@ -72,7 +72,7 @@ public async Task<Response<DocumentsForward>> ForwardToWorker(DocumentsForward f
 			var result = await documentService.SaveAsync(document);
 								
 			if (!result.Success) {
-					return new Response<DocumentsForward>("B³¹d zapisu dokumentu:{...}");
+					return new Response<DocumentsForward>("BÅ‚Ä…d zapisu dokumentu:{...}");
 			}
 			documentToForward = result.Type;
 	}
@@ -84,16 +84,16 @@ public async Task<Response<DocumentsForward>> ForwardToWorker(DocumentsForward f
 	var existingRecipient = await workerService.GetWorkerAsync(forward.RecipientId);
 
 	if (!existingRemitter.Success)
-			return new Response<DocumentsForward>("Nadawca o id:{...} nie zosta³ znaleziony");
+			return new Response<DocumentsForward>("Nadawca o id:{...} nie zostaÅ‚ znaleziony");
 
 	if (!existingRecipient.Success)
-			return new Response<DocumentsForward>("Odbiorca o id:{...} nie zosta³ znaleziony");
+			return new Response<DocumentsForward>("Odbiorca o id:{...} nie zostaÅ‚ znaleziony");
 	
 	var forwardsForDocument = documentToForward.DocumentsForwards.ToList();
 	if (forwardsForDocument.Count != 0) {
 			var lastForward = forwardsForDocument.Last();
 			if (lastForward.RecipientId != existingRemitter.Type.Id)
-					return new Response<DocumentsForward>("Nie jesteœ w³aœcicielem dokumentu!");	
+					return new Response<DocumentsForward>("Nie jesteÅ› wÅ‚aÅ›cicielem dokumentu!");	
 	}
 	var forwardToSave = new DocumentsForward {
 			Remitter = existingRemitter.Type,
@@ -108,34 +108,34 @@ public async Task<Response<DocumentsForward>> ForwardToWorker(DocumentsForward f
 	return new Response<DocumentsForward>(forward);
 \end{lstlisting}
 
-W kodzie Ÿród³owym metody serwisu, wystêpuje odwo³anie do funkcji klasy repozytorium. Funkcje tej klasy, maj¹ za zadanie operowaæ na kontekœcie bazy danych (tj. odwzorowaniu danych z bazy w kodzie programu).
+W kodzie ÅºrÃ³dÅ‚owym metody serwisu, wystÄ™puje odwoÅ‚anie do funkcji klasy repozytorium. Funkcje tej klasy, majÄ… za zadanie operowaÄ‡ na kontekÅ›cie bazy danych (tj. odwzorowaniu danych z bazy w kodzie programu).
 
-Na listingu \ref{lst:repository-forward-worker} pokazane zosta³o cia³o metody repozytorium. Element ten, odpowiedzialny jest za zapisanie do kontekstu bazodanowego nowego przekazania dokumentu.
+Na listingu \ref{lst:repository-forward-worker} pokazane zostaÅ‚o ciaÅ‚o metody repozytorium. Element ten, odpowiedzialny jest za zapisanie do kontekstu bazodanowego nowego przekazania dokumentu.
 
-Po wykonaniu wszystkich operacji, podobnie jak metody serwisów, tak i metoda repozytorium zwraca sterowanie do funkcji wywo³uj¹cej.
+Po wykonaniu wszystkich operacji, podobnie jak metody serwisÃ³w, tak i metoda repozytorium zwraca sterowanie do funkcji wywoÅ‚ujÄ…cej.
 
-\begin{lstlisting}[label=lst:repository-forward-worker,caption=Kod metody repozytorium odpowiedzialnej za przekazywanie dokumentów pracownikowi, captionpos=b,basicstyle=\footnotesize\ttfamily,style=sharpcstyle,language={[Sharp]C}]
+\begin{lstlisting}[label=lst:repository-forward-worker,caption=Kod metody repozytorium odpowiedzialnej za przekazywanie dokumentÃ³w pracownikowi, captionpos=b,basicstyle=\footnotesize\ttfamily,style=sharpcstyle,language={[Sharp]C}]
 public async Task SaveAsync(DocumentsForward documentsForward) {
 	await context.DocumentsForwards.AddAsync(documentsForward);
 }
 \end{lstlisting}
 
-\section{Uwierzytelnianie i autoryzacja u¿ytkowników}
-Mechanizm uwierzytelniania i autoryzacji u¿ytkowników systemu skonstruowany zosta³ w oparciu o technologie .Net Core Identity oraz JSON Web Token. W ramach pierwszego z tych rozwi¹zañ, udostêpniane s¹ metody obs³ugi u¿ytkowników w systemie oraz mechanizmy tworzenia tokenu logowania. Drugie rozwi¹zanie, okreœla sposób autoryzacji u¿ytkownika oraz format tokenu.
+\section{Uwierzytelnianie i autoryzacja uÅ¼ytkownikÃ³w}
+Mechanizm uwierzytelniania i autoryzacji uÅ¼ytkownikÃ³w systemu skonstruowany zostaÅ‚ w oparciu o technologie .Net Core Identity oraz JSON Web Token. W ramach pierwszego z tych rozwiÄ…zaÅ„, udostÄ™pniane sÄ… metody obsÅ‚ugi uÅ¼ytkownikÃ³w w systemie oraz mechanizmy tworzenia tokenu logowania. Drugie rozwiÄ…zanie, okreÅ›la sposÃ³b autoryzacji uÅ¼ytkownika oraz format tokenu.
 
-Pierwsz¹ faz¹ procesu jest wys³anie przez klienta ¿¹dania HTTP pod adres punktu koñcowego odpowiedzialnego za logowanie. W ¿¹daniu tym, okreœlone musi zostaæ jego cia³o, zawieraj¹ce dane uwierzytelniaj¹ce.
+PierwszÄ… fazÄ… procesu jest wysÅ‚anie przez klienta Å¼Ä…dania HTTP pod adres punktu koÅ„cowego odpowiedzialnego za logowanie. W Å¼Ä…daniu tym, okreÅ›lone musi zostaÄ‡ jego ciaÅ‚o, zawierajÄ…ce dane uwierzytelniajÄ…ce.
 
-Je¿eli dane te s¹ poprawne, interfejs API w odpowiedzi zwraca wygenerowany token u¿ytkownika.
+JeÅ¼eli dane te sÄ… poprawne, interfejs API w odpowiedzi zwraca wygenerowany token uÅ¼ytkownika.
 
-Klient (tj. aplikacja webowa lub mobilna) wywo³uje punkty koñcowe API, za³¹czaj¹c token autoryzuj¹cy w nag³ówku komunikatu protoko³u hipertekstowego. Token ten, bêdzie autoryzowany przez interfejs tak d³ugo, jak d³ugo bêdzie trwaæ jego wa¿noœæ. Dla zrealizowanego oprogramowania czas wa¿noœci tokenu okreœlony zosta³ na jeden dzieñ.
+Klient (tj. aplikacja webowa lub mobilna) wywoÅ‚uje punkty koÅ„cowe API, zaÅ‚Ä…czajÄ…c token autoryzujÄ…cy w nagÅ‚Ã³wku komunikatu protokoÅ‚u hipertekstowego. Token ten, bÄ™dzie autoryzowany przez interfejs tak dÅ‚ugo, jak dÅ‚ugo bÄ™dzie trwaÄ‡ jego waÅ¼noÅ›Ä‡. Dla zrealizowanego oprogramowania czas waÅ¼noÅ›ci tokenu okreÅ›lony zostaÅ‚ na jeden dzieÅ„.
 
-W poni¿szych akapitach, przedstawiona zosta³a implementacja omówionego procesu w ramach interfejsu programowania aplikacji. Na listingu \ref{lst:endpoint-login} ukazano kod Ÿród³owy metody \texttt{Login} klasy \texttt{WorkersController}, która pe³ni rolê punktu koñcowego dla logowania w systemie.
+W poniÅ¼szych akapitach, przedstawiona zostaÅ‚a implementacja omÃ³wionego procesu w ramach interfejsu programowania aplikacji. Na listingu \ref{lst:endpoint-login} ukazano kod ÅºrÃ³dÅ‚owy metody \texttt{Login} klasy \texttt{WorkersController}, ktÃ³ra peÅ‚ni rolÄ™ punktu koÅ„cowego dla logowania w systemie.
 
-Podobnie jak w przypadku punktu koñcowego realizuj¹cego przekazania dokumentów, przed cia³em metody okreœlony jest rodzaj ¿¹dania wywo³uj¹cego oraz nazwa endpointu. Ponadto, dodana zosta³a adnotacja \texttt{AllowAnonymous}, informuj¹ca o mo¿liwoœci wywo³ania punktu koñcowego bez uprzedniej autoryzacji.
+Podobnie jak w przypadku punktu koÅ„cowego realizujÄ…cego przekazania dokumentÃ³w, przed ciaÅ‚em metody okreÅ›lony jest rodzaj Å¼Ä…dania wywoÅ‚ujÄ…cego oraz nazwa endpointu. Ponadto, dodana zostaÅ‚a adnotacja \texttt{AllowAnonymous}, informujÄ…ca o moÅ¼liwoÅ›ci wywoÅ‚ania punktu koÅ„cowego bez uprzedniej autoryzacji.
 
-W ramach metody kontrolera, pocz¹tkowo sprawdzana jest poprawnoœæ przekazanego jako parametr zasobu. Zasób ten, zawiera dane, za pomoc¹ których u¿ytkownik chce siê uwierzytelniæ. Aby dane te mog³y byæ przetwarzane, musz¹ zostaæ odwzorowywane na instancjê klasy modelu danych interfejsu API.
+W ramach metody kontrolera, poczÄ…tkowo sprawdzana jest poprawnoÅ›Ä‡ przekazanego jako parametr zasobu. ZasÃ³b ten, zawiera dane, za pomocÄ… ktÃ³rych uÅ¼ytkownik chce siÄ™ uwierzytelniÄ‡. Aby dane te mogÅ‚y byÄ‡ przetwarzane, muszÄ… zostaÄ‡ odwzorowywane na instancjÄ™ klasy modelu danych interfejsu API.
 
-\begin{lstlisting}[label=lst:endpoint-login,caption=Kod metody punktu koñcowego logowania pracownika, captionpos=b,basicstyle=\footnotesize\ttfamily,style=sharpcstyle,language={[Sharp]C}]
+\begin{lstlisting}[label=lst:endpoint-login,caption=Kod metody punktu koÅ„cowego logowania pracownika, captionpos=b,basicstyle=\footnotesize\ttfamily,style=sharpcstyle,language={[Sharp]C}]
 [AllowAnonymous]
 [HttpPost("login")]
 public async Task<ActionResult> Login([FromBody] LoginCredentialsResource loginResource) {
@@ -152,15 +152,15 @@ public async Task<ActionResult> Login([FromBody] LoginCredentialsResource loginR
 }
 \end{lstlisting}
 
-Nastêpnym krokiem jest odwo³anie siê do metody klasy serwisu, realizuj¹cej faktyczn¹ procedurê uwierzytelniania. Kod Ÿród³owy tej metody pokazany zosta³ na listingu \ref{lst:service-login}. W zale¿noœci od wyniku zwróconego przez czêœæ sk³adow¹ serwisu, u¿ytkownikowi przekazywany jest okreœlony typ odpowiedzi HTTP.
+NastÄ™pnym krokiem jest odwoÅ‚anie siÄ™ do metody klasy serwisu, realizujÄ…cej faktycznÄ… procedurÄ™ uwierzytelniania. Kod ÅºrÃ³dÅ‚owy tej metody pokazany zostaÅ‚ na listingu \ref{lst:service-login}. W zaleÅ¼noÅ›ci od wyniku zwrÃ³conego przez czÄ™Å›Ä‡ skÅ‚adowÄ… serwisu, uÅ¼ytkownikowi przekazywany jest okreÅ›lony typ odpowiedzi HTTP.
 
-Metoda klasy serwisu, obs³uguj¹ca procedurê logowania przyjmuje jako parametr obiekt informacji uwierzytelniaj¹cych. Na jego podstawie, z wykorzystaniem klasy \texttt{UserManager} dostêpnej w ramach biblioteki .Net Core Identity, sprawdzane jest istnienie u¿ytkownika oraz zgodnoœæ przekazanych przez niego danych.
+Metoda klasy serwisu, obsÅ‚ugujÄ…ca procedurÄ™ logowania przyjmuje jako parametr obiekt informacji uwierzytelniajÄ…cych. Na jego podstawie, z wykorzystaniem klasy \texttt{UserManager} dostÄ™pnej w ramach biblioteki .Net Core Identity, sprawdzane jest istnienie uÅ¼ytkownika oraz zgodnoÅ›Ä‡ przekazanych przez niego danych.
 
-W przypadku poprawnoœci dostarczonych przez u¿ytkownika informacji, tworzony zostaje obiekt parametrów pracownika, bêd¹cy wartoœci¹ zwracan¹ z metody serwisu. Obiekt ten, poza danymi pracownika, posiada tak¿e wygenerowany token autoryzuj¹cy.
+W przypadku poprawnoÅ›ci dostarczonych przez uÅ¼ytkownika informacji, tworzony zostaje obiekt parametrÃ³w pracownika, bÄ™dÄ…cy wartoÅ›ciÄ… zwracanÄ… z metody serwisu. Obiekt ten, poza danymi pracownika, posiada takÅ¼e wygenerowany token autoryzujÄ…cy.
 
-Po odwzorowaniu zwróconej struktury na klasê zasobu, jest ona przekazywana jako odpowiedŸ na ¿¹danie klienta.
+Po odwzorowaniu zwrÃ³conej struktury na klasÄ™ zasobu, jest ona przekazywana jako odpowiedÅº na Å¼Ä…danie klienta.
 
-\begin{lstlisting}[label=lst:service-login,caption=Kod metody klasy serwisu realizuj¹cego procedurê logowania, captionpos=b,basicstyle=\footnotesize\ttfamily,style=sharpcstyle,language={[Sharp]C}]
+\begin{lstlisting}[label=lst:service-login,caption=Kod metody klasy serwisu realizujÄ…cego procedurÄ™ logowania, captionpos=b,basicstyle=\footnotesize\ttfamily,style=sharpcstyle,language={[Sharp]C}]
 public async Task<Response<LoggedWorker>> Login(LoginCredential loginCredential) {
 	var worker = await workerManager.Users
 			.Include(p => p.Vehicle)
@@ -170,7 +170,7 @@ public async Task<Response<LoggedWorker>> Login(LoginCredential loginCredential)
 			.SingleOrDefaultAsync(w => w.UserName == loginCredential.UserName);
 
 	if (worker == null)
-			return new Response<LoggedWorker>("Pracownik:[...] nie zosta³ znaleziony");
+			return new Response<LoggedWorker>("Pracownik:[...] nie zostaÅ‚ znaleziony");
 
 	var result = await signInManager.CheckPasswordSignInAsync(worker, loginCredential.Password, false);
 
@@ -184,55 +184,55 @@ public async Task<Response<LoggedWorker>> Login(LoginCredential loginCredential)
 			};
 			return new Response<LoggedWorker>(loggedWorker);
 	}
-	return new Response<LoggedWorker>("Dane uwierzytelniaj¹ce s¹ niepoprawne");
+	return new Response<LoggedWorker>("Dane uwierzytelniajÄ…ce sÄ… niepoprawne");
 }
 \end{lstlisting}
-\section{Zarz¹dzanie stanem aplikacji}
+\section{ZarzÄ…dzanie stanem aplikacji}
 \label{sec:zarzadzanie-stanem}
-Pojêcie systemu zarz¹dzania stanem odnosi siê do czêœci klienckiej przygotowanego oprogramowania (tj. aplikacji mobilnej oraz webowej). W przypadku obu z tych elementów, wykorzystany zosta³ hybrydowy model przechowywania stanu aplikacji, wykorzystuj¹cy zarówno koncepcjê stanu wewnêtrznego poszczególnych komponentów, jak i stanu zewnêtrznego, wspólnego dla wszystkich elementów aplikacji. Obiekty zawarte w wewnêtrznych stanach komponentów, wykorzystywane s¹ do realizacji operacji unikalnych dla ka¿dego z elementów sk³adowych aplikacji. W ramach stanu zewnêtrznego natomiast, przechowywane informacje s¹ przetwarzane przez wiele niezale¿nych od siebie komponentów.  
+PojÄ™cie systemu zarzÄ…dzania stanem odnosi siÄ™ do czÄ™Å›ci klienckiej przygotowanego oprogramowania (tj. aplikacji mobilnej oraz webowej). W przypadku obu z tych elementÃ³w, wykorzystany zostaÅ‚ hybrydowy model przechowywania stanu aplikacji, wykorzystujÄ…cy zarÃ³wno koncepcjÄ™ stanu wewnÄ™trznego poszczegÃ³lnych komponentÃ³w, jak i stanu zewnÄ™trznego, wspÃ³lnego dla wszystkich elementÃ³w aplikacji. Obiekty zawarte w wewnÄ™trznych stanach komponentÃ³w, wykorzystywane sÄ… do realizacji operacji unikalnych dla kaÅ¼dego z elementÃ³w skÅ‚adowych aplikacji. W ramach stanu zewnÄ™trznego natomiast, przechowywane informacje sÄ… przetwarzane przez wiele niezaleÅ¼nych od siebie komponentÃ³w.  
 
-Zarówno dla aplikacji webowej, jak i mobilnej, jako system zarz¹dzania stanem (tj. stanem zewnêtrznym) wybrana zosta³a biblioteka MobX.
+ZarÃ³wno dla aplikacji webowej, jak i mobilnej, jako system zarzÄ…dzania stanem (tj. stanem zewnÄ™trznym) wybrana zostaÅ‚a biblioteka MobX.
 
-\subsection{Struktura mechanizmu zarz¹dzania stanem zewnêtrznym}
-W zakresie stanu zewnêtrznego, zdefiniowana zosta³a klasa g³ównego magazynu \textit{(ang. RootStore)}, dla której atrybutami s¹ instancje wszystkich pozosta³ych magazynów podrzêdnych. Klasy podrzêdne natomiast, maj¹ za zadanie przechowywaæ elementy stanu.
+\subsection{Struktura mechanizmu zarzÄ…dzania stanem zewnÄ™trznym}
+W zakresie stanu zewnÄ™trznego, zdefiniowana zostaÅ‚a klasa gÅ‚Ã³wnego magazynu \textit{(ang. RootStore)}, dla ktÃ³rej atrybutami sÄ… instancje wszystkich pozostaÅ‚ych magazynÃ³w podrzÄ™dnych. Klasy podrzÄ™dne natomiast, majÄ… za zadanie przechowywaÄ‡ elementy stanu.
 
-Utworzone magazyny podrzêdne, zawieraj¹ w sobie fragmenty stanu, odpowiadaj¹ce wybranym funkcjonalnoœciom aplikacji. Dla przyk³adu, w ramach klasy \textit{WorkersStore} przechowywana jest miêdzy innymi lista wszystkich pracowników, a tak¿e wszystkie notatki pracownicze. Z kolei w magazynie \textit{AlgorithmsStore} gromadzone s¹ informacje odnoœnie wyniku planowania trasy dostawy.
+Utworzone magazyny podrzÄ™dne, zawierajÄ… w sobie fragmenty stanu, odpowiadajÄ…ce wybranym funkcjonalnoÅ›ciom aplikacji. Dla przykÅ‚adu, w ramach klasy \textit{WorkersStore} przechowywana jest miÄ™dzy innymi lista wszystkich pracownikÃ³w, a takÅ¼e wszystkie notatki pracownicze. Z kolei w magazynie \textit{AlgorithmsStore} gromadzone sÄ… informacje odnoÅ›nie wyniku planowania trasy dostawy.
 
-Aby dane z klas-magazynów mog³y zostaæ wykorzystane w dowolnym komponencie, ca³a struktura klas musi staæ siê elementem ogólnodostêpnym w ramach aplikacji. Wymaganie to, jest realizowane poprzez wykorzystanie mechanizmu kontekstu. Mechanizm ten, reprezentuje strukturê danych osi¹galn¹ dla ka¿dego z fragmentów aplikacji. Do struktury tej, dodawana jest nowa instancja klasy \textit{RootStore}.
+Aby dane z klas-magazynÃ³w mogÅ‚y zostaÄ‡ wykorzystane w dowolnym komponencie, caÅ‚a struktura klas musi staÄ‡ siÄ™ elementem ogÃ³lnodostÄ™pnym w ramach aplikacji. Wymaganie to, jest realizowane poprzez wykorzystanie mechanizmu kontekstu. Mechanizm ten, reprezentuje strukturÄ™ danych osiÄ…galnÄ… dla kaÅ¼dego z fragmentÃ³w aplikacji. Do struktury tej, dodawana jest nowa instancja klasy \textit{RootStore}.
 
-\subsection{Odœwie¿anie widoków w zale¿noœci od zmiany stanu}
-Podstawowym celem modyfikacji danych w obrêbie klasy magazynu jest aktualizacja widoku aplikacji. W ramach omawianych elementów systemu proces odœwie¿ania widoków przebiega nastêpuj¹co:
+\subsection{OdÅ›wieÅ¼anie widokÃ³w w zaleÅ¼noÅ›ci od zmiany stanu}
+Podstawowym celem modyfikacji danych w obrÄ™bie klasy magazynu jest aktualizacja widoku aplikacji. W ramach omawianych elementÃ³w systemu proces odÅ›wieÅ¼ania widokÃ³w przebiega nastÄ™pujÄ…co:
 \begin{itemize}
-	\item Wywo³anie funkcji w ramach okreœlonego komponentu.
-	\item Odwo³anie siê funkcji komponentu do akcji konkretnego magazynu.
-	\item Modyfikacja w³aœciwoœci obserwowalnej, bêd¹cej elementem stanu, wewn¹trz akcji magazynu.
-	\item Opcjonalne ustalenie wartoœci dla powi¹zanej z elementem obserwowalnym, w³aœciwoœci wyliczanej.
-	\item Odœwie¿enie widoku wewn¹trz komponentu.
+	\item WywoÅ‚anie funkcji w ramach okreÅ›lonego komponentu.
+	\item OdwoÅ‚anie siÄ™ funkcji komponentu do akcji konkretnego magazynu.
+	\item Modyfikacja wÅ‚aÅ›ciwoÅ›ci obserwowalnej, bÄ™dÄ…cej elementem stanu, wewnÄ…trz akcji magazynu.
+	\item Opcjonalne ustalenie wartoÅ›ci dla powiÄ…zanej z elementem obserwowalnym, wÅ‚aÅ›ciwoÅ›ci wyliczanej.
+	\item OdÅ›wieÅ¼enie widoku wewnÄ…trz komponentu.
 \end{itemize}
 
-\section{Aktualizacja treœci "`na ¿ywo"'}
-W obszarze funkcjonalnoœci œledzenia dokumentów oraz komunikatora tekstowego zaimplementowany zosta³ mechanizm aktualizacji treœci "`na ¿ywo"'. W ramach jego dzia³ania, u¿ytkownik jest na bie¿¹co informowany o nowych wiadomoœciach przychodz¹cych czy te¿ zmianach statusu dokumentów.
+\section{Aktualizacja treÅ›ci "`na Å¼ywo"'}
+W obszarze funkcjonalnoÅ›ci Å›ledzenia dokumentÃ³w oraz komunikatora tekstowego zaimplementowany zostaÅ‚ mechanizm aktualizacji treÅ›ci "`na Å¼ywo"'. W ramach jego dziaÅ‚ania, uÅ¼ytkownik jest na bieÅ¼Ä…co informowany o nowych wiadomoÅ›ciach przychodzÄ…cych czy teÅ¼ zmianach statusu dokumentÃ³w.
 
-Do realizacji opisywanego modu³u wykorzystany zosta³ protokó³ WebSockets. Protokó³ ten, pozwala na dwukierunkow¹ komunikacjê pomiêdzy serwerem a klientem (tj. przegl¹dark¹ lub aplikacj¹ mobiln¹). W przeciwieñstwie do rozwi¹zañ takich jak odpytywanie HTTP \textit{(ang. HTTP Polling)}, WebSockets umo¿liwia wysy³anie wiadomoœci z serwera, bez uprzedniego otrzymania ¿¹dania klienta. Zastosowanie tego protoko³u, dostarcza mo¿liwoœæ informowania klienta o zachodz¹cych zmianach w modelu danych, nad którymi kontrolê sprawuje serwer.
+Do realizacji opisywanego moduÅ‚u wykorzystany zostaÅ‚ protokÃ³Å‚ WebSockets. ProtokÃ³Å‚ ten, pozwala na dwukierunkowÄ… komunikacjÄ™ pomiÄ™dzy serwerem a klientem (tj. przeglÄ…darkÄ… lub aplikacjÄ… mobilnÄ…). W przeciwieÅ„stwie do rozwiÄ…zaÅ„ takich jak odpytywanie HTTP \textit{(ang. HTTP Polling)}, WebSockets umoÅ¼liwia wysyÅ‚anie wiadomoÅ›ci z serwera, bez uprzedniego otrzymania Å¼Ä…dania klienta. Zastosowanie tego protokoÅ‚u, dostarcza moÅ¼liwoÅ›Ä‡ informowania klienta o zachodzÄ…cych zmianach w modelu danych, nad ktÃ³rymi kontrolÄ™ sprawuje serwer.
 
-W zrealizowanym oprogramowaniu, wykorzystana zosta³a biblioteka firmy Microsoft, obs³uguj¹ca komunikacjê dla protoko³u WebSockets. Biblioteka ta, nazwana SignalR dostarcza zbiór metod, pozwalaj¹cych na kontrolê transmisji danych, zarówno po stronie serwera jak i klienta.
+W zrealizowanym oprogramowaniu, wykorzystana zostaÅ‚a biblioteka firmy Microsoft, obsÅ‚ugujÄ…ca komunikacjÄ™ dla protokoÅ‚u WebSockets. Biblioteka ta, nazwana SignalR dostarcza zbiÃ³r metod, pozwalajÄ…cych na kontrolÄ™ transmisji danych, zarÃ³wno po stronie serwera jak i klienta.
 
-Komunikacjê WebSockets, w ramach stworzonego systemu, mo¿na opisaæ za pomoc¹ nastêpuj¹cej sekwencji:
+KomunikacjÄ™ WebSockets, w ramach stworzonego systemu, moÅ¼na opisaÄ‡ za pomocÄ… nastÄ™pujÄ…cej sekwencji:
 \begin{itemize}
-\item Aplikacja kliencka inicjuje po³¹czenie z wykorzystaniem protoko³u gniazd sieciowych, wysy³aj¹c okreœlone ¿¹danie do serwera.
-\item Serwer zestawia po³¹czenie z aplikacj¹ przegl¹darkow¹. 
-\item Aplikacja, w czasie realizacji okreœlonej funkcjonalnoœci, wywo³uje metodê serwera która ma zostaæ wykonana.
-\item Serwer wykonuje kod wywo³anej metody, a nastêpnie powiadamia o tym fakcie, okreœlony zbiór lub wszystkich klientów aktualnie z nim po³¹czonych. 
-\item Ka¿dy z klientów nas³uchuje na odpowiedŸ z serwera, zwi¹zan¹ z wykonaniem okreœlonego zadania. Jeœli ta odpowiedŸ nadejdzie, aplikacje klienckie wykonuj¹ ustalony kod programu.
+\item Aplikacja kliencka inicjuje poÅ‚Ä…czenie z wykorzystaniem protokoÅ‚u gniazd sieciowych, wysyÅ‚ajÄ…c okreÅ›lone Å¼Ä…danie do serwera.
+\item Serwer zestawia poÅ‚Ä…czenie z aplikacjÄ… przeglÄ…darkowÄ…. 
+\item Aplikacja, w czasie realizacji okreÅ›lonej funkcjonalnoÅ›ci, wywoÅ‚uje metodÄ™ serwera ktÃ³ra ma zostaÄ‡ wykonana.
+\item Serwer wykonuje kod wywoÅ‚anej metody, a nastÄ™pnie powiadamia o tym fakcie, okreÅ›lony zbiÃ³r lub wszystkich klientÃ³w aktualnie z nim poÅ‚Ä…czonych. 
+\item KaÅ¼dy z klientÃ³w nasÅ‚uchuje na odpowiedÅº z serwera, zwiÄ…zanÄ… z wykonaniem okreÅ›lonego zadania. JeÅ›li ta odpowiedÅº nadejdzie, aplikacje klienckie wykonujÄ… ustalony kod programu.
 \end{itemize}
 
-W celu zaprezentowania sposobu dzia³ania mechanizmu aktualizacji treœci z wykorzystaniem protoko³u gniazd sieciowych, przedstawiona zosta³a implementacja funkcjonalnoœci wewnêtrznego komunikatora tekstowego. Funkcjonalnoœæ t¹, zrealizowano w sposób analogiczny, dla aplikacji webowej oraz mobilnej. W niniejszym podrozdziale, zaprezentowany zostanie kod Ÿród³owy aplikacji webowej.
+W celu zaprezentowania sposobu dziaÅ‚ania mechanizmu aktualizacji treÅ›ci z wykorzystaniem protokoÅ‚u gniazd sieciowych, przedstawiona zostaÅ‚a implementacja funkcjonalnoÅ›ci wewnÄ™trznego komunikatora tekstowego. FunkcjonalnoÅ›Ä‡ tÄ…, zrealizowano w sposÃ³b analogiczny, dla aplikacji webowej oraz mobilnej. W niniejszym podrozdziale, zaprezentowany zostanie kod ÅºrÃ³dÅ‚owy aplikacji webowej.
 
-Aby skorzystaæ z komunikatora tekstowego, nale¿y przejœæ do okreœlonego widoku aplikacji. Uruchomienie tego widoku, powoduje wywo³anie akcji \texttt{createHubConnection} z klasy magazynu \texttt{MessagesStore}. Zadaniem tej akcji, jest ustanowienie po³¹czenia z wykorzystaniem protoko³u WebSockets pomiêdzy aplikacj¹ a serwerem. Na listingu \ref{lst:msg-initHub} zaprezentowano kod Ÿród³owy omawianej funkcji.
+Aby skorzystaÄ‡ z komunikatora tekstowego, naleÅ¼y przejÅ›Ä‡ do okreÅ›lonego widoku aplikacji. Uruchomienie tego widoku, powoduje wywoÅ‚anie akcji \texttt{createHubConnection} z klasy magazynu \texttt{MessagesStore}. Zadaniem tej akcji, jest ustanowienie poÅ‚Ä…czenia z wykorzystaniem protokoÅ‚u WebSockets pomiÄ™dzy aplikacjÄ… a serwerem. Na listingu \ref{lst:msg-initHub} zaprezentowano kod ÅºrÃ³dÅ‚owy omawianej funkcji.
 
-W celu ustanowienia komunikacji tworzony jest obiekt \texttt{HubConnection}, z wykorzystaniem wzorca budowniczego oraz klasy \texttt{HubConnectionBuilder}. W ramach tego obiektu, okreœlany zostaje adres serwera (przechowywany w zmiennej œrodowiskowej aplikacji), token autoryzuj¹cy, typ wyœwietlanych komunikatów informacyjnych oraz opcja automatycznego ponawiania po³¹czenia. Nastêpnie, wykonywana jest metoda \texttt{start}, wysy³aj¹ca ¿¹danie inicjuj¹ce do serwera. Wyj¹tki, zwi¹zane z niepowodzeniem ustanowienia wymiany danych, obs³ugiwane s¹ poprzez funkcje \texttt{catch}.
+W celu ustanowienia komunikacji tworzony jest obiekt \texttt{HubConnection}, z wykorzystaniem wzorca budowniczego oraz klasy \texttt{HubConnectionBuilder}. W ramach tego obiektu, okreÅ›lany zostaje adres serwera (przechowywany w zmiennej Å›rodowiskowej aplikacji), token autoryzujÄ…cy, typ wyÅ›wietlanych komunikatÃ³w informacyjnych oraz opcja automatycznego ponawiania poÅ‚Ä…czenia. NastÄ™pnie, wykonywana jest metoda \texttt{start}, wysyÅ‚ajÄ…ca Å¼Ä…danie inicjujÄ…ce do serwera. WyjÄ…tki, zwiÄ…zane z niepowodzeniem ustanowienia wymiany danych, obsÅ‚ugiwane sÄ… poprzez funkcje \texttt{catch}.
 
-\begin{lstlisting}[label=lst:msg-initHub,caption=Kod metody inicjuj¹cej po³¹czenie WebSocket dla komunikatora tekstowego, captionpos=b,basicstyle=\footnotesize\ttfamily,language=JavaScript]
+\begin{lstlisting}[label=lst:msg-initHub,caption=Kod metody inicjujÄ…cej poÅ‚Ä…czenie WebSocket dla komunikatora tekstowego, captionpos=b,basicstyle=\footnotesize\ttfamily,language=JavaScript]
 @action createHubConnection = () => {
 	this.hubConnection = new HubConnectionBuilder()
 		.withUrl(process.env.REACT_APP_HUB_URL, {
@@ -243,20 +243,20 @@ W celu ustanowienia komunikacji tworzony jest obiekt \texttt{HubConnection}, z w
 
 	this.hubConnection.start()
 		.catch(() =>
-			toast.error('Utracono po³¹czenie z powiadomieniami na ¿ywo. Odœwie¿ stronê w celu ponownego po³¹czenia')
+			toast.error('Utracono poÅ‚Ä…czenie z powiadomieniami na Å¼ywo. OdÅ›wieÅ¼ stronÄ™ w celu ponownego poÅ‚Ä…czenia')
 		);
 };
 \end{lstlisting}
 
-Po zestawieniu po³¹czenia pomiêdzy elementami systemu, u¿ytkownik wybiera uczestnika konwersacji. Wybór ten, skutkuje wykonaniem metody \texttt{prepareConversation} przedstawionej na listingu \ref{lst:msg-prepare-worker}.
+Po zestawieniu poÅ‚Ä…czenia pomiÄ™dzy elementami systemu, uÅ¼ytkownik wybiera uczestnika konwersacji. WybÃ³r ten, skutkuje wykonaniem metody \texttt{prepareConversation} przedstawionej na listingu \ref{lst:msg-prepare-worker}.
 
-Parametr procedury, identyfikowany jako \texttt{worker} okreœla zbiór danych dotycz¹cych wybranego uczestnika rozmowy.
+Parametr procedury, identyfikowany jako \texttt{worker} okreÅ›la zbiÃ³r danych dotyczÄ…cych wybranego uczestnika rozmowy.
 
-Aby wymieniane wiadomoœci, widoczne by³y tylko w obszarze odbiorcy oraz nadawcy, w czasie ka¿dej z konwersacji utworzona musi zostaæ dwuosobowa grupa uczestników rozmowy. Rozwi¹zanie to, pozwala serwerowi ustaliæ, do których klientów powinien on wys³aæ informacjê o wyst¹pieniu zdarzenia wys³ania wiadomoœci.
+Aby wymieniane wiadomoÅ›ci, widoczne byÅ‚y tylko w obszarze odbiorcy oraz nadawcy, w czasie kaÅ¼dej z konwersacji utworzona musi zostaÄ‡ dwuosobowa grupa uczestnikÃ³w rozmowy. RozwiÄ…zanie to, pozwala serwerowi ustaliÄ‡, do ktÃ³rych klientÃ³w powinien on wysÅ‚aÄ‡ informacjÄ™ o wystÄ…pieniu zdarzenia wysÅ‚ania wiadomoÅ›ci.
 
-Dla ka¿dej z tworzonych grup, zdefiniowany musi zostaæ identyfikator, znany zarówno przez nadawcê jak i odbiorcê wiadomoœci. W zwi¹zku z faktem, ¿e obaj u¿ytkownicy posiadaj¹, wewn¹trz metody \texttt{prepareConversation} dane drugiego z uczestników rozmowy, identyfikator grupy okreœlony zosta³ jako sortowane leksykograficznie z³¹czenie kodów identyfikacyjnych dwóch pracowników.
+Dla kaÅ¼dej z tworzonych grup, zdefiniowany musi zostaÄ‡ identyfikator, znany zarÃ³wno przez nadawcÄ™ jak i odbiorcÄ™ wiadomoÅ›ci. W zwiÄ…zku z faktem, Å¼e obaj uÅ¼ytkownicy posiadajÄ…, wewnÄ…trz metody \texttt{prepareConversation} dane drugiego z uczestnikÃ³w rozmowy, identyfikator grupy okreÅ›lony zostaÅ‚ jako sortowane leksykograficznie zÅ‚Ä…czenie kodÃ³w identyfikacyjnych dwÃ³ch pracownikÃ³w.
 
-Z chwil¹ ustalenia nazwy grupy, wywo³ywane s¹ metody przyporz¹dkowuj¹ce wyznaczone wartoœci do w³aœciwoœci obserwowalnych. Kolejno, realizowane jest wykonanie procedury serwera z wykorzystaniem komunikacji WebSockets. Nastêpnie, pobierana zostaje lista wszystkich wiadomoœci pomiêdzy dwoma u¿ytkownikami oraz ustawienie ich statusu jako "`Przeczytane"'. Operacje te, determinuj¹ aktualizacjê widoku aplikacji klienta.
+Z chwilÄ… ustalenia nazwy grupy, wywoÅ‚ywane sÄ… metody przyporzÄ…dkowujÄ…ce wyznaczone wartoÅ›ci do wÅ‚aÅ›ciwoÅ›ci obserwowalnych. Kolejno, realizowane jest wykonanie procedury serwera z wykorzystaniem komunikacji WebSockets. NastÄ™pnie, pobierana zostaje lista wszystkich wiadomoÅ›ci pomiÄ™dzy dwoma uÅ¼ytkownikami oraz ustawienie ich statusu jako "`Przeczytane"'. Operacje te, determinujÄ… aktualizacjÄ™ widoku aplikacji klienta.
 
 \begin{lstlisting}[label=lst:msg-prepare-worker,caption=Kod metody wyboru uczestnika konwersacji tekstowej, captionpos=b,basicstyle=\footnotesize\ttfamily,language=JavaScript]
 const prepareConversation = (worker) => {
@@ -269,11 +269,11 @@ const prepareConversation = (worker) => {
 };
 \end{lstlisting}
 
-Po po³¹czeniu u¿ytkowników w grupy, dokonywane mo¿e zostaæ faktyczne przekazywanie wiadomoœci pomiêdzy nimi. Na listingu \ref{lst:add-message} przedstawiona zosta³a akcja klasy magazynu odpowiedzialna za utworzenie nowej wiadomoœci.
+Po poÅ‚Ä…czeniu uÅ¼ytkownikÃ³w w grupy, dokonywane moÅ¼e zostaÄ‡ faktyczne przekazywanie wiadomoÅ›ci pomiÄ™dzy nimi. Na listingu \ref{lst:add-message} przedstawiona zostaÅ‚a akcja klasy magazynu odpowiedzialna za utworzenie nowej wiadomoÅ›ci.
 
-Pocz¹tkowo, konstruowany jest obiekt zasobu, przechowuj¹cy informacje o nowym elemencie konwersacji. Nastêpnie, wywo³ywana zostaje zdalna metoda serwera, obs³uguj¹ca funkcjonalnoœæ tworzenia wiadomoœci. Je¿eli w trakcie jej wykonywania wyst¹pi b³¹d, wyœwietlony zostanie komunikat informuj¹cy u¿ytkownika o tym fakcie.
+PoczÄ…tkowo, konstruowany jest obiekt zasobu, przechowujÄ…cy informacje o nowym elemencie konwersacji. NastÄ™pnie, wywoÅ‚ywana zostaje zdalna metoda serwera, obsÅ‚ugujÄ…ca funkcjonalnoÅ›Ä‡ tworzenia wiadomoÅ›ci. JeÅ¼eli w trakcie jej wykonywania wystÄ…pi bÅ‚Ä…d, wyÅ›wietlony zostanie komunikat informujÄ…cy uÅ¼ytkownika o tym fakcie.
 
-\begin{lstlisting}[label=lst:add-message,caption=Kod akcji utworzenia nowej wiadomoœci tekstowej, captionpos=b,basicstyle=\footnotesize\ttfamily,language=JavaScript]
+\begin{lstlisting}[label=lst:add-message,caption=Kod akcji utworzenia nowej wiadomoÅ›ci tekstowej, captionpos=b,basicstyle=\footnotesize\ttfamily,language=JavaScript]
 @action addMessage = async (message) => {
 	let resource = {
 		fromWorkerId: this.conversationSelectedUser.id,
@@ -285,14 +285,14 @@ Pocz¹tkowo, konstruowany jest obiekt zasobu, przechowuj¹cy informacje o nowym el
 	await this.hubConnection
 		.invoke('SaveConversation', resource, this.groupName)
 		.catch(() =>
-			toast.error('Nie uda³o siê wys³aæ wiadomoœci. Spróbuj ponownie póŸniej'));
+			toast.error('Nie udaÅ‚o siÄ™ wysÅ‚aÄ‡ wiadomoÅ›ci. SprÃ³buj ponownie pÃ³Åºniej'));
 	...
 };
 \end{lstlisting}
 
-Zadaniem zdalnej metody \texttt{SaveConversation}, do której odwo³uje siê funkcja z listingu \ref{lst:add-message} jest wprowadzenie do bazy danych nowej wiadomoœci. W dalszej kolejnoœci, po wykonaniu tego zadania, klienci musz¹ zostaæ o tym fakcie poinformowani. Dlatego te¿, wewn¹trz wspomnianej procedury, nastêpuje wys³anie komunikatów z serwera do klientów. Komunikaty wysy³ane s¹ zarówno do zdefiniowanej uprzednio grupy (wymusza to odœwie¿enie listy wszystkich wiadomoœci), jak i do pozosta³ych odbiorców. Dziêki temu, odbiorca nie korzystaj¹cy aktualnie z modu³u wiadomoœci bêdzie powiadomiony o pojawieniu siê nowego fragmentu konwersacji. Kod procedury \texttt{SaveConversation} ukazany zosta³ na listingu \ref{lst:server-save-message}.
+Zadaniem zdalnej metody \texttt{SaveConversation}, do ktÃ³rej odwoÅ‚uje siÄ™ funkcja z listingu \ref{lst:add-message} jest wprowadzenie do bazy danych nowej wiadomoÅ›ci. W dalszej kolejnoÅ›ci, po wykonaniu tego zadania, klienci muszÄ… zostaÄ‡ o tym fakcie poinformowani. Dlatego teÅ¼, wewnÄ…trz wspomnianej procedury, nastÄ™puje wysÅ‚anie komunikatÃ³w z serwera do klientÃ³w. Komunikaty wysyÅ‚ane sÄ… zarÃ³wno do zdefiniowanej uprzednio grupy (wymusza to odÅ›wieÅ¼enie listy wszystkich wiadomoÅ›ci), jak i do pozostaÅ‚ych odbiorcÃ³w. DziÄ™ki temu, odbiorca nie korzystajÄ…cy aktualnie z moduÅ‚u wiadomoÅ›ci bÄ™dzie powiadomiony o pojawieniu siÄ™ nowego fragmentu konwersacji. Kod procedury \texttt{SaveConversation} ukazany zostaÅ‚ na listingu \ref{lst:server-save-message}.
 
-\begin{lstlisting}[label=lst:server-save-message,caption=Kod metody serwera realizuj¹cej utworzenie nowej wiadomoœci tekstowej, captionpos=b,basicstyle=\footnotesize\ttfamily,style=sharpcstyle,language={[Sharp]C}]
+\begin{lstlisting}[label=lst:server-save-message,caption=Kod metody serwera realizujÄ…cej utworzenie nowej wiadomoÅ›ci tekstowej, captionpos=b,basicstyle=\footnotesize\ttfamily,style=sharpcstyle,language={[Sharp]C}]
 public async Task SaveConversation(SaveConversationItemResource resource, string group) {
 	var item = mapper.Map<SaveConversationItemResource, ConversationItem>(resource);
 	var msgItem = await conversationItemService.SaveAsync(item);
@@ -309,32 +309,32 @@ public async Task SaveConversation(SaveConversationItemResource resource, string
 \end{lstlisting}
 
 \section{Aplikacja webowa}
-\subsection{Przekazywanie dokumentów}
-Modu³ przekazywania dokumentów stanowi kluczow¹ funkcjonalnoœæ przygotowanego oprogramowania. W jego obszarze, wyró¿niæ mo¿na nastêpuj¹ce elementy: przekazanie dokumentu pracownikowi, przekazanie dokumentu klientowi oraz zwrócenie dokumentu do dzia³u sprzeda¿y.
+\subsection{Przekazywanie dokumentÃ³w}
+ModuÅ‚ przekazywania dokumentÃ³w stanowi kluczowÄ… funkcjonalnoÅ›Ä‡ przygotowanego oprogramowania. W jego obszarze, wyrÃ³Å¼niÄ‡ moÅ¼na nastÄ™pujÄ…ce elementy: przekazanie dokumentu pracownikowi, przekazanie dokumentu klientowi oraz zwrÃ³cenie dokumentu do dziaÅ‚u sprzedaÅ¼y.
 
-Dla pierwszego typu przekazañ, pracownik-nadawca, z wykorzystaniem obrazu kamery internetowej lub rêcznego czytnika kodów, skanuje barkod uwierzytelniaj¹cy pracownika-odbiorcy. Nastêpnie sczytywane s¹ kody wszystkich dokumentów, które maj¹ zostaæ przekazane. Aby operacja skanowania przebieg³a pomyœlnie, struktury QR, zarówno pracownika jak i dokumentów musz¹ posiadaæ odpowiednie formaty danych.
+Dla pierwszego typu przekazaÅ„, pracownik-nadawca, z wykorzystaniem obrazu kamery internetowej lub rÄ™cznego czytnika kodÃ³w, skanuje barkod uwierzytelniajÄ…cy pracownika-odbiorcy. NastÄ™pnie sczytywane sÄ… kody wszystkich dokumentÃ³w, ktÃ³re majÄ… zostaÄ‡ przekazane. Aby operacja skanowania przebiegÅ‚a pomyÅ›lnie, struktury QR, zarÃ³wno pracownika jak i dokumentÃ³w muszÄ… posiadaÄ‡ odpowiednie formaty danych.
 
-Pracownik przekazuj¹cy dokumenty, po uwierzytelnieniu nadawcy, posiada okreœlony w konfiguracji systemu czas, w którym zeskanowaæ mo¿e przekazywane faktury. Domyœln¹ wartoœci¹ tego czasu jest 30 sekund, jednak¿e liczba ta mo¿e byæ modyfikowana przez osobê posiadaj¹c¹ uprawnienia do zmiany danych konfiguracyjnych.
+Pracownik przekazujÄ…cy dokumenty, po uwierzytelnieniu nadawcy, posiada okreÅ›lony w konfiguracji systemu czas, w ktÃ³rym zeskanowaÄ‡ moÅ¼e przekazywane faktury. DomyÅ›lnÄ… wartoÅ›ciÄ… tego czasu jest 30 sekund, jednakÅ¼e liczba ta moÅ¼e byÄ‡ modyfikowana przez osobÄ™ posiadajÄ…cÄ… uprawnienia do zmiany danych konfiguracyjnych.
 
-Ponadto, zdefiniowane zosta³y okreœlone formaty numerów dokumentów. Je¿eli numer skanowanego dokumentu nie pasuje do ¿adnego ze schematów, nie zostanie on przekazany pracownikowi.
+Ponadto, zdefiniowane zostaÅ‚y okreÅ›lone formaty numerÃ³w dokumentÃ³w. JeÅ¼eli numer skanowanego dokumentu nie pasuje do Å¼adnego ze schematÃ³w, nie zostanie on przekazany pracownikowi.
 
-Drugi element omawianego modu³u, stanowi funkcjonalnoœæ przekazywania dokumentów klientowi. Zasada realizacji tej funkcjonalnoœci, oraz wszystkie ograniczenia z ni¹ zwi¹zane s¹ analogiczne do elementu przekazywania dokumentu pracownikowi. Istotn¹ ró¿nic¹, pomiêdzy tymi funkcjonalnoœciami, jest brak koniecznoœci wyboru pracownika w trakcie procesu przekazywania faktur.
+Drugi element omawianego moduÅ‚u, stanowi funkcjonalnoÅ›Ä‡ przekazywania dokumentÃ³w klientowi. Zasada realizacji tej funkcjonalnoÅ›ci, oraz wszystkie ograniczenia z niÄ… zwiÄ…zane sÄ… analogiczne do elementu przekazywania dokumentu pracownikowi. IstotnÄ… rÃ³Å¼nicÄ…, pomiÄ™dzy tymi funkcjonalnoÅ›ciami, jest brak koniecznoÅ›ci wyboru pracownika w trakcie procesu przekazywania faktur.
 
-Struktury danych, definiuj¹ce pojedyncze przekazanie dokumentu s¹ identyczne dla obu funkcjonalnoœci. W przypadku gdy odbiorc¹ faktury jest klient, jego identyfikator wewn¹trz tej struktury, przybiera wartoœæ nieokreœlon¹ \texttt{null}.
+Struktury danych, definiujÄ…ce pojedyncze przekazanie dokumentu sÄ… identyczne dla obu funkcjonalnoÅ›ci. W przypadku gdy odbiorcÄ… faktury jest klient, jego identyfikator wewnÄ…trz tej struktury, przybiera wartoÅ›Ä‡ nieokreÅ›lonÄ… \texttt{null}.
 
-Trzeci z wymienionych rodzajów transferów dokumentów, czyli zwrot dokumentów do dzia³u sprzeda¿y, jest modyfikacj¹ pierwszego z typów przekazañ. Stanowisko dzia³u sprzeda¿y jest traktowane w systemie w sposób odrêbny, w przeciwieñstwie do pozosta³ych rodzajów funkcji pracowniczych. Charakteryzuje siê ono, mo¿liwoœci¹ przypisania do niego tylko jednego pracownika.
+Trzeci z wymienionych rodzajÃ³w transferÃ³w dokumentÃ³w, czyli zwrot dokumentÃ³w do dziaÅ‚u sprzedaÅ¼y, jest modyfikacjÄ… pierwszego z typÃ³w przekazaÅ„. Stanowisko dziaÅ‚u sprzedaÅ¼y jest traktowane w systemie w sposÃ³b odrÄ™bny, w przeciwieÅ„stwie do pozostaÅ‚ych rodzajÃ³w funkcji pracowniczych. Charakteryzuje siÄ™ ono, moÅ¼liwoÅ›ciÄ… przypisania do niego tylko jednego pracownika.
 
-Dlatego te¿, element zwrotu dokumentu do dzia³u sprzeda¿y jest w rzeczywistoœci funkcjonalnoœci¹ przekazania dokumentu pracownikowi, w którym odbiorca faktury jest z góry okreœlony.
+Dlatego teÅ¼, element zwrotu dokumentu do dziaÅ‚u sprzedaÅ¼y jest w rzeczywistoÅ›ci funkcjonalnoÅ›ciÄ… przekazania dokumentu pracownikowi, w ktÃ³rym odbiorca faktury jest z gÃ³ry okreÅ›lony.
 
-W niniejszym rozdziale przedstawiona zostanie implementacja funkcji transferu dokumentów miêdzy pracownikami.
+W niniejszym rozdziale przedstawiona zostanie implementacja funkcji transferu dokumentÃ³w miÄ™dzy pracownikami.
 
-Na listingu \ref{lst:forward-worker-handle-worker} zilustrowany zosta³ kod Ÿród³owy operacji, wykonywanej w momencie zeskanowania barkodu QR pracownika.
+Na listingu \ref{lst:forward-worker-handle-worker} zilustrowany zostaÅ‚ kod ÅºrÃ³dÅ‚owy operacji, wykonywanej w momencie zeskanowania barkodu QR pracownika.
 
-Dane zawarte wewn¹trz barkodu reprezentowane s¹ w funkcji jako parametr \texttt{data}. Pierwsz¹ operacj¹, jest sprawdzenie, czy dane te nie posiadaj¹ wartoœci nieokreœlonej. Nastêpnie, dokonywana jest konwersja informacji o pracowniku na format obiektowej notacji JavaScipt. Pozwala to, na wykorzystanie tych informacji jako parametr ¿¹dania API. W ramach odpowiedzi interfejsu uzyskiwany jest obiekt parametrów pracownika. Dziêki temu, wiadomym jest ¿e odbiorca jest faktycznym u¿ytkownikiem systemu.
+Dane zawarte wewnÄ…trz barkodu reprezentowane sÄ… w funkcji jako parametr \texttt{data}. PierwszÄ… operacjÄ…, jest sprawdzenie, czy dane te nie posiadajÄ… wartoÅ›ci nieokreÅ›lonej. NastÄ™pnie, dokonywana jest konwersja informacji o pracowniku na format obiektowej notacji JavaScipt. Pozwala to, na wykorzystanie tych informacji jako parametr Å¼Ä…dania API. W ramach odpowiedzi interfejsu uzyskiwany jest obiekt parametrÃ³w pracownika. DziÄ™ki temu, wiadomym jest Å¼e odbiorca jest faktycznym uÅ¼ytkownikiem systemu.
 
-W dalszej kolejnoœci, dokonywane jest porównanie identyfikatorów pracowników, w celu wyeliminowania mo¿liwoœci przekazania faktury samemu sobie. Je¿eli numery identyfikacyjne aktualnie zalogowanego u¿ytkownika oraz odbiorcy s¹ ró¿ne, nastêpuje okreœlenie odbiorcy, a tak¿e zmiana wartoœci zmiennych stanu wewnêtrznego determinuj¹cych aktywnoœæ ustalonych fragmentów widoku.
+W dalszej kolejnoÅ›ci, dokonywane jest porÃ³wnanie identyfikatorÃ³w pracownikÃ³w, w celu wyeliminowania moÅ¼liwoÅ›ci przekazania faktury samemu sobie. JeÅ¼eli numery identyfikacyjne aktualnie zalogowanego uÅ¼ytkownika oraz odbiorcy sÄ… rÃ³Å¼ne, nastÄ™puje okreÅ›lenie odbiorcy, a takÅ¼e zmiana wartoÅ›ci zmiennych stanu wewnÄ™trznego determinujÄ…cych aktywnoÅ›Ä‡ ustalonych fragmentÃ³w widoku.
 
-Wszystkie z opisanych operacji, zawarte s¹ wewn¹trz bloku zg³aszania wyj¹tków, dlatego te¿, w sytuacji wyst¹pienia niespodziewanego b³êdu, u¿ytkownik zostanie o tym fakcie poinformowany.
+Wszystkie z opisanych operacji, zawarte sÄ… wewnÄ…trz bloku zgÅ‚aszania wyjÄ…tkÃ³w, dlatego teÅ¼, w sytuacji wystÄ…pienia niespodziewanego bÅ‚Ä™du, uÅ¼ytkownik zostanie o tym fakcie poinformowany.
 
 \begin{lstlisting}[label=lst:forward-worker-handle-worker,caption=Kod funkcji wykonywanej po zeskanowaniu barkodu pracownika, captionpos=b,basicstyle=\footnotesize\ttfamily,language=JavaScript]
 const handleScannedWorker = (data) => {
@@ -344,7 +344,7 @@ const handleScannedWorker = (data) => {
 			httpClient.Workers.listOneByUserName(json.userName);
 			.then((response) => {
 				if (response.id === user.id) {
-					setCameraOneMessage('Nie mo¿na przekazaæ sobie dokumentu');
+					setCameraOneMessage('Nie moÅ¼na przekazaÄ‡ sobie dokumentu');
 				} else {
 					setChosenWorker(response);
 					setCameraOneScanned(true);
@@ -357,15 +357,15 @@ const handleScannedWorker = (data) => {
 				toast.error('Brak pracownika o podanym loginie');
 			});
 		} catch (e) {
-			toast.error('Wyst¹pi³ b³¹d skanowania');
+			toast.error('WystÄ…piÅ‚ bÅ‚Ä…d skanowania');
 		}
 	}
 };
 \end{lstlisting}
 
-Po pomyœlnym zweryfikowaniu danych odbiorcy, wykonywane zostaje skanowanie dokumentów. Na listingu \ref{lst:forward-worker-handle-document} przedstawiony zosta³ kod metody, uruchamianej po sczytaniu danych faktury.
+Po pomyÅ›lnym zweryfikowaniu danych odbiorcy, wykonywane zostaje skanowanie dokumentÃ³w. Na listingu \ref{lst:forward-worker-handle-document} przedstawiony zostaÅ‚ kod metody, uruchamianej po sczytaniu danych faktury.
 
-Podobnie jak przy weryfikacji informacji o pracowniku, sprawdzana jest zawartoœæ danych pod kontem wartoœci nieokreœlonej, a tak¿e wykonywana jest konwersja na format JSON. Nastêpnie, identyfikowany zostaje parametr "`s"', oznaczaj¹cy w formacie kodu, numer dokumentu. Stanowi to rodzaj weryfikacji danych faktury po stronie klienta. W kolejnym kroku, aktualnie przechowywany zbiór dokumentów do przekazania jest analizowany pod kontem wystêpowania w nim aktualnie sczytanej faktury. Je¿eli faktury tej nie ma w zbiorze, mo¿e ona zostaæ do niego dodana. W przeciwnym razie, wyœwietlony zostaje stosowny komunikat.
+Podobnie jak przy weryfikacji informacji o pracowniku, sprawdzana jest zawartoÅ›Ä‡ danych pod kontem wartoÅ›ci nieokreÅ›lonej, a takÅ¼e wykonywana jest konwersja na format JSON. NastÄ™pnie, identyfikowany zostaje parametr "`s"', oznaczajÄ…cy w formacie kodu, numer dokumentu. Stanowi to rodzaj weryfikacji danych faktury po stronie klienta. W kolejnym kroku, aktualnie przechowywany zbiÃ³r dokumentÃ³w do przekazania jest analizowany pod kontem wystÄ™powania w nim aktualnie sczytanej faktury. JeÅ¼eli faktury tej nie ma w zbiorze, moÅ¼e ona zostaÄ‡ do niego dodana. W przeciwnym razie, wyÅ›wietlony zostaje stosowny komunikat.
 
 \begin{lstlisting}[label=lst:forward-worker-handle-document,caption=Kod funkcji wykonywanej po zeskanowaniu barkodu dokumentu, captionpos=b,basicstyle=\footnotesize\ttfamily,language=JavaScript]
 const handleScannedInvoice = (data) => {
@@ -378,13 +378,13 @@ const handleScannedInvoice = (data) => {
 				if (found.length === 0) {
 					setScannedDocuments([...documents, json]);
 				} else {
-					setCameraTwoMessage('Dokument zosta³ ju¿ zeskanowany');
+					setCameraTwoMessage('Dokument zostaÅ‚ juÅ¼ zeskanowany');
 					setTimeout(() => {
 					setCameraTwoMessage('Zeskanuj kod przekazywanego dokumentu');
 					}, 1000);
 				}
 			} else {
-				setCameraTwoMessage('Kod QR nie odnosi siê do dokumentu');
+				setCameraTwoMessage('Kod QR nie odnosi siÄ™ do dokumentu');
 			}
 		} catch (e) {
 			setCameraTwoMessage('Struktura kodu jest niepoprawna');
@@ -393,11 +393,11 @@ const handleScannedInvoice = (data) => {
 };
 \end{lstlisting}
 
-Nastêpnym krokiem, po okreœleniu niezbêdnych do realizacji przekazania informacji, jest wprowadzenie do bazy danych wpisów definiuj¹cych transfery faktur. Na listingu \ref{lst:forward-worker-handle-pass}, pokazany zosta³ kod funkcji, odpowiedzialnej za przygotowanie danych oraz wywo³anie ¿¹dania interfejsu API. Interfejs ten, w ramach jednego z punktów koñcowych, wykona operacjê wprowadzenia wpisów przekazañ dokumentów.
+NastÄ™pnym krokiem, po okreÅ›leniu niezbÄ™dnych do realizacji przekazania informacji, jest wprowadzenie do bazy danych wpisÃ³w definiujÄ…cych transfery faktur. Na listingu \ref{lst:forward-worker-handle-pass}, pokazany zostaÅ‚ kod funkcji, odpowiedzialnej za przygotowanie danych oraz wywoÅ‚anie Å¼Ä…dania interfejsu API. Interfejs ten, w ramach jednego z punktÃ³w koÅ„cowych, wykona operacjÄ™ wprowadzenia wpisÃ³w przekazaÅ„ dokumentÃ³w.
 
-Pierwszym elementem funkcji z listingu \ref{lst:forward-worker-handle-pass}, jest zdefiniowanie zasobu dokumentu na podstawie danych barkodu. Nastêpnie, dokument ten staje siê elementem obiektu przekazania, który pe³ni rolê zasobu nadrzêdnego. Kolejno, wykonywana jest metoda \texttt{forwardToWorker}, której zadaniem jest wygenerowanie ¿¹dania do interfejsu API. Wszystkie z tych operacji, przeprowadzane s¹ wewn¹trz asynchronicznej pêtli \texttt{forEach}. Pozwala to na zachowanie kolejnoœci wprowadzania przekazañ, oraz ustalenie sekwencyjnoœci d³ugo trwaj¹cych operacji. Po zakoñczeniu pêtli, ³adowane s¹ wszystkie wiadomoœci dotycz¹ce ewentualnych b³êdów zwi¹zanych z przekazaniami.
+Pierwszym elementem funkcji z listingu \ref{lst:forward-worker-handle-pass}, jest zdefiniowanie zasobu dokumentu na podstawie danych barkodu. NastÄ™pnie, dokument ten staje siÄ™ elementem obiektu przekazania, ktÃ³ry peÅ‚ni rolÄ™ zasobu nadrzÄ™dnego. Kolejno, wykonywana jest metoda \texttt{forwardToWorker}, ktÃ³rej zadaniem jest wygenerowanie Å¼Ä…dania do interfejsu API. Wszystkie z tych operacji, przeprowadzane sÄ… wewnÄ…trz asynchronicznej pÄ™tli \texttt{forEach}. Pozwala to na zachowanie kolejnoÅ›ci wprowadzania przekazaÅ„, oraz ustalenie sekwencyjnoÅ›ci dÅ‚ugo trwajÄ…cych operacji. Po zakoÅ„czeniu pÄ™tli, Å‚adowane sÄ… wszystkie wiadomoÅ›ci dotyczÄ…ce ewentualnych bÅ‚Ä™dÃ³w zwiÄ…zanych z przekazaniami.
 
-\begin{lstlisting}[label=lst:forward-worker-handle-pass,caption=Kod funkcji przekazania dokumentów, captionpos=b,basicstyle=\footnotesize\ttfamily,language=JavaScript]
+\begin{lstlisting}[label=lst:forward-worker-handle-pass,caption=Kod funkcji przekazania dokumentÃ³w, captionpos=b,basicstyle=\footnotesize\ttfamily,language=JavaScript]
 const handleDocumentsPass = async () => {
 	await forEachAsync(scannedDocuments, async (scan) => {
 		let document = {
@@ -424,42 +424,42 @@ const handleDocumentsPass = async () => {
 };
 \end{lstlisting}
 
-Przedstawiony powy¿ej kod, jest ostatnim elementem modu³u transferu dokumentów w obszarze aplikacji klienckiej. W odniesieniu do dziedziny interfejsu API, fragment procedury przekazania dokumentu przedstawiony zosta³ szczegó³owo w podrozdziale \ref{sec:api-implementacja}.
+Przedstawiony powyÅ¼ej kod, jest ostatnim elementem moduÅ‚u transferu dokumentÃ³w w obszarze aplikacji klienckiej. W odniesieniu do dziedziny interfejsu API, fragment procedury przekazania dokumentu przedstawiony zostaÅ‚ szczegÃ³Å‚owo w podrozdziale \ref{sec:api-implementacja}.
 
-\subsection{Œledzenie dokumentów}
-Ide¹ modu³u œledzenia dokumentów jest mo¿liwoœæ dostarczenia informacji o stanie faktur, zarówno tych aktualnie przekazywanych, jak i archiwalnych. Opisywany fragment oprogramowania zawiera dwie funkcjonalnoœci (tj. przegl¹danie dokumentów oraz przegl¹danie archiwum).
+\subsection{Åšledzenie dokumentÃ³w}
+IdeÄ… moduÅ‚u Å›ledzenia dokumentÃ³w jest moÅ¼liwoÅ›Ä‡ dostarczenia informacji o stanie faktur, zarÃ³wno tych aktualnie przekazywanych, jak i archiwalnych. Opisywany fragment oprogramowania zawiera dwie funkcjonalnoÅ›ci (tj. przeglÄ…danie dokumentÃ³w oraz przeglÄ…danie archiwum).
 
-W ramach przegl¹du dokumentów, u¿ytkownikowi ukazywany jest widok tabelaryczny, w którym kolejne z wierszy tabeli reprezentuj¹ poszczególne faktury. Dla ka¿dego z poœwiadczeñ sprzeda¿y, okreœlony jest jego aktualny stan. Dziêki temu rozwi¹zaniu, pracownik jest w stanie oceniæ, czy dokument znajduje siê u któregoœ ze wspó³pracowników, czy te¿ zosta³ przekazany klientowi.
+W ramach przeglÄ…du dokumentÃ³w, uÅ¼ytkownikowi ukazywany jest widok tabelaryczny, w ktÃ³rym kolejne z wierszy tabeli reprezentujÄ… poszczegÃ³lne faktury. Dla kaÅ¼dego z poÅ›wiadczeÅ„ sprzedaÅ¼y, okreÅ›lony jest jego aktualny stan. DziÄ™ki temu rozwiÄ…zaniu, pracownik jest w stanie oceniÄ‡, czy dokument znajduje siÄ™ u ktÃ³regoÅ› ze wspÃ³Å‚pracownikÃ³w, czy teÅ¼ zostaÅ‚ przekazany klientowi.
 
-Ponadto, w widoku zawarte s¹ informacje charakteryzuj¹ce fakturê (tj. symbol, dane kontrahenta oraz sposób p³atnoœci). Co wiêcej, opisywany element interfejsu dostarcza funkcjonalnoœæ wprowadzenia oraz przegl¹dania uwag i wyjaœnieñ zwi¹zanych z dokumentem.
+Ponadto, w widoku zawarte sÄ… informacje charakteryzujÄ…ce fakturÄ™ (tj. symbol, dane kontrahenta oraz sposÃ³b pÅ‚atnoÅ›ci). Co wiÄ™cej, opisywany element interfejsu dostarcza funkcjonalnoÅ›Ä‡ wprowadzenia oraz przeglÄ…dania uwag i wyjaÅ›nieÅ„ zwiÄ…zanych z dokumentem.
 
-Dane, zawarte wewn¹trz modu³u przegl¹dania dokumentów, aktualizowane s¹ bez odœwie¿ania widoku, dziêki implementacji komunikacji z wykorzystaniem protoko³u gniazd sieciowych.
+Dane, zawarte wewnÄ…trz moduÅ‚u przeglÄ…dania dokumentÃ³w, aktualizowane sÄ… bez odÅ›wieÅ¼ania widoku, dziÄ™ki implementacji komunikacji z wykorzystaniem protokoÅ‚u gniazd sieciowych.
 
-Funkcjonalnoœæ przegl¹dania dokumentów archiwalnych, ma za zadanie zapewniæ mo¿liwoœæ rozstrzygania kwestii spornych, dotycz¹cych faktu dostarczenia poœwiadczenia sprzeda¿y do klienta.
+FunkcjonalnoÅ›Ä‡ przeglÄ…dania dokumentÃ³w archiwalnych, ma za zadanie zapewniÄ‡ moÅ¼liwoÅ›Ä‡ rozstrzygania kwestii spornych, dotyczÄ…cych faktu dostarczenia poÅ›wiadczenia sprzedaÅ¼y do klienta.
 
-Wszystkie faktury, których stan okreœlony jest jako "`Przekazano klientowi"', w dniu nastêpnym wprowadzone zostaj¹ do archiwum.
+Wszystkie faktury, ktÃ³rych stan okreÅ›lony jest jako "`Przekazano klientowi"', w dniu nastÄ™pnym wprowadzone zostajÄ… do archiwum.
 
-W ramach widoku archiwum, dostêpne s¹ te same dane, co w przypadku przegl¹dania aktualnie przekazywanych dokumentów.
+W ramach widoku archiwum, dostÄ™pne sÄ… te same dane, co w przypadku przeglÄ…dania aktualnie przekazywanych dokumentÃ³w.
 
-\subsection{Nadzorowanie dostawców}
-Modu³ nadzorowania dostawców zawiera w sobie funkcjonalnoœci: monitorowania trasy dostawcy, przegl¹dania wpisów kilometrów, przegl¹dania historii lokalizacji pracowników oraz przegl¹dania notatek handlowych.
+\subsection{Nadzorowanie dostawcÃ³w}
+ModuÅ‚ nadzorowania dostawcÃ³w zawiera w sobie funkcjonalnoÅ›ci: monitorowania trasy dostawcy, przeglÄ…dania wpisÃ³w kilometrÃ³w, przeglÄ…dania historii lokalizacji pracownikÃ³w oraz przeglÄ…dania notatek handlowych.
 
-Funkcjonalnoœæ monitorowania trasy dostawcy pozwala:
+FunkcjonalnoÅ›Ä‡ monitorowania trasy dostawcy pozwala:
 \begin{itemize}
-	\item Badaæ aktualn¹ lokalizacjê danego pracownika
-	\item Obserwowaæ status dokumentów do niego przypisanych
-	\item Prowadziæ z nim konwersacjê tekstow¹
-	\item Przegl¹daæ jego statystyki efektywnoœci.
+	\item BadaÄ‡ aktualnÄ… lokalizacjÄ™ danego pracownika
+	\item ObserwowaÄ‡ status dokumentÃ³w do niego przypisanych
+	\item ProwadziÄ‡ z nim konwersacjÄ™ tekstowÄ…
+	\item PrzeglÄ…daÄ‡ jego statystyki efektywnoÅ›ci.
 \end{itemize}
 
-W momencie przejœcia do widoku funkcjonalnoœci, pobierana zostaje z serwera lista wszystkich pracowników firmy. Na jej podstawie, generowana jest wartoœæ w³aœciwoœci wyliczanej, reprezentuj¹ca wszystkich u¿ytkowników za wyj¹tkiem zalogowanego pracownika. Ponadto, nastêpuje inicjacja po³¹czenia z serwerem z wykorzystaniem protoko³u WebSockets. Nastêpnie, wartoœæ wyliczana wykorzystywana jest jako zbiór danych dla listy wyboru, za pomoc¹ której u¿ytkownik okreœla, który z pracowników ma byæ nadzorowany.
+W momencie przejÅ›cia do widoku funkcjonalnoÅ›ci, pobierana zostaje z serwera lista wszystkich pracownikÃ³w firmy. Na jej podstawie, generowana jest wartoÅ›Ä‡ wÅ‚aÅ›ciwoÅ›ci wyliczanej, reprezentujÄ…ca wszystkich uÅ¼ytkownikÃ³w za wyjÄ…tkiem zalogowanego pracownika. Ponadto, nastÄ™puje inicjacja poÅ‚Ä…czenia z serwerem z wykorzystaniem protokoÅ‚u WebSockets. NastÄ™pnie, wartoÅ›Ä‡ wyliczana wykorzystywana jest jako zbiÃ³r danych dla listy wyboru, za pomocÄ… ktÃ³rej uÅ¼ytkownik okreÅ›la, ktÃ³ry z pracownikÃ³w ma byÄ‡ nadzorowany.
 
-Wybór pracownika z listy, determinuje przypisanie obiektu z jego danymi do wartoœci obserwowalnej, pobranie jego najnowszej pozycji lokalizacyjnej, powi¹zanych z nim dokumentów, a tak¿e statystyk efektywnoœci. Ka¿da z tych operacji, polega na wys³aniu konkretnego ¿¹dania do interfejsu API.
+WybÃ³r pracownika z listy, determinuje przypisanie obiektu z jego danymi do wartoÅ›ci obserwowalnej, pobranie jego najnowszej pozycji lokalizacyjnej, powiÄ…zanych z nim dokumentÃ³w, a takÅ¼e statystyk efektywnoÅ›ci. KaÅ¼da z tych operacji, polega na wysÅ‚aniu konkretnego Å¼Ä…dania do interfejsu API.
 
-Po ustaleniu lokalizacji pracownika za pomoc¹ aplikacji mobilnej, wywo³ywana zostaje metoda serwera, której jedynym zadaniem jest powiadomienie wszystkich po³¹czonych klientów o wprowadzeniu do bazy danych nowego wpisu lokalizacji. Na takie zdarzenie, reaguje komponent aplikacji webowej, pobieraj¹c za pomoc¹ ¿¹dania API, najnowsz¹ lokalizacjê pracownika i wprowadzaj¹c j¹ do wartoœci obserwowalnej. Skutkuje to, aktualizacj¹ fragmentów widoku przedstawiaj¹cych adres aktualnej lokalizacji oraz ilustracjê mapy.
-Na listingu \ref{lst:receive-add-location} przedstawiono omówion¹ powy¿ej metodê nas³uchuj¹c¹ na zdarzenie wprowadzenia danych lokalizacyjnych.
+Po ustaleniu lokalizacji pracownika za pomocÄ… aplikacji mobilnej, wywoÅ‚ywana zostaje metoda serwera, ktÃ³rej jedynym zadaniem jest powiadomienie wszystkich poÅ‚Ä…czonych klientÃ³w o wprowadzeniu do bazy danych nowego wpisu lokalizacji. Na takie zdarzenie, reaguje komponent aplikacji webowej, pobierajÄ…c za pomocÄ… Å¼Ä…dania API, najnowszÄ… lokalizacjÄ™ pracownika i wprowadzajÄ…c jÄ… do wartoÅ›ci obserwowalnej. Skutkuje to, aktualizacjÄ… fragmentÃ³w widoku przedstawiajÄ…cych adres aktualnej lokalizacji oraz ilustracjÄ™ mapy.
+Na listingu \ref{lst:receive-add-location} przedstawiono omÃ³wionÄ… powyÅ¼ej metodÄ™ nasÅ‚uchujÄ…cÄ… na zdarzenie wprowadzenia danych lokalizacyjnych.
 
-\begin{lstlisting}[label=lst:receive-add-location,caption=Kod akcji nas³uchuj¹cej na zdarzenie dodania lokalizacji pracownika, captionpos=b,basicstyle=\footnotesize\ttfamily,language=JavaScript]
+\begin{lstlisting}[label=lst:receive-add-location,caption=Kod akcji nasÅ‚uchujÄ…cej na zdarzenie dodania lokalizacji pracownika, captionpos=b,basicstyle=\footnotesize\ttfamily,language=JavaScript]
 this.hub.on('ReceiveAddLocation', async () => {
 	try {
 		let location = await httpClient.LocationPoints.getCurrentLocationForWorker(this.selectedWorkerToInspect.id);
@@ -474,17 +474,17 @@ this.hub.on('ReceiveAddLocation', async () => {
 });
 \end{lstlisting}
 
-W sposób analogiczny, opisaæ mo¿na zasadê aktualizacji danych wewn¹trz bloku przypisanych dokumentów. W tym przypadku, u¿ytkownik za pomoc¹ aplikacji mobilnej w panelu g³ównym, lub za pomoc¹ aplikacji webowej, w widoku przekazania dokumentów, wysy³a do serwera ¿¹danie wykonania metody informuj¹cej o zmianie stanu dokumentów. Metoda ta, przekazuje informacje wszystkim pozosta³ym klientom, a w ramach nas³uchuj¹cej akcji, wykonywane jest pobranie aktualnych danych zwi¹zanych z przypisanymi do pracownika dokumentami.
+W sposÃ³b analogiczny, opisaÄ‡ moÅ¼na zasadÄ™ aktualizacji danych wewnÄ…trz bloku przypisanych dokumentÃ³w. W tym przypadku, uÅ¼ytkownik za pomocÄ… aplikacji mobilnej w panelu gÅ‚Ã³wnym, lub za pomocÄ… aplikacji webowej, w widoku przekazania dokumentÃ³w, wysyÅ‚a do serwera Å¼Ä…danie wykonania metody informujÄ…cej o zmianie stanu dokumentÃ³w. Metoda ta, przekazuje informacje wszystkim pozostaÅ‚ym klientom, a w ramach nasÅ‚uchujÄ…cej akcji, wykonywane jest pobranie aktualnych danych zwiÄ…zanych z przypisanymi do pracownika dokumentami.
 
-Fragment widoku prezentuj¹cy statystyki efektywnoœci pracownika, jest elementem, który nie jest aktualizowany z wykorzystaniem protoko³u gniazd sieciowych. Wynika to z faktu, ¿e dane przedstawiane w tym fragmencie generowane s¹ jednorazowo, po zakoñczeniu pracy przedsiêbiorstwa, przez co w momencie przejœcia do opisywanego widoku, s¹ zawsze aktualne.
+Fragment widoku prezentujÄ…cy statystyki efektywnoÅ›ci pracownika, jest elementem, ktÃ³ry nie jest aktualizowany z wykorzystaniem protokoÅ‚u gniazd sieciowych. Wynika to z faktu, Å¼e dane przedstawiane w tym fragmencie generowane sÄ… jednorazowo, po zakoÅ„czeniu pracy przedsiÄ™biorstwa, przez co w momencie przejÅ›cia do opisywanego widoku, sÄ… zawsze aktualne.
 
-Nastêpn¹ funkcjonalnoœci¹ modu³u nadzoru dostawców, jest przegl¹danie listy wpisów kilometrów. Widok tej funkcjonalnoœci ma formê tabelaryczn¹ i przedstawia wprowadzone wartoœci liczników kilometrów dla okreœlonych pojazdów, z wyszczególnieniem ich kierowcy oraz daty utworzenia wpisu.
+NastÄ™pnÄ… funkcjonalnoÅ›ciÄ… moduÅ‚u nadzoru dostawcÃ³w, jest przeglÄ…danie listy wpisÃ³w kilometrÃ³w. Widok tej funkcjonalnoÅ›ci ma formÄ™ tabelarycznÄ… i przedstawia wprowadzone wartoÅ›ci licznikÃ³w kilometrÃ³w dla okreÅ›lonych pojazdÃ³w, z wyszczegÃ³lnieniem ich kierowcy oraz daty utworzenia wpisu.
 
-Z chwil¹ wybrania widoku, wysy³ane jest ¿¹danie pobrania wszystkich adnotacji dotycz¹cych kilometrów pojazdów. Nastêpnie, wartoœci te nadpisuj¹, uprzedni stan w³aœciwoœci obserwowalnej \texttt{kilometers}. W³aœciwoœæ ta, zawarta wewn¹trz widoku, determinuje jego odœwie¿enie. Nastêpnie, edytowany jest fragment stanu, odpowiedzialny za wyœwietlanie widoku ³adowania treœci. Je¿eli któraœ z opisanych operacji, zakoñczy siê niepowodzeniem, u¿ytkownik jest o tym fakcie informowany poprzez komunikat w formie powiadomienia.
+Z chwilÄ… wybrania widoku, wysyÅ‚ane jest Å¼Ä…danie pobrania wszystkich adnotacji dotyczÄ…cych kilometrÃ³w pojazdÃ³w. NastÄ™pnie, wartoÅ›ci te nadpisujÄ…, uprzedni stan wÅ‚aÅ›ciwoÅ›ci obserwowalnej \texttt{kilometers}. WÅ‚aÅ›ciwoÅ›Ä‡ ta, zawarta wewnÄ…trz widoku, determinuje jego odÅ›wieÅ¼enie. NastÄ™pnie, edytowany jest fragment stanu, odpowiedzialny za wyÅ›wietlanie widoku Å‚adowania treÅ›ci. JeÅ¼eli ktÃ³raÅ› z opisanych operacji, zakoÅ„czy siÄ™ niepowodzeniem, uÅ¼ytkownik jest o tym fakcie informowany poprzez komunikat w formie powiadomienia.
 
-Na listingu \ref{lst:load-kilometers} przedstawiony zosta³ kod Ÿród³owy, akcji pobierania wpisów kilometrów dla pojazdów. 
+Na listingu \ref{lst:load-kilometers} przedstawiony zostaÅ‚ kod ÅºrÃ³dÅ‚owy, akcji pobierania wpisÃ³w kilometrÃ³w dla pojazdÃ³w. 
 
-\begin{lstlisting}[label=lst:load-kilometers,caption=Kod akcji pobieraj¹cej listê kilometrów dla pojazdów, captionpos=b,basicstyle=\footnotesize\ttfamily,language=JavaScript]
+\begin{lstlisting}[label=lst:load-kilometers,caption=Kod akcji pobierajÄ…cej listÄ™ kilometrÃ³w dla pojazdÃ³w, captionpos=b,basicstyle=\footnotesize\ttfamily,language=JavaScript]
 @action loadKilometers = async () => {
 	this.rootStore.loadingsStore.setFetchKilometersLoading(true);
 	try {
@@ -492,26 +492,26 @@ Na listingu \ref{lst:load-kilometers} przedstawiony zosta³ kod Ÿród³owy, akcji p
 		this.kilometers = kilometers;
 		this.rootStore.loadingsStore.setFetchKilometersLoading(false);
 	} catch (error) {
-		toast.error('Nie uda³o siê pobraæ wpisów kilometrów');
+		toast.error('Nie udaÅ‚o siÄ™ pobraÄ‡ wpisÃ³w kilometrÃ³w');
 	}
 };
 \end{lstlisting}
 
-Kolejnymi funkcjonalnoœciami modu³u s¹ widoki pobierania historii lokalizacji oraz notatek handlowych. Oba z tych widoków zosta³y wykonane w sposób analogiczny, poniewa¿ przedstawiaj¹ one znacz¹co pokrewne treœci. W przypadku historii lokalizacji, pokazywane s¹ punkty lokalizacyjne dotycz¹ce pracowników, natomiast dla notatek handlowych, punkty te, rozszerzone s¹ o treœæ notatki oraz jej typ.
+Kolejnymi funkcjonalnoÅ›ciami moduÅ‚u sÄ… widoki pobierania historii lokalizacji oraz notatek handlowych. Oba z tych widokÃ³w zostaÅ‚y wykonane w sposÃ³b analogiczny, poniewaÅ¼ przedstawiajÄ… one znaczÄ…co pokrewne treÅ›ci. W przypadku historii lokalizacji, pokazywane sÄ… punkty lokalizacyjne dotyczÄ…ce pracownikÃ³w, natomiast dla notatek handlowych, punkty te, rozszerzone sÄ… o treÅ›Ä‡ notatki oraz jej typ.
 
-Po wejœciu do widoku przegl¹du historii lokalizacji, sprawdzana zostaje wartoœæ w³aœciwoœci obserwowalnej \texttt{workers}, reprezentuj¹cej listê wszystkich pracowników. Je¿eli wartoœæ ta, jest zero-elementow¹ tablic¹, oznacza to, ¿e zbiór pracowników nigdy wczeœniej nie zosta³ pobrany, wiêc nale¿y to uczyniæ w tym momencie. W przeciwnym razie, procedura uzyskiwania listy u¿ytkowników z interfejsu API jest pomijana.
+Po wejÅ›ciu do widoku przeglÄ…du historii lokalizacji, sprawdzana zostaje wartoÅ›Ä‡ wÅ‚aÅ›ciwoÅ›ci obserwowalnej \texttt{workers}, reprezentujÄ…cej listÄ™ wszystkich pracownikÃ³w. JeÅ¼eli wartoÅ›Ä‡ ta, jest zero-elementowÄ… tablicÄ…, oznacza to, Å¼e zbiÃ³r pracownikÃ³w nigdy wczeÅ›niej nie zostaÅ‚ pobrany, wiÄ™c naleÅ¼y to uczyniÄ‡ w tym momencie. W przeciwnym razie, procedura uzyskiwania listy uÅ¼ytkownikÃ³w z interfejsu API jest pomijana.
 
-Nastêpnie, u¿ytkownik wybiera jednego spoœród pracowników, dla którego chce analizowaæ historiê wpisów lokalizacji. Skutkuje to, wywo³aniem akcji magazynu, pobieraj¹cej, grupuj¹cej oraz sortuj¹cej dane adnotacji lokalizacyjnych.
+NastÄ™pnie, uÅ¼ytkownik wybiera jednego spoÅ›rÃ³d pracownikÃ³w, dla ktÃ³rego chce analizowaÄ‡ historiÄ™ wpisÃ³w lokalizacji. Skutkuje to, wywoÅ‚aniem akcji magazynu, pobierajÄ…cej, grupujÄ…cej oraz sortujÄ…cej dane adnotacji lokalizacyjnych.
 
-Na pocz¹tku, w akcji tej, sprawdzana jest zawartoœæ zmiennej identyfikuj¹cej wybranego pracownika. Je¿eli zmienna, nie jest nieokreœlona, nastêpuje wys³anie ¿¹dania API dotycz¹cego wszystkich punktów lokalizacji pracownika. Po otrzymaniu tych punktów, s¹ one grupowane po w³aœciwoœci \texttt{date} (tj. dacie wprowadzenia), a nastêpnie sortowane wzglêdem parametru \texttt{created}. Parametr ten, poza dat¹ przechowuje tak¿e czas utworzenia wpisu lokalizacyjnego.
+Na poczÄ…tku, w akcji tej, sprawdzana jest zawartoÅ›Ä‡ zmiennej identyfikujÄ…cej wybranego pracownika. JeÅ¼eli zmienna, nie jest nieokreÅ›lona, nastÄ™puje wysÅ‚anie Å¼Ä…dania API dotyczÄ…cego wszystkich punktÃ³w lokalizacji pracownika. Po otrzymaniu tych punktÃ³w, sÄ… one grupowane po wÅ‚aÅ›ciwoÅ›ci \texttt{date} (tj. dacie wprowadzenia), a nastÄ™pnie sortowane wzglÄ™dem parametru \texttt{created}. Parametr ten, poza datÄ… przechowuje takÅ¼e czas utworzenia wpisu lokalizacyjnego.
 
-Przetworzone informacje s¹ nastêpnie wprowadzane do w³aœciwoœci obserwowalnej, co determinuje wyœwietlenie zbioru dat dotycz¹cych wpisów pod elementem listy wskazuj¹cym na wybranego pracownika w widoku komponentu. Modyfikowana jest tak¿e w³aœciwoœæ wskazuj¹ca na wyœwietlanie animacji ³adowania wpisów.
+Przetworzone informacje sÄ… nastÄ™pnie wprowadzane do wÅ‚aÅ›ciwoÅ›ci obserwowalnej, co determinuje wyÅ›wietlenie zbioru dat dotyczÄ…cych wpisÃ³w pod elementem listy wskazujÄ…cym na wybranego pracownika w widoku komponentu. Modyfikowana jest takÅ¼e wÅ‚aÅ›ciwoÅ›Ä‡ wskazujÄ…ca na wyÅ›wietlanie animacji Å‚adowania wpisÃ³w.
 
-Niepowodzenie procedury wykonania ¿¹dania jest obs³ugiwane wewn¹trz bloku \texttt{catch} i wi¹¿e siê z wprowadzeniem do w³aœciwoœci obserwowalnej punktów lokalizacyjnych wartoœci nieokreœlonej.
+Niepowodzenie procedury wykonania Å¼Ä…dania jest obsÅ‚ugiwane wewnÄ…trz bloku \texttt{catch} i wiÄ…Å¼e siÄ™ z wprowadzeniem do wÅ‚aÅ›ciwoÅ›ci obserwowalnej punktÃ³w lokalizacyjnych wartoÅ›ci nieokreÅ›lonej.
 
-Na listingu \ref{lst:load-location-points} ukazano procedurê pobrania punktów lokalizacyjnych.
+Na listingu \ref{lst:load-location-points} ukazano procedurÄ™ pobrania punktÃ³w lokalizacyjnych.
 
-\begin{lstlisting}[label=lst:load-location-points,caption=Kod akcji pobieraj¹cej listê punktów lokalizacyjnych dla pracownika, captionpos=b,basicstyle=\footnotesize\ttfamily,language=JavaScript]
+\begin{lstlisting}[label=lst:load-location-points,caption=Kod akcji pobierajÄ…cej listÄ™ punktÃ³w lokalizacyjnych dla pracownika, captionpos=b,basicstyle=\footnotesize\ttfamily,language=JavaScript]
 @action loadLocationPoints = () => {
 	if (this.selectedWorker === null) {
 		this.locationPoints = null;
@@ -531,11 +531,11 @@ Na listingu \ref{lst:load-location-points} ukazano procedurê pobrania punktów lo
 };
 \end{lstlisting}
 
-W przypadku przedstawionej powy¿ej funkcji, nale¿y wspomnieæ o metodach grupowania oraz sortowania uzyskanych danych. W przypadku pierwszej z metod, wykorzystana zosta³a funkcja \texttt{reduce}, która na podstawie tablicy generuje pojedynczy obiekt danych. Jej pierwszym parametrem jest wywo³anie zwrotne wykonywane przy ka¿dej iteracji po tablicy, drugi parametr natomiast, to wartoœæ inicjuj¹ca docelowy obiekt. Wynik funkcji, czyli wyliczana, zgodnie z okreœlonym schematem wartoœæ, jest przypisywany do zmiennej która nastêpnie zostaje zwrócona.
+W przypadku przedstawionej powyÅ¼ej funkcji, naleÅ¼y wspomnieÄ‡ o metodach grupowania oraz sortowania uzyskanych danych. W przypadku pierwszej z metod, wykorzystana zostaÅ‚a funkcja \texttt{reduce}, ktÃ³ra na podstawie tablicy generuje pojedynczy obiekt danych. Jej pierwszym parametrem jest wywoÅ‚anie zwrotne wykonywane przy kaÅ¼dej iteracji po tablicy, drugi parametr natomiast, to wartoÅ›Ä‡ inicjujÄ…ca docelowy obiekt. Wynik funkcji, czyli wyliczana, zgodnie z okreÅ›lonym schematem wartoÅ›Ä‡, jest przypisywany do zmiennej ktÃ³ra nastÄ™pnie zostaje zwrÃ³cona.
 
-Na listingu \ref{lst:group-location-points} pokazana zosta³a omówiona metoda grupowania danych.
+Na listingu \ref{lst:group-location-points} pokazana zostaÅ‚a omÃ³wiona metoda grupowania danych.
 
-\begin{lstlisting}[label=lst:group-location-points,caption=Kod metody grupuj¹cej uzyskane punkty lokalizacyjne, captionpos=b,basicstyle=\footnotesize\ttfamily,language=JavaScript]
+\begin{lstlisting}[label=lst:group-location-points,caption=Kod metody grupujÄ…cej uzyskane punkty lokalizacyjne, captionpos=b,basicstyle=\footnotesize\ttfamily,language=JavaScript]
 groupLocationPoints = async (points, by) => {
 	let result = points.reduce((point, attribute) => {
 		point[attribute[by]] = point[attribute[by]] || [];
@@ -547,11 +547,11 @@ groupLocationPoints = async (points, by) => {
 };
 \end{lstlisting}
 
-Metoda sortowania danych lokalizacyjnych, opiera siê na iteracji po grupowanym uprzednio obiekcie. Dla ka¿dego z przebiegów pêtli, w pomocniczej tablicy, zainicjowanej pocz¹tkowo tablic¹ nieposortowan¹, nadpisywane s¹ wartoœci, po wywo³aniu funkcji \texttt{sort}. Na koniec, pomocnicza tablica jest zwracana.
+Metoda sortowania danych lokalizacyjnych, opiera siÄ™ na iteracji po grupowanym uprzednio obiekcie. Dla kaÅ¼dego z przebiegÃ³w pÄ™tli, w pomocniczej tablicy, zainicjowanej poczÄ…tkowo tablicÄ… nieposortowanÄ…, nadpisywane sÄ… wartoÅ›ci, po wywoÅ‚aniu funkcji \texttt{sort}. Na koniec, pomocnicza tablica jest zwracana.
 
-Funkcjê sortowania punktów lokalizacyjnych przedstawiono na listingu \ref{lst:sort-location-points}.
+FunkcjÄ™ sortowania punktÃ³w lokalizacyjnych przedstawiono na listingu \ref{lst:sort-location-points}.
 
-\begin{lstlisting}[label=lst:sort-location-points,caption=Kod metody sortuj¹cej uzyskane punkty lokalizacyjne, captionpos=b,basicstyle=\footnotesize\ttfamily,language=JavaScript]
+\begin{lstlisting}[label=lst:sort-location-points,caption=Kod metody sortujÄ…cej uzyskane punkty lokalizacyjne, captionpos=b,basicstyle=\footnotesize\ttfamily,language=JavaScript]
 sortLocationPoints = async (points, by) => {
 	let sortedLocations = points;
 	for (const [keyIndex, location] of Object.entries(sortedPoints)) {
@@ -562,13 +562,13 @@ sortLocationPoints = async (points, by) => {
 };
 \end{lstlisting}
 
-Po przetworzeniu danych oraz wprowadzeniu ich do zmiennej obserwowalnej, generowane s¹ dwie w³aœciwoœci wyliczane. Pierwsza z nich reprezentuje te punkty lokalizacyjne, które zosta³y uzyskane w wyniku cyklicznego pobierania lokalizacji. Druga natomiast, przedstawia punkty wygenerowane w momencie przekazania dokumentów. Wyœwietlanie konkretnego typu wpisów lokalizacji, jest uzale¿nione od zaznaczenia odpowiedniej opcji w widoku funkcjonalnoœci.
+Po przetworzeniu danych oraz wprowadzeniu ich do zmiennej obserwowalnej, generowane sÄ… dwie wÅ‚aÅ›ciwoÅ›ci wyliczane. Pierwsza z nich reprezentuje te punkty lokalizacyjne, ktÃ³re zostaÅ‚y uzyskane w wyniku cyklicznego pobierania lokalizacji. Druga natomiast, przedstawia punkty wygenerowane w momencie przekazania dokumentÃ³w. WyÅ›wietlanie konkretnego typu wpisÃ³w lokalizacji, jest uzaleÅ¼nione od zaznaczenia odpowiedniej opcji w widoku funkcjonalnoÅ›ci.
 
-Okreœlony typ wpisów, ukazywany zostaje w komponencie mapy, jako zbiór interaktywnych znaczników. Wybranie dowolnego znacznika, powoduje pokazanie siê ma³ego okienka informacyjnego, zawieraj¹cego wszystkie dane konkretnego punktu lokalizacji.
+OkreÅ›lony typ wpisÃ³w, ukazywany zostaje w komponencie mapy, jako zbiÃ³r interaktywnych znacznikÃ³w. Wybranie dowolnego znacznika, powoduje pokazanie siÄ™ maÅ‚ego okienka informacyjnego, zawierajÄ…cego wszystkie dane konkretnego punktu lokalizacji.
 
-Na listingu \ref{lst:component-map}, zilustrowano fragment widoku komponentu, odpowiedzialnego za wyœwietlanie mapy oraz znaczników lokalizacji.
+Na listingu \ref{lst:component-map}, zilustrowano fragment widoku komponentu, odpowiedzialnego za wyÅ›wietlanie mapy oraz znacznikÃ³w lokalizacji.
 
-\begin{lstlisting}[label=lst:component-map,caption=Kod komponentu wyœwietlaj¹cego mapê oraz znaczniki lokalizacji, captionpos=b,basicstyle=\footnotesize\ttfamily,language=JavaScript]
+\begin{lstlisting}[label=lst:component-map,caption=Kod komponentu wyÅ›wietlajÄ…cego mapÄ™ oraz znaczniki lokalizacji, captionpos=b,basicstyle=\footnotesize\ttfamily,language=JavaScript]
 <Map
 center={[configuration.companyLatitude, configuration.companyLongitude]}>
 ...
@@ -616,24 +616,24 @@ center={[configuration.companyLatitude, configuration.companyLongitude]}>
 )}
 \end{lstlisting}
 
-\subsection{Powiadamianie klientów}
-W ramach funkcjonalnoœci powiadamiania klienta, u¿ytkownik wybiera dokumenty, dla których, przypisani do nich kontrahenci dostan¹ informacjê e-mailow¹, dotycz¹c¹ aktualnego statusu faktury.
+\subsection{Powiadamianie klientÃ³w}
+W ramach funkcjonalnoÅ›ci powiadamiania klienta, uÅ¼ytkownik wybiera dokumenty, dla ktÃ³rych, przypisani do nich kontrahenci dostanÄ… informacjÄ™ e-mailowÄ…, dotyczÄ…cÄ… aktualnego statusu faktury.
 
-W obrêbie omawianego modu³u, zdefiniowane zosta³y dwa szablony wiadomoœci e-mail. Zadaniem pierwszego z nich, jest poinformowanie klienta o przekazaniu dokumentu jednemu z pracowników wewn¹trz firmy. Wi¹¿e siê to z zaprezentowaniem kontrahentowi komunikatu "`Twoje zamówienie jest w trakcie realizacji"'. Za pomoc¹ wiadomoœci opartej na drugim z szablonów, klient zostaje zawiadomiony o niezw³ocznej wizycie dostawcy towaru.
+W obrÄ™bie omawianego moduÅ‚u, zdefiniowane zostaÅ‚y dwa szablony wiadomoÅ›ci e-mail. Zadaniem pierwszego z nich, jest poinformowanie klienta o przekazaniu dokumentu jednemu z pracownikÃ³w wewnÄ…trz firmy. WiÄ…Å¼e siÄ™ to z zaprezentowaniem kontrahentowi komunikatu "`Twoje zamÃ³wienie jest w trakcie realizacji"'. Za pomocÄ… wiadomoÅ›ci opartej na drugim z szablonÃ³w, klient zostaje zawiadomiony o niezwÅ‚ocznej wizycie dostawcy towaru.
 
-Wiadomoœæ dotycz¹ca kroku pierwszego procedury dostarczania towaru, wysy³ana jest automatycznie do klienta w chwili pierwszego przekazania dokumentu miêdzy pracownikami. Warunkiem powiadomienia kontrahenta, jest dostêpnoœæ jego danych kontaktowych w bazie klientów.
+WiadomoÅ›Ä‡ dotyczÄ…ca kroku pierwszego procedury dostarczania towaru, wysyÅ‚ana jest automatycznie do klienta w chwili pierwszego przekazania dokumentu miÄ™dzy pracownikami. Warunkiem powiadomienia kontrahenta, jest dostÄ™pnoÅ›Ä‡ jego danych kontaktowych w bazie klientÃ³w.
 
-Informacja, zwi¹zana z drugim krokiem dostawy, wys³ana mo¿e zostaæ za poœrednictwem dedykowanego widoku aplikacji webowej, lub poprzez naciœniêcie konkretnego przycisku w panelu g³ównym aplikacji mobilnej.
+Informacja, zwiÄ…zana z drugim krokiem dostawy, wysÅ‚ana moÅ¼e zostaÄ‡ za poÅ›rednictwem dedykowanego widoku aplikacji webowej, lub poprzez naciÅ›niÄ™cie konkretnego przycisku w panelu gÅ‚Ã³wnym aplikacji mobilnej.
 
-Do przekazywania wiadomoœci e-mail z wykorzystaniem interfejsu API, u¿yta zosta³a biblioteka MailKit. Ponadto, w zwi¹zku z relatywnie d³ugim czasem trwania wysy³ania wiadomoœci, w porównaniu do uzyskiwania odpowiedzi odnoœnie danych, metoda dostarczania e-mail jest wykonywana zgodnie z zasad¹ "`wywo³aj i zapomnij"' \textit{(ang. Fire And Forget)}. Rozwi¹zanie to, pozwala na redukcjê czasu odpowiedzi punktu koñcowego API.
+Do przekazywania wiadomoÅ›ci e-mail z wykorzystaniem interfejsu API, uÅ¼yta zostaÅ‚a biblioteka MailKit. Ponadto, w zwiÄ…zku z relatywnie dÅ‚ugim czasem trwania wysyÅ‚ania wiadomoÅ›ci, w porÃ³wnaniu do uzyskiwania odpowiedzi odnoÅ›nie danych, metoda dostarczania e-mail jest wykonywana zgodnie z zasadÄ… "`wywoÅ‚aj i zapomnij"' \textit{(ang. Fire And Forget)}. RozwiÄ…zanie to, pozwala na redukcjÄ™ czasu odpowiedzi punktu koÅ„cowego API.
 
-Na listingu \ref{lst:service-fire-and-forget} przedstawiona zosta³a metoda generycznej klasy \texttt{FireForgetHandlerService}, odpowiedzialna za wykonanie funkcji dowolnego serwisu, zgodnie z technik¹ "`wywo³aj i zapomnij"'.
+Na listingu \ref{lst:service-fire-and-forget} przedstawiona zostaÅ‚a metoda generycznej klasy \texttt{FireForgetHandlerService}, odpowiedzialna za wykonanie funkcji dowolnego serwisu, zgodnie z technikÄ… "`wywoÅ‚aj i zapomnij"'.
 
-Jako parametr metoda \texttt{ExecuteffTask} przyjmuje funkcjê dowolnej klasy zwracaj¹c¹ typ \texttt{Task} (tj. funkcjê asynchroniczn¹). Wewn¹trz cia³a funkcji sk³adowej, tworzone jest nowe asynchroniczne zadanie. W zadaniu tym, wygenerowany zostaje zakres wywo³ywania serwisów \textit{(ang. scope)}. Jest to mo¿liwe, dziêki zastosowaniu instancji klasy \texttt{ServiceScopeFactory}, której abstrakcja zostaje dostarczona z wykorzystaniem mechanizmu wstrzykiwania zale¿noœci. W zwi¹zku z u¿yciem dyrektywy \texttt{using}, zakres jest usuwany od razu po zakoñczeniu bloku instrukcji. Nastêpnie, tworzona jest zmienna, przechowuj¹ca obiekt wywo³ywanego serwisu. Ostatni¹ instrukcj¹ metody, jest uruchomienie wywo³ania zwrotnego, przekazanego jako parametr, do³¹czaj¹c jako jego atrybut instancjê serwisu.
+Jako parametr metoda \texttt{ExecuteffTask} przyjmuje funkcjÄ™ dowolnej klasy zwracajÄ…cÄ… typ \texttt{Task} (tj. funkcjÄ™ asynchronicznÄ…). WewnÄ…trz ciaÅ‚a funkcji skÅ‚adowej, tworzone jest nowe asynchroniczne zadanie. W zadaniu tym, wygenerowany zostaje zakres wywoÅ‚ywania serwisÃ³w \textit{(ang. scope)}. Jest to moÅ¼liwe, dziÄ™ki zastosowaniu instancji klasy \texttt{ServiceScopeFactory}, ktÃ³rej abstrakcja zostaje dostarczona z wykorzystaniem mechanizmu wstrzykiwania zaleÅ¼noÅ›ci. W zwiÄ…zku z uÅ¼yciem dyrektywy \texttt{using}, zakres jest usuwany od razu po zakoÅ„czeniu bloku instrukcji. NastÄ™pnie, tworzona jest zmienna, przechowujÄ…ca obiekt wywoÅ‚ywanego serwisu. OstatniÄ… instrukcjÄ… metody, jest uruchomienie wywoÅ‚ania zwrotnego, przekazanego jako parametr, doÅ‚Ä…czajÄ…c jako jego atrybut instancjÄ™ serwisu.
 
-Je¿eli w trakcie którejœ z opisanych operacji wyst¹pi nieoczekiwany b³¹d, sterowanie zostanie przekazane do bloku \texttt{catch}. Skutkowa³o to bêdzie wyœwietleniem komunikatu niepowodzenia.
+JeÅ¼eli w trakcie ktÃ³rejÅ› z opisanych operacji wystÄ…pi nieoczekiwany bÅ‚Ä…d, sterowanie zostanie przekazane do bloku \texttt{catch}. SkutkowaÅ‚o to bÄ™dzie wyÅ›wietleniem komunikatu niepowodzenia.
 
-\begin{lstlisting}[label=lst:service-fire-and-forget,caption=Kod metody wykonuj¹cej funkcjê typu "`Fire And Forget"', captionpos=b,basicstyle=\footnotesize\ttfamily,style=sharpcstyle,language={[Sharp]C}]
+\begin{lstlisting}[label=lst:service-fire-and-forget,caption=Kod metody wykonujÄ…cej funkcjÄ™ typu "`Fire And Forget"', captionpos=b,basicstyle=\footnotesize\ttfamily,style=sharpcstyle,language={[Sharp]C}]
 public void ExecuteffTask(Func<T, Task> someLongRunningServiceTask) {
 	Task.Run(async () => {
 		try {
@@ -647,11 +647,11 @@ public void ExecuteffTask(Func<T, Task> someLongRunningServiceTask) {
 }
 \end{lstlisting}
 
-Posiadaj¹c tak przygotowan¹ metodê, mo¿liwe jest skorzystanie z niej, w kontekœcie wywo³ania serwisu wiadomoœci e-mail. Poczyniono tak wewn¹trz klasy kontrolera \texttt{EmailsController}. Na listingu \ref{lst:endpoint-email} pokazany zosta³ kod Ÿród³owy metody serwisu odpowiedzialnej za wysy³anie wiadomoœci za poœrednictwem poczty elektronicznej.
+PosiadajÄ…c tak przygotowanÄ… metodÄ™, moÅ¼liwe jest skorzystanie z niej, w kontekÅ›cie wywoÅ‚ania serwisu wiadomoÅ›ci e-mail. Poczyniono tak wewnÄ…trz klasy kontrolera \texttt{EmailsController}. Na listingu \ref{lst:endpoint-email} pokazany zostaÅ‚ kod ÅºrÃ³dÅ‚owy metody serwisu odpowiedzialnej za wysyÅ‚anie wiadomoÅ›ci za poÅ›rednictwem poczty elektronicznej.
 
-G³ównym fragmentem funkcji sk³adowej jest wykonanie omówionej w poprzednich akapitach metody \texttt{ExecuteffTask}. Metoda ta, zosta³a uruchomiona na rzecz obiektu klasy \texttt{FireForgetHandlerService}, która powi¹zana jest z klas¹ kontrolera \texttt{EmailsController} poprzez wykorzystanie mechanizmu wstrzykiwania zale¿noœci. Zasadniczym celem przedstawianej procedury, jest odwo³anie siê do funkcji \texttt{SendEmailAsync} serwisu \texttt{EmailService}.
+GÅ‚Ã³wnym fragmentem funkcji skÅ‚adowej jest wykonanie omÃ³wionej w poprzednich akapitach metody \texttt{ExecuteffTask}. Metoda ta, zostaÅ‚a uruchomiona na rzecz obiektu klasy \texttt{FireForgetHandlerService}, ktÃ³ra powiÄ…zana jest z klasÄ… kontrolera \texttt{EmailsController} poprzez wykorzystanie mechanizmu wstrzykiwania zaleÅ¼noÅ›ci. Zasadniczym celem przedstawianej procedury, jest odwoÅ‚anie siÄ™ do funkcji \texttt{SendEmailAsync} serwisu \texttt{EmailService}.
 
-\begin{lstlisting}[label=lst:endpoint-email,caption=Kod punktu koñcowego odpowiedzialnego za wysy³anie wiadomoœci e-mail, captionpos=b,basicstyle=\footnotesize\ttfamily,style=sharpcstyle,language={[Sharp]C}]
+\begin{lstlisting}[label=lst:endpoint-email,caption=Kod punktu koÅ„cowego odpowiedzialnego za wysyÅ‚anie wiadomoÅ›ci e-mail, captionpos=b,basicstyle=\footnotesize\ttfamily,style=sharpcstyle,language={[Sharp]C}]
 public IActionResult SendAsync ([FromBody] SendClientEmailResource resource) {
 	if (!ModelState.IsValid) {
 		return BadRequest(ModelState.GetModelStateErrorMessagesInfo());
@@ -665,15 +665,15 @@ public IActionResult SendAsync ([FromBody] SendClientEmailResource resource) {
 }
 \end{lstlisting}
 
-Funkcja \texttt{SendEmailAsync}, na pocz¹tku ma za zadanie sprawdziæ istnienie okreœlonego dokumentu. Nastêpnie weryfikowane zostaj¹ dane kontaktowe przypisane do miejsca dostawy. Je¿eli dane te, s¹ nieokreœlone, wykorzystywane s¹ informacje adresowe kontrahenta.
+Funkcja \texttt{SendEmailAsync}, na poczÄ…tku ma za zadanie sprawdziÄ‡ istnienie okreÅ›lonego dokumentu. NastÄ™pnie weryfikowane zostajÄ… dane kontaktowe przypisane do miejsca dostawy. JeÅ¼eli dane te, sÄ… nieokreÅ›lone, wykorzystywane sÄ… informacje adresowe kontrahenta.
 
-Posiadawszy adres odbiorcy, tworzony zostaje tymczasowy obiekt klasy \texttt{Message}, przechowuj¹cy wszystkie elementy sk³adowe wiadomoœci e-mail. Kolejno, jest on przekazywany jako parametr funkcji \texttt{CreateEmailMessage}, gdzie zostaje wykorzystany przy budowie obiektu \texttt{MimeMessage}. Obiekt ten, poza atrybutami struktury pomocniczej, przechowuje zawartoœæ wys³anej wiadomoœci. Zawartoœæ, wczytana zostaje z pliku \texttt{html}, a nastêpnie w miejsce znaczników szablonu wprowadzane s¹ okreœlone wartoœci dotycz¹ce kontrahenta.
+Posiadawszy adres odbiorcy, tworzony zostaje tymczasowy obiekt klasy \texttt{Message}, przechowujÄ…cy wszystkie elementy skÅ‚adowe wiadomoÅ›ci e-mail. Kolejno, jest on przekazywany jako parametr funkcji \texttt{CreateEmailMessage}, gdzie zostaje wykorzystany przy budowie obiektu \texttt{MimeMessage}. Obiekt ten, poza atrybutami struktury pomocniczej, przechowuje zawartoÅ›Ä‡ wysÅ‚anej wiadomoÅ›ci. ZawartoÅ›Ä‡, wczytana zostaje z pliku \texttt{html}, a nastÄ™pnie w miejsce znacznikÃ³w szablonu wprowadzane sÄ… okreÅ›lone wartoÅ›ci dotyczÄ…ce kontrahenta.
 
-Tak przygotowany obiekt wiadomoœci, staje siê atrybutem metody \texttt{SendAsync}, odpowiadaj¹cej za realizacjê faktycznego wys³ania wiadomoœci. Na pocz¹tku tej metody, tworzona jest zmienna, przechowuj¹ca instancjê klasy \texttt{SmtpClient}. Odpowiada ona za obs³ugê ¿¹dañ w ramach klienta protoko³u poczty wychodz¹cej. Nastêpnie, inicjowane jest po³¹czenie z serwerem pocztowym. Jest ono mo¿liwe dziêki podaniu informacji uwierzytelniaj¹cych, zapisanych w konfiguracji interfejsu API. W kolejnym kroku, wysy³ana jest wiadomoœæ (tj. funkcji wysy³ania wiadomoœci przekazywany zostaje obiekt klasy \texttt{MimeMessage}). Po wys³aniu wiadomoœci, nastêpuje zakoñczenie komunikacji z serwerem oraz zwrócenie nowej instancji wiadomoœci, jako sygnalizacja poprawnoœci wykonania metody.
+Tak przygotowany obiekt wiadomoÅ›ci, staje siÄ™ atrybutem metody \texttt{SendAsync}, odpowiadajÄ…cej za realizacjÄ™ faktycznego wysÅ‚ania wiadomoÅ›ci. Na poczÄ…tku tej metody, tworzona jest zmienna, przechowujÄ…ca instancjÄ™ klasy \texttt{SmtpClient}. Odpowiada ona za obsÅ‚ugÄ™ Å¼Ä…daÅ„ w ramach klienta protokoÅ‚u poczty wychodzÄ…cej. NastÄ™pnie, inicjowane jest poÅ‚Ä…czenie z serwerem pocztowym. Jest ono moÅ¼liwe dziÄ™ki podaniu informacji uwierzytelniajÄ…cych, zapisanych w konfiguracji interfejsu API. W kolejnym kroku, wysyÅ‚ana jest wiadomoÅ›Ä‡ (tj. funkcji wysyÅ‚ania wiadomoÅ›ci przekazywany zostaje obiekt klasy \texttt{MimeMessage}). Po wysÅ‚aniu wiadomoÅ›ci, nastÄ™puje zakoÅ„czenie komunikacji z serwerem oraz zwrÃ³cenie nowej instancji wiadomoÅ›ci, jako sygnalizacja poprawnoÅ›ci wykonania metody.
 
-Na listingu \ref{lst:service-email}, zilustrowano omówion¹ powy¿ej metodê wysy³ania wiadomoœci e-mail.
+Na listingu \ref{lst:service-email}, zilustrowano omÃ³wionÄ… powyÅ¼ej metodÄ™ wysyÅ‚ania wiadomoÅ›ci e-mail.
 
-\begin{lstlisting}[label=lst:service-email,caption=Kod metody serwisu odpowiedzialnej za wysy³anie wiadomoœci e-mail, captionpos=b,basicstyle=\footnotesize\ttfamily,style=sharpcstyle,language={[Sharp]C}]
+\begin{lstlisting}[label=lst:service-email,caption=Kod metody serwisu odpowiedzialnej za wysyÅ‚anie wiadomoÅ›ci e-mail, captionpos=b,basicstyle=\footnotesize\ttfamily,style=sharpcstyle,language={[Sharp]C}]
 private async Task<Response<Message>> SendAsync(MimeMessage emailMessage) {
 	using var client = new SmtpClient();
 	try {
@@ -686,37 +686,37 @@ private async Task<Response<Message>> SendAsync(MimeMessage emailMessage) {
 	catch (Exception e) {
 		Console.WriteLine("Mailkit {e.Message}");
 		await client.DisconnectAsync(true);
-		return new Response<Message>("Wyst¹pi³ b³¹d serwera pocztowego");
+		return new Response<Message>("WystÄ…piÅ‚ bÅ‚Ä…d serwera pocztowego");
 	}
 }
 \end{lstlisting}
 \subsection{Wyznaczanie trasy dostawy}
 \label{sec:wyznaczanie-trasy}
-Modu³ wyznaczania trasy dostawy, implementuje przedstawiony we wstêpie teoretycznym, algorytm genetyczny dla problemu komiwoja¿era. W ramach funkcjonalnoœci modu³u, u¿ytkownik, na podstawie danych z przypisanych do niego dokumentów, mo¿e wyznaczyæ trasê jak¹ powinien obraæ, aby dostarczyæ wszystkie towary powi¹zane z posiadanymi poœwiadczeniami sprzeda¿y.
+ModuÅ‚ wyznaczania trasy dostawy, implementuje przedstawiony we wstÄ™pie teoretycznym, algorytm genetyczny dla problemu komiwojaÅ¼era. W ramach funkcjonalnoÅ›ci moduÅ‚u, uÅ¼ytkownik, na podstawie danych z przypisanych do niego dokumentÃ³w, moÅ¼e wyznaczyÄ‡ trasÄ™ jakÄ… powinien obraÄ‡, aby dostarczyÄ‡ wszystkie towary powiÄ…zane z posiadanymi poÅ›wiadczeniami sprzedaÅ¼y.
 
-Z racji specyfiki problemu, która przedstawiona zosta³a w sposób szczegó³owy w rozdziale \ref{subsec:TSPwprowadzenie}, przygotowany algorytm wyznacza trasê optymaln¹, lub w znacznym stopniu zbli¿on¹ do optymalnej. Przy za³o¿eniu dotycz¹cym mo¿liwoœci wprowadzania nieograniczonej liczby punktów trasy, uzyskanie wyniku optymalnego dla ka¿dej instancji problemu jest niemo¿liwe.
+Z racji specyfiki problemu, ktÃ³ra przedstawiona zostaÅ‚a w sposÃ³b szczegÃ³Å‚owy w rozdziale \ref{subsec:TSPwprowadzenie}, przygotowany algorytm wyznacza trasÄ™ optymalnÄ…, lub w znacznym stopniu zbliÅ¼onÄ… do optymalnej. Przy zaÅ‚oÅ¼eniu dotyczÄ…cym moÅ¼liwoÅ›ci wprowadzania nieograniczonej liczby punktÃ³w trasy, uzyskanie wyniku optymalnego dla kaÅ¼dej instancji problemu jest niemoÅ¼liwe.
 
-Po przejœciu do widoku opisywanej funkcjonalnoœci, u¿ytkownikowi ukazywana jest lista znalezionych punktów dostawy oraz fragment mapy. Dla ka¿dego z przypisanych do pracownika dokumentów, je¿eli w ramach faktury okreœlone zosta³y dane adresowe, znajdowane s¹ wspó³rzêdne miejsca dostawy, a nastêpnie dodawane s¹ one na mapie. W przypadku, gdy z poœwiadczeniem sprzeda¿y nie zosta³y powi¹zane jakiekolwiek dane adresu, dokument ukazywany zostaje w sekcji znalezionych punktów z adnotacj¹ o koniecznoœci wybrania dla niego lokalizacji.
+Po przejÅ›ciu do widoku opisywanej funkcjonalnoÅ›ci, uÅ¼ytkownikowi ukazywana jest lista znalezionych punktÃ³w dostawy oraz fragment mapy. Dla kaÅ¼dego z przypisanych do pracownika dokumentÃ³w, jeÅ¼eli w ramach faktury okreÅ›lone zostaÅ‚y dane adresowe, znajdowane sÄ… wspÃ³Å‚rzÄ™dne miejsca dostawy, a nastÄ™pnie dodawane sÄ… one na mapie. W przypadku, gdy z poÅ›wiadczeniem sprzedaÅ¼y nie zostaÅ‚y powiÄ…zane jakiekolwiek dane adresu, dokument ukazywany zostaje w sekcji znalezionych punktÃ³w z adnotacjÄ… o koniecznoÅ›ci wybrania dla niego lokalizacji.
 
-Po opcjonalnym przypisaniu danych lokalizacyjnych do faktur, u¿ytkownik wybiera przycisk wywo³uj¹cy wykonanie algorytmu.
+Po opcjonalnym przypisaniu danych lokalizacyjnych do faktur, uÅ¼ytkownik wybiera przycisk wywoÅ‚ujÄ…cy wykonanie algorytmu.
 
-Aby uzyskaæ wynik dzia³ania algorytmu, nale¿y wys³aæ ¿¹danie do interfejsu API, który w ramach okreœlonego punktu koñcowego, wykona kod kontrolera oraz serwisu dla procedury wyliczania trasy.
+Aby uzyskaÄ‡ wynik dziaÅ‚ania algorytmu, naleÅ¼y wysÅ‚aÄ‡ Å¼Ä…danie do interfejsu API, ktÃ³ry w ramach okreÅ›lonego punktu koÅ„cowego, wykona kod kontrolera oraz serwisu dla procedury wyliczania trasy.
 
-W momencie uzyskania ¿¹dania dotycz¹cego wyznaczenia trasy, walidowany zostaje obiekt, w którym okreœlone s¹ punkty pokonywanej drogi. Nastêpnie, punkty te zostaj¹ odwzorowane na instancje klas modelu interfejsu API. W kolejnym kroku, wywo³ywany zostaje serwis realizuj¹cy operacjê wyliczania drogi.
+W momencie uzyskania Å¼Ä…dania dotyczÄ…cego wyznaczenia trasy, walidowany zostaje obiekt, w ktÃ³rym okreÅ›lone sÄ… punkty pokonywanej drogi. NastÄ™pnie, punkty te zostajÄ… odwzorowane na instancje klas modelu interfejsu API. W kolejnym kroku, wywoÅ‚ywany zostaje serwis realizujÄ…cy operacjÄ™ wyliczania drogi.
 
-W ramach serwisu, na pocz¹tku definiowane s¹ parametry konfiguracyjne algorytmu. Wœród tych parametrów mo¿emy wyró¿niæ: prawdopodobieñstwo mutacji, liczba punktów trasy, rozmiar populacji, oraz liczba osobników dominuj¹cych dla populacji potomnej. W przypadku dwóch pierwszych charakterystyk, wartoœci te s¹ sta³e. Dwie pozosta³e natomiast, zale¿ne s¹ od liczby punktów trasy i wynosz¹ kolejno: 0.75 oraz 0.25 z liczby wszystkich miejsc dostawy. Obie wartoœci zaokr¹glane s¹ w dó³ do najbli¿szych liczb naturalnych.
+W ramach serwisu, na poczÄ…tku definiowane sÄ… parametry konfiguracyjne algorytmu. WÅ›rÃ³d tych parametrÃ³w moÅ¼emy wyrÃ³Å¼niÄ‡: prawdopodobieÅ„stwo mutacji, liczba punktÃ³w trasy, rozmiar populacji, oraz liczba osobnikÃ³w dominujÄ…cych dla populacji potomnej. W przypadku dwÃ³ch pierwszych charakterystyk, wartoÅ›ci te sÄ… staÅ‚e. Dwie pozostaÅ‚e natomiast, zaleÅ¼ne sÄ… od liczby punktÃ³w trasy i wynoszÄ… kolejno: 0.75 oraz 0.25 z liczby wszystkich miejsc dostawy. Obie wartoÅ›ci zaokrÄ…glane sÄ… w dÃ³Å‚ do najbliÅ¼szych liczb naturalnych.
 
-W kolejnym kroku, po wprowadzeniu wartoœci konfiguracyjnych, uruchamiany jest nowy w¹tek, w ramach którego przeprowadzane s¹ obliczenia. Czas trwania tych obliczeñ, zdefiniowano na 60 sekund. Okres ten, stanowi warunek zakoñczenia algorytmu.
+W kolejnym kroku, po wprowadzeniu wartoÅ›ci konfiguracyjnych, uruchamiany jest nowy wÄ…tek, w ramach ktÃ³rego przeprowadzane sÄ… obliczenia. Czas trwania tych obliczeÅ„, zdefiniowano na 60 sekund. Okres ten, stanowi warunek zakoÅ„czenia algorytmu.
 
-Pocz¹tkowym krokiem procedury, jest zdefiniowanie rozwi¹zania pocz¹tkowego, bêd¹cego losowym u³o¿eniem wszystkich wprowadzonych punktów dostawy. Nastêpnie, czynnoœci wykonywane s¹ w pêtli, dla której warunkiem zakoñczenia jest flaga, modyfikowana w momencie up³ywu czasu obliczeñ.
+PoczÄ…tkowym krokiem procedury, jest zdefiniowanie rozwiÄ…zania poczÄ…tkowego, bÄ™dÄ…cego losowym uÅ‚oÅ¼eniem wszystkich wprowadzonych punktÃ³w dostawy. NastÄ™pnie, czynnoÅ›ci wykonywane sÄ… w pÄ™tli, dla ktÃ³rej warunkiem zakoÅ„czenia jest flaga, modyfikowana w momencie upÅ‚ywu czasu obliczeÅ„.
 
-W pierwszym kroku pêtli, aktualne rozwi¹zanie okreœlane zostaje jako najlepsze. Kolejno, wyliczana jest wartoœæ funkcji przystosowania populacji dla aktualnie najbardziej optymalnej trasy. W nastêpnym kroku, rozpoczyna siê etap ewolucji rozwi¹zañ, w ramach którego tworzona jest nowa populacja. Populacja ta, powstaje na bazie osobników dominuj¹cych z poprzedniej grupy oraz operacji selekcji, krzy¿owania, a tak¿e mutacji. Je¿eli wartoœæ funkcji przystosowania populacji potomnej jest wiêksza od wartoœci dla poprzedniej instancji, modyfikowana zostaje flaga, pozwalaj¹ca na okreœlenie rozwi¹zania, jako nowe najbardziej optymalne.
+W pierwszym kroku pÄ™tli, aktualne rozwiÄ…zanie okreÅ›lane zostaje jako najlepsze. Kolejno, wyliczana jest wartoÅ›Ä‡ funkcji przystosowania populacji dla aktualnie najbardziej optymalnej trasy. W nastÄ™pnym kroku, rozpoczyna siÄ™ etap ewolucji rozwiÄ…zaÅ„, w ramach ktÃ³rego tworzona jest nowa populacja. Populacja ta, powstaje na bazie osobnikÃ³w dominujÄ…cych z poprzedniej grupy oraz operacji selekcji, krzyÅ¼owania, a takÅ¼e mutacji. JeÅ¼eli wartoÅ›Ä‡ funkcji przystosowania populacji potomnej jest wiÄ™ksza od wartoÅ›ci dla poprzedniej instancji, modyfikowana zostaje flaga, pozwalajÄ…ca na okreÅ›lenie rozwiÄ…zania, jako nowe najbardziej optymalne.
 
-Z chwil¹ zakoñczenia pêtli, wywo³ywana jest procedura zapisuj¹ca najlepszy wynik oraz przypisuj¹ca kolejnym punktom trasy numery porz¹dkowe.
+Z chwilÄ… zakoÅ„czenia pÄ™tli, wywoÅ‚ywana jest procedura zapisujÄ…ca najlepszy wynik oraz przypisujÄ…ca kolejnym punktom trasy numery porzÄ…dkowe.
 
-Na listingu \ref{lst:road-plan-alg-1} przedstawiona zosta³a omówiona powy¿ej metoda wyznaczania trasy dostawy dokumentów.
+Na listingu \ref{lst:road-plan-alg-1} przedstawiona zostaÅ‚a omÃ³wiona powyÅ¼ej metoda wyznaczania trasy dostawy dokumentÃ³w.
 
-\begin{lstlisting}[label=lst:road-plan-alg-1,caption=Kod metody odpowiedzialnej za wyznaczenie trasy dostawy dla zbioru dokumentów, captionpos=b,basicstyle=\footnotesize\ttfamily,style=sharpcstyle,language={[Sharp]C}]
+\begin{lstlisting}[label=lst:road-plan-alg-1,caption=Kod metody odpowiedzialnej za wyznaczenie trasy dostawy dla zbioru dokumentÃ³w, captionpos=b,basicstyle=\footnotesize\ttfamily,style=sharpcstyle,language={[Sharp]C}]
 public void Run() {
 	DeliveryRoad startDeliveryRoad = new DeliveryRoad(Coordinates);
 	Population population = Population.DrawPopulation(startDeliveryRoad, Config.PopulationSize);
@@ -741,11 +741,11 @@ public void Run() {
 }
 \end{lstlisting}
 
-Kluczowym elementem omawianej metody jest funkcja sk³adowa o nazwie \texttt{PerformEvolution}. Wewn¹trz tej funkcji, wybierane zostaj¹ osobniki dominuj¹ce z poprzedniej populacji oraz nowe osobniki zbioru potomnego. Populacja potomna stanowi z³¹czenie obu zbiorów osobników.
+Kluczowym elementem omawianej metody jest funkcja skÅ‚adowa o nazwie \texttt{PerformEvolution}. WewnÄ…trz tej funkcji, wybierane zostajÄ… osobniki dominujÄ…ce z poprzedniej populacji oraz nowe osobniki zbioru potomnego. Populacja potomna stanowi zÅ‚Ä…czenie obu zbiorÃ³w osobnikÃ³w.
 
-Kod Ÿród³owy funkcji sk³adowej \texttt{PerformEvolution} ukazany zosta³ na listingu \ref{lst:road-plan-perform-evolution}. 
+Kod ÅºrÃ³dÅ‚owy funkcji skÅ‚adowej \texttt{PerformEvolution} ukazany zostaÅ‚ na listingu \ref{lst:road-plan-perform-evolution}. 
 
-\begin{lstlisting}[label=lst:road-plan-perform-evolution,caption=Kod funkcji sk³adowej wyboru populacji potomnej, captionpos=b,basicstyle=\footnotesize\ttfamily,style=sharpcstyle,language={[Sharp]C}]
+\begin{lstlisting}[label=lst:road-plan-perform-evolution,caption=Kod funkcji skÅ‚adowej wyboru populacji potomnej, captionpos=b,basicstyle=\footnotesize\ttfamily,style=sharpcstyle,language={[Sharp]C}]
 public Population PerformEvolution()
 {
 	var dominants = GenerateDominants(Config.NumberOfDominantsInDescendantPopulation);
@@ -756,13 +756,13 @@ public Population PerformEvolution()
 }
 \end{lstlisting}
 
-Aby zrozumieæ zasadê dzia³ania funkcji z listingu \ref{lst:road-plan-perform-evolution}, nale¿y przeanalizowaæ metody \texttt{GenerateDominants} oraz \texttt{GenerateDescendantIndividuals}. Pierwsza z nich, prowadzi do wyboru osobników o najwiêkszej wartoœci funkcji dopasowania, spoœród tych, aktualnie znajduj¹cych siê w populacji.
+Aby zrozumieÄ‡ zasadÄ™ dziaÅ‚ania funkcji z listingu \ref{lst:road-plan-perform-evolution}, naleÅ¼y przeanalizowaÄ‡ metody \texttt{GenerateDominants} oraz \texttt{GenerateDescendantIndividuals}. Pierwsza z nich, prowadzi do wyboru osobnikÃ³w o najwiÄ™kszej wartoÅ›ci funkcji dopasowania, spoÅ›rÃ³d tych, aktualnie znajdujÄ…cych siÄ™ w populacji.
 
-Na pocz¹tku, tworzona jest instancja populacji na bazie aktualnie wygenerowanych osobników. Ponadto, zdefiniowana zostaje tak¿e lista rozwi¹zañ, która bêdzie stanowi³a zbiór osobników zwracanej populacji. W pêtli, wykonywanej tyle razy, ile wynosi wartoœæ okreœlona w parametrach konfiguracyjnych, wybierane s¹ najlepiej dopasowane osobniki, po czym dodawane zostaj¹ do zwracanej listy. 
+Na poczÄ…tku, tworzona jest instancja populacji na bazie aktualnie wygenerowanych osobnikÃ³w. Ponadto, zdefiniowana zostaje takÅ¼e lista rozwiÄ…zaÅ„, ktÃ³ra bÄ™dzie stanowiÅ‚a zbiÃ³r osobnikÃ³w zwracanej populacji. W pÄ™tli, wykonywanej tyle razy, ile wynosi wartoÅ›Ä‡ okreÅ›lona w parametrach konfiguracyjnych, wybierane sÄ… najlepiej dopasowane osobniki, po czym dodawane zostajÄ… do zwracanej listy. 
 
 Na listingu \ref{lst:road-plan-generate-dominants}, zilustrowano kod metody \texttt{GenerateDominants}.
 
-\begin{lstlisting}[label=lst:road-plan-generate-dominants,caption=Kod metody generuj¹cej zbiór osobników dominuj¹cych dla nowej populacji, captionpos=b,basicstyle=\footnotesize\ttfamily,style=sharpcstyle,language={[Sharp]C}]
+\begin{lstlisting}[label=lst:road-plan-generate-dominants,caption=Kod metody generujÄ…cej zbiÃ³r osobnikÃ³w dominujÄ…cych dla nowej populacji, captionpos=b,basicstyle=\footnotesize\ttfamily,style=sharpcstyle,language={[Sharp]C}]
 public Population GenerateDominants(int count) {
 	var population = new Population(Individuals);
 	var dominants = new List<DeliveryRoad>();
@@ -779,11 +779,11 @@ public Population GenerateDominants(int count) {
 }
 \end{lstlisting}
 
-Metoda \texttt{GenerateDescendantIndividuals} z kolei, utworzona zosta³a w celu wygenerowania pozosta³ych osobników populacji potomnej, za pomoc¹ operacji selekcji, krzy¿owania oraz mutacji. Operacje te, wykonywane s¹ w pêtli, tyle razy, ilu osobników nale¿y wygenerowaæ do nowej populacji. Po przeprowadzeniu procesów algorytmu genetycznego, jednostki dodawane s¹ do zwracanego zbioru.
+Metoda \texttt{GenerateDescendantIndividuals} z kolei, utworzona zostaÅ‚a w celu wygenerowania pozostaÅ‚ych osobnikÃ³w populacji potomnej, za pomocÄ… operacji selekcji, krzyÅ¼owania oraz mutacji. Operacje te, wykonywane sÄ… w pÄ™tli, tyle razy, ilu osobnikÃ³w naleÅ¼y wygenerowaÄ‡ do nowej populacji. Po przeprowadzeniu procesÃ³w algorytmu genetycznego, jednostki dodawane sÄ… do zwracanego zbioru.
 
-W ramach listingu \ref{lst:road-plan-generate-others}, przedstawiono kod Ÿród³owy metody generowania pozosta³ych osobników populacji.
+W ramach listingu \ref{lst:road-plan-generate-others}, przedstawiono kod ÅºrÃ³dÅ‚owy metody generowania pozostaÅ‚ych osobnikÃ³w populacji.
 
-\begin{lstlisting}[label=lst:road-plan-generate-others,caption=Kod metody generuj¹cej zbiór pozosta³ych osobników dla nowej populacji, captionpos=b,basicstyle=\footnotesize\ttfamily,style=sharpcstyle,language={[Sharp]C}]
+\begin{lstlisting}[label=lst:road-plan-generate-others,caption=Kod metody generujÄ…cej zbiÃ³r pozostaÅ‚ych osobnikÃ³w dla nowej populacji, captionpos=b,basicstyle=\footnotesize\ttfamily,style=sharpcstyle,language={[Sharp]C}]
 public Population GenerateDescendantIndividuals(int count) {
 	var individuals = new List<DeliveryRoad>();
 	var i = 0;
@@ -805,15 +805,15 @@ public Population GenerateDescendantIndividuals(int count) {
 }
 \end{lstlisting}
 
-Podstawowymi elementami sk³adowymi ka¿dego algorytmu genetycznego s¹ operacje: selekcji, krzy¿owania oraz mutacji. Poni¿ej, ka¿da z nich zostanie szczegó³owo omówiona.
+Podstawowymi elementami skÅ‚adowymi kaÅ¼dego algorytmu genetycznego sÄ… operacje: selekcji, krzyÅ¼owania oraz mutacji. PoniÅ¼ej, kaÅ¼da z nich zostanie szczegÃ³Å‚owo omÃ³wiona.
 
-W odniesieniu do procedury selekcji osobników, pierwszym krokiem tej operacji wygenerowanie losowej wartoœci stanowi¹cej indeks osobnika z populacji. Nastêpnie, wyliczany jest u³amek, okreœlaj¹cy szanse osobnika, na dostanie siê do populacji potomnej. Szansa ta, to iloraz wartoœci funkcji przystosowania osobnika przez maksymaln¹ wartoœæ przystosowania populacji.
+W odniesieniu do procedury selekcji osobnikÃ³w, pierwszym krokiem tej operacji wygenerowanie losowej wartoÅ›ci stanowiÄ…cej indeks osobnika z populacji. NastÄ™pnie, wyliczany jest uÅ‚amek, okreÅ›lajÄ…cy szanse osobnika, na dostanie siÄ™ do populacji potomnej. Szansa ta, to iloraz wartoÅ›ci funkcji przystosowania osobnika przez maksymalnÄ… wartoÅ›Ä‡ przystosowania populacji.
 
-Je¿eli szansa osobnika, jest wiêksza od losowo wygenerowanej liczby z przedzia³u <0,1>, wówczas osobnik trafia do populacji potomnej.
+JeÅ¼eli szansa osobnika, jest wiÄ™ksza od losowo wygenerowanej liczby z przedziaÅ‚u <0,1>, wÃ³wczas osobnik trafia do populacji potomnej.
 
-Opisana metoda selekcji, nazywana metod¹ ruletkow¹, ukazana zosta³a na listingu \ref{lst:road-plan-generate-others}.
+Opisana metoda selekcji, nazywana metodÄ… ruletkowÄ…, ukazana zostaÅ‚a na listingu \ref{lst:road-plan-generate-others}.
 
-\begin{lstlisting}[label=lst:road-plan-generate-others,caption=Kod metody generuj¹cej zbiór pozosta³ych osobników dla nowej populacji, captionpos=b,basicstyle=\footnotesize\ttfamily,style=sharpcstyle,language={[Sharp]C}]
+\begin{lstlisting}[label=lst:road-plan-generate-others,caption=Kod metody generujÄ…cej zbiÃ³r pozostaÅ‚ych osobnikÃ³w dla nowej populacji, captionpos=b,basicstyle=\footnotesize\ttfamily,style=sharpcstyle,language={[Sharp]C}]
 public DeliveryRoad PerformSelection() {
 	for (;;) {
 		var index = Generator.Next(0, Config.PopulationSize);
@@ -826,13 +826,13 @@ public DeliveryRoad PerformSelection() {
 }
 \end{lstlisting}
 
-Drugim z elementów algorytmu genetycznego jest operacja krzy¿owania. W procedurze tej, losowane s¹ dwie zmienne z zakresu licznoœci punktów dostaw. Pierwsza z nich, posiada zawsze mniejsz¹ wartoœæ od drugiej, poniewa¿ losowanie kolejnej z nich odbywa siê w zakresie rozpoczynaj¹cym siê od wartoœci liczby ju¿ wylosowanej.
+Drugim z elementÃ³w algorytmu genetycznego jest operacja krzyÅ¼owania. W procedurze tej, losowane sÄ… dwie zmienne z zakresu licznoÅ›ci punktÃ³w dostaw. Pierwsza z nich, posiada zawsze mniejszÄ… wartoÅ›Ä‡ od drugiej, poniewaÅ¼ losowanie kolejnej z nich odbywa siÄ™ w zakresie rozpoczynajÄ…cym siÄ™ od wartoÅ›ci liczby juÅ¼ wylosowanej.
 
-Nastêpnie wykonywana jest zamiana fragmentów list wierzcho³ków (punktów dostaw), w obrêbie dwóch ró¿nych osobników. Z jednego osobnika, pobierany jest fragment ograniczony przez zdefiniowane uprzednio liczby, natomiast drugi osobnik dostarcza pozosta³e z fragmentów trasy.
+NastÄ™pnie wykonywana jest zamiana fragmentÃ³w list wierzchoÅ‚kÃ³w (punktÃ³w dostaw), w obrÄ™bie dwÃ³ch rÃ³Å¼nych osobnikÃ³w. Z jednego osobnika, pobierany jest fragment ograniczony przez zdefiniowane uprzednio liczby, natomiast drugi osobnik dostarcza pozostaÅ‚e z fragmentÃ³w trasy.
 
-Przedstawiona procedura krzy¿owania, opisywana jest jako krzy¿owanie dwupunktowe. Treœæ omówionego kodu Ÿród³owego dla operacji krzy¿owania zaprezentowana zosta³a na listingu \ref{lst:road-plan-generate-others}.
+Przedstawiona procedura krzyÅ¼owania, opisywana jest jako krzyÅ¼owanie dwupunktowe. TreÅ›Ä‡ omÃ³wionego kodu ÅºrÃ³dÅ‚owego dla operacji krzyÅ¼owania zaprezentowana zostaÅ‚a na listingu \ref{lst:road-plan-generate-others}.
 
-\begin{lstlisting}[label=lst:road-plan-generate-others,caption=Kod metody generuj¹cej zbiór pozosta³ych osobników dla nowej populacji, captionpos=b,basicstyle=\footnotesize\ttfamily,style=sharpcstyle,language={[Sharp]C}]
+\begin{lstlisting}[label=lst:road-plan-generate-others,caption=Kod metody generujÄ…cej zbiÃ³r pozostaÅ‚ych osobnikÃ³w dla nowej populacji, captionpos=b,basicstyle=\footnotesize\ttfamily,style=sharpcstyle,language={[Sharp]C}]
 public DeliveryRoad PerformCrossing(DeliveryRoad road) {
 	var firstPoint = Generator.Next(0, road.Vertices.Count);
 	var secondPoint = Generator.Next(firstPoint, road.Vertices.Count);
@@ -847,13 +847,13 @@ public DeliveryRoad PerformCrossing(DeliveryRoad road) {
 }
 \end{lstlisting}
 
-Ostatni¹ operacj¹ kluczow¹ dla algorytmu genetycznego jest mutacja osobnika. W ramach tej operacji, pocz¹tkowo wyliczana jest losowa wartoœæ z przedzia³u [ 0,1 ], determinuj¹ca prawdopodobieñstwo zajœcia zdarzenia mutacji. Kolejno, porównana zostaje wylosowana wartoœæ z dan¹ konfiguracyjn¹ prawdopodobieñstwa mutacji. Je¿eli wartoœæ danej konfiguracyjnej jest wiêksza od wygenerowanej losowo liczby, omawiana operacja zachodzi.
+OstatniÄ… operacjÄ… kluczowÄ… dla algorytmu genetycznego jest mutacja osobnika. W ramach tej operacji, poczÄ…tkowo wyliczana jest losowa wartoÅ›Ä‡ z przedziaÅ‚u [ 0,1 ], determinujÄ…ca prawdopodobieÅ„stwo zajÅ›cia zdarzenia mutacji. Kolejno, porÃ³wnana zostaje wylosowana wartoÅ›Ä‡ z danÄ… konfiguracyjnÄ… prawdopodobieÅ„stwa mutacji. JeÅ¼eli wartoÅ›Ä‡ danej konfiguracyjnej jest wiÄ™ksza od wygenerowanej losowo liczby, omawiana operacja zachodzi.
 
-Nastêpnym krokiem jest wyznaczenie dwóch punktów dostaw, stanowi¹cych wierzcho³ki trasy, w celu zamiany ich kolejnoœci. Zmodyfikowana trasa, reprezentuj¹ca pojedynczego osobnika, zostaje na koñcu zwrócona do funkcji wywo³uj¹cej.
+NastÄ™pnym krokiem jest wyznaczenie dwÃ³ch punktÃ³w dostaw, stanowiÄ…cych wierzchoÅ‚ki trasy, w celu zamiany ich kolejnoÅ›ci. Zmodyfikowana trasa, reprezentujÄ…ca pojedynczego osobnika, zostaje na koÅ„cu zwrÃ³cona do funkcji wywoÅ‚ujÄ…cej.
 
-Na listingu \ref{lst:road-plan-mutation}, zilustrowano kod Ÿród³owy metody wykonuj¹cej operacjê mutacji.
+Na listingu \ref{lst:road-plan-mutation}, zilustrowano kod ÅºrÃ³dÅ‚owy metody wykonujÄ…cej operacjÄ™ mutacji.
 
-\begin{lstlisting}[label=lst:road-plan-mutation,caption=Kod funkcji sk³adowej wykonuj¹cej operacjê mutacji osobnika, captionpos=b,basicstyle=\footnotesize\ttfamily,style=sharpcstyle,language={[Sharp]C}]
+\begin{lstlisting}[label=lst:road-plan-mutation,caption=Kod funkcji skÅ‚adowej wykonujÄ…cej operacjÄ™ mutacji osobnika, captionpos=b,basicstyle=\footnotesize\ttfamily,style=sharpcstyle,language={[Sharp]C}]
 public DeliveryRoad PerformMutation() {
 	var coordinates = new List<Vertex>(Vertices);
 	var probability = Generator.NextDouble();
@@ -873,46 +873,46 @@ public DeliveryRoad PerformMutation() {
 }
 \end{lstlisting}
 
-\subsection{Zarz¹dzanie systemem}
-Modu³ zarz¹dzania systemem zawiera w sobie funkcjonalnoœci, pozwalaj¹ce na modyfikacjê zbioru danych, dotycz¹cego kluczowych aspektów przedstawianego oprogramowania. Wyró¿niæ mo¿emy w nim: edycjê danych konfiguracyjnych, usuwanie b³êdnie wprowadzonych dokumentów, zarz¹dzanie wyjaœnieniami, administracjê danych pracowników, aktualizacjê informacji o pojazdach, przyznawanie oraz odbieranie uprawnieñ, a tak¿e przegl¹d statystyk.
+\subsection{ZarzÄ…dzanie systemem}
+ModuÅ‚ zarzÄ…dzania systemem zawiera w sobie funkcjonalnoÅ›ci, pozwalajÄ…ce na modyfikacjÄ™ zbioru danych, dotyczÄ…cego kluczowych aspektÃ³w przedstawianego oprogramowania. WyrÃ³Å¼niÄ‡ moÅ¼emy w nim: edycjÄ™ danych konfiguracyjnych, usuwanie bÅ‚Ä™dnie wprowadzonych dokumentÃ³w, zarzÄ…dzanie wyjaÅ›nieniami, administracjÄ™ danych pracownikÃ³w, aktualizacjÄ™ informacji o pojazdach, przyznawanie oraz odbieranie uprawnieÅ„, a takÅ¼e przeglÄ…d statystyk.
 
-W ramach pierwszej funkcjonalnoœci, u¿ytkownik mo¿e okreœliæ dane adresowe i lokalizacyjne firmy. Informacje te, potrzebne s¹ do prawid³owego dzia³ania modu³u wyznaczania trasy dostawy oraz nadzorowania wewnêtrznych dostawców. Pe³ni¹ one rolê punktu startowego, dla opisanego w podrozdziale \ref{sec:wyznaczanie-trasy} algorytmu komiwoja¿era, a tak¿e pozwalaj¹ okreœliæ pozycjê pracownika na mapie, w sytuacji, gdy nie zosta³ wprowadzony jakikolwiek wpis lokalizacji urz¹dzenia mobilnego.
+W ramach pierwszej funkcjonalnoÅ›ci, uÅ¼ytkownik moÅ¼e okreÅ›liÄ‡ dane adresowe i lokalizacyjne firmy. Informacje te, potrzebne sÄ… do prawidÅ‚owego dziaÅ‚ania moduÅ‚u wyznaczania trasy dostawy oraz nadzorowania wewnÄ™trznych dostawcÃ³w. PeÅ‚niÄ… one rolÄ™ punktu startowego, dla opisanego w podrozdziale \ref{sec:wyznaczanie-trasy} algorytmu komiwojaÅ¼era, a takÅ¼e pozwalajÄ… okreÅ›liÄ‡ pozycjÄ™ pracownika na mapie, w sytuacji, gdy nie zostaÅ‚ wprowadzony jakikolwiek wpis lokalizacji urzÄ…dzenia mobilnego.
 
-Dodatkowo, w obszarze formularza danych konfiguracyjnych, znajduj¹ siê informacje odnoœnie czasu trwania: procedury skanowania dokumentów, przechowywania wpisów w historii lokalizacji, gromadzenia dziennych statystyk kierowców, czy te¿ magazynowania adnotacji archiwalnych dotycz¹cych faktur. Wartoœci te, wykorzystywane s¹ przez skrypty archiwizuj¹ce, w celu okreœlenia zakresu danych, które maj¹ zostaæ usuniête, wraz z zakoñczeniem dnia pracy przedsiêbiorstwa.
+Dodatkowo, w obszarze formularza danych konfiguracyjnych, znajdujÄ… siÄ™ informacje odnoÅ›nie czasu trwania: procedury skanowania dokumentÃ³w, przechowywania wpisÃ³w w historii lokalizacji, gromadzenia dziennych statystyk kierowcÃ³w, czy teÅ¼ magazynowania adnotacji archiwalnych dotyczÄ…cych faktur. WartoÅ›ci te, wykorzystywane sÄ… przez skrypty archiwizujÄ…ce, w celu okreÅ›lenia zakresu danych, ktÃ³re majÄ… zostaÄ‡ usuniÄ™te, wraz z zakoÅ„czeniem dnia pracy przedsiÄ™biorstwa.
 
-Ponadto, formularz zawiera prze³¹cznik, determinuj¹cy domyœlny tryb skanowania dokumentów. Je¿eli znajduje siê on w pozycji w³¹czonej, w funkcjonalnoœciach skanowania uruchomione zostaj¹ komponenty odpowiedzialne za u¿ycie rêcznego skanera kodów QR. W przeciwnym razie, wyœwietlanym komponentem, jest fragment interfejsu pozwalaj¹cy na wykorzystanie kamery internetowej.
+Ponadto, formularz zawiera przeÅ‚Ä…cznik, determinujÄ…cy domyÅ›lny tryb skanowania dokumentÃ³w. JeÅ¼eli znajduje siÄ™ on w pozycji wÅ‚Ä…czonej, w funkcjonalnoÅ›ciach skanowania uruchomione zostajÄ… komponenty odpowiedzialne za uÅ¼ycie rÄ™cznego skanera kodÃ³w QR. W przeciwnym razie, wyÅ›wietlanym komponentem, jest fragment interfejsu pozwalajÄ…cy na wykorzystanie kamery internetowej.
 
-Wszystkie z wymienionych opcji konfiguracyjnych, przechowywane s¹ w bazie danych w formie rekordu jednowierszowej tabeli.
+Wszystkie z wymienionych opcji konfiguracyjnych, przechowywane sÄ… w bazie danych w formie rekordu jednowierszowej tabeli.
 
-Nastêpn¹ funkcjonalnoœci¹ modu³u jest usuwanie dokumentów. Narzêdzie to, zosta³o stworzone, aby zapobiegaæ sytuacji omy³kowego wprowadzenia do systemu niepo¿¹danej faktury. W ramach aplikacji webowej, przygotowany zosta³ widok tabelaryczny, w którym, przy ka¿dym z dokumentów znajduje siê przycisk jego usuniêcia. Naciœniêcie przycisku, powoduje wywo³anie ¿¹dania usuniêcia dowodu sprzeda¿y poprzez interfejs API. W zwi¹zku z ustawionymi wymogami, dotycz¹cymi modyfikacji danych w bazie \textit{(ang. constraints)}, w momencie usuniêcia dokumentu, w sposób kaskadowy skasowane zostaj¹ informacje o jego przekazaniach, a tak¿e wszystkie przypisane do niego uwagi i wyjaœnienia. Rekomendowanym jest, przypisanie uprawnienia do tej funkcjonalnoœci, tylko i wy³¹cznie u¿ytkownikowi sprawuj¹cemu rolê administratora systemu, który móg³by z niej skorzystaæ tylko w szczególnych przypadkach.
+NastÄ™pnÄ… funkcjonalnoÅ›ciÄ… moduÅ‚u jest usuwanie dokumentÃ³w. NarzÄ™dzie to, zostaÅ‚o stworzone, aby zapobiegaÄ‡ sytuacji omyÅ‚kowego wprowadzenia do systemu niepoÅ¼Ä…danej faktury. W ramach aplikacji webowej, przygotowany zostaÅ‚ widok tabelaryczny, w ktÃ³rym, przy kaÅ¼dym z dokumentÃ³w znajduje siÄ™ przycisk jego usuniÄ™cia. NaciÅ›niÄ™cie przycisku, powoduje wywoÅ‚anie Å¼Ä…dania usuniÄ™cia dowodu sprzedaÅ¼y poprzez interfejs API. W zwiÄ…zku z ustawionymi wymogami, dotyczÄ…cymi modyfikacji danych w bazie \textit{(ang. constraints)}, w momencie usuniÄ™cia dokumentu, w sposÃ³b kaskadowy skasowane zostajÄ… informacje o jego przekazaniach, a takÅ¼e wszystkie przypisane do niego uwagi i wyjaÅ›nienia. Rekomendowanym jest, przypisanie uprawnienia do tej funkcjonalnoÅ›ci, tylko i wyÅ‚Ä…cznie uÅ¼ytkownikowi sprawujÄ…cemu rolÄ™ administratora systemu, ktÃ³ry mÃ³gÅ‚by z niej skorzystaÄ‡ tylko w szczegÃ³lnych przypadkach.
 
-Trzeci¹ funkcjonalnoœci¹ segmentu zarz¹dzania systemem jest kontrola wyjaœnieñ. W ramach tej czêœci aplikacji, u¿ytkownikowi przedstawiany jest widok, w którym w kolejnych wierszach tabeli ukazane zostaj¹ informacje, dotycz¹ce utworzonych wyjaœnieñ dokumentów. Pracownik mo¿e analizowaæ przedstawione wyjaœnienia, a tak¿e, po naciœniêciu okreœlonego przycisku, uniewa¿niaæ je.
+TrzeciÄ… funkcjonalnoÅ›ciÄ… segmentu zarzÄ…dzania systemem jest kontrola wyjaÅ›nieÅ„. W ramach tej czÄ™Å›ci aplikacji, uÅ¼ytkownikowi przedstawiany jest widok, w ktÃ³rym w kolejnych wierszach tabeli ukazane zostajÄ… informacje, dotyczÄ…ce utworzonych wyjaÅ›nieÅ„ dokumentÃ³w. Pracownik moÅ¼e analizowaÄ‡ przedstawione wyjaÅ›nienia, a takÅ¼e, po naciÅ›niÄ™ciu okreÅ›lonego przycisku, uniewaÅ¼niaÄ‡ je.
 
-Uniewa¿nienie wyjaœnienia dokumentu wi¹¿e siê z jego usuniêciem z bazy danych, co skutkuje pozostaniem poœwiadczenia sprzeda¿y "`w obiegu"', na kolejne dni pracownicze.
+UniewaÅ¼nienie wyjaÅ›nienia dokumentu wiÄ…Å¼e siÄ™ z jego usuniÄ™ciem z bazy danych, co skutkuje pozostaniem poÅ›wiadczenia sprzedaÅ¼y "`w obiegu"', na kolejne dni pracownicze.
 
-Kolejnymi funkcjonalnoœciami s¹ widoki s³u¿¹ce do modyfikacji danych pracowników oraz pojazdów. W ich kontekœcie, przedstawiæ mo¿emy podstawowe operacje na zbiorach danych, takie jak dodawanie, usuwanie czy modyfikacja informacji o pracownikach, a tak¿e samochodach, dostêpnych w obrêbie oddzia³u firmy. Oba widoki oparte s¹ o tabele przedstawiaj¹ce zbiory danych, a tak¿e formularze w oknach modalnych, wykorzystywane do wprowadzania oraz edycji elementów zbiorów.
+Kolejnymi funkcjonalnoÅ›ciami sÄ… widoki sÅ‚uÅ¼Ä…ce do modyfikacji danych pracownikÃ³w oraz pojazdÃ³w. W ich kontekÅ›cie, przedstawiÄ‡ moÅ¼emy podstawowe operacje na zbiorach danych, takie jak dodawanie, usuwanie czy modyfikacja informacji o pracownikach, a takÅ¼e samochodach, dostÄ™pnych w obrÄ™bie oddziaÅ‚u firmy. Oba widoki oparte sÄ… o tabele przedstawiajÄ…ce zbiory danych, a takÅ¼e formularze w oknach modalnych, wykorzystywane do wprowadzania oraz edycji elementÃ³w zbiorÃ³w.
 
-Poza przedstawionymi funkcjonalnoœciami wyró¿niæ mo¿emy tak¿e, segment przyznawania uprawnieñ pracownikom. W segmencie tym, u¿ytkownik wybiera pracownika, spoœród listy wszystkich dostêpnych, a nastêpnie, z wykorzystaniem listy prze³¹czników, definiuje do których fragmentów aplikacji pracownik powinien mieæ dostêp.
+Poza przedstawionymi funkcjonalnoÅ›ciami wyrÃ³Å¼niÄ‡ moÅ¼emy takÅ¼e, segment przyznawania uprawnieÅ„ pracownikom. W segmencie tym, uÅ¼ytkownik wybiera pracownika, spoÅ›rÃ³d listy wszystkich dostÄ™pnych, a nastÄ™pnie, z wykorzystaniem listy przeÅ‚Ä…cznikÃ³w, definiuje do ktÃ³rych fragmentÃ³w aplikacji pracownik powinien mieÄ‡ dostÄ™p.
 
-Operacje przyznawania oraz odbierania uprawnieñ pracowniczych, sprowadzaj¹ siê do wysy³ania ¿¹dañ dodania lub usuniêcia wpisu za pomoc¹ interfejsu API.
+Operacje przyznawania oraz odbierania uprawnieÅ„ pracowniczych, sprowadzajÄ… siÄ™ do wysyÅ‚ania Å¼Ä…daÅ„ dodania lub usuniÄ™cia wpisu za pomocÄ… interfejsu API.
 
-Ostatni¹ funkcjonalnoœci¹ modu³u zarz¹dzania systemem jest przegl¹d statystyk. W ramach tego fragmentu aplikacji, u¿ytkownikowi pokazywane s¹ cztery rodzaje wykresów, opisuj¹cych efektywnoœæ pracowników oraz zu¿ycie pojazdów. W zwi¹zku z wiêkszym stopniem zaawansowania operacji, dotycz¹cych dostarczania danych dla wykresów, w przeciwieñstwie do dzia³añ wykonywanych w ramach poprzednich funkcjonalnoœci, przedstawiony zostanie opis przytaczanej operacji oraz kody Ÿród³owe dla konkretnych jej elementów.
+OstatniÄ… funkcjonalnoÅ›ciÄ… moduÅ‚u zarzÄ…dzania systemem jest przeglÄ…d statystyk. W ramach tego fragmentu aplikacji, uÅ¼ytkownikowi pokazywane sÄ… cztery rodzaje wykresÃ³w, opisujÄ…cych efektywnoÅ›Ä‡ pracownikÃ³w oraz zuÅ¼ycie pojazdÃ³w. W zwiÄ…zku z wiÄ™kszym stopniem zaawansowania operacji, dotyczÄ…cych dostarczania danych dla wykresÃ³w, w przeciwieÅ„stwie do dziaÅ‚aÅ„ wykonywanych w ramach poprzednich funkcjonalnoÅ›ci, przedstawiony zostanie opis przytaczanej operacji oraz kody ÅºrÃ³dÅ‚owe dla konkretnych jej elementÃ³w.
 
-Po uruchomieniu widoku przegl¹dania statystyk, aplikacja webowa wysy³a do interfejsu API cztery niezale¿ne ¿¹dania, dotycz¹ce danych dla wykresów. ¯¹dania te, obs³ugiwane s¹ przez metody punktów koñcowych, zgodnie ze schematem wprowadzonym w podrozdziale \ref{sec:api-implementacja}.
+Po uruchomieniu widoku przeglÄ…dania statystyk, aplikacja webowa wysyÅ‚a do interfejsu API cztery niezaleÅ¼ne Å¼Ä…dania, dotyczÄ…ce danych dla wykresÃ³w. Å»Ä…dania te, obsÅ‚ugiwane sÄ… przez metody punktÃ³w koÅ„cowych, zgodnie ze schematem wprowadzonym w podrozdziale \ref{sec:api-implementacja}.
 
-Momentem faktycznego uzyskiwania danych dla wykresów, jest wywo³anie metody klasy repozytorium. Jedna z takich metod, tj. funkcja sk³adowa uzyskiwania kilometrów wykonanych przez pracowników, przedstawiona zosta³a na listingu \ref{lst:worker-stat}.
+Momentem faktycznego uzyskiwania danych dla wykresÃ³w, jest wywoÅ‚anie metody klasy repozytorium. Jedna z takich metod, tj. funkcja skÅ‚adowa uzyskiwania kilometrÃ³w wykonanych przez pracownikÃ³w, przedstawiona zostaÅ‚a na listingu \ref{lst:worker-stat}.
 
-Na pocz¹tku funkcji, pobierana zostaje lista wszystkich pracowników oddzia³u przedsiêbiorstwa. Nastêpnie, tworzony jest pomocniczy obiekt, który na koñcu metody zostanie zwrócony jako rozwi¹zanie.
+Na poczÄ…tku funkcji, pobierana zostaje lista wszystkich pracownikÃ³w oddziaÅ‚u przedsiÄ™biorstwa. NastÄ™pnie, tworzony jest pomocniczy obiekt, ktÃ³ry na koÅ„cu metody zostanie zwrÃ³cony jako rozwiÄ…zanie.
 
-Dla ka¿dego z pracowników, uzyskiwane s¹ wpisy kilometrów ich autorstwa, wykonane w przedziale czasowym okreœlonym przez obiekt \texttt{DateRange}, bêd¹cy parametrem funkcji sk³adowej. Dla opisywanego ¿¹dania, tj. wykonywanego w momencie uruchomienia widoku, obiekt zakresu dat posiada takie wartoœci, które nie ograniczaj¹ wyboru wpisów.
+Dla kaÅ¼dego z pracownikÃ³w, uzyskiwane sÄ… wpisy kilometrÃ³w ich autorstwa, wykonane w przedziale czasowym okreÅ›lonym przez obiekt \texttt{DateRange}, bÄ™dÄ…cy parametrem funkcji skÅ‚adowej. Dla opisywanego Å¼Ä…dania, tj. wykonywanego w momencie uruchomienia widoku, obiekt zakresu dat posiada takie wartoÅ›ci, ktÃ³re nie ograniczajÄ… wyboru wpisÃ³w.
 
-Je¿eli uzyskany zbiór adnotacji kilometrowych nie jest pusty, tworzony zostaje obiekt statystyki dla pojedynczego u¿ytkownika. Nastêpnie, zdefiniowany jest licznik, przechowuj¹cy liczbê wykonanych przez przez pracownika kilometrów. Iteruj¹c po ka¿dej z adnotacji, znajdowana zostaje liczba kilometrów, przypisana do pojazdu uwzglêdnionego w adnotacji, z dat¹ z przed wprowadzenia wpisu. Je¿eli taka liczba istnieje, nale¿y j¹ dodaæ do sumy kilometrów pracownika, w przeciwnym razie, suma kilometrów uzupe³niana jest wartoœci¹ z wpisu u¿ytkownika.
+JeÅ¼eli uzyskany zbiÃ³r adnotacji kilometrowych nie jest pusty, tworzony zostaje obiekt statystyki dla pojedynczego uÅ¼ytkownika. NastÄ™pnie, zdefiniowany jest licznik, przechowujÄ…cy liczbÄ™ wykonanych przez przez pracownika kilometrÃ³w. IterujÄ…c po kaÅ¼dej z adnotacji, znajdowana zostaje liczba kilometrÃ³w, przypisana do pojazdu uwzglÄ™dnionego w adnotacji, z datÄ… z przed wprowadzenia wpisu. JeÅ¼eli taka liczba istnieje, naleÅ¼y jÄ… dodaÄ‡ do sumy kilometrÃ³w pracownika, w przeciwnym razie, suma kilometrÃ³w uzupeÅ‚niana jest wartoÅ›ciÄ… z wpisu uÅ¼ytkownika.
 
-Po wykonaniu obliczeñ w ramach pêtli adnotacji kilometrowych, do obiektu statystyki pracownika dopisywana jest wyznaczona liczba kilometrów, a do zwracanej listy, obiekt statystyki.
+Po wykonaniu obliczeÅ„ w ramach pÄ™tli adnotacji kilometrowych, do obiektu statystyki pracownika dopisywana jest wyznaczona liczba kilometrÃ³w, a do zwracanej listy, obiekt statystyki.
 
-Z chwil¹ zakoñczenia pêtli iteruj¹cej po zbiorze pracowników, zwracana jest skonstruowana lista.
+Z chwilÄ… zakoÅ„czenia pÄ™tli iterujÄ…cej po zbiorze pracownikÃ³w, zwracana jest skonstruowana lista.
 
-\begin{lstlisting}[label=lst:worker-stat,caption=Kod metody repozytorium przygotowuj¹cej dane dla wykresu kilometrów, captionpos=b,basicstyle=\footnotesize\ttfamily,style=sharpcstyle,language={[Sharp]C}]
+\begin{lstlisting}[label=lst:worker-stat,caption=Kod metody repozytorium przygotowujÄ…cej dane dla wykresu kilometrÃ³w, captionpos=b,basicstyle=\footnotesize\ttfamily,style=sharpcstyle,language={[Sharp]C}]
 public async Task<IList<WorkerStat>> GetKilometersForWorkersStatsAsync(DateRange dateRange) {
 	var workers = await context.Workers.ToListAsync();
 	var stats = new List<WorkerStat>();
@@ -954,73 +954,73 @@ public async Task<IList<WorkerStat>> GetKilometersForWorkersStatsAsync(DateRange
 }
 \end{lstlisting}
 
-Po zilustrowaniu w widoku wszystkich wykresów, u¿ytkownik mo¿e wprowadzaæ do znajduj¹cych siê nad nimi formularzy, okreœlone zakresy dat. Czynnoœæ ta, skutkuje ponowieniem ¿¹dania uzyskania danych od interfejsu API. W tym przypadku jednak, widoczne na listingu \ref{lst:worker-stat} kalkulacje, uwzglêdniaæ bêd¹ dok³adny przedzia³ czasowy.
+Po zilustrowaniu w widoku wszystkich wykresÃ³w, uÅ¼ytkownik moÅ¼e wprowadzaÄ‡ do znajdujÄ…cych siÄ™ nad nimi formularzy, okreÅ›lone zakresy dat. CzynnoÅ›Ä‡ ta, skutkuje ponowieniem Å¼Ä…dania uzyskania danych od interfejsu API. W tym przypadku jednak, widoczne na listingu \ref{lst:worker-stat} kalkulacje, uwzglÄ™dniaÄ‡ bÄ™dÄ… dokÅ‚adny przedziaÅ‚ czasowy.
 \section{Aplikacja mobilna}
-\subsection{Panel g³ówny u¿ytkownika}
-Panel g³ówny u¿ytkownika jest podstawowym widokiem utworzonym w ramach aplikacji mobilnej. Wyró¿niæ mo¿emy w nim trzy zak³adki, prezentuj¹ce odpowiednio: dokumenty dostarczone przez pracownika, dokumenty dla których pracownik zg³osi³ uwagê oraz pozosta³e faktury. W obszarze ka¿dej zak³adki, wyœwietlana jest lista dokumentów, wraz ze zdefiniowanymi dla nich akcjami.
+\subsection{Panel gÅ‚Ã³wny uÅ¼ytkownika}
+Panel gÅ‚Ã³wny uÅ¼ytkownika jest podstawowym widokiem utworzonym w ramach aplikacji mobilnej. WyrÃ³Å¼niÄ‡ moÅ¼emy w nim trzy zakÅ‚adki, prezentujÄ…ce odpowiednio: dokumenty dostarczone przez pracownika, dokumenty dla ktÃ³rych pracownik zgÅ‚osiÅ‚ uwagÄ™ oraz pozostaÅ‚e faktury. W obszarze kaÅ¼dej zakÅ‚adki, wyÅ›wietlana jest lista dokumentÃ³w, wraz ze zdefiniowanymi dla nich akcjami.
 
-Dla ka¿dego z dokumentów wykonaæ mo¿na nastêpuj¹ce operacje:
+Dla kaÅ¼dego z dokumentÃ³w wykonaÄ‡ moÅ¼na nastÄ™pujÄ…ce operacje:
 \begin{itemize}
 	\item Przekazanie klientowi
 	\item Uruchomienie nawigacji do klienta
 	\item Przekazanie innemu pracownikowi
-	\item Poinformowanie klienta o zbli¿aj¹cej siê dostawie
-	\item Zg³oszenie uwagi.
+	\item Poinformowanie klienta o zbliÅ¼ajÄ…cej siÄ™ dostawie
+	\item ZgÅ‚oszenie uwagi.
 \end{itemize}
 
-Operacje przekazania faktur do klienta lub pracownika, zaimplementowane zosta³y w sposób analogiczny do aplikacji webowej. Po naciœniêciu okreœlonego przycisku, aplikacja wysy³a ¿¹danie do interfejsu API, dostarczaj¹c jako zasób obiekt przekazania, zawieraj¹cy miêdzy innymi nadawcê, odbiorcê oraz transferowany dokument. Po otrzymaniu poprawnej odpowiedzi na wys³ane ¿¹danie, aplikacja wywo³uje metodê odœwie¿enia listy dokumentów.
+Operacje przekazania faktur do klienta lub pracownika, zaimplementowane zostaÅ‚y w sposÃ³b analogiczny do aplikacji webowej. Po naciÅ›niÄ™ciu okreÅ›lonego przycisku, aplikacja wysyÅ‚a Å¼Ä…danie do interfejsu API, dostarczajÄ…c jako zasÃ³b obiekt przekazania, zawierajÄ…cy miÄ™dzy innymi nadawcÄ™, odbiorcÄ™ oraz transferowany dokument. Po otrzymaniu poprawnej odpowiedzi na wysÅ‚ane Å¼Ä…danie, aplikacja wywoÅ‚uje metodÄ™ odÅ›wieÅ¼enia listy dokumentÃ³w.
 
-Funkcja uruchomienia nawigacji do klienta, w pocz¹tkowej fazie weryfikuje obecnoœæ danych adresowych, dotycz¹cych miejsca dostawy oraz kontrahenta. Je¿eli informacje o miejscu dostawy s¹ przypisane do klienta, wywo³ywana jest metoda \texttt{navigate} klasy \texttt{LaunchNavigator}. Parametrem tej metody, jest wynik zwrócony z funkcji, przygotowuj¹cej ci¹g tekstowy na podstawie danych adresowych.
+Funkcja uruchomienia nawigacji do klienta, w poczÄ…tkowej fazie weryfikuje obecnoÅ›Ä‡ danych adresowych, dotyczÄ…cych miejsca dostawy oraz kontrahenta. JeÅ¼eli informacje o miejscu dostawy sÄ… przypisane do klienta, wywoÅ‚ywana jest metoda \texttt{navigate} klasy \texttt{LaunchNavigator}. Parametrem tej metody, jest wynik zwrÃ³cony z funkcji, przygotowujÄ…cej ciÄ…g tekstowy na podstawie danych adresowych.
 
-W przypadku braku informacji dotycz¹cych adresu miejsca dostawy, weryfikowane s¹ dane adresowe kontrahenta. W sytuacji pomyœlnej identyfikacji tych danych, aplikacja wyœwietla komunikat, w ramach którego, u¿ytkownik musi zdecydowaæ, czy chce byæ kierowany pod adres klienta, czy te¿ procedura ma siê zakoñczyæ.
+W przypadku braku informacji dotyczÄ…cych adresu miejsca dostawy, weryfikowane sÄ… dane adresowe kontrahenta. W sytuacji pomyÅ›lnej identyfikacji tych danych, aplikacja wyÅ›wietla komunikat, w ramach ktÃ³rego, uÅ¼ytkownik musi zdecydowaÄ‡, czy chce byÄ‡ kierowany pod adres klienta, czy teÅ¼ procedura ma siÄ™ zakoÅ„czyÄ‡.
 
-Je¿eli u¿ytkownik zaakceptuje wyœwietlony komunikat, wykonywana jest analogiczna czynnoœæ do opisanej powy¿ej dla miejsca dostawy.
+JeÅ¼eli uÅ¼ytkownik zaakceptuje wyÅ›wietlony komunikat, wykonywana jest analogiczna czynnoÅ›Ä‡ do opisanej powyÅ¼ej dla miejsca dostawy.
 
-Modu³ informowania klienta o zbli¿aj¹cej siê dostawie, zosta³ zaimplementowany analogicznie do funkcjonalnoœci powiadamiania kontrahentów w aplikacji webowej. Po wybraniu przycisku informowania, wykonywany jest kod punktu koñcowego API, odpowiedzialnego za wysy³anie wiadomoœci e-mail. Na podstawie dostarczonego do API obiektu zasobu ¿¹dania, podczas wys³ania wiadomoœci wybierany zostaje szablon, w treœci którego widnieje informacja o niezw³ocznej wizycie pracownika. Nadanie wiadomoœci, determinowane jest obecnoœci¹ w bazie danych, informacji kontaktowych dla miejsca dostawy. W przypadku braku tych informacji sprawdzane s¹ dane kontaktowe kontrahenta. 
+ModuÅ‚ informowania klienta o zbliÅ¼ajÄ…cej siÄ™ dostawie, zostaÅ‚ zaimplementowany analogicznie do funkcjonalnoÅ›ci powiadamiania kontrahentÃ³w w aplikacji webowej. Po wybraniu przycisku informowania, wykonywany jest kod punktu koÅ„cowego API, odpowiedzialnego za wysyÅ‚anie wiadomoÅ›ci e-mail. Na podstawie dostarczonego do API obiektu zasobu Å¼Ä…dania, podczas wysÅ‚ania wiadomoÅ›ci wybierany zostaje szablon, w treÅ›ci ktÃ³rego widnieje informacja o niezwÅ‚ocznej wizycie pracownika. Nadanie wiadomoÅ›ci, determinowane jest obecnoÅ›ciÄ… w bazie danych, informacji kontaktowych dla miejsca dostawy. W przypadku braku tych informacji sprawdzane sÄ… dane kontaktowe kontrahenta. 
 
-Funkcjonalnoœæ zg³oszenia uwagi, pozwala pracownikowi poradziæ sobie w sytuacji, w której dla danego dokumentu, lista zabranych przez niego z magazynu produktów jest niekompletna. Je¿eli u¿ytkownik zauwa¿y tak¹ ewentualnoœæ podczas dostawy towaru, musi utworzyæ notatkê uwagi. Po naciœniêciu przycisku uwagi dla konkretnego dokumentu, wyœwietlane jest pole tekstowe, wewn¹trz którego nale¿y wprowadziæ treœæ informacji. Po zatwierdzeniu wpisanego tekstu, notatka uwagi zapisywana jest do bazy danych poprzez interfejs API.
+FunkcjonalnoÅ›Ä‡ zgÅ‚oszenia uwagi, pozwala pracownikowi poradziÄ‡ sobie w sytuacji, w ktÃ³rej dla danego dokumentu, lista zabranych przez niego z magazynu produktÃ³w jest niekompletna. JeÅ¼eli uÅ¼ytkownik zauwaÅ¼y takÄ… ewentualnoÅ›Ä‡ podczas dostawy towaru, musi utworzyÄ‡ notatkÄ™ uwagi. Po naciÅ›niÄ™ciu przycisku uwagi dla konkretnego dokumentu, wyÅ›wietlane jest pole tekstowe, wewnÄ…trz ktÃ³rego naleÅ¼y wprowadziÄ‡ treÅ›Ä‡ informacji. Po zatwierdzeniu wpisanego tekstu, notatka uwagi zapisywana jest do bazy danych poprzez interfejs API.
 
-Zapis notatki, determinuje aktualizacjê widoków œledzenia dokumentów dla wszystkich klientów aplikacji webowych. Dziêki temu, pracownik stacjonarny oddzia³u firmy, na bie¿¹co dowiaduje siê o zg³oszonych uwagach.  
+Zapis notatki, determinuje aktualizacjÄ™ widokÃ³w Å›ledzenia dokumentÃ³w dla wszystkich klientÃ³w aplikacji webowych. DziÄ™ki temu, pracownik stacjonarny oddziaÅ‚u firmy, na bieÅ¼Ä…co dowiaduje siÄ™ o zgÅ‚oszonych uwagach.  
 
-\subsection{Wprowadzanie wpisów kilometrów}
+\subsection{Wprowadzanie wpisÃ³w kilometrÃ³w}
 \label{subsec:mobilna-kilometry}
-Widok wprowadzania wpisów kilometrów, pozwala u¿ytkownikowi okreœliæ stan licznika kilometrów, dla pojazdu, z wykorzystaniem którego dostarcza³ towar. Przedstawiana aktywnoœæ zawiera formularz, w ramach którego wyró¿niæ mo¿emy cztery pola.
+Widok wprowadzania wpisÃ³w kilometrÃ³w, pozwala uÅ¼ytkownikowi okreÅ›liÄ‡ stan licznika kilometrÃ³w, dla pojazdu, z wykorzystaniem ktÃ³rego dostarczaÅ‚ towar. Przedstawiana aktywnoÅ›Ä‡ zawiera formularz, w ramach ktÃ³rego wyrÃ³Å¼niÄ‡ moÅ¼emy cztery pola.
 
-Pierwsze z nich, to lista rozwijana, z której pracownik wybiera samochód. Z chwil¹ uruchomienia widoku, pobierana zostaje lista wszystkich pojazdów, a tak¿e, je¿eli jest taka koniecznoœæ, zbiór pracowników. Je¿eli do pracownika, przypisany jest pojazd domyœlny, zostanie on wyœwietlony jako pierwszy w liœcie rozwijanej.
+Pierwsze z nich, to lista rozwijana, z ktÃ³rej pracownik wybiera samochÃ³d. Z chwilÄ… uruchomienia widoku, pobierana zostaje lista wszystkich pojazdÃ³w, a takÅ¼e, jeÅ¼eli jest taka koniecznoÅ›Ä‡, zbiÃ³r pracownikÃ³w. JeÅ¼eli do pracownika, przypisany jest pojazd domyÅ›lny, zostanie on wyÅ›wietlony jako pierwszy w liÅ›cie rozwijanej.
 
-Kolejne pola okreœlaj¹ pracownika oraz datê wprowadzenia wpisu. Pole te s¹ wype³niane automatycznie, a u¿ytkownik nie mo¿e zmieniæ ich zawartoœci.
+Kolejne pola okreÅ›lajÄ… pracownika oraz datÄ™ wprowadzenia wpisu. Pole te sÄ… wypeÅ‚niane automatycznie, a uÅ¼ytkownik nie moÅ¼e zmieniÄ‡ ich zawartoÅ›ci.
 
-Ostatnim fragmentem formularza jest pole tekstowe pozwalaj¹ce na wprowadzenie liczby kilometrów. W momencie, w którym pole to, zostanie wype³nione, a tak¿e wybrany jest pojazd, przycisk zatwierdzenia staje siê aktywny i mo¿e zostaæ wys³ane ¿¹danie zapisu adnotacji do bazy danych.
+Ostatnim fragmentem formularza jest pole tekstowe pozwalajÄ…ce na wprowadzenie liczby kilometrÃ³w. W momencie, w ktÃ³rym pole to, zostanie wypeÅ‚nione, a takÅ¼e wybrany jest pojazd, przycisk zatwierdzenia staje siÄ™ aktywny i moÅ¼e zostaÄ‡ wysÅ‚ane Å¼Ä…danie zapisu adnotacji do bazy danych.
 
-Dane, wprowadzane przez u¿ytkownika, podobnie jak w pozosta³ych formularzach w obrêbie aplikacji mobilnej, przechowywane s¹ z wykorzystaniem stanu wewnêtrznego komponentu aplikacji. W przypadku operacji dodania wpisu, odwo³uje siê ona natomiast, do klasy magazynu, wp³ywaj¹cej na stan zewnêtrzny.
+Dane, wprowadzane przez uÅ¼ytkownika, podobnie jak w pozostaÅ‚ych formularzach w obrÄ™bie aplikacji mobilnej, przechowywane sÄ… z wykorzystaniem stanu wewnÄ™trznego komponentu aplikacji. W przypadku operacji dodania wpisu, odwoÅ‚uje siÄ™ ona natomiast, do klasy magazynu, wpÅ‚ywajÄ…cej na stan zewnÄ™trzny.
 
 \subsection{Wprowadzanie notatek handlowych}
-Aktywnoœæ wprowadzania notatek, pozwala pracownikom handlowym, na definiowanie adnotacji dotycz¹cych wykonywanych przez nich odwiedzin klientów. W ramach widoku, wyszczególnionych jest piêæ pól formularza, okreœlaj¹cych: pracownika, aktualny czas, lokalizacjê, typ oraz treœæ notatki.
+AktywnoÅ›Ä‡ wprowadzania notatek, pozwala pracownikom handlowym, na definiowanie adnotacji dotyczÄ…cych wykonywanych przez nich odwiedzin klientÃ³w. W ramach widoku, wyszczegÃ³lnionych jest piÄ™Ä‡ pÃ³l formularza, okreÅ›lajÄ…cych: pracownika, aktualny czas, lokalizacjÄ™, typ oraz treÅ›Ä‡ notatki.
 
-Po uruchomieniu aktywnoœci, pobierana jest lista pracowników, dostêpne typy notatek oraz aktualna lokalizacja telefonu (informacje dotycz¹ce sposobu pozyskiwania lokalizacji telefonu u¿ytkownika opisane zosta³y w rozdziale \ref{sec:cykliczna-lokalizacja}). Informacje te, poza lokalizacj¹, uzyskiwane s¹ poprzez odpowiedŸ na ¿¹danie interfejsu programowania aplikacji, tylko wtedy, gdy nie zosta³y one wczeœniej pozyskane przez inny widok aplikacji.
+Po uruchomieniu aktywnoÅ›ci, pobierana jest lista pracownikÃ³w, dostÄ™pne typy notatek oraz aktualna lokalizacja telefonu (informacje dotyczÄ…ce sposobu pozyskiwania lokalizacji telefonu uÅ¼ytkownika opisane zostaÅ‚y w rozdziale \ref{sec:cykliczna-lokalizacja}). Informacje te, poza lokalizacjÄ…, uzyskiwane sÄ… poprzez odpowiedÅº na Å¼Ä…danie interfejsu programowania aplikacji, tylko wtedy, gdy nie zostaÅ‚y one wczeÅ›niej pozyskane przez inny widok aplikacji.
 
-Formularz wprowadzania notatek, podobnie jak opisywany w rozdziale \ref{subsec:mobilna-kilometry} formularz wprowadzania kilometrów, wykonany zosta³ z wykorzystaniem techniki komponentów kontrolowanych. Oznacza to, ¿e dla ka¿dego z wype³nianych pól ankiety, zdefiniowany zosta³ wewnêtrzny element stanu przechowuj¹cy jego zawartoœæ. W momencie zdarzenia, zmiany wartoœci pola, wywo³ywana jest metoda aktualizacji elementu stanu. Dziêki wykorzystaniu tej metody, wartoœci pól formularza dostêpne s¹ dla funkcji zapisuj¹cej ankietê, w sposób nie wymagaj¹cy tworzenia obiektów referencji.
-\subsection{Cykliczna lokalizacja urz¹dzenia}
+Formularz wprowadzania notatek, podobnie jak opisywany w rozdziale \ref{subsec:mobilna-kilometry} formularz wprowadzania kilometrÃ³w, wykonany zostaÅ‚ z wykorzystaniem techniki komponentÃ³w kontrolowanych. Oznacza to, Å¼e dla kaÅ¼dego z wypeÅ‚nianych pÃ³l ankiety, zdefiniowany zostaÅ‚ wewnÄ™trzny element stanu przechowujÄ…cy jego zawartoÅ›Ä‡. W momencie zdarzenia, zmiany wartoÅ›ci pola, wywoÅ‚ywana jest metoda aktualizacji elementu stanu. DziÄ™ki wykorzystaniu tej metody, wartoÅ›ci pÃ³l formularza dostÄ™pne sÄ… dla funkcji zapisujÄ…cej ankietÄ™, w sposÃ³b nie wymagajÄ…cy tworzenia obiektÃ³w referencji.
+\subsection{Cykliczna lokalizacja urzÄ…dzenia}
 \label{sec:cykliczna-lokalizacja}
-Kluczow¹ funkcjonalnoœci¹, wykorzystywan¹ w wielu widokach aplikacji mobilnej jest lokalizowanie telefonu u¿ytkownika. Modu³ ten, wykonany zosta³, zarówno poprzez zdefiniowanie odpowiednich komponentów i us³ug za pomoc¹ biblioteki React-Native, jak i poprzez napisanie kodu natywnego w jêzyku Java dla systemu Android.
+KluczowÄ… funkcjonalnoÅ›ciÄ…, wykorzystywanÄ… w wielu widokach aplikacji mobilnej jest lokalizowanie telefonu uÅ¼ytkownika. ModuÅ‚ ten, wykonany zostaÅ‚, zarÃ³wno poprzez zdefiniowanie odpowiednich komponentÃ³w i usÅ‚ug za pomocÄ… biblioteki React-Native, jak i poprzez napisanie kodu natywnego w jÄ™zyku Java dla systemu Android.
 
-Lokalizacja u¿ytkownika, odbywa siê poprzez cykliczne wywo³ania funkcji, wewn¹trz aplikacji komponentów stworzonych w React-Native. Aby funkcja ta, mog³a byæ wywo³ywana, niezale¿nie od renderowanego widoku aplikacji (tj. dzia³aæ w tle), musi zostaæ zdefiniowana jako osobne zadanie \textit{(tzw. Headless Task)}.
+Lokalizacja uÅ¼ytkownika, odbywa siÄ™ poprzez cykliczne wywoÅ‚ania funkcji, wewnÄ…trz aplikacji komponentÃ³w stworzonych w React-Native. Aby funkcja ta, mogÅ‚a byÄ‡ wywoÅ‚ywana, niezaleÅ¼nie od renderowanego widoku aplikacji (tj. dziaÅ‚aÄ‡ w tle), musi zostaÄ‡ zdefiniowana jako osobne zadanie \textit{(tzw. Headless Task)}.
 
-Poprawne zarejestrowanie osobnego zadania, wymaga dokonania zmian w kodzie natywnym aplikacji. Zmiany te, polegaj¹ na utworzeniu nowej klasy dziedzicz¹cej po serwisie \texttt{HeadlessJsTaskService}. Klasa ta, w metodzie \texttt{getTaskConfig}, ma za zadanie pobraæ informacje dodatkowe, dotycz¹ce przekazywanej jako argument intencji. Intencja natomiast, stanowi obiekt umo¿liwiaj¹cy po³¹czenie ze sob¹ aktywnoœci w ramach aplikacji. Je¿eli obiekt intencji, posiada dodatkowe informacje, to s¹ one wykorzystywane jako parametr wywo³ania konstruktora obiektu zwracanej klasy \texttt{HeadlessJsTaskConfig}. Ponadto, pozosta³ymi parametrami s¹: nazwa tworzonego zadania, wartoœæ ograniczenia czasowego dla zadania, a tak¿e mo¿liwoœæ wykonywania dzia³ania z koniecznoœci¹ poinformowania o tym fakcie u¿ytkownika. Opisany kod metody, z klasy dziedzicz¹cej po klasie serwisu \texttt{HeadlessJsTaskService}, przedstawiony zosta³ na listingu \ref{lst:headless-task-config}.
+Poprawne zarejestrowanie osobnego zadania, wymaga dokonania zmian w kodzie natywnym aplikacji. Zmiany te, polegajÄ… na utworzeniu nowej klasy dziedziczÄ…cej po serwisie \texttt{HeadlessJsTaskService}. Klasa ta, w metodzie \texttt{getTaskConfig}, ma za zadanie pobraÄ‡ informacje dodatkowe, dotyczÄ…ce przekazywanej jako argument intencji. Intencja natomiast, stanowi obiekt umoÅ¼liwiajÄ…cy poÅ‚Ä…czenie ze sobÄ… aktywnoÅ›ci w ramach aplikacji. JeÅ¼eli obiekt intencji, posiada dodatkowe informacje, to sÄ… one wykorzystywane jako parametr wywoÅ‚ania konstruktora obiektu zwracanej klasy \texttt{HeadlessJsTaskConfig}. Ponadto, pozostaÅ‚ymi parametrami sÄ…: nazwa tworzonego zadania, wartoÅ›Ä‡ ograniczenia czasowego dla zadania, a takÅ¼e moÅ¼liwoÅ›Ä‡ wykonywania dziaÅ‚ania z koniecznoÅ›ciÄ… poinformowania o tym fakcie uÅ¼ytkownika. Opisany kod metody, z klasy dziedziczÄ…cej po klasie serwisu \texttt{HeadlessJsTaskService}, przedstawiony zostaÅ‚ na listingu \ref{lst:headless-task-config}.
 
-\begin{lstlisting}[label=lst:headless-task-config,caption=Kod metody pozwalaj¹cej na zarejestrowanie osobnego zadania, captionpos=b, basicstyle=\footnotesize\ttfamily,style=sharpcstyle,language={Java}]
+\begin{lstlisting}[label=lst:headless-task-config,caption=Kod metody pozwalajÄ…cej na zarejestrowanie osobnego zadania, captionpos=b, basicstyle=\footnotesize\ttfamily,style=sharpcstyle,language={Java}]
 protected HeadlessJsTaskConfig getTaskConfig(Intent passedIntent) {
 	Bundle intentsExtras = passedIntent.getExtras();
 	return new HeadlessJsTaskConfig("Notification", intentsExtras != null ? Arguments.fromBundle(intentsExtras) : Arguments.createMap(),0,true);
 }
 \end{lstlisting}
 
-Aby kod funkcji, zdefiniowanej z obszarze aplikacji React, wykonywany by³ cyklicznie, zdefiniowany musi zostaæ nowy w¹tek, dla klasy serwisu powiadomieñ, wywo³uj¹cy zadanie, co okreœlony przedzia³ czasu. W¹tek ten, rozpoczyna swoje dzia³anie z chwil¹ wywo³ania metody \texttt{startService} dla obiektu klasy serwisu.
+Aby kod funkcji, zdefiniowanej z obszarze aplikacji React, wykonywany byÅ‚ cyklicznie, zdefiniowany musi zostaÄ‡ nowy wÄ…tek, dla klasy serwisu powiadomieÅ„, wywoÅ‚ujÄ…cy zadanie, co okreÅ›lony przedziaÅ‚ czasu. WÄ…tek ten, rozpoczyna swoje dziaÅ‚anie z chwilÄ… wywoÅ‚ania metody \texttt{startService} dla obiektu klasy serwisu.
 
-W ramach w¹tku (tj. obiektu klasy Runnable), uruchamiana zostaje metoda \texttt{run}. W metodzie tej, na pocz¹tku pobierany jest kontekst aplikacji. Dziêki niemu, mo¿liwe jest utworzenie nowej intencji (obiektu klasy \texttt{Intent}), która wi¹¿e stan aplikacji w obecnym momencie jej dzia³ania z obiektem klasy osobnych zadañ, opisanym w powy¿szych akapitach. Posiadaj¹c takie po³¹czenie, wywo³ywana zostaje metoda uruchomienia serwisu, której parametrem jest utworzona intencja. Nastêpnie, wykorzystywana zostaje funkcja \texttt{acquireWakeLockNow}, której celem jest sprawienie, aby urz¹dzenie nie przesz³o w stan uœpienia, przed rozpoczêciem zadania.
-Ostatnim elementem w¹tku, jest wywo³anie ca³ej metody \texttt{run} ponownie, po up³ywie piêtnastu minut (tj. 300000ms). Omówiona funkcja ukazana zosta³a na listingu \ref{lst:runnable-task}.
+W ramach wÄ…tku (tj. obiektu klasy Runnable), uruchamiana zostaje metoda \texttt{run}. W metodzie tej, na poczÄ…tku pobierany jest kontekst aplikacji. DziÄ™ki niemu, moÅ¼liwe jest utworzenie nowej intencji (obiektu klasy \texttt{Intent}), ktÃ³ra wiÄ…Å¼e stan aplikacji w obecnym momencie jej dziaÅ‚ania z obiektem klasy osobnych zadaÅ„, opisanym w powyÅ¼szych akapitach. PosiadajÄ…c takie poÅ‚Ä…czenie, wywoÅ‚ywana zostaje metoda uruchomienia serwisu, ktÃ³rej parametrem jest utworzona intencja. NastÄ™pnie, wykorzystywana zostaje funkcja \texttt{acquireWakeLockNow}, ktÃ³rej celem jest sprawienie, aby urzÄ…dzenie nie przeszÅ‚o w stan uÅ›pienia, przed rozpoczÄ™ciem zadania.
+Ostatnim elementem wÄ…tku, jest wywoÅ‚anie caÅ‚ej metody \texttt{run} ponownie, po upÅ‚ywie piÄ™tnastu minut (tj. 300000ms). OmÃ³wiona funkcja ukazana zostaÅ‚a na listingu \ref{lst:runnable-task}.
 
-\begin{lstlisting}[label=lst:runnable-task,caption=Kod w¹tku wykonuj¹cego zadanie lokalizacji z interwa³em czasowym, captionpos=b, basicstyle=\footnotesize\ttfamily,style=sharpcstyle,language={Java}]
+\begin{lstlisting}[label=lst:runnable-task,caption=Kod wÄ…tku wykonujÄ…cego zadanie lokalizacji z interwaÅ‚em czasowym, captionpos=b, basicstyle=\footnotesize\ttfamily,style=sharpcstyle,language={Java}]
 private Runnable runnableLocationCode = new Runnable() {
 	@Override
 	public void run() {
@@ -1033,13 +1033,13 @@ private Runnable runnableLocationCode = new Runnable() {
 };
 \end{lstlisting}
 
-Po zdefiniowaniu kodu dla warstwy natywnej aplikacji mobilnej, przygotowany zosta³ kod zadania, wykonywanego wewn¹trz warstwy aplikacji React-Native. W ramach tego kodu, weryfikowane jest istnienie zalogowanego u¿ytkownika. Je¿eli weryfikacja ta, przebiega pomyœlnie, wywo³ywana zostaje statyczna metoda, której zadaniem jest uzyskanie lokalizacji oraz zapisanie pozycji pracownika w bazie danych.
+Po zdefiniowaniu kodu dla warstwy natywnej aplikacji mobilnej, przygotowany zostaÅ‚ kod zadania, wykonywanego wewnÄ…trz warstwy aplikacji React-Native. W ramach tego kodu, weryfikowane jest istnienie zalogowanego uÅ¼ytkownika. JeÅ¼eli weryfikacja ta, przebiega pomyÅ›lnie, wywoÅ‚ywana zostaje statyczna metoda, ktÃ³rej zadaniem jest uzyskanie lokalizacji oraz zapisanie pozycji pracownika w bazie danych.
 
-Wewn¹trz metody lokalizuj¹cej, na pocz¹tku wykonywane jest ¿¹danie uprawnieñ od u¿ytkownika. Je¿eli pracownik zezwoli na udostêpnienia do lokalizacji, wykonywana zostaje faktyczna procedura pozyskiwania danych geolokalizacyjnych.
+WewnÄ…trz metody lokalizujÄ…cej, na poczÄ…tku wykonywane jest Å¼Ä…danie uprawnieÅ„ od uÅ¼ytkownika. JeÅ¼eli pracownik zezwoli na udostÄ™pnienia do lokalizacji, wykonywana zostaje faktyczna procedura pozyskiwania danych geolokalizacyjnych.
 
-W ramach tej procedury, wykorzystywana jest metoda \texttt{getCurrentPosition} klasy \texttt{Geolocation}, bêd¹ca elementem wbudowanym pakietu dostarczanego przez twórców React-Native. Wewn¹trz wywo³ania zwrotnego, wykonywanego w momencie uzyskania danych, punkty geograficzne zapisywane s¹ do atrybutów obiektu w³asnej klasy, a nastêpnie wysy³ane poprzez ¿¹danie do interfejsu API. W przypadku b³êdu podczas uzyskiwania lokalizacji, wywo³ywana zostaje metoda analogiczna do \texttt{getCurrentPosition}, lecz z parametrem \texttt{enableHighAccuracy} posiadaj¹cym wartoœæ false. Parametr ten, determinuje dok³adnoœæ lokalizacji, poprzez wykorzystanie konkretnych metod lokalizuj¹cych. Na listingu \ref{lst:get-current-position}, zilustrowano opisany w niniejszym akapicie kod Ÿród³owy procedury lokalizacji.
+W ramach tej procedury, wykorzystywana jest metoda \texttt{getCurrentPosition} klasy \texttt{Geolocation}, bÄ™dÄ…ca elementem wbudowanym pakietu dostarczanego przez twÃ³rcÃ³w React-Native. WewnÄ…trz wywoÅ‚ania zwrotnego, wykonywanego w momencie uzyskania danych, punkty geograficzne zapisywane sÄ… do atrybutÃ³w obiektu wÅ‚asnej klasy, a nastÄ™pnie wysyÅ‚ane poprzez Å¼Ä…danie do interfejsu API. W przypadku bÅ‚Ä™du podczas uzyskiwania lokalizacji, wywoÅ‚ywana zostaje metoda analogiczna do \texttt{getCurrentPosition}, lecz z parametrem \texttt{enableHighAccuracy} posiadajÄ…cym wartoÅ›Ä‡ false. Parametr ten, determinuje dokÅ‚adnoÅ›Ä‡ lokalizacji, poprzez wykorzystanie konkretnych metod lokalizujÄ…cych. Na listingu \ref{lst:get-current-position}, zilustrowano opisany w niniejszym akapicie kod ÅºrÃ³dÅ‚owy procedury lokalizacji.
 
-\begin{lstlisting}[label=lst:get-current-position,caption=Kod metody uzyskuj¹cej lokalizacjê urz¹dzenia u¿ytkownika, captionpos=b,basicstyle=\footnotesize\ttfamily,language=JavaScript]
+\begin{lstlisting}[label=lst:get-current-position,caption=Kod metody uzyskujÄ…cej lokalizacjÄ™ urzÄ…dzenia uÅ¼ytkownika, captionpos=b,basicstyle=\footnotesize\ttfamily,language=JavaScript]
 getLocation = async (user) => {
     Geolocation.getCurrentPosition(
       async (position) => {
@@ -1059,93 +1059,93 @@ getLocation = async (user) => {
   };
 \end{lstlisting}
 
-\section{Skrypty archiwizuj¹ce}
-W celu usuwania zbêdnych informacji, oraz archiwizacji dokumentów nie bêd¹cych ju¿ w obiegu pracowniczym, utworzone zosta³y skrypty porz¹dkuj¹ce dane systemu. Skrypty te, mog¹ byæ wywo³ywane cyklicznie, o okreœlonych porach dnia, poprzez dodanie ich jako zadania, w narzêdziach takich jak np. aplikacja \texttt{cron}.
+\section{Skrypty archiwizujÄ…ce}
+W celu usuwania zbÄ™dnych informacji, oraz archiwizacji dokumentÃ³w nie bÄ™dÄ…cych juÅ¼ w obiegu pracowniczym, utworzone zostaÅ‚y skrypty porzÄ…dkujÄ…ce dane systemu. Skrypty te, mogÄ… byÄ‡ wywoÅ‚ywane cyklicznie, o okreÅ›lonych porach dnia, poprzez dodanie ich jako zadania, w narzÄ™dziach takich jak np. aplikacja \texttt{cron}.
 
-G³ównym zadaniem skryptu jest kontrolowanie czasu od poprzedniego wykonania, a w okreœlonym momencie, zdefiniowanie ¿¹dania do interfejsu API, oraz odebranie jego odpowiedzi.
+GÅ‚Ã³wnym zadaniem skryptu jest kontrolowanie czasu od poprzedniego wykonania, a w okreÅ›lonym momencie, zdefiniowanie Å¼Ä…dania do interfejsu API, oraz odebranie jego odpowiedzi.
 
-Utworzone w ramach systemu skrypty dotycz¹: przechowywania wpisów historii lokalizacji, gromadzenia dziennych statystyk, zachowywania dokumentów w archiwum, a tak¿e przenoszenia faktur koñcz¹cych obieg pracowniczy, do zbioru archiwalnego.
+Utworzone w ramach systemu skrypty dotyczÄ…: przechowywania wpisÃ³w historii lokalizacji, gromadzenia dziennych statystyk, zachowywania dokumentÃ³w w archiwum, a takÅ¼e przenoszenia faktur koÅ„czÄ…cych obieg pracowniczy, do zbioru archiwalnego.
 
-W obecnym rozdziale, przedstawiona zostanie implementacja programu, kontroluj¹cego proces przechowywania wpisów historii lokalizacji.
+W obecnym rozdziale, przedstawiona zostanie implementacja programu, kontrolujÄ…cego proces przechowywania wpisÃ³w historii lokalizacji.
 
-Na pocz¹tku, wykonywane jest ¿¹danie logowania, w celu uzyskania tokenu autoryzuj¹cego. Danymi tego ¿¹dania, s¹ login oraz has³o dedykowanego do wykonywania skryptów u¿ytkownika systemu. Po poprawnym uwierzytelnieniu, pobierany z serwera jest rekord, okreœlaj¹cy konfiguracjê oprogramowania. Na podstawie jego danych, bêdzie mo¿na zweryfikowaæ koniecznoœæ wykonywania operacji archiwizacji. Po uzyskaniu danych konfiguracji, wyliczana jest ró¿nica dni pomiêdzy aktualn¹ dat¹ a momentem ostatniej modyfikacji parametru przechowywania wpisów lokalizacyjnych. Je¿eli ró¿nica ta, jest wiêksza od zera, a ponadto reszta z jej dzielenia przez liczbê przechowywan¹ w konfiguracji jest równa zero, nale¿y wywo³aæ punkt koñcowy, archiwizuj¹cy wpisy lokalizacyjne z konkretnej liczby ostatnich dni. W momencie niepowodzenia, jakiejkolwiek z opisywanych operacji, lub zwrócenia nieoczekiwanego kodu odpowiedzi na ¿¹danie, informacja ta jest odnotowywana w dzienniku logów systemu operacyjnego. 
+Na poczÄ…tku, wykonywane jest Å¼Ä…danie logowania, w celu uzyskania tokenu autoryzujÄ…cego. Danymi tego Å¼Ä…dania, sÄ… login oraz hasÅ‚o dedykowanego do wykonywania skryptÃ³w uÅ¼ytkownika systemu. Po poprawnym uwierzytelnieniu, pobierany z serwera jest rekord, okreÅ›lajÄ…cy konfiguracjÄ™ oprogramowania. Na podstawie jego danych, bÄ™dzie moÅ¼na zweryfikowaÄ‡ koniecznoÅ›Ä‡ wykonywania operacji archiwizacji. Po uzyskaniu danych konfiguracji, wyliczana jest rÃ³Å¼nica dni pomiÄ™dzy aktualnÄ… datÄ… a momentem ostatniej modyfikacji parametru przechowywania wpisÃ³w lokalizacyjnych. JeÅ¼eli rÃ³Å¼nica ta, jest wiÄ™ksza od zera, a ponadto reszta z jej dzielenia przez liczbÄ™ przechowywanÄ… w konfiguracji jest rÃ³wna zero, naleÅ¼y wywoÅ‚aÄ‡ punkt koÅ„cowy, archiwizujÄ…cy wpisy lokalizacyjne z konkretnej liczby ostatnich dni. W momencie niepowodzenia, jakiejkolwiek z opisywanych operacji, lub zwrÃ³cenia nieoczekiwanego kodu odpowiedzi na Å¼Ä…danie, informacja ta jest odnotowywana w dzienniku logÃ³w systemu operacyjnego. 
 
-Omówiony fragment skryptu archiwizuj¹cego zilustrowany zosta³ na listingu \ref{lst:skrypt-historia-lokalizacji}.
+OmÃ³wiony fragment skryptu archiwizujÄ…cego zilustrowany zostaÅ‚ na listingu \ref{lst:skrypt-historia-lokalizacji}.
 
-\section{Interfejs u¿ytkownika}
-W niniejszym rozdziale, przedstawiono widoki gotowego interfejsu u¿ytkownika obu aplikacji klienckich. W zwi¹zku z mnogoœci¹, utworzonych elementów interfejsu, zdecydowano siê na prezentacjê, tylko tych kluczowych.
+\section{Interfejs uÅ¼ytkownika}
+W niniejszym rozdziale, przedstawiono widoki gotowego interfejsu uÅ¼ytkownika obu aplikacji klienckich. W zwiÄ…zku z mnogoÅ›ciÄ…, utworzonych elementÃ³w interfejsu, zdecydowano siÄ™ na prezentacjÄ™, tylko tych kluczowych.
 
 \begin{figure}[ht]
  \centering
   \includegraphics[width=0.95\linewidth]{rys04/zrzut1}
- \caption{Widok panelu g³ównego aplikacji webowej}
+ \caption{Widok panelu gÅ‚Ã³wnego aplikacji webowej}
  \label{fig:gui-webowa-zrzut1}
 \end{figure}
 
 \begin{figure}[ht]
  \centering
   \includegraphics[width=0.95\linewidth]{rys04/zrzut2}
- \caption{Widok panelu g³ównego aplikacji webowej (cz 2.)}
+ \caption{Widok panelu gÅ‚Ã³wnego aplikacji webowej (cz 2.)}
  \label{fig:gui-webowa-zrzut2}
 \end{figure}
 
-Na ilustracjach \ref{fig:gui-webowa-zrzut1} i \ref{fig:gui-webowa-zrzut2} ukazano widok panelu g³ównego aplikacji webowej. U¿ytkownik przechodzi z nich do innych widoków, wybieraj¹c okreœlony przycisk funkcjonalnoœci. Przyciski widoków mog¹ byæ aktywne lub niedostêpne, w zale¿noœci od posiadanych przez pracownika uprawnieñ.
+Na ilustracjach \ref{fig:gui-webowa-zrzut1} i \ref{fig:gui-webowa-zrzut2} ukazano widok panelu gÅ‚Ã³wnego aplikacji webowej. UÅ¼ytkownik przechodzi z nich do innych widokÃ³w, wybierajÄ…c okreÅ›lony przycisk funkcjonalnoÅ›ci. Przyciski widokÃ³w mogÄ… byÄ‡ aktywne lub niedostÄ™pne, w zaleÅ¼noÅ›ci od posiadanych przez pracownika uprawnieÅ„.
 
 \begin{figure}[ht]
  \centering
   \includegraphics[width=0.95\linewidth]{rys04/zrzut3}
- \caption{Widok funkcjonalnoœci przekazywania dokumentów pracownikowi}
+ \caption{Widok funkcjonalnoÅ›ci przekazywania dokumentÃ³w pracownikowi}
  \label{fig:gui-webowa-zrzut3}
 \end{figure}
 
-Na rysunku \ref{fig:gui-webowa-zrzut3} widzimy modu³ przekazywania dokumentów pomiêdzy pracownikami. W momencie tworzenia tej ilustracji, zeskanowany zosta³ kod pracownika, a wczytywany zostaje barkod QR dokumentu. Poni¿ej widoku kamery, zlokalizowane s¹ dwa kontenery, prezentuj¹ce czas pozosta³y do zakoñczenia procedury skanowania oraz listê wczytanych dokumentów.
+Na rysunku \ref{fig:gui-webowa-zrzut3} widzimy moduÅ‚ przekazywania dokumentÃ³w pomiÄ™dzy pracownikami. W momencie tworzenia tej ilustracji, zeskanowany zostaÅ‚ kod pracownika, a wczytywany zostaje barkod QR dokumentu. PoniÅ¼ej widoku kamery, zlokalizowane sÄ… dwa kontenery, prezentujÄ…ce czas pozostaÅ‚y do zakoÅ„czenia procedury skanowania oraz listÄ™ wczytanych dokumentÃ³w.
 
 \begin{figure}[ht]
  \centering
   \includegraphics[width=0.95\linewidth]{rys04/zrzut4}
- \caption{Widok funkcjonalnoœci œledzenia dokumentów}
+ \caption{Widok funkcjonalnoÅ›ci Å›ledzenia dokumentÃ³w}
  \label{fig:gui-webowa-zrzut4}
 \end{figure}
 
-Ilustracja \ref{fig:gui-webowa-zrzut4} obrazuje widok œledzenia dokumentów. W ka¿dym wierszu tabeli, prezentowane s¹ informacje o dokumencie, jego aktualnym statusie w systemie, a tak¿e wszystkich akcjach na nim wykonanych. U¿ytkownik, posiadaj¹cy uprawnienia dostêpu do tego widoku, mo¿e ponadto wprowadziæ notê wyjaœniaj¹c¹ dla dokumentu (przycisk "`Wyjaœnij"'), co spowoduje archiwizacjê faktury po zakoñczeniu dnia pracy.
+Ilustracja \ref{fig:gui-webowa-zrzut4} obrazuje widok Å›ledzenia dokumentÃ³w. W kaÅ¼dym wierszu tabeli, prezentowane sÄ… informacje o dokumencie, jego aktualnym statusie w systemie, a takÅ¼e wszystkich akcjach na nim wykonanych. UÅ¼ytkownik, posiadajÄ…cy uprawnienia dostÄ™pu do tego widoku, moÅ¼e ponadto wprowadziÄ‡ notÄ™ wyjaÅ›niajÄ…cÄ… dla dokumentu (przycisk "`WyjaÅ›nij"'), co spowoduje archiwizacjÄ™ faktury po zakoÅ„czeniu dnia pracy.
 
 \begin{figure}[ht]
  \centering
   \includegraphics[width=0.95\linewidth]{rys04/zrzut5}
- \caption{Widok funkcjonalnoœci przegl¹dania notatek pracowników handlowych}
+ \caption{Widok funkcjonalnoÅ›ci przeglÄ…dania notatek pracownikÃ³w handlowych}
  \label{fig:gui-webowa-zrzut5}
 \end{figure}
 
-Przedstawiona grafika \ref{fig:gui-webowa-zrzut5} ukazuje widok modu³u przegl¹dania notatek handlowych. U¿ytkownik, w ramach tego widoku, po wybraniu pracownika oraz daty utworzenia notatek, mo¿e przegl¹daæ wszystkie wprowadzone przez pracownika wpisy informacyjne. W zale¿noœci od typu wpisu, ukazane na mapie punkty lokalizacyjne, charakteryzuj¹ siê odmienn¹ kolorystyk¹. Po wybraniu okreœlonego punktu na mapie, widoczne s¹ dane notatki dla tej lokalizacji.
+Przedstawiona grafika \ref{fig:gui-webowa-zrzut5} ukazuje widok moduÅ‚u przeglÄ…dania notatek handlowych. UÅ¼ytkownik, w ramach tego widoku, po wybraniu pracownika oraz daty utworzenia notatek, moÅ¼e przeglÄ…daÄ‡ wszystkie wprowadzone przez pracownika wpisy informacyjne. W zaleÅ¼noÅ›ci od typu wpisu, ukazane na mapie punkty lokalizacyjne, charakteryzujÄ… siÄ™ odmiennÄ… kolorystykÄ…. Po wybraniu okreÅ›lonego punktu na mapie, widoczne sÄ… dane notatki dla tej lokalizacji.
 
 \begin{figure}[ht]
  \centering
   \includegraphics[width=0.95\linewidth]{rys04/zrzut6}
- \caption{Widok funkcjonalnoœci planowania trasy dostawy - wybór lokalizacji}
+ \caption{Widok funkcjonalnoÅ›ci planowania trasy dostawy - wybÃ³r lokalizacji}
  \label{fig:gui-webowa-zrzut6}
 \end{figure}
 
-Na ilustracji \ref{fig:gui-webowa-zrzut6}, widoczny jest element segmentu planowania trasy dostawy. Po lewej stronie widoku, dostêpne s¹ wszystkie dokumenty przypisane do zalogowanego pracownika, natomiast po prawej stronie, znajduje siê fragment mapy. Mapa ta, wykorzystywana jest do wyboru lokalizacji dostawy dla dokumentu, w sytuacji gdy dane faktury nie pozwol¹ na jej automatyczne uzyskanie.
+Na ilustracji \ref{fig:gui-webowa-zrzut6}, widoczny jest element segmentu planowania trasy dostawy. Po lewej stronie widoku, dostÄ™pne sÄ… wszystkie dokumenty przypisane do zalogowanego pracownika, natomiast po prawej stronie, znajduje siÄ™ fragment mapy. Mapa ta, wykorzystywana jest do wyboru lokalizacji dostawy dla dokumentu, w sytuacji gdy dane faktury nie pozwolÄ… na jej automatyczne uzyskanie.
 
 \newpage
 
 \begin{figure}[ht]
  \centering
   \includegraphics[width=0.95\linewidth]{rys04/zrzut7}
- \caption{Widok funkcjonalnoœci planowania trasy dostawy - rezultat}
+ \caption{Widok funkcjonalnoÅ›ci planowania trasy dostawy - rezultat}
  \label{fig:gui-webowa-zrzut7}
 \end{figure}
 
-Po wyborze wszystkich punktów lokalizacyjnych, uruchamiany jest algorytm wyliczania trasy dostawy. Z chwil¹ otrzymania wyniku dzia³ania algorytmu, ukazuje siê widok przedstawiony na ilustracji \ref{fig:gui-webowa-zrzut7}. Widzimy w nim listê kolejnych lokalizacji na drodze dostawy, a tak¿e mapê unaoczniaj¹c¹ sekwencjê odwiedzanych punktów. Po wybraniu dowolnego z punktów, wyœwietlana jest informacja o powi¹zanym dokumencie oraz danych adresowych.
+Po wyborze wszystkich punktÃ³w lokalizacyjnych, uruchamiany jest algorytm wyliczania trasy dostawy. Z chwilÄ… otrzymania wyniku dziaÅ‚ania algorytmu, ukazuje siÄ™ widok przedstawiony na ilustracji \ref{fig:gui-webowa-zrzut7}. Widzimy w nim listÄ™ kolejnych lokalizacji na drodze dostawy, a takÅ¼e mapÄ™ unaoczniajÄ…cÄ… sekwencjÄ™ odwiedzanych punktÃ³w. Po wybraniu dowolnego z punktÃ³w, wyÅ›wietlana jest informacja o powiÄ…zanym dokumencie oraz danych adresowych.
 
 \begin{figure}[ht]
  \centering
   \includegraphics[width=0.95\linewidth]{rys04/zrzut8}
- \caption{Widok funkcjonalnoœci komunikatora tekstowego}
+ \caption{Widok funkcjonalnoÅ›ci komunikatora tekstowego}
  \label{fig:gui-webowa-zrzut8}
 \end{figure}
 
-Rysunek \ref{fig:gui-webowa-zrzut8}, prezentuje wygl¹d widoku wewnêtrznego komunikatora tekstowego. Wyró¿niæ mo¿emy w nim listê pracowników, z którymi chcemy rozpocz¹æ konwersacjê, a tak¿e okno wysy³anych wiadomoœci. Poza mo¿liwoœci¹ wprowadzania tekstu wiadomoœci, istnieje tak¿e funkcjonalnoœæ wyboru dokumentu, o którym chcemy "`wspomnieæ"' w wiadomoœci. Wprowadzenie wspomnienia dla faktury, skutkuje wyœwietleniem adekwatnej informacji, w widoku œledzenia dokumentów.
+Rysunek \ref{fig:gui-webowa-zrzut8}, prezentuje wyglÄ…d widoku wewnÄ™trznego komunikatora tekstowego. WyrÃ³Å¼niÄ‡ moÅ¼emy w nim listÄ™ pracownikÃ³w, z ktÃ³rymi chcemy rozpoczÄ…Ä‡ konwersacjÄ™, a takÅ¼e okno wysyÅ‚anych wiadomoÅ›ci. Poza moÅ¼liwoÅ›ciÄ… wprowadzania tekstu wiadomoÅ›ci, istnieje takÅ¼e funkcjonalnoÅ›Ä‡ wyboru dokumentu, o ktÃ³rym chcemy "`wspomnieÄ‡"' w wiadomoÅ›ci. Wprowadzenie wspomnienia dla faktury, skutkuje wyÅ›wietleniem adekwatnej informacji, w widoku Å›ledzenia dokumentÃ³w.
 
 \newpage
 
@@ -1156,11 +1156,11 @@ Rysunek \ref{fig:gui-webowa-zrzut8}, prezentuje wygl¹d widoku wewnêtrznego komun
   \includegraphics[width=0.3\textwidth]{rys04/mobilna/zrzut1} & 
 	\includegraphics[width=0.3\textwidth]{rys04/mobilna/zrzut2}
 	\end{tabular}
-  \caption{Aktywnoœæ g³ówna aplikacji mobilnej a) lista dokumentów b) panel boczny}
+  \caption{AktywnoÅ›Ä‡ gÅ‚Ã³wna aplikacji mobilnej a) lista dokumentÃ³w b) panel boczny}
   \label{fig:gui-mobilna-zrzut12}
 \end{figure}
 
-Na ilustracjach \ref{fig:gui-mobilna-zrzut12}a oraz \ref{fig:gui-mobilna-zrzut12}b, przedstawiona zosta³a aktywnoœæ g³ówna aplikacji mobilnej. Pierwsza z grafik, ukazuje widok listy dokumentów, ³adowany domyœlnie, po zalogowaniu siê do systemu. Na drugim rysunku natomiast, widzimy rozsuwany panel boczny, zawieraj¹cy wiêkszoœæ z dostêpnych funkcjonalnoœci aplikacji.
+Na ilustracjach \ref{fig:gui-mobilna-zrzut12}a oraz \ref{fig:gui-mobilna-zrzut12}b, przedstawiona zostaÅ‚a aktywnoÅ›Ä‡ gÅ‚Ã³wna aplikacji mobilnej. Pierwsza z grafik, ukazuje widok listy dokumentÃ³w, Å‚adowany domyÅ›lnie, po zalogowaniu siÄ™ do systemu. Na drugim rysunku natomiast, widzimy rozsuwany panel boczny, zawierajÄ…cy wiÄ™kszoÅ›Ä‡ z dostÄ™pnych funkcjonalnoÅ›ci aplikacji.
 
 \begin{figure}[ht]
   \centering
@@ -1170,11 +1170,11 @@ Na ilustracjach \ref{fig:gui-mobilna-zrzut12}a oraz \ref{fig:gui-mobilna-zrzut12
 	\includegraphics[width=0.27\textwidth]{rys04/mobilna/zrzut4} &
 	\includegraphics[width=0.27\textwidth]{rys04/mobilna/zrzut5}
 	\end{tabular}
-  \caption{Aktywnoœci wprowadzania danych a) zg³aszanie uwagi b) wpis kilometrów c) wpis notatki}
+  \caption{AktywnoÅ›ci wprowadzania danych a) zgÅ‚aszanie uwagi b) wpis kilometrÃ³w c) wpis notatki}
   \label{fig:gui-mobilna-zrzut345}
 \end{figure}
 
-W ramach rysunków \ref{fig:gui-mobilna-zrzut345}a, \ref{fig:gui-mobilna-zrzut345}b oraz \ref{fig:gui-mobilna-zrzut345}c, ukazane zosta³y aktywnoœci wprowadzania danych w aplikacji mobilnej. Pierwsza z nich, tyczy siê zg³aszania uwagi dotycz¹cej dokumentu. U¿ytkownik, po naciœniêciu czerwonego przycisku, znajduj¹cego siê przy fakturze, wprowadza zawartoœæ notatki uwagi, do przedstawionego pola tekstowego. Druga aktywnoœæ, zdefiniowana zosta³a w celu generowania adnotacji dotycz¹cych liczników kilometrów, w pojazdach firmy. W widoku tym, je¿eli do u¿ytkownika przypisany jest pojazd domyœlny, zostaje on wybrany z listy rozwijanej automatycznie. Trzecia z aktywnoœci, wykorzystywana jest do wprowadzania wpisów dotycz¹cych notatek handlowych. 
+W ramach rysunkÃ³w \ref{fig:gui-mobilna-zrzut345}a, \ref{fig:gui-mobilna-zrzut345}b oraz \ref{fig:gui-mobilna-zrzut345}c, ukazane zostaÅ‚y aktywnoÅ›ci wprowadzania danych w aplikacji mobilnej. Pierwsza z nich, tyczy siÄ™ zgÅ‚aszania uwagi dotyczÄ…cej dokumentu. UÅ¼ytkownik, po naciÅ›niÄ™ciu czerwonego przycisku, znajdujÄ…cego siÄ™ przy fakturze, wprowadza zawartoÅ›Ä‡ notatki uwagi, do przedstawionego pola tekstowego. Druga aktywnoÅ›Ä‡, zdefiniowana zostaÅ‚a w celu generowania adnotacji dotyczÄ…cych licznikÃ³w kilometrÃ³w, w pojazdach firmy. W widoku tym, jeÅ¼eli do uÅ¼ytkownika przypisany jest pojazd domyÅ›lny, zostaje on wybrany z listy rozwijanej automatycznie. Trzecia z aktywnoÅ›ci, wykorzystywana jest do wprowadzania wpisÃ³w dotyczÄ…cych notatek handlowych. 
 
 \begin{figure}[ht]
   \centering
@@ -1184,11 +1184,11 @@ W ramach rysunków \ref{fig:gui-mobilna-zrzut345}a, \ref{fig:gui-mobilna-zrzut345
 	\includegraphics[width=0.27\textwidth]{rys04/mobilna/zrzut8} &
 	\includegraphics[width=0.27\textwidth]{rys04/mobilna/zrzut7}
 	\end{tabular}
-  \caption{Aktywnoœci planowania trasy dostawy a) lista dokumentów b) wybór lokalizacji c) rezultat obliczeñ}
+  \caption{AktywnoÅ›ci planowania trasy dostawy a) lista dokumentÃ³w b) wybÃ³r lokalizacji c) rezultat obliczeÅ„}
   \label{fig:gui-mobilna-zrzut678}
 \end{figure}
 
-Na grafikach \ref{fig:gui-mobilna-zrzut678}a, \ref{fig:gui-mobilna-zrzut678}b oraz \ref{fig:gui-mobilna-zrzut678}c, widzimy widoki aplikacji mobilnej, dotycz¹ce wyznaczania trasy dostawy. W pierwszym widoku, zawarta jest lista przypisanych do pracownika dokumentów. Po wybraniu jednej z faktur, je¿eli nie posiada ona przypisanej automatycznie lokalizacji, przechodzimy do aktywnoœci drugiej. W ramach tej aktywnoœci, u¿ytkownik mo¿e wyszukaæ dowoln¹ lokalizacjê, a nastêpnie przypisaæ j¹ do dokumentu. Widok trzeci natomiast, reprezentuje rezultat, w postaci ustalonej trasy dostawy. Po klikniêciu przycisku "`zapisz"', u¿ytkownik kierowany jest do panelu g³ównego, a dokumenty w nim zawarte, sortuj¹ siê w kolejnoœci zgodnej z tras¹ dostawy.
+Na grafikach \ref{fig:gui-mobilna-zrzut678}a, \ref{fig:gui-mobilna-zrzut678}b oraz \ref{fig:gui-mobilna-zrzut678}c, widzimy widoki aplikacji mobilnej, dotyczÄ…ce wyznaczania trasy dostawy. W pierwszym widoku, zawarta jest lista przypisanych do pracownika dokumentÃ³w. Po wybraniu jednej z faktur, jeÅ¼eli nie posiada ona przypisanej automatycznie lokalizacji, przechodzimy do aktywnoÅ›ci drugiej. W ramach tej aktywnoÅ›ci, uÅ¼ytkownik moÅ¼e wyszukaÄ‡ dowolnÄ… lokalizacjÄ™, a nastÄ™pnie przypisaÄ‡ jÄ… do dokumentu. Widok trzeci natomiast, reprezentuje rezultat, w postaci ustalonej trasy dostawy. Po klikniÄ™ciu przycisku "`zapisz"', uÅ¼ytkownik kierowany jest do panelu gÅ‚Ã³wnego, a dokumenty w nim zawarte, sortujÄ… siÄ™ w kolejnoÅ›ci zgodnej z trasÄ… dostawy.
 
 \newpage
 
@@ -1199,8 +1199,8 @@ Na grafikach \ref{fig:gui-mobilna-zrzut678}a, \ref{fig:gui-mobilna-zrzut678}b or
   \includegraphics[width=0.3\textwidth]{rys04/mobilna/zrzut9} & 
 	\includegraphics[width=0.3\textwidth]{rys04/mobilna/zrzut10}
 	\end{tabular}
-  \caption{Aktywnoœæ komunikatora aplikacji mobilnej a) lista pracowników b) wymiana wiadomoœci}
+  \caption{AktywnoÅ›Ä‡ komunikatora aplikacji mobilnej a) lista pracownikÃ³w b) wymiana wiadomoÅ›ci}
   \label{fig:gui-mobilna-zrzut910}
 \end{figure}
 
-Ostatnie z przedstawionych grafik (tj. grafika \ref{fig:gui-mobilna-zrzut910}a oraz \ref{fig:gui-mobilna-zrzut910}b), ukazuj¹ funkcjonalnoœæ wewnêtrznego komunikatora tekstowego aplikacji mobilnej. Wyró¿niæ mo¿emy tutaj widok listy pracowników, w którymi mo¿na rozpocz¹æ konwersacjê, a tak¿e komponent przedstawiaj¹cy rozmowê z konkretnym u¿ytkownikiem.
+Ostatnie z przedstawionych grafik (tj. grafika \ref{fig:gui-mobilna-zrzut910}a oraz \ref{fig:gui-mobilna-zrzut910}b), ukazujÄ… funkcjonalnoÅ›Ä‡ wewnÄ™trznego komunikatora tekstowego aplikacji mobilnej. WyrÃ³Å¼niÄ‡ moÅ¼emy tutaj widok listy pracownikÃ³w, w ktÃ³rymi moÅ¼na rozpoczÄ…Ä‡ konwersacjÄ™, a takÅ¼e komponent przedstawiajÄ…cy rozmowÄ™ z konkretnym uÅ¼ytkownikiem.

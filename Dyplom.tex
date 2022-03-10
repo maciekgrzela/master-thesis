@@ -9,7 +9,7 @@
 \usepackage{caption}
 \usepackage{longtable}
 \usepackage{color,calc}
-%\usepackage{soul} % pakiet z komendami do podkreœlania tekstu
+%\usepackage{soul} % pakiet z komendami do podkreÅ›lania tekstu
 \usepackage{ebgaramond}
 \usepackage{tgtermes}   
 \renewcommand*\ttdefault{txtt}
@@ -22,7 +22,7 @@ Listing \thelstlisting: #1\hfill%\hfill%
 \addcontentsline{lol}{lstlisting}{\protect\numberline{\thelstlisting}#1}
 }%
 
-% Styl zapewniaj¹cy numerowanie linii
+% Styl zapewniajÄ…cy numerowanie linii
 \lstset{
   basicstyle=\footnotesize\ttfamily,
   columns=fullflexible,
@@ -50,7 +50,7 @@ Listing \thelstlisting: #1\hfill%\hfill%
   %%postbreak=\mbox{\textcolor{red}{$\hookrightarrow$}\space},
 %%}
 
-%% Poni¿ej sposób ostylowania sposobu podœwietlania sk³adni wybranych jêzyków
+%% PoniÅ¼ej sposÃ³b ostylowania sposobu podÅ›wietlania skÅ‚adni wybranych jÄ™zykÃ³w
 \lstloadlanguages{C,C++,csh,Java}
 \definecolor{listingBg}{RGB}{233,232,233}
 
@@ -129,18 +129,18 @@ enum, namespace, string},
 backgroundcolor=\color{listingBg}
 }
 
-\renewcommand\lstlistlistingname{Spis listingów}
+\renewcommand\lstlistlistingname{Spis listingÃ³w}
 \makeatletter
 \g@addto@macro\insertchapterspace{\addtocontents{lol}{\protect\addvspace{10pt}}}
 \renewcommand*{\l@lstlisting}{\@dottedtocline{1}{0em}{2.3em}}
 \makeatother
-\renewcommand*{\lstlistlistingname}{Spis listingów} \newlistof{lstlistoflistings}{lol}{\lstlistlistingname}
+\renewcommand*{\lstlistlistingname}{Spis listingÃ³w} \newlistof{lstlistoflistings}{lol}{\lstlistlistingname}
 
-%\hyphenpenalty=10000		% nie dziel wyrazów zbyt czêsto
+%\hyphenpenalty=10000		% nie dziel wyrazÃ³w zbyt czÄ™sto
 \clubpenalty=10000      %kara za sierotki
-\widowpenalty=10000  % nie pozostawiaj wdów
-%\brokenpenalty=10000		% nie dziel wyrazów miêdzy stronami - trzeba by³o wy³¹czyæ, bo nie ³ama³y siê linie w lstlisting
-%\exhyphenpenalty=999999		% nie dziel s³ów z myœlnikiem - trzeba by³o wy³¹czyæ, bo nie ³ama³y siê linie w lstlisting
+\widowpenalty=10000  % nie pozostawiaj wdÃ³w
+%\brokenpenalty=10000		% nie dziel wyrazÃ³w miÄ™dzy stronami - trzeba byÅ‚o wyÅ‚Ä…czyÄ‡, bo nie Å‚amaÅ‚y siÄ™ linie w lstlisting
+%\exhyphenpenalty=999999		% nie dziel sÅ‚Ã³w z myÅ›lnikiem - trzeba byÅ‚o wyÅ‚Ä…czyÄ‡, bo nie Å‚amaÅ‚y siÄ™ linie w lstlisting
 \righthyphenmin=3			% dziel minimum 3 litery
 %\tolerance=4500
 %\pretolerance=250
@@ -153,11 +153,11 @@ backgroundcolor=\color{listingBg}
 \renewcommand{\floatpagefraction}{0.35}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%  Ustawienia rozmiarów: tekstu, nag³ówka i stopki, marginesów
-%%  dla dokumentów klasy memoir 
+%%  Ustawienia rozmiarÃ³w: tekstu, nagÅ‚Ã³wka i stopki, marginesÃ³w
+%%  dla dokumentÃ³w klasy memoir 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \setlength{\headsep}{10pt} 
-\setlength{\headheight}{13.6pt} % wartoœæ baselineskip dla czcionki 11pt tj. \small wynosi 13.6pt
+\setlength{\headheight}{13.6pt} % wartoÅ›Ä‡ baselineskip dla czcionki 11pt tj. \small wynosi 13.6pt
 \setlength{\footskip}{\headsep+\headheight}
 \setlength{\uppermargin}{\headheight+\headsep+1cm}
 \setlength{\textheight}{\paperheight-\uppermargin-\footskip-1.5cm}
@@ -168,14 +168,14 @@ backgroundcolor=\color{listingBg}
 \setlength{\marginparwidth}{2.3mm}
 %\settrimmedsize{297mm}{210mm}{*}
 %\settrims{0mm}{0mm}	
-\checkandfixthelayout[fixed] % konieczne, aby siê dobrze wszystko poustawia³o
+\checkandfixthelayout[fixed] % konieczne, aby siÄ™ dobrze wszystko poustawiaÅ‚o
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%  Ustawienia odleg³oœci linii, wciêæ, odstêpów
+%%  Ustawienia odlegÅ‚oÅ›ci linii, wciÄ™Ä‡, odstÄ™pÃ³w
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \linespread{1}
 %\linespread{1.241}
 \setlength{\parindent}{14.5pt}
-%\setlength{\cftbeforechapterskip}{0.3em} % odstêpy w spisie treœci
+%\setlength{\cftbeforechapterskip}{0.3em} % odstÄ™py w spisie treÅ›ci
 %\setbeforesecskip{10pt plus 0.5ex}%{-3.5ex \@plus -1ex \@minus -.2ex}
 %\setaftersecskip{10pt plus 0.5ex}%\onelineskip}
 %\setbeforesubsecskip{8pt plus 0.5ex}%{-3.5ex \@plus -1ex \@minus -.2ex}
@@ -183,30 +183,30 @@ backgroundcolor=\color{listingBg}
 %\setlength\floatsep{6pt plus 2pt minus 2pt} 
 %\setlength\intextsep{12pt plus 2pt minus 2pt} 
 %\setlength\textfloatsep{12pt plus 2pt minus 2pt} 
-\usepackage{memlays}     % extra layout diagrams, zastosowane w szblonie do 'debuggowania', u¿ywa pakietu layouts
+\usepackage{memlays}     % extra layout diagrams, zastosowane w szblonie do 'debuggowania', uÅ¼ywa pakietu layouts
 %\usepackage{layouts}
-\usepackage{printlen} % pakiet do wyœwietlania wartoœci zdefiniowanych d³ugoœci, stosowany do 'debuggowania'
+\usepackage{printlen} % pakiet do wyÅ›wietlania wartoÅ›ci zdefiniowanych dÅ‚ugoÅ›ci, stosowany do 'debuggowania'
 \uselengthunit{pt}
 \makeatletter
-\newcommand{\showFontSize}{\f@size pt} % makro wypisuj¹ce wielkoœæ bie¿¹cej czcionki
+\newcommand{\showFontSize}{\f@size pt} % makro wypisujÄ…ce wielkoÅ›Ä‡ bieÅ¼Ä…cej czcionki
 \makeatother
-% do pokazania ramek mo¿na by³oby u¿yæ:
+% do pokazania ramek moÅ¼na byÅ‚oby uÅ¼yÄ‡:
 %\usepackage{showframe} 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%  Formatowanie list wyliczeniowych, wypunktowañ i w³asnych otoczeñ
+%%  Formatowanie list wyliczeniowych, wypunktowaÅ„ i wÅ‚asnych otoczeÅ„
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-% Domyœlnie wypunktowania maj¹ zadeklatorowane znaki, które nie wystêpuj¹ w tgtermes
-% Aby latex nie podstawia³ w ich miejsca znaków z czcionki standardowej mo¿na zrobiæ podstawienie:
+% DomyÅ›lnie wypunktowania majÄ… zadeklatorowane znaki, ktÃ³re nie wystÄ™pujÄ… w tgtermes
+% Aby latex nie podstawiaÅ‚ w ich miejsca znakÃ³w z czcionki standardowej moÅ¼na zrobiÄ‡ podstawienie:
 %    \DeclareTextCommandDefault{\textbullet}{\ensuremath{\bullet}}
 %    \DeclareTextCommandDefault{\textasteriskcentered}{\ensuremath{\ast}}
 %    \DeclareTextCommandDefault{\textperiodcentered}{\ensuremath{\cdot}}
-% Jednak jeszcze lepszym pomys³em jest zdefiniowanie otoczeñ z wykorzystaniem enumitem
-\usepackage{enumitem} % pakiet pozwalaj¹cy zarz¹dzaæ formatowaniem list wyliczeniowych
-\setlist{noitemsep,topsep=4pt,parsep=0pt,partopsep=4pt,leftmargin=*} % zadeklarowane parametry pozwalaj¹ uzyskaæ 'zwart¹' postaæ wypunktowania b¹dŸ wyliczenia
-\setenumerate{labelindent=0pt,itemindent=0pt,leftmargin=!,label=\arabic*.} % mo¿na zmieniæ \arabic na \alph, jeœli wyliczenia maj¹ byæ z literkami
-\setlistdepth{4} % definiujemy g³êbokoœæ zagnie¿d¿enia list wyliczeniowych do 4 poziomów
-\setlist[itemize,1]{label=$\bullet$}  % definiujemy, jaki symbol ma byæ u¿yty w wyliczeniu na danym poziomie
+% Jednak jeszcze lepszym pomysÅ‚em jest zdefiniowanie otoczeÅ„ z wykorzystaniem enumitem
+\usepackage{enumitem} % pakiet pozwalajÄ…cy zarzÄ…dzaÄ‡ formatowaniem list wyliczeniowych
+\setlist{noitemsep,topsep=4pt,parsep=0pt,partopsep=4pt,leftmargin=*} % zadeklarowane parametry pozwalajÄ… uzyskaÄ‡ 'zwartÄ…' postaÄ‡ wypunktowania bÄ…dÅº wyliczenia
+\setenumerate{labelindent=0pt,itemindent=0pt,leftmargin=!,label=\arabic*.} % moÅ¼na zmieniÄ‡ \arabic na \alph, jeÅ›li wyliczenia majÄ… byÄ‡ z literkami
+\setlistdepth{4} % definiujemy gÅ‚Ä™bokoÅ›Ä‡ zagnieÅ¼dÅ¼enia list wyliczeniowych do 4 poziomÃ³w
+\setlist[itemize,1]{label=$\bullet$}  % definiujemy, jaki symbol ma byÄ‡ uÅ¼yty w wyliczeniu na danym poziomie
 \setlist[itemize,2]{label=\normalfont\bfseries\textendash}
 \setlist[itemize,3]{label=$\ast$}
 \setlist[itemize,4]{label=$\cdot$}
@@ -250,10 +250,10 @@ backgroundcolor=\color{listingBg}
 \makeatother
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%  Pakiet do generowania indeksu (wa¿ne, aby wstawiæ przed hyperref)
+%%  Pakiet do generowania indeksu (waÅ¼ne, aby wstawiÄ‡ przed hyperref)
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \DisemulatePackage{imakeidx}
-\usepackage[makeindex,noautomatic]{imakeidx} % tutaj mówimy, ¿eby indeks nie generowa³ siê automatycznie, 
+\usepackage[makeindex,noautomatic]{imakeidx} % tutaj mÃ³wimy, Å¼eby indeks nie generowaÅ‚ siÄ™ automatycznie, 
 
 %\usepackage[noautomatic]{imakeidx} 
 \makeindex
@@ -289,13 +289,13 @@ backgroundcolor=\color{listingBg}
 \pdfcompresslevel=9
 \pdfoutput=1
 \makeatletter
-\AtBeginDocument{  % Poni¿ej zdefiniowano metadane, jakie zapisane zostan¹ w dokumencie pdf - nale¿y je w³aœciwie uzupe³niæ
+\AtBeginDocument{  % PoniÅ¼ej zdefiniowano metadane, jakie zapisane zostanÄ… w dokumencie pdf - naleÅ¼y je wÅ‚aÅ›ciwie uzupeÅ‚niÄ‡
   \hypersetup{
 	pdfinfo={
     Title = {\@title},
     Author = {\@author},
     Subject={\@title},
-    Keywords={analiza wydajnoœciowa, interfejsy programowania aplikacji, testowanie rozproszone, wirtualizacja œrodowisk uruchamiania oprogramowania, œrodowisko .net, silnik nodejs},  
+    Keywords={analiza wydajnoÅ›ciowa, interfejsy programowania aplikacji, testowanie rozproszone, wirtualizacja Å›rodowisk uruchamiania oprogramowania, Å›rodowisko .net, silnik nodejs},  
 		Producer={Maciej Grzela},
 		Creator={Maciej Grzela}
 	}}
@@ -329,7 +329,7 @@ backgroundcolor=\color{listingBg}
 
 \usepackage{rotating}
 
-% Deklaracja g³êbokoœciu numeracji
+% Deklaracja gÅ‚Ä™bokoÅ›ciu numeracji
 \setcounter{secnumdepth}{2}
 \setcounter{tocdepth}{2}
 \setsecnumdepth{subsection} % activating subsubsec numbering in doc
@@ -345,10 +345,10 @@ backgroundcolor=\color{listingBg}
 \renewcommand{\cftchapterdotsep}{\cftdotsep}
 
 
-% Czcionka do podpisów tabel i rysunków
+% Czcionka do podpisÃ³w tabel i rysunkÃ³w
 \captionnamefont{\small}
 \captiontitlefont{\small}
-% makro pozwalaj¹ce zmieniæ sposób wypisywania rozdzia³u
+% makro pozwalajÄ…ce zmieniÄ‡ sposÃ³b wypisywania rozdziaÅ‚u
 %\def\printchaptertitle##1{\fonttitle \space \thechapter.\space ##1} 
 
 %\usepackage{ltcaption}
@@ -356,7 +356,7 @@ backgroundcolor=\color{listingBg}
 %\renewcommand\CaptionLabelFont{\small}
 %\renewcommand\CaptionTextFont{\small}
 
-% Przedefiniowanie etykiet w podpisach tabel i rysunków
+% Przedefiniowanie etykiet w podpisach tabel i rysunkÃ³w
 %\AtBeginDocument{% 
         \addto\captionspolish{% 
         \renewcommand{\tablename}{Tab.}% 
@@ -364,7 +364,7 @@ backgroundcolor=\color{listingBg}
 
 %\AtBeginDocument{% 
 %        \addto\captionspolish{% 
-%        \renewcommand{\chaptername}{Rozdzia³}% 
+%        \renewcommand{\chaptername}{RozdziaÅ‚}% 
 %}} 
 
 %\AtBeginDocument{% 
@@ -380,7 +380,7 @@ backgroundcolor=\color{listingBg}
 
 %\AtBeginDocument{% 
         \addto\captionspolish{% 
-        \renewcommand{\listfigurename}{Spis rysunków}% 
+        \renewcommand{\listfigurename}{Spis rysunkÃ³w}% 
 }%}
 
 %\AtBeginDocument{% 
@@ -394,7 +394,7 @@ backgroundcolor=\color{listingBg}
 }%}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%                  
-%% Definicje stopek i nag³ówków
+%% Definicje stopek i nagÅ‚Ã³wkÃ³w
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%                  
 \addtopsmarks{headings}{%
 \nouppercaseheads % added at the beginning
@@ -429,60 +429,60 @@ backgroundcolor=\color{listingBg}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% Definicja strony tytu³owej 
+%% Definicja strony tytuÅ‚owej 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \makeatletter
 %Uczelnia
 \newcommand\uczelnia[1]{\renewcommand\@uczelnia{#1}}
-\newcommand\@uczelnia{Politechnika Wroc³awska}
-%Wydzia³
+\newcommand\@uczelnia{Politechnika WrocÅ‚awska}
+%WydziaÅ‚
 \newcommand\wydzial[1]{\renewcommand\@wydzial{#1}}
-\newcommand\@wydzial{Wydzia³ Informatyki i Telekomunikacji}
+\newcommand\@wydzial{WydziaÅ‚ Informatyki i Telekomunikacji}
 %Kierunek
 \newcommand\kierunek[1]{\renewcommand\@kierunek{#1}}
 \newcommand\@kierunek{Informatyka}
-%Specjalnoœæ
+%SpecjalnoÅ›Ä‡
 \newcommand\specjalnosc[1]{\renewcommand\@specjalnosc{#1}}
 \newcommand\@specjalnosc{Systemy i Sieci Komputerowe}
-%Tytu³ po angielsku
+%TytuÅ‚ po angielsku
 \newcommand\titleEN[1]{\renewcommand\@titleEN{#1}}
 \newcommand\@titleEN{Performance analysis of C\# and NodeJS APIs}
-%Tytu³ krótki
+%TytuÅ‚ krÃ³tki
 \newcommand\titleShort[1]{\renewcommand\@titleShort{#1}}
-\newcommand\@titleShort{Analiza wydajnoœciowa interfejsów API w technologiach C\# oraz NodeJS}
+\newcommand\@titleShort{Analiza wydajnoÅ›ciowa interfejsÃ³w API w technologiach C\# oraz NodeJS}
 %Promotor
 \newcommand\promotor[1]{\renewcommand\@promotor{#1}}
-\newcommand\@promotor{dr in¿. Micha³ Kucharzak}
+\newcommand\@promotor{dr inÅ¼. MichaÅ‚ Kucharzak}
 %Katedra
 \newcommand\katedra[1]{\renewcommand\@katedra{#1}}
-\newcommand\@katedra{Katedra Systemów i Sieci Komputerowych}
+\newcommand\@katedra{Katedra SystemÃ³w i Sieci Komputerowych}
 
 %\usepackage[absolute]{textpos} % zamarkowano, bo ostatecznie wykorzystano otoczenie picture
 
 \def\maketitle{%
   \pagestyle{empty}%
 %%\garamond 
-	\fontfamily{\ebgaramond@family}\selectfont % na stronie tytu³owej czcionka garamond
+	\fontfamily{\ebgaramond@family}\selectfont % na stronie tytuÅ‚owej czcionka garamond
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%	
-%% Poni¿ej, w otoczniu picture, wstawiono tytu³ i autora. 
-%% Tytu³ (z autorem) musi znaleŸæ siê w obszarze 
-%% odpowiadaj¹cym okienku 110mmx75mm, którego lewy górny róg 
-%% jest w po³o¿eniu 77mm od lewej i 111mm od górnej  krawêdzi strony 
-%% (tak wynika z wyciêcia na ok³adce). 
-%% Poni¿szy kod musi byæ u¿yty dok³adnie w miejscu gdzie jest.
-%% Jeœli tytu³ nie mieœci siê w okienku, to nale¿y tak pozmieniaæ 
-%% parametry u¿ytych komend, aby ten przyd³ugi tytu³ jednak 
-%% upakowaæ go do okienka.
+%% PoniÅ¼ej, w otoczniu picture, wstawiono tytuÅ‚ i autora. 
+%% TytuÅ‚ (z autorem) musi znaleÅºÄ‡ siÄ™ w obszarze 
+%% odpowiadajÄ…cym okienku 110mmx75mm, ktÃ³rego lewy gÃ³rny rÃ³g 
+%% jest w poÅ‚oÅ¼eniu 77mm od lewej i 111mm od gÃ³rnej  krawÄ™dzi strony 
+%% (tak wynika z wyciÄ™cia na okÅ‚adce). 
+%% PoniÅ¼szy kod musi byÄ‡ uÅ¼yty dokÅ‚adnie w miejscu gdzie jest.
+%% JeÅ›li tytuÅ‚ nie mieÅ›ci siÄ™ w okienku, to naleÅ¼y tak pozmieniaÄ‡ 
+%% parametry uÅ¼ytych komend, aby ten przydÅ‚ugi tytuÅ‚ jednak 
+%% upakowaÄ‡ go do okienka.
 %%
-%% Sama ok³adka (kolorowa strona z wyciêciem, do pobrania z dydaktyki) 
-%% powinna byæ przyciêta o 3mm od ka¿dej z krawêdzi.
-%% Te 3mm pewnie zostawiono na ewentualne spady czy te¿ specjaln¹ oprawê.
+%% Sama okÅ‚adka (kolorowa strona z wyciÄ™ciem, do pobrania z dydaktyki) 
+%% powinna byÄ‡ przyciÄ™ta o 3mm od kaÅ¼dej z krawÄ™dzi.
+%% Te 3mm pewnie zostawiono na ewentualne spady czy teÅ¼ specjalnÄ… oprawÄ™.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%	
 \newlength{\tmpfboxrule}
 \setlength{\tmpfboxrule}{\fboxrule}
 \setlength{\fboxsep}{2mm}
 \setlength{\fboxrule}{0mm} 
-%\setlength{\fboxrule}{0.1mm} %% jeœli chcemy zobaczyæ ramkê
+%\setlength{\fboxrule}{0.1mm} %% jeÅ›li chcemy zobaczyÄ‡ ramkÄ™
 \setlength{\unitlength}{1mm}
 \begin{picture}(0,0)
 \put(26,-124){\fbox{
@@ -496,8 +496,8 @@ backgroundcolor=\color{listingBg}
 \end{picture}
 \setlength{\fboxrule}{\tmpfboxrule} 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% Reszta strony z nazw¹ uczelni, wydzia³u, kierunkiem, specjalnoœci¹
-%% promotorem, ocen¹ pracy, miastem i rokiem
+%% Reszta strony z nazwÄ… uczelni, wydziaÅ‚u, kierunkiem, specjalnoÅ›ciÄ…
+%% promotorem, ocenÄ… pracy, miastem i rokiem
 	{\centering%\vspace{-1cm}
 		{\fontsize{22pt}{24pt}\selectfont \@uczelnia}\\[0.4cm]
 		{\fontsize{18pt}{20pt}\selectfont \@wydzial}\\[0.5cm]
@@ -506,7 +506,7 @@ backgroundcolor=\color{listingBg}
 {\flushleft\fontsize{14pt}{16pt}\selectfont%
 \begin{tabular}{ll}
 KIERUNEK: & \@kierunek\\
-SPECJALNOŒÆ: & \@specjalnosc\\
+SPECJALNOÅšÄ†: & \@specjalnosc\\
 \end{tabular}\\[1.3cm]
 }
 {\centering
@@ -515,7 +515,7 @@ SPECJALNOŒÆ: & \@specjalnosc\\
 }
 \vfill
 \begin{tabularx}{\linewidth}{p{6cm}X}
-		&{\fontsize{16pt}{18pt}\selectfont PROWADZ¥CY PRACÊ:}\\[2mm] %UWAGA: tutaj jest miejsce na nazwisko promotora pracy
+		&{\fontsize{16pt}{18pt}\selectfont PROWADZÄ„CY PRACÄ˜:}\\[2mm] %UWAGA: tutaj jest miejsce na nazwisko promotora pracy
 		&{\fontsize{15pt}{16pt}\selectfont \@promotor}\\[2mm]
 		&{\fontsize{13pt}{16pt}\selectfont \@katedra}\\[10mm]
 		&{\fontsize{16pt}{18pt}\selectfont }\\[20mm]
@@ -540,20 +540,20 @@ SPECJALNOŒÆ: & \@specjalnosc\\
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%  Metadane dokumentu 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\title{Analiza wydajnoœciowa interfejsów API w technologiach C\# oraz NodeJS}
-\titleShort{Analiza wydajnoœciowa interfejsów API w technologiach C\# oraz NodeJS}
+\title{Analiza wydajnoÅ›ciowa interfejsÃ³w API w technologiach C\# oraz NodeJS}
+\titleShort{Analiza wydajnoÅ›ciowa interfejsÃ³w API w technologiach C\# oraz NodeJS}
 \titleEN{Performance analysis of C\# and NodeJS APIs}
 \author{Maciej Grzela}
-\uczelnia{POLITECHNIKA WROC£AWSKA}
-\wydzial{WYDZIA£ INFORMATYKI I TELEKOMUNIKACJI}
+\uczelnia{POLITECHNIKA WROCÅAWSKA}
+\wydzial{WYDZIAÅ INFORMATYKI I TELEKOMUNIKACJI}
 \kierunek{INFORMATYKA}
 \specjalnosc{SYSTEMY I SIECI KOMPUTEROWE}
-\promotor{dr in¿., Micha³ Kucharzak}
-\katedra{Katedra Systemów i Sieci Komputerowych}
-\date{WROC£AW, 2022}
+\promotor{dr inÅ¼., MichaÅ‚ Kucharzak}
+\katedra{Katedra SystemÃ³w i Sieci Komputerowych}
+\date{WROCÅAW, 2022}
 
-% Ustawienie odstêpu od góry w nienumerowanych rozdzia³ach oraz wykazach:
-% Spis treœci, Spis tabel, Spis rysunków, Indeks rzeczowy
+% Ustawienie odstÄ™pu od gÃ³ry w nienumerowanych rozdziaÅ‚ach oraz wykazach:
+% Spis treÅ›ci, Spis tabel, Spis rysunkÃ³w, Indeks rzeczowy
 
 %\newlength{\linespace}
 %\setlength{\linespace}{-\beforechapskip-\topskip+\headheight+\topsep}
@@ -561,40 +561,40 @@ SPECJALNOŒÆ: & \@specjalnosc\\
 %\renewcommand\chapterheadstart{\vspace*{\linespace}}
 %}
 
-%% powy¿sza komenda za³atwia to, co robi¹ komendy poni¿sze dla spisów
+%% powyÅ¼sza komenda zaÅ‚atwia to, co robiÄ… komendy poniÅ¼sze dla spisÃ³w
 %\renewcommand*{\tocheadstart}{\vspace*{\linespace}}
 %\renewcommand*{\lotheadstart}{\vspace*{\linespace}}
 %\renewcommand*{\lofheadstart}{\vspace*{\linespace}}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%                  Pocz¹tek dokumentu 
+%                  PoczÄ…tek dokumentu 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%\includeonly{skroty,rozdzial01} % jeœli chcemy kompilowaæ tylko fragmenty, to mo¿na tu je wpisaæ
+%\includeonly{skroty,rozdzial01} % jeÅ›li chcemy kompilowaÄ‡ tylko fragmenty, to moÅ¼na tu je wpisaÄ‡
 
 \begin{document}
-% Tutaj mo¿na prze³¹czyæ odstêp miêdzy liniami
+% Tutaj moÅ¼na przeÅ‚Ä…czyÄ‡ odstÄ™p miÄ™dzy liniami
 %\SingleSpacing
 %\OnehalfSpacing
 %\DoubleSpacing
 
 %\settypeoutlayoutunit{cm} % do debugowania
 %\typeoutstandardlayout    % wypisuje na stdout informacje o ustawieniach
-\pdfbookmark[0]{Tytu³}{Tytul.1}
+\pdfbookmark[0]{TytuÅ‚}{Tytul.1}
 \maketitle
 
 \chapterstyle{noNumbered}
 \pagestyle{outer}
-\mbox{}\pdfbookmark[0]{Spis treœci}{spisTresci.1}
+\mbox{}\pdfbookmark[0]{Spis treÅ›ci}{spisTresci.1}
 \tableofcontents* 
 
 \newpage
-\mbox{}\pdfbookmark[0]{Spis rysunków}{spisRysunkow.1}
-%\addcontentsline{toc}{chapter}{Spis rysunków}
+\mbox{}\pdfbookmark[0]{Spis rysunkÃ³w}{spisRysunkow.1}
+%\addcontentsline{toc}{chapter}{Spis rysunkÃ³w}
 \listoffigures*
 
 \newpage
-\mbox{}\pdfbookmark[0]{Spis listingów}{spisListingow.1}
-%\addcontentsline{toc}{chapter}{Spis listingów}
+\mbox{}\pdfbookmark[0]{Spis listingÃ³w}{spisListingow.1}
+%\addcontentsline{toc}{chapter}{Spis listingÃ³w}
 \lstlistoflistings*
 
 
@@ -610,7 +610,7 @@ SPECJALNOŒÆ: & \@specjalnosc\\
 %\addcontentsline{toc}{chapter}{Spis tabel}
 \listoftables*
 
-\include{skroty} %skróty mo¿na sobie pomin¹æ
+\include{skroty} %skrÃ³ty moÅ¼na sobie pominÄ…Ä‡
 \chapterstyle{default}
 \include{rozdzial01}
 \include{rozdzial023}
@@ -622,10 +622,10 @@ SPECJALNOŒÆ: & \@specjalnosc\\
 %\bibliographystyle{plalpha}
 \bibliographystyle{plabbrv}
 
-%UWAGA: bibliotekê referencji nale¿y przygotowaæ samemu. Dobrym do tego narzêdziem jest JabRef.
-%       Nazwê przygotowanej biblioteki wpisuje siê poni¿ej bez rozszerzenia 
+%UWAGA: bibliotekÄ™ referencji naleÅ¼y przygotowaÄ‡ samemu. Dobrym do tego narzÄ™dziem jest JabRef.
+%       NazwÄ™ przygotowanej biblioteki wpisuje siÄ™ poniÅ¼ej bez rozszerzenia 
 %       (w tym przypadku jest to "dokumentacja.bib")
-\setlength{\bibitemsep}{2pt} % - by zacieœniæ wykaz literatury
+\setlength{\bibitemsep}{2pt} % - by zacieÅ›niÄ‡ wykaz literatury
 \bibliography{dokumentacja}
 
 \end{document}
