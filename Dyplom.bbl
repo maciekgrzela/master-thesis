@@ -1,3 +1,15 @@
-\begin{thebibliography}{}
+\begin{thebibliography}{1}
+
+\bibitem{SQL2}
+M.~Bickley,  C.~Slominski.
+\newblock {A MySQL-based data archiver: preliminary results}.
+\newblock {\em {Proceedings of ICALEPCS07}}, Paz. 2007.
+\newblock \url{http://www.osti.gov/scitech/servlets/purl/922267} [dostp dnia 20
+  czerwca 2015].
+
+\bibitem{JS07}
+J.~Jędrzejczyk,  B.~rdka.
+\newblock Segmentacja obrazw metod drzew decyzyjnych.
+\newblock Raport instytutowy, Politechnika Wrocawska, Wydzia Elektroniki, 2007.
 
 \end{thebibliography}
