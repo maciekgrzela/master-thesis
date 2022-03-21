@@ -258,10 +258,35 @@ Zasada poziomu pierwszego, odnosi się do charakterystyki interfejsu API jako us
 
 Reguła stanowiąca definicję poziomu trzeciego, związana jest z semantyką poszczególnych typów żądań protokołu hipertekstowego. Żądanie o takim samym adresie sieciowym, pełnić powinno odmienną rolę, w zależności od rodzaju żądania HTTP.
 
-Ostatnim z poziomów dojrzałości interfejsu programowania aplikacji opartego o konwencję REST jest reguła HATEOAS \textit{(ang. Hypertext As The Engine Of Application State)}. Reguła ta, definiuje interfejs API jako źródło informacji dotyczącej obsługi stanu całego systemu internetowego (tj. usługi sieciowej wraz z aplikacjami klienckimi).
+Ostatnim z poziomów dojrzałości interfejsu programowania aplikacji opartego o konwencję REST jest reguła HATEOAS \textit{(ang. Hypertext As The Engine Of Application State)}. Reguła ta, definiuje interfejs API jako źródło informacji dotyczącej obsługi stanu całego systemu internetowego (tj. usługi sieciowej wraz z aplikacjami klienckimi). Klient, po uzyskaniu odpowiedzi serwera na żądanie, powinien na podstawie zawartości tej odpowiedzi móc zdefiniować przyszłe czynności, które wolno mu wykonać.  
 
 \section{Testowanie usług sieciowych}
-\section{Wykorzystywane technologie}
+\section{Wykorzystywane narzędzia i technologie}
+Zarówno w trakcie procesu implementacji badanych interfejsów programowania aplikacji, jak i procedurze przeprowadzenia badań pod kontem ich wydajności, wykorzystano obszerny zbiór sprawdzonych i powszechnie stosowanych rozwiązań technologicznych. W ramach niniejszej sekcji, opisane zostanie każde z nich.
+
+\subsection*{C\#}
+C\# jest wieloparadygmatowym, a także nowoczesnym językiem programowania ogólnego przeznaczenia, charakteryzującym się bezpieczeństwem i niezawodnością w aspekcie typowania struktur danych. Pierwsza z wersji tego języka, stworzona została przez Andersa Hejlsberga w roku 1998. Od tamtej chwili, do momentu napisania niniejszej pracy, upublicznionych zostało 9 kolejnych,  stabilnych wydań projektu C\#. Każda z następnych wersji omawianego języka programowania wprowadzała zarówno usprawnienia w kontekście ekosystemu budowy i kompilacji programów źródłowych, jak i wzbogacała interfejs bibliotek funkcyjnych o kluczowe z punktu widzenia doświadczonego programisty rozwiązania. Do rozwiązań tych, zaliczyć należy między innymi: mechanizmy programowania współbieżnego, typy anonimowe, operatory zmiennych typów niezdefiniowanych, obsługę referencji, typy generyczne, czy też wyrażenia lambda. 
+
+W ramach niniejszej pracy, język C\# wykorzystany został do implementacji jednego z dwóch zbiorów interfejsów programowania aplikacji. Ze względu na zastosowanie rozwiązań z zakresu przetwarzania współbieżnego (tj. operacji asynchronicznych oraz wielowątkowych) udostępnianych przez omawiany język programowania, interfejsy API realizowane w tej technologii mogą obsługiwać w sposób równoległy żądania pochodzące od wielu klientów, a także utrzymywać sekwencyjny charakter przetwarzanych procedur niezależnie od czasu ich wykonywania. Należy także zwrócić uwagę na mechanizm wewnętrznych usprawnień wydajnościowych implementowany w ramach kompilatora i uruchamiany w momencie tłumaczenia kodu języka do tzw. języka pośredniego \textit{(ang. Intermediate Language)}. Dzięki zastosowaniu przedstawionego mechanizmu, operacje zdefiniowane przez programistę mogą być modyfikowane w procesie kompilacji, tak aby nie wpłynąć na zaimplementowaną funkcjonalność, zwiększając jednocześnie wydajność generowanego programu. [1]
+\subsection*{.NET Core}
+\subsection*{Entity Framework Core}
+\subsection*{MediatR}
+\subsection*{JavaScript}
+JavaScript to wielofunkcyjny oraz wieloplatformowy skryptowy język programowania cechujący się wysokim poziomem abstrakcji. Najbardziej popularnym przeznaczeniem omawianego języka jest budowa systemów internetowych, a także mobilnych. Historyczną rolą języka JavaScript było udostępnianie programiście funkcjonalności umożliwiających określanie różnorodnych sposobów interakcji pomiędzy użytkownikiem serwisu internetowego, a jego statycznymi elementami. Podstawowym środowiskiem wykonania i interpretacji omawianego języka była uwcześnie przeglądarka internetowa. DOPISAĆ O NODE'DZIE
+\subsection*{TypeScript}
+\subsection*{NodeJS}
+\subsection*{ExpressJS}
+\subsection*{Prisma ORM}
+\subsection*{Mongoose}
+\subsection*{Apache JMeter}
+\subsection*{Postman Client}
+\subsection*{Visual Studio Code}
+\subsection*{Jetbrains Rider}
+\subsection*{Microsoft SQL Server}
+\subsection*{PostgreSQL}
+\subsection*{MySQL}
+\subsection*{Sqlite}
+\subsection*{MongoDB}
 \section{Przegląd literatury}
 W niniejszym rozdziale przedstawione zostaną pozycje literaturowe, do których odnosić się będzie opisywana praca dyplomowa. Pozycje te, podzielone zostały na oddzielne grupy, związane z określoną tematyką.
 
