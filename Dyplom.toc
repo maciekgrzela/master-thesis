@@ -32,32 +32,32 @@
 \contentsline {section}{\numberline {2.2}Interfejsy programowania aplikacji}{15}{section.2.2}%
 \contentsline {section}{\numberline {2.3}Testowanie usług sieciowych}{23}{section.2.3}%
 \contentsline {section}{\numberline {2.4}Wykorzystywane narzędzia i technologie}{23}{section.2.4}%
-\contentsline {section}{\numberline {2.5}Przegląd literatury}{26}{section.2.5}%
-\contentsline {chapter}{\chapternumberline {3}Zalecenia dotyczce formatowania}{33}{chapter.3}%
-\contentsline {section}{\numberline {3.1}Rozmiar i ukad treci na stronach dokumentu}{33}{section.3.1}%
-\contentsline {section}{\numberline {3.2}Strona tytuowa}{35}{section.3.2}%
-\contentsline {section}{\numberline {3.3}Krj i wielko czcionek}{36}{section.3.3}%
-\contentsline {section}{\numberline {3.4}Formatowanie blokw tekstu}{37}{section.3.4}%
-\contentsline {section}{\numberline {3.5}Opisy tabel i rysunkw}{39}{section.3.5}%
-\contentsline {section}{\numberline {3.6}Przypisy dolne}{39}{section.3.6}%
-\contentsline {section}{\numberline {3.7}Formatowanie spisu treci}{40}{section.3.7}%
-\contentsline {section}{\numberline {3.8}Formatowanie list wyliczeniowych i wypunktowa}{41}{section.3.8}%
-\contentsline {section}{\numberline {3.9}Wzory matematyczne}{42}{section.3.9}%
-\contentsline {chapter}{\chapternumberline {4}Redakcja pracy}{43}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Układ pracy}{43}{section.4.1}%
-\contentsline {section}{\numberline {4.2}Styl}{44}{section.4.2}%
-\contentsline {chapter}{\chapternumberline {5}Uwagi techniczne}{45}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Rysunki}{45}{section.5.1}%
-\contentsline {section}{\numberline {5.2}Wstawianie kodu rdowego}{47}{section.5.2}%
-\contentsline {section}{\numberline {5.3}Wykaz literatury oraz cytowania}{48}{section.5.3}%
-\contentsline {section}{\numberline {5.4}Indeks rzeczowy}{49}{section.5.4}%
-\contentsline {section}{\numberline {5.5}Inne uwagi}{50}{section.5.5}%
-\contentsline {chapter}{\chapternumberline {6}Podsumowanie}{52}{chapter.6}%
-\contentsline {section}{\numberline {6.1}Sekcja poziomu 1}{52}{section.6.1}%
-\contentsline {subsection}{\numberline {6.1.1}Sekcja poziomu 2}{52}{subsection.6.1.1}%
-\contentsline {subsubsection}{Sekcja poziomu 3}{52}{section*.73}%
-\contentsline {paragraph}{Paragraf 4}{52}{section*.74}%
-\contentsline {section}{\numberline {6.2}Sekcja poziomu 1}{52}{section.6.2}%
-\contentsline {chapter}{Literatura}{53}{chapter*.75}%
-\contentsline {appendix}{\chapternumberline {A}Instrukcja wdroeniowa}{54}{appendix.A}%
-\contentsline {appendix}{\chapternumberline {B}Opis zaczonej pyty CD/DVD}{55}{appendix.B}%
+\contentsline {section}{\numberline {2.5}Przegląd literatury}{28}{section.2.5}%
+\contentsline {chapter}{\chapternumberline {3}Zalecenia dotyczce formatowania}{35}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Rozmiar i ukad treci na stronach dokumentu}{35}{section.3.1}%
+\contentsline {section}{\numberline {3.2}Strona tytuowa}{37}{section.3.2}%
+\contentsline {section}{\numberline {3.3}Krj i wielko czcionek}{38}{section.3.3}%
+\contentsline {section}{\numberline {3.4}Formatowanie blokw tekstu}{39}{section.3.4}%
+\contentsline {section}{\numberline {3.5}Opisy tabel i rysunkw}{41}{section.3.5}%
+\contentsline {section}{\numberline {3.6}Przypisy dolne}{41}{section.3.6}%
+\contentsline {section}{\numberline {3.7}Formatowanie spisu treci}{42}{section.3.7}%
+\contentsline {section}{\numberline {3.8}Formatowanie list wyliczeniowych i wypunktowa}{43}{section.3.8}%
+\contentsline {section}{\numberline {3.9}Wzory matematyczne}{44}{section.3.9}%
+\contentsline {chapter}{\chapternumberline {4}Redakcja pracy}{45}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Układ pracy}{45}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Styl}{46}{section.4.2}%
+\contentsline {chapter}{\chapternumberline {5}Uwagi techniczne}{47}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Rysunki}{47}{section.5.1}%
+\contentsline {section}{\numberline {5.2}Wstawianie kodu rdowego}{49}{section.5.2}%
+\contentsline {section}{\numberline {5.3}Wykaz literatury oraz cytowania}{50}{section.5.3}%
+\contentsline {section}{\numberline {5.4}Indeks rzeczowy}{51}{section.5.4}%
+\contentsline {section}{\numberline {5.5}Inne uwagi}{52}{section.5.5}%
+\contentsline {chapter}{\chapternumberline {6}Podsumowanie}{54}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Sekcja poziomu 1}{54}{section.6.1}%
+\contentsline {subsection}{\numberline {6.1.1}Sekcja poziomu 2}{54}{subsection.6.1.1}%
+\contentsline {subsubsection}{Sekcja poziomu 3}{54}{section*.65}%
+\contentsline {paragraph}{Paragraf 4}{54}{section*.66}%
+\contentsline {section}{\numberline {6.2}Sekcja poziomu 1}{54}{section.6.2}%
+\contentsline {chapter}{Literatura}{55}{chapter*.67}%
+\contentsline {appendix}{\chapternumberline {A}Instrukcja wdroeniowa}{56}{appendix.A}%
+\contentsline {appendix}{\chapternumberline {B}Opis zaczonej pyty CD/DVD}{57}{appendix.B}%
