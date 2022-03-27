@@ -59,5 +59,5 @@
 \contentsline {paragraph}{Paragraf 4}{54}{section*.66}%
 \contentsline {section}{\numberline {6.2}Sekcja poziomu 1}{54}{section.6.2}%
 \contentsline {chapter}{Literatura}{55}{chapter*.67}%
-\contentsline {appendix}{\chapternumberline {A}Instrukcja wdroeniowa}{56}{appendix.A}%
-\contentsline {appendix}{\chapternumberline {B}Opis zaczonej pyty CD/DVD}{57}{appendix.B}%
+\contentsline {appendix}{\chapternumberline {A}Instrukcja wdroeniowa}{57}{appendix.A}%
+\contentsline {appendix}{\chapternumberline {B}Opis zaczonej pyty CD/DVD}{58}{appendix.B}%

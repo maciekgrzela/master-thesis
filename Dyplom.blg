@@ -23,44 +23,49 @@ A level-1 auxiliary file: dodatekA.aux
 Reallocating 'name_of_file' (item size: 1) to 13 items.
 A level-1 auxiliary file: dodatekB.aux
 Database file #1: dokumentacja.bib
-You've used 2 entries,
+Warning--entry type for "25010:2011" isn't style-file defined
+--line 248 of file dokumentacja.bib
+Warning--I didn't find a database entry for "JS07"
+Warning--I didn't find a database entry for "SQL2"
+You've used 37 entries,
             2129 wiz_defined-function locations,
-            524 strings with 4226 characters,
-and the built_in function-call counts, 541 in all, are:
-= -- 51
-> -- 26
-< -- 0
-+ -- 10
-- -- 8
-* -- 30
-:= -- 102
-add.period$ -- 7
-call.type$ -- 2
-change.case$ -- 11
+            700 strings with 9269 characters,
+and the built_in function-call counts, 10781 in all, are:
+= -- 1054
+> -- 467
+< -- 8
++ -- 189
+- -- 150
+* -- 582
+:= -- 1787
+add.period$ -- 115
+call.type$ -- 37
+change.case$ -- 170
 chr.to.int$ -- 0
-cite$ -- 2
-duplicate$ -- 22
-empty$ -- 44
-format.name$ -- 8
-if$ -- 110
+cite$ -- 37
+duplicate$ -- 471
+empty$ -- 909
+format.name$ -- 150
+if$ -- 2327
 int.to.chr$ -- 0
-int.to.str$ -- 2
-missing$ -- 1
-newline$ -- 14
-num.names$ -- 4
-pop$ -- 12
+int.to.str$ -- 37
+missing$ -- 48
+newline$ -- 188
+num.names$ -- 74
+pop$ -- 283
 preamble$ -- 1
-purify$ -- 8
+purify$ -- 149
 quote$ -- 0
-skip$ -- 14
+skip$ -- 350
 stack$ -- 0
-substring$ -- 10
-swap$ -- 2
-text.length$ -- 0
+substring$ -- 450
+swap$ -- 100
+text.length$ -- 8
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 8
+type$ -- 116
 warning$ -- 0
-while$ -- 4
-width$ -- 3
-write$ -- 25
+while$ -- 99
+width$ -- 39
+write$ -- 386
+(There were 3 warnings)

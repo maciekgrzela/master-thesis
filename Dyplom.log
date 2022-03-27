@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.6.29) (preloaded format=pdflatex 2020.10.11)  23 MAR 2022 16:03
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.6.29) (preloaded format=pdflatex 2020.10.11)  27 MAR 2022 12:56
 entering extended mode
 **c:/Users/HP/source/repos/master-thesis/Dyplom.tex
 (c:/Users/HP/source/repos/master-thesis/Dyplom.tex
@@ -1203,7 +1203,7 @@ Overfull \vbox (0.89998pt too high) has occurred while \output is active []
 Overfull \vbox (0.89998pt too high) has occurred while \output is active []
 
  [18]
-<rys02/architektura-api.png, id=398, 683.4333pt x 639.1077pt>
+<rys02/architektura-api.png, id=407, 683.4333pt x 639.1077pt>
 File: rys02/architektura-api.png Graphic file (type png)
 <use rys02/architektura-api.png>
 Package pdftex.def Info: rys02/architektura-api.png  used on input line 181.
@@ -1215,7 +1215,7 @@ Overfull \vbox (0.89998pt too high) has occurred while \output is active []
 
 pdfTeX warning: pdflatex (file ./rys02/architektura-api.png): large interlaced PNG might cause out of memory (use non-interlaced PNG to fix this)
 >]
-<rys02/orm-wyjasnienie.png, id=408, 1596.71532pt x 473.51906pt>
+<rys02/orm-wyjasnienie.png, id=418, 1596.71532pt x 473.51906pt>
 File: rys02/orm-wyjasnienie.png Graphic file (type png)
 <use rys02/orm-wyjasnienie.png>
 Package pdftex.def Info: rys02/orm-wyjasnienie.png  used on input line 195.
@@ -1224,7 +1224,7 @@ Package pdftex.def Info: rys02/orm-wyjasnienie.png  used on input line 195.
 Overfull \vbox (0.89998pt too high) has occurred while \output is active []
 
  [20 <./rys02/orm-wyjasnienie.png>]
-<rys02/uwierzytelnianie-autoryzacja.png, id=417, 844.5954pt x 711.1368pt>
+<rys02/uwierzytelnianie-autoryzacja.png, id=430, 844.5954pt x 711.1368pt>
 File: rys02/uwierzytelnianie-autoryzacja.png Graphic file (type png)
 <use rys02/uwierzytelnianie-autoryzacja.png>
 Package pdftex.def Info: rys02/uwierzytelnianie-autoryzacja.png  used on input line 217.
@@ -1236,12 +1236,12 @@ Overfull \vbox (0.89998pt too high) has occurred while \output is active []
 
 pdfTeX warning: pdflatex (file ./rys02/uwierzytelnianie-autoryzacja.png): large interlaced PNG might cause out of memory (use non-interlaced PNG to fix this)
 >]
-<rys02/standard-vs-cqrs1.png, id=426, 1052.4921pt x 494.0859pt>
+<rys02/standard-vs-cqrs1.png, id=441, 1052.4921pt x 494.0859pt>
 File: rys02/standard-vs-cqrs1.png Graphic file (type png)
 <use rys02/standard-vs-cqrs1.png>
 Package pdftex.def Info: rys02/standard-vs-cqrs1.png  used on input line 234.
 (pdftex.def)             Requested size: 409.49722pt x 192.23283pt.
-<rys02/standard-vs-cqrs2.png, id=427, 1052.4921pt x 494.0859pt>
+<rys02/standard-vs-cqrs2.png, id=442, 1052.4921pt x 494.0859pt>
 File: rys02/standard-vs-cqrs2.png Graphic file (type png)
 <use rys02/standard-vs-cqrs2.png>
 Package pdftex.def Info: rys02/standard-vs-cqrs2.png  used on input line 241.
@@ -1279,10 +1279,10 @@ Overfull \vbox (0.89998pt too high) has occurred while \output is active []
  [31]
 Overfull \vbox (0.89998pt too high) has occurred while \output is active []
 
- [32])
+ [32]
 Overfull \vbox (0.89998pt too high) has occurred while \output is active []
 
- [33]
+ [33])
 Overfull \vbox (0.89998pt too high) has occurred while \output is active []
 
  [34]
@@ -1310,7 +1310,7 @@ Overfull \vbox (0.89998pt too high) has occurred while \output is active []
 Overfull \vbox (0.89998pt too high) has occurred while \output is active []
 
  [36]
-<rys03/stronaTytulowa01.pdf, id=516, 355.77538pt x 488.63553pt>
+<rys03/stronaTytulowa01.pdf, id=602, 355.77538pt x 488.63553pt>
 File: rys03/stronaTytulowa01.pdf Graphic file (type pdf)
 <use rys03/stronaTytulowa01.pdf>
 Package pdftex.def Info: rys03/stronaTytulowa01.pdf  used on input line 57.
@@ -1400,17 +1400,17 @@ Overfull \vbox (0.89998pt too high) has occurred while \output is active []
 
 
 ]
-<rys05/kanji-giri.pdf, id=678, 23.21744pt x 11.60876pt>
+<rys05/kanji-giri.pdf, id=764, 23.21744pt x 11.60876pt>
 File: rys05/kanji-giri.pdf Graphic file (type pdf)
 <use rys05/kanji-giri.pdf>
 Package pdftex.def Info: rys05/kanji-giri.pdf  used on input line 42.
 (pdftex.def)             Requested size: 136.50139pt x 68.29262pt.
-<rys05/beta1.pdf, id=679, 318.67084pt x 196.32407pt>
+<rys05/beta1.pdf, id=765, 318.67084pt x 196.32407pt>
 File: rys05/beta1.pdf Graphic file (type pdf)
 <use rys05/beta1.pdf>
 Package pdftex.def Info: rys05/beta1.pdf  used on input line 51.
 (pdftex.def)             Requested size: 216.12778pt x 133.15408pt.
-<rys05/alfa1.pdf, id=680, 1308.82678pt x 281.68228pt>
+<rys05/alfa1.pdf, id=766, 1308.82678pt x 281.68228pt>
 File: rys05/alfa1.pdf Graphic file (type pdf)
 <use rys05/alfa1.pdf>
 Package pdftex.def Info: rys05/alfa1.pdf  used on input line 52.
@@ -1437,6 +1437,12 @@ Underfull \hbox (badness 2980) in paragraph at lines 126--128
  []
 
 
+LaTeX Warning: Citation `JS07' on page 50 undefined on input line 132.
+
+
+LaTeX Warning: Citation `SQL2' on page 50 undefined on input line 132.
+
+
 Overfull \vbox (0.89998pt too high) has occurred while \output is active []
 
  [50]
@@ -1460,19 +1466,26 @@ Overfull \vbox (0.89998pt too high) has occurred while \output is active []
 
 ] (Dyplom.bbl
 bibitemlist
-)
+
 Overfull \vbox (0.89998pt too high) has occurred while \output is active []
 
  [55
 
 
 ]
+LaTeX Font Info:    Trying to load font information for TS1+qtm on input line 170.
+ ("C:\Program Files\MiKTeX\tex/latex/tex-gyre\ts1qtm.fd"
+File: ts1qtm.fd 2009/09/25 v1.2 font definition file for TS1/qtm
+))
+Overfull \vbox (0.89998pt too high) has occurred while \output is active []
+
+ [56]
 \openout2 = `dodatekA.aux'.
 
  (dodatekA.tex)
 Overfull \vbox (0.89998pt too high) has occurred while \output is active []
 
- [56
+ [57
 
 
 ]
@@ -1481,7 +1494,7 @@ Overfull \vbox (0.89998pt too high) has occurred while \output is active []
  (dodatekB.tex)
 Overfull \vbox (0.89998pt too high) has occurred while \output is active []
 
- [57
+ [58
 
 
 
@@ -1511,19 +1524,23 @@ Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 888.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 888.
 Package rerunfilecheck Info: File `Dyplom.out' has not changed.
 (rerunfilecheck)             Checksum: F87CEE189AF8DAC72500D840C09DCEF3;6302.
+
+
+LaTeX Warning: There were undefined references.
+
  ) 
 Here is how much of TeX's memory you used:
- 20310 strings out of 480790
- 328151 string characters out of 2898707
- 733106 words of memory out of 3000000
- 35536 multiletter control sequences out of 15000+200000
- 691713 words of font info for 93 fonts, out of 3000000 for 9000
+ 20405 strings out of 480790
+ 329870 string characters out of 2898707
+ 734464 words of memory out of 3000000
+ 35591 multiletter control sequences out of 15000+200000
+ 692125 words of font info for 94 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 37i,14n,45p,2182b,1921s stack positions out of 5000i,500n,10000p,200000b,50000s
-{C:/Users/HP/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathit.enc}{C:/Users/HP/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-rm.enc}{C:/Users/HP/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathex.enc}{C:/Users/HP/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathsy.enc}{C:/Program Files/MiKTeX/fonts/enc/dvips/tex-gyre/q-ec.enc}{C:/Program Files/MiKTeX/fonts/enc/dvips/ebgaramond/ebgm_tcdnmr.enc}<C:/Program Files/MiKTeX/fonts/type1/public/ebgaramond/EBGaramond-Bold.pfb><C:/Program Files/MiKTeX/fonts/type1/public/ebgaramond/EBGaramond-Regular.pfb><C:/Users/HP/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/latxfont/line10.pfb><C:/Users/HP/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/latxfont/linew10.pfb><C:/Users/HP/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmex10.pfb><C:/Users/HP/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi10.pfb><C:/Users/HP/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi12.pfb><C:/Users/HP/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi8.pfb><C:/Users/HP/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr8.pfb><C:/Users/HP/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/tex-gyre/qtmb.pfb><C:/Program Files/MiKTeX/fonts/type1/public/tex-gyre/qtmbi.pfb><C:/Program Files/MiKTeX/fonts/type1/public/tex-gyre/qtmr.pfb><C:/Program Files/MiKTeX/fonts/type1/public/tex-gyre/qtmri.pfb><C:/Program Files/MiKTeX/fonts/type1/public/txfonts/t1xtt.pfb>
-Output written on Dyplom.pdf (57 pages, 3055867 bytes).
+ 37i,14n,45p,2200b,1921s stack positions out of 5000i,500n,10000p,200000b,50000s
+{C:/Program Files/MiKTeX/fonts/enc/dvips/tex-gyre/q-ts1.enc}{C:/Users/HP/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathit.enc}{C:/Users/HP/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-rm.enc}{C:/Users/HP/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathex.enc}{C:/Users/HP/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathsy.enc}{C:/Program Files/MiKTeX/fonts/enc/dvips/tex-gyre/q-ec.enc}{C:/Program Files/MiKTeX/fonts/enc/dvips/ebgaramond/ebgm_tcdnmr.enc}<C:/Program Files/MiKTeX/fonts/type1/public/ebgaramond/EBGaramond-Bold.pfb><C:/Program Files/MiKTeX/fonts/type1/public/ebgaramond/EBGaramond-Regular.pfb><C:/Users/HP/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/latxfont/line10.pfb><C:/Users/HP/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/latxfont/linew10.pfb><C:/Users/HP/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmex10.pfb><C:/Users/HP/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi10.pfb><C:/Users/HP/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi12.pfb><C:/Users/HP/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi8.pfb><C:/Users/HP/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr8.pfb><C:/Users/HP/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/tex-gyre/qtmb.pfb><C:/Program Files/MiKTeX/fonts/type1/public/tex-gyre/qtmbi.pfb><C:/Program Files/MiKTeX/fonts/type1/public/tex-gyre/qtmr.pfb><C:/Program Files/MiKTeX/fonts/type1/public/tex-gyre/qtmri.pfb><C:/Program Files/MiKTeX/fonts/type1/public/txfonts/t1xtt.pfb>
+Output written on Dyplom.pdf (58 pages, 3079755 bytes).
 PDF statistics:
- 996 PDF objects out of 1000 (max. 8388607)
- 399 named destinations out of 1000 (max. 500000)
+ 1096 PDF objects out of 1200 (max. 8388607)
+ 435 named destinations out of 1000 (max. 500000)
  382 words of extra memory for PDF output out of 10000 (max. 10000000)
 
