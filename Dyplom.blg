@@ -25,11 +25,12 @@ A level-1 auxiliary file: dodatekB.aux
 Database file #1: dokumentacja.bib
 Warning--entry type for "25010:2011" isn't style-file defined
 --line 248 of file dokumentacja.bib
+Warning--I didn't find a database entry for "hetzel"
 Warning--I didn't find a database entry for "JS07"
 Warning--I didn't find a database entry for "SQL2"
 You've used 37 entries,
             2129 wiz_defined-function locations,
-            700 strings with 9269 characters,
+            701 strings with 9275 characters,
 and the built_in function-call counts, 10781 in all, are:
 = -- 1054
 > -- 467
@@ -68,4 +69,4 @@ warning$ -- 0
 while$ -- 99
 width$ -- 39
 write$ -- 386
-(There were 3 warnings)
+(There were 4 warnings)

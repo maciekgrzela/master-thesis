@@ -30,34 +30,34 @@
 \contentsline {subsubsection}{\textit {Stress testing}}{15}{section*.46}%
 \contentsline {subsubsection}{\textit {Assertion}}{15}{section*.48}%
 \contentsline {section}{\numberline {2.2}Interfejsy programowania aplikacji}{15}{section.2.2}%
-\contentsline {section}{\numberline {2.3}Testowanie usług sieciowych}{23}{section.2.3}%
-\contentsline {section}{\numberline {2.4}Wykorzystywane narzędzia i technologie}{23}{section.2.4}%
-\contentsline {section}{\numberline {2.5}Przegląd literatury}{28}{section.2.5}%
-\contentsline {chapter}{\chapternumberline {3}Zalecenia dotyczce formatowania}{35}{chapter.3}%
-\contentsline {section}{\numberline {3.1}Rozmiar i ukad treci na stronach dokumentu}{35}{section.3.1}%
-\contentsline {section}{\numberline {3.2}Strona tytuowa}{37}{section.3.2}%
-\contentsline {section}{\numberline {3.3}Krj i wielko czcionek}{38}{section.3.3}%
-\contentsline {section}{\numberline {3.4}Formatowanie blokw tekstu}{39}{section.3.4}%
-\contentsline {section}{\numberline {3.5}Opisy tabel i rysunkw}{41}{section.3.5}%
-\contentsline {section}{\numberline {3.6}Przypisy dolne}{41}{section.3.6}%
-\contentsline {section}{\numberline {3.7}Formatowanie spisu treci}{42}{section.3.7}%
-\contentsline {section}{\numberline {3.8}Formatowanie list wyliczeniowych i wypunktowa}{43}{section.3.8}%
-\contentsline {section}{\numberline {3.9}Wzory matematyczne}{44}{section.3.9}%
-\contentsline {chapter}{\chapternumberline {4}Redakcja pracy}{45}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Układ pracy}{45}{section.4.1}%
-\contentsline {section}{\numberline {4.2}Styl}{46}{section.4.2}%
-\contentsline {chapter}{\chapternumberline {5}Uwagi techniczne}{47}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Rysunki}{47}{section.5.1}%
-\contentsline {section}{\numberline {5.2}Wstawianie kodu rdowego}{49}{section.5.2}%
-\contentsline {section}{\numberline {5.3}Wykaz literatury oraz cytowania}{50}{section.5.3}%
-\contentsline {section}{\numberline {5.4}Indeks rzeczowy}{51}{section.5.4}%
-\contentsline {section}{\numberline {5.5}Inne uwagi}{52}{section.5.5}%
-\contentsline {chapter}{\chapternumberline {6}Podsumowanie}{54}{chapter.6}%
-\contentsline {section}{\numberline {6.1}Sekcja poziomu 1}{54}{section.6.1}%
-\contentsline {subsection}{\numberline {6.1.1}Sekcja poziomu 2}{54}{subsection.6.1.1}%
-\contentsline {subsubsection}{Sekcja poziomu 3}{54}{section*.65}%
-\contentsline {paragraph}{Paragraf 4}{54}{section*.66}%
-\contentsline {section}{\numberline {6.2}Sekcja poziomu 1}{54}{section.6.2}%
-\contentsline {chapter}{Literatura}{55}{chapter*.67}%
-\contentsline {appendix}{\chapternumberline {A}Instrukcja wdroeniowa}{57}{appendix.A}%
-\contentsline {appendix}{\chapternumberline {B}Opis zaczonej pyty CD/DVD}{58}{appendix.B}%
+\contentsline {section}{\numberline {2.3}Testowanie oprogramowania}{23}{section.2.3}%
+\contentsline {section}{\numberline {2.4}Wykorzystywane narzędzia i technologie}{25}{section.2.4}%
+\contentsline {section}{\numberline {2.5}Przegląd literatury}{30}{section.2.5}%
+\contentsline {chapter}{\chapternumberline {3}Zalecenia dotyczce formatowania}{37}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Rozmiar i ukad treci na stronach dokumentu}{37}{section.3.1}%
+\contentsline {section}{\numberline {3.2}Strona tytuowa}{39}{section.3.2}%
+\contentsline {section}{\numberline {3.3}Krj i wielko czcionek}{40}{section.3.3}%
+\contentsline {section}{\numberline {3.4}Formatowanie blokw tekstu}{41}{section.3.4}%
+\contentsline {section}{\numberline {3.5}Opisy tabel i rysunkw}{43}{section.3.5}%
+\contentsline {section}{\numberline {3.6}Przypisy dolne}{43}{section.3.6}%
+\contentsline {section}{\numberline {3.7}Formatowanie spisu treci}{44}{section.3.7}%
+\contentsline {section}{\numberline {3.8}Formatowanie list wyliczeniowych i wypunktowa}{45}{section.3.8}%
+\contentsline {section}{\numberline {3.9}Wzory matematyczne}{46}{section.3.9}%
+\contentsline {chapter}{\chapternumberline {4}Redakcja pracy}{47}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Układ pracy}{47}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Styl}{48}{section.4.2}%
+\contentsline {chapter}{\chapternumberline {5}Uwagi techniczne}{49}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Rysunki}{49}{section.5.1}%
+\contentsline {section}{\numberline {5.2}Wstawianie kodu rdowego}{51}{section.5.2}%
+\contentsline {section}{\numberline {5.3}Wykaz literatury oraz cytowania}{52}{section.5.3}%
+\contentsline {section}{\numberline {5.4}Indeks rzeczowy}{53}{section.5.4}%
+\contentsline {section}{\numberline {5.5}Inne uwagi}{54}{section.5.5}%
+\contentsline {chapter}{\chapternumberline {6}Podsumowanie}{56}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Sekcja poziomu 1}{56}{section.6.1}%
+\contentsline {subsection}{\numberline {6.1.1}Sekcja poziomu 2}{56}{subsection.6.1.1}%
+\contentsline {subsubsection}{Sekcja poziomu 3}{56}{section*.68}%
+\contentsline {paragraph}{Paragraf 4}{56}{section*.69}%
+\contentsline {section}{\numberline {6.2}Sekcja poziomu 1}{56}{section.6.2}%
+\contentsline {chapter}{Literatura}{57}{chapter*.70}%
+\contentsline {appendix}{\chapternumberline {A}Instrukcja wdroeniowa}{59}{appendix.A}%
+\contentsline {appendix}{\chapternumberline {B}Opis zaczonej pyty CD/DVD}{60}{appendix.B}%
