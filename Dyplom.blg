@@ -25,48 +25,47 @@ A level-1 auxiliary file: dodatekB.aux
 Database file #1: dokumentacja.bib
 Warning--entry type for "25010:2011" isn't style-file defined
 --line 248 of file dokumentacja.bib
-Warning--I didn't find a database entry for "hetzel"
 Warning--I didn't find a database entry for "JS07"
 Warning--I didn't find a database entry for "SQL2"
-You've used 37 entries,
+You've used 38 entries,
             2129 wiz_defined-function locations,
-            701 strings with 9275 characters,
-and the built_in function-call counts, 10781 in all, are:
-= -- 1054
-> -- 467
+            705 strings with 9358 characters,
+and the built_in function-call counts, 10998 in all, are:
+= -- 1073
+> -- 474
 < -- 8
-+ -- 189
-- -- 150
-* -- 582
-:= -- 1787
-add.period$ -- 115
-call.type$ -- 37
-change.case$ -- 170
++ -- 193
+- -- 152
+* -- 590
+:= -- 1825
+add.period$ -- 118
+call.type$ -- 38
+change.case$ -- 173
 chr.to.int$ -- 0
-cite$ -- 37
-duplicate$ -- 471
-empty$ -- 909
-format.name$ -- 150
-if$ -- 2327
+cite$ -- 38
+duplicate$ -- 483
+empty$ -- 931
+format.name$ -- 152
+if$ -- 2373
 int.to.chr$ -- 0
-int.to.str$ -- 37
-missing$ -- 48
-newline$ -- 188
-num.names$ -- 74
-pop$ -- 283
+int.to.str$ -- 38
+missing$ -- 50
+newline$ -- 193
+num.names$ -- 76
+pop$ -- 291
 preamble$ -- 1
-purify$ -- 149
+purify$ -- 152
 quote$ -- 0
-skip$ -- 350
+skip$ -- 356
 stack$ -- 0
-substring$ -- 450
-swap$ -- 100
+substring$ -- 456
+swap$ -- 101
 text.length$ -- 8
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 116
+type$ -- 118
 warning$ -- 0
-while$ -- 99
-width$ -- 39
-write$ -- 386
-(There were 4 warnings)
+while$ -- 101
+width$ -- 40
+write$ -- 396
+(There were 3 warnings)

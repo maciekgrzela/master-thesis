@@ -37,9 +37,9 @@ M.~Casciaro,  L.~Mammino.
 \newblock Packt Publishing Ltd, 2020.
 
 \bibitem{CAIR20182023}
-U.~Cisco.
+{Cisco}.
 \newblock Cisco annual internet report (2018--2023) white paper.
-\newblock {\em Cisco: San Jose, CA, USA}, 2020.
+\newblock {\em Cisco: San Jose, CA, USA}, 2018.
 
 \bibitem{fielding2014hypertext}
 R.~Fielding,  J.~Reschke.
@@ -64,6 +64,11 @@ E.~H. Halili.
 A.~Hejlsberg, S.~Wiltamuth, P.~Golde.
 \newblock {\em C\# language specification}.
 \newblock Addison-Wesley Longman Publishing Co., Inc., 2003.
+
+\bibitem{hetzel}
+B.~Hetzel.
+\newblock {\em The complete guide to software testing}.
+\newblock QED Information Sciences, Inc., 1988.
 
 \bibitem{holmes2013mongoose}
 S.~Holmes.
