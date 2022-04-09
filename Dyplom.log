@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.6.29) (preloaded format=pdflatex 2020.10.11)  4 APR 2022 14:50
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.6.29) (preloaded format=pdflatex 2020.10.11)  9 APR 2022 17:11
 entering extended mode
 **c:/Users/HP/source/repos/master-thesis/Dyplom.tex
 (c:/Users/HP/source/repos/master-thesis/Dyplom.tex
@@ -1278,7 +1278,7 @@ Overfull \vbox (0.89998pt too high) has occurred while \output is active []
  [37]
 \openout2 = `rozdzial03.aux'.
 
- (rozdzial03.tex)
+ (rozdzial03.tex
 Overfull \vbox (0.89998pt too high) has occurred while \output is active []
 
  [38
@@ -1286,6 +1286,15 @@ Overfull \vbox (0.89998pt too high) has occurred while \output is active []
 
 
 ]
+Overfull \vbox (0.89998pt too high) has occurred while \output is active []
+
+ [39])
+Overfull \vbox (0.89998pt too high) has occurred while \output is active []
+
+ [40]
+Overfull \vbox (0.89998pt too high) has occurred while \output is active []
+
+ [41]
 \openout2 = `rozdzial04.aux'.
 
  (rozdzial04.tex
@@ -1296,14 +1305,14 @@ Underfull \hbox (badness 10000) in paragraph at lines 5--43
 
 Overfull \vbox (0.89998pt too high) has occurred while \output is active []
 
- [39
+ [42
 
 
 
 ])
 Overfull \vbox (0.89998pt too high) has occurred while \output is active []
 
- [40]
+ [43]
 \openout2 = `rozdzial05.aux'.
 
  (rozdzial05.tex
@@ -1318,22 +1327,22 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 
 Overfull \vbox (0.89998pt too high) has occurred while \output is active []
 
- [41
+ [44
 
 
 
 ]
-<rys05/kanji-giri.pdf, id=583, 23.21744pt x 11.60876pt>
+<rys05/kanji-giri.pdf, id=597, 23.21744pt x 11.60876pt>
 File: rys05/kanji-giri.pdf Graphic file (type pdf)
 <use rys05/kanji-giri.pdf>
 Package pdftex.def Info: rys05/kanji-giri.pdf  used on input line 42.
 (pdftex.def)             Requested size: 136.50139pt x 68.29262pt.
-<rys05/beta1.pdf, id=584, 318.67084pt x 196.32407pt>
+<rys05/beta1.pdf, id=598, 318.67084pt x 196.32407pt>
 File: rys05/beta1.pdf Graphic file (type pdf)
 <use rys05/beta1.pdf>
 Package pdftex.def Info: rys05/beta1.pdf  used on input line 51.
 (pdftex.def)             Requested size: 216.12778pt x 133.15408pt.
-<rys05/alfa1.pdf, id=585, 1308.82678pt x 281.68228pt>
+<rys05/alfa1.pdf, id=599, 1308.82678pt x 281.68228pt>
 File: rys05/alfa1.pdf Graphic file (type pdf)
 <use rys05/alfa1.pdf>
 Package pdftex.def Info: rys05/alfa1.pdf  used on input line 52.
@@ -1341,10 +1350,10 @@ Package pdftex.def Info: rys05/alfa1.pdf  used on input line 52.
 
 Overfull \vbox (0.89998pt too high) has occurred while \output is active []
 
- [42 <./rys05/kanji-giri.pdf> <./rys05/beta1.pdf> <./rys05/alfa1.pdf>]
+ [45 <./rys05/kanji-giri.pdf> <./rys05/beta1.pdf> <./rys05/alfa1.pdf>]
 Overfull \vbox (0.89998pt too high) has occurred while \output is active []
 
- [43]
+ [46]
 Underfull \hbox (badness 10000) in paragraph at lines 126--128
 []\T1/qtm/m/n/12 korzystajc z po-le-ce-nia [][]\T1/txtt/m/n/12 \lstin []\T1/qtm/m/n/12 umo-li-wiaj-cego wy-pi-sa-nie kodu czcionk
  []
@@ -1360,30 +1369,30 @@ Underfull \hbox (badness 2980) in paragraph at lines 126--128
  []
 
 
-LaTeX Warning: Citation `JS07' on page 44 undefined on input line 132.
+LaTeX Warning: Citation `JS07' on page 47 undefined on input line 132.
 
 
-LaTeX Warning: Citation `SQL2' on page 44 undefined on input line 132.
+LaTeX Warning: Citation `SQL2' on page 47 undefined on input line 132.
 
 
-Overfull \vbox (0.89998pt too high) has occurred while \output is active []
-
- [44]
-Overfull \vbox (0.89998pt too high) has occurred while \output is active []
-
- [45]
-Overfull \vbox (0.89998pt too high) has occurred while \output is active []
-
- [46])
 Overfull \vbox (0.89998pt too high) has occurred while \output is active []
 
  [47]
+Overfull \vbox (0.89998pt too high) has occurred while \output is active []
+
+ [48]
+Overfull \vbox (0.89998pt too high) has occurred while \output is active []
+
+ [49])
+Overfull \vbox (0.89998pt too high) has occurred while \output is active []
+
+ [50]
 \openout2 = `rozdzial06.aux'.
 
  (rozdzial06.tex)
 Overfull \vbox (0.89998pt too high) has occurred while \output is active []
 
- [48
+ [51
 
 
 
@@ -1392,7 +1401,7 @@ bibitemlist
 
 Overfull \vbox (0.89998pt too high) has occurred while \output is active []
 
- [49
+ [52
 
 
 ]
@@ -1402,16 +1411,16 @@ File: ts1qtm.fd 2009/09/25 v1.2 font definition file for TS1/qtm
 ))
 Overfull \vbox (0.89998pt too high) has occurred while \output is active []
 
- [50]
+ [53]
 Overfull \vbox (0.89998pt too high) has occurred while \output is active []
 
- [51]
+ [54]
 \openout2 = `dodatekA.aux'.
 
  (dodatekA.tex)
 Overfull \vbox (0.89998pt too high) has occurred while \output is active []
 
- [52
+ [55
 
 
 ]
@@ -1420,7 +1429,7 @@ Overfull \vbox (0.89998pt too high) has occurred while \output is active []
  (dodatekB.tex)
 Overfull \vbox (0.89998pt too high) has occurred while \output is active []
 
- [53
+ [56
 
 
 
@@ -1449,24 +1458,24 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 888.
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 888.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 888.
 Package rerunfilecheck Info: File `Dyplom.out' has not changed.
-(rerunfilecheck)             Checksum: 002CADA1420919291E4FE8F056DA164B;5093.
+(rerunfilecheck)             Checksum: 0F957EA4CF4A71EB90DEF3EA685512E7;5093.
 
 
 LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 20285 strings out of 480790
- 328089 string characters out of 2898707
+ 20289 strings out of 480790
+ 328121 string characters out of 2898707
  720451 words of memory out of 3000000
  35561 multiletter control sequences out of 15000+200000
  683284 words of font info for 90 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  37i,13n,45p,2200b,1921s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Program Files/MiKTeX/fonts/enc/dvips/tex-gyre/q-ts1.enc}{C:/Users/HP/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathit.enc}{C:/Users/HP/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathsy.enc}{C:/Program Files/MiKTeX/fonts/enc/dvips/tex-gyre/q-ec.enc}{C:/Program Files/MiKTeX/fonts/enc/dvips/ebgaramond/ebgm_tcdnmr.enc}<C:/Program Files/MiKTeX/fonts/type1/public/ebgaramond/EBGaramond-Bold.pfb><C:/Program Files/MiKTeX/fonts/type1/public/ebgaramond/EBGaramond-Regular.pfb><C:/Users/HP/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi10.pfb><C:/Users/HP/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi12.pfb><C:/Users/HP/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/tex-gyre/qtmb.pfb><C:/Program Files/MiKTeX/fonts/type1/public/tex-gyre/qtmbi.pfb><C:/Program Files/MiKTeX/fonts/type1/public/tex-gyre/qtmr.pfb><C:/Program Files/MiKTeX/fonts/type1/public/tex-gyre/qtmri.pfb><C:/Program Files/MiKTeX/fonts/type1/public/txfonts/t1xtt.pfb>
-Output written on Dyplom.pdf (53 pages, 2904105 bytes).
+Output written on Dyplom.pdf (56 pages, 2914451 bytes).
 PDF statistics:
- 884 PDF objects out of 1000 (max. 8388607)
- 347 named destinations out of 1000 (max. 500000)
+ 899 PDF objects out of 1000 (max. 8388607)
+ 351 named destinations out of 1000 (max. 500000)
  321 words of extra memory for PDF output out of 10000 (max. 10000000)
 
