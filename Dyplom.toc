@@ -32,25 +32,25 @@
 \contentsline {section}{\numberline {2.2}Interfejsy programowania aplikacji}{15}{section.2.2}%
 \contentsline {section}{\numberline {2.3}Testowanie oprogramowania}{23}{section.2.3}%
 \contentsline {section}{\numberline {2.4}Wykorzystywane narzędzia i technologie}{27}{section.2.4}%
-\contentsline {section}{\numberline {2.5}Przegląd literatury}{31}{section.2.5}%
+\contentsline {section}{\numberline {2.5}Przegląd literatury}{32}{section.2.5}%
 \contentsline {chapter}{\chapternumberline {3}Opis problemu badawczego}{38}{chapter.3}%
 \contentsline {section}{\numberline {3.1}Przedstawienie aspektów problemu badawczego}{38}{section.3.1}%
-\contentsline {section}{\numberline {3.2}Sformułowanie scenariuszy badawczych}{41}{section.3.2}%
-\contentsline {chapter}{\chapternumberline {4}Redakcja pracy}{42}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Układ pracy}{42}{section.4.1}%
-\contentsline {section}{\numberline {4.2}Styl}{43}{section.4.2}%
-\contentsline {chapter}{\chapternumberline {5}Uwagi techniczne}{44}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Rysunki}{44}{section.5.1}%
-\contentsline {section}{\numberline {5.2}Wstawianie kodu rdowego}{46}{section.5.2}%
-\contentsline {section}{\numberline {5.3}Wykaz literatury oraz cytowania}{47}{section.5.3}%
-\contentsline {section}{\numberline {5.4}Indeks rzeczowy}{48}{section.5.4}%
-\contentsline {section}{\numberline {5.5}Inne uwagi}{49}{section.5.5}%
-\contentsline {chapter}{\chapternumberline {6}Podsumowanie}{51}{chapter.6}%
-\contentsline {section}{\numberline {6.1}Sekcja poziomu 1}{51}{section.6.1}%
-\contentsline {subsection}{\numberline {6.1.1}Sekcja poziomu 2}{51}{subsection.6.1.1}%
-\contentsline {subsubsection}{Sekcja poziomu 3}{51}{section*.74}%
-\contentsline {paragraph}{Paragraf 4}{51}{section*.75}%
-\contentsline {section}{\numberline {6.2}Sekcja poziomu 1}{51}{section.6.2}%
-\contentsline {chapter}{Literatura}{52}{chapter*.76}%
-\contentsline {appendix}{\chapternumberline {A}Instrukcja wdroeniowa}{55}{appendix.A}%
-\contentsline {appendix}{\chapternumberline {B}Opis zaczonej pyty CD/DVD}{56}{appendix.B}%
+\contentsline {section}{\numberline {3.2}Sformułowanie scenariuszy badawczych}{42}{section.3.2}%
+\contentsline {chapter}{\chapternumberline {4}Redakcja pracy}{43}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Układ pracy}{43}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Styl}{44}{section.4.2}%
+\contentsline {chapter}{\chapternumberline {5}Uwagi techniczne}{45}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Rysunki}{45}{section.5.1}%
+\contentsline {section}{\numberline {5.2}Wstawianie kodu rdowego}{47}{section.5.2}%
+\contentsline {section}{\numberline {5.3}Wykaz literatury oraz cytowania}{48}{section.5.3}%
+\contentsline {section}{\numberline {5.4}Indeks rzeczowy}{49}{section.5.4}%
+\contentsline {section}{\numberline {5.5}Inne uwagi}{50}{section.5.5}%
+\contentsline {chapter}{\chapternumberline {6}Podsumowanie}{52}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Sekcja poziomu 1}{52}{section.6.1}%
+\contentsline {subsection}{\numberline {6.1.1}Sekcja poziomu 2}{52}{subsection.6.1.1}%
+\contentsline {subsubsection}{Sekcja poziomu 3}{52}{section*.74}%
+\contentsline {paragraph}{Paragraf 4}{52}{section*.75}%
+\contentsline {section}{\numberline {6.2}Sekcja poziomu 1}{52}{section.6.2}%
+\contentsline {chapter}{Literatura}{53}{chapter*.76}%
+\contentsline {appendix}{\chapternumberline {A}Instrukcja wdroeniowa}{56}{appendix.A}%
+\contentsline {appendix}{\chapternumberline {B}Opis zaczonej pyty CD/DVD}{57}{appendix.B}%

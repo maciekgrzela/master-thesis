@@ -224,7 +224,7 @@ Na rysunku \ref{fig:uwierzytelnienie-autoryzacja}, zilustrowany został proces u
 \subsection*{Separacja zapytań oraz komend w kontekście odwołań do źródeł danych}
 Wraz z rosnącą liczbą żądań obsługiwanych w ramach zaawansowanych interfejsów programowania aplikacji, zauważone zostało zjawisko asymetrii w kontekście typów wiadomości generowanych przez klientów. Zapytania dotyczące pozyskiwania danych z API realizowane jest z nieporównywalnie większą częstością niż operacje ich modyfikacji. Dlatego też, zdefiniowany został wzorzec projektowy dotyczący separacji zapytań oraz komend generowanych względem usługi sieciowej \textit{(ang. Command Query Responsibility Segregation)}.
 
-Zastosowanie przedstawionego powyżej wzorca projektowego wiąże się z koniecznością budowy dwóch osobnych modeli danych. Pierwszy z nich, wykorzystywany jest w kontekście odczytu informacji. Na modelu tym, dokonywana jest najczęściej operacja optymalizacji, której celem jest redukcja rozmiaru składowych modelu, a także szybkości przetwarzania bardziej złożonych struktur będących jego częścią. Drugi z modeli danych, znajduje zastosowanie w aspekcie modyfikacji określonych zasóbów. Biorąc pod uwagę standardowy sposób eksploatacji interfejsu programowania aplikacji, model ten cechować się może niższą wydajnością.  
+Zastosowanie przedstawionego powyżej wzorca projektowego wiąże się z koniecznością budowy dwóch osobnych modeli danych. Pierwszy z nich, wykorzystywany jest w kontekście odczytu informacji. Na modelu tym, dokonywana jest najczęściej operacja optymalizacji, której celem jest redukcja rozmiaru składowych modelu, a także szybkości przetwarzania bardziej złożonych struktur będących jego częścią. Drugi z modeli danych, znajduje zastosowanie w aspekcie modyfikacji określonych zasóbów. Biorąc pod uwagę standardowy sposób eksploatacji interfejsu programowania aplikacji, model ten cechować się może niższą wydajnością. W zależności od specyfiki określonej usługi sieciowej, optymalizowany może być albo model odczytu, albo też model zapisu. Ponadto, implementując wzorzec projektowy separacji zapytań oraz komend, wykorzystać można dwa osobne zewnętrzne źródła danych, przystosowane do wydajniejszego wykonywania określonego typu operacji, bądź też dostosowane do obsługi większego ruchu sieciowego.   
 
 Niewątpliwymi zaletami, wynikającymi z zastosowania opisywanego wzorca projektowego są: zwiększenie efektywności operacji realizowanych z dużą częstotliwością, możliwość korzystania z osobnych źródeł danych dla operacji odczytu oraz zapisu, zachowanie zasady pojedynczej odpowiedzialności \textit{(ang. Single Responsibility Principle)} względem klas logiki biznesowej API, a także redukcja liczby wstrzykiwanych zależności \textit{(ang. Dependency Injection)} w ramach klas kontrolerów interfejsu \cite{cs7194}.
 
@@ -243,6 +243,9 @@ Na ilustracjach \ref{fig:standard-vs-cqrs1} oraz \ref{fig:standard-vs-cqrs2} prz
     \caption{Schemat przetworzenia żądania przez interfejs API dla architektury wykorzystującej wzorzec projektowy CQRS}
     \label{fig:standard-vs-cqrs2}
    \end{figure}
+
+
+Odwołując się do ilustracji \ref{fig:standard-vs-cqrs2} należy zaznaczyć, że jest to jedna z możliwości implementacji wzorca CQRS, uwzględniająca wykorzystanie odseparowanych źródeł danych. Architektura separacji zapytań oraz komend w kontekście żądań wysyłanych do interfejsu API, może być także wprowadzona przy wykorzystaniu pojedynczego systemu bazodanowego.
 
 \subsection*{Konwencja REST}
 Niezależnie od struktury wewnętrznej omawianych usług sieciowych, współczesne interfejsy programowania aplikacji projektowane są tak, aby ich zewnętrzna warstwa (tj. widziana z perspektywy aplikacji klienckiej) cechowała się jednolitą kompozycją.
