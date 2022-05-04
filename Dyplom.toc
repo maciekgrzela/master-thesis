@@ -10,47 +10,47 @@
 \contentsline {subsubsection}{\textit {Web Service}}{11}{section*.6}%
 \contentsline {subsubsection}{\textit {Application Programming Interface}}{11}{section*.8}%
 \contentsline {subsubsection}{\textit {RESTful API}}{11}{section*.10}%
-\contentsline {subsubsection}{\textit {Controller}}{11}{section*.12}%
+\contentsline {subsubsection}{\textit {Controller}}{12}{section*.12}%
 \contentsline {subsubsection}{\textit {Service}}{12}{section*.14}%
 \contentsline {subsubsection}{\textit {Repository}}{12}{section*.16}%
-\contentsline {subsubsection}{\textit {Object-relational mapper (ORM)}}{12}{section*.18}%
-\contentsline {subsubsection}{\textit {Cache}}{12}{section*.20}%
-\contentsline {subsubsection}{\textit {Multithreading}}{12}{section*.22}%
+\contentsline {subsubsection}{\textit {Object-relational mapper}}{12}{section*.18}%
+\contentsline {subsubsection}{\textit {Cache}}{13}{section*.20}%
+\contentsline {subsubsection}{\textit {Concurrent Computing}}{13}{section*.22}%
 \contentsline {subsubsection}{\textit {Metaheuristic algorithm}}{13}{section*.24}%
-\contentsline {subsubsection}{\textit {Endpoint}}{13}{section*.26}%
-\contentsline {subsubsection}{\textit {HTTP Request}}{13}{section*.28}%
-\contentsline {subsubsection}{\textit {HTTP Response}}{13}{section*.30}%
-\contentsline {subsubsection}{\textit {HTTP Response Code}}{13}{section*.32}%
+\contentsline {subsubsection}{\textit {API Endpoint}}{13}{section*.26}%
+\contentsline {subsubsection}{\textit {HTTP Request}}{14}{section*.28}%
+\contentsline {subsubsection}{\textit {HTTP Response}}{14}{section*.30}%
+\contentsline {subsubsection}{\textit {HTTP Response Code}}{14}{section*.32}%
 \contentsline {subsubsection}{\textit {HTTP Response Time}}{14}{section*.34}%
-\contentsline {subsubsection}{\textit {JavaScript Object Notation}}{14}{section*.36}%
-\contentsline {subsubsection}{\textit {Benchmark}}{14}{section*.38}%
-\contentsline {subsubsection}{\textit {Smoke testing}}{14}{section*.40}%
-\contentsline {subsubsection}{\textit {Baseline performance testing}}{14}{section*.42}%
+\contentsline {subsubsection}{\textit {JavaScript Object Notation - JSON}}{14}{section*.36}%
+\contentsline {subsubsection}{\textit {Benchmark}}{15}{section*.38}%
+\contentsline {subsubsection}{\textit {Smoke testing}}{15}{section*.40}%
+\contentsline {subsubsection}{\textit {Baseline performance testing}}{15}{section*.42}%
 \contentsline {subsubsection}{\textit {Load testing}}{15}{section*.44}%
 \contentsline {subsubsection}{\textit {Stress testing}}{15}{section*.46}%
-\contentsline {subsubsection}{\textit {Assertion}}{15}{section*.48}%
-\contentsline {section}{\numberline {2.2}Interfejsy programowania aplikacji}{15}{section.2.2}%
-\contentsline {section}{\numberline {2.3}Testowanie oprogramowania}{23}{section.2.3}%
-\contentsline {section}{\numberline {2.4}Wykorzystywane narzędzia i technologie}{27}{section.2.4}%
-\contentsline {section}{\numberline {2.5}Przegląd literatury}{32}{section.2.5}%
-\contentsline {chapter}{\chapternumberline {3}Opis problemu badawczego}{38}{chapter.3}%
-\contentsline {section}{\numberline {3.1}Przedstawienie aspektów problemu badawczego}{38}{section.3.1}%
-\contentsline {section}{\numberline {3.2}Sformułowanie scenariuszy badawczych}{42}{section.3.2}%
-\contentsline {chapter}{\chapternumberline {4}Redakcja pracy}{52}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Układ pracy}{52}{section.4.1}%
-\contentsline {section}{\numberline {4.2}Styl}{53}{section.4.2}%
-\contentsline {chapter}{\chapternumberline {5}Uwagi techniczne}{54}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Rysunki}{54}{section.5.1}%
-\contentsline {section}{\numberline {5.2}Wstawianie kodu rdowego}{56}{section.5.2}%
-\contentsline {section}{\numberline {5.3}Wykaz literatury oraz cytowania}{57}{section.5.3}%
-\contentsline {section}{\numberline {5.4}Indeks rzeczowy}{58}{section.5.4}%
-\contentsline {section}{\numberline {5.5}Inne uwagi}{59}{section.5.5}%
-\contentsline {chapter}{\chapternumberline {6}Podsumowanie}{61}{chapter.6}%
-\contentsline {section}{\numberline {6.1}Sekcja poziomu 1}{61}{section.6.1}%
-\contentsline {subsection}{\numberline {6.1.1}Sekcja poziomu 2}{61}{subsection.6.1.1}%
-\contentsline {subsubsection}{Sekcja poziomu 3}{61}{section*.74}%
-\contentsline {paragraph}{Paragraf 4}{61}{section*.75}%
-\contentsline {section}{\numberline {6.2}Sekcja poziomu 1}{61}{section.6.2}%
-\contentsline {chapter}{Literatura}{62}{chapter*.76}%
-\contentsline {appendix}{\chapternumberline {A}Instrukcja wdroeniowa}{65}{appendix.A}%
-\contentsline {appendix}{\chapternumberline {B}Opis zaczonej pyty CD/DVD}{66}{appendix.B}%
+\contentsline {subsubsection}{\textit {Assertion}}{16}{section*.48}%
+\contentsline {section}{\numberline {2.2}Interfejsy programowania aplikacji}{16}{section.2.2}%
+\contentsline {section}{\numberline {2.3}Testowanie oprogramowania}{24}{section.2.3}%
+\contentsline {section}{\numberline {2.4}Wykorzystywane narzędzia i technologie}{28}{section.2.4}%
+\contentsline {section}{\numberline {2.5}Przegląd literatury}{33}{section.2.5}%
+\contentsline {chapter}{\chapternumberline {3}Opis problemu badawczego}{39}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Przedstawienie aspektów problemu badawczego}{39}{section.3.1}%
+\contentsline {section}{\numberline {3.2}Sformułowanie scenariuszy badawczych}{43}{section.3.2}%
+\contentsline {chapter}{\chapternumberline {4}Implementacja środowiska badawczego}{53}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Układ pracy}{53}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Styl}{54}{section.4.2}%
+\contentsline {chapter}{\chapternumberline {5}Uwagi techniczne}{55}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Rysunki}{55}{section.5.1}%
+\contentsline {section}{\numberline {5.2}Wstawianie kodu rdowego}{57}{section.5.2}%
+\contentsline {section}{\numberline {5.3}Wykaz literatury oraz cytowania}{58}{section.5.3}%
+\contentsline {section}{\numberline {5.4}Indeks rzeczowy}{59}{section.5.4}%
+\contentsline {section}{\numberline {5.5}Inne uwagi}{60}{section.5.5}%
+\contentsline {chapter}{\chapternumberline {6}Podsumowanie}{62}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Sekcja poziomu 1}{62}{section.6.1}%
+\contentsline {subsection}{\numberline {6.1.1}Sekcja poziomu 2}{62}{subsection.6.1.1}%
+\contentsline {subsubsection}{Sekcja poziomu 3}{62}{section*.74}%
+\contentsline {paragraph}{Paragraf 4}{62}{section*.75}%
+\contentsline {section}{\numberline {6.2}Sekcja poziomu 1}{62}{section.6.2}%
+\contentsline {chapter}{Literatura}{63}{chapter*.76}%
+\contentsline {appendix}{\chapternumberline {A}Instrukcja wdroeniowa}{66}{appendix.A}%
+\contentsline {appendix}{\chapternumberline {B}Opis zaczonej pyty CD/DVD}{67}{appendix.B}%

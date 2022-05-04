@@ -7,46 +7,46 @@ W niniejszej pracy, posłużono się terminologią dystynktywną z punktu widzen
 \subsubsection{\textit{Web Service}}
 Rodzaj systemu informatycznego cechującego się permanentnym wykonywaniem zdefiniowanych funkcji, tuż po uzyskaniu żądania. Żądanie to, przybiera postać danych, przekazanych w ramach systematycznej struktury. Sposób dostarczenia żądania, jego format, a także metoda odpowiedzi na żądanie, definiowane są poprzez protokół sieciowy z którego korzysta dana usługa.
 
-\subsection*{Interfejs Programowania Aplikacji (API) - OPIS Z INŻ.}
+\subsection*{Interfejs Programowania Aplikacji}
 \subsubsection{\textit{Application Programming Interface}}
-Zbiór zasad oraz procedur determinujący sposób komunikacji pomiędzy wieloma aplikacjami. Aplikacjami tymi mogą być zarówno programy klienckie (np. strona webowa), jak i serwery danych.
+Zbiór reguł oraz struktur programistycznych określający metodę oraz cel interakcji pomiędzy komponentami oprogramowania. Pojęcie interfejsu programowania aplikacji jest niezależne od warstwy implementacji systemu i może tyczyć się dowolnego rodzaju programu komputerowego. Interfejs API definiowany jest na poziomie kodu źródłowego poszczególnych fragmentów oprogramowania, a jego zadaniem jest dostarczenie wymaganych specyfikacji struktur programistycznych, a także protokołu, pozwalającego na ich wykorzystanie przez zewnętrzny komponent programowy.  
 
-\subsection*{API wykonane w technologii REST - OPIS Z INŻ.}
+\subsection*{API wykonane w technologii REST}
 \subsubsection{\textit{RESTful API}}
-Interfejs programowania aplikacji opierający swoją budowę oraz sposób funkcjonowania o zbiór ustalonych reguł. Reguły te, dotyczą między innymi: struktury żądań wysyłanych od klienta do serwera, budowy zasobu odpowiedzi serwera, a także kodów statusów zwracanych z chwilą odpowiedzi w zależności od wykonanej akcji.
+Interfejs programowania aplikacji, bazujący zarówno w swojej strukturze, jak i funkcjonalności na zbiorze ściśle określonych reguł dostarczanych w ramach metodologii REST. Reguły metodologii tej, implementowane są najczęściej w stosunku do interfejsów programowania aplikacji, które wykorzystują w kontekście zewnętrznej komunikacji protokół hipertekstowy. Podstawowa charakterystyka interfejsu programowania aplikacji opartego o zbiór reguł REST definiowana jest poprzez bezstanowość transmisji danych, pojęcia zasobów i reprezentacji, a także cechę jednolitości interfejsu komunikacyjnego.
 
-\subsection*{Kontroler - OPIS Z INŻ.}
+\subsection*{Kontroler}
 \subsubsection{\textit{Controller}}
-Klasa, której zadaniem jest obsłużenie żądania aplikacji klienckiej, weryfikacja jego poprawności, a następnie wywołanie kodu logiki biznesowej w ramach struktur serwisów. Po otrzymaniu rezultatu obliczeń z warstwy logiki biznesowej, odpowiedzialnością metody kontrolera jest zwrócenie przetworzonego zasobu do systemu klienta.
+Struktura programistyczna (w przypadku języków programowania opartych o paradygmat obiektowy - klasa), której celem jest obsługa żądania dostarczonego od aplikacji klienckiej, zweryfikowania zgodności jego treści, a następnie przekierowanie wykonania programu do odpowiedniej metody warstwy logiki biznesowej.
+Po zakończeniu wszystkich operacji dotyczących omawianego zapytania, metoda dostępna w ramach klasy kontrolera formułuje odpowiedź zwracaną bezpośrednio do konsumenta żądania.
 
-\subsection*{Serwis - OPIS Z INŻ.}
+\subsection*{Serwis}
 \subsubsection{\textit{Service}}
-Klasa, zawierająca metody odpowiedzialne za realizację logiki biznesowej w ramach interfejsu programowania aplikacji. Obiekt tej struktury danych, wywoływany jest bezpośrednio przed metody klas kontrolerów.  
+Struktura programistyczna (w przypadku języków programowania opartych o paradygmat obiektowy - klasa), której zadaniem jest realizacja obliczeń związanych z określonym obiektem, lub domeną, w ramach której określony obiekt się znajduje. Klasy serwsisów (nazywane również klasami logiki biznesowej), stanowią centralny punkt przetwarzania w ramach interfejsów programowania aplikacji, a także pełnią rolę pośrednika pomiędzy komponentami odpowiedzialnymi za zarządzanie żądaniem (tj. metodami kontrolerów) oraz pozyskiwanie danych z określonych źródeł (tj. metodami repozytoriów).
 
-\subsection*{Repozytorium - OPIS Z INŻ.}
+\subsection*{Repozytorium}
 \subsubsection{\textit{Repository}}
-Struktura danych, wykorzystywana do komunikacji interfejsu API z serwerem bazodanowym. Metody, w ramach klas repozytoriów, operują na modelu danych, przechowywanym w ramach API, a następnie, odwzorowują ten model za pomocą narzędzia ORM, na fizyczną zawartość bazodanową.
+Struktura programistyczna (w przypadku języków programowania opartych o paradygmat obiektowy - klasa), której rolą jest wykonywanie operacji na obiektach modelu danych komunikując się bezpośrednio z wykorzystywanym systemem bazodanowym. Operacje zawarte wewnątrz metod klas repozytoriów mogą mieć postać kwerend lub komend definiowanych w języku zapytań dostarczanym przez serwer bazodanowy, mogą operować na dostępnej w pamięci aplikacji strukturze danych, bądź też odwoływać się do zewnętrznego zbioru bazodanowego, manipulując instancjami klas zdefiniowanego wewnątrz aplikacji modelu. W ostatnim z omawianych przypadków, aktualizacje wartości w ramach encji modelu danych są identyfikowane przez maper obiektowo-relacyjny, który generuje polecenia języka zapytań systemu bazodanowego, mające na celu synchronizację stanu danych aplikacji oraz zewnętrznego źródła informacji. Metody klas repozytoriów są wywoływane wewnątrz metod logiki biznesowej.
 
-\subsection*{Mapper obiektowo-relacyjny (ORM)}
-\subsubsection{\textit{Object-relational mapper (ORM)}}
+\subsection*{Mapper obiektowo-relacyjny}
+\subsubsection{\textit{Object-relational mapper}}
 Oprogramowanie, którego głównym zadaniem jest konwersja struktury klas modelu danych do fizycznej organizacji tabel w ramach systemu bazodanowego. Ponadto, mapper obiektowo-relacyjny dostarcza zbiór właściwości oraz metod stanowiących fasadę dla niskopoziomowych procedur dostępu do bazy danych, a także modyfikacji danych w niej zawartych.
-
 
 \subsection*{Pamięć podręczna}
 \subsubsection{\textit{Cache}}
 Wydzielony fragment pamięci cechujący się szybkim czasem dostępu, wysoką przepustowością transmisji, a także ograniczonym okresem trwałego przechowywania danych. Pamięć ta, w kontekście webowego interfejsu programowania aplikacji, wykorzystywana jest w celu przechowywania wyników często realizowanych operacji, a także magazynowania uprzednio dostarczonych do klienta fragmentów odpowiedzi na żądania.
 
-\subsection*{Wielowątkowość - OPIS Z INŻ.}
-\subsubsection{\textit{Multithreading}}
-Technika programowania, zakładająca wykorzystanie wielu odrębnie wykonywanych procesów w ramach jednej aplikacji. W przypadku interfejsu API implementującego tę technikę, każdy z punktów końcowych stanowi osobny wątek, będący częścią składową pojedynczego procesu. Dzięki temu, aplikacja jest dostępna, niezależnie od wywołanych, niekiedy długo trwających zadań.
+\subsection*{Przetwarzanie współbieżne}
+\subsubsection{\textit{Concurrent Computing}}
+Technika programistyczna oparta o wykorzystanie wielu współistniejących procesów oraz wątków, dostępnych w obrębie jednej aplikacji, a także odwołujących się do współdzielonych struktur danych. Poszczególne wątki stanowią elementy składowe pojedynczego procesu i są uruchamiane na tej samej centralnej jednostce przetwarzania. Procesor wykonuje operacje przełączania pomiędzy kontekstami poszczególnych wątków, dzięki czemu uzyskać można wrażenie, wykonania wielu spośród tych elementów w sposób równoległy. Z punktu widzenia interfejsu programowania aplikacji, który implementuje technikę przetwarzania współbieżnego, wyróżnić możemy punkty końcowe, które definiowane są jako osobne wątki aplikacji. Dlatego też, interfejs programowania aplikacji cechuje się dostępnością pomimo jednoczesnego przetwarzania wielu, niekiedy długotrwałych żądań klientów.
 
 \subsection*{Algorytm metaheurystyczny}
 \subsubsection{\textit{Metaheuristic algorithm}}
 Technika projektowania algorytmów nie zapewniających gwarancji uzyskania optimum dla rozważanego problemu, jednakże pozwalająca na zbudowanie systemu, dostarczającego rozwiązanie złożonego zagadnienia w akceptowalnym czasie, a także uzyskiwanego przy wykorzystaniu akceptowalnej ilości zasobów sprzętowych. Algorytm metaheurystyczny, poza konwencjonalnymi regułami stosowanymi w ramach standardowych wzorców programowania, implementuje reguły rozwiązywania problemów oparte na losowości, bądź też wywnioskowane na podstawie zjawisk fizycznych.
 
-\subsection*{Punkt końcowy usługi sieci Web - OPIS Z INŻ.}
-\subsubsection{\textit{Endpoint}}
-Metoda klasy kontrolera, uruchamiana w momencie określenia żądania klienta. Do każdego z punktów końcowych, przypisany jest adres wywołania, zbiór wymaganych parametrów, a także obsługiwany typ metody protokołu hipertekstowego. Dzięki temu, bazując na strukturze otrzymanego żądania, interfejs API jest w stanie stwierdzić który z punktów końcowych powinien zostać wywołany.
+\subsection*{Punkt końcowy interfejsu programowania aplikacji}
+\subsubsection{\textit{API Endpoint}}
+Punkt końcowy usługi sieci web definiuje jeden z końców kanału komunikacyjnego pomiędzy aplikacją kliencką a serwerową. W momencie interakcji interfejsu programowania aplikacji z odrębnym systemem, punkt styku dwóch usług sieciowych w ramach omawianej interakcji nazywany jest punktem końcowym. W odniesieniu do wewnętrznej struktury interfejsu programowania aplikacji, punkt końcowy wywołuje związaną z nim metodę klasy kontrolera, a samo powiązanie identyfikowane jest (w przypadku usługi sieciowej bazującej na protokole hipertekstowym i metodologii REST) poprzez nazwę zasobu, rodzaj metody, a także parametry żądania.
 
 \subsection*{Żądanie realizowane w ramach usługi protokołu hipertekstowego}
 \subsubsection{\textit{HTTP Request}}
@@ -64,9 +64,9 @@ Liczba determinująca status realizacji żądania wysłanego przez aplikację kl
 \subsubsection{\textit{HTTP Response Time}}
 Wyrażony w milisekundach, przedział czasu od momentu otrzymania żądania wygenerowanego przez aplikację kliencką, do chwili zwrócenia rezultatu wykonywanych przez usługę sieciową obliczeń. Liczba ta, stanowi jedną z wartości pomiarowych, w kontekście efektywności działania interfejsu programowania aplikacji.  
 
-\subsection*{Obiektowa notacja JavaScript (JSON) - OPIS Z INŻ.}
-\subsubsection{\textit{JavaScript Object Notation}}
-Niezależny od języka programowania format prezentacji, definicji oraz wymiany danych w formie obiektów. Powszechnie stosowany jako sposób generowania ciała żądania wysyłanego do interfejsu API, a także odpowiedzi od niego uzyskiwanej.
+\subsection*{Obiektowa notacja JavaScript}
+\subsubsection{\textit{JavaScript Object Notation - JSON}}
+Format definicji, reprezentacji, a także wymiany danych w postaci obiektów niezależny od określonego języka programowania. Obiektowa notacja JavaScript jest powszechnie wykorzystywana jako format komunikatów przekazywanych pomiędzy interfejsami programowania aplikacji a systemami klienckimi. W odróżnieniu od języka reprezentacji danych opartego o znaczniki \textit{Extensible Markup Language - XML}, obiektowa notacja JavaScript cechuje się mniejszym rozmiarem przesyłanych obiektów (poprzez redukcję liczby metadanych), jednolitym standardem niezależnym od technologii, a także brakiem przechowywania informacji o typie poszczególnej wartości zadanego obiektu.
 
 \subsection*{Testy wzorcowe}
 \subsubsection{\textit{Benchmark}}
@@ -80,7 +80,7 @@ Metoda testowania oprogramowania, której celem jest sprawdzenie poprawności fu
 \subsubsection{\textit{Baseline performance testing}}
 Metoda ewaluacji oprogramowania, pozwalająca na weryfikację działania systemu w warunkach analogicznych do realiów standardowego działania. Na podstawie testów wydajności podstawowej, określić można wartości metryk, które będą miały zastosowanie jako punkt odniesienia dla kolejnych rodzajów testów. Ponadto, wykorzystując standard pomiaru wydajności aplikacji internetowych (taki jak np. APDEX), wartości uzyskane w ramach ewaluacji podstawowych, mogą posłużyć w celu określenia punktów satysfakcji, tolerancji oraz frustracji.
 
-\subsection*{Testy obciążeniowe}
+\subsection*{Testy obciążające}
 \subsubsection{\textit{Load testing}}
 Rodzaj testów, które mają na celu określenie maksymalnego poziomu natężenia operacji, jakie mogą być generowane w kierunku oprogramowania. W kontekście niniejszej pracy, operacjami tymi są żądania wysyłane do interfejsu programowania aplikacji. Kluczowym aspektem testu obciążeniowego jest zdefiniowanie progu obciążenia aplikacji, powyżej którego system jest nie w stanie generować poprawnych odpowiedzi w akceptowalnym czasie.
 
