@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.6.29) (preloaded format=pdflatex 2020.10.11)  4 MAY 2022 13:00
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.6.29) (preloaded format=pdflatex 2020.10.11)  5 MAY 2022 21:50
 entering extended mode
 **c:/Users/HP/source/repos/master-thesis/Dyplom.tex
 (c:/Users/HP/source/repos/master-thesis/Dyplom.tex
@@ -1262,7 +1262,7 @@ Overfull \vbox (0.89998pt too high) has occurred while \output is active []
 Overfull \vbox (0.89998pt too high) has occurred while \output is active []
 
  [19]
-<rys02/architektura-api.png, id=369, 683.4333pt x 639.1077pt>
+<rys02/architektura-api.png, id=349, 683.4333pt x 639.1077pt>
 File: rys02/architektura-api.png Graphic file (type png)
 <use rys02/architektura-api.png>
 Package pdftex.def Info: rys02/architektura-api.png  used on input line 182.
@@ -1274,7 +1274,7 @@ Overfull \vbox (0.89998pt too high) has occurred while \output is active []
 
 pdfTeX warning: pdflatex (file ./rys02/architektura-api.png): large interlaced PNG might cause out of memory (use non-interlaced PNG to fix this)
 >]
-<rys02/orm-wyjasnienie.png, id=379, 1596.71532pt x 473.51906pt>
+<rys02/orm-wyjasnienie.png, id=359, 1596.71532pt x 473.51906pt>
 File: rys02/orm-wyjasnienie.png Graphic file (type png)
 <use rys02/orm-wyjasnienie.png>
 Package pdftex.def Info: rys02/orm-wyjasnienie.png  used on input line 196.
@@ -1283,7 +1283,7 @@ Package pdftex.def Info: rys02/orm-wyjasnienie.png  used on input line 196.
 Overfull \vbox (0.89998pt too high) has occurred while \output is active []
 
  [21 <./rys02/orm-wyjasnienie.png>]
-<rys02/uwierzytelnianie-autoryzacja.png, id=391, 844.5954pt x 711.1368pt>
+<rys02/uwierzytelnianie-autoryzacja.png, id=371, 844.5954pt x 711.1368pt>
 File: rys02/uwierzytelnianie-autoryzacja.png Graphic file (type png)
 <use rys02/uwierzytelnianie-autoryzacja.png>
 Package pdftex.def Info: rys02/uwierzytelnianie-autoryzacja.png  used on input line 218.
@@ -1295,12 +1295,12 @@ Overfull \vbox (0.89998pt too high) has occurred while \output is active []
 
 pdfTeX warning: pdflatex (file ./rys02/uwierzytelnianie-autoryzacja.png): large interlaced PNG might cause out of memory (use non-interlaced PNG to fix this)
 >]
-<rys02/standard-vs-cqrs1.png, id=402, 1052.4921pt x 494.0859pt>
+<rys02/standard-vs-cqrs1.png, id=382, 1052.4921pt x 494.0859pt>
 File: rys02/standard-vs-cqrs1.png Graphic file (type png)
 <use rys02/standard-vs-cqrs1.png>
 Package pdftex.def Info: rys02/standard-vs-cqrs1.png  used on input line 235.
 (pdftex.def)             Requested size: 409.49722pt x 192.23283pt.
-<rys02/standard-vs-cqrs2.png, id=403, 1052.4921pt x 494.0859pt>
+<rys02/standard-vs-cqrs2.png, id=383, 1052.4921pt x 494.0859pt>
 File: rys02/standard-vs-cqrs2.png Graphic file (type png)
 <use rys02/standard-vs-cqrs2.png>
 Package pdftex.def Info: rys02/standard-vs-cqrs2.png  used on input line 242.
@@ -1373,10 +1373,6 @@ Overfull \vbox (0.89998pt too high) has occurred while \output is active []
 Overfull \vbox (0.89998pt too high) has occurred while \output is active []
 
  [42]
-
-LaTeX Warning: Reference `fig:lokalne-srodowisko-badawcze-ver-1' on page 43 undefined on input line 91.
-
-
 Overfull \hbox (12.79999pt too wide) in alignment at lines 77--137
  [] [] [] [] 
  []
@@ -1388,10 +1384,6 @@ Overfull \vbox (0.89998pt too high) has occurred while \output is active []
 Overfull \vbox (0.89998pt too high) has occurred while \output is active []
 
  [44]
-
-LaTeX Warning: Reference `fig:lokalne-srodowisko-badawcze-ver-2' on page 45 undefined on input line 157.
-
-
 Overfull \hbox (12.79999pt too wide) in alignment at lines 143--201
  [] [] [] [] 
  []
@@ -1400,10 +1392,6 @@ Overfull \hbox (12.79999pt too wide) in alignment at lines 143--201
 Overfull \vbox (0.89998pt too high) has occurred while \output is active []
 
  [45]
-
-LaTeX Warning: Reference `fig:lokalne-srodowisko-badawcze-ver-3' on page 46 undefined on input line 220.
-
-
 Overfull \hbox (12.79999pt too wide) in alignment at lines 206--264
  [] [] [] [] 
  []
@@ -1412,10 +1400,6 @@ Overfull \hbox (12.79999pt too wide) in alignment at lines 206--264
 Overfull \vbox (0.89998pt too high) has occurred while \output is active []
 
  [46]
-
-LaTeX Warning: Reference `fig:lokalne-srodowisko-badawcze-ver-1' on page 47 undefined on input line 284.
-
-
 Overfull \hbox (12.79999pt too wide) in alignment at lines 270--332
  [] [] [] [] 
  []
@@ -1427,10 +1411,6 @@ Overfull \vbox (0.89998pt too high) has occurred while \output is active []
 Overfull \vbox (0.89998pt too high) has occurred while \output is active []
 
  [48]
-
-LaTeX Warning: Reference `fig:lokalne-srodowisko-badawcze-ver-2' on page 49 undefined on input line 352.
-
-
 Overfull \hbox (12.79999pt too wide) in alignment at lines 338--398
  [] [] [] [] 
  []
@@ -1442,10 +1422,6 @@ Overfull \vbox (0.89998pt too high) has occurred while \output is active []
 Overfull \vbox (0.89998pt too high) has occurred while \output is active []
 
  [50]
-
-LaTeX Warning: Reference `fig:rozproszone-srodowisko-badawcze-ver-1' on page 51 undefined on input line 417.
-
-
 Overfull \hbox (12.79999pt too wide) in alignment at lines 403--463
  [] [] [] [] 
  []
@@ -1460,110 +1436,76 @@ Overfull \vbox (0.89998pt too high) has occurred while \output is active []
 \openout2 = `rozdzial04.aux'.
 
  (rozdzial04.tex
-Underfull \hbox (badness 10000) in paragraph at lines 5--43
-
- []
-
-
 Overfull \vbox (0.89998pt too high) has occurred while \output is active []
 
  [53
 
 
 
-])
+]
+<rys04/topologia-1.png, id=626, 1039.2426pt x 514.5624pt>
+File: rys04/topologia-1.png Graphic file (type png)
+<use rys04/topologia-1.png>
+Package pdftex.def Info: rys04/topologia-1.png  used on input line 20.
+(pdftex.def)             Requested size: 455.0pt x 225.28537pt.
+
 Overfull \vbox (0.89998pt too high) has occurred while \output is active []
 
- [54]
+ [54 <./rys04/topologia-1.png>]
+<rys04/topologia-2.png, id=633, 1039.2426pt x 514.5624pt>
+File: rys04/topologia-2.png Graphic file (type png)
+<use rys04/topologia-2.png>
+Package pdftex.def Info: rys04/topologia-2.png  used on input line 35.
+(pdftex.def)             Requested size: 455.0pt x 225.28537pt.
+
+Overfull \vbox (0.89998pt too high) has occurred while \output is active []
+
+ [55 <./rys04/topologia-2.png>]
+<rys04/topologia-3.png, id=641, 1039.2426pt x 514.5624pt>
+File: rys04/topologia-3.png Graphic file (type png)
+<use rys04/topologia-3.png>
+Package pdftex.def Info: rys04/topologia-3.png  used on input line 54.
+(pdftex.def)             Requested size: 455.0pt x 225.28537pt.
+<rys04/topologia-4.png, id=643, 1039.2426pt x 514.5624pt>
+File: rys04/topologia-4.png Graphic file (type png)
+<use rys04/topologia-4.png>
+Package pdftex.def Info: rys04/topologia-4.png  used on input line 69.
+(pdftex.def)             Requested size: 455.0pt x 225.28537pt.
+)
+Overfull \vbox (0.89998pt too high) has occurred while \output is active []
+
+ [56 <./rys04/topologia-3.png>]
+Overfull \vbox (0.89998pt too high) has occurred while \output is active []
+
+ [57 <./rys04/topologia-4.png>]
 \openout2 = `rozdzial05.aux'.
 
- (rozdzial05.tex
-LaTeX Font Info:    Trying to load font information for T1+txtt on input line 5.
- ("C:\Program Files\MiKTeX\tex/latex/txfonts\t1txtt.fd"
-File: t1txtt.fd 2000/12/15 v3.1
-)
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 17.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 17.
-
+ (rozdzial05.tex)
 Overfull \vbox (0.89998pt too high) has occurred while \output is active []
 
- [55
+ [58
 
 
 
 ]
-<rys05/kanji-giri.pdf, id=665, 23.21744pt x 11.60876pt>
-File: rys05/kanji-giri.pdf Graphic file (type pdf)
-<use rys05/kanji-giri.pdf>
-Package pdftex.def Info: rys05/kanji-giri.pdf  used on input line 42.
-(pdftex.def)             Requested size: 136.50139pt x 68.29262pt.
-<rys05/beta1.pdf, id=666, 318.67084pt x 196.32407pt>
-File: rys05/beta1.pdf Graphic file (type pdf)
-<use rys05/beta1.pdf>
-Package pdftex.def Info: rys05/beta1.pdf  used on input line 51.
-(pdftex.def)             Requested size: 216.12778pt x 133.15408pt.
-<rys05/alfa1.pdf, id=667, 1308.82678pt x 281.68228pt>
-File: rys05/alfa1.pdf Graphic file (type pdf)
-<use rys05/alfa1.pdf>
-Package pdftex.def Info: rys05/alfa1.pdf  used on input line 52.
-(pdftex.def)             Requested size: 216.12778pt x 46.51425pt.
-
-Overfull \vbox (0.89998pt too high) has occurred while \output is active []
-
- [56 <./rys05/kanji-giri.pdf> <./rys05/beta1.pdf> <./rys05/alfa1.pdf>]
-Overfull \vbox (0.89998pt too high) has occurred while \output is active []
-
- [57]
-Underfull \hbox (badness 10000) in paragraph at lines 126--128
-[]\T1/qtm/m/n/12 korzystajc z po-le-ce-nia [][]\T1/txtt/m/n/12 \lstin []\T1/qtm/m/n/12 umo-li-wiaj-cego wy-pi-sa-nie kodu czcionk
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 126--128
-\T1/qtm/m/n/12 usta-wian w opcjach jak w przy-ka-dzie [][][][][] (efekt ko-mendy
- []
-
-
-Underfull \hbox (badness 2980) in paragraph at lines 126--128
-[][]\T1/txtt/m/n/12 \lstset{basicstyle=\ttfamily}\lstinline{tutaj}[]\T1/qtm/m/n/12 ) lub [][][][][] (efekt ko-mendy
- []
-
-
-LaTeX Warning: Citation `JS07' on page 58 undefined on input line 132.
-
-
-LaTeX Warning: Citation `SQL2' on page 58 undefined on input line 132.
-
-
-Overfull \vbox (0.89998pt too high) has occurred while \output is active []
-
- [58]
-Overfull \vbox (0.89998pt too high) has occurred while \output is active []
-
- [59]
-Overfull \vbox (0.89998pt too high) has occurred while \output is active []
-
- [60])
-Overfull \vbox (0.89998pt too high) has occurred while \output is active []
-
- [61]
 \openout2 = `rozdzial06.aux'.
 
  (rozdzial06.tex)
 Overfull \vbox (0.89998pt too high) has occurred while \output is active []
 
- [62
+ [59
 
 
 
 ] (Dyplom.bbl
 bibitemlist
-
+LaTeX Font Info:    Trying to load font information for T1+txtt on input line 24.
+("C:\Program Files\MiKTeX\tex/latex/txfonts\t1txtt.fd"
+File: t1txtt.fd 2000/12/15 v3.1
+)
 Overfull \vbox (0.89998pt too high) has occurred while \output is active []
 
- [63
+ [60
 
 
 ]
@@ -1573,16 +1515,16 @@ File: ts1qtm.fd 2009/09/25 v1.2 font definition file for TS1/qtm
 ))
 Overfull \vbox (0.89998pt too high) has occurred while \output is active []
 
- [64]
+ [61]
 Overfull \vbox (0.89998pt too high) has occurred while \output is active []
 
- [65]
+ [62]
 \openout2 = `dodatekA.aux'.
 
  (dodatekA.tex)
 Overfull \vbox (0.89998pt too high) has occurred while \output is active []
 
- [66
+ [63
 
 
 ]
@@ -1591,7 +1533,7 @@ Overfull \vbox (0.89998pt too high) has occurred while \output is active []
  (dodatekB.tex)
 Overfull \vbox (0.89998pt too high) has occurred while \output is active []
 
- [67
+ [64
 
 
 
@@ -1620,27 +1562,24 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 889.
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 889.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 889.
 Package rerunfilecheck Info: File `Dyplom.out' has not changed.
-(rerunfilecheck)             Checksum: DDC3434C39EFD20D443895CFDD39554A;5204.
-
-
-LaTeX Warning: There were undefined references.
+(rerunfilecheck)             Checksum: 3175519F736863B9ED510D97C617E14A;5464.
 
 
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 20868 strings out of 480790
- 336475 string characters out of 2898707
- 741280 words of memory out of 3000000
- 36113 multiletter control sequences out of 15000+200000
- 683284 words of font info for 90 fonts, out of 3000000 for 9000
+ 20455 strings out of 480790
+ 332397 string characters out of 2898707
+ 692946 words of memory out of 3000000
+ 35835 multiletter control sequences out of 15000+200000
+ 672924 words of font info for 82 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 37i,13n,45p,2200b,1922s stack positions out of 5000i,500n,10000p,200000b,50000s
-{C:/Program Files/MiKTeX/fonts/enc/dvips/tex-gyre/q-ts1.enc}{C:/Users/HP/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathit.enc}{C:/Users/HP/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathsy.enc}{C:/Program Files/MiKTeX/fonts/enc/dvips/tex-gyre/q-ec.enc}{C:/Program Files/MiKTeX/fonts/enc/dvips/ebgaramond/ebgm_tcdnmr.enc}<C:/Program Files/MiKTeX/fonts/type1/public/ebgaramond/EBGaramond-Bold.pfb><C:/Program Files/MiKTeX/fonts/type1/public/ebgaramond/EBGaramond-Regular.pfb><C:/Users/HP/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi10.pfb><C:/Users/HP/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi12.pfb><C:/Users/HP/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/tex-gyre/qtmb.pfb><C:/Program Files/MiKTeX/fonts/type1/public/tex-gyre/qtmbi.pfb><C:/Program Files/MiKTeX/fonts/type1/public/tex-gyre/qtmr.pfb><C:/Program Files/MiKTeX/fonts/type1/public/tex-gyre/qtmri.pfb><C:/Program Files/MiKTeX/fonts/type1/public/txfonts/t1xtt.pfb>
-Output written on Dyplom.pdf (67 pages, 2952301 bytes).
+ 37i,13n,42p,2200b,497s stack positions out of 5000i,500n,10000p,200000b,50000s
+{C:/Program Files/MiKTeX/fonts/enc/dvips/tex-gyre/q-ts1.enc}{C:/Users/HP/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathit.enc}{C:/Users/HP/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathsy.enc}{C:/Program Files/MiKTeX/fonts/enc/dvips/tex-gyre/q-ec.enc}{C:/Program Files/MiKTeX/fonts/enc/dvips/ebgaramond/ebgm_tcdnmr.enc}<C:/Program Files/MiKTeX/fonts/type1/public/ebgaramond/EBGaramond-Bold.pfb><C:/Program Files/MiKTeX/fonts/type1/public/ebgaramond/EBGaramond-Regular.pfb><C:/Users/HP/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi12.pfb><C:/Users/HP/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/tex-gyre/qtmb.pfb><C:/Program Files/MiKTeX/fonts/type1/public/tex-gyre/qtmbi.pfb><C:/Program Files/MiKTeX/fonts/type1/public/tex-gyre/qtmr.pfb><C:/Program Files/MiKTeX/fonts/type1/public/tex-gyre/qtmri.pfb><C:/Program Files/MiKTeX/fonts/type1/public/txfonts/t1xtt.pfb>
+Output written on Dyplom.pdf (64 pages, 4052846 bytes).
 PDF statistics:
- 971 PDF objects out of 1000 (max. 8388607)
- 368 named destinations out of 1000 (max. 500000)
- 321 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 784 PDF objects out of 1000 (max. 8388607)
+ 235 named destinations out of 1000 (max. 500000)
+ 294 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -37,20 +37,14 @@
 \contentsline {section}{\numberline {3.1}Przedstawienie aspektów problemu badawczego}{39}{section.3.1}%
 \contentsline {section}{\numberline {3.2}Sformułowanie scenariuszy badawczych}{43}{section.3.2}%
 \contentsline {chapter}{\chapternumberline {4}Implementacja środowiska badawczego}{53}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Układ pracy}{53}{section.4.1}%
-\contentsline {section}{\numberline {4.2}Styl}{54}{section.4.2}%
-\contentsline {chapter}{\chapternumberline {5}Uwagi techniczne}{55}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Rysunki}{55}{section.5.1}%
-\contentsline {section}{\numberline {5.2}Wstawianie kodu rdowego}{57}{section.5.2}%
-\contentsline {section}{\numberline {5.3}Wykaz literatury oraz cytowania}{58}{section.5.3}%
-\contentsline {section}{\numberline {5.4}Indeks rzeczowy}{59}{section.5.4}%
-\contentsline {section}{\numberline {5.5}Inne uwagi}{60}{section.5.5}%
-\contentsline {chapter}{\chapternumberline {6}Podsumowanie}{62}{chapter.6}%
-\contentsline {section}{\numberline {6.1}Sekcja poziomu 1}{62}{section.6.1}%
-\contentsline {subsection}{\numberline {6.1.1}Sekcja poziomu 2}{62}{subsection.6.1.1}%
-\contentsline {subsubsection}{Sekcja poziomu 3}{62}{section*.74}%
-\contentsline {paragraph}{Paragraf 4}{62}{section*.75}%
-\contentsline {section}{\numberline {6.2}Sekcja poziomu 1}{62}{section.6.2}%
-\contentsline {chapter}{Literatura}{63}{chapter*.76}%
-\contentsline {appendix}{\chapternumberline {A}Instrukcja wdroeniowa}{66}{appendix.A}%
-\contentsline {appendix}{\chapternumberline {B}Opis zaczonej pyty CD/DVD}{67}{appendix.B}%
+\contentsline {section}{\numberline {4.1}Realizacja topologii fizycznych}{53}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Budowa interfejsów programowania aplikacji}{57}{section.4.2}%
+\contentsline {section}{\numberline {4.3}Konfiguracja generycznych oraz dedykowanych platform chmurowych}{57}{section.4.3}%
+\contentsline {section}{\numberline {4.4}Konfiguracja narzędzia do realizacji badań}{57}{section.4.4}%
+\contentsline {chapter}{\chapternumberline {5}Przeprowadzone badania}{58}{chapter.5}%
+\contentsline {chapter}{\chapternumberline {6}Podsumowanie}{59}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Wnioski z przeprowadzonych badań}{59}{section.6.1}%
+\contentsline {section}{\numberline {6.2}Perspektywy rozwoju badań}{59}{section.6.2}%
+\contentsline {chapter}{Literatura}{60}{chapter*.83}%
+\contentsline {appendix}{\chapternumberline {A}Instrukcja wdroeniowa}{63}{appendix.A}%
+\contentsline {appendix}{\chapternumberline {B}Opis zaczonej pyty CD/DVD}{64}{appendix.B}%

@@ -25,11 +25,9 @@ A level-1 auxiliary file: dodatekB.aux
 Database file #1: dokumentacja.bib
 Warning--entry type for "25010:2011" isn't style-file defined
 --line 248 of file dokumentacja.bib
-Warning--I didn't find a database entry for "JS07"
-Warning--I didn't find a database entry for "SQL2"
 You've used 38 entries,
             2129 wiz_defined-function locations,
-            705 strings with 9358 characters,
+            701 strings with 9342 characters,
 and the built_in function-call counts, 10998 in all, are:
 = -- 1073
 > -- 474
@@ -68,4 +66,4 @@ warning$ -- 0
 while$ -- 101
 width$ -- 40
 write$ -- 396
-(There were 3 warnings)
+(There was 1 warning)
