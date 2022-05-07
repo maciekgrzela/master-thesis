@@ -279,6 +279,7 @@ Na podstawie przedstawionych w poprzednim podrozdziale aspektów problemu badawc
     \multicolumn{4}{|l|}{\textbf{Topologia fizyczna środowiska badawczego:}}         \\ \hline
     \multicolumn{4}{|p{\linewidth}|}{
         \begin{itemize}[label={}]
+            % dodać jeszcze jedną konfigurację lokalnego środowiska badawczego
             \item Konfiguracja pierwsza lokalnego środowiska badawczego \ref{sec:lokalne-srodowisko-badawcze-ver-1}
           \end{itemize}
     }\\ \hline
@@ -286,9 +287,9 @@ Na podstawie przedstawionych w poprzednim podrozdziale aspektów problemu badawc
     \multicolumn{4}{|p{\linewidth}|}{
         \begin{itemize}
             \item Zaimplementowanie interfejsów programowania aplikacji wykorzystujących wzorzec projektowy CQRS w technologiach C\#/.NET oraz NodeJS/ExpressJS.
-            \item Konfiguracja interfejsów programowania aplikacji w celu obsługi systemów bazodanowych: Microsoft SQL Server, MySQL, PostgreSQL, SQLite oraz MongoDB.
-            \item Wprowadzenie usprawnień wydajnościowych dotyczących odczytu i zapisu dla każdego z systemów bazodanowych
-            \item Połączenie interfejsu API z dwoma systemami bazodanowymi tego samego typu i konfiguracja automatycznej replikacji danych w momencie ich zapisu
+            \item Konfiguracja interfejsów programowania aplikacji w celu obsługi systemu bazodanowego: Microsoft SQL Server.
+            \item Wprowadzenie usprawnień wydajnościowych dotyczących modelu danych przeznaczonego dla operacji odczytu.
+            \item Połączenie interfejsu API z dwoma systemami bazodanowymi tego samego typu i konfiguracja automatycznej, transakcyjne replikacji danych w momencie ich zapisu.
             \item Konfiguracja topologii fizycznej środowiska badawczego.
             \item Konfiguracja narzędzia do wykonywania testów wydajnościowych.
         \end{itemize}}                                                           \\ \hline
@@ -310,7 +311,7 @@ Na podstawie przedstawionych w poprzednim podrozdziale aspektów problemu badawc
     \multicolumn{4}{|l|}{\textbf{Opis scenariusza badawczego:}}                      \\ \hline
     \multicolumn{4}{|p{\linewidth}|}{
         \begin{itemize}[label={}]
-            \item Po wykonaniu konfiguracji topologii fizycznej środowiska badawczego, urządzenia klienckie będą wysyłać żądania protokołu hipertekstowego w kierunku interfejsu programowania aplikacji. Liczba żądań tych będzie sukcesywnie zwiększana, poprzez uruchamianie kolejnych równolegle pracujących wątków oprogramowania testowego. Dla każdej wartości liczby urządzeń klienckich, badanie zostanie wykonane dziesięciokrotnie, a uzyskane wyniki zostaną następnie uśrednione. Odpowiednie przedziały wartości omawianego parametru wyznaczać będą granicę pomiędzy testami linii bazowej, obciążeniowymi, a także przeciążającymi. Badanie zostanie powtórzone dla każdego z rozważanych systemów bazodanowych w obrębie obu porównywanych technologii programistycznych. Po zgromadzeniu wyników badań przeprowadzone zostaną parowe testy statystyczne wykazujące istotność różnic pomiarowych. Obserwacje uzyskane w ramach niniejszego badania, porównane zostaną z tymi, ustalonymi na podstawie pierwszego scenariusza badawczego \ref{tab:research-scenario-1}.
+            \item Po wykonaniu konfiguracji topologii fizycznej środowiska badawczego, urządzenia klienckie będą wysyłać żądania protokołu hipertekstowego w kierunku interfejsu programowania aplikacji. Liczba żądań tych będzie sukcesywnie zwiększana, poprzez uruchamianie kolejnych równolegle pracujących wątków oprogramowania testowego. Dla każdej wartości liczby urządzeń klienckich, badanie zostanie wykonane minimum trzydziestokrotnie, a uzyskane wyniki zostaną następnie uśrednione. Odpowiednie przedziały wartości omawianego parametru wyznaczać będą granicę pomiędzy testami linii bazowej, obciążeniowymi, a także przeciążającymi. Badanie zostanie powtórzone dla każdego z rozważanych systemów bazodanowych w obrębie obu porównywanych technologii programistycznych. Po zgromadzeniu wyników badań przeprowadzone zostaną parowe testy statystyczne wykazujące istotność różnic pomiarowych. Obserwacje uzyskane w ramach niniejszego badania, porównane zostaną z tymi, ustalonymi na podstawie pierwszego scenariusza badawczego \ref{tab:research-scenario-1}.
           \end{itemize}
     }                                                           \\ \hline
     \multicolumn{4}{|l|}{\textbf{Kryteria porównawcze:}}                             \\ \hline
@@ -326,7 +327,6 @@ Na podstawie przedstawionych w poprzednim podrozdziale aspektów problemu badawc
         \begin{itemize}
             \item Liczba klientów równolegle wysyłających żądania.
             \item Technologia programistyczna zastosowana do implementacji interfejsu programowania aplikacji.
-            \item Rodzaj systemu bazodanowego komunikującego się z interfejsem programowania aplikacji.
         \end{itemize}
     }                                                           \\ \hline
 \end{longtable}
