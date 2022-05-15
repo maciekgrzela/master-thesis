@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.6.29) (preloaded format=pdflatex 2020.10.11)  7 MAY 2022 18:28
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.6.29) (preloaded format=pdflatex 2020.10.11)  15 MAY 2022 19:04
 entering extended mode
 **c:/Users/HP/source/repos/master-thesis/Dyplom.tex
 (c:/Users/HP/source/repos/master-thesis/Dyplom.tex
@@ -1262,7 +1262,7 @@ Overfull \vbox (0.89998pt too high) has occurred while \output is active []
 Overfull \vbox (0.89998pt too high) has occurred while \output is active []
 
  [19]
-<rys02/architektura-api.png, id=357, 683.4333pt x 639.1077pt>
+<rys02/architektura-api.png, id=366, 683.4333pt x 639.1077pt>
 File: rys02/architektura-api.png Graphic file (type png)
 <use rys02/architektura-api.png>
 Package pdftex.def Info: rys02/architektura-api.png  used on input line 182.
@@ -1274,7 +1274,7 @@ Overfull \vbox (0.89998pt too high) has occurred while \output is active []
 
 pdfTeX warning: pdflatex (file ./rys02/architektura-api.png): large interlaced PNG might cause out of memory (use non-interlaced PNG to fix this)
 >]
-<rys02/orm-wyjasnienie.png, id=367, 1596.71532pt x 473.51906pt>
+<rys02/orm-wyjasnienie.png, id=376, 1596.71532pt x 473.51906pt>
 File: rys02/orm-wyjasnienie.png Graphic file (type png)
 <use rys02/orm-wyjasnienie.png>
 Package pdftex.def Info: rys02/orm-wyjasnienie.png  used on input line 196.
@@ -1283,7 +1283,7 @@ Package pdftex.def Info: rys02/orm-wyjasnienie.png  used on input line 196.
 Overfull \vbox (0.89998pt too high) has occurred while \output is active []
 
  [21 <./rys02/orm-wyjasnienie.png>]
-<rys02/uwierzytelnianie-autoryzacja.png, id=379, 844.5954pt x 711.1368pt>
+<rys02/uwierzytelnianie-autoryzacja.png, id=388, 844.5954pt x 711.1368pt>
 File: rys02/uwierzytelnianie-autoryzacja.png Graphic file (type png)
 <use rys02/uwierzytelnianie-autoryzacja.png>
 Package pdftex.def Info: rys02/uwierzytelnianie-autoryzacja.png  used on input line 218.
@@ -1295,12 +1295,12 @@ Overfull \vbox (0.89998pt too high) has occurred while \output is active []
 
 pdfTeX warning: pdflatex (file ./rys02/uwierzytelnianie-autoryzacja.png): large interlaced PNG might cause out of memory (use non-interlaced PNG to fix this)
 >]
-<rys02/standard-vs-cqrs1.png, id=390, 1052.4921pt x 494.0859pt>
+<rys02/standard-vs-cqrs1.png, id=399, 1052.4921pt x 494.0859pt>
 File: rys02/standard-vs-cqrs1.png Graphic file (type png)
 <use rys02/standard-vs-cqrs1.png>
 Package pdftex.def Info: rys02/standard-vs-cqrs1.png  used on input line 235.
 (pdftex.def)             Requested size: 409.49722pt x 192.23283pt.
-<rys02/standard-vs-cqrs2.png, id=391, 1052.4921pt x 494.0859pt>
+<rys02/standard-vs-cqrs2.png, id=400, 1052.4921pt x 494.0859pt>
 File: rys02/standard-vs-cqrs2.png Graphic file (type png)
 <use rys02/standard-vs-cqrs2.png>
 Package pdftex.def Info: rys02/standard-vs-cqrs2.png  used on input line 242.
@@ -1443,7 +1443,7 @@ Overfull \vbox (0.89998pt too high) has occurred while \output is active []
 
 
 ]
-<rys04/topologia-1.png, id=634, 1039.2426pt x 514.5624pt>
+<rys04/topologia-1.png, id=643, 1039.2426pt x 514.5624pt>
 File: rys04/topologia-1.png Graphic file (type png)
 <use rys04/topologia-1.png>
 Package pdftex.def Info: rys04/topologia-1.png  used on input line 20.
@@ -1452,7 +1452,7 @@ Package pdftex.def Info: rys04/topologia-1.png  used on input line 20.
 Overfull \vbox (0.89998pt too high) has occurred while \output is active []
 
  [54 <./rys04/topologia-1.png>]
-<rys04/topologia-2.png, id=641, 1039.2426pt x 514.5624pt>
+<rys04/topologia-2.png, id=650, 1039.2426pt x 514.5624pt>
 File: rys04/topologia-2.png Graphic file (type png)
 <use rys04/topologia-2.png>
 Package pdftex.def Info: rys04/topologia-2.png  used on input line 35.
@@ -1461,12 +1461,12 @@ Package pdftex.def Info: rys04/topologia-2.png  used on input line 35.
 Overfull \vbox (0.89998pt too high) has occurred while \output is active []
 
  [55 <./rys04/topologia-2.png>]
-<rys04/topologia-3.png, id=649, 1039.2426pt x 514.5624pt>
+<rys04/topologia-3.png, id=658, 1039.2426pt x 514.5624pt>
 File: rys04/topologia-3.png Graphic file (type png)
 <use rys04/topologia-3.png>
 Package pdftex.def Info: rys04/topologia-3.png  used on input line 54.
 (pdftex.def)             Requested size: 455.0pt x 225.28537pt.
-<rys04/topologia-5.png, id=651, 1039.2426pt x 514.5624pt>
+<rys04/topologia-5.png, id=660, 1039.2426pt x 514.5624pt>
 File: rys04/topologia-5.png Graphic file (type png)
 <use rys04/topologia-5.png>
 Package pdftex.def Info: rys04/topologia-5.png  used on input line 71.
@@ -1475,7 +1475,7 @@ Package pdftex.def Info: rys04/topologia-5.png  used on input line 71.
 Overfull \vbox (0.89998pt too high) has occurred while \output is active []
 
  [56 <./rys04/topologia-3.png>]
-<rys04/topologia-4.png, id=659, 1039.2426pt x 514.5624pt>
+<rys04/topologia-4.png, id=668, 1039.2426pt x 514.5624pt>
 File: rys04/topologia-4.png Graphic file (type png)
 <use rys04/topologia-4.png>
 Package pdftex.def Info: rys04/topologia-4.png  used on input line 86.
@@ -1487,7 +1487,7 @@ Overfull \vbox (0.89998pt too high) has occurred while \output is active []
 Overfull \vbox (0.89998pt too high) has occurred while \output is active []
 
  [58 <./rys04/topologia-4.png>]
-<rys04/struktura-plikow-dotnet.png, id=673, 846.16125pt x 470.50781pt>
+<rys04/struktura-plikow-dotnet.png, id=682, 846.16125pt x 470.50781pt>
 File: rys04/struktura-plikow-dotnet.png Graphic file (type png)
 <use rys04/struktura-plikow-dotnet.png>
 Package pdftex.def Info: rys04/struktura-plikow-dotnet.png  used on input line 122.
@@ -1496,24 +1496,199 @@ Package pdftex.def Info: rys04/struktura-plikow-dotnet.png  used on input line 1
 Overfull \vbox (0.89998pt too high) has occurred while \output is active []
 
  [59]
-<rys04/struktura-plikow-nodejs.png, id=680, 575.90157pt x 411.03563pt>
+<rys04/struktura-plikow-nodejs.png, id=689, 575.90157pt x 411.03563pt>
 File: rys04/struktura-plikow-nodejs.png Graphic file (type png)
 <use rys04/struktura-plikow-nodejs.png>
 Package pdftex.def Info: rys04/struktura-plikow-nodejs.png  used on input line 141.
 (pdftex.def)             Requested size: 455.0pt x 324.75848pt.
-)
+
 Overfull \vbox (0.89998pt too high) has occurred while \output is active []
 
  [60 <./rys04/struktura-plikow-dotnet.png>]
+<rys04/algorytm-genetyczny.png, id=697, 513.5988pt x 657.657pt>
+File: rys04/algorytm-genetyczny.png Graphic file (type png)
+<use rys04/algorytm-genetyczny.png>
+Package pdftex.def Info: rys04/algorytm-genetyczny.png  used on input line 155.
+(pdftex.def)             Requested size: 273.00278pt x 349.57008pt.
+
 Overfull \vbox (0.89998pt too high) has occurred while \output is active []
 
  [61 <./rys04/struktura-plikow-nodejs.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 176--176
+[]|\T1/qtm/m/n/10.95 Prawdopodobie«stwo mu-ta-cji
+ []
+
+
+Underfull \hbox (badness 4001) in paragraph at lines 176--176
+[]|\T1/qtm/m/n/10.95 Parametr de-fi-niu-j¡cy cz¦-sto±¢
+ []
+
+
+Underfull \hbox (badness 7451) in paragraph at lines 176--176
+\T1/qtm/m/n/10.95 wy-st¡-pie-nia zda-rze-nia mo-dy-
+ []
+
+
+Underfull \hbox (badness 3019) in paragraph at lines 176--176
+\T1/qtm/m/n/10.95 fi-ka-cji po-je-dyn-czego chro-mo-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 176--176
+[]|\T1/qtm/m/n/10.95 Prawdopodobie«stwo krzy-»o-
+ []
+
+
+Underfull \hbox (badness 4001) in paragraph at lines 176--176
+[]|\T1/qtm/m/n/10.95 Parametr de-fi-niu-j¡cy cz¦-sto±¢
+ []
+
+
+Underfull \hbox (badness 3977) in paragraph at lines 176--176
+\T1/qtm/m/n/10.95 kodu ge-ne-tycz-nego po-mi¦-dzy
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 176--176
+[]|\T1/qtm/m/n/10.95 Liczba osob-ni-ków pod-da-wa-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 176--176
+\T1/qtm/m/n/10.95 osta-tecz-nie wy-bie-rane jest
+ []
+
+
+Underfull \hbox (badness 6110) in paragraph at lines 176--176
+[]|\T1/qtm/m/n/10.95 Liczba osob-ni-ków do-mi-nu-j¡-
+ []
+
+
+Underfull \hbox (badness 1852) in paragraph at lines 176--176
+[]|\T1/qtm/m/n/10.95 Rozmiar pod-grupy w ob-r¦-bie
+ []
+
+
+Underfull \hbox (badness 2376) in paragraph at lines 176--176
+\T1/qtm/m/n/10.95 wy»-szych war-to-±ciach funk-cji
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 176--176
+[]|\T1/qtm/m/n/10.95 Przedziaª czasu okre-±lany
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 176--176
+\T1/qtm/m/n/10.95 któ-rego wy-ko-ny-wana b¦-dzie
+ []
+
+
+Overfull \vbox (0.89998pt too high) has occurred while \output is active []
+
+ [62 <./rys04/algorytm-genetyczny.png>]
+Overfull \vbox (0.89998pt too high) has occurred while \output is active []
+
+ [63]
+<rys04/cache-klucz.png, id=714, 914.9382pt x 517.6941pt>
+File: rys04/cache-klucz.png Graphic file (type png)
+<use rys04/cache-klucz.png>
+Package pdftex.def Info: rys04/cache-klucz.png  used on input line 197.
+(pdftex.def)             Requested size: 455.0pt x 257.45612pt.
+
+Overfull \vbox (0.89998pt too high) has occurred while \output is active []
+
+ [64]
+Overfull \vbox (0.89998pt too high) has occurred while \output is active []
+
+ [65 <./rys04/cache-klucz.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 225--226
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 225--226
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 229--235
+
+ []
+
+
+Underfull \hbox (badness 1436) in paragraph at lines 229--235
+\OML/lmm/m/it/12 invalidations\OT1/lmr/m/n/12 (\OML/lmm/m/it/12 x\OT1/lmr/m/n/12 )$ \T1/qtm/m/n/12 - liczba unie-wa»-nie« wpisu pa-mi¦ci pod-r¦cz-nej iden-ty-fi-ko-wa-nego klu-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 229--235
+
+ []
+
+
+Underfull \hbox (badness 4505) in paragraph at lines 229--235
+\OML/lmm/m/it/12 execution[]factor\OT1/lmr/m/n/12 (\OML/lmm/m/it/12 x\OT1/lmr/m/n/12 )$ \T1/qtm/m/n/12 - wspóª-czyn-nik cz¦-sto-±ci wy-ko-na-nia okre-±lo-nego punktu ko«-co-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 229--235
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 229--235
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 229--235
+
+ []
+
+
+Underfull \hbox (badness 3965) in paragraph at lines 229--235
+\OML/lmm/m/it/12 max[]time[]to[]live\OT1/lmr/m/n/12 (\OML/lmm/m/it/12 x\OT1/lmr/m/n/12 )$ \T1/qtm/m/n/12 - mak-sy-malny czas wa»-no-±ci wpisu pod-r¦cz-nej wzgl¦-dem któ-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 229--235
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 229--235
+
+ []
+
+
+Overfull \vbox (0.89998pt too high) has occurred while \output is active []
+
+ [66]
+<rys04/jak_dziala_transakcja.png, id=735, 583.7007pt x 514.3215pt>
+File: rys04/jak_dziala_transakcja.png Graphic file (type png)
+<use rys04/jak_dziala_transakcja.png>
+Package pdftex.def Info: rys04/jak_dziala_transakcja.png  used on input line 272.
+(pdftex.def)             Requested size: 455.0pt x 400.92587pt.
+
+Overfull \vbox (0.89998pt too high) has occurred while \output is active []
+
+ [67]
+Overfull \vbox (0.89998pt too high) has occurred while \output is active []
+
+ [68 <./rys04/jak_dziala_transakcja.png>]
+Overfull \vbox (0.89998pt too high) has occurred while \output is active []
+
+ [69])
+Overfull \vbox (0.89998pt too high) has occurred while \output is active []
+
+ [70]
 \openout2 = `rozdzial05.aux'.
 
  (rozdzial05.tex)
 Overfull \vbox (0.89998pt too high) has occurred while \output is active []
 
- [62
+ [71
 
 
 
@@ -1523,7 +1698,7 @@ Overfull \vbox (0.89998pt too high) has occurred while \output is active []
  (rozdzial06.tex)
 Overfull \vbox (0.89998pt too high) has occurred while \output is active []
 
- [63
+ [72
 
 
 
@@ -1535,7 +1710,7 @@ File: t1txtt.fd 2000/12/15 v3.1
 )
 Overfull \vbox (0.89998pt too high) has occurred while \output is active []
 
- [64
+ [73
 
 
 ]
@@ -1545,16 +1720,16 @@ File: ts1qtm.fd 2009/09/25 v1.2 font definition file for TS1/qtm
 ))
 Overfull \vbox (0.89998pt too high) has occurred while \output is active []
 
- [65]
+ [74]
 Overfull \vbox (0.89998pt too high) has occurred while \output is active []
 
- [66]
+ [75]
 \openout2 = `dodatekA.aux'.
 
  (dodatekA.tex)
 Overfull \vbox (0.89998pt too high) has occurred while \output is active []
 
- [67
+ [76
 
 
 ]
@@ -1563,7 +1738,7 @@ Overfull \vbox (0.89998pt too high) has occurred while \output is active []
  (dodatekB.tex)
 Overfull \vbox (0.89998pt too high) has occurred while \output is active []
 
- [68
+ [77
 
 
 
@@ -1599,17 +1774,17 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 20486 strings out of 480790
- 333152 string characters out of 2898707
- 693947 words of memory out of 3000000
- 35854 multiletter control sequences out of 15000+200000
+ 20527 strings out of 480790
+ 333984 string characters out of 2898707
+ 694998 words of memory out of 3000000
+ 35876 multiletter control sequences out of 15000+200000
  672924 words of font info for 82 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  37i,13n,42p,2200b,497s stack positions out of 5000i,500n,10000p,200000b,50000s
-{C:/Program Files/MiKTeX/fonts/enc/dvips/tex-gyre/q-ts1.enc}{C:/Users/HP/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathit.enc}{C:/Users/HP/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathsy.enc}{C:/Program Files/MiKTeX/fonts/enc/dvips/tex-gyre/q-ec.enc}{C:/Program Files/MiKTeX/fonts/enc/dvips/ebgaramond/ebgm_tcdnmr.enc}<C:/Program Files/MiKTeX/fonts/type1/public/ebgaramond/EBGaramond-Bold.pfb><C:/Program Files/MiKTeX/fonts/type1/public/ebgaramond/EBGaramond-Regular.pfb><C:/Users/HP/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi12.pfb><C:/Users/HP/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/tex-gyre/qtmb.pfb><C:/Program Files/MiKTeX/fonts/type1/public/tex-gyre/qtmbi.pfb><C:/Program Files/MiKTeX/fonts/type1/public/tex-gyre/qtmr.pfb><C:/Program Files/MiKTeX/fonts/type1/public/tex-gyre/qtmri.pfb><C:/Program Files/MiKTeX/fonts/type1/public/txfonts/t1xtt.pfb>
-Output written on Dyplom.pdf (68 pages, 4644579 bytes).
+{C:/Program Files/MiKTeX/fonts/enc/dvips/tex-gyre/q-ts1.enc}{C:/Users/HP/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-rm.enc}{C:/Users/HP/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathit.enc}{C:/Users/HP/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathsy.enc}{C:/Program Files/MiKTeX/fonts/enc/dvips/tex-gyre/q-ec.enc}{C:/Program Files/MiKTeX/fonts/enc/dvips/ebgaramond/ebgm_tcdnmr.enc}<C:/Program Files/MiKTeX/fonts/type1/public/ebgaramond/EBGaramond-Bold.pfb><C:/Program Files/MiKTeX/fonts/type1/public/ebgaramond/EBGaramond-Regular.pfb><C:/Users/HP/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi12.pfb><C:/Users/HP/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr12.pfb><C:/Users/HP/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/tex-gyre/qtmb.pfb><C:/Program Files/MiKTeX/fonts/type1/public/tex-gyre/qtmbi.pfb><C:/Program Files/MiKTeX/fonts/type1/public/tex-gyre/qtmr.pfb><C:/Program Files/MiKTeX/fonts/type1/public/tex-gyre/qtmri.pfb><C:/Program Files/MiKTeX/fonts/type1/public/txfonts/t1xtt.pfb>
+Output written on Dyplom.pdf (77 pages, 5511387 bytes).
 PDF statistics:
- 820 PDF objects out of 1000 (max. 8388607)
- 244 named destinations out of 1000 (max. 500000)
- 309 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 889 PDF objects out of 1000 (max. 8388607)
+ 260 named destinations out of 1000 (max. 500000)
+ 324 words of extra memory for PDF output out of 10000 (max. 10000000)
 
