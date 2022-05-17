@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.6.29) (preloaded format=pdflatex 2020.10.11)  15 MAY 2022 19:04
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.6.29) (preloaded format=pdflatex 2020.10.11)  17 MAY 2022 22:10
 entering extended mode
 **c:/Users/HP/source/repos/master-thesis/Dyplom.tex
 (c:/Users/HP/source/repos/master-thesis/Dyplom.tex
@@ -1679,16 +1679,19 @@ Overfull \vbox (0.89998pt too high) has occurred while \output is active []
  [68 <./rys04/jak_dziala_transakcja.png>]
 Overfull \vbox (0.89998pt too high) has occurred while \output is active []
 
- [69])
+ [69]
 Overfull \vbox (0.89998pt too high) has occurred while \output is active []
 
- [70]
+ [70])
+Overfull \vbox (0.89998pt too high) has occurred while \output is active []
+
+ [71]
 \openout2 = `rozdzial05.aux'.
 
  (rozdzial05.tex)
 Overfull \vbox (0.89998pt too high) has occurred while \output is active []
 
- [71
+ [72
 
 
 
@@ -1698,7 +1701,7 @@ Overfull \vbox (0.89998pt too high) has occurred while \output is active []
  (rozdzial06.tex)
 Overfull \vbox (0.89998pt too high) has occurred while \output is active []
 
- [72
+ [73
 
 
 
@@ -1710,7 +1713,7 @@ File: t1txtt.fd 2000/12/15 v3.1
 )
 Overfull \vbox (0.89998pt too high) has occurred while \output is active []
 
- [73
+ [74
 
 
 ]
@@ -1720,16 +1723,16 @@ File: ts1qtm.fd 2009/09/25 v1.2 font definition file for TS1/qtm
 ))
 Overfull \vbox (0.89998pt too high) has occurred while \output is active []
 
- [74]
+ [75]
 Overfull \vbox (0.89998pt too high) has occurred while \output is active []
 
- [75]
+ [76]
 \openout2 = `dodatekA.aux'.
 
  (dodatekA.tex)
 Overfull \vbox (0.89998pt too high) has occurred while \output is active []
 
- [76
+ [77
 
 
 ]
@@ -1738,7 +1741,7 @@ Overfull \vbox (0.89998pt too high) has occurred while \output is active []
  (dodatekB.tex)
 Overfull \vbox (0.89998pt too high) has occurred while \output is active []
 
- [77
+ [78
 
 
 
@@ -1774,17 +1777,17 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 20527 strings out of 480790
- 333984 string characters out of 2898707
+ 20528 strings out of 480790
+ 333991 string characters out of 2898707
  694998 words of memory out of 3000000
  35876 multiletter control sequences out of 15000+200000
  672924 words of font info for 82 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  37i,13n,42p,2200b,497s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Program Files/MiKTeX/fonts/enc/dvips/tex-gyre/q-ts1.enc}{C:/Users/HP/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-rm.enc}{C:/Users/HP/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathit.enc}{C:/Users/HP/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathsy.enc}{C:/Program Files/MiKTeX/fonts/enc/dvips/tex-gyre/q-ec.enc}{C:/Program Files/MiKTeX/fonts/enc/dvips/ebgaramond/ebgm_tcdnmr.enc}<C:/Program Files/MiKTeX/fonts/type1/public/ebgaramond/EBGaramond-Bold.pfb><C:/Program Files/MiKTeX/fonts/type1/public/ebgaramond/EBGaramond-Regular.pfb><C:/Users/HP/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi12.pfb><C:/Users/HP/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr12.pfb><C:/Users/HP/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/tex-gyre/qtmb.pfb><C:/Program Files/MiKTeX/fonts/type1/public/tex-gyre/qtmbi.pfb><C:/Program Files/MiKTeX/fonts/type1/public/tex-gyre/qtmr.pfb><C:/Program Files/MiKTeX/fonts/type1/public/tex-gyre/qtmri.pfb><C:/Program Files/MiKTeX/fonts/type1/public/txfonts/t1xtt.pfb>
-Output written on Dyplom.pdf (77 pages, 5511387 bytes).
+Output written on Dyplom.pdf (78 pages, 5516014 bytes).
 PDF statistics:
- 889 PDF objects out of 1000 (max. 8388607)
- 260 named destinations out of 1000 (max. 500000)
+ 893 PDF objects out of 1000 (max. 8388607)
+ 261 named destinations out of 1000 (max. 500000)
  324 words of extra memory for PDF output out of 10000 (max. 10000000)
 
