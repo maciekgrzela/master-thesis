@@ -315,5 +315,63 @@ Drugi z zastosowanych mechanizmów wdrożeniowych to rozwiązanie typu \textit{P
 
 Odnosząc się do ostatniej spośród eksploatowanych platform chmurowych, zastosowano rozwiązanie typu \textit{Platform as a Service} dostawcy usług \textit{Heroku}. Rozwiązanie to, jest rekomendowanym sposobem wdrożenia aplikacji internetowych opartych o środowisko NodeJS. Analogicznie do platformy udostępnianej przez dostawcę DigitalOcean, w przypadku usługi Heroku istnieje możliwość doboru komponentów sprzętowych dostępnych w ramach fizycznej maszyny hostującej. W związku z tym faktem, a także w celu zapobiegania uprzywilejowaniu któregokolwiek z rozwiązań w kontekście przeprowadzanych badań, zastosowano te same wartości pojemności dyskowej, pojemności pamięci operacyjnej, a także liczby rdzeni procesora. Dostęp do systemu operacyjnego urządzenia serwerowego, zgodnie z typem przedstawianej usługi, nie jest przyznany użytkownikowi. Na omawianej platformie uruchomiono usługę interfejsu programowania aplikacji napisanego w języku JavaScript z wykorzystaniem platformy NodeJS/Express, a także nierelacyjny system bazodanowy MongoDB.
 \section{Konfiguracja narzędzia do realizacji badań}
+Narzędziem wykorzystanym do przeprowadzenia procesu ewaluacji wydajności interfejsów programowania aplikacji było otwartoźródłowe oprogramowanie Apache JMeter. Przytoczone rozwiązanie informatyczne dostarcza możliwości definiowania, konfiguracji, a także wykonywania testów wydajności usług sieciowych, z uwzględnieniem zmiennego natężenia ruchu sieciowego, kontrolowanego przez użytkownika. Jedną z kluczowych zalet omawianego narzędzia jest możliwość kompozycji testów wydajnościowych o charakterze rozproszonym. Możliwość ta, została wykorzystana w ramach przeprowadzonych badań, dzięki czemu w czasie pojedynczej ewaluacji, żądania generowane były ze zmiennej liczby urządzeń klienckich.
 
+Pierwszym etapem konfiguracji oprogramowania JMeter było przystosowanie wszystkich instancji tego narzędzia, ulokowanych w obrębie poszczególnych hostów sieci komputerowej. Przystosowanie to, sprowadzało się do edycji plików właściwości programu, a także skryptu programowania wsadowego uruchamiającego plik wykonywalny JMeter. Niezbędnym krokiem w kierunku ustanowienia komunikacji pomiędzy hostami było również wyłączenie systemowej usługi zapory sieciowej.
 
+Implementacja ustawień programu JMeter dla komputera pełniącego rolę koordynatora testów sprowadzała się do modyfikacji zawartości pliku \textit{jmeter.properties}. W pliku tym, wyszczególniono adresy internetowe hostów typu slave, przypisano numer portu dla serwera zdalnego wywoływania metod, wskazano lokalizację pliku przechowującego klucz szyfrowania komunikacji, a także ustawiono opcję wykorzystania protokołu SSL do komunikacji za pomocą usługi RMI. Pozostała zawartość pliku nie uległa zmianie. Na listingu \ref{list:jmeter-properties} pokazano fragment omawianego pliku właściwości zawierający zmodyfikowane wpisy.
+
+\begin{lstlisting}[ label=list:jmeter-properties, caption=Modyfikowane właściwości pliku konfiguracyjnego JMeter, basicstyle =\footnotesize \ttfamily]
+remote_hosts=192.168.1.101, 192.168.1.102
+server.rmi.port=1099
+server.rmi.keystore.type=JKS
+server.rmi.keystore.file=ssl_master_thesis_testing.jks
+server.rmi.keystore.password=master_thesis
+server.rmi.ssl.disable=false
+\end{lstlisting}
+
+W analogiczny sposób zmodyfikowano zawartość plików konfiguracyjnych dla każdej z maszyn pełniących role generatorów żądań. W tym przypadku jednak, klucz \textit{remote\_hosts} zawierał tylko i wyłącznie adres IP hosta typu master, a plik klucza prywatnego, uprzednio wygenerowany na maszynie master, został rozdystrybuowany pomiędzy maszynami slave. Po wykonaniu opisanych czynności, na każdym z hostów-generatorów uruchomiono plik wsadowy \textit{jmeter-server}, nasłuchujący poleceń od urządzenia typu master.
+
+Po realizacji czynności związanych z ustanowieniem transmisji pomiędzy maszynami, sporządzono plany testowe dotyczące poszczególnych scenariuszy badawczych. Wyróżnić należy dwa plany testowe, których określone warianty pozwoliły na przeprowadzenie każdej z ewaluacji określonych w ramach scenariuszy badawczych. 
+
+\subsection*{Plan testowy nr. 1}
+\label{plan-testowy-1}
+Pierwszy z planów testowych, stworzony został w celu obserwacji sposobu działania interfejsów programowania aplikacji względem zwiększającego się poziomu natężenia równolegle generowanego ruchu sieciowego. Podstawowym elementem schematu ewaluacyjnego jest grupa współbieżnie działających wątków \textit{(ang. Concurrency Thread Group)}. W przeciwieństwie do standardowej implmentacji mechanizmu grupy wątków, dostępnej w ramach oprogramowania JMeter, grupa wątków współbieżnych pozwala na kumulowanie liczby aktywnych procesów w czasie testu, pozwalając na ich zakończenie dopiero w momencie określonym przez użytkownika. Moment ten, w kontekście niniejszych testów przypadał na chwilę zakończenia badania. Dzięki zastosowaniu takiego rozwiązania, możliwe było symulowanie zjawiska stopniowego wzrostu natężenia ruchu generowanego równolegle przez określoną liczbę użytkowników. Wybór standardowej grupy wątków, prowadziłby do finalnego uruchomienia określonej liczby procesów, jednakże nie pozwalałby na kontrolę momentu ich zakończenia, co prowadziłoby do zmiennego poziomu natężenia żądań, posiadającego charakterystykę losową, a także niepowiązanego z czasem trwania testu.
+
+Kolejne składowe występujące w ramach planu testowego, podzielić należy na cztery grupy. 
+
+Pierwszą z nich są elementy konfiguracyjne \textit{(ang. Config Elements)}. W elementach tych, określono: adres IP interfejsu programowania aplikacji, port TCP, rodzaj protokołu hipertekstowego, immplementację klienta HTTP (wybrano domyślną - HttpClient4), a także czasy upłynięcia limitu czasu połączenia (30000ms) oraz uzyskania odpowiedzi (120000ms).
+
+Kolejna z grup składowych zawiera próbniki \textit{(ang. Samplers)}. Elementy te, dostarczają informacji o punktach końcowych API, do których wysyłane mają być żądania. Do każdego z próbników, dołączyć można indywidualny element konfiguracyjny, a także mechanizm weryfikacji poprawności realizacji żądania nazywany asercją \textit{(ang. Assertions)}. W przypadku niniejszego planu testowego, wprowadzono asercje dotyczące kodu odpowiedzi HTTP, a także jej schematu w postaci notacji JSON.
+
+Ostatnie spośród zawartych składowych to nasłuchiwacze \textit{(ang. Listeners)}. Posiadają one postaci raportów, tabel, a także wizualizacji dotyczących przeprowadzonego testu.
+
+Na ilustracji \ref{fig:test-plan-1} przedstawiono zastosowane elementy składowe pierwszego planu testowego.
+
+\begin{figure}[ht]
+    \centering
+     \includegraphics[width=\linewidth]{rys04/test-plan-1.png}
+    \caption{Konfiguracja pierwsza planu testowego JMeter}
+    \label{fig:test-plan-1}
+\end{figure}
+
+\subsection*{Plan testowy nr. 2}
+\label{plan-testowy-2}
+Drugi z planów testowych, został przygotowany w kontekście wywoływania punktów końcowych o stałym czasie odpowiedzi, realizujących operacje charakteryzujące się wysokim kosztem obliczeniowym. W tym przypadku, zdefiniowano współbieżną grupę wątków o stałej liczebności równej 100. Czas podtrzymania każdego ze stu procesów określony został na 48000 sekund, co wynikało z założenia najbardziej pesymistycznego scenariusza badań, wykorzystujących ten właśnie plan. Ponadto, wprowadzono elementy konifguracyjne dotyczące komunikacji z API z wykorzystaniem protokołu internetowego, a także, analogiczne względem pierwszego planu komponenty nasłuchujące. Spośród składowych próbników, wymienić należy dwa moduły dotyczące wywołania punktów końcowych interfejsów programowania aplikacji dla porównywanych technologii. Każdy z modułów zawierał asercje dotyczące występowania określonych właściwości w ramach odpowiedzi JSON, a także zbiory danych pomocniczych oraz element konfiguracyjny nagłówka żądania.  
+
+Na ilustracji \ref{fig:test-plan-2} przedstawiono zastosowane elementy składowe drugiego planu testowego.
+
+\begin{figure}[ht]
+    \centering
+     \includegraphics[width=\linewidth]{rys04/test-plan-2.png}
+    \caption{Konfiguracja druga planu testowego JMeter}
+    \label{fig:test-plan-2}
+\end{figure}
+
+\subsection*{Plan testowy nr. 2 - wariant 1}
+\label{plan-testowy-2-wariant-1}
+Wariant pierwszy drugiego planu testowego wykorzystany został w kontekście obsługi punktów końcowych realizujących operacje asynchroniczne, poprzez odwołania do zewnętrznej usługi. Wprowadzone modyfikacje względem drugiego planu testowego obejmują zastosowanie innych elementów próbników (w tym przypadku elementów odwołujących się do punktów końcowych ewaluacji operacji asynchronicznych), a także wprowadzenie alternatywnej wartości czasu wykonania testu wynoszącej dziesięć minut
+
+\subsection*{Plan testowy nr. 2 - wariant 2}
+\label{plan-testowy-2-wariant-2}
+Drugi z wariantów planu testowego dostosowano względem ewaluacji wydajności mechanizmów pamięci podręcznej. Liczba wątków w obrębie grupy ograniczona została do trzydziestu, a czas przeprowadzenia badania ustanowiono na 20 minut. Ponadto, wprowadzono komponenty próbników specyficzne w odniesieniu do badania mechanizmów cache. Należy także wspomnieć o wprowadzeniu próbnika pełniącego rolę mechanizmu unieważnienia wpisów pamięci podręcznej. Próbnik ten, wywoływany był tylko i wyłącznie w określonych momentach testu. Takie zachowanie, osiągnięto poprzez wprowadzenie elementu kontrolera przepływności \textit{(ang. Throughput Controller)}, determinującego liczbę wywołań próbnika, a także licznika czasu \textit{(ang. Constant Timer)}, wskazującego na moment wywołania. 
