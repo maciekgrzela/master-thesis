@@ -23,9 +23,11 @@
 \contentsline {figure}{\numberline {4.11}{\ignorespaces Konfiguracja pierwsza planu testowego JMeter}}{73}{figure.4.11}%
 \contentsline {figure}{\numberline {4.12}{\ignorespaces Konfiguracja druga planu testowego JMeter}}{74}{figure.4.12}%
 \addvspace {10pt}
-\contentsline {figure}{\numberline {5.1}{\ignorespaces Czas odpowiedzi na żądanie dla konfiguracji .NET/SQL Server w kontekście testu funkcjonalnego}}{76}{figure.5.1}%
-\contentsline {figure}{\numberline {5.2}{\ignorespaces Obszary satysfakcji, tolerancji oraz frustracji wskaźnika APDEX względem poszczególnych systemów bazodanowych dla API zaimplementowanego w C\#}}{76}{figure.5.2}%
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Czas odpowiedzi na żądanie dla konfiguracji .NET/SQL Server w kontekście testu funkcjonalnego}}{77}{figure.5.1}%
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Obszary satysfakcji, tolerancji oraz frustracji wskaźnika APDEX względem poszczególnych systemów bazodanowych dla API zaimplementowanego w C\#}}{78}{figure.5.2}%
 \contentsline {figure}{\numberline {5.3}{\ignorespaces Obszary satysfakcji, tolerancji oraz frustracji wskaźnika APDEX względem poszczególnych systemów bazodanowych dla API zaimplementowanego w JavaScript}}{78}{figure.5.3}%
+\contentsline {figure}{\numberline {5.4}{\ignorespaces Średnie czasy odpowiedzi na żądanie względem liczby procesów generujących oraz systemu bazodanowego}}{81}{figure.5.4}%
+\contentsline {figure}{\numberline {5.5}{\ignorespaces Średnie czasy odpowiedzi na żądanie oraz procent niepoprawnych odpowiedzi względem liczby procesów generujących}}{82}{figure.5.5}%
 \addvspace {10pt}
 \addvspace {10pt}
 \addvspace {10pt}
