@@ -4,7 +4,9 @@ W niniejszym rozdziale przedstawiono oraz omówiono badania przeprowadzone w cel
 \section{Wpływ zastosowanego systemu bazodanowego na efektywność działania interfejsu API}
 W ramach badania zobserwowano zmianę wydajności działania interfejsów programowania aplikacji względem skomunikowanego z nim systemu bazodanowego. Wykorzystano cztery najpopularniejsze relacyjne systemy baz danych (tj. MySQL, SQL Sever, PostgreSQL oraz SQlite), a także jeden system nierelacyjny (tj. MongoDB). Interfejsy programowania aplikacji komunikujące się z poszczególnymi systemami bazodanowymi poddawane były coraz to większemu obciążeniu, poprzez zwiększanie liczby procesów generujących żądania.
 
-Pierwszą czynnością wykonaną w ramach ewaluacji było spełnienie warunków początkowych dotyczących podjęcia czynności badawczych. Warunki te, uwzględniały realizację testów funkcjonalnych gwarantujących poprawność działania punktów końcowych interfejsu programowania aplikacji. Ponadto, przeprowadzenie tego rodzaju testów pozwoliło na określenie progów tolerancji oraz frustracji wykorzystywanych w kontekście późniejszego wyliczania wartości wskaźnika wydajności aplikacji APDEX. Ewaluacja funkcjonalna, polegała na uruchomieniu testu uwzględniającego 30 współbieżnie pracujących wątków oprogramowania JMeter, które wysyłały żądania w kierunku punktów końcowych API w czasie 10 minut.
+Pierwszą czynnością wykonaną w ramach ewaluacji było spełnienie warunków początkowych dotyczących podjęcia czynności badawczych. Warunki te, uwzględniały realizację testów funkcjonalnych gwarantujących poprawność działania punktów końcowych interfejsu programowania aplikacji. Ponadto, przeprowadzenie tego rodzaju testów pozwoliło na określenie progów tolerancji oraz frustracji wykorzystywanych w kontekście późniejszego wyliczania wartości wskaźnika wydajności aplikacji APDEX.
+
+Ewaluacja funkcjonalna, polegała na uruchomieniu testu uwzględniającego 30 współbieżnie pracujących wątków oprogramowania JMeter, które wysyłały żądania w kierunku punktów końcowych API w czasie 10 minut.
 
 Poczynione zostały dwa następujące założenia:
 \begin{itemize}
@@ -95,9 +97,23 @@ Na wykresach \ref{fig:response-mtc-1} a) do \ref{fig:response-mtc-1} j) zaprezen
   \label{fig:response-mtc-1}
 \end{figure}
 
-Zauważyć należy znaczącą różnicę czasów odpowiedzi na żądanie w kontekście pobierania kolekcji encji bazodanowych. Różnica ta, faworyzuje rozwiązanie oparte o język JavaScript oraz platformę uruchomieniową NodeJS w odniesieniu do czterech z pięciu wykorzystywanych systemów baz danych. Wyjątkiem jest tutaj technologia SQL Server, która pozwalała na bardziej sprawne obsługiwanie zapytań poprzez komunikację z usługą sieciową implementowaną w języku C\#. Ponadto, w obrębie zakresu od 3500 do 4500 współbieżnie pracujących wątków generowania zapytań, zaobserwować można nagłe wzrosty czasów odpowiedzi na żądanie. Eskalacja wartości tego parametru związana jest w tym przypadku z osiągnięciem limitu możliwości obsługi zapytań przychodzących do wybranej bazy danych. Limit ten, nie musi być związany z infrastrukturą ani oprogramowaniem serwera. Ograniczenie możliwości wynikać może z zastosowania domyślnych parametrów połączenia pomiędzy usługami. Wpływ wprowadzenia usprawnień wydajnościowych, w tym dostosowania parametrów połączenia oraz określenia puli połączeń, zweryfikowany zostanie w badaniu \ref{sec:cqrs-and-database-improvements}.  
+Analizując wyniki uzyskane dla operacji pobierania kolekcji obiektów, zauważyć można niewielkie różnice w wartości średnich czasów odpowiedzi, występujące w przedziale do około 4000 użytkowników. Różnice te, nie faworyzują ani deprecjonują któregokolwiek z rozwiązań.
 
-Odwołując się do pozostałych rodzajów wykonywanych operacji, zauważyć można wydatnie niższy czas obsługi żądania dodającego encję, wygenerowanego z kierunku rozwiązania opartego o technologię .NET. W przypadku czynności aktualizacji oraz usuwania encji z kolei, znaczną przewagę posiada ekosystem JavaScript wraz ze środowiskiem NodeJS.
+Jedyną zauważalną anomalię dotyczącą zmiany wydajności dostrzec można w kontekście interfejsu programowania aplikacji C\# .NET korzystającego z silnika bazy danych PostgreSQL. W tym przypadku znaczące różnice pomiędzy wydajnością omawianego systemu, a efektywnością drugiego najgorszego rozwiązania odnotowano już dla około \textbf{720} współbieżnie pracujących wątków. Dla tej właśnie metryki, omawiana różnica wynosi \textbf{374ms}. Wraz ze wzrostem liczby użytkowników o tysiąc, zauważyć możemy różnicę \textbf{759ms}, a o dwa tysiące - \textbf{2326ms}. W momencie zaprzestania obserwacji tendencji nieznacznych dysproporcji pomiędzy systemami baz danych (moment ten możemy aproksymować do chwili działania 3750 jednoczesnych procesów-generatorów) dywergencja czasów odpowiedzi osiągnęła wartość \textbf{4855ms}.
+
+Dysproporcje wskazujące na niezaprzeczalną wyższość określonych rozwiązań nad pozostałymi dostrzegalne są dla rezultatów otrzymywanych w wyniku wspólnej pracy więcej niż czterech tysięcy procesów oprogramowania Apache JMeter. 
+
+Odwołując się do interfejsu zaimplementowanego w technologii NodeJS, zauważyć możemy fakt, że spośród rozwiązań relacyjnych, najniższy skok wartości odnotowały rozwiązania MySQL oraz PostgreSQL. Ponadto, skok ten nastąpił zdecydowanie później, niż miało to miejsce w przypadku pozostałych rozwiązań. Wartym odnotowania są wyniki zaobserwowane dla nierelacyjnego systemu bazodanowego. W przypadku silnika bazy danych MongoDB, średnie czasy odpowiedzi były względnie niskie nie tylko do chwili uruchomienia czterech tysięcy wątków, ale również po tym czasie nie odnotowano gwałtownego wzrostu monitorowanej metryki. W momencie generowania maksymalnego natężenia ruchu sieciowego, zmierzony średni czas odpowiedzi wyniósł \textbf{5846ms}.
+
+W przypadku rozwiązania zdefiniowanego na bazie technologii Microsoft, zauważalna jest bardzo niska wydajność obsługi komunikacji z rozwiązaniem SQLite (maksymalna zmierzona wartość to \textbf{22141ms}). Ponadto, silnik bazy danych PostgreSQL, analogicznie do obszaru niższego natężenia ruchu, notuje wyniki gorsze od swoich relacyjnych oraz nierelacyjnych odpowiedników w granicach od \textbf{2111ms} do \textbf{5373ms}.
+
+W kontekście pobierania pojedynczego wyniku, wzrosty wartości średniego czasu odpowiedzi posiadają charakterystkę przybliżoną do charakterystyki liniowej. Wyjątkami są tutaj systemy bazy danych MongoDB dla interfejsu napisanego w języku C\#, oraz silnik MySQL dla NodeJS API. W obu przypadkach pojawiają się gwałtowne wzrosty wartości czasu odpowiedzi. Odnosząc się do MongoDB zaobserwować możemy zmianę metryki wydajności od \textbf{1549ms} do \textbf{5945ms} na przestrzeni przyrostu wątków od liczby \textbf{3748} do \textbf{4253}. Zmiana ta, utrzymuje się do końca przeprowadzania testu. Dla interfejsu programowania aplikacji uruchamianego w środowisku NodeJS, oraz dla systemu bazodanowego MySQL, anomalia dostrzegana jest dla \textbf{2465} wątków a jej amplituda to \textbf{6721ms}. Co ciekawe, przekraczając poziom natężenia wynoszący \textbf{2890} wątków, średni czas odpowiedzi zaczyna spadać, aby w punkcie \textbf{4080} stanowić minimum w odniesieniu do pozostałych systemów baz danych.
+
+Poddając pod analizę procedurę zapisu danych do bazy, zgromadzone wyniki wykazują przewagę rozwiązania opartego o język C\#, niezależnie od systemu bazodanowego. Ponadto, liniowa charakterystyka wzrostu metryk dla interfejsu JavaScript zakłócona została pojawieniem się nagłych spadków wydajnościowych. Analogicznie do punktu końcowego pobierania listy obiektów, najmniej znaczący spadek odnotować należy w odniesieniu do nierelacyjnego systemu MongoDB. W tym przypadku zmiana nastąpiła od wartości \textbf{5261ms} dla \textbf{4247} wątków do wartości \textbf{6203ms} dla \textbf{5000} wątków.
+    
+W aspekcie dwóch ostatnich procedur realizowanych przez punkty końcowe interfejsów programowania aplikacji, podobnie jak w przypadku funkcjonalności pozyskiwania pojedynczej encji, zaobserwować możemy przybliżone do liniowych, zmiany monitorowanego parametru wydajności. Spośród interesujących anomalii zaobserwowanych w ramach czterech ostatnich wykresów wyróżnić należy spadek wydajnościowy silnika bazodanowego SQLite w przypadku modyfikacji encji za pomocą interfejsu API .NET. Spadek ten, identyfikowany jest poprzez wzrost średniego czasu odpowiedzi o \textbf{8018ms}, w przedziale czasowym w którym uruchomiono dodatkowe \textbf{847} wątków. Niestandardowym zachowaniem cechują się również systemy bazodanowe SQL Server oraz MySQL w odniesieniu do operacji usuwania pojedynczego rekordu poprzez API implementowane w języku C\#. Interfejsy korzystające z obu mechanizmów przechowywania danych, do momentu osiągnięcia odpowiednio \textbf{1725} oraz \textbf{1955} współbieżnie pracujących wątków generowania żądań, cechowały się wyjątkowo niskim średnim czasem odpowiedzi (tj. odpowiednio \textbf{827ms} oraz \textbf{922ms}).
+
+Podsumowując, zarówno wskazanie wyższości jednej z technologii niezależnie od systemów baz danych, jak i wyróżnienie pojedynczego systemu bazy danych w kontekście realizowanej operacji nie jest możliwe biorąc pod uwagę kształt przeprowadzonego badania. Możliwym jest jednak zaobserowanie niskiego poziomu kompatybilności pomiędzy interfejsem API napisanym w języku C\# oraz systemem baz danych SQLite. Ponadto, relatywnie wysoką wydajnością względem innych rozwiązań bazodanowych cechuje się system nierelacyjny MongoDB. W pięciu na dziesięć porównaniach wydajnościowych, przedstawionych na omawianych wykresach, to właśnie ten silnik baz danych najdłużej utrzymuje najniższą wartość średniego czasu odpowiedzi względem pozostałych rozwiązań.
 
 Przedstawione powyżej wyniki nie dostarczają jednakże pełnego obrazu faktycznej wydajności ewaluowanych usług. Należy pamiętać, że uzyskana odpowiedź na żądanie nie musi być zawsze pozytywna, przez co nie zawsze niesie ona ze sobą informacje pożądaną dla klienta. Na wykresach \ref{fig:response-with-errors} a) oraz \ref{fig:response-with-errors} b) zestawiono ze sobą informacje o średnim czasie odpowiedzi na żądanie, a także o procencie żądań zakończonych niepomyślnie. Poprzez niepomyślne zakończenie żądania, rozumiano zarówno uzyskanie odpowiedzi o niepoprawnym kodzie i treści ciała, jak i zgłoszenie wyjątku protokołu hipertekstowego związanego z odmową aplikacji względem realizacji zapytania. Choć zobrazowano tu tylko i wyłącznie przypadek pojedynczej operacji oraz jednego systemu bazodanowego, analogiczne zachowanie zaobserwować można dla wszystkich pozostałych operacji i jest ono specyficzne dla interfejsu programowania aplikacji. 
 
@@ -116,27 +132,238 @@ Przedstawione powyżej wyniki nie dostarczają jednakże pełnego obrazu faktycz
 
 Analizując przedstawione wykresy należy zwrócić uwagę zarówno na moment pojawiania się błędów obsługi żądania, jak i na stopień korelacji błędów z czasem przetwarzania zapytania. W przypadku interfejsu API opartego o technologię .NET widzimy, że procent błędów jest silnie powiązany ze zwiększającym się przedziałem czasowym obsługi komendy, a także intensyfikacją ruchu sieciowego. Oznacza to, że serwer w momencie kolejkowania żądań do przetworzenia, nie bierze pod uwagę ich liczby i stara się przetwarzać każde, jakie do niego dotrze. W związku z odmową realizacji funkcjonalności ze strony API, serwer zgłasza wyjątek protokołu hipertekstowego. Z racji konieczności wykonania pracy w kontekście każdego żądania, niezależnie od niewielkiego prawdopodobieństwa jego pomyślnej realizacji, wydłuża się czas uzyskania odpowiedzi na zapytanie klienckie.
 
-Odnosząc się do interfejsu zaimplementowanego w technologii NodeJS, zaobserwować możemy odmienne zachowanie. Pierwszym aspektem na jaki należy zwrócić uwagę jest pojawienie się błędów obsługi żądania zdecydowanie wcześniej (tj. przy znacząco mniejszej liczbie uruchomionych wątków testowych). Oznacza to, że usługa nie jest w stanie radzić sobie na tyle dobrze z dostarczanym ruchem, jak robi to interfejs napisany w języku C\#. Jednakże, wraz z rosnącym błędem procentowym nie zmienia się czas obsługi żądania. Oznacza to, że komponent serwerowy w ramach API nie przetwarza każdego z zapytań jakie zostanie do niego dostarczone, a także w pewien specyficzny względem swojej charakterystyki sposób, dokonuje wyboru tych spośród otrzymanych żądań, które mają zostać natychmiastowo odrzucone. Taki model przetwarzania komunikatów pozwala na utrzymanie niskiego poziomu czasu odpowiedzi, jednakże należy wziąć pod uwagę fakt, że nie musi być ona jednoznaczna z poziomem wydajności działania API.
+Odnosząc się do interfejsu zaimplementowanego w technologii NodeJS, zaobserwować możemy odmienne zachowanie. Pierwszym aspektem na jaki należy zwrócić uwagę jest pojawienie się błędów obsługi żądania zdecydowanie wcześniej (tj. przy znacząco mniejszej liczbie uruchomionych wątków testowych). Oznacza to, że usługa nie jest w stanie radzić sobie na tyle dobrze z dostarczanym ruchem, jak robi to interfejs napisany w języku C\#. Jednakże, wraz z rosnącym błędem procentowym nie zmienia się czas obsługi żądania. Oznacza to, że komponent serwerowy w ramach API nie przetwarza każdego z zapytań jakie zostanie do niego dostarczone, a także to, że w pewien specyficzny względem swojej charakterystyki sposób, API dokonuje wyboru tych spośród otrzymanych żądań, które mają zostać natychmiastowo odrzucone. Taki model przetwarzania komunikatów pozwala na utrzymanie niskiego poziomu czasu odpowiedzi, jednakże należy wziąć pod uwagę fakt, że nie musi być ona jednoznaczna z poziomem wydajności działania API.
+\section{Wpływ zastosowanej technologii na wydajność realizacji operacji współbieżnych}
+Niniejsze badanie, przeprowadzone zostało w celu zaobserwowania różnic dotyczących sposobu przetwarzania długo trwających operacji. Potencjalnie różnice te, związane mogą być z odmienną implementacją wewnętrznych mechanizmów przetwarzania współbieżnego, a także diametralnie innym podejściem obu technologii do zagadnienia wielowątkowości. Zdecydowano się na implementację algorytmu rozwiązującego symetryczny problem komiwojażera, bazującego na metaheurystyce genetycznej. Elementy charakterystyczne względem omawianego rozwiązania przedstawiono w sekcji \ref{label:algorytm-genetyczny}. Napisane programy, zawarte są wewnątrz warstwy logiki biznesowej interfejsów API, a punktem wprowadzania danych dla algorytmów są określone punkty końcowe. W odniesieniu do przekazywanych danych wejściowych, wyróżnić należy ciało żądania, zawierające tablicę obiektów notacji JSON. Obiekty te, identyfikują określone lokalizacje poprzez wprowadzenie parametrów długości oraz szerokości geograficznej. Ponadto, przekazywany zostaje parametr czasu trwania głównej pętli algorytmu (tj. jak długo program powinien dokonywać kalkulacji), a także wartość wyniku optymalnego, względem której program powinien porównać uzyskany rezultat.
 
-Biorąc pod uwagę przedstawione fakty, zdecydowano się na wprowadzenie dodatkowej formy wizualizacji, łączącej ze sobą informacje o czasie odpowiedzi oraz procentowym błędzie. Na podstawie tej fromy wizualizacji możliwa będzie prawidłowa ocena wydajności systemów internetowych, uwzględniając zastosowane systemy bazodanowe.
+Odnosząc się do protokołu badawczego, zdecydowano się na wykonanie pomiarów jakości uzyskanego rozwiązania, a także liczby iteracji głównej pętli implementowanego algorytmu. Metryki te, zostały zebrane w kontekście uruchomienia programu dla pietnastu odmiennych zbiorów danych testowych, dostępnych w ramach otwartej biblioteki TSPLib. Dla każdego ze zbiorów danych, trzydziestokrotnie powtórzono wywołanie algorytmu, w obrębie każdego z czterech różnych czasów wykonywania iteracji głównej programu. Czasy te to: 15s, 30s, 45s oraz 60s. W momencie przeprowadzenia badania, a także przez cały okres jego trwania, uruchomionych było 30 współbieżnie pracujących wątków będących generatorami żądań.
 
-W tabelach X i Y, odnoszących się kolejno do interfejsu implementowanego w technologii .NET oraz usługi tworzonej za pomocą języka JavaScript, wprowadzono trójelementowe wektory, nazwane przez autora pracy wektorami wydajności.
+Przed rozpoczęciem realizacji omówionego protokołu przeprowadzono ewaluację funkcjonalną, stanowiącą warunek początkowy podjęcia badań. Ewaluacja ta, polegała na pięciokrotnym odwołaniu się punktów końcowych api obu technologii, wprowadzając jako dane wejściowe, zbiory współrzędnych dostępnych w ramach biblioteki TSPLib. Warto zaznaczyć, że są to zbiory inne, niż te wykorzystane następnie w faktycznym badaniu. Kryterium akceptacji warunku początkowego, było pomyślne wykonanie algorytmu w każdym ze zdefiniowanych przypadków funkcjonalnych, a także zwrócenie poprawnej odpowiedzi w czasie zgodnym z parametrem czasu wykonania alogytmu. Oba wymienione kryteria zostały w czasie ewaluacji funkcjonalnej spełnione.
 
-Poszczególne składowe wektora wydajności odnoszą się kolejno do:
-\begin{itemize}
-    \item maksymalnej liczby uruchomionych wątków oprogramowania testowego dla których współczynnik APDEX usługi wynosi 1
-    \item minimalnej liczby uruchomionych wątków oprogramowania testowego dla których współczynnik APDEX usługi wynosi 0
-    \item minimalnej liczby uruchomionych wątków oprogramowania testowego dla których procent niepoprawnych odpowiedzi usługi przekracza 50\%.
-\end{itemize}
+Następnie, przygotowano lokalną topologię fizyczną nr. \ref{sec:lokalne-srodowisko-badawcze-ver-2} oraz rozpoczęto generowanie żądań. Już na tym etapie, a jeszcze przed otrzymaniem wyników działania algorytmu, zaobserwowano interesujące zachowanie dotyczące obsługi długo trwających żądań. Analizując czasy rozpoczęcia oraz zakończenia pracy dla poszczególnych wątków Apache JMeter, a także całkowity czas trwania badania dla każdego z interfejsów programowania aplikacji, dostrzeżono pełną sekwencyjność przetwarzania zapytań w przypadku API zaimplementowanego w technologii JavaScript / NodeJS, a także częściowe zrównoleglenie operacji w kontekście technologii C\# .NET. W konsekwencji tego, ewaluacja usługi sieciowej opartej o NodeJS trwała 18 godzin i 52 minuty, podczas gdy badanie interfejsu napisanego w języku programowania C\# - 5 godzin i 27 minut. Tak znacząca dysproporcja wynika ze sposobu zarządzania wykonaniem zapytań poprzez zastosowanie podejścia wielowątkowości, a także pracy z wykorzystaniem pojedynczego wątku.
 
-Tak sformułowane elementy, nie tylko pozwalają na przedstawienie bardziej obiektywnego rezultatu dotyczącego wydajności, ale także niosą ze sobą informacje związaną z podziałem przeprowadzonego testu na fazę ewaluacji bazowej, obciążeniowej oraz przeciążającej.
+Kiedy żądanie zacznie być przetwarzane przez interfejs programowania aplikacji NodeJS, jest ono wykonywane do momentu: uzyskania wyniku, przekroczenia dozwolonego czasu realizacji zapytania \textit{(ang. timeout)}, bądź też przekazania tokenu przerwania \textit{(ang. cancellation token)}. Jeżeli w czasie obsługi żądania pojawi się następne, musi ono zostać przekazane do kolejki, po to, aby stać się aktywnym po zakończeniu przetwarzania poprzedniej wiadomości.
 
-%% TABELKA
-%% NA PODSTAWIE INFO Z TABELI ZE DWA WNIOSKI I MAMY READY
+Analizując wewnętrzne mechanizmy usługi sieciowej implementowanej w języku C\# zauważyć możemy odmienne, niż zaprezentowane powyżej podejście. W związku z faktem utworzenia nowego wątku dla głównej pętli algorytmu, wątek podstawowy programu nie jest obciążony koniecznością realizacji jakichkolwiek dodatkowych operacji i oczekuje na uzyskanie wyników z procesu potomnego. Jeżeli w czasie oczekiwania pojawi się przychodzące żądanie, wątek główny zapisuje kontekst wywołania dla obecnego zapytania, przechodzi do realizacji kolejnego z nich, a po jego zakończeniu, bądź w momencie wyczekiwania na zakończenie, przełącza się do kontekstu poprzedniego zadania, aby zweryfikować jego status. Dzięki zastosowaniu takiego podejścia, które możliwe jest tylko w sytuacji dostępności wielu wątków w ramach pojedynczego programu, usługa sieciowa nie jest blokowana względem innych klientów.
 
-\section{Wpływ zastosowanej technologii programistycznej na wydajność realizacji operacji współbieżnych}
-\section{Wpływ zastosowanej technologii programistycznej na efektywność obsługi operacji asynchronicznych}
-\section{Wpływ implementacji wzorca projektowego podziału odpowiedzialności na wydajność obsługi żądania klienta}
+Po ukończeniu obsługi wszystkich wygenerowanych żądań, przez oba systemy internetowe, uśredniono serie każdych 30 rezultatów, uzyskanych względem różnych zbiorów testowych oraz odmiennych czasów wykonania. Opracowane wyniki, przedstawiono w tabeli \ref{tab:mtc-2}.
+
+\begin{longtable}[c]{|l|llll|llll|}
+    \caption{Wydajność realizacji algorytmu genetycznego dla problemu komiwojażera w zależności od czasu przetwarzania oraz technologii}
+    \label{tab:mtc-2}\\
+    \hline
+    \multicolumn{1}{|c|}{\multirow{2}{*}{}} &
+      \multicolumn{4}{c|}{C\# / .NET} &
+      \multicolumn{4}{c|}{JavaScript / NodeJS} \\ \cline{2-9} 
+    \multicolumn{1}{|c|}{} &
+      \multicolumn{1}{c|}{15s} &
+      \multicolumn{1}{c|}{30s} &
+      \multicolumn{1}{c|}{45s} &
+      \multicolumn{1}{c|}{60s} &
+      \multicolumn{1}{c|}{15s} &
+      \multicolumn{1}{c|}{30s} &
+      \multicolumn{1}{c|}{45s} &
+      \multicolumn{1}{c|}{60s} \\ \hline
+    \endfirsthead
+    %
+    \multicolumn{9}{c}%
+    {{\bfseries Table \thetable\ continued from previous page}} \\
+    \endhead
+    %
+    burma14 &
+      \multicolumn{1}{l|}{0,3462 (71725)} &
+      \multicolumn{1}{l|}{0,6847 (130514)} &
+      \multicolumn{1}{l|}{0,8475 (201224)} &
+      0,8589 (248972) &
+      \multicolumn{1}{l|}{0,2983 (71747)} &
+      \multicolumn{1}{l|}{0,5943 (129134)} &
+      \multicolumn{1}{l|}{0,7636 (205306)} &
+      0,7579 (227232) \\ \hline
+    ulysses16 &
+      \multicolumn{1}{l|}{0,5299 (68491)} &
+      \multicolumn{1}{l|}{0,3910 (124929)} &
+      \multicolumn{1}{l|}{0,9270 (174385)} &
+      0,6549 (244773) &
+      \multicolumn{1}{l|}{0,4817 (68488)} &
+      \multicolumn{1}{l|}{0,2857 (122619)} &
+      \multicolumn{1}{l|}{0,8297 (192590)} &
+      0,5354 (219521) \\ \hline
+    ulysses22 &
+      \multicolumn{1}{l|}{0,5271 (63520)} &
+      \multicolumn{1}{l|}{0,4171 (117580)} &
+      \multicolumn{1}{l|}{0,9312 (164707)} &
+      0,7824 (224099) &
+      \multicolumn{1}{l|}{0,5488 (63802)} &
+      \multicolumn{1}{l|}{0,4668 (129397)} &
+      \multicolumn{1}{l|}{0,8728 (176319)} &
+      0,6717 (203753) \\ \hline
+    att48 &
+      \multicolumn{1}{l|}{0,0493 (62550)} &
+      \multicolumn{1}{l|}{0,0611 (120072)} &
+      \multicolumn{1}{l|}{0,3129 (183853)} &
+      0,2623 (233205) &
+      \multicolumn{1}{l|}{0,0242 (62843)} &
+      \multicolumn{1}{l|}{0,0238 (134376)} &
+      \multicolumn{1}{l|}{0,2413 (157470)} &
+      0,2903 (198158) \\ \hline
+    berlin52 &
+      \multicolumn{1}{l|}{0,2316 (72721)} &
+      \multicolumn{1}{l|}{0,2484 (114196)} &
+      \multicolumn{1}{l|}{0,9718 (190914)} &
+      0,8398 (235500) &
+      \multicolumn{1}{l|}{0,2239 (72331)} &
+      \multicolumn{1}{l|}{0,3861 (122215)} &
+      \multicolumn{1}{l|}{0,9202 (182668)} &
+      0,7642 (237310) \\ \hline
+    gr96 &
+      \multicolumn{1}{l|}{0,4798 (62745)} &
+      \multicolumn{1}{l|}{0,1617 (133156)} &
+      \multicolumn{1}{l|}{0,9274 (172122)} &
+      0,7808 (203419) &
+      \multicolumn{1}{l|}{0,4874 (63117)} &
+      \multicolumn{1}{l|}{0,1386 (99062)} &
+      \multicolumn{1}{l|}{0,8606 (162453)} &
+      0,7103 (204787) \\ \hline
+    bier127 &
+      \multicolumn{1}{l|}{0,2313 (66491)} &
+      \multicolumn{1}{l|}{0,1963 (132354)} &
+      \multicolumn{1}{l|}{0,8473 (179792)} &
+      0,8505 (247307) &
+      \multicolumn{1}{l|}{0,1162 (66123)} &
+      \multicolumn{1}{l|}{0,1928 (117603)} &
+      \multicolumn{1}{l|}{0,7906 (188063)} &
+      0,7792 (227924) \\ \hline
+    ch130 &
+      \multicolumn{1}{l|}{0,0947 (62713)} &
+      \multicolumn{1}{l|}{0,1328 (118125)} &
+      \multicolumn{1}{l|}{0,8072 (174455)} &
+      0,8066 (234333) &
+      \multicolumn{1}{l|}{0,0575 (62785)} &
+      \multicolumn{1}{l|}{0,1457 (127119)} &
+      \multicolumn{1}{l|}{0,7521 (159485)} &
+      0,6828 (223465) \\ \hline
+    ch150 &
+      \multicolumn{1}{l|}{0,0784 (66845)} &
+      \multicolumn{1}{l|}{0,1140 (123024)} &
+      \multicolumn{1}{l|}{0,8584 (179031)} &
+      0,7966 (235174) &
+      \multicolumn{1}{l|}{0,0812 (66984)} &
+      \multicolumn{1}{l|}{0,1483 (138917)} &
+      \multicolumn{1}{l|}{0,7900 (185943)} &
+      0,7991 (211357) \\ \hline
+    tsp225 &
+      \multicolumn{1}{l|}{0,2819 (61923)} &
+      \multicolumn{1}{l|}{0,0988 (124816)} &
+      \multicolumn{1}{l|}{0,7801 (163056)} &
+      0,8311 (202829) &
+      \multicolumn{1}{l|}{0,3057 (61479)} &
+      \multicolumn{1}{l|}{0,0826 (126286)} &
+      \multicolumn{1}{l|}{0,8209 (173199)} &
+      0,7533 (224409) \\ \hline
+    att532 &
+      \multicolumn{1}{l|}{0,0194 (65333)} &
+      \multicolumn{1}{l|}{0,0171 (153374)} &
+      \multicolumn{1}{l|}{0,2226 (188061)} &
+      0,2470 (220558) &
+      \multicolumn{1}{l|}{0,0116 (65372)} &
+      \multicolumn{1}{l|}{0,0233 (121134)} &
+      \multicolumn{1}{l|}{0,2650 (173916)} &
+      0,1498 (240112) \\ \hline
+    u574 &
+      \multicolumn{1}{l|}{0,5940 (70850)} &
+      \multicolumn{1}{l|}{0,5454 (133559)} &
+      \multicolumn{1}{l|}{0,6460 (190742)} &
+      0,7872 (231134) &
+      \multicolumn{1}{l|}{0,4821 (70639)} &
+      \multicolumn{1}{l|}{0,3782 (106502)} &
+      \multicolumn{1}{l|}{0,5836 (196297)} &
+      0,6573 (248733) \\ \hline
+    u724 &
+      \multicolumn{1}{l|}{0,1620 (69793)} &
+      \multicolumn{1}{l|}{0,0483 (120363)} &
+      \multicolumn{1}{l|}{0,6529 (205031)} &
+      0,7718 (226060) &
+      \multicolumn{1}{l|}{0,0943 (69700)} &
+      \multicolumn{1}{l|}{0,0472 (117866)} &
+      \multicolumn{1}{l|}{0,5747 (200697)} &
+      0,6369 (229731) \\ \hline
+    vm1084 &
+      \multicolumn{1}{l|}{0,0289 (64393)} &
+      \multicolumn{1}{l|}{0,0273 (111650)} &
+      \multicolumn{1}{l|}{0,5971 (192909)} &
+      0,7938 (225794) &
+      \multicolumn{1}{l|}{0,0051 (64545)} &
+      \multicolumn{1}{l|}{0,0381 (122070)} &
+      \multicolumn{1}{l|}{0,5126 (174608)} &
+      0,7962 (227990) \\ \hline
+    d1291 &
+      \multicolumn{1}{l|}{0,1927 (68067)} &
+      \multicolumn{1}{l|}{0,2930 (120889)} &
+      \multicolumn{1}{l|}{0,5711 (199096)} &
+      0,8421 (235376) &
+      \multicolumn{1}{l|}{0,1768 (67843)} &
+      \multicolumn{1}{l|}{0,1016 (140742)} &
+      \multicolumn{1}{l|}{0,5979 (196741)} &
+      0,7438 (238146) \\ \hline
+    \end{longtable}
+
+Analizując powyższe wyniki, zauważyć należy przewagę interfejsu programowania aplikacji zaimplementowanego w technologii C\# .NET, w kontekście wartości współczynnika jakości rozwiązania. Na 60 uśrednionych wartości tego parametru, interfejs API NodeJS notuje wyniki lepsze zaledwie w 15 przypadkach. Ponadto, zauważyć należy, że niezależnie od technologii, czas wykonywania algorytmu nie zawsze musi przekładać się na uzyskanie lepszego rozwiązania. Niedeterministyczna charakterystyka algorytmu genetycznego jest powodem pojawiania się gorszych rozwiązań, pomimo pracy algorytmu przez dłuższy czas. Odnosząc się do wartości liczby iteracji głównej pętli programu, różnice cechujące się określoną tendencją nie są zauważalne. Wynika to z dwóch następujących faktów. Po pierwsze, kod źródłowy C\#, z chwilą translacji do języka pośredniego \textit{(ang. intermediate language)}, ulega wewnętrznej optymalizacji przeprowadzanej bezpośrednio przez mechanizmy języka. Po drugie, mechanizmy wykorzystywane do przetwarzania list w C\# dostępne w ramach biblioteki LINQ, wprowadzają dodatkowy narzut związany z koniecznością budowy wewnętrznej struktury danych związanej z przetwarzaną listą. Dlatego też, jakikolwiek wzrost efektywności związany ze wspomnianymi w pierwszym fakcie optymalizacjami, może zostać redukowany poprzez spadek wydajnościowy wprowadzany przez instrukcje przetwarzania list. Mechanizmy przetwarzania kolekcji w ramach języka JavaScript z kolei, nie wprowadzają dodatkowego opóźnienia w wykonywaniu kodu, jednakże na etapie interpretacji wydajność implementowanego programu nie ulega zmianie.
+
+Odwołując się do różnic w kontekście opracowywanych kolekcji danych, zauważyć można bardzo słabe rezultaty dla zbiorów \textbf{att48} oraz \textbf{att532}. Uzyskane w tych przypadkach długości najkrótszych tras są niemalże 5 krotnie większe, niż rozwiązania optymalne. Z drugiej strony, zaobserwować możemy rozwiązania znacząco bliskie optymalnym w odniesieniu do zbioru \textbf{gr96} dla interfejsu NodeJS oraz zbioru \textbf{bier127} dla interfejsu C\# .NET.
+\section{Wpływ zastosowanej technologii na efektywność obsługi operacji asynchronicznych}
+W ramach omawianego badania dokonano analizy wydajności realizacji operacji asynchronicznych względem technologii wykorzystywanych do implementacji porównywanych interfejsów programowania aplikacji. Operacje te, znajdują szerokie zastosowanie wewnątrz kodu źródłowego usług sieciowych, będąc wykorzystywanym w celu uzyskania dostępu i zarządzania plikami, odwoływania się do zewnętrznych źródeł danych, czy też synchronizowania egzekucji wybranych fragmentów kodu programu w czasie.
+
+Zrealizowany eksperyment polegał na obserwacji czasów wykonań operacji asynchronicznych, względem zmiennej liczby encji pobieranych za ich pomocą. Elementy modelu danych, pozyskiwane były poprzez generowanie żądań protokołu hipertekstowego w kierunku zewnętrznej usługi sieciowej. Usługa ta, znajdowała się wewnątrz sieci lokalnej i została zaimplementowana intencjonalnie na potrzeby tego badania. Interfejs programowania aplikacji poddawany ocenie, korzystając z natywnego klienta protokołu hipertekstowego, wykonuje 30 iteracji, w ramach których pozyskuje kolejno 100, 200, 500, 1000, 2000, oraz 5000 encji bazodanowych. Dla każdej z wykonywanych operacji, odnotowany zostaje czas jej ukończenia, a także binarna wartość wskazująca na jej poprawność. W badaniu wykorzystano topologię fizyczną przedstawioną w sekcji \ref{sec:lokalne-srodowisko-badawcze-ver-3}, a także wariant planu testowego umówiony w punkcie \ref{plan-testowy-2-wariant-1}. Wiąże się to z uruchomieniem grupy stu wątków w przedziale czasowym dziesięciu minut.
+
+Pozyskane w ramach badania rezultaty uśredniono, a następnie zaprezentowano na wykresie \ref{fig:async-times}. Zdecydowano się nie uwzględniać metryki procentowego błędu związanego z niepoprawnym wykonaniem żądań, ponieważ niezależnie od poddawanego analizie przypadku, był on równy zero.
+
+\begin{figure}[ht]
+  \centering
+   \includegraphics[width=\linewidth]{rys05/async-times.pdf}
+  \caption{Uśredniony czas realizacji operacji asynchronicznych względem zmiennej liczby pobieranych encji}
+  \label{fig:async-times}
+\end{figure}
+
+Zauważyć należy znaczącą wyższość rozwiązania opartego o technologie JavaScript / NodeJS, względem oprogramowania utworzonego z wykorzystaniem C\# .NET. Dla najmniejszej liczby pozyskiwanych encji, różnica średnich czasów odpowiedzi jest ponad 25 krotna. Wraz ze zwiększaniem liczebności pozyskiwanych obiektów modelu danych średni czas odpowiedzi dla NodeJS rośnie co prawda w szybszym tempie, niż ma to miejsce w kontekście rozwiązania uruchamianego na platformie .NET, jednakże nawet dla największej spośród liczb encji, dysproporcja wyników jest ponad dwukrotna. Warto zwrócić również uwagę na dyspersję poszczególnych rozwiązań względem przedstawionych średnich. Zaobserwować można zdecydowanie mniejsze odchylenia standardowe w odniesieniu do rozwiązania języka JavaScript, które zgodnie ze spodziewaną tendencją zwiększają się wraz z liczbą obiektów modelu danych. Dla dużych liczebności encji bazodanowych, rozwiązanie implementowane w języku C\# w niewielkiej liczbie przypadków uzyskuje wyniki bliskie średniej.
+
+Tak znacząca dyferencja w kontekście obu interfejsów programowania aplikacji, wynikać może z implementacji natywnych rozwiązań klienta protokołu hipertekstowego. W środowisku NodeJS, klient ten posiada niewiele opcji konfiguracyjnych, a jakiekolwiek bardziej zaawansowane żądania, realizowane są z wykorzystaniem zewnętrznych bibliotek. Ponadto, klient ten, jest częścią rdzennego modułu środowiska NodeJS, obsługującego zoptymalizowaną komunikację hipertekstową. Rozwiązanie służące do komunikacji HTTP dla języka C\# jest mechanizmem dostarczanym przez biblioteki standardowe języka programowania, a nie samego środowiska uruchomieniowego. Oznacza to, że rozwiązanie dla tej właśnie technologii musi posiadać bardziej generyczną charakterystykę, aby móc być zastosowanym w dowolnym z przypadków użycia języka.
+\section{Wpływ implementacji wzorca projektowego podziału odpowiedzialności na wydajność obsługi żądania}
 \label{sec:cqrs-and-database-improvements}
-\section{Porównanie efektywności obsługi żądań klienckich w stałym czasie z uwzględnieniem odmienneych implementacji mechanizmów pamięci podręcznej}
+Celem niniejszego badania była obserwacja wpływu wdrożenia wzorca projektowego podziału odpowiedzialności, a także usprawnień wydajnościowych względem odseparowanych modeli encji, na wydajność obsługi żądań dla ocenianych interfejsów programowania aplikacji. Wdrożenie wzorca projektowego miało na celu odseparowanie operacji dotyczących odczytu danych, od tych, dokonujących ich modyfikacji. Separacja ta, występowała zarówno na poziomie logicznym (tj. modelu danych), jak i fizycznym (tj. systemu bazodanowego). Dzięki temu, możliwe było wprowadzenie optymalizacji wydajnościowych względem modelu odczytu. Aby zachować spójność informacji pomiędzy bazami danych, wprowadzono ponadto mechanizm replikacji transakcyjnej, działający w warstwie systemu bazodanowego. Po wysłaniu wiadomości modyfikującej dane, określony rekord jest zmieniany w bazie zapisu, a następnie wysyłany jest komunikat synchronizacji zmian w kierunku bazy odczytu. Szczegóły implementacyjne dotyczące omawianego badania przedstawiono w sekcji \ref{sec:implementacja-cqrs-i-replikacji}.
+
+Zastosowany protokół badawczy posiada analogiczną strukturę do tego, który został zaprezentowany w badaniu wpływu systemów bazodanowych. Oznacza to, że w przedziale dwudziestu minut, stopniowo zwiększano liczbę współbieżnie pracujących wątków oprogramowania testowego, osiągając szczytową wartość równą 5000. W tym przypadku jednak, poddano analizie tylko pojedynczy system bazodanowy, który wspiera obsługę mechanizmu replikacji transakcyjnej - tj. Microsoft SQL Server. Kluczowym aspektem badania jest próba obserwacji czy, a także w jaki sposób wprowadzony model architektoniczny oraz usprawnienia wydajnościowe wpłyną na zmniejszenie się średniego czasu odpowiedzi, a także procentu błędnych odpowiedzi w stosunku do generowanych wiadomości. W badaniu zastosowano topologię fizyczną przedstawioną w sekcji \ref{sec:lokalne-srodowisko-badawcze-ver-4}, a także plan testowy wyszczególniony w punkcie \ref{plan-testowy-1}. Ogół przeprowadzonych operacji jest zgodny z wyspecyfikowanym scenariuszem badawczym opisanym w tabeli \ref{tab:research-scenario-4}.
+
+Na wykresach \ref{fig:3tier-vs-cqrs} a) do \ref{fig:3tier-vs-cqrs} d) przedstawiono kolejno porównanie procedur odczytu oraz zapisu, zarówno przed jak i po zastosowaniu omówionych modyfikacji.
+
+\begin{figure}[htb]
+  \centering
+    \begin{tabular}{@{}ll@{}}
+    a) & b) \\
+    \includegraphics[width=0.49\textwidth]{rys05/dotnet-vs-cqrs.pdf} & \includegraphics[width=0.49\textwidth]{rys05/nodejs-vs-cqrs.pdf} \\
+    c) & d) \\
+    \includegraphics[width=0.49\textwidth]{rys05/dotnet-vs-cqrs-write.pdf} & \includegraphics[width=0.49\textwidth]{rys05/nodejs-vs-cqrs-write.pdf}
+    % jezeli obraki sa rownej wysokosci, mozna je wyrownac do gory stosujac vtop jak nizej
+    % \vtop{\vskip-2ex\hbox{{\includegraphics[width=0.475\textwidth]{rys05/beta1}}}} &
+    % \vtop{\vskip-2ex\hbox{{\includegraphics[width=0.475\textwidth]{rys05/alfa1}}}}  \caption{Wyznaczanie trajektorii lotu rakiety: 
+    \end{tabular}
+  \caption{Wydajność działania interfejsów API dla operacji odczytu oraz zapisu, przed i po zastosowaniu wzorca podziału odpowiedzialności}
+  \label{fig:3tier-vs-cqrs}
+\end{figure}
+
+Dla każdego z przypadków zauważyć należy zarówno obniżenie się poziomu średniego czasu odpowiedzi, jak i procentowego błędu żądań niepoprawnych. Zachowanie takie, jest zrozumiałe ze względu na silną korelację obu metryk. Dostrzec należy relatywnie większą zmianę średniego czasu odpowiedzi w kontekście odczytu danych, niż ma to miejsce dla procedury ich zapisu. Wynika to z faktu, że dla zadania odczytu, dokonano usprawnień nie tylko związanych z komunikacją z bazą danych (m.in. zdefiniowanie puli połączeń), ale również dotyczących formułowania zapytań, czy też wewnętrznej struktury poszczególnych pól danych. Wpływ pierwszego z wymienionych w poprzednim zdaniu aspektów widoczny jest szczególnie w odniesieniu do zmiany procenta niepoprawnych żądań. Tyczy się to zarówno procedury odczytu, jak i zapisu. Co więcej metryka ta, wpływa na średni czas odpowiedzi. Czym więcej kanałów komunikacji z serwerem bazodanowym posiada interfejs API, tym więcej żądań będzie mógł on obsłużyć bez konieczności czekania na zwolnienie połączenia.
+
+Dla procedury odczytu danych, po wprowadzeniu opisywanych w niniejszym badaniu usprawnień, pierwszy błąd związany z niepoprawną obsługą zapytania, pojawił się przy natężeniu o \textbf{1273} wątki wyższym dla api napisanego w technologii C\# .NET, oraz o \textbf{1527} wątków wyższym w przypadku NodeJS API. W kontekście metryki czasu wykonywania zapytania klienta, w momencie szczytowym zauważyć można różnicę \textbf{4577ms} dla rozwiązania C\# oraz \textbf{6987ms} dla systemu opartego o NodeJS.
+
+Odnosząc się do procedury zapisu danych, przedział liczby wątków oprogramowania testowego, w ramach którego nie wystąpiły błędne żądania, rozszerzył się o \textbf{1190} procesów w przypadku interfejsu napisanego w języku JavaScript, a także o \textbf{765} procesów w przypadku api implementowanego w C\#. Doprowadziło to do spadku średniego czasu odpowiedzi w momencie szczytowym o \textbf{6225ms} dla pierwszej z wymienionych technologii, a także o \textbf{1677ms} dla drugiej z nich.
+
+Analizując powyższe rezultaty, należy także spojrzeć na nie przez pryzmat ilości zmian, jakie zostały wprowadzone dla poszczególnych technologii. Mówiąc o interfejsie programowania aplikacji języka JavaScript, modyfikacje sprowadzały się do usprawnień na poziomie bazy danych, a także w kontekście momentu uruchamiania instancji mapera obiektowo-relacyjnego. Pomimo stosunkowo niewielkiej liczby zaimplementowanych adaptacji, wydajność rozwiązania wzrosła w sposób znaczący. Lekko odmienną tendencję zauważyć można dla usługi sieciowej napisanej w języku C\#. W tym przypadku wprowadzono nie tylko analogiczne względem konkurenta poprawki, ale także dodatkowo skorzystano z mechanizmów poprawy wydajności, specyficznych względem tylko tej technologii. Co prawda implementacja określonych modyfikacji wpłynęła pozytywnie na efektywność działania interfejsu, to zmiana ta, nie jest tak znacząca, jak dla rozwiązania opartego o technologię JavaScript / NodeJS. 
+\section{Porównanie efektywności obsługi zapytań klienckich z uwzględnieniem odmiennych mechanizmów pamięci podręcznej}
+
+% Różnica odczytu pomiędzy api bez cache'u a api ze standardowym cache
+% Różnica odczytu pomiędzy api z cache statycznym a api z cache mojego pomysłu
+
 \section{Zmienność wydajności interfejsu API wdrożonego na generycznej oraz dedykowanej platformie chmurowej}
+
+% Zwrócić uwagę że tutaj już nie czas odpowiedzi a czas przetwarzania wewnątrz api
+% Jak postawiłem to na infrastructure as a service (digitalocean) to czasy w jednym i drugim przypadku były niskie
+% Dwa wykresy kolumnowe z porównaniami dotnet na azure vs dotnet na docean / nodejs na docean vs nodejs na heroku
