@@ -19,6 +19,7 @@
 \addvspace {10pt}
 \contentsline {table}{\numberline {5.1}{\ignorespaces Wykaz punktów końcowych wykorzystywanych w badaniu wpływu wykorzystanego systemu bazodanowego na działanie API}}{77}{table.5.1}%
 \contentsline {table}{\numberline {5.2}{Wydajność realizacji algorytmu genetycznego dla problemu komiwojażera w zależności od czasu przetwarzania oraz technologii}}{82}{table.5.2}%
+\contentsline {table}{\numberline {5.3}{Wydajność metod obsługi pamięci podręcznej względem technologii oraz momentu unieważnienia wpisu}}{86}{table.5.3}%
 \addvspace {10pt}
 \addvspace {10pt}
 \addvspace {10pt}
