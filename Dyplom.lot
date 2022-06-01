@@ -3,23 +3,23 @@
 \babel@toc {polish}{}
 \addvspace {10pt}
 \addvspace {10pt}
-\contentsline {table}{\numberline {2.1}{\ignorespaces Zbiór dozwolonych metod protokołu hipertekstowego}}{17}{table.2.1}%
-\contentsline {table}{\numberline {2.2}{\ignorespaces Zbiór najczęściej wykorzystywanych linii nagłówkowych w kontekście żądania protokołu hipertekstowego}}{18}{table.2.2}%
-\contentsline {table}{\numberline {2.3}{\ignorespaces Zbiór najczęściej zwracanych linii nagłówkowych w kontekście odpowiedzi protokołu hipertekstowego}}{19}{table.2.3}%
-\contentsline {table}{\numberline {2.4}{\ignorespaces Zbiór kodów statusu odpowiedzi protokołu hipertekstowego}}{19}{table.2.4}%
+\contentsline {table}{\numberline {2.1}{\ignorespaces Zbiór dozwolonych metod protokołu hipertekstowego}}{18}{table.2.1}%
+\contentsline {table}{\numberline {2.2}{\ignorespaces Zbiór najczęściej wykorzystywanych linii nagłówkowych w kontekście żądania protokołu hipertekstowego}}{19}{table.2.2}%
+\contentsline {table}{\numberline {2.3}{\ignorespaces Zbiór najczęściej zwracanych linii nagłówkowych w kontekście odpowiedzi protokołu hipertekstowego}}{20}{table.2.3}%
+\contentsline {table}{\numberline {2.4}{\ignorespaces Zbiór kodów statusu odpowiedzi protokołu hipertekstowego}}{20}{table.2.4}%
 \addvspace {10pt}
-\contentsline {table}{\numberline {3.1}{Scenariusz badawczy - badanie przeprowadzone w kontekście systemów bazodanowych}}{43}{table.3.1}%
-\contentsline {table}{\numberline {3.2}{Scenariusz badawczy - badanie przeprowadzone w kontekście realizacji operacji współbieżnych}}{45}{table.3.2}%
-\contentsline {table}{\numberline {3.3}{Scenariusz badawczy - badanie przeprowadzone w kontekście obsługi operacji asynchronicznych}}{46}{table.3.3}%
-\contentsline {table}{\numberline {3.4}{Scenariusz badawczy - badanie przeprowadzone w kontekście zastosowania wzorca projektowego CQRS}}{47}{table.3.4}%
-\contentsline {table}{\numberline {3.5}{Scenariusz badawczy - badanie przeprowadzone w kontekście wykorzystania mechanizmów pamięci podręcznej}}{49}{table.3.5}%
-\contentsline {table}{\numberline {3.6}{Scenariusz badawczy - badanie przeprowadzone w kontekście wdrażania oprogramowania na platformach chmurowych}}{51}{table.3.6}%
+\contentsline {table}{\numberline {3.1}{Scenariusz badawczy - badanie przeprowadzone w kontekście systemów bazodanowych}}{44}{table.3.1}%
+\contentsline {table}{\numberline {3.2}{Scenariusz badawczy - badanie przeprowadzone w kontekście realizacji operacji współbieżnych}}{46}{table.3.2}%
+\contentsline {table}{\numberline {3.3}{Scenariusz badawczy - badanie przeprowadzone w kontekście obsługi operacji asynchronicznych}}{47}{table.3.3}%
+\contentsline {table}{\numberline {3.4}{Scenariusz badawczy - badanie przeprowadzone w kontekście zastosowania wzorca projektowego CQRS}}{48}{table.3.4}%
+\contentsline {table}{\numberline {3.5}{Scenariusz badawczy - badanie przeprowadzone w kontekście wykorzystania mechanizmów pamięci podręcznej}}{50}{table.3.5}%
+\contentsline {table}{\numberline {3.6}{Scenariusz badawczy - badanie przeprowadzone w kontekście wdrażania oprogramowania na platformach chmurowych}}{52}{table.3.6}%
 \addvspace {10pt}
-\contentsline {table}{\numberline {4.1}{\ignorespaces Wykaz hiperparametrów zaimplementowanego algorytmu genetycznego}}{63}{table.4.1}%
+\contentsline {table}{\numberline {4.1}{\ignorespaces Wykaz hiperparametrów zaimplementowanego algorytmu genetycznego}}{64}{table.4.1}%
 \addvspace {10pt}
-\contentsline {table}{\numberline {5.1}{\ignorespaces Wykaz punktów końcowych wykorzystywanych w badaniu wpływu wykorzystanego systemu bazodanowego na działanie API}}{77}{table.5.1}%
-\contentsline {table}{\numberline {5.2}{Wydajność realizacji algorytmu genetycznego dla problemu komiwojażera w zależności od czasu przetwarzania oraz technologii}}{82}{table.5.2}%
-\contentsline {table}{\numberline {5.3}{Wydajność metod obsługi pamięci podręcznej względem technologii oraz momentu unieważnienia wpisu}}{86}{table.5.3}%
+\contentsline {table}{\numberline {5.1}{\ignorespaces Wykaz punktów końcowych wykorzystywanych w badaniu wpływu wykorzystanego systemu bazodanowego na działanie API}}{78}{table.5.1}%
+\contentsline {table}{\numberline {5.2}{Wydajność realizacji algorytmu genetycznego dla problemu komiwojażera w zależności od czasu przetwarzania oraz technologii}}{83}{table.5.2}%
+\contentsline {table}{\numberline {5.3}{Wydajność metod obsługi pamięci podręcznej względem technologii oraz momentu unieważnienia wpisu}}{87}{table.5.3}%
 \addvspace {10pt}
 \addvspace {10pt}
 \addvspace {10pt}

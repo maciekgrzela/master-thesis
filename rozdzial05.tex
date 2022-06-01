@@ -2,6 +2,7 @@
 W niniejszym rozdziale przedstawiono oraz omówiono badania przeprowadzone w celu ewaluacji wydajności interfejsów API implementowanych z wykorzystaniem porównywanych technologii. Każde z wykonanych badań oparte jest o scenariusz testowy określony w ramach sekcji \ref{sec:scenariusze-badawcze}, a także dotyczy odmiennych aspektów działania usługi sieciowej interfejsu programowania aplikacji. W kojenych sekcjach tego rozdziału w sposób szczegółowy opisano podjęte czynności badawcze, zwizualizowano rezultaty każdej z ewaluacji, dokonano analizy statystycznej, a także sformułowano wnioski.
 
 \section{Wpływ zastosowanego systemu bazodanowego na efektywność działania interfejsu API}
+\label{research:crud}
 W ramach badania zobserwowano zmianę wydajności działania interfejsów programowania aplikacji względem skomunikowanego z nim systemu bazodanowego. Wykorzystano cztery najpopularniejsze relacyjne systemy baz danych (tj. MySQL, SQL Sever, PostgreSQL oraz SQlite), a także jeden system nierelacyjny (tj. MongoDB). Interfejsy programowania aplikacji komunikujące się z poszczególnymi systemami bazodanowymi poddawane były coraz to większemu obciążeniu, poprzez zwiększanie liczby procesów generujących żądania.
 
 Pierwszą czynnością wykonaną w ramach ewaluacji było spełnienie warunków początkowych dotyczących podjęcia czynności badawczych. Warunki te, uwzględniały realizację testów funkcjonalnych gwarantujących poprawność działania punktów końcowych interfejsu programowania aplikacji. Ponadto, przeprowadzenie tego rodzaju testów pozwoliło na określenie progów tolerancji oraz frustracji wykorzystywanych w kontekście późniejszego wyliczania wartości wskaźnika wydajności aplikacji APDEX.
@@ -586,7 +587,7 @@ Na wykresach \ref{fig:cache-charts} a) do \ref{fig:cache-charts} d) pokazano fak
   \centering
     \begin{tabular}{@{}ll@{}}
     a) & b) \\
-    \includegraphics[width=0.49\textwidth]{rys05/dotnet-static-cache-chart.svg} & \includegraphics[width=0.49\textwidth]{rys05/dotnet-freq-cache-chart.pdf} \\
+    \includegraphics[width=0.49\textwidth]{rys05/dotnet-static-cache-chart.pdf} & \includegraphics[width=0.49\textwidth]{rys05/dotnet-freq-cache-chart.pdf} \\
     c) & d) \\
     \includegraphics[width=0.49\textwidth]{rys05/nodejs-static-cache.pdf} & \includegraphics[width=0.49\textwidth]{rys05/nodejs-freq-cache.pdf}
     % jezeli obraki sa rownej wysokosci, mozna je wyrownac do gory stosujac vtop jak nizej
@@ -599,7 +600,82 @@ Na wykresach \ref{fig:cache-charts} a) do \ref{fig:cache-charts} d) pokazano fak
 
 W kontekście interfejsu programowania aplikacji zaimplementowanego w języku C\# zauważyć możemy znaczące wydłużenie się przedziałów czasowych, w ramach których nie występują żądania o wysokim czasie odpowiedzi. Trend ten, nie jest jednakże tak dobrze dostrzegalny w odniesieniu eksperymentu przeprowadzanego z wykorzystaniem interfejsu API napisanego w JavaScript. Ponadto, niezależnie od technologii, nie jest zauważalne spodziewane, stopniowe rozszerzanie się odcinków niskich czasów odpowiedzi, wraz z postępem ewaluacji. Może to być spowodowane nieadekwatnymi wartościami liczników unieważnień, które określone zostały na podstawie poprzednich eksperymentów wykorzystujących mechanizm o stałym czasie przechowywania wpisu.
 \section{Zmienność wydajności api wdrożonego na generycznej oraz dedykowanej platformie chmurowej}
+Ostatnia ze zrealizowanych w ramach niniejszej pracy ewaluacji odnosi się do analizy zmiany wydajności pracy interfejsów programowania aplikacji w zależności od środowiska wdrożeniowego, w ramach którego usługa sieciowa jest hostowana. Celem niniejszego badania jest sprawdzenie, czy wykorzystanie dedykowanej rozwiązaniu platformy chmurowej, pozwala na uzyskanie lepszych rezultatów działania api, niż w przypadku wdrożenia systemu internetowego na infrastrukturze generycznej, którą jest wirtualny serwer prywatny.
 
-% Zwrócić uwagę że tutaj już nie czas odpowiedzi a czas przetwarzania wewnątrz api
-% Jak postawiłem to na infrastructure as a service (digitalocean) to czasy w jednym i drugim przypadku były niskie
-% Dwa wykresy kolumnowe z porównaniami dotnet na azure vs dotnet na docean / nodejs na docean vs nodejs na heroku
+Zdecydowano się na zastosowanie usługi w modelu infrastructure-as-a-service, która pełniła rolę środowiska produkcyjnego niezależnego od technologii implementacji api. W środowisku tym, wdrożono interfejsy programowania aplikacji napisane w językach C\# oraz JavaScript, wykorzystując serwer HTTP Apache oraz usługę odwróconego proxy. Ponadto, każda z poddawanych analizie usług, komunikowała się z silnikiem bazodanowym znajdującym się wewnątrz wirtualnego serwera prywatnego. Dzięki temu, wyeliminiować można było zjawisko zmienności czasu połączenia pomiędzy interfejsem a źródłem danych, która to zmienność wynika z niedeterministycznego charakteru łącza sieciowego. Aby zachować pełną generyczność omawianego rozwiązania zastosowano jeden z najpopularniejszych systemów bazodanowych jakim jest MySQL. System ten, choć w znaczącym stopniu wspierany przez aplikacje tworzone w językach C\# oraz JavaScript, nie jest rozwiązaniem postrzeganym jako dedykowane względem platform .NET oraz NodeJS. 
+
+Jako podejścia referencyjne względem infrastruktury generycznej, wdrożone zostały interfejsy programowania aplikacji na platformach Microsoft Azure oraz Heroku. Pierwsza z nich, jest usługą dedykowaną dla rozwiązań bazujących na platformie .NET oraz napisanych w języku C\#. W tym przypadku, interfejs programowania aplikacji połączono z bazą danych Microsoft SQL Server. Druga z platform to rekomendowane rozwiązanie dla systemów internetowych tworzonych z wykorzystaniem środowiska uruchomieniowego NodeJS. Interfejs API wdrożony na platformie Heroku, skomunikowany został z nierelacyjną bazą danych MongoDB.
+
+Odnosząc się do metryk gromadzonych w ramach niniejszego badania, wspomnieć należy o fakcie, że rezultaty wykonywanych operacji nie stanowią wartości czasu odpowiedzi na żądanie, a jedynie czas przetwarzania zapytania wewnątrz metody kontrolera interfejsu programowania aplikacji. Takie podejście, pozwala na uniezależnienie ewaluacji względem lokalizacji oraz szybkości łącza internetowego urządzeń generujących zapytania.
+
+W przeprowadzonym badaniu generowano zapytania pod pięć punktów końcowych, które wykorzystywane były również w eksperymencie \ref{research:crud}. Ich szczegółowa charakterystyka zawarta została w tabeli \ref{tab:endpointy-scenario-1}. Przed rozpoczęciem analizy, zestawiono rozproszoną konfigurację topologii fizycznej, która opisana została w sekcji \ref{sec:rozproszone-srodowisko-badawcze-ver-1}, a także dokonano ewaluacji funkcjonalnej zaimplementowanych rozwiązań, poprzez realizację testów linii bazowej. Plan testowy obejmował uruchomienie 40 współbieżnie pracujących wątków oprogramowania Apache JMeter, które generowały ruch sieciowy przez 10 minut. Całość badania była przeprowadzona zgodnie ze zdefiniowanym uprzednio scenariuszem badawczym \ref{tab:research-scenario-6}.
+
+Kluczowymi wskaźnikami wydajności rozwiązań wdrażanych na platformach chmurowych są: czas realizacji pojedynczego zapytania, procent błędnych odpowiedzi w kontekście poprawnych zapytań, a także efektywność wykorzystania zasobów fizycznego sprzętu. Zdecydowano się na pominięcie ostatniego z przytoczonych wskaźników, ponieważ w odniesieniu do tak przygotowanego badania, nie dostarcza on informacji, które mogłaby być przesłanką do formułowania jakichkolwiek hipotez dotyczących omawianego problemu. W czasie generowania zapytań w kierunku interfejsów programowania aplikacji, niezależnie od platform wdrożeniowych oraz uruchomieniowych, konsumpcja fizycznych zasobów sprzętowych cechowała się relatywną stałością w czasie. Oznacza to, że każda z poddawanych analizie platform chmurowych, jest w stanie obsłużyć znacząco większy ruch, niż ten, generowanych w ramach tego badania. Przeanalizowano natomiast, zarówno czas przetwarzania zapytania wewnątrz interfejsu, jak i liczbę błędnych zapytań w stosunku do wszystkich wygenerowanych.     
+
+Na wykresach \ref{fig:dotnet-azure-vs-digitalocean} a) do \ref{fig:dotnet-azure-vs-digitalocean} h) zawarto porównanie rezultatów pozyskanych w czasie ewaluacji interfejsu programowania aplikacji napisanego w języku C\# i uruchamianego na platformach: generycznej (tj. DigitalOcean VPS), oraz dedykowanej (tj. Microsoft Azure).
+
+\begin{figure}[htb]
+  \centering
+	\begin{tabular}{@{}ll@{}}
+    a) & b) \\
+    \includegraphics[width=0.49\textwidth]{rys05/dotnet-get-azure.pdf} & \includegraphics[width=0.49\textwidth]{rys05/dotnet-get-digitalocean.pdf} \\
+    c) & d) \\
+    \includegraphics[width=0.49\textwidth]{rys05/dotnet-post-azure.pdf} & \includegraphics[width=0.49\textwidth]{rys05/dotnet-post-digitalocean.pdf} \\
+    e) & f) \\
+    \includegraphics[width=0.49\textwidth]{rys05/dotnet-put-azure.pdf} & \includegraphics[width=0.49\textwidth]{rys05/dotnet-put-digitalocean.pdf} \\
+    g) & h) \\
+    \includegraphics[width=0.49\textwidth]{rys05/dotnet-delete-azure.pdf} & \includegraphics[width=0.49\textwidth]{rys05/dotnet-delete-digitalocean.pdf} \\
+	% jezeli obraki sa rownej wysokosci, mozna je wyrownac do gory stosujac vtop jak nizej
+	% \vtop{\vskip-2ex\hbox{{\includegraphics[width=0.475\textwidth]{rys05/beta1}}}} &
+	% \vtop{\vskip-2ex\hbox{{\includegraphics[width=0.475\textwidth]{rys05/alfa1}}}}  \caption{Wyznaczanie trajektorii lotu rakiety: 
+	\end{tabular}
+  \caption{Wydajność działania mierzona czasem wewnętrznego przetwarzania operacji CRUD dla platform Azure oraz DigitalOcean - Interfejs API C\# .NET}
+  \label{fig:dotnet-azure-vs-digitalocean}
+\end{figure}
+
+Wskazać należy nieznaczą, jednakże występującą przewagę rozwiązania opartego o usługę platform-as-a-service. Jak możemy zauważyć, przewaga ta, występuje niezależnie od typu generowanego żądania klienta. Ponadto, w przypadku rozwiązania generycznego zaobserwowano pojawienie się większej liczby zapytań klienckich, których czasy odpowiedzi nie mieściły się w przedziale definiującym 97\% wszystkich próbek (tj. od 200ms do 580ms) dla rozwiązania dedykowanego. Szczególnie trend ten, widoczny jest dla żądań wykorzystujących metodę HTTP PUT. Zastanawiającym jest fakt nieodnotowania jakiegokolwiek wyniku, w przedziale od 0 do 119ms. Wyniki takie, były bez trudu osiągane w środowisku lokalnym dla małej liczby współbieżnie pracujących generatorów. Zjawisko to, jest jednakże specyficzne względem względem technologii C\# .NET i nie uwidacznia się w przypadku interfejsów API napisanych w JavaScript.
+
+Kolejna z zaprezentowanych wizualizacji, dotyczy z kolei interfejsu API zaimplementowanego w oparciu o technologię NodeJS, który uruchomiony został na platformie Heroku (konfiguracja dedykowana), a także serwerze udostępnianym w ramach chmury DigitalOcean (konfiguracja generyczna). Zgromadzone czasy przetwarzania żądań dla odmiennych typów operacji pokazane zostały na wykresach \ref{fig:nodejs-heroku-vs-digitalocean} a) do \ref{fig:nodejs-heroku-vs-digitalocean} h).
+
+\begin{figure}[htb]
+  \centering
+	\begin{tabular}{@{}ll@{}}
+    a) & b) \\
+    \includegraphics[width=0.49\textwidth]{rys05/nodejs-get-heroku.pdf} & \includegraphics[width=0.49\textwidth]{rys05/nodejs-get-digitalocean.pdf} \\
+    c) & d) \\
+    \includegraphics[width=0.49\textwidth]{rys05/nodejs-post-heroku.pdf} & \includegraphics[width=0.49\textwidth]{rys05/nodejs-post-digitalocean.pdf} \\
+    e) & f) \\
+    \includegraphics[width=0.49\textwidth]{rys05/nodejs-put-heroku.pdf} & \includegraphics[width=0.49\textwidth]{rys05/nodejs-put-digitalocean.pdf} \\
+    g) & h) \\
+    \includegraphics[width=0.49\textwidth]{rys05/nodejs-delete-heroku.pdf} & \includegraphics[width=0.49\textwidth]{rys05/nodejs-delete-digitalocean.pdf} \\
+	% jezeli obraki sa rownej wysokosci, mozna je wyrownac do gory stosujac vtop jak nizej
+	% \vtop{\vskip-2ex\hbox{{\includegraphics[width=0.475\textwidth]{rys05/beta1}}}} &
+	% \vtop{\vskip-2ex\hbox{{\includegraphics[width=0.475\textwidth]{rys05/alfa1}}}}  \caption{Wyznaczanie trajektorii lotu rakiety: 
+	\end{tabular}
+  \caption{Wydajność działania mierzona czasem wewnętrznego przetwarzania operacji CRUD dla platform Heroku oraz DigitalOcean - Interfejs JS \ NodeJS}
+  \label{fig:nodejs-heroku-vs-digitalocean}
+\end{figure}
+
+Odnosząc się do analizowanej technologii, wzrost wydajności rozwiązania dedykowanego względem generycznego jest wydatny, i niezależnie od wybranego typu wykonywanej operacji, różnica wartości metryki go opisującaj jest niemniejsza niż 237ms. Ponadto, w momencie w którym 99,98\% wszystkich obserwacji należy do przedziału od 34ms do 900ms w kontekście rozwiązania dedykowanego, tylko 72,7\% próbek badania dla rozwiązania generycznego, zawarte jest w analogicznym przedziale. Zauważyć należy fakt braku zwiększenia się intensywności żądań dla czasów przetwarzania powyżej 1000ms, w odniesieniu do rozwiązania generycznego. Co prawda zapytania trwające powyżej 1000ms pojawiają się w tego typu konfiguracji, to podobnie do rozwiązania dedykowanego, są to obserwacje jednostkowe.  
+
+Kolejną metryką wziętą pod uwagę w ramach niniejszego badania jest liczba niepoprawnych odpowiedzi, które zostały zwrócone dla wygenerowanych zapytań. Podobnie jak dla wizualizacji zaprezentowanych powyżej, w tym przypadku, analiza również prowadzona będzie pod kątem obserwacji różnic wynikających z zastosowania odmiennych platform wdrożeniowych, a nie technologii implementacji interfejsów api. Na wykresach \ref{fig:errors-for-plaforms} a) oraz \ref{fig:errors-for-plaforms} b) przedstawiono wartości odnotowane względem omawianej metryki.
+
+\begin{figure}[htb]
+  \centering
+	\begin{tabular}{@{}ll@{}}
+    a) & b) \\
+    \includegraphics[width=0.49\textwidth]{rys05/nodejs-errors.pdf} & \includegraphics[width=0.49\textwidth]{rys05/dotnet-errors.pdf} \\
+	% jezeli obraki sa rownej wysokosci, mozna je wyrownac do gory stosujac vtop jak nizej
+	% \vtop{\vskip-2ex\hbox{{\includegraphics[width=0.475\textwidth]{rys05/beta1}}}} &
+	% \vtop{\vskip-2ex\hbox{{\includegraphics[width=0.475\textwidth]{rys05/alfa1}}}}  \caption{Wyznaczanie trajektorii lotu rakiety: 
+	\end{tabular}
+  \caption{Liczba błędnych odpowiedzi względem typu żądania oraz platformy wdrożeniowej}
+  \label{fig:errors-for-plaforms}
+\end{figure}
+
+
+W przypadku interfejsu implementowanego z wykorzystaniem platformy NodeJS oraz języka JavaScript różnice wydajnościowe uwidaczniają się jeszcze bardziej w momencie w którym brana pod uwagę jest liczba niepowodzeń realizacji zapytań klienckich. Niezależnie od typu operacji, rozwiązanie wdrożone na platformie Heroku, generowało mniejszą liczbę błędnych odpowiedzi. Przytaczając najbardziej skrajny przypadek (tj. żądania typu GET), liczba niezrealizowanych poprawnie zapytań dla platformy generycznej jest ponad dwa razy większa, od tej dla platformy dedykowanej.
+
+Analogiczną tendencję zaobserwować możemy w przypadku interfejsu programowania aplikacji C\# .NET. Tu również, niezależnie od metody protokołu hipertekstowego, rozwiązanie rekomendowane przez twórcę technologii posiada przewagę. Przewaga ta, najbardziej widoczna jest dla żądania typu PUT i wynosi ona 37 niepoprawnych odpowiedzi. Warto zaznaczyć, że całkowita liczba błędnie zrealizowanych żądań dla metody PUT oraz platformy dedykowanej wynosi 26.
+
+Wyniki przeprowadzonego w tej sekcji badania posiadają najbardziej jednoznaczny charakter spośród wszystkich rezultatów otrzymanych w kontekście każdego z przeprowadzonych badań. Co więcej, rezultaty te, prowadzą do sformułowania popartego badaniami wniosku, że niezależnie od faktu, która z technologii implementacyjnych zostanie wybrana, a także jakiego typu operacje będą realizowane, system internetowy przygotowany do przejścia w fazę produkcyjną, powinien być wdrażany z wykorzystaniem narzędzi oraz infrastruktur dedykowanych względem określonej technologii. Usprawnienia wydajnościowe, wprowadzane przez twórców określonych środowisk chmurowych, pozwalają na korzystanie z usług sieciowych w sposób bardziej efektywny, a także generujący mniejszą liczbę błędów.  
