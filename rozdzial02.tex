@@ -100,31 +100,41 @@ Interfejsy API, budowane są z wykorzystaniem protokołu HTTP, dlatego też w ic
 
 Żądanie protokołu http wysyłane jest od aplikacji klienta do interfejsu API. Podstawową składową tego polecenia stanowi unikalny identyfikator zasobu URI (\textit{ang. Uniform Resource Identifier}), na podstawie którego możliwe jest określenie fragmentu dziedziny obsługiwanego modelu danych. Informacja ta jednak, nie jest wystarczająca w kontekście realizacji jednej z funkcjonalności, zdefiniowanych w ramach API. Żądanie klienta, musi zostać uzupełnione o jedną z dziewięciu ustalonych metod http, obsługiwaną wersję protokołu, a także zbiór linii nagłówkowych. Opcjonalnie, informacja wysyłana w kierunku interfejsu, może zostać wzbogacona o zawartość tekstową określaną ciałem żądania (\textit{ang. Request body}). Taki zbiór informacji, pozwala na jednoznaczną identyfikacje fragmentu kodu programu, który ma zostać wykonany wewnątrz interfejsu programowania aplikacji. W tabelach \ref{tab:metody-http} oraz \ref{tab:naglowki-zadanie} przedstawiono kolejno listę zdefiniowanych metod protokołu hipertekstowego wraz z wyjaśnieniem ich przeznaczenia, a także zbiór najczęściej wykorzystywanych linii nagłówkowych, w kontekście realizacji żądań.
 
-\begin{table}[htbp] \small
-\centering
-\caption{Zbiór dozwolonych metod protokołu hipertekstowego}
-\label{tab:metody-http}
-\begin{tabularx}{\linewidth}{|p{3cm}|X|} \hline\
-Nazwa metody & Opis \\ \hline\hline
-GET & Pozyskanie danych dotyczących pojedynczej instancji określonego zasobu lub grupy instancji z opcjonalnym uwzględnieniem warunków kwalifikacji poszczególnej instancji do grupy. \\ \hline
-POST & Definiowanie nowej instancji dotyczącej określonego typu zasobu. Przy zastosowaniu metody POST, wymagane jest zdefiniowanie ciała żądania, jako części składowej generowanej instrukcji. \\ \hline
-PUT & Aktualizacja pełni zawartości instancji występującej w ramach odwołania się do określonego zasobu. Przy zastosowaniu metody PUT, wymagane jest zdefiniowanie ciała żądania, jako części składowej generowanej instrukcji. \\ \hline
-DELETE & Usunięcie istniejącej instancji dotyczącej określonego typu zasobu. \\ \hline
-PATCH & Aktualizacja fragmentu zawartości instancji występującej w ramach odwołania się do określonego zasobu. Przy zastosowaniu metody PATCH, wymagane jest zdefiniowanie ciała żądania, jako części składowej generowanej instrukcji. \\ \hline
-HEAD & Pozyskanie zbioru linii nagłówkowych, które byłyby dostarczone wraz z ciałem odpowiedzi w ramach żądania wykorzystującego metodę GET. Wygenerowanie żądania HEAD umożliwia określenie charakteru danych, przed ich ewentualnym pozyskaniem. \\ \hline
-OPTIONS & Pozyskanie informacji dotyczących charakterystyki oraz struktury serwera. Definiując żądanie typu OPTIONS, klient może dowiedzieć się o dopuszczalnych metodach HTTP obsługiwanych przez serwer, czy też uzyskać informacje o nazwie serwera oraz wykorzystywanym systemie operacyjnym. \\ \hline
-CONNECT & Ustanowienie dwukierunkowej komunikacji pomiędzy klientem a serwerem. W przypadku realizacji komunikacji szyfrowanej, żądanie typu CONNECT pozwala na zestawienie zabezpieczonego tunelu pomiędzy hostami. \\ \hline
-TRACE & Wygenerowanie komunikatu diagnostycznego w ramach pętli zwrotnej, którego celem jest osiągnięcie każdego z hostów, biorących udział w komunikacji. \\ \hline
-\end{tabularx}
-\end{table}
+\begin{longtable}{|l|p{12cm}|}
+    \caption{Zbiór dozwolonych metod protokołu hipertekstowego}
+    \label{tab:metody-http} \\
+    \hline
+    Nazwa metody & Opis \\ \hline\hline\
+    \endhead
+    %
+    GET &
+      Pozyskanie danych dotyczących pojedynczej instancji określonego zasobu lub grupy instancji z opcjonalnym uwzględnieniem warunków kwalifikacji poszczególnej instancji do grupy. \\ \hline
+    POST &
+      Definiowanie nowej instancji dotyczącej określonego typu zasobu. Przy zastosowaniu metody POST, wymagane jest zdefiniowanie ciała żądania, jako części składowej generowanej instrukcji. \\ \hline
+    PUT &
+      Aktualizacja pełni zawartości instancji występującej w ramach odwołania się do określonego zasobu. Przy zastosowaniu metody PUT, wymagane jest zdefiniowanie ciała żądania, jako części składowej generowanej instrukcji. \\ \hline
+    DELETE &
+      Usunięcie istniejącej instancji dotyczącej określonego typu zasobu. \\ \hline
+    PATCH &
+      Aktualizacja fragmentu zawartości instancji występującej w ramach odwołania się do określonego zasobu. Przy zastosowaniu metody PATCH, wymagane jest zdefiniowanie ciała żądania, jako części składowej generowanej instrukcji. \\ \hline
+    HEAD &
+      Pozyskanie zbioru linii nagłówkowych, które byłyby dostarczone wraz z ciałem odpowiedzi w ramach żądania wykorzystującego metodę GET. Wygenerowanie żądania HEAD umożliwia określenie charakteru danych, przed ich ewentualnym pozyskaniem. \\ \hline
+    OPTIONS &
+      Pozyskanie informacji dotyczących charakterystyki oraz struktury serwera. Definiując żądanie typu OPTIONS, klient może dowiedzieć się o dopuszczalnych metodach HTTP obsługiwanych przez serwer, czy też uzyskać informacje o nazwie serwera oraz wykorzystywanym systemie operacyjnym. \\ \hline
+    CONNECT &
+      Ustanowienie dwukierunkowej komunikacji pomiędzy klientem a serwerem. W przypadku realizacji komunikacji szyfrowanej, żądanie typu CONNECT pozwala na zestawienie zabezpieczonego tunelu pomiędzy hostami. \\ \hline
+    TRACE &
+      Wygenerowanie komunikatu diagnostycznego w ramach pętli zwrotnej, którego celem jest osiągnięcie każdego z hostów, biorących udział w komunikacji. \\ \hline
+\end{longtable}
 
-\begin{table}[htbp] \small
-\centering
-\caption{Zbiór najczęściej wykorzystywanych linii nagłówkowych w kontekście żądania protokołu hipertekstowego}
-\label{tab:naglowki-zadanie}
-\begin{tabularx}{\linewidth}{|p{5cm}|X|X|} \hline\
-Linia nagłówkowa & Znaczenie & Dopuszczalna zawartość \\ \hline\hline
-accept & Typ zawartości, którą jest w stanie przetwarzać aplikacja kliencka & Identyfikator typu MIME (\textit{ang. Multipurpose Internet Mail Extensions}) lub zapis */* oznaczający dowolną zawartość  \\ \hline
+\begin{longtable}{|l|p{6cm}|p{5cm}|}
+    \caption{Zbiór najczęściej wykorzystywanych linii nagłówkowych w kontekście żądania protokołu hipertekstowego}
+    \label{tab:naglowki-zadanie} \\
+    \hline
+    Linia nagłówkowa & Znaczenie & Dopuszczalna zawartość \\ \hline\hline\
+    \endhead
+    %
+    accept & Typ zawartości, którą jest w stanie przetwarzać aplikacja kliencka & Identyfikator typu MIME (\textit{ang. Multipurpose Internet Mail Extensions}) lub zapis */* oznaczający dowolną zawartość  \\ \hline
 accept-encoding & Sposób kodowania znaków, rozumiany przez stronę klienta & Zbiór formatów kodowania zdefiniowany w ramach rejestru formatów IANA\\ \hline
 accept-language & Język naturalny, preferowany przez stronę kliencką & Pojedyncza wartość reprezentująca określony kraj lub region, bądź też lista niniejszych wartości wraz z parametrem istotności poszczególnego kodu lokalizacji\\ \hline
 content-length & Długość ciała żądania wyrażona w bajtach & Liczba naturalna\\ \hline
@@ -132,8 +142,7 @@ content-type & Format zawartości ciała żądania & Identyfikator typu MIME wra
 cookie & Zbiór informacji pozwalających na wprowadzenie oraz utrzymanie stanowego charakteru transmisji & Zestaw par klucz-wartość, gdzie klucz jest wartością tekstową, a wartość przyjmuje postać dowolną\\ \hline
 origin & Informacja determinująca pochodzenie żądania & Ciąg tekstowy składający się z nazwy protokołu, nazwy hosta oraz numeru portu\\ \hline
 user-agent & Specyfikacja techniczna oprogramowania klienta & Ciąg znaków zawierający informacje o nazwie produktu, jego wersji, platformie sprzętowej, czy też systemie operacyjnym \\ \hline
-\end{tabularx}
-\end{table}
+\end{longtable}
 
 Po wykonaniu kodu programu przypisanego do określonego rodzaju polecenia generowanego przez aplikacje kliencką, z interfejsu programowania aplikacji zwracana jest odpowiedź na żądanie (\textit{ang. HTTP response}). Analogicznie do instrukcji realizacji danej czynności, także odpowiedź dotycząca statusu jej wykonania jest ustrukturyzowana zgodnie z wytycznymi zawartymi w definicji protokołu hipertekstowego. W ramach rezultatu zwróconego przez API wyróżnić należy: adres docelowy klienta, kod statusu, ciało odpowiedzi, a także zbiór linii nagłówkowych. Informacja zawarta w ramach kodu statusu, determinuje powodzenie realizowanej operacji, a treść dostarczanych linii nagłówkowych, może zostać wykorzystana w celu wnioskowania o charakterystyce odbywającej się komunikacji. Ciało odpowiedzi powinno zawierać dane dotyczące definiowanego w ramach identyfikatora żądania zasobu, w przypadku żądań wykorzystujących metodę GET. W kontekście pozostałych żądań, zgodnie z wytycznymi dokumentu RFC (\textit{ang. Request For Comments}) o numerze 7230, powinno ono posiadać charakter informacji pomocniczej, bądź też pozostać puste \cite{rfc7230}. W ramach tabel \ref{tab:naglowki-odpowiedz} oraz \ref{tab:kody-odpowiedzi}, wymienione zostały kolejno: zbiór najczęściej zwracanych linii nagłówkowych w kontekście odpowiedzi na żądanie, a także przedziały liczbowe dla kodów statusu odpowiedzi, wraz z ich semantyką.
 

@@ -96,7 +96,7 @@ Na podstawie przedstawionych w poprzednim podrozdziale aspektów problemu badawc
             \item Zaimplementowanie interfejsów programowania aplikacji w technologiach C\#/.NET oraz NodeJS/ExpressJS.
             \item Konfiguracja interfejsów programowania aplikacji w celu obsługi systemów bazodanowych: Microsoft SQL Server, MySQL, PostgreSQL, SQLite oraz MongoDB.
             \item Konfiguracja topologii fizycznej środowiska badawczego.
-            \item Konfiguracja narzędzia do wykonywania testów wydajnościowych.
+            \item Konfiguracja narzędzia do wykonywania testów wydajnościowych zgodnie z planem testowym \ref{plan-testowy-1}.
         \end{itemize}}                                                           \\ \hline
     \multicolumn{4}{|l|}{\textbf{Czynności badawcze:}}                               \\ \hline
     \multicolumn{4}{|p{\linewidth}|}{
@@ -104,7 +104,6 @@ Na podstawie przedstawionych w poprzednim podrozdziale aspektów problemu badawc
             \item Realizacja testów wydajnościowych z uwzględnieniem zmienności liczby klientów.
             \item Obserwacja oraz gromadzenie wartości pomiarowych dotyczących kryteriów porównawczych.
             \item Dostosowywanie wartości parametrów przeprowadzanego badania.
-            \item Analiza statystyczna otrzymanych wyników.
         \end{itemize}
     }                                                           \\ \hline
     \multicolumn{4}{|l|}{\textbf{Warunki początkowe podjęcia czynności badawczych:}} \\ \hline
@@ -116,15 +115,14 @@ Na podstawie przedstawionych w poprzednim podrozdziale aspektów problemu badawc
     \multicolumn{4}{|l|}{\textbf{Opis scenariusza badawczego:}}                      \\ \hline
     \multicolumn{4}{|p{\linewidth}|}{
         \begin{itemize}[label={}]
-            \item Po wykonaniu konfiguracji topologii fizycznej środowiska badawczego, urządzenia klienckie będą wysyłać żądania protokołu hipertekstowego w kierunku interfejsu programowania aplikacji. Liczba żądań tych będzie sukcesywnie zwiększana, poprzez uruchamianie kolejnych równolegle pracujących wątków oprogramowania testowego. Dla każdej wartości liczby urządzeń klienckich, badanie zostanie wykonane dziesięciokrotnie, a uzyskane wyniki zostaną następnie uśrednione. Odpowiednie przedziały wartości omawianego parametru wyznaczać będą granicę pomiędzy testami linii bazowej, obciążeniowymi, a także przeciążającymi. Badanie zostanie powtórzone dla każdego z rozważanych systemów bazodanowych w obrębie obu porównywanych technologii programistycznych. Po zgromadzeniu wyników badań przeprowadzone zostaną parowe testy statystyczne wykazujące istotność różnic pomiarowych.
+            \item Po wykonaniu konfiguracji topologii fizycznej środowiska badawczego, dwa urządzenia klienckie będą wysyłać żądania protokołu hipertekstowego w kierunku interfejsu programowania aplikacji. Liczba żądań tych będzie sukcesywnie zwiększana, poprzez uruchamianie kolejnych równolegle pracujących wątków oprogramowania testowego. Dla każdej wartości liczby urządzeń klienckich, gromadzonych będzie co najmniej 30 próbek, a uzyskane wyniki zostaną następnie uśrednione. Odpowiednie przedziały wartości omawianego parametru wyznaczać będą granicę pomiędzy testami linii bazowej, obciążeniowymi, a także przeciążającymi. Badanie zostanie powtórzone dla każdego z rozważanych systemów bazodanowych w obrębie obu porównywanych technologii programistycznych.
           \end{itemize}
     }                                                           \\ \hline
     \multicolumn{4}{|l|}{\textbf{Kryteria porównawcze:}}                             \\ \hline
     \multicolumn{4}{|p{\linewidth}|}{
         \begin{itemize}
             \item Czas odpowiedzi interfejsu programowania aplikacji na żądanie klienta.
-            \item Procent wykorzystania centralnej jednostki przetwarzania serwera, na którym uruchomiony został interfejs programowania aplikacji.
-            \item Ilość wykorzystanej pamięci operacyjnej serwera, na którym uruchomiony został interfejs programowania aplikacji.
+            \item Procent odpowiedzi błędnych, uzyskanych względem wszystkich rezultatów.
         \end{itemize}
     }                                                           \\ \hline
     \multicolumn{4}{|l|}{\textbf{Parametry badania:}}                                \\ \hline
@@ -133,6 +131,7 @@ Na podstawie przedstawionych w poprzednim podrozdziale aspektów problemu badawc
             \item Liczba klientów równolegle wysyłających żądania.
             \item Technologia programistyczna zastosowana do implementacji interfejsu programowania aplikacji.
             \item Rodzaj systemu bazodanowego komunikującego się z interfejsem programowania aplikacji.
+            \item Rodzaj operacji protokołu hipertekstowego.
         \end{itemize}
     }                                                           \\ \hline
 \end{longtable}
@@ -160,10 +159,10 @@ Na podstawie przedstawionych w poprzednim podrozdziale aspektów problemu badawc
     \multicolumn{4}{|p{\linewidth}|}{
         \begin{itemize}
             \item Zaimplementowanie genetycznego algorytmu metaheurystycznego dla symetrycznego problemu komiwojażera w językach programowania C\# oraz JavaScript.
-            \item Zaimplementowanie mechanizmów pomiaru czasu wykonania algorytmu
+            \item Zaimplementowanie mechanizmów pomiaru czasu wykonania algorytmu.
             \item Konfiguracja interfejsów programowania aplikacji w celu obsługi algorytmów metaheurystycznych z poziomu punktu końcowego API.
             \item Konfiguracja topologii fizycznej środowiska badawczego.
-            \item Konfiguracja narzędzia do wykonywania testów wydajnościowych.
+            \item Konfiguracja narzędzia do wykonywania testów wydajnościowych zgodnie z planem testowym \ref{plan-testowy-2}.
         \end{itemize}}                                                           \\ \hline
     \multicolumn{4}{|l|}{\textbf{Czynności badawcze:}}                               \\ \hline
     \multicolumn{4}{|p{\linewidth}|}{
@@ -183,20 +182,21 @@ Na podstawie przedstawionych w poprzednim podrozdziale aspektów problemu badawc
     \multicolumn{4}{|l|}{\textbf{Opis scenariusza badawczego:}}                      \\ \hline
     \multicolumn{4}{|p{\linewidth}|}{
         \begin{itemize}[label={}]
-            \item Po wykonaniu konfiguracji topologii fizycznej środowiska badawczego, pojedyncze urządzenie klienckie będzie wysyłać z ustaloną częstotliwością, żądania wykonania algorytmu. Po odebraniu zapytania od klienta, algorytm będzie uruchamiany, a czas trwania obliczeń będzie zawsze wartością stałą. W trakcie wykonywanych kalkulacji zliczana będzie liczba iteracji głównej pętli kodu algorytmu. Liczba ta, stanowić będzie kryterium porównawcze. Dla każdej z porównywanych technologii programistycznych wykonana zostanie seria dwudziestu cyklicznych żądań klienta. Po zgromadzeniu wyników badań przeprowadzone zostaną parowe testy statystyczne wykazujące istotność różnic pomiarowych.
+            \item Po wykonaniu konfiguracji topologii fizycznej środowiska badawczego, pojedyncze urządzenie klienckie będzie wysyłać z ustaloną w planie testowym częstotliwością, żądania wykonania algorytmu. Po odebraniu zapytania od klienta, algorytm będzie uruchamiany, a czas trwania obliczeń będzie zawsze wartością stałą. W trakcie wykonywanych kalkulacji zliczana będzie liczba iteracji głównej pętli kodu algorytmu. Liczba ta, a także współczynnik jakości uzyskanego rezultatu względem rozwiązania optymalnego stanowić będą kryteria porównawcze. Dla każdej z porównywanych technologii programistycznych, w obrębie czterech różnych czasów działania głównej pętli algorytmu, wykonana zostanie seria piętnastu cyklicznych żądań klienta. Po zgromadzeniu wyników badań przeprowadzone zostaną parowe testy statystyczne wykazujące istotność różnic pomiarowych.
           \end{itemize}
     }                                                           \\ \hline
     \multicolumn{4}{|l|}{\textbf{Kryteria porównawcze:}}                             \\ \hline
     \multicolumn{4}{|p{\linewidth}|}{
         \begin{itemize}
             \item Liczba iteracji głównej pętli algorytmu metaheurystycznego.
+            \item Stosunek uzyskanego rezultatu obliczeń względem rozwiązania optymalnego.
         \end{itemize}
     }                                                           \\ \hline
     \multicolumn{4}{|l|}{\textbf{Parametry badania:}}                                \\ \hline
     \multicolumn{4}{|p{\linewidth}|}{
         \begin{itemize}
-            \item Częstotliwość generowania żądań protokołu hipertekstowego.
             \item Technologia programistyczna zastosowana do implementacji interfejsu programowania aplikacji.
+            \item Czas wykonywania głównej pętli programu.
         \end{itemize}
     }                                                           \\ \hline
 \end{longtable}
@@ -225,7 +225,7 @@ Na podstawie przedstawionych w poprzednim podrozdziale aspektów problemu badawc
             \item Zaimplementowanie interfejsów programowania aplikacji w technologiach C\#/.NET, NodeJS/ExpressJS oraz Python/Flask.
             \item Zdefiniowanie punktów końcowych odpowiedzialnych za komunikację badanego interfejsu z zewnętrznym API.
             \item Konfiguracja topologii fizycznej środowiska badawczego.
-            \item Konfiguracja narzędzia do wykonywania testów wydajnościowych.
+            \item Konfiguracja narzędzia do wykonywania testów wydajnościowych zgodnie z planem testowym \ref{plan-testowy-2-wariant-1}.
         \end{itemize}}                                                           \\ \hline
     \multicolumn{4}{|l|}{\textbf{Czynności badawcze:}}                               \\ \hline
     \multicolumn{4}{|p{\linewidth}|}{
@@ -233,7 +233,6 @@ Na podstawie przedstawionych w poprzednim podrozdziale aspektów problemu badawc
             \item Realizacja testów wydajnościowych dla porównywanych technologii programistycznych.
             \item Obserwacja oraz gromadzenie wartości pomiarowych dotyczących kryteriów porównawczych.
             \item Dostosowywanie wartości parametrów przeprowadzanego badania.
-            \item Analiza statystyczna otrzymanych wyników.
         \end{itemize}
     }                                                           \\ \hline
     \multicolumn{4}{|l|}{\textbf{Warunki początkowe podjęcia czynności badawczych:}} \\ \hline
@@ -245,14 +244,16 @@ Na podstawie przedstawionych w poprzednim podrozdziale aspektów problemu badawc
     \multicolumn{4}{|l|}{\textbf{Opis scenariusza badawczego:}}                      \\ \hline
     \multicolumn{4}{|p{\linewidth}|}{
         \begin{itemize}[label={}]
-            \item Po wykonaniu konfiguracji topologii fizycznej środowiska badawczego, urządzenia klienckie będą równolegle wysyłać żądania http w kierunku interfejsu programowania aplikacji. Po odebraniu zapytania od klienta, interfejs API, łączyć się będzie ze znajdującą się w obrębie sieci lokalnej zewnętrzną usługą sieciową. Taki rodzaj operacji, kiedy strona wywołująca zleca wykonanie zadania, a odpowiedź na to zlecenie przyjść może w dowolnym momencie, nazywamy operacją asynchroniczną. W ramach punktu końcowego ewaluowanego API, wykonane zostaną cztery operacje asynchroniczne dotyczące różnych sposobów operowania na danych. Po uzyskaniu odpowiedzi na wszystkie z czterech operacji, interfejs programowania aplikacji będzie zwracał odpowiedź zawierającą informację o stopniu poprawności wykonania zleconych operacji, a także czas odpowiedzi na żądanie. Tak zdefiniowane badanie, będzie wykonywane dla określonej liczby klientów równolegle generujących żądania. Po zgromadzeniu wyników badań przeprowadzone zostaną parowe testy statystyczne wykazujące istotność różnic pomiarowych.
+            \item Po wykonaniu konfiguracji topologii fizycznej środowiska badawczego, urządzenia klienckie będą równolegle wysyłać żądania http w kierunku interfejsu programowania aplikacji. Po odebraniu zapytania od klienta, interfejs API, łączyć się będzie ze znajdującą się w obrębie sieci lokalnej zewnętrzną usługą sieciową. Taki rodzaj operacji, kiedy strona wywołująca zleca wykonanie zadania, a odpowiedź na to zlecenie przyjść może w dowolnym momencie, nazywamy operacją asynchroniczną. W ramach punktu końcowego ewaluowanego API, wykonana zostanie trzydziestokrotnie instrukcja iteracyjna, wewnątrz której natywny klient protokołu hipertekstowego zostanie wywołany w celu pozyskania list obiektów bazodanowych dla sześciu różnych liczebności. Interfejs programowania aplikacji zwracać będzie odpowiedź zawierającą informację o stopniu poprawności wykonania zleconych operacji, a także czas odpowiedzi na żądanie. Tak zdefiniowane badanie, będzie wykonywane dla określonej w planie testowym liczby klientów równolegle generujących żądania.
           \end{itemize}
     }                                                           \\ \hline
+    % 100 wątków / 10minut / 1zapytanie = 30 iteracji pozyskujących 6 różnych zbiorów o 6 różnych rozmiarach
     \multicolumn{4}{|l|}{\textbf{Kryteria porównawcze:}}                             \\ \hline
     \multicolumn{4}{|p{\linewidth}|}{
         \begin{itemize}
             \item Czas odpowiedzi interfejsu programowania aplikacji na żądanie klienta.
             \item Procent poprawności wykonania zleconych operacji asynchronicznych.
+            \item Liczba obiektów bazodanowych pozyskiwanych w ramach żądania.
         \end{itemize}
     }                                                           \\ \hline
     \multicolumn{4}{|l|}{\textbf{Parametry badania:}}                                \\ \hline
@@ -264,6 +265,7 @@ Na podstawie przedstawionych w poprzednim podrozdziale aspektów problemu badawc
     }                                                           \\ \hline
 \end{longtable}
 
+\clearpage
 
 \setlength{\LTcapwidth}{\textwidth}
 \setlength\LTleft{0pt}
@@ -280,8 +282,7 @@ Na podstawie przedstawionych w poprzednim podrozdziale aspektów problemu badawc
     \multicolumn{4}{|l|}{\textbf{Topologia fizyczna środowiska badawczego:}}         \\ \hline
     \multicolumn{4}{|p{\linewidth}|}{
         \begin{itemize}[label={}]
-            % dodać jeszcze jedną konfigurację lokalnego środowiska badawczego
-            \item Konfiguracja pierwsza lokalnego środowiska badawczego \ref{sec:lokalne-srodowisko-badawcze-ver-1}
+            \item Konfiguracja czwarta lokalnego środowiska badawczego \ref{sec:lokalne-srodowisko-badawcze-ver-4}
           \end{itemize}
     }\\ \hline
     \multicolumn{4}{|l|}{\textbf{Czynności implementacyjne:}}                        \\ \hline
@@ -290,9 +291,9 @@ Na podstawie przedstawionych w poprzednim podrozdziale aspektów problemu badawc
             \item Zaimplementowanie interfejsów programowania aplikacji wykorzystujących wzorzec projektowy CQRS w technologiach C\#/.NET oraz NodeJS/ExpressJS.
             \item Konfiguracja interfejsów programowania aplikacji w celu obsługi systemu bazodanowego: Microsoft SQL Server.
             \item Wprowadzenie usprawnień wydajnościowych dotyczących modelu danych przeznaczonego dla operacji odczytu.
-            \item Połączenie interfejsu API z dwoma systemami bazodanowymi tego samego typu i konfiguracja automatycznej, transakcyjne replikacji danych w momencie ich zapisu.
+            \item Połączenie interfejsu API z dwoma systemami bazodanowymi tego samego typu i konfiguracja automatycznej, transakcyjnej replikacji danych w momencie ich zapisu.
             \item Konfiguracja topologii fizycznej środowiska badawczego.
-            \item Konfiguracja narzędzia do wykonywania testów wydajnościowych.
+            \item Konfiguracja narzędzia do wykonywania testów wydajnościowych zgodnie z planem testowym \ref{plan-testowy-1}.
         \end{itemize}}                                                           \\ \hline
     \multicolumn{4}{|l|}{\textbf{Czynności badawcze:}}                               \\ \hline
     \multicolumn{4}{|p{\linewidth}|}{
@@ -300,7 +301,6 @@ Na podstawie przedstawionych w poprzednim podrozdziale aspektów problemu badawc
             \item Realizacja testów wydajnościowych z uwzględnieniem zmienności liczby klientów.
             \item Obserwacja oraz gromadzenie wartości pomiarowych dotyczących kryteriów porównawczych.
             \item Dostosowywanie wartości parametrów przeprowadzanego badania.
-            \item Analiza statystyczna otrzymanych wyników.
         \end{itemize}
     }                                                           \\ \hline
     \multicolumn{4}{|l|}{\textbf{Warunki początkowe podjęcia czynności badawczych:}} \\ \hline
@@ -312,20 +312,20 @@ Na podstawie przedstawionych w poprzednim podrozdziale aspektów problemu badawc
     \multicolumn{4}{|l|}{\textbf{Opis scenariusza badawczego:}}                      \\ \hline
     \multicolumn{4}{|p{\linewidth}|}{
         \begin{itemize}[label={}]
-            \item Po wykonaniu konfiguracji topologii fizycznej środowiska badawczego, urządzenia klienckie będą wysyłać żądania protokołu hipertekstowego w kierunku interfejsu programowania aplikacji. Liczba żądań tych będzie sukcesywnie zwiększana, poprzez uruchamianie kolejnych równolegle pracujących wątków oprogramowania testowego. Dla każdej wartości liczby urządzeń klienckich, badanie zostanie wykonane minimum trzydziestokrotnie, a uzyskane wyniki zostaną następnie uśrednione. Odpowiednie przedziały wartości omawianego parametru wyznaczać będą granicę pomiędzy testami linii bazowej, obciążeniowymi, a także przeciążającymi. Badanie zostanie powtórzone dla każdego z rozważanych systemów bazodanowych w obrębie obu porównywanych technologii programistycznych. Po zgromadzeniu wyników badań przeprowadzone zostaną parowe testy statystyczne wykazujące istotność różnic pomiarowych. Obserwacje uzyskane w ramach niniejszego badania, porównane zostaną z tymi, ustalonymi na podstawie pierwszego scenariusza badawczego \ref{tab:research-scenario-1}.
+            \item Po wykonaniu konfiguracji topologii fizycznej środowiska badawczego, urządzenia klienckie będą wysyłać żądania protokołu hipertekstowego w kierunku interfejsu programowania aplikacji. Liczba żądań tych będzie sukcesywnie zwiększana, poprzez uruchamianie kolejnych równolegle pracujących wątków oprogramowania testowego. Dla każdej wartości liczby urządzeń klienckich, badanie zostanie wykonane minimum trzydziestokrotnie, a uzyskane wyniki zostaną następnie uśrednione. Odpowiednie przedziały wartości omawianego parametru wyznaczać będą granicę pomiędzy testami linii bazowej, obciążeniowymi, a także przeciążającymi. Badanie zostanie powtórzone dla każdego z rozważanych systemów bazodanowych w obrębie obu porównywanych technologii programistycznych. Obserwacje uzyskane w ramach niniejszego badania, porównane zostaną z tymi, ustalonymi na podstawie pierwszego scenariusza badawczego \ref{tab:research-scenario-1}.
           \end{itemize}
     }                                                           \\ \hline
     \multicolumn{4}{|l|}{\textbf{Kryteria porównawcze:}}                             \\ \hline
     \multicolumn{4}{|p{\linewidth}|}{
         \begin{itemize}
             \item Czas odpowiedzi interfejsu programowania aplikacji na żądanie klienta.
-            \item Procent wykorzystania centralnej jednostki przetwarzania serwera, na którym uruchomiony został interfejs programowania aplikacji.
-            \item Ilość wykorzystanej pamięci operacyjnej serwera, na którym uruchomiony został interfejs programowania aplikacji.
+            \item Procent odpowiedzi błędnych, uzyskanych względem wszystkich rezultatów.
         \end{itemize}
     }                                                           \\ \hline
     \multicolumn{4}{|l|}{\textbf{Parametry badania:}}                                \\ \hline
     \multicolumn{4}{|p{\linewidth}|}{
         \begin{itemize}
+            \item Rodzaj operacji protokołu hipertekstowego.
             \item Liczba klientów równolegle wysyłających żądania.
             \item Technologia programistyczna zastosowana do implementacji interfejsu programowania aplikacji.
         \end{itemize}
@@ -358,7 +358,7 @@ Na podstawie przedstawionych w poprzednim podrozdziale aspektów problemu badawc
             \item Zaimplementowanie mechanizmów pamięci podręcznej (rozwiązanie autorskie oraz standardowe) w oparciu o bibliotekę Redis.
             \item Konfiguracja interfejsów programowania aplikacji w celu obsługi systemu bazodanowego MySQL.
             \item Konfiguracja topologii fizycznej środowiska badawczego.
-            \item Konfiguracja narzędzia do wykonywania testów wydajnościowych.
+            \item Konfiguracja narzędzia do wykonywania testów wydajnościowych zgodnie z planem testowym \ref{plan-testowy-2-wariant-2}.
         \end{itemize}}                                                           \\ \hline
     \multicolumn{4}{|l|}{\textbf{Czynności badawcze:}}                               \\ \hline
     \multicolumn{4}{|p{\linewidth}|}{
@@ -366,7 +366,6 @@ Na podstawie przedstawionych w poprzednim podrozdziale aspektów problemu badawc
             \item Realizacja testów wydajnościowych z uwzględnieniem zmienności czasu trwania testu.
             \item Obserwacja oraz gromadzenie wartości pomiarowych dotyczących kryteriów porównawczych.
             \item Dostosowywanie wartości parametrów przeprowadzanego badania.
-            \item Analiza statystyczna otrzymanych wyników.
         \end{itemize}
     }                                                           \\ \hline
     \multicolumn{4}{|l|}{\textbf{Warunki początkowe podjęcia czynności badawczych:}} \\ \hline
@@ -378,22 +377,22 @@ Na podstawie przedstawionych w poprzednim podrozdziale aspektów problemu badawc
     \multicolumn{4}{|l|}{\textbf{Opis scenariusza badawczego:}}                      \\ \hline
     \multicolumn{4}{|p{\linewidth}|}{
         \begin{itemize}[label={}]
-            \item Po wykonaniu konfiguracji topologii fizycznej środowiska badawczego, pojedyncze urządzenie klienckie będzie w sposób sekwencyjny wysyłać żądania do zdefiniowanego zbioru punktów końcowych. Interfejsy programowania aplikacji, które implementować będą określone mechanizmy pamięci podręcznej, zwracać będą odpowiedź na żądanie, której wartość różnić będzie się w sposób znaczny, w zależności od tego, czy API musiało odwołać się do systemu bazodanowego, czy też pozyskać dane z cache. Pierwszy z systemów pamięci podręcznej uwzględniać będzie stały czas ważności wpisu, natomiast drugi system (tj. system autorski) wyliczać będzie czas ważności na podstawie częstotliwości odwołań do punktu końcowego. Zebrane rezultaty rozpatrywane będą dla różnych przedziałów czasowych. W każdym z przedziałów, wydajność systemu pamięci podręcznej determinować będzie średni czas odpowiedzi na żądanie oraz liczba odwołań do systemu bazodanowego. Badanie zostanie powtórzone w obrębie obu porównywanych technologii programistycznych. Po zgromadzeniu wyników badań przeprowadzone zostaną parowe testy statystyczne wykazujące istotność różnic pomiarowych.
+            \item Po wykonaniu konfiguracji topologii fizycznej środowiska badawczego, pojedyncze urządzenie klienckie będzie w sposób sekwencyjny wysyłać żądania do zdefiniowanego zbioru punktów końcowych. Interfejsy programowania aplikacji, które implementować będą określone mechanizmy pamięci podręcznej, zwracać będą odpowiedź na żądanie, której wartość różnić będzie się w sposób znaczący, w zależności od tego, czy API musiało odwołać się do systemu bazodanowego, czy też pozyskać dane z cache. Pierwszy z systemów pamięci podręcznej uwzględniać będzie stały czas ważności wpisu, natomiast drugi system (tj. system autorski) wyliczać będzie czas ważności na podstawie częstotliwości odwołań do punktu końcowego. Zebrane rezultaty rozpatrywane będą dla stałego przedziału czasu trwania testu, a także różnych momentów wywołań stałej liczby żądań unieważniających. W każdym z przedziałów, wydajność systemu pamięci podręcznej determinowana będzie przez średni czas odpowiedzi na żądanie oraz liczbę odwołań których długość realizacji przekracza 500ms. Badanie zostanie powtórzone w obrębie obu porównywanych technologii programistycznych.
           \end{itemize}
     }                                                           \\ \hline
     \multicolumn{4}{|l|}{\textbf{Kryteria porównawcze:}}                             \\ \hline
     \multicolumn{4}{|p{\linewidth}|}{
         \begin{itemize}
-            \item Średni czas odpowiedzi interfejsu programowania aplikacji na żądanie klienta w określonym przedziale czasowym.
-            \item Liczba odwołań interfejsu programowania aplikacji do systemu bazodanowego w określonym przedziale czasowym.
+            \item Średni czas odpowiedzi interfejsu programowania aplikacji na żądanie klienta w stałym przedziale czasu.
+            \item Liczba żądań, dla których czas odpowiedzi jest większy niż 500 milisekund.
         \end{itemize}
     }                                                           \\ \hline
     \multicolumn{4}{|l|}{\textbf{Parametry badania:}}                                \\ \hline
     \multicolumn{4}{|p{\linewidth}|}{
         \begin{itemize}
-            \item Długość przedziału czasowego.
             \item Technologia programistyczna zastosowana do implementacji interfejsu programowania aplikacji.
             \item Rodzaj zaimplementowanego mechanizmu przechowywania danych w pamięci podręcznej.
+            \item Rozmieszczenie stałej liczby punktów unieważnień wpisów pamięci podręcznej.
         \end{itemize}
     }                                                           \\ \hline
 \end{longtable}
@@ -420,10 +419,10 @@ Na podstawie przedstawionych w poprzednim podrozdziale aspektów problemu badawc
     \multicolumn{4}{|p{\linewidth}|}{
         \begin{itemize}
             \item Zaimplementowanie interfejsów programowania aplikacji w technologiach C\#/.NET oraz NodeJS/ExpressJS.
-            \item Konfiguracja interfejsów programowania aplikacji w celu obsługi dedykowanych systemów bazodanowych (rodzaj systemu bazodanowego będzie zależny od wyników badań uzyskanych poprzez realizację scenariusza badawczego \ref{tab:research-scenario-1}).
-            \item Wdrożenie interfejsów programowania aplikacji na wirtualnych serwerach prywatnych
-            \item Wdrożenie interfejsów programowania aplikacji na dedykowanych względem określonej technologii platformach chmurowych
-            \item Implementacja mechanizmów pomiaru czasu wykonywanych operacji wewnątrz interfejsów API
+            \item Konfiguracja interfejsów programowania aplikacji w celu obsługi dedykowanych systemów bazodanowych.
+            \item Wdrożenie interfejsów programowania aplikacji na wirtualnych serwerach prywatnych.
+            \item Wdrożenie interfejsów programowania aplikacji na dedykowanych względem określonej technologii platformach chmurowych.
+            \item Implementacja mechanizmów pomiaru czasu wykonywanych operacji wewnątrz interfejsów API.
             \item Konfiguracja topologii fizycznej rozproszonego środowiska badawczego.
             \item Konfiguracja narzędzia do wykonywania testów wydajnościowych.
         \end{itemize}}                                                           \\ \hline
@@ -445,19 +444,20 @@ Na podstawie przedstawionych w poprzednim podrozdziale aspektów problemu badawc
     \multicolumn{4}{|l|}{\textbf{Opis scenariusza badawczego:}}                      \\ \hline
     \multicolumn{4}{|p{\linewidth}|}{
         \begin{itemize}[label={}]
-            \item Po wykonaniu konfiguracji topologii fizycznej rozproszonego środowiska badawczego, urządzenia klienckie będą równolegle generowały żądania hipertekstowe w kierunku interfejsu programowania aplikacji. Poszczególny interfejs API, analogicznie do obsługiwanego przez niego systemu bazodanowego, wdrożony zostanie w określonym środowisku chmurowym. Od momentu uzyskania żądania od aplikacji klienckiej, zliczany będzie czas wykonywania operacji wewnątrz API. Punktem końcowym czasu realizacji obliczeń będzie chwila wygenerowania odpowiedzi na żądanie. Czas odpowiedzi liczony w ten sposób, będzie odpowiednio pomniejszony względem standardowego czasu odpowiedzi na żądanie i nie będzie on uwzględniał faktu dostarczenia oraz zwrócenia wiadomości http w ramach sieci rozległej. Badanie zostanie powtórzone w obrębie obu porównywanych technologii programistycznych, uwzględniając dwa systemy bazodanowe, dla których efektywność wynikająca ze scenariusza badawczego \ref{tab:research-scenario-1} okazała się najwyższa. Uwzględniona zostanie ponadto zmienna liczba równolegle generowanych żądań. Po zgromadzeniu wyników badań przeprowadzone zostaną parowe testy statystyczne wykazujące istotność różnic pomiarowych.
+            \item Po wykonaniu konfiguracji topologii fizycznej rozproszonego środowiska badawczego, urządzenia klienckie będą równolegle generowały żądania hipertekstowe w kierunku interfejsu programowania aplikacji. Poszczególny interfejs API, analogicznie do obsługiwanego przez niego systemu bazodanowego, wdrożony zostanie w określonym środowisku chmurowym. Od momentu uzyskania żądania od aplikacji klienckiej, zliczany będzie czas wykonywania operacji wewnątrz API. Punktem końcowym czasu realizacji obliczeń będzie chwila wygenerowania odpowiedzi na żądanie. Czas odpowiedzi liczony w ten sposób, będzie odpowiednio pomniejszony względem standardowego czasu odpowiedzi na żądanie i nie będzie on uwzględniał faktu dostarczenia oraz zwrócenia wiadomości http w ramach sieci rozległej. Badanie zostanie powtórzone w obrębie obu porównywanych technologii programistycznych, uwzględniając dwa systemy bazodanowe. Systemami tymi są MySQL (w kontekście rozwiązań generycznych), a także Microsoft SQL Server oraz MongoDB w kontekście rozwiązań dedykowanych. Po zgromadzeniu wyników badań przeprowadzone zostaną parowe testy statystyczne wykazujące istotność różnic pomiarowych.
           \end{itemize}
     }                                                           \\ \hline
     \multicolumn{4}{|l|}{\textbf{Kryteria porównawcze:}}                             \\ \hline
     \multicolumn{4}{|p{\linewidth}|}{
         \begin{itemize}
             \item Czas obsługi żądania wewnątrz interfejsu programowania aplikacji.
+            \item Liczba żądań dla których uzyskano niepoprawny format odpowiedzi.
         \end{itemize}
     }                                                           \\ \hline
     \multicolumn{4}{|l|}{\textbf{Parametry badania:}}                                \\ \hline
     \multicolumn{4}{|p{\linewidth}|}{
         \begin{itemize}
-            \item Liczba klientów równolegle generujących żądania.
+            \item Rodzaj operacji protokołu hipertekstowego.
             \item Wykorzystywana platforma chmurowa oraz wirtualny serwer prywatny.
         \end{itemize}
     }                                                           \\ \hline

@@ -64,6 +64,7 @@
 %% Pakiety do formatowania tabel
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \usepackage{tabularx}
+\usepackage{xltabular}
 % Prosz uywa tylko tabularx. Innych pakietw prosz nie stosowa !!!
 % Dokument na pewno da si zredagowa bez ich uycia.
 \usepackage{longtable}
@@ -521,9 +522,9 @@ Listing \thelstlisting: #1\hfill%\hfill%
 	pdfinfo={
     Title = {\@title \the\uppermargin},
     Author = {\@author},
-    Subject={},  
-    Keywords={raz, dwa, trzy, cztery}, 
-		Producer={}, 
+    Subject={Analiza wydajnościowa interfejsów API w technologiach C\# oraz NodeJS},  
+    Keywords={interfejsy programowania aplikacji, C\# .NET, JavaScript, NodeJS, mappery obiektowo-relacyjne, operacje współbieżne, operacje asynchroniczne, obsługa pamięci podręcznej, wzorzec podziału odpowiedzialności, replikacja transakcyjna, platformy chmurowe}, 
+		Producer={Maciej Grzela}, 
 	  CreationDate= {}, % zgodnie ze skadni: {D:yyyymmddhhmmss}, np. D:20210208175600
     ModDate={\pdfcreationdate},   % data modyfikacji bdzie dat kompilacji
 		Creator={pdftex},
@@ -752,7 +753,7 @@ Listing \thelstlisting: #1\hfill%\hfill%
 {\vskip 24pt\raggedright\fontsize{14pt}{16pt}\selectfont%
 \begin{tabular}{ll}
 Kierunek: & {\bfseries \@kierunek}\\
-Specjalno: & {\bfseries \@specjalnosc}\\
+Specjalność: & {\bfseries \@specjalnosc}\\
 \end{tabular}\\[1.3cm]
 }
 {\vskip 29pt\centering{\fontsize{24pt}{26pt}\selectfont%
@@ -852,11 +853,6 @@ Specjalno: & {\bfseries \@specjalnosc}\\
 %%\addcontentsline{toc}{chapter}{Spis tabel}
 \listoftables*
 \clearpage
-\pdfbookmark[0]{Spis listingów}{spisListingow.1} %
-%%\phantomsection
-%%\addcontentsline{toc}{chapter}{Spis listingw}
-\lstlistoflistings*
-\clearpage
 
 
 %\mainmatter
@@ -878,9 +874,6 @@ Specjalno: & {\bfseries \@specjalnosc}\\
 %\addtocontents{toc}{\addvspace{5pt}} % ustawiamy odstp przed literatur w spisie treci
 \bibliography{dokumentacja}
 \appendix
-\include{dodatekA}
-\include{dodatekB}
-
 % Ponisze jest niepotrzebne, jeli nie generuje si indeksu
 %%\chapterstyle{noNumbered}
 %%\phantomsection % sets an anchor

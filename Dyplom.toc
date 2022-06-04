@@ -1,56 +1,52 @@
 \babel@toc {polish}{}
-\babel@toc {english}{}
-\babel@toc {polish}{}
-\contentsline {chapter}{\chapternumberline {1}Wstęp}{8}{chapter.1}%
-\contentsline {section}{\numberline {1.1}Geneza pracy}{8}{section.1.1}%
-\contentsline {section}{\numberline {1.2}Cel i zakres pracy}{10}{section.1.2}%
-\contentsline {section}{\numberline {1.3}Struktura pracy}{11}{section.1.3}%
-\contentsline {chapter}{\chapternumberline {2}Wprowadzenie teoretyczne}{12}{chapter.2}%
-\contentsline {section}{\numberline {2.1}Wykorzystywane terminy}{12}{section.2.1}%
-\contentsline {subsubsection}{\textit {Web Service}}{12}{section*.6}%
-\contentsline {subsubsection}{\textit {Application Programming Interface}}{12}{section*.8}%
-\contentsline {subsubsection}{\textit {RESTful API}}{12}{section*.10}%
-\contentsline {subsubsection}{\textit {Controller}}{13}{section*.12}%
-\contentsline {subsubsection}{\textit {Service}}{13}{section*.14}%
-\contentsline {subsubsection}{\textit {Repository}}{13}{section*.16}%
-\contentsline {subsubsection}{\textit {Object-relational mapper}}{13}{section*.18}%
-\contentsline {subsubsection}{\textit {Cache}}{14}{section*.20}%
-\contentsline {subsubsection}{\textit {Concurrent Computing}}{14}{section*.22}%
-\contentsline {subsubsection}{\textit {Metaheuristic algorithm}}{14}{section*.24}%
-\contentsline {subsubsection}{\textit {API Endpoint}}{14}{section*.26}%
-\contentsline {subsubsection}{\textit {HTTP Request}}{15}{section*.28}%
-\contentsline {subsubsection}{\textit {HTTP Response}}{15}{section*.30}%
-\contentsline {subsubsection}{\textit {HTTP Response Code}}{15}{section*.32}%
-\contentsline {subsubsection}{\textit {HTTP Response Time}}{15}{section*.34}%
-\contentsline {subsubsection}{\textit {JavaScript Object Notation - JSON}}{15}{section*.36}%
-\contentsline {subsubsection}{\textit {Benchmark}}{16}{section*.38}%
-\contentsline {subsubsection}{\textit {Smoke testing}}{16}{section*.40}%
-\contentsline {subsubsection}{\textit {Baseline performance testing}}{16}{section*.42}%
-\contentsline {subsubsection}{\textit {Load testing}}{16}{section*.44}%
-\contentsline {subsubsection}{\textit {Stress testing}}{16}{section*.46}%
-\contentsline {subsubsection}{\textit {Assertion}}{17}{section*.48}%
-\contentsline {section}{\numberline {2.2}Interfejsy programowania aplikacji}{17}{section.2.2}%
-\contentsline {section}{\numberline {2.3}Testowanie oprogramowania}{25}{section.2.3}%
-\contentsline {section}{\numberline {2.4}Wykorzystywane narzędzia i technologie}{29}{section.2.4}%
-\contentsline {section}{\numberline {2.5}Przegląd literatury}{34}{section.2.5}%
-\contentsline {chapter}{\chapternumberline {3}Opis problemu badawczego}{40}{chapter.3}%
-\contentsline {section}{\numberline {3.1}Przedstawienie aspektów problemu badawczego}{40}{section.3.1}%
-\contentsline {section}{\numberline {3.2}Sformułowanie scenariuszy badawczych}{44}{section.3.2}%
-\contentsline {chapter}{\chapternumberline {4}Implementacja środowiska badawczego}{54}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Realizacja topologii fizycznych}{54}{section.4.1}%
+\contentsline {chapter}{\chapternumberline {1}Wstęp}{7}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Geneza pracy}{7}{section.1.1}%
+\contentsline {section}{\numberline {1.2}Cel i zakres pracy}{9}{section.1.2}%
+\contentsline {section}{\numberline {1.3}Struktura pracy}{10}{section.1.3}%
+\contentsline {chapter}{\chapternumberline {2}Wprowadzenie teoretyczne}{11}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Wykorzystywane terminy}{11}{section.2.1}%
+\contentsline {subsubsection}{\textit {Web Service}}{11}{section*.5}%
+\contentsline {subsubsection}{\textit {Application Programming Interface}}{11}{section*.7}%
+\contentsline {subsubsection}{\textit {RESTful API}}{11}{section*.9}%
+\contentsline {subsubsection}{\textit {Controller}}{12}{section*.11}%
+\contentsline {subsubsection}{\textit {Service}}{12}{section*.13}%
+\contentsline {subsubsection}{\textit {Repository}}{12}{section*.15}%
+\contentsline {subsubsection}{\textit {Object-relational mapper}}{12}{section*.17}%
+\contentsline {subsubsection}{\textit {Cache}}{13}{section*.19}%
+\contentsline {subsubsection}{\textit {Concurrent Computing}}{13}{section*.21}%
+\contentsline {subsubsection}{\textit {Metaheuristic algorithm}}{13}{section*.23}%
+\contentsline {subsubsection}{\textit {API Endpoint}}{13}{section*.25}%
+\contentsline {subsubsection}{\textit {HTTP Request}}{14}{section*.27}%
+\contentsline {subsubsection}{\textit {HTTP Response}}{14}{section*.29}%
+\contentsline {subsubsection}{\textit {HTTP Response Code}}{14}{section*.31}%
+\contentsline {subsubsection}{\textit {HTTP Response Time}}{14}{section*.33}%
+\contentsline {subsubsection}{\textit {JavaScript Object Notation - JSON}}{14}{section*.35}%
+\contentsline {subsubsection}{\textit {Benchmark}}{15}{section*.37}%
+\contentsline {subsubsection}{\textit {Smoke testing}}{15}{section*.39}%
+\contentsline {subsubsection}{\textit {Baseline performance testing}}{15}{section*.41}%
+\contentsline {subsubsection}{\textit {Load testing}}{15}{section*.43}%
+\contentsline {subsubsection}{\textit {Stress testing}}{15}{section*.45}%
+\contentsline {subsubsection}{\textit {Assertion}}{16}{section*.47}%
+\contentsline {section}{\numberline {2.2}Interfejsy programowania aplikacji}{16}{section.2.2}%
+\contentsline {section}{\numberline {2.3}Testowanie oprogramowania}{24}{section.2.3}%
+\contentsline {section}{\numberline {2.4}Wykorzystywane narzędzia i technologie}{27}{section.2.4}%
+\contentsline {section}{\numberline {2.5}Przegląd literatury}{32}{section.2.5}%
+\contentsline {chapter}{\chapternumberline {3}Opis problemu badawczego}{39}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Przedstawienie aspektów problemu badawczego}{39}{section.3.1}%
+\contentsline {section}{\numberline {3.2}Sformułowanie scenariuszy badawczych}{43}{section.3.2}%
+\contentsline {chapter}{\chapternumberline {4}Implementacja środowiska badawczego}{53}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Realizacja topologii fizycznych}{53}{section.4.1}%
 \contentsline {section}{\numberline {4.2}Budowa interfejsów programowania aplikacji}{58}{section.4.2}%
-\contentsline {section}{\numberline {4.3}Konfiguracja generycznych oraz dedykowanych platform chmurowych}{71}{section.4.3}%
-\contentsline {section}{\numberline {4.4}Konfiguracja narzędzia do realizacji badań}{72}{section.4.4}%
-\contentsline {chapter}{\chapternumberline {5}Przeprowadzone badania}{76}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Wpływ zastosowanego systemu bazodanowego na efektywność działania interfejsu API}{76}{section.5.1}%
-\contentsline {section}{\numberline {5.2}Wpływ zastosowanej technologii na wydajność realizacji operacji współbieżnych}{81}{section.5.2}%
-\contentsline {section}{\numberline {5.3}Wpływ zastosowanej technologii na efektywność obsługi operacji asynchronicznych}{84}{section.5.3}%
-\contentsline {section}{\numberline {5.4}Wpływ implementacji wzorca projektowego podziału odpowiedzialności na wydajność obsługi żądania}{85}{section.5.4}%
-\contentsline {section}{\numberline {5.5}Porównanie efektywności obsługi zapytań z uwzględnieniem odmiennych mechanizmów pamięci podręcznej}{86}{section.5.5}%
-\contentsline {section}{\numberline {5.6}Zmienność wydajności api wdrożonego na generycznej oraz dedykowanej platformie chmurowej}{88}{section.5.6}%
-\contentsline {chapter}{\chapternumberline {6}Podsumowanie}{96}{chapter.6}%
-\contentsline {section}{\numberline {6.1}Wnioski z przeprowadzonych badań}{96}{section.6.1}%
+\contentsline {section}{\numberline {4.3}Konfiguracja generycznych oraz dedykowanych platform chmurowych}{69}{section.4.3}%
+\contentsline {section}{\numberline {4.4}Konfiguracja narzędzia do realizacji badań}{70}{section.4.4}%
+\contentsline {chapter}{\chapternumberline {5}Przeprowadzone badania}{74}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Wpływ zastosowanego systemu bazodanowego na efektywność działania interfejsu API}{74}{section.5.1}%
+\contentsline {section}{\numberline {5.2}Wpływ zastosowanej technologii na wydajność realizacji operacji współbieżnych}{79}{section.5.2}%
+\contentsline {section}{\numberline {5.3}Wpływ zastosowanej technologii na efektywność obsługi operacji asynchronicznych}{83}{section.5.3}%
+\contentsline {section}{\numberline {5.4}Wpływ implementacji wzorca projektowego CQRS na wydajność obsługi żądania}{84}{section.5.4}%
+\contentsline {section}{\numberline {5.5}Porównanie efektywności obsługi zapytań dla odmiennych mechanizmów pamięci podręcznej}{85}{section.5.5}%
+\contentsline {section}{\numberline {5.6}Zmienność wydajności api wdrożonego na generycznej oraz dedykowanej platformie chmurowej}{87}{section.5.6}%
+\contentsline {chapter}{\chapternumberline {6}Podsumowanie}{95}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Uzyskane efekty pracy}{95}{section.6.1}%
 \contentsline {section}{\numberline {6.2}Perspektywy rozwoju badań}{96}{section.6.2}%
-\contentsline {chapter}{Literatura}{97}{chapter*.89}%
-\contentsline {appendix}{\chapternumberline {A}Instrukcja wdroeniowa}{100}{appendix.A}%
-\contentsline {appendix}{\chapternumberline {B}Opis zaczonej pyty CD/DVD}{101}{appendix.B}%
+\contentsline {chapter}{Literatura}{98}{chapter*.88}%

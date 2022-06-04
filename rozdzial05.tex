@@ -19,35 +19,46 @@ Zdecydowano się na wybór pięciu punktów końcowych obsługujących różne m
 
 W tabeli \ref{tab:endpointy-scenario-1} wyszczególniono każdy z wykorzystywanych punktów końcowych interfejsów programowania aplikacji, a także opisano sposób jego działania.
 
-\begin{table}[htbp] \small
-    \centering
-    \caption{Wykaz punktów końcowych wykorzystywanych w badaniu wpływu wykorzystanego systemu bazodanowego na działanie API}
-    \label{tab:endpointy-scenario-1}
-    \begin{tabularx}{\linewidth}{|X|X|X|X|} \hline\
-        Identyfikator zasobu & Dostarczana zawartość & Rodzaj metody HTTP & Opis działania \\ \hline\hline
-        /api/bills &
-        \begin{itemize}
-            \item pageSize - rozmiar strony (tj. liczba rekordów) - ustalony na stałe jako 30
-            \item pageNumber - numer strony - generowany zgodnie z jednostajnym rozkładem prawdopodobieństwa
-        \end{itemize} &
-        GET &
-        Zwrócenie listy encji identyfikujących rachunki wygenerowane w restauracji. Zarówno rozmiar strony, jak i liczba pomijanych rekordów zadane są jako parametr, a poszczególny element listy, zawiera zarówno dane encji podstawowej, jak i każdej z encji zależnych, powiązanych z nią kluczem obcym. \\ \hline
-        /api/orders/:id & id - identyfikator zamówienia wskazujący każdorazowo zamówienie istniejące w bazie danych & GET & Zwrócenie pojedynczej encji identyfikującej określone zamówienie poczynione w ramach pobytu w restauracji. Zwrócony element zawiera zarówno dane encji podstawowej, jak i każdej z encji zależnych, powiązanych z nią kluczem obcym.\\ \hline
-        /api/products & saveProductBody - zasób zapisany w formacie JSON, dostarczający informacje o wartościach właściwości nowo tworzonego produktu - każdy z identyfikatorów encji zależnych wskazuje na istniejący obiekt & POST & Dodanie pojedynczej encji do zbioru danych z poprzedzającą je walidacją danych dostarczonych w ramach ciała żądania \\ \hline
-        /api/courses/:id & \begin{itemize}
-            \item id - identyfikator posiłku zawartego w ramach zamówienia wskazujący każdorazowo istniejącą encję bazodanową
-            \item updateCourseBody - zasób zapisany w formacie JSON, dostarczający informacje o wartościach właściwości modyfikowanego obiektu posiłku
-        \end{itemize}  &
-        PUT &
-        Modyfikowanie encji bazodanowej dotyczącej posiłku zawartego w ramach zamówienia z uprzednią weryfikacją poprawności danych ciała żądania \\ \hline
-        /api/reservations/:id & id - identyfikator rezerwacji, wskazujący na istniejący bądź nieistniejący zasób & DELETE & Usunięcie pojedynczego obiektu rezerwacji, bądź zwrócenie informacji o jego nie znalezieniu w systemie bazodanowym \\ \hline
-    \hline
-    \end{tabularx}
+\begin{table}[htb]
+  \centering
+  \caption{Wykaz punktów końcowych wykorzystywanych w badaniu wpływu wykorzystanego systemu bazodanowego na działanie API}
+  \label{tab:endpointy-scenario-1}
+  \resizebox{\columnwidth}{!}{%
+  \begin{tabular}[c]{|c|m{0.4\textwidth}|c|m{0.4\textwidth}|}
+  \hline
+  Identyfikator zasobu &
+    Dostarczana zawartość &
+    \begin{tabular}[c]{@{}l@{}}Rodzaj \\ metody HTTP\end{tabular} &
+    Opis działania \\ \hline
+  /api/bills &
+    \begin{tabular}[c]{@{}l@{}}\textbf{pageSize} - rozmiar strony (tj. liczba \\ rekordów) - ustalony na stałe jako 30 \\ \textbf{pageNumber} - numer strony \\ - generowany zgodnie z jednostajnym \\ rozkładem prawdopodobieństwa\end{tabular} &
+    GET &
+    Zwrócenie listy encji identyfikujących rachunki wygenerowane w restauracji. Zarówno rozmiar strony, jak i liczba pomijanych rekordów zadane są jako parametr, a poszczególny element listy, zawiera zarówno dane encji podstawowej, jak i każdej z encji zależnych, powiązanych z nią kluczem obcym. \\ \hline
+  /api/orders/:id &
+    \textbf{id} - identyfikator zamówienia wskazujący każdorazowo zamówienie istniejące w bazie danych &
+    GET &
+    Zwrócenie pojedynczej encji identyfikującej określone zamówienie poczynione w ramach pobytu w restauracji. Zwrócony element zawiera zarówno dane encji podstawowej, jak i każdej z encji zależnych, powiązanych z nią kluczem obcym. \\ \hline
+  /api/products &
+  \textbf{saveProductBody} - zasób zapisany w formacie JSON, dostarczający informacje o wartościach właściwości nowo tworzonego produktu - każdy z identyfikatorów encji zależnych wskazuje na istniejący obiekt &
+    POST &
+    Dodanie pojedynczej encji do zbioru danych z poprzedzającą je walidacją danych dostarczonych w ramach ciała żądania. \\ \hline
+  /api/courses/:id &
+  \begin{tabular}[c]{@{}l@{}} \textbf{id} - identyfikator posiłku zawartego \\ w ramach zamówienia wskazujący \\ każdorazowo istniejącą \\ encję bazodanową \\ updateCourseBody - zasób zapisany \\ w formacie JSON, dostarczający \\ informacje o wartościach właściwości \\ modyfikowanego obiektu posiłku \end{tabular} &
+    PUT &
+    Modyfikowanie encji bazodanowej dotyczącej posiłku zawartego w ramach zamówienia z uprzednią weryfikacją poprawności danych ciała żądania. \\ \hline
+  /api/reservations/:id &
+  \textbf{id} - identyfikator rezerwacji, wskazujący na istniejący bądź nieistniejący zasób &
+    DELETE &
+    Usunięcie pojedynczego obiektu rezerwacji, bądź zwrócenie informacji o jego nie znalezieniu w systemie bazodanowym. \\ \hline
+  \end{tabular}%
+  }
 \end{table}
 
 Na wykresie \ref{fig:wykres-testy-funkcjonalne-dotnet} przedstawiono zagregowane względem omówionych punktów końcowych, czasy odpowiedzi na żądanie w przypadku interfejsu programowania aplikacji zaimplementowanego z wykorzystaniem środowiska C\#/.NET, a także komunikującego się z bazą danych SQL Server.
 
-\begin{figure}[ht]
+\clearpage
+
+\begin{figure}[htb]
     \centering
      \includegraphics[width=\linewidth]{rys05/testy-funkcjonalne-dotnet.pdf}
     \caption{Czas odpowiedzi na żądanie dla konfiguracji .NET/SQL Server w kontekście testu funkcjonalnego}
@@ -58,14 +69,14 @@ Na podstawie analogicznych danych, dla każdej pary interfejs API - system bazod
 
 Uzyskane przedziały satysfakcji, tolerancji oraz frustracji względem każdego systemu bazodanowego oraz technologii tworzenia API zostały zobrazowane na wykresach \ref{fig:apdex-dotnet} oraz \ref{fig:apdex-nodejs}.
 
-\begin{figure}[ht]
+\begin{figure}[htb]
     \centering
      \includegraphics[width=\linewidth]{rys05/apdex-dotnet.pdf}
     \caption{Obszary satysfakcji, tolerancji oraz frustracji wskaźnika APDEX względem poszczególnych systemów bazodanowych dla API zaimplementowanego w C\#}
     \label{fig:apdex-dotnet}
 \end{figure}
 
-\begin{figure}[ht]
+\begin{figure}[htb]
     \centering
      \includegraphics[width=\linewidth]{rys05/apdex-nodejs.pdf}
     \caption{Obszary satysfakcji, tolerancji oraz frustracji wskaźnika APDEX względem poszczególnych systemów bazodanowych dla API zaimplementowanego w JavaScript}
@@ -100,13 +111,13 @@ Na wykresach \ref{fig:response-mtc-1} a) do \ref{fig:response-mtc-1} j) zaprezen
 
 Analizując wyniki uzyskane dla operacji pobierania kolekcji obiektów, zauważyć można niewielkie różnice w wartości średnich czasów odpowiedzi, występujące w przedziale do około 4000 użytkowników. Różnice te, nie faworyzują ani deprecjonują któregokolwiek z rozwiązań.
 
-Jedyną zauważalną anomalię dotyczącą zmiany wydajności dostrzec można w kontekście interfejsu programowania aplikacji C\# .NET korzystającego z silnika bazy danych PostgreSQL. W tym przypadku znaczące różnice pomiędzy wydajnością omawianego systemu, a efektywnością drugiego najgorszego rozwiązania odnotowano już dla około \textbf{720} współbieżnie pracujących wątków. Dla tej właśnie metryki, omawiana różnica wynosi \textbf{374ms}. Wraz ze wzrostem liczby użytkowników o tysiąc, zauważyć możemy różnicę \textbf{759ms}, a o dwa tysiące - \textbf{2326ms}. W momencie zaprzestania obserwacji tendencji nieznacznych dysproporcji pomiędzy systemami baz danych (moment ten możemy aproksymować do chwili działania 3750 jednoczesnych procesów-generatorów) dywergencja czasów odpowiedzi osiągnęła wartość \textbf{4855ms}.
+Dla tego właśnie przedziału, jedyną zauważalną anomalię dotyczącą zmiany wydajności dostrzec można w kontekście interfejsu programowania aplikacji C\# .NET korzystającego z silnika bazy danych PostgreSQL. W tym przypadku znaczące różnice pomiędzy wydajnością omawianego systemu, a efektywnością drugiego najgorszego rozwiązania odnotowano już dla około \textbf{720} współbieżnie pracujących wątków. Dla tej właśnie metryki, omawiana różnica wynosi \textbf{374ms}. Wraz ze wzrostem liczby użytkowników o tysiąc, zauważyć możemy różnicę \textbf{759ms}, a o dwa tysiące - \textbf{2326ms}. W momencie zaprzestania obserwacji tendencji nieznacznych dysproporcji pomiędzy systemami baz danych (moment ten możemy aproksymować do chwili działania 3750 jednoczesnych procesów-generatorów) dywergencja czasów odpowiedzi osiągnęła wartość \textbf{4855ms}.
 
 Dysproporcje wskazujące na niezaprzeczalną wyższość określonych rozwiązań nad pozostałymi dostrzegalne są dla rezultatów otrzymywanych w wyniku wspólnej pracy więcej niż czterech tysięcy procesów oprogramowania Apache JMeter. 
 
 Odwołując się do interfejsu zaimplementowanego w technologii NodeJS, zauważyć możemy fakt, że spośród rozwiązań relacyjnych, najniższy skok wartości odnotowały rozwiązania MySQL oraz PostgreSQL. Ponadto, skok ten nastąpił zdecydowanie później, niż miało to miejsce w przypadku pozostałych rozwiązań. Wartym odnotowania są wyniki zaobserwowane dla nierelacyjnego systemu bazodanowego. W przypadku silnika bazy danych MongoDB, średnie czasy odpowiedzi były względnie niskie nie tylko do chwili uruchomienia czterech tysięcy wątków, ale również po tym czasie nie odnotowano gwałtownego wzrostu monitorowanej metryki. W momencie generowania maksymalnego natężenia ruchu sieciowego, zmierzony średni czas odpowiedzi wyniósł \textbf{5846ms}.
 
-W przypadku rozwiązania zdefiniowanego na bazie technologii Microsoft, zauważalna jest bardzo niska wydajność obsługi komunikacji z rozwiązaniem SQLite (maksymalna zmierzona wartość to \textbf{22141ms}). Ponadto, silnik bazy danych PostgreSQL, analogicznie do obszaru niższego natężenia ruchu, notuje wyniki gorsze od swoich relacyjnych oraz nierelacyjnych odpowiedników w granicach od \textbf{2111ms} do \textbf{5373ms}.
+W przypadku rozwiązania zdefiniowanego na bazie technologii Microsoft, zauważalna jest bardzo niska wydajność obsługi komunikacji z rozwiązaniem SQLite (maksymalna zmierzona wartość to \textbf{22515ms}). Ponadto, silnik bazy danych PostgreSQL, analogicznie do obszaru niższego natężenia ruchu, notuje wyniki gorsze od swoich relacyjnych oraz nierelacyjnych odpowiedników w granicach od \textbf{2111ms} do \textbf{5373ms}.
 
 W kontekście pobierania pojedynczego wyniku, wzrosty wartości średniego czasu odpowiedzi posiadają charakterystkę przybliżoną do charakterystyki liniowej. Wyjątkami są tutaj systemy bazy danych MongoDB dla interfejsu napisanego w języku C\#, oraz silnik MySQL dla NodeJS API. W obu przypadkach pojawiają się gwałtowne wzrosty wartości czasu odpowiedzi. Odnosząc się do MongoDB zaobserwować możemy zmianę metryki wydajności od \textbf{1549ms} do \textbf{5945ms} na przestrzeni przyrostu wątków od liczby \textbf{3748} do \textbf{4253}. Zmiana ta, utrzymuje się do końca przeprowadzania testu. Dla interfejsu programowania aplikacji uruchamianego w środowisku NodeJS, oraz dla systemu bazodanowego MySQL, anomalia dostrzegana jest dla \textbf{2465} wątków a jej amplituda to \textbf{6721ms}. Co ciekawe, przekraczając poziom natężenia wynoszący \textbf{2890} wątków, średni czas odpowiedzi zaczyna spadać, aby w punkcie \textbf{4080} stanowić minimum w odniesieniu do pozostałych systemów baz danych.
 
@@ -137,7 +148,7 @@ Odnosząc się do interfejsu zaimplementowanego w technologii NodeJS, zaobserwow
 \section{Wpływ zastosowanej technologii na wydajność realizacji operacji współbieżnych}
 Niniejsze badanie, przeprowadzone zostało w celu zaobserwowania różnic dotyczących sposobu przetwarzania długo trwających operacji. Potencjalnie różnice te, związane mogą być z odmienną implementacją wewnętrznych mechanizmów przetwarzania współbieżnego, a także diametralnie innym podejściem obu technologii do zagadnienia wielowątkowości. Zdecydowano się na implementację algorytmu rozwiązującego symetryczny problem komiwojażera, bazującego na metaheurystyce genetycznej. Elementy charakterystyczne względem omawianego rozwiązania przedstawiono w sekcji \ref{label:algorytm-genetyczny}. Napisane programy, zawarte są wewnątrz warstwy logiki biznesowej interfejsów API, a punktem wprowadzania danych dla algorytmów są określone punkty końcowe. W odniesieniu do przekazywanych danych wejściowych, wyróżnić należy ciało żądania, zawierające tablicę obiektów notacji JSON. Obiekty te, identyfikują określone lokalizacje poprzez wprowadzenie parametrów długości oraz szerokości geograficznej. Ponadto, przekazywany zostaje parametr czasu trwania głównej pętli algorytmu (tj. jak długo program powinien dokonywać kalkulacji), a także wartość wyniku optymalnego, względem której program powinien porównać uzyskany rezultat.
 
-Odnosząc się do protokołu badawczego, zdecydowano się na wykonanie pomiarów jakości uzyskanego rozwiązania, a także liczby iteracji głównej pętli implementowanego algorytmu. Metryki te, zostały zebrane w kontekście uruchomienia programu dla pietnastu odmiennych zbiorów danych testowych, dostępnych w ramach otwartej biblioteki TSPLib. Dla każdego ze zbiorów danych, trzydziestokrotnie powtórzono wywołanie algorytmu, w obrębie każdego z czterech różnych czasów wykonywania iteracji głównej programu. Czasy te to: 15s, 30s, 45s oraz 60s. W momencie przeprowadzenia badania, a także przez cały okres jego trwania, uruchomionych było 30 współbieżnie pracujących wątków będących generatorami żądań.
+Odnosząc się do protokołu badawczego, zdecydowano się na wykonanie pomiarów jakości uzyskanego rozwiązania, a także liczby iteracji głównej pętli implementowanego algorytmu. Metryki te, zostały zebrane w kontekście uruchomienia programu dla pietnastu odmiennych zbiorów danych testowych, dostępnych w ramach otwartej biblioteki TSPLib \cite{TSPLIB_ARTICLE}. Dla każdego ze zbiorów danych, trzydziestokrotnie powtórzono wywołanie algorytmu, w obrębie każdego z czterech różnych czasów wykonywania iteracji głównej programu. Czasy te to: 15s, 30s, 45s oraz 60s. W momencie przeprowadzenia badania, a także przez cały okres jego trwania, uruchomionych było 30 współbieżnie pracujących wątków będących generatorami żądań.
 
 Przed rozpoczęciem realizacji omówionego protokołu przeprowadzono ewaluację funkcjonalną, stanowiącą warunek początkowy podjęcia badań. Ewaluacja ta, polegała na pięciokrotnym odwołaniu się punktów końcowych api obu technologii, wprowadzając jako dane wejściowe, zbiory współrzędnych dostępnych w ramach biblioteki TSPLib. Warto zaznaczyć, że są to zbiory inne, niż te wykorzystane następnie w faktycznym badaniu. Kryterium akceptacji warunku początkowego, było pomyślne wykonanie algorytmu w każdym ze zdefiniowanych przypadków funkcjonalnych, a także zwrócenie poprawnej odpowiedzi w czasie zgodnym z parametrem czasu wykonania alogytmu. Oba wymienione kryteria zostały w czasie ewaluacji funkcjonalnej spełnione.
 
@@ -147,170 +158,369 @@ Kiedy żądanie zacznie być przetwarzane przez interfejs programowania aplikacj
 
 Analizując wewnętrzne mechanizmy usługi sieciowej implementowanej w języku C\# zauważyć możemy odmienne, niż zaprezentowane powyżej podejście. W związku z faktem utworzenia nowego wątku dla głównej pętli algorytmu, wątek podstawowy programu nie jest obciążony koniecznością realizacji jakichkolwiek dodatkowych operacji i oczekuje na uzyskanie wyników z procesu potomnego. Jeżeli w czasie oczekiwania pojawi się przychodzące żądanie, wątek główny zapisuje kontekst wywołania dla obecnego zapytania, przechodzi do realizacji kolejnego z nich, a po jego zakończeniu, bądź w momencie wyczekiwania na zakończenie, przełącza się do kontekstu poprzedniego zadania, aby zweryfikować jego status. Dzięki zastosowaniu takiego podejścia, które możliwe jest tylko w sytuacji dostępności wielu wątków w ramach pojedynczego programu, usługa sieciowa nie jest blokowana względem innych klientów.
 
-Po ukończeniu obsługi wszystkich wygenerowanych żądań, przez oba systemy internetowe, uśredniono serie każdych 30 rezultatów, uzyskanych względem różnych zbiorów testowych oraz odmiennych czasów wykonania. Opracowane wyniki, przedstawiono w tabeli \ref{tab:mtc-2}.
+Po ukończeniu obsługi wszystkich wygenerowanych żądań, przez oba systemy internetowe, uśredniono serie każdych 30 rezultatów, uzyskanych względem różnych zbiorów testowych oraz odmiennych czasów wykonania. Opracowane wyniki, przedstawiono w tabelach \ref{tab:mtc-2} oraz \ref{tab:mtc-2-2}.
 
-\begin{longtable}[c]{|l|llll|llll|}
-    \caption{Wydajność realizacji algorytmu genetycznego dla problemu komiwojażera w zależności od czasu przetwarzania oraz technologii}
-    \label{tab:mtc-2}\\
-    \hline
-    \multicolumn{1}{|c|}{\multirow{2}{*}{}} &
-      \multicolumn{4}{c|}{C\# / .NET} &
-      \multicolumn{4}{c|}{JavaScript / NodeJS} \\ \cline{2-9} 
-    \multicolumn{1}{|c|}{} &
-      \multicolumn{1}{c|}{15s} &
-      \multicolumn{1}{c|}{30s} &
-      \multicolumn{1}{c|}{45s} &
-      \multicolumn{1}{c|}{60s} &
-      \multicolumn{1}{c|}{15s} &
-      \multicolumn{1}{c|}{30s} &
-      \multicolumn{1}{c|}{45s} &
-      \multicolumn{1}{c|}{60s} \\ \hline
-    \endfirsthead
-    %
-    \multicolumn{9}{c}%
-    {{\bfseries Table \thetable\ continued from previous page}} \\
-    \endhead
-    %
-    burma14 &
-      \multicolumn{1}{l|}{0,3462 (71725)} &
-      \multicolumn{1}{l|}{0,6847 (130514)} &
-      \multicolumn{1}{l|}{0,8475 (201224)} &
-      0,8589 (248972) &
-      \multicolumn{1}{l|}{0,2983 (71747)} &
-      \multicolumn{1}{l|}{0,5943 (129134)} &
-      \multicolumn{1}{l|}{0,7636 (205306)} &
-      0,7579 (227232) \\ \hline
-    ulysses16 &
-      \multicolumn{1}{l|}{0,5299 (68491)} &
-      \multicolumn{1}{l|}{0,3910 (124929)} &
-      \multicolumn{1}{l|}{0,9270 (174385)} &
-      0,6549 (244773) &
-      \multicolumn{1}{l|}{0,4817 (68488)} &
-      \multicolumn{1}{l|}{0,2857 (122619)} &
-      \multicolumn{1}{l|}{0,8297 (192590)} &
-      0,5354 (219521) \\ \hline
-    ulysses22 &
-      \multicolumn{1}{l|}{0,5271 (63520)} &
-      \multicolumn{1}{l|}{0,4171 (117580)} &
-      \multicolumn{1}{l|}{0,9312 (164707)} &
-      0,7824 (224099) &
-      \multicolumn{1}{l|}{0,5488 (63802)} &
-      \multicolumn{1}{l|}{0,4668 (129397)} &
-      \multicolumn{1}{l|}{0,8728 (176319)} &
-      0,6717 (203753) \\ \hline
-    att48 &
-      \multicolumn{1}{l|}{0,0493 (62550)} &
-      \multicolumn{1}{l|}{0,0611 (120072)} &
-      \multicolumn{1}{l|}{0,3129 (183853)} &
-      0,2623 (233205) &
-      \multicolumn{1}{l|}{0,0242 (62843)} &
-      \multicolumn{1}{l|}{0,0238 (134376)} &
-      \multicolumn{1}{l|}{0,2413 (157470)} &
-      0,2903 (198158) \\ \hline
-    berlin52 &
-      \multicolumn{1}{l|}{0,2316 (72721)} &
-      \multicolumn{1}{l|}{0,2484 (114196)} &
-      \multicolumn{1}{l|}{0,9718 (190914)} &
-      0,8398 (235500) &
-      \multicolumn{1}{l|}{0,2239 (72331)} &
-      \multicolumn{1}{l|}{0,3861 (122215)} &
-      \multicolumn{1}{l|}{0,9202 (182668)} &
-      0,7642 (237310) \\ \hline
-    gr96 &
-      \multicolumn{1}{l|}{0,4798 (62745)} &
-      \multicolumn{1}{l|}{0,1617 (133156)} &
-      \multicolumn{1}{l|}{0,9274 (172122)} &
-      0,7808 (203419) &
-      \multicolumn{1}{l|}{0,4874 (63117)} &
-      \multicolumn{1}{l|}{0,1386 (99062)} &
-      \multicolumn{1}{l|}{0,8606 (162453)} &
-      0,7103 (204787) \\ \hline
-    bier127 &
-      \multicolumn{1}{l|}{0,2313 (66491)} &
-      \multicolumn{1}{l|}{0,1963 (132354)} &
-      \multicolumn{1}{l|}{0,8473 (179792)} &
-      0,8505 (247307) &
-      \multicolumn{1}{l|}{0,1162 (66123)} &
-      \multicolumn{1}{l|}{0,1928 (117603)} &
-      \multicolumn{1}{l|}{0,7906 (188063)} &
-      0,7792 (227924) \\ \hline
-    ch130 &
-      \multicolumn{1}{l|}{0,0947 (62713)} &
-      \multicolumn{1}{l|}{0,1328 (118125)} &
-      \multicolumn{1}{l|}{0,8072 (174455)} &
-      0,8066 (234333) &
-      \multicolumn{1}{l|}{0,0575 (62785)} &
-      \multicolumn{1}{l|}{0,1457 (127119)} &
-      \multicolumn{1}{l|}{0,7521 (159485)} &
-      0,6828 (223465) \\ \hline
-    ch150 &
-      \multicolumn{1}{l|}{0,0784 (66845)} &
-      \multicolumn{1}{l|}{0,1140 (123024)} &
-      \multicolumn{1}{l|}{0,8584 (179031)} &
-      0,7966 (235174) &
-      \multicolumn{1}{l|}{0,0812 (66984)} &
-      \multicolumn{1}{l|}{0,1483 (138917)} &
-      \multicolumn{1}{l|}{0,7900 (185943)} &
-      0,7991 (211357) \\ \hline
-    tsp225 &
-      \multicolumn{1}{l|}{0,2819 (61923)} &
-      \multicolumn{1}{l|}{0,0988 (124816)} &
-      \multicolumn{1}{l|}{0,7801 (163056)} &
-      0,8311 (202829) &
-      \multicolumn{1}{l|}{0,3057 (61479)} &
-      \multicolumn{1}{l|}{0,0826 (126286)} &
-      \multicolumn{1}{l|}{0,8209 (173199)} &
-      0,7533 (224409) \\ \hline
-    att532 &
-      \multicolumn{1}{l|}{0,0194 (65333)} &
-      \multicolumn{1}{l|}{0,0171 (153374)} &
-      \multicolumn{1}{l|}{0,2226 (188061)} &
-      0,2470 (220558) &
-      \multicolumn{1}{l|}{0,0116 (65372)} &
-      \multicolumn{1}{l|}{0,0233 (121134)} &
-      \multicolumn{1}{l|}{0,2650 (173916)} &
-      0,1498 (240112) \\ \hline
-    u574 &
-      \multicolumn{1}{l|}{0,5940 (70850)} &
-      \multicolumn{1}{l|}{0,5454 (133559)} &
-      \multicolumn{1}{l|}{0,6460 (190742)} &
-      0,7872 (231134) &
-      \multicolumn{1}{l|}{0,4821 (70639)} &
-      \multicolumn{1}{l|}{0,3782 (106502)} &
-      \multicolumn{1}{l|}{0,5836 (196297)} &
-      0,6573 (248733) \\ \hline
-    u724 &
-      \multicolumn{1}{l|}{0,1620 (69793)} &
-      \multicolumn{1}{l|}{0,0483 (120363)} &
-      \multicolumn{1}{l|}{0,6529 (205031)} &
-      0,7718 (226060) &
-      \multicolumn{1}{l|}{0,0943 (69700)} &
-      \multicolumn{1}{l|}{0,0472 (117866)} &
-      \multicolumn{1}{l|}{0,5747 (200697)} &
-      0,6369 (229731) \\ \hline
-    vm1084 &
-      \multicolumn{1}{l|}{0,0289 (64393)} &
-      \multicolumn{1}{l|}{0,0273 (111650)} &
-      \multicolumn{1}{l|}{0,5971 (192909)} &
-      0,7938 (225794) &
-      \multicolumn{1}{l|}{0,0051 (64545)} &
-      \multicolumn{1}{l|}{0,0381 (122070)} &
-      \multicolumn{1}{l|}{0,5126 (174608)} &
-      0,7962 (227990) \\ \hline
-    d1291 &
-      \multicolumn{1}{l|}{0,1927 (68067)} &
-      \multicolumn{1}{l|}{0,2930 (120889)} &
-      \multicolumn{1}{l|}{0,5711 (199096)} &
-      0,8421 (235376) &
-      \multicolumn{1}{l|}{0,1768 (67843)} &
-      \multicolumn{1}{l|}{0,1016 (140742)} &
-      \multicolumn{1}{l|}{0,5979 (196741)} &
-      0,7438 (238146) \\ \hline
-    \end{longtable}
+\begin{table}[htb]
+  \centering
+  \caption{Wydajność realizacji algorytmu genetycznego dla problemu komiwojażera w zależności od czasu przetwarzania oraz technologii - współczynnik jakości rozwiązania}
+  \label{tab:mtc-2}
+  \resizebox{\columnwidth}{!}{%
+  \begin{tabular}{|l|llll|llll|}
+  \hline
+  \multicolumn{1}{|c|}{\multirow{2}{*}{}} &
+    \multicolumn{4}{c|}{C\# / .NET} &
+    \multicolumn{4}{c|}{JavaScript / NodeJS} \\ \cline{2-9} 
+  \multicolumn{1}{|c|}{} &
+    \multicolumn{1}{c|}{15s} &
+    \multicolumn{1}{c|}{30s} &
+    \multicolumn{1}{c|}{45s} &
+    \multicolumn{1}{c|}{60s} &
+    \multicolumn{1}{c|}{15s} &
+    \multicolumn{1}{c|}{30s} &
+    \multicolumn{1}{c|}{45s} &
+    \multicolumn{1}{c|}{60s} \\ \hline
+  burma14 &
+    \multicolumn{1}{l|}{0,3462 } &
+    \multicolumn{1}{l|}{\textbf{0,6847}} &
+    \multicolumn{1}{l|}{0,8475 } &
+    \textbf{0,8589} &
+    \multicolumn{1}{l|}{0,2983 } &
+    \multicolumn{1}{l|}{\textbf{0,5943}} &
+    \multicolumn{1}{l|}{0,7636 } &
+    0,7579  \\ \hline
+  ulysses16 &
+    \multicolumn{1}{l|}{0,5299} &
+    \multicolumn{1}{l|}{0,3910 } &
+    \multicolumn{1}{l|}{0,9270 } &
+    0,6549  &
+    \multicolumn{1}{l|}{0,4817 } &
+    \multicolumn{1}{l|}{0,2857 } &
+    \multicolumn{1}{l|}{0,8297 } &
+    0,5354  \\ \hline
+  ulysses22 &
+    \multicolumn{1}{l|}{0,5271 } &
+    \multicolumn{1}{l|}{0,4171 } &
+    \multicolumn{1}{l|}{0,9312 } &
+    0,7824  &
+    \multicolumn{1}{l|}{\textbf{0,5488} } &
+    \multicolumn{1}{l|}{0,4668 } &
+    \multicolumn{1}{l|}{0,8728 } &
+    0,6717  \\ \hline
+  att48 &
+    \multicolumn{1}{l|}{0,0493 } &
+    \multicolumn{1}{l|}{0,0611 } &
+    \multicolumn{1}{l|}{0,3129 } &
+    0,2623  &
+    \multicolumn{1}{l|}{0,0242 } &
+    \multicolumn{1}{l|}{0,0238 } &
+    \multicolumn{1}{l|}{0,2413 } &
+    0,2903  \\ \hline
+  berlin52 &
+    \multicolumn{1}{l|}{0,2316 } &
+    \multicolumn{1}{l|}{0,2484 } &
+    \multicolumn{1}{l|}{\textbf{0,9718}} &
+    0,8398  &
+    \multicolumn{1}{l|}{0,2239 } &
+    \multicolumn{1}{l|}{0,3861 } &
+    \multicolumn{1}{l|}{\textbf{0,9202} } &
+    0,7642  \\ \hline
+  gr96 &
+    \multicolumn{1}{l|}{0,4798 } &
+    \multicolumn{1}{l|}{0,1617 } &
+    \multicolumn{1}{l|}{0,9274 } &
+    0,7808  &
+    \multicolumn{1}{l|}{0,4874 } &
+    \multicolumn{1}{l|}{0,1386 } &
+    \multicolumn{1}{l|}{0,8606 } &
+    0,7103  \\ \hline
+  bier127 &
+    \multicolumn{1}{l|}{0,2313 } &
+    \multicolumn{1}{l|}{0,1963 } &
+    \multicolumn{1}{l|}{0,8473 } &
+    0,8505  &
+    \multicolumn{1}{l|}{0,1162 } &
+    \multicolumn{1}{l|}{0,1928 } &
+    \multicolumn{1}{l|}{0,7906 } &
+    0,7792  \\ \hline
+  ch130 &
+    \multicolumn{1}{l|}{0,0947 } &
+    \multicolumn{1}{l|}{0,1328 } &
+    \multicolumn{1}{l|}{0,8072 } &
+    0,8066  &
+    \multicolumn{1}{l|}{0,0575 } &
+    \multicolumn{1}{l|}{0,1457 } &
+    \multicolumn{1}{l|}{0,7521 } &
+    0,6828  \\ \hline
+  ch150 &
+    \multicolumn{1}{l|}{0,0784 } &
+    \multicolumn{1}{l|}{0,1140 } &
+    \multicolumn{1}{l|}{0,8584 } &
+    0,7966  &
+    \multicolumn{1}{l|}{0,0812 } &
+    \multicolumn{1}{l|}{0,1483 } &
+    \multicolumn{1}{l|}{0,7900 } &
+    \textbf{0,7991 } \\ \hline
+  tsp225 &
+    \multicolumn{1}{l|}{0,2819 } &
+    \multicolumn{1}{l|}{0,0988 } &
+    \multicolumn{1}{l|}{0,7801 } &
+    0,8311  &
+    \multicolumn{1}{l|}{0,3057 } &
+    \multicolumn{1}{l|}{0,0826 } &
+    \multicolumn{1}{l|}{0,8209 } &
+    0,7533  \\ \hline
+  att532 &
+    \multicolumn{1}{l|}{0,0194 } &
+    \multicolumn{1}{l|}{0,0171 } &
+    \multicolumn{1}{l|}{0,2226 } &
+    0,2470  &
+    \multicolumn{1}{l|}{0,0116 } &
+    \multicolumn{1}{l|}{0,0233 } &
+    \multicolumn{1}{l|}{0,2650 } &
+    0,1498  \\ \hline
+  u574 &
+    \multicolumn{1}{l|}{\textbf{0,5940}} &
+    \multicolumn{1}{l|}{0,5454 } &
+    \multicolumn{1}{l|}{0,6460 } &
+    0,7872  &
+    \multicolumn{1}{l|}{0,4821 } &
+    \multicolumn{1}{l|}{0,3782 } &
+    \multicolumn{1}{l|}{0,5836 } &
+    0,6573  \\ \hline
+  u724 &
+    \multicolumn{1}{l|}{0,1620 } &
+    \multicolumn{1}{l|}{0,0483 } &
+    \multicolumn{1}{l|}{0,6529 } &
+    0,7718  &
+    \multicolumn{1}{l|}{0,0943 } &
+    \multicolumn{1}{l|}{0,0472 } &
+    \multicolumn{1}{l|}{0,5747 } &
+    0,6369  \\ \hline
+  vm1084 &
+    \multicolumn{1}{l|}{0,0289 } &
+    \multicolumn{1}{l|}{0,0273 } &
+    \multicolumn{1}{l|}{0,5971 } &
+    0,7938  &
+    \multicolumn{1}{l|}{0,0051 } &
+    \multicolumn{1}{l|}{0,0381 } &
+    \multicolumn{1}{l|}{0,5126 } &
+    0,7962  \\ \hline
+  d1291 &
+    \multicolumn{1}{l|}{0,1927 } &
+    \multicolumn{1}{l|}{0,2930 } &
+    \multicolumn{1}{l|}{0,5711 } &
+    0,8421  &
+    \multicolumn{1}{l|}{0,1768 } &
+    \multicolumn{1}{l|}{0,1016 } &
+    \multicolumn{1}{l|}{0,5979 } &
+    0,7438  \\ \hline
+    \multicolumn{1}{|l|}{Średnia ranga} &
+    \multicolumn{1}{l|}{3,0000} &
+    \multicolumn{1}{l|}{2,6667} &
+    \multicolumn{1}{l|}{7,0667} &
+    \multicolumn{1}{l|}{7,0000} &
+    \multicolumn{1}{l|}{2,1334} &
+    \multicolumn{1}{l|}{2,6667} &
+    \multicolumn{1}{l|}{6,0667} &
+    \multicolumn{1}{l|}{5,8000} \\ \hline
+  \end{tabular}%
+  }
+\end{table}
+
+\begin{table}[htb]
+  \centering
+  \caption{Wydajność realizacji algorytmu genetycznego dla problemu komiwojażera w zależności od czasu przetwarzania oraz technologii - liczba iteracji pętli algorytmu}
+  \label{tab:mtc-2-2}
+  \resizebox{\columnwidth}{!}{%
+  \begin{tabular}{|l|llll|llll|}
+  \hline
+  \multicolumn{1}{|c|}{\multirow{2}{*}{}} &
+    \multicolumn{4}{c|}{C\# / .NET} &
+    \multicolumn{4}{c|}{JavaScript / NodeJS} \\ \cline{2-9} 
+  \multicolumn{1}{|c|}{} &
+    \multicolumn{1}{c|}{15s} &
+    \multicolumn{1}{c|}{30s} &
+    \multicolumn{1}{c|}{45s} &
+    \multicolumn{1}{c|}{60s} &
+    \multicolumn{1}{c|}{15s} &
+    \multicolumn{1}{c|}{30s} &
+    \multicolumn{1}{c|}{45s} &
+    \multicolumn{1}{c|}{60s} \\ \hline
+  burma14 &
+    \multicolumn{1}{l|}{71725} &
+    \multicolumn{1}{l|}{130514} &
+    \multicolumn{1}{l|}{201224} &
+    \multicolumn{1}{l|}{\textbf{248972}} &
+    \multicolumn{1}{l|}{71747} &
+    \multicolumn{1}{l|}{129134} &
+    \multicolumn{1}{l|}{\textbf{205306}} &
+    227232 \\ \hline
+  ulysses16 &
+    \multicolumn{1}{l|}{68491} &
+    \multicolumn{1}{l|}{124929} &
+    \multicolumn{1}{l|}{174385} &
+    244773 &
+    \multicolumn{1}{l|}{68488} &
+    \multicolumn{1}{l|}{122619} &
+    \multicolumn{1}{l|}{192590} &
+    219521 \\ \hline
+  ulysses22 &
+    \multicolumn{1}{l|}{33520} &
+    \multicolumn{1}{l|}{117580} &
+    \multicolumn{1}{l|}{164707} &
+    224099 &
+    \multicolumn{1}{l|}{63802} &
+    \multicolumn{1}{l|}{129397} &
+    \multicolumn{1}{l|}{176319} &
+    203753 \\ \hline
+  att48 &
+    \multicolumn{1}{l|}{62550} &
+    \multicolumn{1}{l|}{120072} &
+    \multicolumn{1}{l|}{183853} &
+    233205 &
+    \multicolumn{1}{l|}{62843} &
+    \multicolumn{1}{l|}{134376} &
+    \multicolumn{1}{l|}{157470} &
+    198158 \\ \hline
+  berlin52 &
+    \multicolumn{1}{l|}{\textbf{72721}} &
+    \multicolumn{1}{l|}{114196} &
+    \multicolumn{1}{l|}{190914} &
+    235500 &
+    \multicolumn{1}{l|}{\textbf{72331}} &
+    \multicolumn{1}{l|}{122215} &
+    \multicolumn{1}{l|}{182668} &
+    237310 \\ \hline
+  gr96 &
+    \multicolumn{1}{l|}{62745} &
+    \multicolumn{1}{l|}{133156} &
+    \multicolumn{1}{l|}{172122} &
+    203419 &
+    \multicolumn{1}{l|}{63117} &
+    \multicolumn{1}{l|}{99062} &
+    \multicolumn{1}{l|}{162453} &
+    204787 \\ \hline
+  bier127 &
+    \multicolumn{1}{l|}{66491} &
+    \multicolumn{1}{l|}{132354} &
+    \multicolumn{1}{l|}{179792} &
+    247307 &
+    \multicolumn{1}{l|}{66123} &
+    \multicolumn{1}{l|}{117603} &
+    \multicolumn{1}{l|}{188063} &
+    227924 \\ \hline
+  ch130 &
+    \multicolumn{1}{l|}{62713} &
+    \multicolumn{1}{l|}{118125} &
+    \multicolumn{1}{l|}{174455} &
+    234333 &
+    \multicolumn{1}{l|}{62785} &
+    \multicolumn{1}{l|}{127119} &
+    \multicolumn{1}{l|}{159485} &
+   223465 \\ \hline
+  ch150 &
+    \multicolumn{1}{l|}{66845} &
+    \multicolumn{1}{l|}{123024} &
+    \multicolumn{1}{l|}{179031} &
+    235174 &
+    \multicolumn{1}{l|}{66984} &
+    \multicolumn{1}{l|}{138917} &
+    \multicolumn{1}{l|}{185943} &
+    211357 \\ \hline
+  tsp225 &
+    \multicolumn{1}{l|}{61923} &
+    \multicolumn{1}{l|}{124816} &
+    \multicolumn{1}{l|}{163056} &
+    202829 &
+    \multicolumn{1}{l|}{61479} &
+    \multicolumn{1}{l|}{126286} &
+    \multicolumn{1}{l|}{173199} &
+    224409 \\ \hline
+  att532 &
+    \multicolumn{1}{l|}{65333} &
+    \multicolumn{1}{l|}{\textbf{153374}} &
+    \multicolumn{1}{l|}{188061} &
+    220558 &
+    \multicolumn{1}{l|}{65372} &
+    \multicolumn{1}{l|}{121134} &
+    \multicolumn{1}{l|}{173916} &
+    240112 \\ \hline
+  u574 &
+    \multicolumn{1}{l|}{70850} &
+    \multicolumn{1}{l|}{133559} &
+    \multicolumn{1}{l|}{190742} &
+    231134 &
+    \multicolumn{1}{l|}{70639} &
+    \multicolumn{1}{l|}{106502} &
+    \multicolumn{1}{l|}{196297} &
+    \textbf{248733} \\ \hline
+  u724 &
+    \multicolumn{1}{l|}{69793} &
+    \multicolumn{1}{l|}{120363} &
+    \multicolumn{1}{l|}{\textbf{205031}} &
+    226060 &
+    \multicolumn{1}{l|}{69700} &
+    \multicolumn{1}{l|}{117866} &
+    \multicolumn{1}{l|}{200697} &
+    229731 \\ \hline
+  vm1084 &
+    \multicolumn{1}{l|}{64393} &
+    \multicolumn{1}{l|}{111650} &
+    \multicolumn{1}{l|}{192909} &
+    225794 &
+    \multicolumn{1}{l|}{64545} &
+    \multicolumn{1}{l|}{122070} &
+    \multicolumn{1}{l|}{174608} &
+    227990 \\ \hline
+  d1291 &
+    \multicolumn{1}{l|}{68067} &
+    \multicolumn{1}{l|}{120889} &
+    \multicolumn{1}{l|}{199096} &
+    235376 &
+    \multicolumn{1}{l|}{67843} &
+    \multicolumn{1}{l|}{\textbf{140742}} &
+    \multicolumn{1}{l|}{196741} &
+    238146 \\ \hline
+  \end{tabular}%
+  }
+\end{table}
 
 Analizując powyższe wyniki, zauważyć należy przewagę interfejsu programowania aplikacji zaimplementowanego w technologii C\# .NET, w kontekście wartości współczynnika jakości rozwiązania. Na 60 uśrednionych wartości tego parametru, interfejs API NodeJS notuje wyniki lepsze zaledwie w 15 przypadkach. Ponadto, zauważyć należy, że niezależnie od technologii, czas wykonywania algorytmu nie zawsze musi przekładać się na uzyskanie lepszego rozwiązania. Niedeterministyczna charakterystyka algorytmu genetycznego jest powodem pojawiania się gorszych rozwiązań, pomimo pracy algorytmu przez dłuższy czas. Odnosząc się do wartości liczby iteracji głównej pętli programu, różnice cechujące się określoną tendencją nie są zauważalne. Wynika to z dwóch następujących faktów. Po pierwsze, kod źródłowy C\#, z chwilą translacji do języka pośredniego \textit{(ang. intermediate language)}, ulega wewnętrznej optymalizacji przeprowadzanej bezpośrednio przez mechanizmy języka. Po drugie, mechanizmy wykorzystywane do przetwarzania list w C\# dostępne w ramach biblioteki LINQ, wprowadzają dodatkowy narzut związany z koniecznością budowy wewnętrznej struktury danych związanej z przetwarzaną listą. Dlatego też, jakikolwiek wzrost efektywności związany ze wspomnianymi w pierwszym fakcie optymalizacjami, może zostać redukowany poprzez spadek wydajnościowy wprowadzany przez instrukcje przetwarzania list. Mechanizmy przetwarzania kolekcji w ramach języka JavaScript z kolei, nie wprowadzają dodatkowego opóźnienia w wykonywaniu kodu, jednakże na etapie interpretacji wydajność implementowanego programu nie ulega zmianie.
 
 Odwołując się do różnic w kontekście opracowywanych kolekcji danych, zauważyć można bardzo słabe rezultaty dla zbiorów \textbf{att48} oraz \textbf{att532}. Uzyskane w tych przypadkach długości najkrótszych tras są niemalże 5 krotnie większe, niż rozwiązania optymalne. Z drugiej strony, zaobserwować możemy rozwiązania znacząco bliskie optymalnym w odniesieniu do zbioru \textbf{gr96} dla interfejsu NodeJS oraz zbioru \textbf{bier127} dla interfejsu C\# .NET.
+
+W celu wykazania istnotnych statystycznie różnic dotyczących rezultatów zgromadzonych dla określonych konfiguracji badania, wykonano parowe testy statystyczne bazujące na teście Wilcoxona. Test ten, jest nieparametryczną odmianą procedury t-Studenta, zakładającą jako hipotezę zerową zgodność wartości środkowych w odpowiadających sobie populacjach. Jako poziom istotności przyjęto wartość 0,05. Na podstawie tego właśnie testu, wyliczono średnie rangi dla poszczególnych czasów wykonania algorytmów w kontekście wartości współczynnika uzyskanego rezultatu do rozwiązania optymalnego.
+
+Analizując przeprowadzoną ewaluację statystyczną, wykazać należy istotną wyższość rozwiązań uzyskanych przez interfejs programowania aplikacji języka C\# w kontekście czasów wykonania równych 45s oraz 60s. W pozostałych przypadkach różnice nie są istotne statystycznie przy uwzględnieniu poziomu istotności 0,05. Macierz istotności statystycznej przedstawiono w tabeli \ref{tab:stat-mtc2}.
+
+\begin{table}[htb]
+  \centering
+  \caption{Macierz istotności statystycznej dla współczynników jakości rozwiązania pozyskanych w ramach badania wydajności obsługi operacji współbieżnych}
+  \label{tab:stat-mtc2}
+  \resizebox{\columnwidth}{!}{%
+  \begin{tabular}{|c|c|c|c|c|c|c|c|c|}
+  \hline
+   &
+    \textbf{15s (C\#)} &
+    \textbf{30s (C\#)} &
+    \textbf{45s (C\#)} &
+    \textbf{60s (C\#)} &
+    \textbf{15s (NodeJS)} &
+    \textbf{30s (NodeJS)} &
+    \textbf{45s (NodeJS)} &
+    \textbf{60s (NodeJS)} \\ \hline
+  \textbf{15s (C\#)}    & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\ \hline
+  \textbf{30s (C\#)}    & 1 & 0 & 0 & 0 & 1 & 0 & 0 & 0 \\ \hline
+  \textbf{45s (C\#)}    & 1 & 1 & 0 & 0 & 1 & 1 & 1 & 0 \\ \hline
+  \textbf{60s (C\#)}    & 1 & 1 & 1 & 0 & 1 & 1 & 1 & 1 \\ \hline
+  \textbf{15s (NodeJS)} & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\ \hline
+  \textbf{30s (NodeJS)} & 0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 \\ \hline
+  \textbf{45s (NodeJS)} & 1 & 1 & 0 & 0 & 1 & 1 & 0 & 0 \\ \hline
+  \textbf{60s (NodeJS)} & 1 & 1 & 0 & 0 & 1 & 1 & 0 & 0 \\ \hline
+  \end{tabular}%
+  }
+  \end{table}
+
 \section{Wpływ zastosowanej technologii na efektywność obsługi operacji asynchronicznych}
 W ramach omawianego badania dokonano analizy wydajności realizacji operacji asynchronicznych względem technologii wykorzystywanych do implementacji porównywanych interfejsów programowania aplikacji. Operacje te, znajdują szerokie zastosowanie wewnątrz kodu źródłowego usług sieciowych, będąc wykorzystywanym w celu uzyskania dostępu i zarządzania plikami, odwoływania się do zewnętrznych źródeł danych, czy też synchronizowania egzekucji wybranych fragmentów kodu programu w czasie.
 
@@ -318,7 +528,7 @@ Zrealizowany eksperyment polegał na obserwacji czasów wykonań operacji asynch
 
 Pozyskane w ramach badania rezultaty uśredniono, a następnie zaprezentowano na wykresie \ref{fig:async-times}. Zdecydowano się nie uwzględniać metryki procentowego błędu związanego z niepoprawnym wykonaniem żądań, ponieważ niezależnie od poddawanego analizie przypadku, był on równy zero.
 
-\begin{figure}[ht]
+\begin{figure}[htb]
   \centering
    \includegraphics[width=\linewidth]{rys05/async-times.pdf}
   \caption{Uśredniony czas realizacji operacji asynchronicznych względem zmiennej liczby pobieranych encji}
@@ -328,7 +538,7 @@ Pozyskane w ramach badania rezultaty uśredniono, a następnie zaprezentowano na
 Zauważyć należy znaczącą wyższość rozwiązania opartego o technologie JavaScript / NodeJS, względem oprogramowania utworzonego z wykorzystaniem C\# .NET. Dla najmniejszej liczby pozyskiwanych encji, różnica średnich czasów odpowiedzi jest ponad 25 krotna. Wraz ze zwiększaniem liczebności pozyskiwanych obiektów modelu danych średni czas odpowiedzi dla NodeJS rośnie co prawda w szybszym tempie, niż ma to miejsce w kontekście rozwiązania uruchamianego na platformie .NET, jednakże nawet dla największej spośród liczb encji, dysproporcja wyników jest ponad dwukrotna. Warto zwrócić również uwagę na dyspersję poszczególnych rozwiązań względem przedstawionych średnich. Zaobserwować można zdecydowanie mniejsze odchylenia standardowe w odniesieniu do rozwiązania języka JavaScript, które zgodnie ze spodziewaną tendencją zwiększają się wraz z liczbą obiektów modelu danych. Dla dużych liczebności encji bazodanowych, rozwiązanie implementowane w języku C\# w niewielkiej liczbie przypadków uzyskuje wyniki bliskie średniej.
 
 Tak znacząca dyferencja w kontekście obu interfejsów programowania aplikacji, wynikać może z implementacji natywnych rozwiązań klienta protokołu hipertekstowego. W środowisku NodeJS, klient ten posiada niewiele opcji konfiguracyjnych, a jakiekolwiek bardziej zaawansowane żądania, realizowane są z wykorzystaniem zewnętrznych bibliotek. Ponadto, klient ten, jest częścią rdzennego modułu środowiska NodeJS, obsługującego zoptymalizowaną komunikację hipertekstową. Rozwiązanie służące do komunikacji HTTP dla języka C\# jest mechanizmem dostarczanym przez biblioteki standardowe języka programowania, a nie samego środowiska uruchomieniowego. Oznacza to, że rozwiązanie dla tej właśnie technologii musi posiadać bardziej generyczną charakterystykę, aby móc być zastosowanym w dowolnym z przypadków użycia języka.
-\section{Wpływ implementacji wzorca projektowego podziału odpowiedzialności na wydajność obsługi żądania}
+\section{Wpływ implementacji wzorca projektowego CQRS na wydajność obsługi żądania}
 \label{sec:cqrs-and-database-improvements}
 Celem niniejszego badania była obserwacja wpływu wdrożenia wzorca projektowego podziału odpowiedzialności, a także usprawnień wydajnościowych względem odseparowanych modeli encji, na wydajność obsługi żądań dla ocenianych interfejsów programowania aplikacji. Wdrożenie wzorca projektowego miało na celu odseparowanie operacji dotyczących odczytu danych, od tych, dokonujących ich modyfikacji. Separacja ta, występowała zarówno na poziomie logicznym (tj. modelu danych), jak i fizycznym (tj. systemu bazodanowego). Dzięki temu, możliwe było wprowadzenie optymalizacji wydajnościowych względem modelu odczytu. Aby zachować spójność informacji pomiędzy bazami danych, wprowadzono ponadto mechanizm replikacji transakcyjnej, działający w warstwie systemu bazodanowego. Po wysłaniu wiadomości modyfikującej dane, określony rekord jest zmieniany w bazie zapisu, a następnie wysyłany jest komunikat synchronizacji zmian w kierunku bazy odczytu. Szczegóły implementacyjne dotyczące omawianego badania przedstawiono w sekcji \ref{sec:implementacja-cqrs-i-replikacji}.
 
@@ -358,7 +568,7 @@ Dla procedury odczytu danych, po wprowadzeniu opisywanych w niniejszym badaniu u
 Odnosząc się do procedury zapisu danych, przedział liczby wątków oprogramowania testowego, w ramach którego nie wystąpiły błędne żądania, rozszerzył się o \textbf{1190} procesów w przypadku interfejsu napisanego w języku JavaScript, a także o \textbf{765} procesów w przypadku api implementowanego w C\#. Doprowadziło to do spadku średniego czasu odpowiedzi w momencie szczytowym o \textbf{6225ms} dla pierwszej z wymienionych technologii, a także o \textbf{1677ms} dla drugiej z nich.
 
 Analizując powyższe rezultaty, należy także spojrzeć na nie przez pryzmat ilości zmian, jakie zostały wprowadzone dla poszczególnych technologii. Mówiąc o interfejsie programowania aplikacji języka JavaScript, modyfikacje sprowadzały się do usprawnień na poziomie bazy danych, a także w kontekście momentu uruchamiania instancji mapera obiektowo-relacyjnego. Pomimo stosunkowo niewielkiej liczby zaimplementowanych adaptacji, wydajność rozwiązania wzrosła w sposób znaczący. Lekko odmienną tendencję zauważyć można dla usługi sieciowej napisanej w języku C\#. W tym przypadku wprowadzono nie tylko analogiczne względem konkurenta poprawki, ale także dodatkowo skorzystano z mechanizmów poprawy wydajności, specyficznych względem tylko tej technologii. Co prawda implementacja określonych modyfikacji wpłynęła pozytywnie na efektywność działania interfejsu, to zmiana ta, nie jest tak znacząca, jak dla rozwiązania opartego o technologię JavaScript / NodeJS. 
-\section{Porównanie efektywności obsługi zapytań z uwzględnieniem odmiennych mechanizmów pamięci podręcznej}
+\section{Porównanie efektywności obsługi zapytań dla odmiennych mechanizmów pamięci podręcznej}
 W przedstawionym badaniu dokonano porównania wydajności obsługi żądań klienckich, dotyczących pozyskiwania obiektów danych, w odniesieniu do wykorzystania zaimplementowanych mechanizmów pamięci podręcznej. Wydajność w ramach przeprowadzonej ewaluacji rozumiana była poprzez czas odpowiedzi na żądanie. Warto zaznaczyć, że nie uwzględniono parametru dotyczącego liczby niepoprawnych zapytań ponieważ dla żadnej z próbek, nie uzyskano nieprawidłowej odpowiedzi.
 
 Zdecydowano się na wdrożenie dwóch mechanizmów obsługi pamięci podręcznej. Działanie pierwszego z nich, nazywanego mechanizmem statycznym, polega na zapamiętywaniu odpowiedzi w kontekście żądania o określonych właściwościach (tj. identyfikator zasobu, parametry zapytania), a także przetrzymywaniu jej w buforze przez stały, określony czas. Jeżeli zapytanie charakteryzujące się znaną uprzednio strukturą, zostanie odebrane w tym właśnie czasie, odpowiedź nie zostanie pobrana z bazy danych, a dostarczona bezpośrednio z omawianego bufora. Drugi mechanizm jest autorskim pomysłem twórcy niniejszej pracy i uwzględnia zmienność czasu przechowywania wpisu w odniesieniu do częstości wywoływań, a także unieważnień danych przechowywanych w pamięci cache. Mechanizm ten, wykorzystuje ponadto osobną strukturę danych, która jest aktualizowana przy wywołaniu dowolnego punktu końcowego, a gromadzone w niej dane, dostarczają informacji niezbędnych do wyliczania czasu zapamiętywania wpisu w cache. Niezależnie od omawianego mechanizmu, punkty końcowe odpowiedzialne za modyfikację danych, dla których wpisy przechowywane są w pamięci podręcznej, uruchamiają procedurę unieważnienia określonych obiektów encji. Szczegóły implementacyjne dotyczące obu mechanizmów pamięci podręcznej przytoczone zostały w sekcji \ref{sec:mechanizmy-cache}.
@@ -371,211 +581,210 @@ Badanie przeprowadzono zgodnie z koncepcją zarysowaną w scenariuszu badawczym 
 
 W tabeli \ref{tab:mtc-5-table} zaprezentowano elementy charakterystyczne dla każdego z dwudziestu eksperymentów, a także rezultaty jakie w kontekście nich odnotowano. Moment unieważnienia rozumiany jest jako punkt na osi czasu, kiedy nastąpiło wywołanie żądania aktualizacji encji bazodanowych. Czasy odpowiedzi na żądanie oraz liczby żądań powyżej 500ms odnoszą się do punktu końcowego pozyskiwania kolekcji obiektów danych.
 
-\begin{longtable}[c]{|c|c|ccccc|c|c|}
-  \caption{Wydajność metod obsługi pamięci podręcznej względem technologii oraz momentu unieważnienia wpisu}
-  \label{tab:mtc-5-table}\\
-  \hline
-  \multirow{2}{*}{} &
-    \multirow{2}{*}{Typ metody} &
-    \multicolumn{5}{c|}{Moment unieważnienia} &
-    \multirow{2}{*}{Liczba żądań \textgreater 500ms} &
-    \multirow{2}{*}{Zysk względem rozwiązania alternatywnego} \\ \cline{3-7}
+\begin{table}[htb] \small
+\centering
+\caption{Wydajność metod obsługi pamięci podręcznej względem technologii oraz momentu unieważnienia wpisu}
+\label{tab:mtc-5-table}
+\resizebox{\columnwidth}{!}{%
+\begin{tabular}{|c|c|ccccc|c|c|}
+\hline
+\multirow{2}{*}{} &
+  \multirow{2}{*}{Typ metody} &
+  \multicolumn{5}{c|}{Moment unieważnienia} &
+  \multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}Liczba żądań\\ \textgreater 500ms\end{tabular}} &
+  \multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}Zysk względem\\ rozwiązania alternatywnego\end{tabular}} \\ \cline{3-7}
+  &
    &
-     &
-    \multicolumn{1}{c|}{\#1} &
-    \multicolumn{1}{c|}{\#2} &
-    \multicolumn{1}{c|}{\#3} &
-    \multicolumn{1}{c|}{\#4} &
-    \#5 &
-     &
-     \\ \hline
-  \endfirsthead
-  %
-  \multicolumn{9}{c}%
-  {{\bfseries Table \thetable\ continued from previous page}} \\
-  \endhead
-  %
-  \multirow{2}{*}{C\# / .NET} &
-    statyczna &
-    \multicolumn{1}{c|}{06:40} &
-    \multicolumn{1}{c|}{10:00} &
-    \multicolumn{1}{c|}{13:20} &
-    \multicolumn{1}{c|}{15:00} &
-    19:40 &
-    10 &
-    - \\ \cline{2-9} 
+  \multicolumn{1}{c|}{\#1} &
+  \multicolumn{1}{c|}{\#2} &
+  \multicolumn{1}{c|}{\#3} &
+  \multicolumn{1}{c|}{\#4} &
+  \#5 &
    &
-    autorska &
-    \multicolumn{1}{c|}{06:40} &
-    \multicolumn{1}{c|}{10:00} &
-    \multicolumn{1}{c|}{13:20} &
-    \multicolumn{1}{c|}{15:00} &
-    19:40 &
-    9 &
-    13,77 ms \\ \hline
-  \multirow{2}{*}{C\# / .NET} &
-    statyczna &
-    \multicolumn{1}{c|}{00:32} &
-    \multicolumn{1}{c|}{03:45} &
-    \multicolumn{1}{c|}{06:52} &
-    \multicolumn{1}{c|}{07:49} &
-    16:40 &
-    8 &
-    20,16 ms \\ \cline{2-9} 
-   &
-    autorska &
-    \multicolumn{1}{c|}{00:32} &
-    \multicolumn{1}{c|}{03:45} &
-    \multicolumn{1}{c|}{06:52} &
-    \multicolumn{1}{c|}{07:49} &
-    16:40 &
-    12 &
-    - \\ \hline
-  \multirow{2}{*}{C\# / .NET} &
-    statyczna &
-    \multicolumn{1}{c|}{02:44} &
-    \multicolumn{1}{c|}{06:30} &
-    \multicolumn{1}{c|}{14:27} &
-    \multicolumn{1}{c|}{16:55} &
-    19:42 &
-    14 &
-    - \\ \cline{2-9} 
-   &
-    autorska &
-    \multicolumn{1}{c|}{02:44} &
-    \multicolumn{1}{c|}{06:30} &
-    \multicolumn{1}{c|}{14:27} &
-    \multicolumn{1}{c|}{16:55} &
-    19:42 &
-    10 &
-    12,54 ms \\ \hline
-  \multirow{2}{*}{C\# / .NET} &
-    statyczna &
-    \multicolumn{1}{c|}{01:15} &
-    \multicolumn{1}{c|}{05:29} &
-    \multicolumn{1}{c|}{08:31} &
-    \multicolumn{1}{c|}{14:48} &
-    17:45 &
-    15 &
-    - \\ \cline{2-9} 
-   &
-    autorska &
-    \multicolumn{1}{c|}{01:15} &
-    \multicolumn{1}{c|}{05:29} &
-    \multicolumn{1}{c|}{08:31} &
-    \multicolumn{1}{c|}{14:48} &
-    17:45 &
-    13 &
-    19,29 ms \\ \hline
-  \multirow{2}{*}{C\# / .NET} &
-    statyczna &
-    \multicolumn{1}{c|}{02:01} &
-    \multicolumn{1}{c|}{07:32} &
-    \multicolumn{1}{c|}{12:00} &
-    \multicolumn{1}{c|}{13:27} &
-    15:56 &
-    16 &
-    24,85 ms \\ \cline{2-9} 
-   &
-    autorska &
-    \multicolumn{1}{c|}{02:01} &
-    \multicolumn{1}{c|}{07:32} &
-    \multicolumn{1}{c|}{12:00} &
-    \multicolumn{1}{c|}{13:27} &
-    15:56 &
-    20 &
-    - \\ \hline
-  \multirow{2}{*}{JS / NodeJS} &
-    statyczna &
-    \multicolumn{1}{c|}{06:40} &
-    \multicolumn{1}{c|}{10:00} &
-    \multicolumn{1}{c|}{13:20} &
-    \multicolumn{1}{c|}{15:00} &
-    19:40 &
-    17 &
-    - \\ \cline{2-9} 
-   &
-    autorska &
-    \multicolumn{1}{c|}{06:40} &
-    \multicolumn{1}{c|}{10:00} &
-    \multicolumn{1}{c|}{13:20} &
-    \multicolumn{1}{c|}{15:00} &
-    19:40 &
-    14 &
-    18,13ms \\ \hline
-  \multirow{2}{*}{JS / NodeJS} &
-    statyczna &
-    \multicolumn{1}{c|}{00:32} &
-    \multicolumn{1}{c|}{03:45} &
-    \multicolumn{1}{c|}{06:52} &
-    \multicolumn{1}{c|}{07:49} &
-    16:40 &
-    13 &
-    23,14 ms \\ \cline{2-9} 
-   &
-    autorska &
-    \multicolumn{1}{c|}{00:32} &
-    \multicolumn{1}{c|}{03:45} &
-    \multicolumn{1}{c|}{06:52} &
-    \multicolumn{1}{c|}{07:49} &
-    16:40 &
-    15 &
-    - \\ \hline
-  \multirow{2}{*}{JS / NodeJS} &
-    statyczna &
-    \multicolumn{1}{c|}{02:44} &
-    \multicolumn{1}{c|}{06:30} &
-    \multicolumn{1}{c|}{14:27} &
-    \multicolumn{1}{c|}{16:55} &
-    19:42 &
-    11 &
-    11,97 ms \\ \cline{2-9} 
-   &
-    autorska &
-    \multicolumn{1}{c|}{02:44} &
-    \multicolumn{1}{c|}{06:30} &
-    \multicolumn{1}{c|}{14:27} &
-    \multicolumn{1}{c|}{16:55} &
-    19:42 &
-    16 &
-    - \\ \hline
-  \multirow{2}{*}{JS / NodeJS} &
-    statyczna &
-    \multicolumn{1}{c|}{01:15} &
-    \multicolumn{1}{c|}{05:29} &
-    \multicolumn{1}{c|}{08:31} &
-    \multicolumn{1}{c|}{14:48} &
-    17:45 &
-    14 &
-    - \\ \cline{2-9} 
-   &
-    autorska &
-    \multicolumn{1}{c|}{01:15} &
-    \multicolumn{1}{c|}{05:29} &
-    \multicolumn{1}{c|}{08:31} &
-    \multicolumn{1}{c|}{14:48} &
-    17:45 &
-    8 &
-    21,91 ms \\ \hline
-  \multirow{2}{*}{JS / NodeJS} &
-    statyczna &
-    \multicolumn{1}{c|}{02:01} &
-    \multicolumn{1}{c|}{07:32} &
-    \multicolumn{1}{c|}{12:00} &
-    \multicolumn{1}{c|}{13:27} &
-    15:56 &
-    15 &
-    - \\ \cline{2-9} 
-   &
-    autorska &
-    \multicolumn{1}{c|}{02:01} &
-    \multicolumn{1}{c|}{07:32} &
-    \multicolumn{1}{c|}{12:00} &
-    \multicolumn{1}{c|}{13:27} &
-    15:56 &
-    13 &
-    14,35 ms \\ \hline
-  \end{longtable}
+   \\ \hline\hline\
+\multirow{2}{*}{C\# / .NET} &
+  statyczna &
+  \multicolumn{1}{c|}{06:40} &
+  \multicolumn{1}{c|}{10:00} &
+  \multicolumn{1}{c|}{13:20} &
+  \multicolumn{1}{c|}{15:00} &
+  19:40 &
+  10 &
+  - \\ \cline{2-9} 
+ &
+  \textbf{autorska} &
+  \multicolumn{1}{c|}{06:40} &
+  \multicolumn{1}{c|}{10:00} &
+  \multicolumn{1}{c|}{13:20} &
+  \multicolumn{1}{c|}{15:00} &
+  19:40 &
+  9 &
+  13,77 ms \\ \hline
+\multirow{2}{*}{C\# / .NET} &
+  statyczna &
+  \multicolumn{1}{c|}{00:32} &
+  \multicolumn{1}{c|}{03:45} &
+  \multicolumn{1}{c|}{06:52} &
+  \multicolumn{1}{c|}{07:49} &
+  16:40 &
+  8 &
+  20,16 ms \\ \cline{2-9} 
+ &
+  autorska &
+  \multicolumn{1}{c|}{00:32} &
+  \multicolumn{1}{c|}{03:45} &
+  \multicolumn{1}{c|}{06:52} &
+  \multicolumn{1}{c|}{07:49} &
+  16:40 &
+  12 &
+  - \\ \hline
+\multirow{2}{*}{C\# / .NET} &
+  statyczna &
+  \multicolumn{1}{c|}{02:44} &
+  \multicolumn{1}{c|}{06:30} &
+  \multicolumn{1}{c|}{14:27} &
+  \multicolumn{1}{c|}{16:55} &
+  19:42 &
+  14 &
+  - \\ \cline{2-9} 
+ &
+  \textbf{autorska} &
+  \multicolumn{1}{c|}{02:44} &
+  \multicolumn{1}{c|}{06:30} &
+  \multicolumn{1}{c|}{14:27} &
+  \multicolumn{1}{c|}{16:55} &
+  19:42 &
+  10 &
+  12,54 ms \\ \hline
+\multirow{2}{*}{C\# / .NET} &
+  statyczna &
+  \multicolumn{1}{c|}{01:15} &
+  \multicolumn{1}{c|}{05:29} &
+  \multicolumn{1}{c|}{08:31} &
+  \multicolumn{1}{c|}{14:48} &
+  17:45 &
+  15 &
+  - \\ \cline{2-9} 
+ &
+  \textbf{autorska} &
+  \multicolumn{1}{c|}{01:15} &
+  \multicolumn{1}{c|}{05:29} &
+  \multicolumn{1}{c|}{08:31} &
+  \multicolumn{1}{c|}{14:48} &
+  17:45 &
+  13 &
+  19,29 ms \\ \hline
+\multirow{2}{*}{C\# / .NET} &
+  statyczna &
+  \multicolumn{1}{c|}{02:01} &
+  \multicolumn{1}{c|}{07:32} &
+  \multicolumn{1}{c|}{12:00} &
+  \multicolumn{1}{c|}{13:27} &
+  15:56 &
+  16 &
+  24,85 ms \\ \cline{2-9} 
+ &
+  autorska &
+  \multicolumn{1}{c|}{02:01} &
+  \multicolumn{1}{c|}{07:32} &
+  \multicolumn{1}{c|}{12:00} &
+  \multicolumn{1}{c|}{13:27} &
+  15:56 &
+  20 &
+  - \\ \hline
+\multirow{2}{*}{JS / NodeJS} &
+  statyczna &
+  \multicolumn{1}{c|}{06:40} &
+  \multicolumn{1}{c|}{10:00} &
+  \multicolumn{1}{c|}{13:20} &
+  \multicolumn{1}{c|}{15:00} &
+  19:40 &
+  17 &
+  - \\ \cline{2-9} 
+ &
+  \textbf{autorska} &
+  \multicolumn{1}{c|}{06:40} &
+  \multicolumn{1}{c|}{10:00} &
+  \multicolumn{1}{c|}{13:20} &
+  \multicolumn{1}{c|}{15:00} &
+  19:40 &
+  14 &
+  18,13ms \\ \hline
+\multirow{2}{*}{JS / NodeJS} &
+  statyczna &
+  \multicolumn{1}{c|}{00:32} &
+  \multicolumn{1}{c|}{03:45} &
+  \multicolumn{1}{c|}{06:52} &
+  \multicolumn{1}{c|}{07:49} &
+  16:40 &
+  13 &
+  23,14 ms \\ \cline{2-9} 
+ &
+  autorska &
+  \multicolumn{1}{c|}{00:32} &
+  \multicolumn{1}{c|}{03:45} &
+  \multicolumn{1}{c|}{06:52} &
+  \multicolumn{1}{c|}{07:49} &
+  16:40 &
+  15 &
+  - \\ \hline
+\multirow{2}{*}{JS / NodeJS} &
+  statyczna &
+  \multicolumn{1}{c|}{02:44} &
+  \multicolumn{1}{c|}{06:30} &
+  \multicolumn{1}{c|}{14:27} &
+  \multicolumn{1}{c|}{16:55} &
+  19:42 &
+  11 &
+  11,97 ms \\ \cline{2-9} 
+ &
+  autorska &
+  \multicolumn{1}{c|}{02:44} &
+  \multicolumn{1}{c|}{06:30} &
+  \multicolumn{1}{c|}{14:27} &
+  \multicolumn{1}{c|}{16:55} &
+  19:42 &
+  16 &
+  - \\ \hline
+\multirow{2}{*}{JS / NodeJS} &
+  statyczna &
+  \multicolumn{1}{c|}{01:15} &
+  \multicolumn{1}{c|}{05:29} &
+  \multicolumn{1}{c|}{08:31} &
+  \multicolumn{1}{c|}{14:48} &
+  17:45 &
+  14 &
+  - \\ \cline{2-9} 
+ &
+  \textbf{autorska} &
+  \multicolumn{1}{c|}{01:15} &
+  \multicolumn{1}{c|}{05:29} &
+  \multicolumn{1}{c|}{08:31} &
+  \multicolumn{1}{c|}{14:48} &
+  17:45 &
+  8 &
+  21,91 ms \\ \hline
+\multirow{2}{*}{JS / NodeJS} &
+  statyczna &
+  \multicolumn{1}{c|}{02:01} &
+  \multicolumn{1}{c|}{07:32} &
+  \multicolumn{1}{c|}{12:00} &
+  \multicolumn{1}{c|}{13:27} &
+  15:56 &
+  15 &
+  - \\ \cline{2-9} 
+ &
+  \textbf{autorska} &
+  \multicolumn{1}{c|}{02:01} &
+  \multicolumn{1}{c|}{07:32} &
+  \multicolumn{1}{c|}{12:00} &
+  \multicolumn{1}{c|}{13:27} &
+  15:56 &
+  13 &
+  14,35 ms \\ \hline
+\end{tabular}%
+}
+\end{table}
 
 Zauważyć należy, że autorskie rozwiązanie zakładające zmienny czas przechowywania wpisu w pamięci podręcznej, notuje zysk względem rozwiązania konkurencyjnego w sześciu przypadkach na dziesięć zdefiniowanych. Minimalna wartość zysku, w kontekście eksperymentów to \textbf{12,54ms} - interfejs programowania C\# .NET, natomiast maksymalna to \textbf{21,91ms} - interfejs JavaScript / NodeJS. Niewątpliwie, zaobserwować można silną korelację pomiędzy wartością omawianego zysku a liczbą żądań, których czas trwania wynosi ponad 500ms. Bardzo prawdopodobnym jest, że dla większości z tych zapytań, realizowana jest komunikacja z bazą danych wskutek braku określonego wpisu w pamięci cache. Analizując przewagi rozwiązań w obrębie każdego z eksperymentów, zauważyć można, że za każdym razem, gdy liczba żądań o czasie odpowiedzi powyżej 500ms jest wyższa, to przekłada się to na gorszy wynik średni.
 
@@ -678,4 +887,4 @@ W przypadku interfejsu implementowanego z wykorzystaniem platformy NodeJS oraz j
 
 Analogiczną tendencję zaobserwować możemy w przypadku interfejsu programowania aplikacji C\# .NET. Tu również, niezależnie od metody protokołu hipertekstowego, rozwiązanie rekomendowane przez twórcę technologii posiada przewagę. Przewaga ta, najbardziej widoczna jest dla żądania typu PUT i wynosi ona 37 niepoprawnych odpowiedzi. Warto zaznaczyć, że całkowita liczba błędnie zrealizowanych żądań dla metody PUT oraz platformy dedykowanej wynosi 26.
 
-Wyniki przeprowadzonego w tej sekcji badania posiadają najbardziej jednoznaczny charakter spośród wszystkich rezultatów otrzymanych w kontekście każdego z przeprowadzonych badań. Co więcej, rezultaty te, prowadzą do sformułowania popartego badaniami wniosku, że niezależnie od faktu, która z technologii implementacyjnych zostanie wybrana, a także jakiego typu operacje będą realizowane, system internetowy przygotowany do przejścia w fazę produkcyjną, powinien być wdrażany z wykorzystaniem narzędzi oraz infrastruktur dedykowanych względem określonej technologii. Usprawnienia wydajnościowe, wprowadzane przez twórców określonych środowisk chmurowych, pozwalają na korzystanie z usług sieciowych w sposób bardziej efektywny, a także generujący mniejszą liczbę błędów.  
+Wyniki przeprowadzonego w tej sekcji badania posiadają najbardziej jednoznaczny charakter spośród wszystkich rezultatów otrzymanych w kontekście każdego z przeprowadzonych badań. Co więcej, rezultaty te, prowadzą do sformułowania popartego badaniami wniosku, że niezależnie od faktu, która z technologii implementacyjnych zostanie wybrana, a także jakiego typu operacje będą realizowane, system internetowy przygotowany do przejścia w fazę produkcyjną, powinien być wdrażany z wykorzystaniem narzędzi oraz infrastruktur dedykowanych względem określonej technologii. Usprawnienia wydajnościowe, wprowadzane przez twórców określonych środowisk chmurowych, pozwalają na korzystanie z usług sieciowych w sposób bardziej efektywny, a także generujący mniejszą liczbę błędów.

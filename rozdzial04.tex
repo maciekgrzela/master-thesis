@@ -66,6 +66,8 @@ Poza serwerami danych, w ramach topologii wyróżnić należy dwa porównywane i
 
 Na ilustracji \ref{fig:topologia-5} przedstawiono schemat czwartego wariantu lokalnej topologii fizycznej środowiska badawczego.
 
+\clearpage
+
 \begin{figure}[ht]
     \centering
      \includegraphics[width=\linewidth]{rys04/topologia-5.png}
@@ -80,6 +82,8 @@ Konfiguracja topologii fizycznej dla rozproszonego środowiska badawczego, stwor
 W tym przypadku, wyodrębnić należy dwa obszary, zawierające urządzenia w kontekście których przeprowadzana jest ewaluacja. Pierwszy obszar to lokalna sieć komputerowa, w której ulokowane zostały urządzenia końcowe odpowiedzialne za przechowywanie konfiguracji badania, a także generowanie żądań w kierunku API. W drugim obszarze zaś, nazwanym rozległą siecią komputerową uruchomione są platformy chmurowe, wewnątrz których działają interfejsy programowania aplikacji oraz serwery bazodanowe. Systemy internetowe zaimplementowane w odrębnych technologiach, przechowywane są na oddzielnych platformach chmurowych i nie są one ze sobą w żaden sposób skomunikowane. Zauważyć należy również fakt, że obie platformy chmurowe znajdują się w różnych lokalizacjach geograficznych. Stwierdzenia te, wymuszają modyfikację sposobu pozyskiwania pomiarów żądań, poprzez przeniesienie odpowiedzialności za wyliczenie czasu wykonywania operacji na interfejsy programowania aplikacji. Pomimo tego, niezbędnym jest posiadania urządzenia generującego żądania zgodnie z określoną charakterystyką. Dlatego też, wewnątrz obszaru lokalnego wskazać możemy dwa urządzenia końcowe, których rolą, podobnie do urządzeń końcowych zawartych we wszystkich poprzednich topologii fizycznych, jest generowanie żądań, oraz koordynowanie przeprowadzanego badania.
 
 Na ilustracji \ref{fig:topologia-4} przedstawiono schemat pierwszego wariantu rozległej topologii fizycznej środowiska badawczego.
+
+\clearpage
 
 \begin{figure}[ht]
     \centering
@@ -162,7 +166,7 @@ Implementowane rozwiązanie omawiane w ramach niniejszej pracy dyplomowej cechuj
 
 W tabeli \ref{tab:hiperparametry-genetyczny} wymieniono hiperparametry zaimplementowanej metaheurystyki genetycznej, a także opisano ich znaczenie w kontekście schematu działania algorytmu.
 
-\begin{table}[htbp] \small
+\begin{table}[htb] \small
 \centering
 \caption{Wykaz hiperparametrów zaimplementowanego algorytmu genetycznego}
 \label{tab:hiperparametry-genetyczny}
@@ -196,7 +200,7 @@ Na ilustracji \ref{fig:cache-klucz} zaprezentowano format klucza wpisu przechowy
 
 \begin{figure}[ht]
     \centering
-     \includegraphics[width=\linewidth]{rys04/cache-klucz.png}
+     \includegraphics[width=0.8\linewidth]{rys04/cache-klucz.png}
     \caption{Format klucza wpisu przechowywanego w pamięci podręcznej}
     \label{fig:cache-klucz}
 \end{figure}
@@ -218,7 +222,7 @@ W momencie tuż przed stworzeniem wpisu i wysyłaniem go do magazynu pamięci po
 \end{equation}
 
 \begin{equation}
-    time\_to\_live(x) = (\frac{1}{2} * exec\_factor(x) + \frac{1}{2} * (1 - invalid\_factor(x))) * max\_time\_to\_live
+    ttl(x) = (\frac{1}{2} * exec\_factor(x) + \frac{1}{2} * (1 - invalid\_factor(x))) * max\_ttl
     \label{eq:time-to-live}
 \end{equation}
 
@@ -232,8 +236,8 @@ $executions(x)$ - liczba wywołań punktu końcowego, którego wpis w pamięci p
 $invalidations(x)$ - liczba unieważnień wpisu pamięci podręcznej identyfikowanego kluczem x \newline\newline
 $execution\_factor(x)$ - współczynnik częstości wykonania określonego punktu końcowego \newline\newline
 $invalidation\_factor(x)$ - współczynnik częstości unieważnień wpisów dotyczących określonego punktu końcowego \newline\newline
-$time\_to\_live(x)$ - czas ważności wpisu dodawanego do pamięci podręcznej \newline\newline
-$max\_time\_to\_live(x)$ - maksymalny czas ważności wpisu podręcznej względem którego wyliczany jest faktyczny czas ważności \newline\newline
+$ttl(x)$ - czas ważności wpisu dodawanego do pamięci podręcznej \newline\newline
+$max\_ttl(x)$ - maksymalny czas ważności wpisu podręcznej względem którego wyliczany jest faktyczny czas ważności \newline\newline
 
 Kod źródłowy służący do zarządzania elementami pamięci podręcznej zaimplementowany został w API C\# za pomocą funkcji pośredniczących dołączanych do struktur programistycznych w formie atrybutu. Stworzona została klasa dziedzicząca po natywnym typie \textit{Attribute}, a także implementująca interfejs \textit{IAsyncActionFilter}. Implementacja niniejszego interfejsu wymaga zdefiniowania metody \textit{OnActionExecutionAsync}, w ramach której napisano logikę działania obu mechanizmów obsługi cache. Wspomniana metoda, posiada dostęp do kontekstu żądania HTTP przez co możliwe było zarówno wykonanie operacji, tuż przed jak i tuż po uruchomieniu metody klasy konstruktora.
 
@@ -272,7 +276,7 @@ Na ilustracji \ref{fig:jak-dziala-replikacja} zobrazowano zasadę działania zai
 
 \begin{figure}[ht]
     \centering
-     \includegraphics[width=\linewidth]{rys04/jak_dziala_transakcja.png}
+     \includegraphics[width=0.6\linewidth]{rys04/jak_dziala_transakcja.png}
     \caption{Schemat wykonywania procedur zapisu oraz odczytu z wykorzystaniem replikacji transakcyjnej}
     \label{fig:jak-dziala-replikacja}
 \end{figure}

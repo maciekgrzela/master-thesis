@@ -1,38 +1,9 @@
 \pdfbookmark[0]{Streszczenie}{streszczenie.1}
-%\phantomsection
-%\addcontentsline{toc}{chapter}{Streszczenie}
-%%% Ponisze zostao niewykorzystane (tj. zrezygnowano z utworzenia nienumerowanego rozdziau na abstrakt)
-%%%\begingroup
-%%%\setlength\beforechapskip{48pt} % z jakiego powodu bya maleka rnica w pooeniu nagwka rozdziau numerowanego i nienumerowanego
-%%%\chapter*{\centering Abstrakt}
-%%%\endgroup
-%%%\label{sec:abstrakt}
-%%%Lorem ipsum dolor sit amet eleifend et, congue arcu. Morbi tellus sit amet, massa. Vivamus est id risus. Sed sit amet, libero. Aenean ac ipsum. Mauris vel lectus. 
-%%%
-%%%Nam id nulla a adipiscing tortor, dictum ut, lobortis urna. Donec non dui. Cras tempus orci ipsum, molestie quis, lacinia varius nunc, rhoncus purus, consectetuer congue risus. 
-%\mbox{}\vspace{2cm} % mona przesun, w zalenoci od dugoci streszczenia
 \begin{abstract}
-Streszczenie w jzyku polskim powininno zmieci si na poowie strony (drug poow powinien zaj abstract w jzyku angielskim).
+Celem dokumentu jest analiza wydajności usług sieciowych implementowanych jako interfejsy programowania aplikacji, przy wykorzystaniu stosu technologicznego C\# / .NET oraz JavaScript / NodeJS. Zdecydowano się nie tylko, na porównanie efektywności realizacji podstawowych operacji wykonywanych na danych w kontekście zmiennego ruchu sieciowego oraz różnych systemów bazodanowych, ale także dokonano ewaluacji wydajności technik programowania współbieżnego, obsługi operacji asynchronicznych, wprowadzenia wzorca projektowego podziału odpowiedzialności, czy też wpływu wdrożenia systemów internetowych na odmiennych platformach chmurowych.
 
-Lorem ipsum dolor sit amet eleifend et, congue arcu. Morbi tellus sit amet, massa. Vivamus est id risus. Sed sit amet, libero. Aenean ac ipsum. Mauris vel lectus. 
+Ponadto, zaproponowano autorski mechanizm wyliczania czasu przechowywania wpisu w pamięci podręcznej i porównano go z szeroko wykorzystywanym mechanizmem statycznym. W odniesieniu do oceny wydajności operacji współbieżnych, zaimplementowano algorytm genetyczny dla problemu komiwojażera i zbadano liczbę wykonywanych iteracji a także współczynnik rezultatu względem rozwiązania optymalnego. Co się tyczy ewaluacji obsługi wywołań asynchronicznych, przeprowadzono ocenę efektywności natywnych klientów dla obu środowisk analizując średnich czasów pozyskiwania danych dla zmiennej liczby otrzymywanych encji bazodanowych. Jako zewnętrzne źródło pozyskiwania danych zaimplementowano odseparowaną lokalną usługę sieciową. Zbadano również wpływ wykorzystania zaawansowanego wzorca projektowego podziału odpowiedzialności, a także w jaki sposób, wprowadzenie rozbudowanych technik optymalizacji, możliwych dzięki przytoczonemu wzorcowi, wpływa na czas odpowiedzi interfejsów API na poszczególny rodzaj żądania. Na koniec, dokonano obserwacji dysproporcji pomiędzy czasem przetwarzania żądania usług sieciowych uruchamianych w dedykowanych środowiskach chmurowych, oraz na platformie typu infrastructure-as-a-service.
 
-Nam id nulla a adipiscing tortor, dictum ut, lobortis urna. Donec non dui. Cras tempus orci ipsum, molestie quis, lacinia varius nunc, rhoncus purus, consectetuer congue risus. 
-
-
+Przeprowadzone badania wykazały silną zależność wykorzystywanego silnika bazy danych, w odniesieniu do maksymalnego ruchu sieciowego, jaki są w stanie obsługiwać API. Ponadto, znaczącą dysproporcję dotyczącą obsługi operacji współbieżnych faworyzującą rozwiązanie bazujące na języku C\#, czy też silną korelację pomiędzy niską złożonością natywnego klienta http API języka JavaScript a wydajnością jego działania. Analizując wydajność rozwiązań pamięci podręcznej zaobserwowano przewagę autorskiego mechanizmu dla stałego poziomu natężenia generowanego w stałym czasie, przy uwzględnieniu losowego rozmieszczenia punktów unieważnień. 
 \end{abstract}
-\mykeywords{raz, dwa, trzy, cztery}
-
-% Dobrze byoby skopiowa sowa kluczowe do metadanych dokumentu pdf (w pliku Dyplom.tex)
-% Niestety, zaimplementowane makro nie robi tego z automatu, wic pozostaje kopiowanie rczne.
-
-{
-\selectlanguage{english}
-\begin{abstract}
-Streszczenie in Polish should fit on the half of the page (the other half should be covered by the abstract in English). 
-
-Lorem ipsum dolor sit amet eleifend et, congue arcu. Morbi tellus sit amet, massa. Vivamus est id risus. Sed sit amet, libero. Aenean ac ipsum. Mauris vel lectus. 
-
-Nam id nulla a adipiscing tortor, dictum ut, lobortis urna. Donec non dui. Cras tempus orci ipsum, molestie quis, lacinia varius nunc, rhoncus purus, consectetuer congue risus. 
-\end{abstract}
-\mykeywords{one, two, three, four}
-}
+\mykeywords{interfejsy programowania aplikacji, C\# .NET, JavaScript, NodeJS, mappery obiektowo-relacyjne, operacje współbieżne, operacje asynchroniczne, obsługa pamięci podręcznej, wzorzec podziału odpowiedzialności, replikacja transakcyjna, platformy chmurowe}
