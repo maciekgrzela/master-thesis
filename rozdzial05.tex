@@ -76,6 +76,8 @@ Uzyskane przedziały satysfakcji, tolerancji oraz frustracji względem każdego 
     \label{fig:apdex-dotnet}
 \end{figure}
 
+\clearpage
+
 \begin{figure}[htb]
     \centering
      \includegraphics[width=\linewidth]{rys05/apdex-nodejs.pdf}
@@ -83,12 +85,13 @@ Uzyskane przedziały satysfakcji, tolerancji oraz frustracji względem każdego 
     \label{fig:apdex-nodejs}
 \end{figure}
 
-
 Po spełnieniu warunków początkowych badania zrealizowano faktyczne czynności badawcze. Wykorzystując lokalną topologię fizyczną \ref{sec:lokalne-srodowisko-badawcze-ver-1} rozpoczęto generowanie żądań protokołu hipertekstowego wytwarzanych przez dwa równolegle pracujące hosty sieciowe. Procedura badawcza trwała 20 minut i polegała na stopniowym zwiększaniu liczby współbieżnie pracujących procesów oprogramowania testującego rozpoczynając od jednego procesu a kończąc na pięciu tysiącach. Nowe wątki oprogramowania Apache JMeter uruchamiane były w stałych odstępach czasu, co implikuje niezmienność długości przedziału czasowego pracy w obrębie ustalonej liczby wątków. Czas ten, wynosi 240ms. Przy uwzględnieniu minimalnej zaobserwowanej średniej wartości natężenia generowanych żądań, wynoszącej 152 zapytania w ciągu sekundy, liczebność zbioru próbek czasu zapytania w odniesieniu do dowolnego z 4990 poziomów przyrostu ruchu wyniosła co najmniej 36 elementów. Pierwsze 10 poziomów dotyczących liczby klientów generujących komunikaty nie pozwoliło na zarejestrowanie co najmniej 30 próbek, przez co elementy te, nie były brane pod uwagę w czasie opracowywania uzyskanych wyników. Opisane w niniejszym akapicie czynności zostały wykonane względem interfejsów programowania aplikacji wykorzystujących porównywane technologie, uwzględniając komunikację z każdym z pięciu systemów bazodanowych.
 
 Na wykresach \ref{fig:response-mtc-1} a) do \ref{fig:response-mtc-1} j) zaprezentowano uśrednione względem liczby pracujących wątków, czasy odpowiedzi na żądanie generowane w kierunku ewaluowanych interfejsów API.
 
-\begin{figure}[htb]
+Analizując wyniki uzyskane dla operacji pobierania kolekcji obiektów, zauważyć można niewielkie różnice w wartości średnich czasów odpowiedzi, występujące w przedziale do około 4000 użytkowników. Różnice te, nie faworyzują ani deprecjonują któregokolwiek z rozwiązań.
+
+\begin{figure}[H]
   \centering
 	\begin{tabular}{@{}ll@{}}
     a) & b) \\
@@ -108,8 +111,6 @@ Na wykresach \ref{fig:response-mtc-1} a) do \ref{fig:response-mtc-1} j) zaprezen
   \caption{Średnie czasy odpowiedzi na żądanie względem liczby procesów generujących oraz systemu bazodanowego}
   \label{fig:response-mtc-1}
 \end{figure}
-
-Analizując wyniki uzyskane dla operacji pobierania kolekcji obiektów, zauważyć można niewielkie różnice w wartości średnich czasów odpowiedzi, występujące w przedziale do około 4000 użytkowników. Różnice te, nie faworyzują ani deprecjonują któregokolwiek z rozwiązań.
 
 Dla tego właśnie przedziału, jedyną zauważalną anomalię dotyczącą zmiany wydajności dostrzec można w kontekście interfejsu programowania aplikacji C\# .NET korzystającego z silnika bazy danych PostgreSQL. W tym przypadku znaczące różnice pomiędzy wydajnością omawianego systemu, a efektywnością drugiego najgorszego rozwiązania odnotowano już dla około \textbf{720} współbieżnie pracujących wątków. Dla tej właśnie metryki, omawiana różnica wynosi \textbf{374ms}. Wraz ze wzrostem liczby użytkowników o tysiąc, zauważyć możemy różnicę \textbf{759ms}, a o dwa tysiące - \textbf{2326ms}. W momencie zaprzestania obserwacji tendencji nieznacznych dysproporcji pomiędzy systemami baz danych (moment ten możemy aproksymować do chwili działania 3750 jednoczesnych procesów-generatorów) dywergencja czasów odpowiedzi osiągnęła wartość \textbf{4855ms}.
 
@@ -160,7 +161,7 @@ Analizując wewnętrzne mechanizmy usługi sieciowej implementowanej w języku C
 
 Po ukończeniu obsługi wszystkich wygenerowanych żądań, przez oba systemy internetowe, uśredniono serie każdych 30 rezultatów, uzyskanych względem różnych zbiorów testowych oraz odmiennych czasów wykonania. Opracowane wyniki, przedstawiono w tabelach \ref{tab:mtc-2} oraz \ref{tab:mtc-2-2}.
 
-\begin{table}[htb]
+\begin{table}[ht]
   \centering
   \caption{Wydajność realizacji algorytmu genetycznego dla problemu komiwojażera w zależności od czasu przetwarzania oraz technologii - współczynnik jakości rozwiązania}
   \label{tab:mtc-2}
@@ -327,7 +328,7 @@ Po ukończeniu obsługi wszystkich wygenerowanych żądań, przez oba systemy in
   }
 \end{table}
 
-\begin{table}[htb]
+\begin{table}[ht]
   \centering
   \caption{Wydajność realizacji algorytmu genetycznego dla problemu komiwojażera w zależności od czasu przetwarzania oraz technologii - liczba iteracji pętli algorytmu}
   \label{tab:mtc-2-2}
@@ -485,7 +486,7 @@ Po ukończeniu obsługi wszystkich wygenerowanych żądań, przez oba systemy in
   }
 \end{table}
 
-Analizując powyższe wyniki, zauważyć należy przewagę interfejsu programowania aplikacji zaimplementowanego w technologii C\# .NET, w kontekście wartości współczynnika jakości rozwiązania. Na 60 uśrednionych wartości tego parametru, interfejs API NodeJS notuje wyniki lepsze zaledwie w 15 przypadkach. Ponadto, zauważyć należy, że niezależnie od technologii, czas wykonywania algorytmu nie zawsze musi przekładać się na uzyskanie lepszego rozwiązania. Niedeterministyczna charakterystyka algorytmu genetycznego jest powodem pojawiania się gorszych rozwiązań, pomimo pracy algorytmu przez dłuższy czas. Odnosząc się do wartości liczby iteracji głównej pętli programu, różnice cechujące się określoną tendencją nie są zauważalne. Wynika to z dwóch następujących faktów. Po pierwsze, kod źródłowy C\#, z chwilą translacji do języka pośredniego \textit{(ang. intermediate language)}, ulega wewnętrznej optymalizacji przeprowadzanej bezpośrednio przez mechanizmy języka. Po drugie, mechanizmy wykorzystywane do przetwarzania list w C\# dostępne w ramach biblioteki LINQ, wprowadzają dodatkowy narzut związany z koniecznością budowy wewnętrznej struktury danych związanej z przetwarzaną listą. Dlatego też, jakikolwiek wzrost efektywności związany ze wspomnianymi w pierwszym fakcie optymalizacjami, może zostać redukowany poprzez spadek wydajnościowy wprowadzany przez instrukcje przetwarzania list. Mechanizmy przetwarzania kolekcji w ramach języka JavaScript z kolei, nie wprowadzają dodatkowego opóźnienia w wykonywaniu kodu, jednakże na etapie interpretacji wydajność implementowanego programu nie ulega zmianie.
+Analizując zgromadzone rezultaty, zauważyć należy przewagę interfejsu programowania aplikacji zaimplementowanego w technologii C\# .NET, w kontekście wartości współczynnika jakości rozwiązania. Na 60 uśrednionych wartości tego parametru, interfejs API NodeJS notuje wyniki lepsze zaledwie w 15 przypadkach. Ponadto, zauważyć należy, że niezależnie od technologii, czas wykonywania algorytmu nie zawsze musi przekładać się na uzyskanie lepszego rozwiązania. Niedeterministyczna charakterystyka algorytmu genetycznego jest powodem pojawiania się gorszych rozwiązań, pomimo pracy algorytmu przez dłuższy czas. Odnosząc się do wartości liczby iteracji głównej pętli programu, różnice cechujące się określoną tendencją nie są zauważalne. Wynika to z dwóch następujących faktów. Po pierwsze, kod źródłowy C\#, z chwilą translacji do języka pośredniego \textit{(ang. intermediate language)}, ulega wewnętrznej optymalizacji przeprowadzanej bezpośrednio przez mechanizmy języka. Po drugie, mechanizmy wykorzystywane do przetwarzania list w C\# dostępne w ramach biblioteki LINQ, wprowadzają dodatkowy narzut związany z koniecznością budowy wewnętrznej struktury danych związanej z przetwarzaną listą. Dlatego też, jakikolwiek wzrost efektywności związany ze wspomnianymi w pierwszym fakcie optymalizacjami, może zostać redukowany poprzez spadek wydajnościowy wprowadzany przez instrukcje przetwarzania list. Mechanizmy przetwarzania kolekcji w ramach języka JavaScript z kolei, nie wprowadzają dodatkowego opóźnienia w wykonywaniu kodu, jednakże na etapie interpretacji wydajność implementowanego programu nie ulega zmianie.
 
 Odwołując się do różnic w kontekście opracowywanych kolekcji danych, zauważyć można bardzo słabe rezultaty dla zbiorów \textbf{att48} oraz \textbf{att532}. Uzyskane w tych przypadkach długości najkrótszych tras są niemalże 5 krotnie większe, niż rozwiązania optymalne. Z drugiej strony, zaobserwować możemy rozwiązania znacząco bliskie optymalnym w odniesieniu do zbioru \textbf{gr96} dla interfejsu NodeJS oraz zbioru \textbf{bier127} dla interfejsu C\# .NET.
 
@@ -528,7 +529,7 @@ Zrealizowany eksperyment polegał na obserwacji czasów wykonań operacji asynch
 
 Pozyskane w ramach badania rezultaty uśredniono, a następnie zaprezentowano na wykresie \ref{fig:async-times}. Zdecydowano się nie uwzględniać metryki procentowego błędu związanego z niepoprawnym wykonaniem żądań, ponieważ niezależnie od poddawanego analizie przypadku, był on równy zero.
 
-\begin{figure}[htb]
+\begin{figure}[H]
   \centering
    \includegraphics[width=\linewidth]{rys05/async-times.pdf}
   \caption{Uśredniony czas realizacji operacji asynchronicznych względem zmiennej liczby pobieranych encji}
@@ -579,9 +580,9 @@ Dla statycznego mechanizmu pamięci cache zastosowano czas życia wynoszący 60s
 
 Badanie przeprowadzono zgodnie z koncepcją zarysowaną w scenariuszu badawczym \ref{tab:research-scenario-5}, wykorzystując konfigurację lokalnej topologii fizycznej przedstawionej w sekcji \ref{sec:lokalne-srodowisko-badawcze-ver-2}.
 
-W tabeli \ref{tab:mtc-5-table} zaprezentowano elementy charakterystyczne dla każdego z dwudziestu eksperymentów, a także rezultaty jakie w kontekście nich odnotowano. Moment unieważnienia rozumiany jest jako punkt na osi czasu, kiedy nastąpiło wywołanie żądania aktualizacji encji bazodanowych. Czasy odpowiedzi na żądanie oraz liczby żądań powyżej 500ms odnoszą się do punktu końcowego pozyskiwania kolekcji obiektów danych.
+W tabeli \ref{tab:mtc-5-table} zaprezentowano elementy charakterystyczne dla każdego z dwudziestu eksperymentów, a także rezultaty jakie w kontekście nich odnotowano.
 
-\begin{table}[htb] \small
+\begin{table}[H] \small
 \centering
 \caption{Wydajność metod obsługi pamięci podręcznej względem technologii oraz momentu unieważnienia wpisu}
 \label{tab:mtc-5-table}
@@ -786,6 +787,8 @@ W tabeli \ref{tab:mtc-5-table} zaprezentowano elementy charakterystyczne dla ka�
 }
 \end{table}
 
+Moment unieważnienia rozumiany jest jako punkt na osi czasu, kiedy nastąpiło wywołanie żądania aktualizacji encji bazodanowych. Czasy odpowiedzi na żądanie oraz liczby żądań powyżej 500ms odnoszą się do punktu końcowego pozyskiwania kolekcji obiektów danych.
+
 Zauważyć należy, że autorskie rozwiązanie zakładające zmienny czas przechowywania wpisu w pamięci podręcznej, notuje zysk względem rozwiązania konkurencyjnego w sześciu przypadkach na dziesięć zdefiniowanych. Minimalna wartość zysku, w kontekście eksperymentów to \textbf{12,54ms} - interfejs programowania C\# .NET, natomiast maksymalna to \textbf{21,91ms} - interfejs JavaScript / NodeJS. Niewątpliwie, zaobserwować można silną korelację pomiędzy wartością omawianego zysku a liczbą żądań, których czas trwania wynosi ponad 500ms. Bardzo prawdopodobnym jest, że dla większości z tych zapytań, realizowana jest komunikacja z bazą danych wskutek braku określonego wpisu w pamięci cache. Analizując przewagi rozwiązań w obrębie każdego z eksperymentów, zauważyć można, że za każdym razem, gdy liczba żądań o czasie odpowiedzi powyżej 500ms jest wyższa, to przekłada się to na gorszy wynik średni.
 
 Ponadto, wartym odnotowania jest fakt, że autorskie rozwiązanie zarządzania wpisami pamięci podręcznej, wykazuje lepsze rezultaty w tych przypadkach, kiedy zakresy pomiędzy momentami unieważnień są stosunkowo szerokie. W związku z uzyskaniem dłuższego czasu życia przez określony element gromadzony w pamięci podręcznej, żądanie pobierające dane z systemu bazodanowego może zostać opóźnione, a co za tym idzie, średni czas odpowiedzi może być niższy. Sytuacja staje się z goła odmienna, z chwilą częstej inwalidacji wpisu pamięci cache na przestrzeni czasu, co prowadzi do ograniczenia długości czasu jego życia.
@@ -842,11 +845,9 @@ Na wykresach \ref{fig:dotnet-azure-vs-digitalocean} a) do \ref{fig:dotnet-azure-
   \label{fig:dotnet-azure-vs-digitalocean}
 \end{figure}
 
-Wskazać należy nieznaczą, jednakże występującą przewagę rozwiązania opartego o usługę platform-as-a-service. Jak możemy zauważyć, przewaga ta, występuje niezależnie od typu generowanego żądania klienta. Ponadto, w przypadku rozwiązania generycznego zaobserwowano pojawienie się większej liczby zapytań klienckich, których czasy odpowiedzi nie mieściły się w przedziale definiującym 97\% wszystkich próbek (tj. od 200ms do 580ms) dla rozwiązania dedykowanego. Szczególnie trend ten, widoczny jest dla żądań wykorzystujących metodę HTTP PUT. Zastanawiającym jest fakt nieodnotowania jakiegokolwiek wyniku, w przedziale od 0 do 119ms. Wyniki takie, były bez trudu osiągane w środowisku lokalnym dla małej liczby współbieżnie pracujących generatorów. Zjawisko to, jest jednakże specyficzne względem względem technologii C\# .NET i nie uwidacznia się w przypadku interfejsów API napisanych w JavaScript.
+Wskazać należy nieznaczą, jednakże występującą przewagę rozwiązania opartego o usługę platform-as-a-service. Jak możemy zauważyć, przewaga ta, występuje niezależnie od typu generowanego żądania klienta. Ponadto, w przypadku rozwiązania generycznego zaobserwowano pojawienie się większej liczby zapytań klienckich, których czasy odpowiedzi nie mieściły się w przedziale definiującym 97\% wszystkich próbek (tj. od 200ms do 580ms) dla rozwiązania dedykowanego. Szczególnie trend ten, widoczny jest dla żądań metody HTTP typu PUT. Wartym odnotowania jest fakt niewystępowania jakiegokolwiek wyniku w przedziale od 0 do 119ms. Wyniki takie, były bez trudu osiągane w środowisku lokalnym dla małej liczby współbieżnie pracujących generatorów. Zjawisko to, jest specyficzne względem względem technologii C\# .NET i nie uwidacznia się w przypadku interfejsów uruchamianych w NodeJS.
 
-Kolejna z zaprezentowanych wizualizacji, dotyczy z kolei interfejsu API zaimplementowanego w oparciu o technologię NodeJS, który uruchomiony został na platformie Heroku (konfiguracja dedykowana), a także serwerze udostępnianym w ramach chmury DigitalOcean (konfiguracja generyczna). Zgromadzone czasy przetwarzania żądań dla odmiennych typów operacji pokazane zostały na wykresach \ref{fig:nodejs-heroku-vs-digitalocean} a) do \ref{fig:nodejs-heroku-vs-digitalocean} h).
-
-\begin{figure}[htb]
+\begin{figure}[H]
   \centering
 	\begin{tabular}{@{}ll@{}}
     a) & b) \\
@@ -861,9 +862,11 @@ Kolejna z zaprezentowanych wizualizacji, dotyczy z kolei interfejsu API zaimplem
 	% \vtop{\vskip-2ex\hbox{{\includegraphics[width=0.475\textwidth]{rys05/beta1}}}} &
 	% \vtop{\vskip-2ex\hbox{{\includegraphics[width=0.475\textwidth]{rys05/alfa1}}}}  \caption{Wyznaczanie trajektorii lotu rakiety: 
 	\end{tabular}
-  \caption{Wydajność działania mierzona czasem wewnętrznego przetwarzania operacji CRUD dla platform Heroku oraz DigitalOcean - Interfejs JS \ NodeJS}
+  \caption{Wydajność działania mierzona czasem wewnętrznego przetwarzania operacji CRUD dla platform Heroku oraz DigitalOcean - Interfejs API NodeJS}
   \label{fig:nodejs-heroku-vs-digitalocean}
 \end{figure}
+
+Kolejna z zaprezentowanych wizualizacji, dotyczy z kolei interfejsu API zaimplementowanego w oparciu o technologię NodeJS, który uruchomiony został na platformie Heroku (konfiguracja dedykowana), a także serwerze udostępnianym w ramach chmury DigitalOcean (konfiguracja generyczna). Zgromadzone czasy przetwarzania żądań dla odmiennych typów operacji pokazane zostały na wykresach \ref{fig:nodejs-heroku-vs-digitalocean} a) do \ref{fig:nodejs-heroku-vs-digitalocean} h).
 
 Odnosząc się do analizowanej technologii, wzrost wydajności rozwiązania dedykowanego względem generycznego jest wydatny, i niezależnie od wybranego typu wykonywanej operacji, różnica wartości metryki go opisującaj jest niemniejsza niż 237ms. Ponadto, w momencie w którym 99,98\% wszystkich obserwacji należy do przedziału od 34ms do 900ms w kontekście rozwiązania dedykowanego, tylko 72,7\% próbek badania dla rozwiązania generycznego, zawarte jest w analogicznym przedziale. Zauważyć należy fakt braku zwiększenia się intensywności żądań dla czasów przetwarzania powyżej 1000ms, w odniesieniu do rozwiązania generycznego. Co prawda zapytania trwające powyżej 1000ms pojawiają się w tego typu konfiguracji, to podobnie do rozwiązania dedykowanego, są to obserwacje jednostkowe.  
 

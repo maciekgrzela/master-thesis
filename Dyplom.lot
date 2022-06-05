@@ -18,8 +18,8 @@
 \contentsline {table}{\numberline {4.1}{\ignorespaces Wykaz hiperparametrów zaimplementowanego algorytmu genetycznego}}{63}{table.4.1}%
 \addvspace {10pt}
 \contentsline {table}{\numberline {5.1}{\ignorespaces Wykaz punktów końcowych wykorzystywanych w badaniu wpływu wykorzystanego systemu bazodanowego na działanie API}}{75}{table.5.1}%
-\contentsline {table}{\numberline {5.2}{\ignorespaces Wydajność realizacji algorytmu genetycznego dla problemu komiwojażera w zależności od czasu przetwarzania oraz technologii - współczynnik jakości rozwiązania}}{81}{table.5.2}%
-\contentsline {table}{\numberline {5.3}{\ignorespaces Wydajność realizacji algorytmu genetycznego dla problemu komiwojażera w zależności od czasu przetwarzania oraz technologii - liczba iteracji pętli algorytmu}}{82}{table.5.3}%
-\contentsline {table}{\numberline {5.4}{\ignorespaces Macierz istotności statystycznej dla współczynników jakości rozwiązania pozyskanych w ramach badania wydajności obsługi operacji współbieżnych}}{82}{table.5.4}%
-\contentsline {table}{\numberline {5.5}{\ignorespaces Wydajność metod obsługi pamięci podręcznej względem technologii oraz momentu unieważnienia wpisu}}{86}{table.5.5}%
+\contentsline {table}{\numberline {5.2}{\ignorespaces Wydajność realizacji algorytmu genetycznego dla problemu komiwojażera w zależności od czasu przetwarzania oraz technologii - współczynnik jakości rozwiązania}}{83}{table.5.2}%
+\contentsline {table}{\numberline {5.3}{\ignorespaces Wydajność realizacji algorytmu genetycznego dla problemu komiwojażera w zależności od czasu przetwarzania oraz technologii - liczba iteracji pętli algorytmu}}{83}{table.5.3}%
+\contentsline {table}{\numberline {5.4}{\ignorespaces Macierz istotności statystycznej dla współczynników jakości rozwiązania pozyskanych w ramach badania wydajności obsługi operacji współbieżnych}}{84}{table.5.4}%
+\contentsline {table}{\numberline {5.5}{\ignorespaces Wydajność metod obsługi pamięci podręcznej względem technologii oraz momentu unieważnienia wpisu}}{88}{table.5.5}%
 \addvspace {10pt}
