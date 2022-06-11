@@ -17,16 +17,16 @@ Interfejs programowania aplikacji, bazujący zarówno w swojej strukturze, jak i
 
 \subsection*{Kontroler}
 \subsubsection{\textit{Controller}}
-Struktura programistyczna (w przypadku języków programowania opartych o paradygmat obiektowy - klasa), której celem jest obsługa żądania dostarczonego od aplikacji klienckiej, zweryfikowania zgodności jego treści, a następnie przekierowanie wykonania programu do odpowiedniej metody warstwy logiki biznesowej.
+Struktura programistyczna (w przypadku języków programowania opartych o paradygmat obiektowy klasa), której celem jest obsługa żądania dostarczonego od aplikacji klienckiej, zweryfikowania zgodności jego treści, a następnie przekierowanie wykonania programu do odpowiedniej metody warstwy logiki biznesowej.
 Po zakończeniu wszystkich operacji dotyczących omawianego zapytania, metoda dostępna w ramach klasy kontrolera formułuje odpowiedź zwracaną bezpośrednio do konsumenta żądania.
 
 \subsection*{Serwis}
 \subsubsection{\textit{Service}}
-Struktura programistyczna (w przypadku języków programowania opartych o paradygmat obiektowy - klasa), której zadaniem jest realizacja obliczeń związanych z określonym obiektem, lub domeną, w ramach której określony obiekt się znajduje. Klasy serwsisów (nazywane również klasami logiki biznesowej), stanowią centralny punkt przetwarzania w ramach interfejsów programowania aplikacji, a także pełnią rolę pośrednika pomiędzy komponentami odpowiedzialnymi za zarządzanie żądaniem (tj. metodami kontrolerów) oraz pozyskiwanie danych z określonych źródeł (tj. metodami repozytoriów).
+Struktura programistyczna (w przypadku języków programowania opartych o paradygmat obiektowy klasa), której zadaniem jest realizacja obliczeń związanych z określonym obiektem, lub domeną, w ramach której określony obiekt się znajduje. Klasy serwsisów (nazywane również klasami logiki biznesowej), stanowią centralny punkt przetwarzania w ramach interfejsów programowania aplikacji, a także pełnią rolę pośrednika pomiędzy komponentami odpowiedzialnymi za zarządzanie żądaniem (tj. metodami kontrolerów) oraz pozyskiwanie danych z określonych źródeł (tj. metodami repozytoriów).
 
 \subsection*{Repozytorium}
 \subsubsection{\textit{Repository}}
-Struktura programistyczna (w przypadku języków programowania opartych o paradygmat obiektowy - klasa), której rolą jest wykonywanie operacji na obiektach modelu danych komunikując się bezpośrednio z wykorzystywanym systemem bazodanowym. Operacje zawarte wewnątrz metod klas repozytoriów mogą mieć postać kwerend lub komend definiowanych w języku zapytań dostarczanym przez serwer bazodanowy, mogą operować na dostępnej w pamięci aplikacji strukturze danych, bądź też odwoływać się do zewnętrznego zbioru bazodanowego, manipulując instancjami klas zdefiniowanego wewnątrz aplikacji modelu. W ostatnim z omawianych przypadków, aktualizacje wartości w ramach encji modelu danych są identyfikowane przez maper obiektowo-relacyjny, który generuje polecenia języka zapytań systemu bazodanowego, mające na celu synchronizację stanu danych aplikacji oraz zewnętrznego źródła informacji. Metody klas repozytoriów są wywoływane wewnątrz metod logiki biznesowej.
+Struktura programistyczna (w przypadku języków programowania opartych o paradygmat obiektowy klasa), której rolą jest wykonywanie operacji na obiektach modelu danych komunikując się bezpośrednio z wykorzystywanym systemem bazodanowym. Operacje zawarte wewnątrz metod klas repozytoriów mogą mieć postać kwerend lub komend definiowanych w języku zapytań dostarczanym przez serwer bazodanowy, mogą operować na dostępnej w pamięci aplikacji strukturze danych, bądź też odwoływać się do zewnętrznego zbioru bazodanowego, manipulując instancjami klas zdefiniowanego wewnątrz aplikacji modelu. W ostatnim z omawianych przypadków, aktualizacje wartości w ramach encji modelu danych są identyfikowane przez maper obiektowo-relacyjny, który generuje polecenia języka zapytań systemu bazodanowego, mające na celu synchronizację stanu danych aplikacji oraz zewnętrznego źródła informacji. Metody klas repozytoriów są wywoływane wewnątrz metod logiki biznesowej.
 
 \subsection*{Mapper obiektowo-relacyjny}
 \subsubsection{\textit{Object-relational mapper}}
@@ -58,15 +58,15 @@ Struktura danych, wysyłana przez usługę sieciową w kierunku aplikacji klienc
 
 \subsection*{Kod odpowiedzi usługi protokołu hipertekstowego}
 \subsubsection{\textit{HTTP Response Code}}
-Liczba determinująca status realizacji żądania wysłanego przez aplikację kliencką. Kod odpowiedzi stanowi jedną z wymaganych składowych dotyczących standardowego rezultatu zwracanego w ramach usługi opartej o protokół hipertekstowy. Wyróżnić możemy pięć kategorii kodów odpowiedzi, niosących ze sobą odmienną informacje. Kategoriami tymi są: kody informacyjnej odpowiedzi (100-199), kody poprawnej odpowiedzi (200-299), kody wiadomości o przekierowaniu (300-399), kody błędu aplikacji klienckiej (400-499), oraz kody błędu aplikacji serwerowej (500-599).
+Liczba determinująca status realizacji żądania wysłanego przez aplikację kliencką. Kod odpowiedzi stanowi jedną z wymaganych składowych dotyczących standardowego rezultatu zwracanego w ramach usługi opartej o protokół hipertekstowy. Wyróżnić możemy pięć kategorii kodów odpowiedzi, niosących ze sobą odmienną informacje. Kategoriami tymi są: kody informacyjnej odpowiedzi (100--199), kody poprawnej odpowiedzi (200--299), kody wiadomości o przekierowaniu (300--399), kody błędu aplikacji klienckiej (400--499), oraz kody błędu aplikacji serwerowej (500--599).
 
 \subsection*{Czas odpowiedzi usługi protokołu hipertekstowego}
 \subsubsection{\textit{HTTP Response Time}}
 Wyrażony w milisekundach, przedział czasu od momentu otrzymania żądania wygenerowanego przez aplikację kliencką, do chwili zwrócenia rezultatu wykonywanych przez usługę sieciową obliczeń. Liczba ta, stanowi jedną z wartości pomiarowych, w kontekście efektywności działania interfejsu programowania aplikacji.  
 
 \subsection*{Obiektowa notacja JavaScript}
-\subsubsection{\textit{JavaScript Object Notation - JSON}}
-Format definicji, reprezentacji, a także wymiany danych w postaci obiektów niezależny od określonego języka programowania. Obiektowa notacja JavaScript jest powszechnie wykorzystywana jako format komunikatów przekazywanych pomiędzy interfejsami programowania aplikacji a systemami klienckimi. W odróżnieniu od języka reprezentacji danych opartego o znaczniki \textit{Extensible Markup Language - XML}, obiektowa notacja JavaScript cechuje się mniejszym rozmiarem przesyłanych obiektów (poprzez redukcję liczby metadanych), jednolitym standardem niezależnym od technologii, a także brakiem przechowywania informacji o typie poszczególnej wartości zadanego obiektu.
+\subsubsection{\textit{JavaScript Object Notation -- JSON}}
+Format definicji, reprezentacji, a także wymiany danych w postaci obiektów niezależny od określonego języka programowania. Obiektowa notacja JavaScript jest powszechnie wykorzystywana jako format komunikatów przekazywanych pomiędzy interfejsami programowania aplikacji a systemami klienckimi. W odróżnieniu od języka reprezentacji danych opartego o znaczniki \textit{Extensible Markup Language -- XML}, obiektowa notacja JavaScript cechuje się mniejszym rozmiarem przesyłanych obiektów (poprzez redukcję liczby metadanych), jednolitym standardem niezależnym od technologii, a także brakiem przechowywania informacji o typie poszczególnej wartości zadanego obiektu.
 
 \subsection*{Testy wzorcowe}
 \subsubsection{\textit{Benchmark}}
@@ -94,9 +94,9 @@ Wyrażenie typu prawda/fałsz, zdefiniowane w dowolnym miejscu programu, które 
 
 \section{Interfejsy programowania aplikacji}
 \label{sec:api-teoria}
-Webowy interfejs programowania aplikacji to usługa sieciowa, której celem jest realizacja zadań zleconych przez oprogramowanie klienta. Zadania te, dotyczą operacji wykonywanych w kontekście określonych zasobów. Wyróżnić możemy operacje zwane zapytaniami (tj. dotyczące pozyskiwania danych z ich źródeł), a także komendami (tj. związane z wykonywaniem operacji na danych).
+Webowy interfejs programowania aplikacji to usługa sieciowa, której celem jest realizacja zadań zleconych przez oprogramowanie klienta. Zadania te dotyczą operacji wykonywanych w kontekście określonych zasobów. Wyróżnić możemy operacje zwane zapytaniami (tj. dotyczące pozyskiwania danych z ich źródeł), a także komendami (tj. związane z wykonywaniem operacji na danych).
 
-Interfejsy API, budowane są z wykorzystaniem protokołu HTTP, dlatego też w ich kontekście możemy mówić o komunikacji bezstanowej definiującej pojęcia żądania oraz odpowiedzi. W związku z charakterystyką protokołu hipertekstowego, zarówno żądanie jak i odpowiedź cechuje się regularną strukturą zawierającą predefiniowane elementy.
+Interfejsy API budowane są z wykorzystaniem protokołu HTTP, dlatego też w ich kontekście możemy mówić o komunikacji bezstanowej definiującej pojęcia żądania oraz odpowiedzi. W związku z charakterystyką protokołu hipertekstowego, zarówno żądanie jak i odpowiedź cechuje się regularną strukturą zawierającą predefiniowane elementy.
 
 Żądanie protokołu http wysyłane jest od aplikacji klienta do interfejsu API. Podstawową składową tego polecenia stanowi unikalny identyfikator zasobu URI (\textit{ang. Uniform Resource Identifier}), na podstawie którego możliwe jest określenie fragmentu dziedziny obsługiwanego modelu danych. Informacja ta jednak, nie jest wystarczająca w kontekście realizacji jednej z funkcjonalności, zdefiniowanych w ramach API. Żądanie klienta, musi zostać uzupełnione o jedną z dziewięciu ustalonych metod http, obsługiwaną wersję protokołu, a także zbiór linii nagłówkowych. Opcjonalnie, informacja wysyłana w kierunku interfejsu, może zostać wzbogacona o zawartość tekstową określaną ciałem żądania (\textit{ang. Request body}). Taki zbiór informacji, pozwala na jednoznaczną identyfikacje fragmentu kodu programu, który ma zostać wykonany wewnątrz interfejsu programowania aplikacji. W tabelach \ref{tab:metody-http} oraz \ref{tab:naglowki-zadanie} przedstawiono kolejno listę zdefiniowanych metod protokołu hipertekstowego wraz z wyjaśnieniem ich przeznaczenia, a także zbiór najczęściej wykorzystywanych linii nagłówkowych, w kontekście realizacji żądań.
 
@@ -104,9 +104,8 @@ Interfejsy API, budowane są z wykorzystaniem protokołu HTTP, dlatego też w ic
     \caption{Zbiór dozwolonych metod protokołu hipertekstowego}
     \label{tab:metody-http} \\
     \hline
-    Nazwa metody & Opis \\ \hline\hline\
+    Nazwa metody & Opis \\ \hline\hline
     \endhead
-    %
     GET &
       Pozyskanie danych dotyczących pojedynczej instancji określonego zasobu lub grupy instancji z opcjonalnym uwzględnieniem warunków kwalifikacji poszczególnej instancji do grupy. \\ \hline
     POST &
@@ -131,9 +130,8 @@ Interfejsy API, budowane są z wykorzystaniem protokołu HTTP, dlatego też w ic
     \caption{Zbiór najczęściej wykorzystywanych linii nagłówkowych w kontekście żądania protokołu hipertekstowego}
     \label{tab:naglowki-zadanie} \\
     \hline
-    Linia nagłówkowa & Znaczenie & Dopuszczalna zawartość \\ \hline\hline\
+    Linia nagłówkowa & Znaczenie & Dopuszczalna zawartość \\ \hline\hline
     \endhead
-    %
     accept & Typ zawartości, którą jest w stanie przetwarzać aplikacja kliencka & Identyfikator typu MIME (\textit{ang. Multipurpose Internet Mail Extensions}) lub zapis */* oznaczający dowolną zawartość  \\ \hline
 accept-encoding & Sposób kodowania znaków, rozumiany przez stronę klienta & Zbiór formatów kodowania zdefiniowany w ramach rejestru formatów IANA\\ \hline
 accept-language & Język naturalny, preferowany przez stronę kliencką & Pojedyncza wartość reprezentująca określony kraj lub region, bądź też lista niniejszych wartości wraz z parametrem istotności poszczególnego kodu lokalizacji\\ \hline
@@ -169,11 +167,11 @@ server & Nazwa hosta dostarczającego odpowiedź klientowi & Ciąg znaków \\ \h
 \label{tab:kody-odpowiedzi}
 \begin{tabularx}{\linewidth}{|p{4cm}|X|X|} \hline\
 Przedział liczbowy & Semantyka w kontekście odpowiedzi\\ \hline\hline
-100 - 199 & Zbiór kodów informacyjnych - żądanie jest aktualnie przetwarzanie\\ \hline
-200 - 299 & Zbiór kodów poprawnej odpowiedzi - wystosowane żądanie zostało zrealizowane poprawnie \\ \hline
-300 - 399 & Zbiór kodów przekierowań - istnieć może wiele akceptowalnych odpowiedzi dla żądania bądź realizacja określonej operacji wymusza odwołanie się pod adres identyfikujący odmienny zasób \\ \hline
-400 - 499 & Zbiór kodów błędu po stronie klienta - wygenerowane żądanie zawiera błędy, oczekiwany zasób nie istnieje, klient nie jest uwierzytelniony lub nie posiada określonego poziomu uprawnień \\ \hline
-500 - 599 & Zbiór kodów błędu po stronie serwera - pomimo poprawnej struktury wygenerowanego żądania, serwer nie jest w stanie zrealizować przydzielonej mu operacji\\ \hline
+100 -- 199 & Zbiór kodów informacyjnych -- żądanie jest aktualnie przetwarzanie\\ \hline
+200 -- 299 & Zbiór kodów poprawnej odpowiedzi -- wystosowane żądanie zostało zrealizowane poprawnie \\ \hline
+300 -- 399 & Zbiór kodów przekierowań -- istnieć może wiele akceptowalnych odpowiedzi dla żądania bądź realizacja określonej operacji wymusza odwołanie się pod adres identyfikujący odmienny zasób \\ \hline
+400 -- 499 & Zbiór kodów błędu po stronie klienta -- wygenerowane żądanie zawiera błędy, oczekiwany zasób nie istnieje, klient nie jest uwierzytelniony lub nie posiada określonego poziomu uprawnień \\ \hline
+500 -- 599 & Zbiór kodów błędu po stronie serwera -- pomimo poprawnej struktury wygenerowanego żądania, serwer nie jest w stanie zrealizować przydzielonej mu operacji\\ \hline
 \end{tabularx}
 \end{table}
 
@@ -188,7 +186,7 @@ Zbiór klas warstwy dostępu do danych, stanowi ostatni z logicznych poziomów, 
 
 \begin{figure}[ht]
  \centering
-  \includegraphics[width=0.6\linewidth]{rys02/architektura-api}
+  \includegraphics[width=0.9\linewidth]{rys02/architektura-api}
  \caption{Proces przetwarzania żądania wewnątrz interfejsu API}
  \label{fig:architektura-api}
 \end{figure}
@@ -224,7 +222,7 @@ Na rysunku \ref{fig:uwierzytelnienie-autoryzacja}, zilustrowany został proces u
 
 \begin{figure}[ht]
  \centering
-  \includegraphics[width=0.6\linewidth]{rys02/uwierzytelnianie-autoryzacja}
+  \includegraphics[width=1\linewidth]{rys02/uwierzytelnianie-autoryzacja}
  \caption{Proces uwierzytelnienia oraz autoryzacji użytkownika przed interfejsem API}
  \label{fig:uwierzytelnienie-autoryzacja}
 \end{figure}
@@ -288,10 +286,10 @@ Metody dynamiczne natomiast, związane są z weryfikacją właściwości poszcze
 
 Innym z rozważanych kryteriów podziału technik testowania jest ich umiejscowienie metody względem określonego fragmentu procesu wytwórczego. W nawiązaniu do tego aspektu, zdefiniować należy pojęcie poziomu testów, które jest powiązaniem sposobu ewaluacji oprogramowania z etapem jego realizacji. Istotą rozróżniania danych poziomów testów jest założenie różnorodności celów testowania, a także testowanych obiektów, określanych w kontekście każdej z warstw. W odniesieniu do najbardziej popularnych systematyk poziomów testowania wyróżnić można następujące elementy:
 \begin{itemize}
-    \item testy jednostkowe (zwane także modułowymi lub testami komponentów)
-    \item testy integracyjne
-    \item testy systemowe
-    \item testy akceptacyjne
+    \item testy jednostkowe (zwane także modułowymi lub testami komponentów),
+    \item testy integracyjne,
+    \item testy systemowe,
+    \item testy akceptacyjne.
 \end{itemize}
 
 Pierwszy z poziomów, dotyczy znajdowania niezgodności specyfikacyjnych w obrębie logicznie oddzielonych jednostek oprogramowania \textit{(ang. Software Units)}. Każda z jednostek, powinna być testowana w izolacji od pozostałych elementów systemu. Ze względu na złożoność rozwiązań informatycznych, a także statystycznie wysoki współczynnik wzajemnych zależności modułowych, warunek ten często nie może zostać spełniony. W takich sytuacjach, aby dostarczyć zależność do testowanej jednostki, budowane są moduły zastępcze, imitujące poprawne zachowanie określonego fragmentu programu \textit{(ang. Mocks)}. Omawiany poziom testowania, często postrzegany jest jako jeden z etapów procesu wytwórczego, szczególnie w ramach takich technik jak rozwój oprogramowania napędzany testowaniem \textit{(ang. Test Driven Development)}.
@@ -320,9 +318,9 @@ Kolejnym z kryteriów oceny wydajności, uwzględnianym w ramach procesu testowa
 
 Uwzględniając oba opisane powyżej parametry, podstawowy schemat scenariusza badawczego dotyczącego ewaluacji wydajności API składa się z następujących testów:
 \begin{itemize}
-    \item testy linii bazowej - pojedynczy klient generuje żadania w kierunku API w celu zdefiniowania średniego czasu odpowiedzi usługi w standardowych warunkach jej działania. W ramach niniejszej pracy, podczas wykonywania omawianego testu, zdefiniowane zostaną ponadto wartości współczynników satysfakcji, toleracji oraz frustracji, będące składowymi wskaźnika jakości APDEX. Wartości te, stanowią uogólnioną ocenę wydajności i posłużą jako punkt odniesienia dla kolejnych testów.
-    \item testy obciążeniowe - uwzględniana zostaje zmienna liczba klientów generujących żądania, w kontekście której ustalane są średnie czasu odpowiedzi na żądanie, a także dokonywane zostaje odniesienie uzyskanego rezultatu do współczynników zdefiniowanych uprzednio w ramach miary APDEX.
-    \item testy przeciążające - liczba klientów generujących żądanie zostaje dobrana w taki sposób, aby doprowadzić do obciążenia testowanej usługi, niepozwalającego na poprawne funkcjonowanie interfejsu programowania aplikacji. Ewaluacja ta, ma na celu znalezienie punktu krytycznego w kontekście działania testowanego oprogramowania.
+    \item testy linii bazowej -- pojedynczy klient generuje żadania w kierunku API w celu zdefiniowania średniego czasu odpowiedzi usługi w standardowych warunkach jej działania. W ramach niniejszej pracy, podczas wykonywania omawianego testu, zdefiniowane zostaną ponadto wartości współczynników satysfakcji, toleracji oraz frustracji, będące składowymi wskaźnika jakości APDEX. Wartości te, stanowią uogólnioną ocenę wydajności i posłużą jako punkt odniesienia dla kolejnych testów.
+    \item testy obciążeniowe -- uwzględniana zostaje zmienna liczba klientów generujących żądania, w kontekście której ustalane są średnie czasu odpowiedzi na żądanie, a także dokonywane zostaje odniesienie uzyskanego rezultatu do współczynników zdefiniowanych uprzednio w ramach miary APDEX.
+    \item testy przeciążające -- liczba klientów generujących żądanie zostaje dobrana w taki sposób, aby doprowadzić do obciążenia testowanej usługi, niepozwalającego na poprawne funkcjonowanie interfejsu programowania aplikacji. Ewaluacja ta, ma na celu znalezienie punktu krytycznego w kontekście działania testowanego oprogramowania.
 \end{itemize}
 
 Poza czarnoskrzynkowymi testami wydajności, cechującymi się omówioną powyżej strkturą, przeprowadzone mogą zostać ewaluacje efektywności działania poszczególnych fragmentów usługi sieciowej, w ramach których interfejs programowania aplikacji postrzegać należy w odmienny sposób, aniżeli jako system wejściowo-wyjściowy.
@@ -340,7 +338,7 @@ W ramach niniejszej pracy, język C\# wykorzystany został do implementacji jedn
 
 W ramach omawianego środowiska wykorzystywany zostaje komponent języka C\# zwany biblioteką standardową \textit{(ang. .NET Standard Library)}. Biblioteka ta jest wspólna dla wielu środowisk uruchomieniowych, a zawarte w niej funkcjonalności, traktować należy jako metody ogólnego przeznaczenia.
 
-Ponadto, środowisko .NET Core, w ramach procesu budowy i kompilacji rozwiązania nawiązuje komunikację z komponentem wspólnej infrastruktury \textit{(ang. Common Infrastructure)}. Komponent ten, podobnie jak biblioteka standardowa, współdzielony jest przez wiele środowisk wykonawczych. W kontekście wspólnej infrastruktury, wspomnieć należy o wspólnej specyfikacji języka \textit{(ang. CLS - Common Language Specification)}, wspólnym systemie typów \textit{(ang. CTS - Common Type System)}, a także środowisku uruchomieniowym wspólnego języka \textit{(ang. CLR - Common Language Runtime)}. Wykorzystanie między innymi tych trzech elementów, pozwala na budowę systemu dostępnego na wielu platformach \cite{troelsen2017pro}.
+Ponadto, środowisko .NET Core, w ramach procesu budowy i kompilacji rozwiązania nawiązuje komunikację z komponentem wspólnej infrastruktury \textit{(ang. Common Infrastructure)}. Komponent ten, podobnie jak biblioteka standardowa, współdzielony jest przez wiele środowisk wykonawczych. W kontekście wspólnej infrastruktury, wspomnieć należy o wspólnej specyfikacji języka \textit{(ang. CLS -- Common Language Specification)}, wspólnym systemie typów \textit{(ang. CTS -- Common Type System)}, a także środowisku uruchomieniowym wspólnego języka \textit{(ang. CLR -- Common Language Runtime)}. Wykorzystanie między innymi tych trzech elementów, pozwala na budowę systemu dostępnego na wielu platformach \cite{troelsen2017pro}.
 
 W kontekście realizowanej pracy, technologia .NET Core użyta została jako środowisko uruchomieniowe dla interfejsów programowania aplikacji tworzonych w języku C\#. W obrębie technologii tej, poza przedstawionymi powyżej komponentami, wyróżnić możemy natywną bibliotekę ASP.NET Core, stanowiącą zbiór metod przydatnych w procesie definiowania internetowych usług sieciowych oraz aplikacji webowych. Dzięki zastosowaniu ASP.NET Core operacje takie jak, między innymi: obsługa definicji kontrolerów API, zarządzanie stanem ciała żądania oraz jego rzutowaniem na określony typ danych, czy też implementacja mechanizmów uwierzytelniania i autoryzacji klienta, wykonane mogą zostać na wysokim poziomie abstrakcji z jednoczesnym zapewnieniem należytego poziomu ich wydajności.
 \subsection*{Entity Framework Core}
@@ -350,7 +348,7 @@ Zastosowanie biblioteki mapera obiektowo-relacyjnego jaką jest Entity Framework
 
 Niezaprzeczalną zaletę wykorzystania biblioteki ORM jaką jest Entity Framework Core stanowi możliwość operowania na jednolitym interfejsie realizacji operacji na danych, niezależnie od obsługiwanego systemu bazodanowego. Oznacza to, że w momencie zmiany dostawcy zewnętrznego źródła danych, zawartość kodu źródłowego programu nie musi podlegać modyfikacji \cite{smith2021entity}.
 \subsection*{MediatR}
-MediatR to otwartoźródłowa biblioteka języka C\#, z wykorzystaniem której zaimplementowany może zostać wzorzec projektowy, dotyczący separacji odpowiedzialności za obsługę zapytań oraz komend przetwarzanych przez usługę sieciową. Kluczowym elementem biblioteki MediatR jest para generycznych interfejsów, za pomocą których implementowana jest obsługa zarówno żądań jak i zapytań dotyczących danych. Interfejsami tymi są kolejno: \textit{IRequest} - struktura programistyczna implementowana przez klasy definiujące zawartość ciała żądania lub komendy, a także powiązany z nią \textit{IRequestHandler}, który jest konkretyzowany przez klasę definicji metody obsługi żądania bądź operacji na danych. 
+MediatR to otwartoźródłowa biblioteka języka C\#, z wykorzystaniem której zaimplementowany może zostać wzorzec projektowy, dotyczący separacji odpowiedzialności za obsługę zapytań oraz komend przetwarzanych przez usługę sieciową. Kluczowym elementem biblioteki MediatR jest para generycznych interfejsów, za pomocą których implementowana jest obsługa zarówno żądań jak i zapytań dotyczących danych. Interfejsami tymi są kolejno: \textit{IRequest} -- struktura programistyczna implementowana przez klasy definiujące zawartość ciała żądania lub komendy, a także powiązany z nią \textit{IRequestHandler}, który jest konkretyzowany przez klasę definicji metody obsługi żądania bądź operacji na danych. 
 
 Ponadto, należy również podkreślić znaczenie metody \textit{Send} dostępnej w ramach głównego API pakietu MediatR. Dzięki niej, wywołana może zostać procedura obsługi określonego żądania lub operacji, z dowolnego miejsca kodu źródłowego interfejsu programowania aplikacji \cite{mediatr}.
 \subsection*{JavaScript}
@@ -428,7 +426,7 @@ Ostatnią przytoczoną w ramach tego przeglądu literaturowego pozycją, dotycz�
 
 Pozycja \cite{prasad2004software} stanowi przegląd narzędzi wykorzystywanych do testowania działania systemów komputerowych. Na początku książki, wprowadzany jest termin zapewnienia jakości (ang. Quality Assurance), który w dzisiejszych czasach definiuje zakres odpowiedzialności osoby testującej oprogramowanie. Kolejno, przedstawiane są kryteria sukcesu dotyczące tworzonego systemu, a także fazy poszczególnych modeli rozwoju oprogramowania zorientowanych na procesy. Analogicznie do pozycji literaturowych przedstawionych uprzednio, w ramach tej pozycji określone zostały metryki i definicje jakości oprogramowania oraz omówiony został proces realizacji testów. Główna część omawianego dokumentu skupiona jest wokół narzędzi stosowanych do realizacji ewaluacji oprogramowania. Wyszczególniono tutaj narzędzie WinRunner, przedstawiając między innymi wykorzystywany w tym programie skryptowy język testów (ang. Test Script Language). Ponadto, przedstawiono architekturę oraz najważniejsze funkcjonalności narzędzi SilkTest, SQA Robot, LoadRunner, TestDirector, QuickTest Professional a także Apache JMeter. Ostatni z wymienionych programów, wykorzystywany zostanie w ramach niniejszej pracy dyplomowej, dlatego też dalszy przegląd tej pozycji literaturowej skupiony będzie na rozdziale dotyczącym właśnie tego narzędzia. Opis funkcjonalności aplikacji JMeter został w niniejszej pozycji podzielony na sekcje związane z testowaniem rozwiązań bazodanowych wykorzystujących interfejs JDBC (ang. Java DataBase Connectivity), a także sekcję dotyczącą testowania aplikacji bazujących w swoim działaniu na protokole hipertekstowym. Przedstawiono tutaj sposób tworzenia grup wątków reprezentujących użytkowników aplikacji, generowania żądania protokołu hipertekstowego, uruchomienia mechanizmu nasłuchiwania na odpowiedź serwisu, dodawania licznika czasu, a także zapisywania i przeglądania rezultatów przeprowadzonego testu.
 
-W ramach dokumentów \cite{nevedrov2006using} oraz \cite{halili2008apache} przedstawiono pełen zakres funkcjonalności dostępnych w ramach narzędzia Apache JMeter. Pierwsza z prac (tj. \cite{nevedrov2006using}), skupia się na wykorzystaniu narzędzia w celu wykonywania testów wydajności usług sieciowych, natomiast druga z pozycji (tj. \cite{halili2008apache}), przedstawia aplikację JMeter dla różnych kontekstów jej potencjalnego użycia. W obu pracach wyszczególnione zostają podstawowe elementy, na które składa się środowisko testowe. Elementami tymi są: grupy wątków, komponenty próbkujące, kontrolery, komponenty nasłuchujące, liczniki czasu oraz asercje. Ponadto,  omówiono elementy graficznego interfejsu użytkownika dla aplikacji, przedstawiono proces instalacji oraz uruchamiania narzędzia JMeter, a także zdefiniowano pojęcie planu testów. W kontekście pracy \cite{nevedrov2006using}, poza wymienionymi uprzednio kwestiami, zobrazowany został także proces wykonywania testu przeciążeniowego dla usługi zorientowanej na serwisy (ang. Service-Oriented Application). Proces ten uwzględniał: tworzenie grupy wątków, konfigurację struktury żądania wysyłanego do usługi, uruchomienie testu, a także pozyskanie wyniku. W pracy \cite{halili2008apache} natomiast, analogiczny proces, możemy zaobserwować dla monolitycznej aplikacji internetowej oraz interfejsu programowania aplikacji. Ponadto, przedstawione zostały zaawansowane opcje konfiguracji elementów nasłuchujących oraz liczników czasu, a także pokazany został proces wykorzystania pośredniczącego serwera http, w celu dokumentowania realizowanych żądań.
+W ramach dokumentów \cite{nevedrov2006using} oraz \cite{halili2008apache} przedstawiono pełen zakres funkcjonalności dostępnych w ramach narzędzia Apache JMeter. Pierwsza z prac (tj. \cite{nevedrov2006using}), skupia się na wykorzystaniu narzędzia w celu wykonywania testów wydajności usług sieciowych, natomiast druga z pozycji (tj. \cite{halili2008apache}), przedstawia aplikację JMeter dla różnych kontekstów jej potencjalnego użycia. W obu pracach wyszczególnione zostają podstawowe elementy, na które składa się środowisko testowe. Elementami tymi są: grupy wątków, komponenty próbkujące, kontrolery, komponenty nasłuchujące, liczniki czasu oraz asercje. Ponadto,  omówiono elementy graficznego interfejsu użytkownika dla aplikacji, przedstawiono proces instalacji oraz uruchamiania narzędzia JMeter, a także zdefiniowano pojęcie planu testów. W kontekście pracy \cite{nevedrov2006using}, poza wymienionymi uprzednio kwestiami, zobrazowany został także proces wykonywania testu przeciążeniowego dla usługi zorientowanej na serwisy (ang. Service Oriented Application). Proces ten uwzględniał: tworzenie grupy wątków, konfigurację struktury żądania wysyłanego do usługi, uruchomienie testu, a także pozyskanie wyniku. W pracy \cite{halili2008apache} natomiast, analogiczny proces, możemy zaobserwować dla monolitycznej aplikacji internetowej oraz interfejsu programowania aplikacji. Ponadto, przedstawione zostały zaawansowane opcje konfiguracji elementów nasłuchujących oraz liczników czasu, a także pokazany został proces wykorzystania pośredniczącego serwera http, w celu dokumentowania realizowanych żądań.
 
 Następne pozycje literaturowe omówione w ramach tej pracy, dotyczą budowy oraz zasady działania internetowego protokołu hipertekstowego (ang. Hypertext Transfer Protocol), a także implementacji mechanizmu zarządzania stanem. Mechanizm ten, w związku z naturą protokołu http, nie jest w nim domyślnie realizowany.
 

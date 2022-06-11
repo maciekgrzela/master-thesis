@@ -7,7 +7,7 @@ W odniesieniu do każdej z topologii zbudowanej w środowisku lokalnym, zauważy
 
 Odwołując się do topologii sieciowej zbudowanej w środowisku rozległym, zauważyć należy odmienny sposób pozyskiwania informacji o czasie przetwarzania pojedynczego żądania. W tym przypadku, wykorzystywane narzędzie pomiarowe służy jako generator żądań, jednakże czasy odpowiedzi na żądanie, zwrócone przez to narzędzie nie mogą być brane pod uwagę. Informacja o czasie przetwarzania żądania zostaje dostarczana bezpośrednio z interfejsu programowania aplikacji.
 
-\subsection*{Konfiguracja pierwsza lokalnej topologii fizycznej środowiska badawczego}
+\subsection*{Konfiguracja topologii fizycznej środowiska badawczego nr 1}
 \label{sec:lokalne-srodowisko-badawcze-ver-1}
 Pierwsza spośród lokalnych topologii fizycznych środowiska badawczego zastosowana została w celu badania wpływu wykorzystania odmiennych systemów bazodanowych na wydajność interfejsów programowania aplikacji.
 
@@ -18,26 +18,26 @@ Na ilustracji \ref{fig:topologia-1} przedstawiono schemat pierwszego wariantu lo
 \begin{figure}[ht]
     \centering
      \includegraphics[width=\linewidth]{rys04/topologia-1.png}
-    \caption{Konfiguracja pierwsza lokalnej topologii fizycznej środowiska badawczego}
+    \caption{Konfiguracja topologii fizycznej środowiska badawczego nr 1}
     \label{fig:topologia-1}
 \end{figure}
 
-\subsection*{Konfiguracja druga lokalnej topologii fizycznej środowiska badawczego}
+\subsection*{Konfiguracja topologii fizycznej środowiska badawczego nr 2}
 \label{sec:lokalne-srodowisko-badawcze-ver-2}
 Druga topologia fizyczna środowiska badawczego, dotycząca ewaluacji w obrębie lokalnej sieci komputerowej, zbudowana została na potrzeby badań zaimplementowanych mechanizmów programowania współbieżnego, a także przechowywania odpowiedzi na żądania w ramach pamięci podręcznej.
 
-W omawianej topologii wskazać należy dwa interfejsy programowania aplikacji, których implementacja dokonana została w porównywanych dwóch technologiach programistycznych. Obie usługi sieciowe, komunikują się z pojedyną instancją serwera bazodanowego - w przypadku badania pamięci cache, bądź też nie odwołują się do niego wcale - w przypadku badania efektywności operacji współbieżnych. Spośród urządzeń komunikacyjnych, wykorzystywanych do przeprowadzenia ewaluacji, wyróżnić należy jedno urządzenie typu Master (tzw. Dyrygent testu), a także jednego hosta typu Slave (tzw. generator żądań). Pierwszy z komputerów ma za zadanie przechowywać konfigurację wykonywanego badania, a także dostarczać komendy związane z rozpoczęciem i charakterystyką testu. Drugi host pełni rolę maszyny wytwarzającej i wysyłającej żądania protokołu hipertekstowego, zgodnie z koncepcją nakreśloną przez uzyskany plan ewaluacji. Wszystkie urządzenia znajdują się w obszarze pojedynczej, przewodowej lokalnej sieci komputerowej. Analogicznie do konfiguracji pierwszej, każde łącze przewodowe charakteryzuje się tym samym standardem oraz przepustowością.
+W omawianej topologii wskazać należy dwa interfejsy programowania aplikacji, których implementacja dokonana została w porównywanych dwóch technologiach programistycznych. Obie usługi sieciowe, komunikują się z pojedyną instancją serwera bazodanowego -- w przypadku badania pamięci cache, bądź też nie odwołują się do niego wcale -- w przypadku badania efektywności operacji współbieżnych. Spośród urządzeń komunikacyjnych, wykorzystywanych do przeprowadzenia ewaluacji, wyróżnić należy jedno urządzenie typu Master (tzw. Dyrygent testu), a także jednego hosta typu Slave (tzw. generator żądań). Pierwszy z komputerów ma za zadanie przechowywać konfigurację wykonywanego badania, a także dostarczać komendy związane z rozpoczęciem i charakterystyką testu. Drugi host pełni rolę maszyny wytwarzającej i wysyłającej żądania protokołu hipertekstowego, zgodnie z koncepcją nakreśloną przez uzyskany plan ewaluacji. Wszystkie urządzenia znajdują się w obszarze pojedynczej, przewodowej lokalnej sieci komputerowej. Analogicznie do konfiguracji pierwszej, każde łącze przewodowe charakteryzuje się tym samym standardem oraz przepustowością.
 
 Na ilustracji \ref{fig:topologia-2} przedstawiono schemat drugiego wariantu lokalnej topologii fizycznej środowiska badawczego.
 
 \begin{figure}[ht]
     \centering
      \includegraphics[width=\linewidth]{rys04/topologia-2.png}
-    \caption{Konfiguracja druga lokalnej topologii fizycznej środowiska badawczego}
+    \caption{Konfiguracja topologii fizycznej środowiska badawczego nr 2}
     \label{fig:topologia-2}
 \end{figure}
 
-\subsection*{Konfiguracja trzecia lokalnej topologii fizycznej środowiska badawczego}
+\subsection*{Konfiguracja topologii fizycznej środowiska badawczego nr 3}
 \label{sec:lokalne-srodowisko-badawcze-ver-3}
 Trzecia lokalna topologia fizyczna środowiska badawczego przystosowana została w celu umożliwienia realizacji badań dotyczących wydajności obsługi operacji asynchronicznych.
 
@@ -52,11 +52,11 @@ Na ilustracji \ref{fig:topologia-3} przedstawiono schemat trzeciego wariantu lok
 \begin{figure}[ht]
     \centering
      \includegraphics[width=\linewidth]{rys04/topologia-3.png}
-    \caption{Konfiguracja trzecia lokalnej topologii fizycznej środowiska badawczego}
+    \caption{Konfiguracja topologii fizycznej środowiska badawczego nr 3}
     \label{fig:topologia-3}
 \end{figure}
 
-\subsection*{Konfiguracja czwarta lokalnej topologii fizycznej środowiska badawczego}
+\subsection*{Konfiguracja topologii fizycznej środowiska badawczego nr 4}
 \label{sec:lokalne-srodowisko-badawcze-ver-4}
 Ostatnia z lokalnych topologii fizycznych środowiska badawczego zbudowana została w kontekście przeprowadzenia badania efektywności interfejsów programowania aplikacji w związku z zastosowaniem wzorca podziału odpowiedzialności.
 
@@ -71,11 +71,11 @@ Na ilustracji \ref{fig:topologia-5} przedstawiono schemat czwartego wariantu lok
 \begin{figure}[ht]
     \centering
      \includegraphics[width=\linewidth]{rys04/topologia-5.png}
-    \caption{Konfiguracja czwarta lokalnej topologii fizycznej środowiska badawczego}
+    \caption{Konfiguracja topologii fizycznej środowiska badawczego nr 4}
     \label{fig:topologia-5}
 \end{figure}
 
-\subsection*{Konfiguracja pierwsza rozległej topologii fizycznej środowiska badawczego}
+\subsection*{Konfiguracja topologii fizycznej środowiska badawczego nr 5}
 \label{sec:rozproszone-srodowisko-badawcze-ver-1}
 Konfiguracja topologii fizycznej dla rozproszonego środowiska badawczego, stworzona została w celu wykonania badań dotyczących efektywności działania interfejsów programowania aplikacji uruchamianych na odmiennych platformach chmurowych.
 
@@ -88,7 +88,7 @@ Na ilustracji \ref{fig:topologia-4} przedstawiono schemat pierwszego wariantu ro
 \begin{figure}[ht]
     \centering
      \includegraphics[width=\linewidth]{rys04/topologia-4.png}
-    \caption{Konfiguracja pierwsza rozległej topologii fizycznej środowiska badawczego}
+    \caption{Konfiguracja topologii fizycznej środowiska badawczego nr 5}
     \label{fig:topologia-4}
 \end{figure}
 
@@ -98,8 +98,8 @@ Niezależnie od rozważanej technologii, interfejsy programowania aplikacji impl
 
 W kontekście funkcjonalności tworzonych usług sieciowych wymienić należy:
 \begin{itemize}
-    \item definiowanie oraz zarządzanie strukturą lokalu restauracyjnego (zarządzanie pomieszczeniami lokalu, określanie układu stolików wewnątrz pojedynczego pomieszczenia)
-    \item obsługa procesu zamównienia (zarządzanie rachunkami, daniami, statusami przetwarzania posiłków, a także dyspozycjami klientów)
+    \item definiowanie oraz zarządzanie strukturą lokalu restauracyjnego (zarządzanie pomieszczeniami lokalu, określanie układu stolików wewnątrz pojedynczego pomieszczenia),
+    \item obsługa procesu zamównienia (zarządzanie rachunkami, daniami, statusami przetwarzania posiłków, a także dyspozycjami klientów),
     \item zarządzanie gospodarką magazynową lokalu restauracyjnego (obserwacja stanów ilościowych w kontekście produktu, obsługa danych produktu, definiowanie kategorii produktowych).
 \end{itemize}
 
@@ -158,7 +158,7 @@ Na rysunku \ref{fig:algorytm-genetyczny} zilustrowano schemat blokowy algorytmu 
 \begin{figure}[ht]
     \centering
      \includegraphics[width=0.6\linewidth]{rys04/algorytm-genetyczny.png}
-    \caption{Schemat blokowy algorytmu genetycznego}
+    \caption{Schemat blokowy algorytmu genetycznego \cite{wozniak}}
     \label{fig:algorytm-genetyczny}
 \end{figure}
 
@@ -177,7 +177,6 @@ W tabeli \ref{tab:hiperparametry-genetyczny} wymieniono hiperparametry zaimpleme
     Rozmiar populacji & Liczba osobników poddawanych ewolucji, spośród których ostatecznie wybierane jest rozwiązanie najlepsze & 0,75 * liczba wszystkich rozpatrywanych lokalizacji \\ \hline
     Liczba osobników dominujących w ramach pojedynczej populacji & Rozmiar podgrupy w obrębie pojedynczej populacji, skupiającej w sobie osobników o najwyższych wartościach funkcji przystosowania & 0.25 * rozmiar populacji \\ \hline
     Czas wykonania algorytmu & Przedział czasu określany przez liczbę sekund, w ramach którego wykonywana będzie główna pętla algorytmu & 60 \\ \hline
-\hline
 \end{tabularx}
 \end{table}
 
@@ -228,16 +227,14 @@ W momencie tuż przed stworzeniem wpisu i wysyłaniem go do magazynu pamięci po
 
 
 
-gdzie:\newline\newline
+\noindent \textbf{gdzie:}
 
-
-
-$executions(x)$ - liczba wywołań punktu końcowego, którego wpis w pamięci podręcznej identyfikowany jest kluczem x \newline\newline
-$invalidations(x)$ - liczba unieważnień wpisu pamięci podręcznej identyfikowanego kluczem x \newline\newline
-$execution\_factor(x)$ - współczynnik częstości wykonania określonego punktu końcowego \newline\newline
-$invalidation\_factor(x)$ - współczynnik częstości unieważnień wpisów dotyczących określonego punktu końcowego \newline\newline
-$ttl(x)$ - czas ważności wpisu dodawanego do pamięci podręcznej \newline\newline
-$max\_ttl(x)$ - maksymalny czas ważności wpisu podręcznej względem którego wyliczany jest faktyczny czas ważności \newline\newline
+\noindent $executions(x)$ -- liczba wywołań punktu końcowego, którego wpis w pamięci podręcznej identyfikowany jest kluczem x \newline
+$invalidations(x)$ -- liczba unieważnień wpisu pamięci podręcznej identyfikowanego kluczem x \newline
+$execution\_factor(x)$ -- współczynnik częstości wykonania określonego punktu końcowego, którego wpis w pamięci podręcznej identyfikowany jest kluczem x \newline
+$invalidation\_factor(x)$ -- współczynnik częstości unieważnień wpisów dotyczących określonego punktu końcowego, którego wpis w pamięci podręcznej identyfikowany jest kluczem x \newline
+$ttl(x)$ -- czas ważności wpisu dodawanego do pamięci podręcznej identyfikowanego kluczem x \newline
+$max\_ttl(x)$ -- maksymalny czas ważności wpisu pamięci podręcznej identyfikowanego kluczem x względem którego wyliczany jest faktyczny czas ważności \newline
 
 Kod źródłowy służący do zarządzania elementami pamięci podręcznej zaimplementowany został w API C\# za pomocą funkcji pośredniczących dołączanych do struktur programistycznych w formie atrybutu. Stworzona została klasa dziedzicząca po natywnym typie \textit{Attribute}, a także implementująca interfejs \textit{IAsyncActionFilter}. Implementacja niniejszego interfejsu wymaga zdefiniowania metody \textit{OnActionExecutionAsync}, w ramach której napisano logikę działania obu mechanizmów obsługi cache. Wspomniana metoda, posiada dostęp do kontekstu żądania HTTP przez co możliwe było zarówno wykonanie operacji, tuż przed jak i tuż po uruchomieniu metody klasy konstruktora.
 
@@ -246,23 +243,23 @@ W przypadku platformy uruchomieniowej NodeJS oraz języka JavaScript, wymagane b
 Uogólniony przepływ sterowania wewnątrz interfejsów API implementujących pamięć podręczną, w kontekście odczytu danych, a także abstrahując od używanej technologii programistycznej, stanowi następującą sekwencję:
 
 \begin{itemize}
-    \item Wywołania żądania protokołu HTTP przez aplikację kliencką
-    \item Określenie metody klasy konstruktora obsługującej żądanie o wyspecyfikowanych składowych
-    \item Wywołanie metody obsługi wpisu pamięci podręcznej dla operacji odczytu (tj. połączenie się z magazynem cache, sprawdzenie dostępności wpisu)
-    \item Wywołanie metody klasy konstruktora w przypadku braku wpisu w magazynie cache
-    \item Pominięcie metody klasy konstruktora w przypadku uzyskania wpisu z magazynu
-    \item Zwrócenie odpowiedzi z jednego z dwóch źródeł danych
+    \item Wywołania żądania protokołu HTTP przez aplikację kliencką.
+    \item Określenie metody klasy konstruktora obsługującej żądanie o wyspecyfikowanych składowych.
+    \item Wywołanie metody obsługi wpisu pamięci podręcznej dla operacji odczytu (tj. połączenie się z magazynem cache, sprawdzenie dostępności wpisu).
+    \item Wywołanie metody klasy konstruktora w przypadku braku wpisu w magazynie cache.
+    \item Pominięcie metody klasy konstruktora w przypadku uzyskania wpisu z magazynu.
+    \item Zwrócenie odpowiedzi z jednego z dwóch źródeł danych.
 \end{itemize}
 
 W aspekcie zapisu danych natomiast wyróżnić możemy poniższe kroki:
 
 \begin{itemize}
-    \item Wywołania żądania protokołu HTTP przez aplikację kliencką
-    \item Określenie metody klasy konstruktora obsługującej żądanie o wyspecyfikowanych składowych
-    \item Wywołanie metody klasy konstruktora
-    \item Ustalenie kolekcji kluczy wszystkich wpisów pamięci podręcznej powiązanych z modyfikowaną encją
-    \item Unieważnienie wszystkich wpisów na podstawie kluczy uzyskanej kolekcji
-    \item Zwrócenie odpowiedzi w kierunku aplikacji klienckiej
+    \item Wywołania żądania protokołu HTTP przez aplikację kliencką.
+    \item Określenie metody klasy konstruktora obsługującej żądanie o wyspecyfikowanych składowych.
+    \item Wywołanie metody klasy konstruktora.
+    \item Ustalenie kolekcji kluczy wszystkich wpisów pamięci podręcznej powiązanych z modyfikowaną encją.
+    \item Unieważnienie wszystkich wpisów na podstawie kluczy uzyskanej kolekcji.
+    \item Zwrócenie odpowiedzi w kierunku aplikacji klienckiej.
 \end{itemize}
 
 Obie powyższe sekwencje, w przypadku metody autorskiej wzbogacone zostały o aktualizację informacji o wykonaniu i unieważnieniu punktu końcowego, a także proces wyliczenia współczynników wykonania i unieważnienia. 
@@ -289,11 +286,11 @@ Zależnie od wykorzystywanej technologii, możliwe było wprowadzenie różnych 
 
 W ramach interfejsu programowania aplikacji uruchamianego w środowisku .NET/C\# wprowadzono następujące usprawnienia wydajnościowe:
 \begin{itemize}
-    \item Kompilowane kwerendy \textit{(ang. Compiled Queries)} - zapytania o dane linq, wykorzystywane przez mapper entity framework core stanowią intuicyjny i prosty w budowie interfejs komunikacji z systemem bazodanowym. Programista, w nieskomplikowany sposób może zbudować zaawansowaną kwerendę pozyskującą dane, odwołującą się jednocześnie do wielu struktur bazodanowych. Rozwiązanie to jednak, wymaga zbudowania przez bibliotekę entity framework core drzewa składniowego reprezentującego kwerendę i pozwalającego na jej przekształcenie do kodu języka bazy danych. Proces ten, wraz ze zwiększeniem się poziomu skomplikowania zapytania może trwać znacząco dłużej i wpływać negatywnie na wydajność aplikacji. Dlatego też, zastosowano się na wykorzystanie podejścia kompilowanych kwerend, które pozwala na zbudowanie drzew składniowych dla zapytań jednokrotnie po uruchomieniu api, a następnie szybsze generowanie kodu języka bazy danych.
-    \item Pula kontekstów bazodanowych \textit{(ang. DbContext Pool)} - dla standardowej konfiguracji interfejsów API w ramach platformy .NET, instancja klasy kontekstu bazodanowego inicjalizowana każdorazowo dla pojedynczego żądania wysyłanego w kierunku API. Rozwiązanie to jest akceptowalne przy standardowym natężeniu otrzymywanych żądań ze względu na niewielki rozmiar instancji klasy, a także szybki czas jej ustanowienia. W przypadku zwiększonego natężenia ruchu sieciowego w kierunku API, wydajność może zostać z tego powodu obniżona. W celu zapobiegania spadku wydajności zastosowano mechanizm puli obiektów kontekstu bazodanowego. Mechanizm ten pozwala na utrzymywanie wielu obiektów konktekstu przez cały czas działania API i czasowe przydzielanie tych obiektów do obsługi nadchodzących żądań.
-    \item Leniwe ładowanie \textit{(ang. Lazy loading)} - domyślnym zachowaniem obiektu kontekstu bazodanowego jest wykonanie kwerendy tuż po jej deklaracji, a także pozyskanie wszelkich obiektów nawigacyjnych, które zostały w niej wymienione. Zachowanie to, powoduje pozyskanie określonych fragmentów danych, które zostaną wykorzystane dopiero w dalszej części przetwarzania programu. Mechanizm leniwego ładowania pozwala na pozyskiwanie danych dopiero wtedy, gdy instrukcje kodu źródłowego wskazują na konieczność ich wykorzystania.
-    \item Rozdzielone zapytania \textit{(ang. Split Queries)} - kod języka bazy danych, wygenerowany poprzez przetworzenie drzewa składniowego zapytania linq przez entity framework core, domyślnie uwzględnia pozyskiwanie encji zależnych (tj. encji identyfikowanych kluczem obcym) poprzez dokonanie lewostronnego iloczynu kartezjańskiego. Dzięki temu, niezależnie od tego, ile encji zależnych programista będzie chciał uzyskać, operacja pozyskiwania danych sprowadzona zostanie do pojedynczego zapytania. Wiąże się to jednak z możliwością uzyskania bardzo dużej liczby zduplikowanych danych. Dane te, są programowo filtrowane przez maper obiektowo-relacyjny przed zwróceniem ich do kodu programu. Aby uniknąć konieczności redukcji zduplikowanych danych, przy założeniu wykonywania kwerend dołączających wiele encji zależnych wykorzystany został mechanizm rozdzielonych zapytań, który przekształca pojedyncze zapytanie z wielokrotnym lewostronnym iloczynem w serię kilku osobnych zapytań.
-    \item Pula połączeń bazodanowych \textit{(ang. Database Connections Pool)} - zdefiniowanie parametru obsługi wielu równolegle działających połączeń z serwerem bazodanowym. 
+    \item Kompilowane kwerendy \textit{(ang. Compiled Queries)} -- zapytania o dane linq, wykorzystywane przez mapper entity framework core stanowią intuicyjny i prosty w budowie interfejs komunikacji z systemem bazodanowym. Programista, w nieskomplikowany sposób może zbudować zaawansowaną kwerendę pozyskującą dane, odwołującą się jednocześnie do wielu struktur bazodanowych. Rozwiązanie to jednak, wymaga zbudowania przez bibliotekę entity framework core drzewa składniowego reprezentującego kwerendę i pozwalającego na jej przekształcenie do kodu języka bazy danych. Proces ten, wraz ze zwiększeniem się poziomu skomplikowania zapytania może trwać znacząco dłużej i wpływać negatywnie na wydajność aplikacji. Dlatego też, zastosowano się na wykorzystanie podejścia kompilowanych kwerend, które pozwala na zbudowanie drzew składniowych dla zapytań jednokrotnie po uruchomieniu api, a następnie szybsze generowanie kodu języka bazy danych.
+    \item Pula kontekstów bazodanowych \textit{(ang. DbContext Pool)} -- dla standardowej konfiguracji interfejsów API w ramach platformy .NET, instancja klasy kontekstu bazodanowego inicjalizowana każdorazowo dla pojedynczego żądania wysyłanego w kierunku API. Rozwiązanie to jest akceptowalne przy standardowym natężeniu otrzymywanych żądań ze względu na niewielki rozmiar instancji klasy, a także szybki czas jej ustanowienia. W przypadku zwiększonego natężenia ruchu sieciowego w kierunku API, wydajność może zostać z tego powodu obniżona. W celu zapobiegania spadku wydajności zastosowano mechanizm puli obiektów kontekstu bazodanowego. Mechanizm ten pozwala na utrzymywanie wielu obiektów konktekstu przez cały czas działania API i czasowe przydzielanie tych obiektów do obsługi nadchodzących żądań.
+    \item Leniwe ładowanie \textit{(ang. Lazy loading)} -- domyślnym zachowaniem obiektu kontekstu bazodanowego jest wykonanie kwerendy tuż po jej deklaracji, a także pozyskanie wszelkich obiektów nawigacyjnych, które zostały w niej wymienione. Zachowanie to, powoduje pozyskanie określonych fragmentów danych, które zostaną wykorzystane dopiero w dalszej części przetwarzania programu. Mechanizm leniwego ładowania pozwala na pozyskiwanie danych dopiero wtedy, gdy instrukcje kodu źródłowego wskazują na konieczność ich wykorzystania.
+    \item Rozdzielone zapytania \textit{(ang. Split Queries)} -- kod języka bazy danych, wygenerowany poprzez przetworzenie drzewa składniowego zapytania linq przez entity framework core, domyślnie uwzględnia pozyskiwanie encji zależnych (tj. encji identyfikowanych kluczem obcym) poprzez dokonanie lewostronnego iloczynu kartezjańskiego. Dzięki temu, niezależnie od tego, ile encji zależnych programista będzie chciał uzyskać, operacja pozyskiwania danych sprowadzona zostanie do pojedynczego zapytania. Wiąże się to jednak z możliwością uzyskania bardzo dużej liczby zduplikowanych danych. Dane te, są programowo filtrowane przez maper obiektowo-relacyjny przed zwróceniem ich do kodu programu. Aby uniknąć konieczności redukcji zduplikowanych danych, przy założeniu wykonywania kwerend dołączających wiele encji zależnych wykorzystany został mechanizm rozdzielonych zapytań, który przekształca pojedyncze zapytanie z wielokrotnym lewostronnym iloczynem w serię kilku osobnych zapytań.
+    \item Pula połączeń bazodanowych \textit{(ang. Database Connections Pool)} -- zdefiniowanie parametru obsługi wielu równolegle działających połączeń z serwerem bazodanowym. 
 \end{itemize}
 
 Ponadto, wprowadzono wiele mniej znaczących usprawnień wydajnościowych, takich jak przekazywanie parametrów do zapytań linq zamiast stosowania stałych dosłownych, czy też redukcja wykorzystania zewnętrznych metod wewnątrz funkcji anonimowych zapytania. 
@@ -302,13 +299,13 @@ W ramach interfejsu programowania aplikacji uruchamianego w środowisku NodeJS/E
 \begin{itemize}
     \item Wykorzystanie obiektu include do dołączania encji zależnych w sposób kontrolowany przez mapper obiektowo-relacyjny prisma, tak aby zredukować możliwość wystąpienia problemu n+1 zapytań.
     \item Zdefiniowanie pojedynczej, globalnej instancji klienta mappera obiektowo-relacyjnego \textit{PrismaClient}, w celu redukcji konieczności każdorazowego dokonywania operacji zajęcia i zwolnienia pamięci, a także czasu potrzebnego na nawiązanie połączenia pomiędzy klientem a instancją systemu bazodanowego.
-    \item Pula połączeń bazodanowych - zdefiniowanie parametru obsługi wielu równolegle działających połączeń z serwerem bazodanowym. 
+    \item Pula połączeń bazodanowych -- zdefiniowanie parametru obsługi wielu równolegle działających połączeń z serwerem bazodanowym. 
 \end{itemize}
 
 Co więcej, wprowadzono również następujące optymalizacje wydajności ściśle dotyczące struktur bazodanowych:
 \begin{itemize}
-    \item Zdefiniowanie indeksów oraz określenie pól jako unikalne w celu przyspieszenia procesu odwoływania się do danych, a także ich filtracji oraz sortowania
-    \item Ograniczenie przedziałów liczbowych dla pól numerycznych oraz maksymalnych długości dla ciągów tekstowych
+    \item Zdefiniowanie indeksów oraz określenie pól jako unikalne w celu przyspieszenia procesu odwoływania się do danych, a także ich filtracji oraz sortowania.
+    \item Ograniczenie przedziałów liczbowych dla pól numerycznych oraz maksymalnych długości dla ciągów tekstowych.
     \item Przekształcenie określonych pól ciągów tekstowych z typu \textit{NVARCHAR} wykorzystującego do kodowania pojedynczego znaku 2 bajty (kodowanie UTF16), do typu \textit{VARCHAR} wykorzystującego do kodowania pojedynczego znaku jeden bajt.
 \end{itemize}
 \section{Konfiguracja generycznych oraz dedykowanych platform chmurowych}
@@ -341,7 +338,7 @@ W analogiczny sposób zmodyfikowano zawartość plików konfiguracyjnych dla ka�
 
 Po realizacji czynności związanych z ustanowieniem transmisji pomiędzy maszynami, sporządzono plany testowe dotyczące poszczególnych scenariuszy badawczych. Wyróżnić należy dwa plany testowe, których określone warianty pozwoliły na przeprowadzenie każdej z ewaluacji określonych w ramach scenariuszy badawczych. 
 
-\subsection*{Plan testowy nr. 1}
+\subsection*{Konfiguracja planu testowego Apache JMeter nr 1}
 \label{plan-testowy-1}
 Pierwszy z planów testowych, stworzony został w celu obserwacji sposobu działania interfejsów programowania aplikacji względem zwiększającego się poziomu natężenia równolegle generowanego ruchu sieciowego. Podstawowym elementem schematu ewaluacyjnego jest grupa współbieżnie działających wątków \textit{(ang. Concurrency Thread Group)}. W przeciwieństwie do standardowej implmentacji mechanizmu grupy wątków, dostępnej w ramach oprogramowania JMeter, grupa wątków współbieżnych pozwala na kumulowanie liczby aktywnych procesów w czasie testu, pozwalając na ich zakończenie dopiero w momencie określonym przez użytkownika. Moment ten, w kontekście niniejszych testów przypadał na chwilę zakończenia badania. Dzięki zastosowaniu takiego rozwiązania, możliwe było symulowanie zjawiska stopniowego wzrostu natężenia ruchu generowanego równolegle przez określoną liczbę użytkowników. Wybór standardowej grupy wątków, prowadziłby do finalnego uruchomienia określonej liczby procesów, jednakże nie pozwalałby na kontrolę momentu ich zakończenia, co prowadziłoby do zmiennego poziomu natężenia żądań, posiadającego charakterystykę losową, a także niepowiązanego z czasem trwania testu.
 
@@ -358,11 +355,11 @@ Na ilustracji \ref{fig:test-plan-1} przedstawiono zastosowane elementy składowe
 \begin{figure}[ht]
     \centering
      \includegraphics[width=\linewidth]{rys04/test-plan-1.png}
-    \caption{Konfiguracja pierwsza planu testowego JMeter}
+    \caption{Konfiguracja planu testowego Apache JMeter nr 1}
     \label{fig:test-plan-1}
 \end{figure}
 
-\subsection*{Plan testowy nr. 2}
+\subsection*{Konfiguracja planu testowego Apache JMeter nr 2}
 \label{plan-testowy-2}
 Drugi z planów testowych, został przygotowany w kontekście wywoływania punktów końcowych o stałym czasie odpowiedzi, realizujących operacje charakteryzujące się wysokim kosztem obliczeniowym. W tym przypadku, zdefiniowano współbieżną grupę wątków o stałej liczebności równej 100. Czas podtrzymania każdego ze stu procesów określony został na 68000 sekund, co wynikało z założenia najbardziej pesymistycznego scenariusza badań, wykorzystujących ten właśnie plan. Ponadto, wprowadzono elementy konifguracyjne dotyczące komunikacji z API z wykorzystaniem protokołu internetowego, a także, analogiczne względem pierwszego planu komponenty nasłuchujące. Spośród składowych próbników, wymienić należy dwa moduły dotyczące wywołania punktów końcowych interfejsów programowania aplikacji dla porównywanych technologii. Każdy z modułów zawierał asercje dotyczące występowania określonych właściwości w ramach odpowiedzi JSON, a także zbiory danych pomocniczych oraz element konfiguracyjny nagłówka żądania.  
 
@@ -371,14 +368,14 @@ Na ilustracji \ref{fig:test-plan-2} przedstawiono zastosowane elementy składowe
 \begin{figure}[ht]
     \centering
      \includegraphics[width=\linewidth]{rys04/test-plan-2.png}
-    \caption{Konfiguracja druga planu testowego JMeter}
+    \caption{Konfiguracja planu testowego Apache JMeter nr 2}
     \label{fig:test-plan-2}
 \end{figure}
 
-\subsection*{Plan testowy nr. 2 - wariant 1}
+\subsection*{Konfiguracja planu testowego Apache JMeter nr 2 - wariant nr 1}
 \label{plan-testowy-2-wariant-1}
 Wariant pierwszy drugiego planu testowego wykorzystany został w kontekście obsługi punktów końcowych realizujących operacje asynchroniczne, poprzez odwołania do zewnętrznej usługi. Wprowadzone modyfikacje względem drugiego planu testowego obejmują zastosowanie innych elementów próbników (w tym przypadku elementów odwołujących się do punktów końcowych ewaluacji operacji asynchronicznych), a także wprowadzenie alternatywnej wartości czasu wykonania testu wynoszącej dziesięć minut
 
-\subsection*{Plan testowy nr. 2 - wariant 2}
+\subsection*{Konfiguracja planu testowego Apache JMeter nr 2 - wariant nr 2}
 \label{plan-testowy-2-wariant-2}
 Drugi z wariantów planu testowego dostosowano względem ewaluacji wydajności mechanizmów pamięci podręcznej. Liczba wątków w obrębie grupy ograniczona została do trzydziestu, a czas przeprowadzenia badania ustanowiono na 20 minut. Ponadto, wprowadzono komponenty próbników specyficzne w odniesieniu do badania mechanizmów cache. Należy także wspomnieć o wprowadzeniu próbnika pełniącego rolę mechanizmu unieważnienia wpisów pamięci podręcznej. Próbnik ten, wywoływany był tylko i wyłącznie w określonych momentach testu. Takie zachowanie, osiągnięto poprzez wprowadzenie elementu kontrolera przepływności \textit{(ang. Throughput Controller)}, determinującego liczbę wywołań próbnika, a także licznika czasu \textit{(ang. Constant Timer)}, wskazującego na moment wywołania. 
