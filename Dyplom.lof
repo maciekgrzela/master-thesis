@@ -27,11 +27,14 @@
 \contentsline {figure}{\numberline {5.2}{\ignorespaces Obszary satysfakcji, tolerancji oraz frustracji wskaźnika APDEX względem poszczególnych systemów bazodanowych dla API zaimplementowanego w C\#}}{78}{figure.5.2}%
 \contentsline {figure}{\numberline {5.3}{\ignorespaces Obszary satysfakcji, tolerancji oraz frustracji wskaźnika APDEX względem poszczególnych systemów bazodanowych dla API zaimplementowanego w JavaScript}}{79}{figure.5.3}%
 \contentsline {figure}{\numberline {5.4}{\ignorespaces Średnie czasy odpowiedzi na żądanie względem liczby procesów generujących oraz systemu bazodanowego}}{80}{figure.5.4}%
-\contentsline {figure}{\numberline {5.5}{\ignorespaces Średnie czasy odpowiedzi na żądanie oraz procent niepoprawnych odpowiedzi względem liczby procesów generujących}}{82}{figure.5.5}%
-\contentsline {figure}{\numberline {5.6}{\ignorespaces Uśredniony czas realizacji operacji asynchronicznych względem zmiennej liczby pobieranych encji}}{87}{figure.5.6}%
-\contentsline {figure}{\numberline {5.7}{\ignorespaces Wydajność działania interfejsów API dla operacji odczytu oraz zapisu, przed i po zastosowaniu wzorca podziału odpowiedzialności}}{88}{figure.5.7}%
-\contentsline {figure}{\numberline {5.8}{\ignorespaces Porównanie czasów odpowiedzi na żądanie dla odmiennych mechanizmów pamięci podręcznej}}{92}{figure.5.8}%
-\contentsline {figure}{\numberline {5.9}{\ignorespaces Wydajność działania mierzona czasem wewnętrznego przetwarzania operacji CRUD dla platform Azure oraz DigitalOcean -- Interfejs API C\# .NET}}{94}{figure.5.9}%
-\contentsline {figure}{\numberline {5.10}{\ignorespaces Wydajność działania mierzona czasem wewnętrznego przetwarzania operacji CRUD dla platform Heroku oraz DigitalOcean -- Interfejs API NodeJS}}{94}{figure.5.10}%
-\contentsline {figure}{\numberline {5.11}{\ignorespaces Liczba błędnych odpowiedzi względem typu żądania oraz platformy wdrożeniowej}}{95}{figure.5.11}%
+\contentsline {figure}{\numberline {5.4}{\ignorespaces Średnie czasy odpowiedzi na żądanie względem liczby procesów generujących oraz systemu bazodanowego}}{81}{figure.5.4}%
+\contentsline {figure}{\numberline {5.5}{\ignorespaces Średnie czasy odpowiedzi na żądanie oraz procent niepoprawnych odpowiedzi względem liczby procesów generujących - C\# / .NET}}{83}{figure.5.5}%
+\contentsline {figure}{\numberline {5.6}{\ignorespaces Średnie czasy odpowiedzi na żądanie oraz procent niepoprawnych odpowiedzi względem liczby procesów generujących - JavaScript / NodeJS}}{83}{figure.5.6}%
+\contentsline {figure}{\numberline {5.7}{\ignorespaces Uśredniony czas realizacji operacji asynchronicznych względem zmiennej liczby pobieranych encji}}{88}{figure.5.7}%
+\contentsline {figure}{\numberline {5.8}{\ignorespaces Wydajność działania interfejsów API dla operacji odczytu oraz zapisu, przed i po zastosowaniu wzorca podziału odpowiedzialności}}{89}{figure.5.8}%
+\contentsline {figure}{\numberline {5.9}{\ignorespaces Porównanie czasów odpowiedzi na żądanie dla odmiennych mechanizmów pamięci podręcznej}}{93}{figure.5.9}%
+\contentsline {figure}{\numberline {5.10}{\ignorespaces Wydajność działania mierzona czasem wewnętrznego przetwarzania operacji CRUD dla platform Azure oraz DigitalOcean -- Interfejs API C\# .NET}}{95}{figure.5.10}%
+\contentsline {figure}{\numberline {5.11}{\ignorespaces Wydajność działania mierzona czasem wewnętrznego przetwarzania operacji CRUD dla platform Heroku oraz DigitalOcean -- Interfejs API NodeJS}}{96}{figure.5.11}%
+\contentsline {figure}{\numberline {5.12}{\ignorespaces Liczba błędnych odpowiedzi względem typu żądania oraz platformy wdrożeniowej -- C\# / .NET}}{97}{figure.5.12}%
+\contentsline {figure}{\numberline {5.13}{\ignorespaces Liczba błędnych odpowiedzi względem typu żądania oraz platformy wdrożeniowej -- JavaScript / NodeJS}}{97}{figure.5.13}%
 \addvspace {10pt}

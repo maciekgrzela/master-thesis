@@ -78,6 +78,8 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \usepackage{listings} 
 \usepackage{xpatch}
+
+
 \makeatletter
 \xpatchcmd\l@lstlisting{1.5em}{0em}{}{}
 \makeatother
@@ -510,9 +512,11 @@ Listing \thelstlisting: #1\hfill%\hfill%
  \usepackage{datetime2} % INFO: pakiet potrzeby do uzyskania i sformatowania daty 
  \usepackage[pdftex,bookmarks,breaklinks,unicode]{hyperref}
  \usepackage[pdftex]{graphicx}
- \DeclareGraphicsExtensions{.pdf,.jpg,.mps,.png} % po zadeklarowaniu rozszerze mona bdzie wstawia pliki z grafik bez koniecznoci podawania tych rozszerze w ich nazwach
+ \DeclareGraphicsExtensions{.pdf,.jpg,.mps,.png,.svg} % po zadeklarowaniu rozszerze mona bdzie wstawia pliki z grafik bez koniecznoci podawania tych rozszerze w ich nazwach
 \pdfcompresslevel=9
 \pdfoutput=1
+
+\usepackage{svg}
 
 % Dobrze przygotowany dokument pdf to taki, ktry zawiera metadane.
 % Poniej zadeklarowano pola metadanych, jakie bd wczone do dokumentu pdf.

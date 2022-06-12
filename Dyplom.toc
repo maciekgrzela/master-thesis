@@ -43,12 +43,12 @@
 \contentsline {section}{\numberline {4.4}Konfiguracja narzędzia do realizacji badań}{72}{section.4.4}%
 \contentsline {chapter}{\chapternumberline {5}Przeprowadzone badania}{76}{chapter.5}%
 \contentsline {section}{\numberline {5.1}Wpływ zastosowanego systemu bazodanowego na efektywność działania interfejsu API}{76}{section.5.1}%
-\contentsline {section}{\numberline {5.2}Wpływ zastosowanej technologii na wydajność realizacji operacji współbieżnych}{83}{section.5.2}%
-\contentsline {section}{\numberline {5.3}Wpływ zastosowanej technologii na efektywność obsługi operacji asynchronicznych}{86}{section.5.3}%
-\contentsline {section}{\numberline {5.4}Wpływ implementacji wzorca projektowego CQRS na wydajność obsługi żądania}{87}{section.5.4}%
-\contentsline {section}{\numberline {5.5}Porównanie efektywności obsługi zapytań dla odmiennych mechanizmów pamięci podręcznej}{89}{section.5.5}%
-\contentsline {section}{\numberline {5.6}Zmienność wydajności api wdrożonego na generycznej oraz dedykowanej platformie chmurowej}{92}{section.5.6}%
-\contentsline {chapter}{\chapternumberline {6}Podsumowanie}{97}{chapter.6}%
-\contentsline {section}{\numberline {6.1}Uzyskane efekty pracy}{97}{section.6.1}%
-\contentsline {section}{\numberline {6.2}Perspektywy rozwoju badań}{98}{section.6.2}%
-\contentsline {chapter}{Literatura}{100}{chapter*.88}%
+\contentsline {section}{\numberline {5.2}Wpływ zastosowanej technologii na wydajność realizacji operacji współbieżnych}{84}{section.5.2}%
+\contentsline {section}{\numberline {5.3}Wpływ zastosowanej technologii na efektywność obsługi operacji asynchronicznych}{87}{section.5.3}%
+\contentsline {section}{\numberline {5.4}Wpływ implementacji wzorca projektowego CQRS na wydajność obsługi żądania}{88}{section.5.4}%
+\contentsline {section}{\numberline {5.5}Porównanie efektywności obsługi zapytań dla odmiennych mechanizmów pamięci podręcznej}{90}{section.5.5}%
+\contentsline {section}{\numberline {5.6}Zmienność wydajności api wdrożonego na generycznej oraz dedykowanej platformie chmurowej}{93}{section.5.6}%
+\contentsline {chapter}{\chapternumberline {6}Podsumowanie}{99}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Uzyskane efekty pracy}{99}{section.6.1}%
+\contentsline {section}{\numberline {6.2}Perspektywy rozwoju badań}{100}{section.6.2}%
+\contentsline {chapter}{Literatura}{102}{chapter*.88}%

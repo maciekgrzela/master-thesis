@@ -89,30 +89,39 @@ Uzyskane przedziały satysfakcji, tolerancji oraz frustracji względem każdego 
 
 Po spełnieniu warunków początkowych badania zrealizowano faktyczne czynności badawcze. Wykorzystując lokalną topologię fizyczną nr 1, omówioną w ramach sekcji \ref{sec:lokalne-srodowisko-badawcze-ver-1} rozpoczęto generowanie żądań protokołu hipertekstowego wytwarzanych przez dwa równolegle pracujące hosty sieciowe. Procedura badawcza trwała 20 minut i polegała na stopniowym zwiększaniu liczby współbieżnie pracujących procesów oprogramowania testującego rozpoczynając od jednego procesu a kończąc na pięciu tysiącach. Nowe wątki oprogramowania Apache JMeter uruchamiane były w stałych odstępach czasu, co implikuje niezmienność długości przedziału czasowego pracy w obrębie ustalonej liczby wątków. Czas ten, wynosi 240 ms. Przy uwzględnieniu minimalnej zaobserwowanej średniej wartości natężenia generowanych żądań, wynoszącej 152 zapytania w ciągu sekundy, liczebność zbioru próbek czasu zapytania w odniesieniu do dowolnego z 4990 poziomów przyrostu ruchu wyniosła co najmniej 36 elementów. Pierwsze 10 poziomów dotyczących liczby klientów generujących komunikaty nie pozwoliło na zarejestrowanie co najmniej 30 próbek, przez co elementy te, nie były brane pod uwagę w czasie opracowywania uzyskanych wyników. Opisane w niniejszym akapicie czynności zostały wykonane względem interfejsów programowania aplikacji wykorzystujących porównywane technologie, uwzględniając komunikację z każdym z pięciu systemów bazodanowych.
 
-Na wykresach \ref{fig:response-mtc-1} a) do \ref{fig:response-mtc-1} j) zaprezentowano uśrednione względem liczby pracujących wątków, czasy odpowiedzi na żądanie generowane w kierunku ewaluowanych interfejsów API.
+Na wykresach \ref{fig:response-mtc-1-1} a) do \ref{fig:response-mtc-1-2} j) zaprezentowano uśrednione względem liczby pracujących wątków, czasy odpowiedzi na żądanie generowane w kierunku ewaluowanych interfejsów API.
 
 Analizując wyniki uzyskane dla operacji pobierania kolekcji obiektów, zauważyć można niewielkie różnice w wartości średnich czasów odpowiedzi, występujące w przedziale do około 4000 użytkowników. Różnice te, nie faworyzują ani deprecjonują któregokolwiek z rozwiązań.
 
 \begin{figure}[H]
-  \centering
-	\begin{tabular}{@{}ll@{}}
+  \advance\leftskip-1.7cm
+  \begin{tabular}{@{}ll@{}}
     a) & b) \\
-    \includegraphics[width=0.49\textwidth]{rys05/response-dotnet-fetchAllBills.pdf} & \includegraphics[width=0.49\textwidth]{rys05/response-nodejs-fetchAllBills.pdf} \\
+    \includegraphics[width=0.6\textwidth]{rys05/response-dotnet-fetchAllBills.pdf} & \includegraphics[width=0.6\textwidth]{rys05/response-nodejs-fetchAllBills.pdf} \\
     c) & d) \\
-    \includegraphics[width=0.49\textwidth]{rys05/response-dotnet-getSingleOrder.pdf} & \includegraphics[width=0.49\textwidth]{rys05/response-nodejs-getSingleOrder.pdf} \\
+    \includegraphics[width=0.6\textwidth]{rys05/response-dotnet-getSingleOrder.pdf} & \includegraphics[width=0.6\textwidth]{rys05/response-nodejs-getSingleOrder.pdf} \\
     e) & f) \\
-    \includegraphics[width=0.49\textwidth]{rys05/response-dotnet-addProduct.pdf} & \includegraphics[width=0.49\textwidth]{rys05/response-nodejs-addProduct.pdf} \\
+    \includegraphics[width=0.6\textwidth]{rys05/response-dotnet-addProduct.pdf} & \includegraphics[width=0.6\textwidth]{rys05/response-nodejs-addProduct.pdf} \\
     g) & h) \\
-    \includegraphics[width=0.49\textwidth]{rys05/response-dotnet-updateCourse.pdf} & \includegraphics[width=0.49\textwidth]{rys05/response-nodejs-updateCourse.pdf} \\
-    i) & j) \\
-    \includegraphics[width=0.49\textwidth]{rys05/response-dotnet-deleteReservation.pdf} & \includegraphics[width=0.49\textwidth]{rys05/response-nodejs-deleteReservation.pdf} \\
-	% jezeli obraki sa rownej wysokosci, mozna je wyrownac do gory stosujac vtop jak nizej
-	% \vtop{\vskip-2ex\hbox{{\includegraphics[width=0.475\textwidth]{rys05/beta1}}}} &
-	% \vtop{\vskip-2ex\hbox{{\includegraphics[width=0.475\textwidth]{rys05/alfa1}}}}  \caption{Wyznaczanie trajektorii lotu rakiety: 
+    \includegraphics[width=0.6\textwidth]{rys05/response-dotnet-updateCourse.pdf} & \includegraphics[width=0.6\textwidth]{rys05/response-nodejs-updateCourse.pdf} \\
 	\end{tabular}
   \caption{Średnie czasy odpowiedzi na żądanie względem liczby procesów generujących oraz systemu bazodanowego}
-  \label{fig:response-mtc-1}
+  \label{fig:response-mtc-1-1}
 \end{figure}
+
+
+\addtocounter{figure}{-1}
+
+\begin{figure}[H]
+  \advance\leftskip-1.7cm
+	\begin{tabular}{@{}ll@{}}
+    i) & j) \\
+    \includegraphics[width=0.6\textwidth]{rys05/response-dotnet-deleteReservation.pdf} & \includegraphics[width=0.6\textwidth]{rys05/response-nodejs-deleteReservation.pdf} \\
+	\end{tabular}
+  \caption{Średnie czasy odpowiedzi na żądanie względem liczby procesów generujących oraz systemu bazodanowego}
+  \label{fig:response-mtc-1-2}
+\end{figure}
+
 
 Dla tego właśnie przedziału, jedyną zauważalną anomalię dotyczącą zmiany wydajności dostrzec można w kontekście interfejsu programowania aplikacji C\# .NET korzystającego z silnika bazy danych PostgreSQL. W tym przypadku znaczące różnice pomiędzy wydajnością omawianego systemu, a efektywnością drugiego najgorszego rozwiązania odnotowano już dla około \textbf{720} współbieżnie pracujących wątków. Dla tej właśnie metryki, omawiana różnica wynosi \textbf{374 ms}. Wraz ze wzrostem liczby użytkowników o tysiąc, zauważyć możemy różnicę \textbf{759 ms}, a o dwa tysiące - \textbf{2326 ms}. W momencie zaprzestania obserwacji tendencji nieznacznych dysproporcji pomiędzy systemami baz danych (moment ten możemy aproksymować do chwili działania 3750 jednoczesnych procesów-generatorów) dywergencja czasów odpowiedzi osiągnęła wartość \textbf{4855 ms}.
 
@@ -130,20 +139,21 @@ W aspekcie dwóch ostatnich procedur realizowanych przez punkty końcowe interfe
 
 Podsumowując, zarówno wskazanie wyższości jednej z technologii niezależnie od systemów baz danych, jak i wyróżnienie pojedynczego systemu bazy danych w kontekście realizowanej operacji nie jest możliwe biorąc pod uwagę kształt przeprowadzonego badania. Możliwym jest jednak zaobserowanie niskiego poziomu kompatybilności pomiędzy interfejsem API napisanym w języku C\# oraz systemem baz danych SQLite. Ponadto, relatywnie wysoką wydajnością względem innych rozwiązań bazodanowych cechuje się system nierelacyjny MongoDB. W pięciu na dziesięć porównaniach wydajnościowych, przedstawionych na omawianych wykresach, to właśnie ten silnik baz danych najdłużej utrzymuje najniższą wartość średniego czasu odpowiedzi względem pozostałych rozwiązań.
 
-Przedstawione powyżej wyniki nie dostarczają jednakże pełnego obrazu faktycznej wydajności ewaluowanych usług. Należy pamiętać, że uzyskana odpowiedź na żądanie nie musi być zawsze pozytywna, przez co nie zawsze niesie ona ze sobą informacje pożądaną dla klienta. Na wykresach \ref{fig:response-with-errors} a) oraz \ref{fig:response-with-errors} b) zestawiono ze sobą informacje o średnim czasie odpowiedzi na żądanie, a także o procencie żądań zakończonych niepomyślnie. Poprzez niepomyślne zakończenie żądania, rozumiano zarówno uzyskanie odpowiedzi o niepoprawnym kodzie i treści ciała, jak i zgłoszenie wyjątku protokołu hipertekstowego związanego z odmową aplikacji względem realizacji zapytania. Choć zobrazowano tu tylko i wyłącznie przypadek pojedynczej operacji oraz jednego systemu bazodanowego, analogiczne zachowanie zaobserwować można dla wszystkich pozostałych operacji i jest ono specyficzne dla interfejsu programowania aplikacji. 
+Przedstawione powyżej wyniki nie dostarczają jednakże pełnego obrazu faktycznej wydajności ewaluowanych usług. Należy pamiętać, że uzyskana odpowiedź na żądanie nie musi być zawsze pozytywna, przez co nie zawsze niesie ona ze sobą informacje pożądaną dla klienta. Na wykresach \ref{fig:response-with-errors-dotnet} oraz \ref{fig:response-with-errors-nodejs} zestawiono ze sobą informacje o średnim czasie odpowiedzi na żądanie, a także o procencie żądań zakończonych niepomyślnie. Poprzez niepomyślne zakończenie żądania, rozumiano zarówno uzyskanie odpowiedzi o niepoprawnym kodzie i treści ciała, jak i zgłoszenie wyjątku protokołu hipertekstowego związanego z odmową aplikacji względem realizacji zapytania. Choć zobrazowano tu tylko i wyłącznie przypadek pojedynczej operacji oraz jednego systemu bazodanowego, analogiczne zachowanie zaobserwować można dla wszystkich pozostałych operacji i jest ono specyficzne dla interfejsu programowania aplikacji. 
 
 \begin{figure}[htb]
-    \centering
-      \begin{tabular}{@{}ll@{}}
-      a) & b) \\
-      \includegraphics[width=0.49\textwidth]{rys05/response-and-errors-dotnet.pdf} & \includegraphics[width=0.49\textwidth]{rys05/response-and-errors-nodejs.pdf}
-      % jezeli obraki sa rownej wysokosci, mozna je wyrownac do gory stosujac vtop jak nizej
-      % \vtop{\vskip-2ex\hbox{{\includegraphics[width=0.475\textwidth]{rys05/beta1}}}} &
-      % \vtop{\vskip-2ex\hbox{{\includegraphics[width=0.475\textwidth]{rys05/alfa1}}}}  \caption{Wyznaczanie trajektorii lotu rakiety: 
-      \end{tabular}
-    \caption{Średnie czasy odpowiedzi na żądanie oraz procent niepoprawnych odpowiedzi względem liczby procesów generujących}
-    \label{fig:response-with-errors}
+  \centering
+  \includegraphics[width=\textwidth]{rys05/response-and-errors-dotnet.pdf}
+    \caption{Średnie czasy odpowiedzi na żądanie oraz procent niepoprawnych odpowiedzi względem liczby procesów generujących - C\# / .NET}
+    \label{fig:response-with-errors-dotnet}
   \end{figure}
+
+  \begin{figure}[htb]
+    \centering
+    \includegraphics[width=\textwidth]{rys05/response-and-errors-nodejs.pdf}
+      \caption{Średnie czasy odpowiedzi na żądanie oraz procent niepoprawnych odpowiedzi względem liczby procesów generujących - JavaScript / NodeJS}
+      \label{fig:response-with-errors-nodejs}
+    \end{figure}
 
 Analizując przedstawione wykresy należy zwrócić uwagę zarówno na moment pojawiania się błędów obsługi żądania, jak i na stopień korelacji błędów z czasem przetwarzania zapytania. W przypadku interfejsu API opartego o technologię .NET widzimy, że procent błędów jest silnie powiązany ze zwiększającym się przedziałem czasowym obsługi komendy, a także intensyfikacją ruchu sieciowego. Oznacza to, że serwer w momencie kolejkowania żądań do przetworzenia, nie bierze pod uwagę ich liczby i stara się przetwarzać każde, jakie do niego dotrze. W związku z odmową realizacji funkcjonalności ze strony API, serwer zgłasza wyjątek protokołu hipertekstowego. Z racji konieczności wykonania pracy w kontekście każdego żądania, niezależnie od niewielkiego prawdopodobieństwa jego pomyślnej realizacji, wydłuża się czas uzyskania odpowiedzi na zapytanie klienckie.
 
@@ -550,12 +560,12 @@ Zastosowany protokół badawczy posiada analogiczną strukturę do tego, który 
 Na wykresach \ref{fig:3tier-vs-cqrs} a) do \ref{fig:3tier-vs-cqrs} d) przedstawiono kolejno porównanie procedur odczytu oraz zapisu, zarówno przed jak i po zastosowaniu omówionych modyfikacji.
 
 \begin{figure}[htb]
-  \centering
+  \advance\leftskip-1.7cm
     \begin{tabular}{@{}ll@{}}
     a) & b) \\
-    \includegraphics[width=0.49\textwidth]{rys05/dotnet-vs-cqrs.pdf} & \includegraphics[width=0.49\textwidth]{rys05/nodejs-vs-cqrs.pdf} \\
+    \includegraphics[width=0.6\textwidth]{rys05/dotnet-vs-cqrs.pdf} & \includegraphics[width=0.6\textwidth]{rys05/nodejs-vs-cqrs.pdf} \\
     c) & d) \\
-    \includegraphics[width=0.49\textwidth]{rys05/dotnet-vs-cqrs-write.pdf} & \includegraphics[width=0.49\textwidth]{rys05/nodejs-vs-cqrs-write.pdf}
+    \includegraphics[width=0.6\textwidth]{rys05/dotnet-vs-cqrs-write.pdf} & \includegraphics[width=0.6\textwidth]{rys05/nodejs-vs-cqrs-write.pdf}
     % jezeli obraki sa rownej wysokosci, mozna je wyrownac do gory stosujac vtop jak nizej
     % \vtop{\vskip-2ex\hbox{{\includegraphics[width=0.475\textwidth]{rys05/beta1}}}} &
     % \vtop{\vskip-2ex\hbox{{\includegraphics[width=0.475\textwidth]{rys05/alfa1}}}}  \caption{Wyznaczanie trajektorii lotu rakiety: 
@@ -798,12 +808,12 @@ Ponadto, wartym odnotowania jest fakt, że autorskie rozwiązanie zarządzania w
 Na wykresach \ref{fig:cache-charts} a) do \ref{fig:cache-charts} d) pokazano faktyczne czasy odpowiedzi, dla żądań generowanych w kontekście pierwszego z eksperymentów przedstawionych w tabeli.
 
 \begin{figure}[htb]
-  \centering
+  \advance\leftskip-1.7cm
     \begin{tabular}{@{}ll@{}}
     a) & b) \\
-    \includegraphics[width=0.49\textwidth]{rys05/dotnet-static-cache-chart.pdf} & \includegraphics[width=0.49\textwidth]{rys05/dotnet-freq-cache-chart.pdf} \\
+    \includegraphics[width=0.6\textwidth]{rys05/dotnet-static-cache-chart.pdf} & \includegraphics[width=0.6\textwidth]{rys05/dotnet-freq-cache-chart.pdf} \\
     c) & d) \\
-    \includegraphics[width=0.49\textwidth]{rys05/nodejs-static-cache.pdf} & \includegraphics[width=0.49\textwidth]{rys05/nodejs-freq-cache.pdf}
+    \includegraphics[width=0.6\textwidth]{rys05/nodejs-static-cache.pdf} & \includegraphics[width=0.6\textwidth]{rys05/nodejs-freq-cache.pdf}
     % jezeli obraki sa rownej wysokosci, mozna je wyrownac do gory stosujac vtop jak nizej
     % \vtop{\vskip-2ex\hbox{{\includegraphics[width=0.475\textwidth]{rys05/beta1}}}} &
     % \vtop{\vskip-2ex\hbox{{\includegraphics[width=0.475\textwidth]{rys05/alfa1}}}}  \caption{Wyznaczanie trajektorii lotu rakiety: 
@@ -828,17 +838,21 @@ Kluczowymi wskaźnikami wydajności rozwiązań wdrażanych na platformach chmur
 
 Na wykresach \ref{fig:dotnet-azure-vs-digitalocean} a) do \ref{fig:dotnet-azure-vs-digitalocean} h) zawarto porównanie rezultatów pozyskanych w czasie ewaluacji interfejsu programowania aplikacji napisanego w języku C\# i uruchamianego na platformach: generycznej (tj. DigitalOcean VPS), oraz dedykowanej (tj. Microsoft Azure).
 
-\begin{figure}[htb]
-  \centering
+Wskazać należy nieznaczą, jednakże występującą przewagę rozwiązania opartego o usługę platform-as-a-service. Jak możemy zauważyć, przewaga ta, występuje niezależnie od typu generowanego żądania klienta. Ponadto, w przypadku rozwiązania generycznego zaobserwowano pojawienie się większej liczby zapytań klienckich, których czasy odpowiedzi nie mieściły się w przedziale definiującym 97\% wszystkich próbek (tj. od 200 ms do 580 ms) dla rozwiązania dedykowanego. Szczególnie trend ten, widoczny jest dla żądań metody HTTP typu PUT. Wartym odnotowania jest fakt niewystępowania jakiegokolwiek wyniku w przedziale od 0 do 119 ms. Wyniki takie, były bez trudu osiągane w środowisku lokalnym dla małej liczby współbieżnie pracujących generatorów. Zjawisko to, jest specyficzne względem względem technologii C\# .NET i nie uwidacznia się w przypadku interfejsów uruchamianych w NodeJS.
+
+\clearpage
+
+\begin{figure}[H]
+  \advance\leftskip-1.7cm
 	\begin{tabular}{@{}ll@{}}
     a) & b) \\
-    \includegraphics[width=0.49\textwidth]{rys05/dotnet-get-azure.pdf} & \includegraphics[width=0.49\textwidth]{rys05/dotnet-get-digitalocean.pdf} \\
+    \includegraphics[width=0.6\textwidth]{rys05/dotnet-get-azure.pdf} & \includegraphics[width=0.6\textwidth]{rys05/dotnet-get-digitalocean.pdf} \\
     c) & d) \\
-    \includegraphics[width=0.49\textwidth]{rys05/dotnet-post-azure.pdf} & \includegraphics[width=0.49\textwidth]{rys05/dotnet-post-digitalocean.pdf} \\
+    \includegraphics[width=0.6\textwidth]{rys05/dotnet-post-azure.pdf} & \includegraphics[width=0.6\textwidth]{rys05/dotnet-post-digitalocean.pdf} \\
     e) & f) \\
-    \includegraphics[width=0.49\textwidth]{rys05/dotnet-put-azure.pdf} & \includegraphics[width=0.49\textwidth]{rys05/dotnet-put-digitalocean.pdf} \\
+    \includegraphics[width=0.6\textwidth]{rys05/dotnet-put-azure.pdf} & \includegraphics[width=0.6\textwidth]{rys05/dotnet-put-digitalocean.pdf} \\
     g) & h) \\
-    \includegraphics[width=0.49\textwidth]{rys05/dotnet-delete-azure.pdf} & \includegraphics[width=0.49\textwidth]{rys05/dotnet-delete-digitalocean.pdf} \\
+    \includegraphics[width=0.6\textwidth]{rys05/dotnet-delete-azure.pdf} & \includegraphics[width=0.6\textwidth]{rys05/dotnet-delete-digitalocean.pdf} \\
 	% jezeli obraki sa rownej wysokosci, mozna je wyrownac do gory stosujac vtop jak nizej
 	% \vtop{\vskip-2ex\hbox{{\includegraphics[width=0.475\textwidth]{rys05/beta1}}}} &
 	% \vtop{\vskip-2ex\hbox{{\includegraphics[width=0.475\textwidth]{rys05/alfa1}}}}  \caption{Wyznaczanie trajektorii lotu rakiety: 
@@ -847,19 +861,17 @@ Na wykresach \ref{fig:dotnet-azure-vs-digitalocean} a) do \ref{fig:dotnet-azure-
   \label{fig:dotnet-azure-vs-digitalocean}
 \end{figure}
 
-Wskazać należy nieznaczą, jednakże występującą przewagę rozwiązania opartego o usługę platform-as-a-service. Jak możemy zauważyć, przewaga ta, występuje niezależnie od typu generowanego żądania klienta. Ponadto, w przypadku rozwiązania generycznego zaobserwowano pojawienie się większej liczby zapytań klienckich, których czasy odpowiedzi nie mieściły się w przedziale definiującym 97\% wszystkich próbek (tj. od 200 ms do 580 ms) dla rozwiązania dedykowanego. Szczególnie trend ten, widoczny jest dla żądań metody HTTP typu PUT. Wartym odnotowania jest fakt niewystępowania jakiegokolwiek wyniku w przedziale od 0 do 119 ms. Wyniki takie, były bez trudu osiągane w środowisku lokalnym dla małej liczby współbieżnie pracujących generatorów. Zjawisko to, jest specyficzne względem względem technologii C\# .NET i nie uwidacznia się w przypadku interfejsów uruchamianych w NodeJS.
-
-\begin{figure}[H]
-  \centering
+\begin{figure}[htb]
+  \advance\leftskip-1.7cm
 	\begin{tabular}{@{}ll@{}}
     a) & b) \\
-    \includegraphics[width=0.49\textwidth]{rys05/nodejs-get-heroku.pdf} & \includegraphics[width=0.49\textwidth]{rys05/nodejs-get-digitalocean.pdf} \\
+    \includegraphics[width=0.6\textwidth]{rys05/nodejs-get-heroku.pdf} & \includegraphics[width=0.6\textwidth]{rys05/nodejs-get-digitalocean.pdf} \\
     c) & d) \\
-    \includegraphics[width=0.49\textwidth]{rys05/nodejs-post-heroku.pdf} & \includegraphics[width=0.49\textwidth]{rys05/nodejs-post-digitalocean.pdf} \\
+    \includegraphics[width=0.6\textwidth]{rys05/nodejs-post-heroku.pdf} & \includegraphics[width=0.6\textwidth]{rys05/nodejs-post-digitalocean.pdf} \\
     e) & f) \\
-    \includegraphics[width=0.49\textwidth]{rys05/nodejs-put-heroku.pdf} & \includegraphics[width=0.49\textwidth]{rys05/nodejs-put-digitalocean.pdf} \\
+    \includegraphics[width=0.6\textwidth]{rys05/nodejs-put-heroku.pdf} & \includegraphics[width=0.6\textwidth]{rys05/nodejs-put-digitalocean.pdf} \\
     g) & h) \\
-    \includegraphics[width=0.49\textwidth]{rys05/nodejs-delete-heroku.pdf} & \includegraphics[width=0.49\textwidth]{rys05/nodejs-delete-digitalocean.pdf} \\
+    \includegraphics[width=0.6\textwidth]{rys05/nodejs-delete-heroku.pdf} & \includegraphics[width=0.6\textwidth]{rys05/nodejs-delete-digitalocean.pdf} \\
 	% jezeli obraki sa rownej wysokosci, mozna je wyrownac do gory stosujac vtop jak nizej
 	% \vtop{\vskip-2ex\hbox{{\includegraphics[width=0.475\textwidth]{rys05/beta1}}}} &
 	% \vtop{\vskip-2ex\hbox{{\includegraphics[width=0.475\textwidth]{rys05/alfa1}}}}  \caption{Wyznaczanie trajektorii lotu rakiety: 
@@ -872,21 +884,21 @@ Kolejna z zaprezentowanych wizualizacji, dotyczy z kolei interfejsu API zaimplem
 
 Odnosząc się do analizowanej technologii, wzrost wydajności rozwiązania dedykowanego względem generycznego jest wydatny, i niezależnie od wybranego typu wykonywanej operacji, różnica wartości metryki go opisującaj jest niemniejsza niż 237 ms. Ponadto, w momencie w którym 99,98\% wszystkich obserwacji należy do przedziału od 34 ms do 900 ms w kontekście rozwiązania dedykowanego, tylko 72,7\% próbek badania dla rozwiązania generycznego, zawarte jest w analogicznym przedziale. Zauważyć należy fakt braku zwiększenia się intensywności żądań dla czasów przetwarzania powyżej 1000 ms, w odniesieniu do rozwiązania generycznego. Co prawda zapytania trwające powyżej 1000 ms pojawiają się w tego typu konfiguracji, to podobnie do rozwiązania dedykowanego, są to obserwacje jednostkowe.  
 
-Kolejną metryką wziętą pod uwagę w ramach niniejszego badania jest liczba niepoprawnych odpowiedzi, które zostały zwrócone dla wygenerowanych zapytań. Podobnie jak dla wizualizacji zaprezentowanych powyżej, w tym przypadku, analiza również prowadzona będzie pod kątem obserwacji różnic wynikających z zastosowania odmiennych platform wdrożeniowych, a nie technologii implementacji interfejsów api. Na wykresach \ref{fig:errors-for-plaforms} a) oraz \ref{fig:errors-for-plaforms} b) przedstawiono wartości odnotowane względem omawianej metryki.
+Kolejną metryką wziętą pod uwagę w ramach niniejszego badania jest liczba niepoprawnych odpowiedzi, które zostały zwrócone dla wygenerowanych zapytań. Podobnie jak dla wizualizacji zaprezentowanych powyżej, w tym przypadku, analiza również prowadzona będzie pod kątem obserwacji różnic wynikających z zastosowania odmiennych platform wdrożeniowych, a nie technologii implementacji interfejsów api. Na wykresach \ref{fig:errors-for-plaforms-dotnet} oraz \ref{fig:errors-for-plaforms-nodejs} przedstawiono wartości odnotowane względem omawianej metryki.
 
 \begin{figure}[htb]
   \centering
-	\begin{tabular}{@{}ll@{}}
-    a) & b) \\
-    \includegraphics[width=0.49\textwidth]{rys05/nodejs-errors.pdf} & \includegraphics[width=0.49\textwidth]{rys05/dotnet-errors.pdf} \\
-	% jezeli obraki sa rownej wysokosci, mozna je wyrownac do gory stosujac vtop jak nizej
-	% \vtop{\vskip-2ex\hbox{{\includegraphics[width=0.475\textwidth]{rys05/beta1}}}} &
-	% \vtop{\vskip-2ex\hbox{{\includegraphics[width=0.475\textwidth]{rys05/alfa1}}}}  \caption{Wyznaczanie trajektorii lotu rakiety: 
-	\end{tabular}
-  \caption{Liczba błędnych odpowiedzi względem typu żądania oraz platformy wdrożeniowej}
-  \label{fig:errors-for-plaforms}
+  \includegraphics[width=\textwidth]{rys05/dotnet-errors.pdf}
+  \caption{Liczba błędnych odpowiedzi względem typu żądania oraz platformy wdrożeniowej -- C\# / .NET}
+  \label{fig:errors-for-plaforms-dotnet}
 \end{figure}
 
+\begin{figure}[htb]
+  \centering
+	\includegraphics[width=\textwidth]{rys05/nodejs-errors.pdf}
+  \caption{Liczba błędnych odpowiedzi względem typu żądania oraz platformy wdrożeniowej -- JavaScript / NodeJS}
+  \label{fig:errors-for-plaforms-nodejs}
+\end{figure}
 
 W przypadku interfejsu implementowanego z wykorzystaniem platformy NodeJS oraz języka JavaScript różnice wydajnościowe uwidaczniają się jeszcze bardziej w momencie w którym brana pod uwagę jest liczba niepowodzeń realizacji zapytań klienckich. Niezależnie od typu operacji, rozwiązanie wdrożone na platformie Heroku, generowało mniejszą liczbę błędnych odpowiedzi. Przytaczając najbardziej skrajny przypadek (tj. żądania typu GET), liczba niezrealizowanych poprawnie zapytań dla platformy generycznej jest ponad dwa razy większa, od tej dla platformy dedykowanej.
 

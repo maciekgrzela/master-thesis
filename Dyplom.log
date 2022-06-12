@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.6.29) (preloaded format=pdflatex 2020.10.11)  11 JUN 2022 17:58
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.6.29) (preloaded format=pdflatex 2020.10.11)  12 JUN 2022 14:27
 entering extended mode
 **c:/Users/HP/source/repos/master-thesis/Dyplom.tex
 (c:/Users/HP/source/repos/master-thesis/Dyplom.tex
@@ -863,7 +863,108 @@ Package graphics Info: Driver file: pdftex.def on input line 105.
 )
 \Gin@req@height=\dimen271
 \Gin@req@width=\dimen272
-) (Dyplom.aux (streszczenie.aux) (rozdzial01.aux) (rozdzial02.aux
+) ("C:\Program Files\MiKTeX\tex/latex/svg\svg.sty"
+Package: svg 2020/11/26 v2.02k (include SVG pictures)
+ ("C:\Program Files\MiKTeX\tex/latex/koma-script\scrbase.sty"
+Package: scrbase 2022/05/01 v3.36 KOMA-Script package (KOMA-Script-independent basics and keyval usage)
+ ("C:\Program Files\MiKTeX\tex/latex/koma-script\scrlfile.sty"
+Package: scrlfile 2022/05/01 v3.36 KOMA-Script package (file load hooks)
+ ("C:\Program Files\MiKTeX\tex/latex/koma-script\scrlfile-patcholdlatex.sty"
+Package: scrlfile-patcholdlatex 2022/05/01 v3.36 KOMA-Script package (patching old LaTeX kernels)
+Package scrlfile Info: class `memoir' detected.
+(scrlfile)             Using a compatible redefinition of \InputIfFileExists,
+(scrlfile)             but always robust and with the fix of the
+(scrlfile)             argument order bug even for old versions of the
+(scrlfile)             LaTeX kernel on input line 89.
+ ("C:\Program Files\MiKTeX\tex/latex/koma-script\scrlogo.sty"
+Package: scrlogo 2022/05/01 v3.36 KOMA-Script package (logo)
+)))
+Skipping: [2021/05/01] Usage of raw or classic option list on input line 252.
+Applying: [0000/00/00] Usage of raw or classic option list on input line 368.
+) (C:\Users\HP\AppData\Local\Programs\MiKTeX\tex/latex/trimspaces\trimspaces.sty
+Package: trimspaces 2009/09/17 v1.1 Trim spaces around a token list
+) (C:\Users\HP\AppData\Local\Programs\MiKTeX\tex/latex/tools\shellesc.sty
+Package: shellesc 2019/11/08 v1.0c unified shell escape interface for LaTeX
+Package shellesc Info: Unrestricted shell escape enabled on input line 75.
+) ("C:\Program Files\MiKTeX\tex/latex/ifplatform\ifplatform.sty"
+Package: ifplatform 2017/10/13 v0.4a Testing for the operating system
+ ("C:\Program Files\MiKTeX\tex/generic/catchfile\catchfile.sty"
+Package: catchfile 2019/12/09 v1.8 Catch the contents of a file (HO)
+))
+\c@svg@param@lastpage=\count397
+\svg@box=\box107
+\c@svg@param@currpage=\count398
+) (C:\Users\HP\AppData\Local\Programs\MiKTeX\tex/latex/xcolor\xcolor.sty
+Package: xcolor 2016/05/11 v2.12 LaTeX color extensions (UK)
+ (C:\Users\HP\AppData\Local\Programs\MiKTeX\tex/latex/graphics-cfg\color.cfg
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package xcolor Info: Driver file: pdftex.def on input line 225.
+LaTeX Info: Redefining \color on input line 709.
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1348.
+Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1352.
+Package xcolor Info: Model `RGB' extended on input line 1364.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1366.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1367.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1368.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1369.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1370.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1371.
+) ("C:\Program Files\MiKTeX\tex/latex/transparent\transparent.sty"
+Package: transparent 2019/11/29 v1.4 Transparency via pdfTeX's color stack (HO)
+) (C:\Users\HP\AppData\Local\Programs\MiKTeX\tex/latex/pgf/systemlayer\pgfsys.sty (C:\Users\HP\AppData\Local\Programs\MiKTeX\tex/latex/pgf/utilities\pgfrcs.sty (C:\Users\HP\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfutil-common.tex
+\pgfutil@everybye=\toks35
+\pgfutil@tempdima=\dimen273
+\pgfutil@tempdimb=\dimen274
+ (C:\Users\HP\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfutil-common-lists.tex)) (C:\Users\HP\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfutil-latex.def
+\pgfutil@abb=\box108
+ (C:\Users\HP\AppData\Local\Programs\MiKTeX\tex/latex/ms\everyshi.sty
+Package: everyshi 2001/05/15 v3.00 EveryShipout Package (MS)
+)) (C:\Users\HP\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfrcs.code.tex (C:\Users\HP\AppData\Local\Programs\MiKTeX\tex/generic/pgf\pgf.revision.tex)
+Package: pgfrcs 2020/01/08 v3.1.5b (3.1.5b)
+)) (C:\Users\HP\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pgfsys.code.tex
+Package: pgfsys 2020/01/08 v3.1.5b (3.1.5b)
+ (C:\Users\HP\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfkeys.code.tex
+\pgfkeys@pathtoks=\toks36
+\pgfkeys@temptoks=\toks37
+ (C:\Users\HP\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfkeysfiltered.code.tex
+\pgfkeys@tmptoks=\toks38
+))
+\pgf@x=\dimen275
+\pgf@y=\dimen276
+\pgf@xa=\dimen277
+\pgf@ya=\dimen278
+\pgf@xb=\dimen279
+\pgf@yb=\dimen280
+\pgf@xc=\dimen281
+\pgf@yc=\dimen282
+\pgf@xd=\dimen283
+\pgf@yd=\dimen284
+\w@pgf@writea=\write4
+\r@pgf@reada=\read4
+\c@pgf@counta=\count399
+\c@pgf@countb=\count400
+\c@pgf@countc=\count401
+\c@pgf@countd=\count402
+\t@pgf@toka=\toks39
+\t@pgf@tokb=\toks40
+\t@pgf@tokc=\toks41
+\pgf@sys@id@count=\count403
+ (C:\Users\HP\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pgf.cfg
+File: pgf.cfg 2020/01/08 v3.1.5b (3.1.5b)
+)
+Driver file for pgf: pgfsys-pdftex.def
+ (C:\Users\HP\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pgfsys-pdftex.def
+File: pgfsys-pdftex.def 2020/01/08 v3.1.5b (3.1.5b)
+ (C:\Users\HP\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pgfsys-common-pdf.def
+File: pgfsys-common-pdf.def 2020/01/08 v3.1.5b (3.1.5b)
+))) (C:\Users\HP\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pgfsyssoftpath.code.tex
+File: pgfsyssoftpath.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+\pgfsyssoftpath@smallbuffer@items=\count404
+\pgfsyssoftpath@bigbuffer@items=\count405
+) (C:\Users\HP\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pgfsysprotocol.code.tex
+File: pgfsysprotocol.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+)) (Dyplom.aux (streszczenie.aux) (rozdzial01.aux) (rozdzial02.aux
 
 LaTeX Warning: Label `tab:metody-http' multiply defined.
 
@@ -873,25 +974,25 @@ LaTeX Warning: Label `tab:naglowki-zadanie' multiply defined.
 ) (rozdzial03.aux) (rozdzial04.aux) (rozdzial05.aux) (rozdzial06.aux))
 \openout1 = `Dyplom.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 830.
-LaTeX Font Info:    ... okay on input line 830.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 830.
-LaTeX Font Info:    ... okay on input line 830.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 830.
-LaTeX Font Info:    ... okay on input line 830.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 830.
-LaTeX Font Info:    ... okay on input line 830.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 830.
-LaTeX Font Info:    ... okay on input line 830.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 830.
-LaTeX Font Info:    ... okay on input line 830.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 830.
-LaTeX Font Info:    ... okay on input line 830.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 830.
-LaTeX Font Info:    ... okay on input line 830.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 830.
-LaTeX Font Info:    ... okay on input line 830.
-LaTeX Font Info:    Trying to load font information for T1+qtm on input line 830.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 834.
+LaTeX Font Info:    ... okay on input line 834.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 834.
+LaTeX Font Info:    ... okay on input line 834.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 834.
+LaTeX Font Info:    ... okay on input line 834.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 834.
+LaTeX Font Info:    ... okay on input line 834.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 834.
+LaTeX Font Info:    ... okay on input line 834.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 834.
+LaTeX Font Info:    ... okay on input line 834.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 834.
+LaTeX Font Info:    ... okay on input line 834.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 834.
+LaTeX Font Info:    ... okay on input line 834.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 834.
+LaTeX Font Info:    ... okay on input line 834.
+LaTeX Font Info:    Trying to load font information for T1+qtm on input line 834.
  ("C:\Program Files\MiKTeX\tex/latex/tex-gyre\t1qtm.fd"
 File: t1qtm.fd 2009/09/25 v1.2 font definition file for T1/qtm
 )
@@ -931,36 +1032,30 @@ File: t1qtm.fd 2009/09/25 v1.2 font definition file for T1/qtm
 
 (C:\Users\HP\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count397
-\scratchdimen=\dimen273
-\scratchbox=\box107
-\nofMPsegments=\count398
-\nofMParguments=\count399
-\everyMPshowfont=\toks35
-\MPscratchCnt=\count400
-\MPscratchDim=\dimen274
-\MPnumerator=\count401
-\makeMPintoPDFobject=\count402
-\everyMPtoPDFconversion=\toks36
+\scratchcounter=\count406
+\scratchdimen=\dimen285
+\scratchbox=\box109
+\nofMPsegments=\count407
+\nofMParguments=\count408
+\everyMPshowfont=\toks42
+\MPscratchCnt=\count409
+\MPscratchDim=\dimen286
+\MPnumerator=\count410
+\makeMPintoPDFobject=\count411
+\everyMPtoPDFconversion=\toks43
 ) (C:\Users\HP\AppData\Local\Programs\MiKTeX\tex/latex/epstopdf-pkg\epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
- ("C:\Program Files\MiKTeX\tex/latex/grfext\grfext.sty"
-Package: grfext 2019/12/03 v1.3 Manage graphics extensions (HO)
-)
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
-Package grfext Info: Graphics extension search list:
-(grfext)             [.pdf,.jpg,.mps,.png,.eps]
-(grfext)             \AppendGraphicsExtensions on input line 504.
 )
-\c@mv@tabular=\count403
-\c@mv@boldtabular=\count404
-\c@lstlisting=\count405
+\c@mv@tabular=\count412
+\c@mv@boldtabular=\count413
+\c@lstlisting=\count414
 
 
-Package layouts Warning: Layout scale set to 0.5 on input line 830.
+Package layouts Warning: Layout scale set to 0.5 on input line 834.
 
-\AtBeginShipoutBox=\box108
-Package hyperref Info: Link coloring OFF on input line 830.
+\AtBeginShipoutBox=\box110
+Package hyperref Info: Link coloring OFF on input line 834.
 (C:\Users\HP\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\nameref.sty
 Package: nameref 2019/09/16 v2.46 Cross-referencing by name of section
  ("C:\Program Files\MiKTeX\tex/latex/refcount\refcount.sty"
@@ -968,98 +1063,99 @@ Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 ) ("C:\Program Files\MiKTeX\tex/generic/gettitlestring\gettitlestring.sty"
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
-\c@section@level=\count406
+\c@section@level=\count415
 )
 Redoing nameref's sectioning
 Redoing nameref's label
-LaTeX Info: Redefining \nameref on input line 830.
-LaTeX Info: Redefining \ref on input line 830.
-LaTeX Info: Redefining \pageref on input line 830.
-LaTeX Info: Redefining \nameref on input line 830.
+LaTeX Info: Redefining \nameref on input line 834.
+LaTeX Info: Redefining \ref on input line 834.
+LaTeX Info: Redefining \pageref on input line 834.
+LaTeX Info: Redefining \nameref on input line 834.
 (Dyplom.out) (Dyplom.out)
-\@outlinefile=\write4
-\openout4 = `Dyplom.out'.
+\@outlinefile=\write5
+\openout5 = `Dyplom.out'.
 
-LaTeX Font Info:    Trying to load font information for T1+EBGaramond-OsF on input line 841.
+ ABD: EveryShipout initializing macros
+LaTeX Font Info:    Trying to load font information for T1+EBGaramond-OsF on input line 845.
  ("C:\Program Files\MiKTeX\tex/latex/ebgaramond\t1ebgaramond-osf.fd"
 File: T1EBGaramond-OsF.fd 2019/10/22 (autoinst) Font definitions for T1/EBGaramond-OsF.
 )
 LaTeX Font Info:    Font shape `T1/EBGaramond-OsF/m/n' in size <12> not available
-(Font)              Font shape `T1/EBGaramond-OsF/regular/n' tried instead on input line 841.
+(Font)              Font shape `T1/EBGaramond-OsF/regular/n' tried instead on input line 845.
 LaTeX Font Info:    Font shape `T1/EBGaramond-OsF/regular/n' will be
-(Font)              scaled to size 12.0pt on input line 841.
+(Font)              scaled to size 12.0pt on input line 845.
 \tmpfboxrule=\skip281
 LaTeX Font Info:    Font shape `T1/EBGaramond-OsF/b/n' in size <18> not available
-(Font)              Font shape `T1/EBGaramond-OsF/bold/n' tried instead on input line 841.
+(Font)              Font shape `T1/EBGaramond-OsF/bold/n' tried instead on input line 845.
 LaTeX Font Info:    Font shape `T1/EBGaramond-OsF/bold/n' will be
-(Font)              scaled to size 18.0pt on input line 841.
+(Font)              scaled to size 18.0pt on input line 845.
 LaTeX Font Info:    Font shape `T1/EBGaramond-OsF/m/n' in size <16> not available
-(Font)              Font shape `T1/EBGaramond-OsF/regular/n' tried instead on input line 841.
+(Font)              Font shape `T1/EBGaramond-OsF/regular/n' tried instead on input line 845.
 LaTeX Font Info:    Font shape `T1/EBGaramond-OsF/regular/n' will be
-(Font)              scaled to size 16.0pt on input line 841.
-LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 841.
+(Font)              scaled to size 16.0pt on input line 845.
+LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 845.
  (C:\Users\HP\AppData\Local\Programs\MiKTeX\tex/latex/lm\ot1lmr.fd
 File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OML+lmm on input line 841.
+LaTeX Font Info:    Trying to load font information for OML+lmm on input line 845.
  (C:\Users\HP\AppData\Local\Programs\MiKTeX\tex/latex/lm\omllmm.fd
 File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 841.
+LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 845.
  (C:\Users\HP\AppData\Local\Programs\MiKTeX\tex/latex/lm\omslmsy.fd
 File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 841.
+LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 845.
  (C:\Users\HP\AppData\Local\Programs\MiKTeX\tex/latex/lm\omxlmex.fd
 File: omxlmex.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <12> on input line 841.
+(Font)              <12> on input line 845.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 841.
+(Font)              <8> on input line 845.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 841.
+(Font)              <6> on input line 845.
 LaTeX Font Info:    Font shape `T1/EBGaramond-OsF/b/n' in size <20> not available
-(Font)              Font shape `T1/EBGaramond-OsF/bold/n' tried instead on input line 841.
+(Font)              Font shape `T1/EBGaramond-OsF/bold/n' tried instead on input line 845.
 LaTeX Font Info:    Font shape `T1/EBGaramond-OsF/bold/n' will be
-(Font)              scaled to size 20.0pt on input line 841.
+(Font)              scaled to size 20.0pt on input line 845.
 LaTeX Font Info:    Font shape `T1/EBGaramond-OsF/b/n' in size <16> not available
-(Font)              Font shape `T1/EBGaramond-OsF/bold/n' tried instead on input line 841.
+(Font)              Font shape `T1/EBGaramond-OsF/bold/n' tried instead on input line 845.
 LaTeX Font Info:    Font shape `T1/EBGaramond-OsF/bold/n' will be
-(Font)              scaled to size 16.0pt on input line 841.
+(Font)              scaled to size 16.0pt on input line 845.
 LaTeX Font Info:    Font shape `T1/EBGaramond-OsF/m/n' in size <14> not available
-(Font)              Font shape `T1/EBGaramond-OsF/regular/n' tried instead on input line 841.
+(Font)              Font shape `T1/EBGaramond-OsF/regular/n' tried instead on input line 845.
 LaTeX Font Info:    Font shape `T1/EBGaramond-OsF/regular/n' will be
-(Font)              scaled to size 14.0pt on input line 841.
-LaTeX Font Info:    Calculating math sizes for size <14> on input line 841.
+(Font)              scaled to size 14.0pt on input line 845.
+LaTeX Font Info:    Calculating math sizes for size <14> on input line 845.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <14> on input line 841.
+(Font)              <14> on input line 845.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <9.79996> on input line 841.
+(Font)              <9.79996> on input line 845.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 841.
+(Font)              <7> on input line 845.
 LaTeX Font Info:    Font shape `T1/EBGaramond-OsF/b/n' in size <14> not available
-(Font)              Font shape `T1/EBGaramond-OsF/bold/n' tried instead on input line 841.
+(Font)              Font shape `T1/EBGaramond-OsF/bold/n' tried instead on input line 845.
 LaTeX Font Info:    Font shape `T1/EBGaramond-OsF/bold/n' will be
-(Font)              scaled to size 14.0pt on input line 841.
+(Font)              scaled to size 14.0pt on input line 845.
 LaTeX Font Info:    Font shape `T1/EBGaramond-OsF/m/n' in size <24> not available
-(Font)              Font shape `T1/EBGaramond-OsF/regular/n' tried instead on input line 841.
+(Font)              Font shape `T1/EBGaramond-OsF/regular/n' tried instead on input line 845.
 LaTeX Font Info:    Font shape `T1/EBGaramond-OsF/regular/n' will be
-(Font)              scaled to size 24.0pt on input line 841.
+(Font)              scaled to size 24.0pt on input line 845.
 LaTeX Font Info:    Font shape `T1/EBGaramond-OsF/m/n' in size <26> not available
-(Font)              Font shape `T1/EBGaramond-OsF/regular/n' tried instead on input line 841.
+(Font)              Font shape `T1/EBGaramond-OsF/regular/n' tried instead on input line 845.
 LaTeX Font Info:    Font shape `T1/EBGaramond-OsF/regular/n' will be
-(Font)              scaled to size 26.0pt on input line 841.
+(Font)              scaled to size 26.0pt on input line 845.
 LaTeX Font Info:    Font shape `T1/EBGaramond-OsF/b/n' in size <12> not available
-(Font)              Font shape `T1/EBGaramond-OsF/bold/n' tried instead on input line 841.
+(Font)              Font shape `T1/EBGaramond-OsF/bold/n' tried instead on input line 845.
 LaTeX Font Info:    Font shape `T1/EBGaramond-OsF/bold/n' will be
-(Font)              scaled to size 12.0pt on input line 841.
+(Font)              scaled to size 12.0pt on input line 845.
 
 
 Class memoir Warning: The material used in the headers is too large
 (14.49998pt) for the given head height (13.6pt), it is recommended to
 either increase the head height or redesign the header
-(in both cases you will find help in the memoir manual). on input line 841.
+(in both cases you will find help in the memoir manual). on input line 845.
 
 
 Overfull \vbox (0.89998pt too high) has occurred while \output is active []
@@ -1088,17 +1184,17 @@ Overfull \vbox (0.89998pt too high) has occurred while \output is active []
 
 
 ] (Dyplom.lof
-Underfull \hbox (badness 3019) in paragraph at lines 34--34
- [][] [][]\T1/qtm/m/n/12 Wydajno±¢ dzia-ªa-nia mie-rzona cza-sem we-wn¦trz-nego prze-twa-rza-nia ope-ra-cji 
- []
-
-
 Overfull \vbox (0.89998pt too high) has occurred while \output is active []
 
  [5
 
 ]
-Underfull \hbox (badness 3019) in paragraph at lines 35--35
+Underfull \hbox (badness 3019) in paragraph at lines 36--36
+ [][] [][]\T1/qtm/m/n/12 Wydajno±¢ dzia-ªa-nia mie-rzona cza-sem we-wn¦trz-nego prze-twa-rza-nia ope-ra-cji 
+ []
+
+
+Underfull \hbox (badness 3019) in paragraph at lines 37--37
  [][] [][]\T1/qtm/m/n/12 Wydajno±¢ dzia-ªa-nia mie-rzona cza-sem we-wn¦trz-nego prze-twa-rza-nia ope-ra-cji 
  []
 
@@ -1289,7 +1385,7 @@ l.185 Z
 Overfull \vbox (0.89998pt too high) has occurred while \output is active []
 
  [20]
-<rys02/architektura-api.png, id=440, 683.4333pt x 639.1077pt>
+<rys02/architektura-api.png, id=452, 683.4333pt x 639.1077pt>
 File: rys02/architektura-api.png Graphic file (type png)
 <use rys02/architektura-api.png>
 Package pdftex.def Info: rys02/architektura-api.png  used on input line 189.
@@ -1301,12 +1397,12 @@ Overfull \vbox (0.89998pt too high) has occurred while \output is active []
 
 pdfTeX warning: pdflatex (file ./rys02/architektura-api.png): large interlaced PNG might cause out of memory (use non-interlaced PNG to fix this)
 >]
-<rys02/orm-wyjasnienie.png, id=450, 746.03719pt x 990.70125pt>
+<rys02/orm-wyjasnienie.png, id=462, 746.03719pt x 990.70125pt>
 File: rys02/orm-wyjasnienie.png Graphic file (type png)
 <use rys02/orm-wyjasnienie.png>
 Package pdftex.def Info: rys02/orm-wyjasnienie.png  used on input line 203.
 (pdftex.def)             Requested size: 455.0pt x 604.22107pt.
-<rys02/uwierzytelnianie-autoryzacja.png, id=454, 844.5954pt x 711.1368pt>
+<rys02/uwierzytelnianie-autoryzacja.png, id=466, 844.5954pt x 711.1368pt>
 File: rys02/uwierzytelnianie-autoryzacja.png Graphic file (type png)
 <use rys02/uwierzytelnianie-autoryzacja.png>
 Package pdftex.def Info: rys02/uwierzytelnianie-autoryzacja.png  used on input line 225.
@@ -1318,7 +1414,7 @@ Overfull \vbox (0.89998pt too high) has occurred while \output is active []
 Overfull \vbox (0.89998pt too high) has occurred while \output is active []
 
  [23 <./rys02/orm-wyjasnienie.png>]
-<rys02/standard-vs-cqrs1.png, id=471, 1052.4921pt x 494.0859pt>
+<rys02/standard-vs-cqrs1.png, id=483, 1052.4921pt x 494.0859pt>
 File: rys02/standard-vs-cqrs1.png Graphic file (type png)
 <use rys02/standard-vs-cqrs1.png>
 Package pdftex.def Info: rys02/standard-vs-cqrs1.png  used on input line 242.
@@ -1330,7 +1426,7 @@ Overfull \vbox (0.89998pt too high) has occurred while \output is active []
 
 pdfTeX warning: pdflatex (file ./rys02/uwierzytelnianie-autoryzacja.png): large interlaced PNG might cause out of memory (use non-interlaced PNG to fix this)
 >]
-<rys02/standard-vs-cqrs2.png, id=478, 1052.4921pt x 494.0859pt>
+<rys02/standard-vs-cqrs2.png, id=490, 1052.4921pt x 494.0859pt>
 File: rys02/standard-vs-cqrs2.png Graphic file (type png)
 <use rys02/standard-vs-cqrs2.png>
 Package pdftex.def Info: rys02/standard-vs-cqrs2.png  used on input line 249.
@@ -1505,7 +1601,7 @@ Overfull \vbox (0.89998pt too high) has occurred while \output is active []
 
 
 ]
-<rys04/topologia-1.png, id=729, 1039.2426pt x 514.5624pt>
+<rys04/topologia-1.png, id=741, 1039.2426pt x 514.5624pt>
 File: rys04/topologia-1.png Graphic file (type png)
 <use rys04/topologia-1.png>
 Package pdftex.def Info: rys04/topologia-1.png  used on input line 20.
@@ -1514,7 +1610,7 @@ Package pdftex.def Info: rys04/topologia-1.png  used on input line 20.
 Overfull \vbox (0.89998pt too high) has occurred while \output is active []
 
  [56 <./rys04/topologia-1.png>]
-<rys04/topologia-2.png, id=736, 1039.2426pt x 514.5624pt>
+<rys04/topologia-2.png, id=748, 1039.2426pt x 514.5624pt>
 File: rys04/topologia-2.png Graphic file (type png)
 <use rys04/topologia-2.png>
 Package pdftex.def Info: rys04/topologia-2.png  used on input line 35.
@@ -1523,7 +1619,7 @@ Package pdftex.def Info: rys04/topologia-2.png  used on input line 35.
 Overfull \vbox (0.89998pt too high) has occurred while \output is active []
 
  [57 <./rys04/topologia-2.png>]
-<rys04/topologia-3.png, id=743, 1039.2426pt x 514.5624pt>
+<rys04/topologia-3.png, id=755, 1039.2426pt x 514.5624pt>
 File: rys04/topologia-3.png Graphic file (type png)
 <use rys04/topologia-3.png>
 Package pdftex.def Info: rys04/topologia-3.png  used on input line 54.
@@ -1532,7 +1628,7 @@ Package pdftex.def Info: rys04/topologia-3.png  used on input line 54.
 Overfull \vbox (0.89998pt too high) has occurred while \output is active []
 
  [58 <./rys04/topologia-3.png>]
-<rys04/topologia-5.png, id=750, 1039.2426pt x 514.5624pt>
+<rys04/topologia-5.png, id=762, 1039.2426pt x 514.5624pt>
 File: rys04/topologia-5.png Graphic file (type png)
 <use rys04/topologia-5.png>
 Package pdftex.def Info: rys04/topologia-5.png  used on input line 73.
@@ -1543,7 +1639,7 @@ Overfull \vbox (0.89998pt too high) has occurred while \output is active []
  [59
 
  <./rys04/topologia-5.png>]
-<rys04/topologia-4.png, id=757, 1039.2426pt x 514.5624pt>
+<rys04/topologia-4.png, id=769, 1039.2426pt x 514.5624pt>
 File: rys04/topologia-4.png Graphic file (type png)
 <use rys04/topologia-4.png>
 Package pdftex.def Info: rys04/topologia-4.png  used on input line 90.
@@ -1554,7 +1650,7 @@ Overfull \vbox (0.89998pt too high) has occurred while \output is active []
  [60
 
  <./rys04/topologia-4.png>]
-<rys04/struktura-plikow-dotnet.png, id=765, 846.16125pt x 470.50781pt>
+<rys04/struktura-plikow-dotnet.png, id=777, 846.16125pt x 470.50781pt>
 File: rys04/struktura-plikow-dotnet.png Graphic file (type png)
 <use rys04/struktura-plikow-dotnet.png>
 Package pdftex.def Info: rys04/struktura-plikow-dotnet.png  used on input line 126.
@@ -1566,7 +1662,7 @@ Overfull \vbox (0.89998pt too high) has occurred while \output is active []
 Overfull \vbox (0.89998pt too high) has occurred while \output is active []
 
  [62 <./rys04/struktura-plikow-dotnet.png>]
-<rys04/struktura-plikow-nodejs.png, id=779, 575.90157pt x 411.03563pt>
+<rys04/struktura-plikow-nodejs.png, id=791, 575.90157pt x 411.03563pt>
 File: rys04/struktura-plikow-nodejs.png Graphic file (type png)
 <use rys04/struktura-plikow-nodejs.png>
 Package pdftex.def Info: rys04/struktura-plikow-nodejs.png  used on input line 145.
@@ -1575,7 +1671,7 @@ Package pdftex.def Info: rys04/struktura-plikow-nodejs.png  used on input line 1
 Overfull \vbox (0.89998pt too high) has occurred while \output is active []
 
  [63 <./rys04/struktura-plikow-nodejs.png>]
-<rys04/algorytm-genetyczny.png, id=786, 513.5988pt x 657.657pt>
+<rys04/algorytm-genetyczny.png, id=798, 513.5988pt x 657.657pt>
 File: rys04/algorytm-genetyczny.png Graphic file (type png)
 <use rys04/algorytm-genetyczny.png>
 Package pdftex.def Info: rys04/algorytm-genetyczny.png  used on input line 160.
@@ -1657,7 +1753,7 @@ Overfull \vbox (0.89998pt too high) has occurred while \output is active []
 Overfull \vbox (0.89998pt too high) has occurred while \output is active []
 
  [65]
-<rys04/cache-klucz.png, id=800, 914.9382pt x 519.6213pt>
+<rys04/cache-klucz.png, id=812, 914.9382pt x 519.6213pt>
 File: rys04/cache-klucz.png Graphic file (type png)
 <use rys04/cache-klucz.png>
 Package pdftex.def Info: rys04/cache-klucz.png  used on input line 202.
@@ -1677,7 +1773,7 @@ Overfull \vbox (0.89998pt too high) has occurred while \output is active []
 Overfull \vbox (0.89998pt too high) has occurred while \output is active []
 
  [68]
-<rys04/jak_dziala_transakcja.png, id=822, 583.7007pt x 514.3215pt>
+<rys04/jak_dziala_transakcja.png, id=834, 583.7007pt x 514.3215pt>
 File: rys04/jak_dziala_transakcja.png Graphic file (type png)
 <use rys04/jak_dziala_transakcja.png>
 Package pdftex.def Info: rys04/jak_dziala_transakcja.png  used on input line 276.
@@ -1707,12 +1803,12 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 Overfull \vbox (0.89998pt too high) has occurred while \output is active []
 
  [73]
-<rys04/test-plan-1.png, id=856, 1145.78062pt x 661.72218pt>
+<rys04/test-plan-1.png, id=868, 1145.78062pt x 661.72218pt>
 File: rys04/test-plan-1.png Graphic file (type png)
 <use rys04/test-plan-1.png>
 Package pdftex.def Info: rys04/test-plan-1.png  used on input line 357.
 (pdftex.def)             Requested size: 455.0pt x 262.77583pt.
-<rys04/test-plan-2.png, id=858, 1145.78062pt x 662.475pt>
+<rys04/test-plan-2.png, id=870, 1145.78062pt x 662.475pt>
 File: rys04/test-plan-2.png Graphic file (type png)
 <use rys04/test-plan-2.png>
 Package pdftex.def Info: rys04/test-plan-2.png  used on input line 370.
@@ -1757,12 +1853,12 @@ Overfull \vbox (0.89998pt too high) has occurred while \output is active []
 Overfull \vbox (0.89998pt too high) has occurred while \output is active []
 
  [77]
-<rys05/testy-funkcjonalne-dotnet.pdf, id=880, 3146.75626pt x 1547.7825pt>
+<rys05/testy-funkcjonalne-dotnet.pdf, id=892, 3146.75626pt x 1547.7825pt>
 File: rys05/testy-funkcjonalne-dotnet.pdf Graphic file (type pdf)
 <use rys05/testy-funkcjonalne-dotnet.pdf>
 Package pdftex.def Info: rys05/testy-funkcjonalne-dotnet.pdf  used on input line 65.
 (pdftex.def)             Requested size: 455.0pt x 223.79686pt.
-<rys05/apdex-dotnet.pdf, id=883, 2338.98843pt x 1188.69093pt>
+<rys05/apdex-dotnet.pdf, id=895, 2338.98843pt x 1188.69093pt>
 File: rys05/apdex-dotnet.pdf Graphic file (type pdf)
 <use rys05/apdex-dotnet.pdf>
 Package pdftex.def Info: rys05/apdex-dotnet.pdf  used on input line 76.
@@ -1776,63 +1872,53 @@ Overfull \vbox (0.89998pt too high) has occurred while \output is active []
 
 pdfTeX warning: pdflatex (file ./rys05/apdex-dotnet.pdf): PDF inclusion: multiple pdfs with page group included in a single page
 >]
-<rys05/apdex-nodejs.pdf, id=1069, 2338.98843pt x 1188.69093pt>
+<rys05/apdex-nodejs.pdf, id=1081, 2338.98843pt x 1188.69093pt>
 File: rys05/apdex-nodejs.pdf Graphic file (type pdf)
 <use rys05/apdex-nodejs.pdf>
 Package pdftex.def Info: rys05/apdex-nodejs.pdf  used on input line 85.
 (pdftex.def)             Requested size: 455.0pt x 231.22246pt.
-<rys05/response-dotnet-fetchAllBills.pdf, id=1073, 2564.83218pt x 1281.28688pt>
+<rys05/response-dotnet-fetchAllBills.pdf, id=1085, 2564.83218pt x 1281.28688pt>
 File: rys05/response-dotnet-fetchAllBills.pdf Graphic file (type pdf)
 <use rys05/response-dotnet-fetchAllBills.pdf>
 Package pdftex.def Info: rys05/response-dotnet-fetchAllBills.pdf  used on input line 100.
-(pdftex.def)             Requested size: 222.9525pt x 111.36157pt.
-<rys05/response-nodejs-fetchAllBills.pdf, id=1074, 2564.83218pt x 1281.28688pt>
+(pdftex.def)             Requested size: 273.00278pt x 136.3671pt.
+<rys05/response-nodejs-fetchAllBills.pdf, id=1086, 2564.83218pt x 1281.28688pt>
 File: rys05/response-nodejs-fetchAllBills.pdf Graphic file (type pdf)
 <use rys05/response-nodejs-fetchAllBills.pdf>
 Package pdftex.def Info: rys05/response-nodejs-fetchAllBills.pdf  used on input line 100.
-(pdftex.def)             Requested size: 222.9525pt x 111.36157pt.
-<rys05/response-dotnet-getSingleOrder.pdf, id=1075, 2564.83218pt x 1281.28688pt>
+(pdftex.def)             Requested size: 273.00278pt x 136.3671pt.
+<rys05/response-dotnet-getSingleOrder.pdf, id=1087, 2564.83218pt x 1281.28688pt>
 File: rys05/response-dotnet-getSingleOrder.pdf Graphic file (type pdf)
 <use rys05/response-dotnet-getSingleOrder.pdf>
 Package pdftex.def Info: rys05/response-dotnet-getSingleOrder.pdf  used on input line 102.
-(pdftex.def)             Requested size: 222.9525pt x 111.36157pt.
-<rys05/response-nodejs-getSingleOrder.pdf, id=1076, 2564.83218pt x 1281.28688pt>
+(pdftex.def)             Requested size: 273.00278pt x 136.3671pt.
+<rys05/response-nodejs-getSingleOrder.pdf, id=1088, 2564.83218pt x 1281.28688pt>
 File: rys05/response-nodejs-getSingleOrder.pdf Graphic file (type pdf)
 <use rys05/response-nodejs-getSingleOrder.pdf>
 Package pdftex.def Info: rys05/response-nodejs-getSingleOrder.pdf  used on input line 102.
-(pdftex.def)             Requested size: 222.9525pt x 111.36157pt.
-<rys05/response-dotnet-addProduct.pdf, id=1077, 2564.83218pt x 1281.28688pt>
+(pdftex.def)             Requested size: 273.00278pt x 136.3671pt.
+<rys05/response-dotnet-addProduct.pdf, id=1089, 2564.83218pt x 1281.28688pt>
 File: rys05/response-dotnet-addProduct.pdf Graphic file (type pdf)
 <use rys05/response-dotnet-addProduct.pdf>
 Package pdftex.def Info: rys05/response-dotnet-addProduct.pdf  used on input line 104.
-(pdftex.def)             Requested size: 222.9525pt x 111.36157pt.
-<rys05/response-nodejs-addProduct.pdf, id=1078, 2564.83218pt x 1281.28688pt>
+(pdftex.def)             Requested size: 273.00278pt x 136.3671pt.
+<rys05/response-nodejs-addProduct.pdf, id=1090, 2564.83218pt x 1281.28688pt>
 File: rys05/response-nodejs-addProduct.pdf Graphic file (type pdf)
 <use rys05/response-nodejs-addProduct.pdf>
 Package pdftex.def Info: rys05/response-nodejs-addProduct.pdf  used on input line 104.
-(pdftex.def)             Requested size: 222.9525pt x 111.36157pt.
-<rys05/response-dotnet-updateCourse.pdf, id=1079, 2564.83218pt x 1281.28688pt>
+(pdftex.def)             Requested size: 273.00278pt x 136.3671pt.
+<rys05/response-dotnet-updateCourse.pdf, id=1091, 2564.83218pt x 1281.28688pt>
 File: rys05/response-dotnet-updateCourse.pdf Graphic file (type pdf)
 <use rys05/response-dotnet-updateCourse.pdf>
 Package pdftex.def Info: rys05/response-dotnet-updateCourse.pdf  used on input line 106.
-(pdftex.def)             Requested size: 222.9525pt x 111.36157pt.
-<rys05/response-nodejs-updateCourse.pdf, id=1080, 2564.83218pt x 1281.28688pt>
+(pdftex.def)             Requested size: 273.00278pt x 136.3671pt.
+<rys05/response-nodejs-updateCourse.pdf, id=1092, 2564.83218pt x 1281.28688pt>
 File: rys05/response-nodejs-updateCourse.pdf Graphic file (type pdf)
 <use rys05/response-nodejs-updateCourse.pdf>
 Package pdftex.def Info: rys05/response-nodejs-updateCourse.pdf  used on input line 106.
-(pdftex.def)             Requested size: 222.9525pt x 111.36157pt.
-<rys05/response-dotnet-deleteReservation.pdf, id=1081, 2564.83218pt x 1281.28688pt>
-File: rys05/response-dotnet-deleteReservation.pdf Graphic file (type pdf)
-<use rys05/response-dotnet-deleteReservation.pdf>
-Package pdftex.def Info: rys05/response-dotnet-deleteReservation.pdf  used on input line 108.
-(pdftex.def)             Requested size: 222.9525pt x 111.36157pt.
-<rys05/response-nodejs-deleteReservation.pdf, id=1082, 2564.83218pt x 1281.28688pt>
-File: rys05/response-nodejs-deleteReservation.pdf Graphic file (type pdf)
-<use rys05/response-nodejs-deleteReservation.pdf>
-Package pdftex.def Info: rys05/response-nodejs-deleteReservation.pdf  used on input line 108.
-(pdftex.def)             Requested size: 222.9525pt x 111.36157pt.
+(pdftex.def)             Requested size: 273.00278pt x 136.3671pt.
 
-Overfull \hbox (2.90503pt too wide) in paragraph at lines 98--113
+Overfull \hbox (54.636pt too wide) in paragraph at lines 98--108
  [][] 
  []
 
@@ -1842,6 +1928,22 @@ Overfull \vbox (0.89998pt too high) has occurred while \output is active []
  [79
 
  <./rys05/apdex-nodejs.pdf>]
+<rys05/response-dotnet-deleteReservation.pdf, id=1192, 2564.83218pt x 1281.28688pt>
+File: rys05/response-dotnet-deleteReservation.pdf Graphic file (type pdf)
+<use rys05/response-dotnet-deleteReservation.pdf>
+Package pdftex.def Info: rys05/response-dotnet-deleteReservation.pdf  used on input line 119.
+(pdftex.def)             Requested size: 273.00278pt x 136.3671pt.
+<rys05/response-nodejs-deleteReservation.pdf, id=1193, 2564.83218pt x 1281.28688pt>
+File: rys05/response-nodejs-deleteReservation.pdf Graphic file (type pdf)
+<use rys05/response-nodejs-deleteReservation.pdf>
+Package pdftex.def Info: rys05/response-nodejs-deleteReservation.pdf  used on input line 119.
+(pdftex.def)             Requested size: 273.00278pt x 136.3671pt.
+
+Overfull \hbox (54.636pt too wide) in paragraph at lines 117--121
+ [][] 
+ []
+
+
 Overfull \vbox (0.89998pt too high) has occurred while \output is active []
 
  [80 <./rys05/response-dotnet-fetchAllBills.pdf> <./rys05/response-nodejs-fetchAllBills.pdf
@@ -1865,88 +1967,88 @@ pdfTeX warning: pdflatex (file ./rys05/response-dotnet-updateCourse.pdf): PDF in
 > <./rys05/response-nodejs-updateCourse.pdf
 
 pdfTeX warning: pdflatex (file ./rys05/response-nodejs-updateCourse.pdf): PDF inclusion: multiple pdfs with page group included in a single page
-> <./rys05/response-dotnet-deleteReservation.pdf
+>]
+Overfull \vbox (0.89998pt too high) has occurred while \output is active []
 
-pdfTeX warning: pdflatex (file ./rys05/response-dotnet-deleteReservation.pdf): PDF inclusion: multiple pdfs with page group included in a single page
-> <./rys05/response-nodejs-deleteReservation.pdf
+ [81pdfTeX warning (ext4): destination with the same identifier (name{figure.5.4}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.135 
+       <./rys05/response-dotnet-deleteReservation.pdf> <./rys05/response-nodejs-deleteReservation.pdf
 
 pdfTeX warning: pdflatex (file ./rys05/response-nodejs-deleteReservation.pdf): PDF inclusion: multiple pdfs with page group included in a single page
 >]
-Overfull \vbox (0.89998pt too high) has occurred while \output is active []
-
- [81]
-<rys05/response-and-errors-dotnet.pdf, id=2567, 2564.83218pt x 1281.28688pt>
+<rys05/response-and-errors-dotnet.pdf, id=2580, 2564.83218pt x 1281.28688pt>
 File: rys05/response-and-errors-dotnet.pdf Graphic file (type pdf)
 <use rys05/response-and-errors-dotnet.pdf>
-Package pdftex.def Info: rys05/response-and-errors-dotnet.pdf  used on input line 139.
-(pdftex.def)             Requested size: 222.9525pt x 111.36157pt.
-<rys05/response-and-errors-nodejs.pdf, id=2568, 2564.83218pt x 1281.28688pt>
+Package pdftex.def Info: rys05/response-and-errors-dotnet.pdf  used on input line 146.
+(pdftex.def)             Requested size: 455.0pt x 227.29803pt.
+<rys05/response-and-errors-nodejs.pdf, id=2581, 2564.83218pt x 1281.28688pt>
 File: rys05/response-and-errors-nodejs.pdf Graphic file (type pdf)
 <use rys05/response-and-errors-nodejs.pdf>
-Package pdftex.def Info: rys05/response-and-errors-nodejs.pdf  used on input line 139.
-(pdftex.def)             Requested size: 222.9525pt x 111.36157pt.
-
-Overfull \hbox (2.90503pt too wide) in paragraph at lines 137--144
- [][] 
- []
-
+Package pdftex.def Info: rys05/response-and-errors-nodejs.pdf  used on input line 153.
+(pdftex.def)             Requested size: 455.0pt x 227.29803pt.
 
 Overfull \vbox (0.89998pt too high) has occurred while \output is active []
 
- [82 <./rys05/response-and-errors-dotnet.pdf> <./rys05/response-and-errors-nodejs.pdf
+ [82]
+Overfull \vbox (0.89998pt too high) has occurred while \output is active []
+
+ [83 <./rys05/response-and-errors-dotnet.pdf> <./rys05/response-and-errors-nodejs.pdf
 
 pdfTeX warning: pdflatex (file ./rys05/response-and-errors-nodejs.pdf): PDF inclusion: multiple pdfs with page group included in a single page
 >]
-Overfull \vbox (0.89998pt too high) has occurred while \output is active []
-
- [83]
 Overfull \vbox (0.89998pt too high) has occurred while \output is active []
 
  [84]
 Overfull \vbox (0.89998pt too high) has occurred while \output is active []
 
  [85]
-<rys05/async-times.pdf, id=2933, 2049.90843pt x 1059.96pt>
+Overfull \vbox (0.89998pt too high) has occurred while \output is active []
+
+ [86]
+<rys05/async-times.pdf, id=2950, 2049.90843pt x 1059.96pt>
 File: rys05/async-times.pdf Graphic file (type pdf)
 <use rys05/async-times.pdf>
-Package pdftex.def Info: rys05/async-times.pdf  used on input line 536.
+Package pdftex.def Info: rys05/async-times.pdf  used on input line 546.
 (pdftex.def)             Requested size: 455.0pt x 235.26215pt.
 
 Overfull \vbox (0.89998pt too high) has occurred while \output is active []
 
- [86]
+ [87]
 Overfull \vbox (0.89998pt too high) has occurred while \output is active []
 
- [87 <./rys05/async-times.pdf>]
-<rys05/dotnet-vs-cqrs.pdf, id=3081, 2622.04594pt x 1281.28688pt>
+ [88 <./rys05/async-times.pdf>]
+<rys05/dotnet-vs-cqrs.pdf, id=3098, 2622.04594pt x 1281.28688pt>
 File: rys05/dotnet-vs-cqrs.pdf Graphic file (type pdf)
 <use rys05/dotnet-vs-cqrs.pdf>
-Package pdftex.def Info: rys05/dotnet-vs-cqrs.pdf  used on input line 556.
-(pdftex.def)             Requested size: 222.9525pt x 108.93727pt.
-<rys05/nodejs-vs-cqrs.pdf, id=3082, 2564.83218pt x 1281.28688pt>
+Package pdftex.def Info: rys05/dotnet-vs-cqrs.pdf  used on input line 566.
+(pdftex.def)             Requested size: 273.00278pt x 133.39537pt.
+<rys05/nodejs-vs-cqrs.pdf, id=3099, 2621.29312pt x 1281.28688pt>
 File: rys05/nodejs-vs-cqrs.pdf Graphic file (type pdf)
 <use rys05/nodejs-vs-cqrs.pdf>
-Package pdftex.def Info: rys05/nodejs-vs-cqrs.pdf  used on input line 556.
-(pdftex.def)             Requested size: 222.9525pt x 111.36157pt.
-<rys05/dotnet-vs-cqrs-write.pdf, id=3083, 2564.83218pt x 1281.28688pt>
+Package pdftex.def Info: rys05/nodejs-vs-cqrs.pdf  used on input line 566.
+(pdftex.def)             Requested size: 273.00278pt x 133.43446pt.
+<rys05/dotnet-vs-cqrs-write.pdf, id=3100, 2622.04594pt x 1281.28688pt>
 File: rys05/dotnet-vs-cqrs-write.pdf Graphic file (type pdf)
 <use rys05/dotnet-vs-cqrs-write.pdf>
-Package pdftex.def Info: rys05/dotnet-vs-cqrs-write.pdf  used on input line 558.
-(pdftex.def)             Requested size: 222.9525pt x 111.36157pt.
-<rys05/nodejs-vs-cqrs-write.pdf, id=3084, 2564.83218pt x 1281.28688pt>
+Package pdftex.def Info: rys05/dotnet-vs-cqrs-write.pdf  used on input line 568.
+(pdftex.def)             Requested size: 273.00278pt x 133.39537pt.
+<rys05/nodejs-vs-cqrs-write.pdf, id=3101, 2564.83218pt x 1281.28688pt>
 File: rys05/nodejs-vs-cqrs-write.pdf Graphic file (type pdf)
 <use rys05/nodejs-vs-cqrs-write.pdf>
-Package pdftex.def Info: rys05/nodejs-vs-cqrs-write.pdf  used on input line 558.
-(pdftex.def)             Requested size: 222.9525pt x 111.36157pt.
+Package pdftex.def Info: rys05/nodejs-vs-cqrs-write.pdf  used on input line 568.
+(pdftex.def)             Requested size: 273.00278pt x 136.3671pt.
 
-Overfull \hbox (2.90503pt too wide) in paragraph at lines 554--563
+Overfull \hbox (54.636pt too wide) in paragraph at lines 564--573
  [][] 
  []
 
 
 Overfull \vbox (0.89998pt too high) has occurred while \output is active []
 
- [88 <./rys05/dotnet-vs-cqrs.pdf> <./rys05/nodejs-vs-cqrs.pdf
+ [89 <./rys05/dotnet-vs-cqrs.pdf> <./rys05/nodejs-vs-cqrs.pdf
 
 pdfTeX warning: pdflatex (file ./rys05/nodejs-vs-cqrs.pdf): PDF inclusion: multiple pdfs with page group included in a single page
 > <./rys05/dotnet-vs-cqrs-write.pdf
@@ -1958,42 +2060,42 @@ pdfTeX warning: pdflatex (file ./rys05/nodejs-vs-cqrs-write.pdf): PDF inclusion:
 >]
 Overfull \vbox (0.89998pt too high) has occurred while \output is active []
 
- [89]
+ [90]
 Overfull \vbox (0.89998pt too high) has occurred while \output is active []
 
- [90]
-<rys05/dotnet-static-cache-chart.pdf, id=3845, 2600.9672pt x 1163.0953pt>
+ [91]
+<rys05/dotnet-static-cache-chart.pdf, id=3803, 2600.9672pt x 1163.0953pt>
 File: rys05/dotnet-static-cache-chart.pdf Graphic file (type pdf)
 <use rys05/dotnet-static-cache-chart.pdf>
-Package pdftex.def Info: rys05/dotnet-static-cache-chart.pdf  used on input line 804.
-(pdftex.def)             Requested size: 222.9525pt x 99.68704pt.
-<rys05/dotnet-freq-cache-chart.pdf, id=3846, 2600.9672pt x 1163.0953pt>
+Package pdftex.def Info: rys05/dotnet-static-cache-chart.pdf  used on input line 814.
+(pdftex.def)             Requested size: 273.00278pt x 122.06648pt.
+<rys05/dotnet-freq-cache-chart.pdf, id=3804, 2600.9672pt x 1163.0953pt>
 File: rys05/dotnet-freq-cache-chart.pdf Graphic file (type pdf)
 <use rys05/dotnet-freq-cache-chart.pdf>
-Package pdftex.def Info: rys05/dotnet-freq-cache-chart.pdf  used on input line 804.
-(pdftex.def)             Requested size: 222.9525pt x 99.68704pt.
-<rys05/nodejs-static-cache.pdf, id=3847, 2600.9672pt x 1163.0953pt>
+Package pdftex.def Info: rys05/dotnet-freq-cache-chart.pdf  used on input line 814.
+(pdftex.def)             Requested size: 273.00278pt x 122.06648pt.
+<rys05/nodejs-static-cache.pdf, id=3805, 2600.9672pt x 1163.0953pt>
 File: rys05/nodejs-static-cache.pdf Graphic file (type pdf)
 <use rys05/nodejs-static-cache.pdf>
-Package pdftex.def Info: rys05/nodejs-static-cache.pdf  used on input line 806.
-(pdftex.def)             Requested size: 222.9525pt x 99.68704pt.
-<rys05/nodejs-freq-cache.pdf, id=3848, 2600.9672pt x 1163.0953pt>
+Package pdftex.def Info: rys05/nodejs-static-cache.pdf  used on input line 816.
+(pdftex.def)             Requested size: 273.00278pt x 122.06648pt.
+<rys05/nodejs-freq-cache.pdf, id=3806, 2600.9672pt x 1163.0953pt>
 File: rys05/nodejs-freq-cache.pdf Graphic file (type pdf)
 <use rys05/nodejs-freq-cache.pdf>
-Package pdftex.def Info: rys05/nodejs-freq-cache.pdf  used on input line 806.
-(pdftex.def)             Requested size: 222.9525pt x 99.68704pt.
+Package pdftex.def Info: rys05/nodejs-freq-cache.pdf  used on input line 816.
+(pdftex.def)             Requested size: 273.00278pt x 122.06648pt.
 
-Overfull \hbox (2.90503pt too wide) in paragraph at lines 802--811
+Overfull \hbox (54.636pt too wide) in paragraph at lines 812--821
  [][] 
  []
 
 
 Overfull \vbox (0.89998pt too high) has occurred while \output is active []
 
- [91]
+ [92]
 Overfull \vbox (0.89998pt too high) has occurred while \output is active []
 
- [92 <./rys05/dotnet-static-cache-chart.pdf> <./rys05/dotnet-freq-cache-chart.pdf
+ [93 <./rys05/dotnet-static-cache-chart.pdf> <./rys05/dotnet-freq-cache-chart.pdf
 
 pdfTeX warning: pdflatex (file ./rys05/dotnet-freq-cache-chart.pdf): PDF inclusion: multiple pdfs with page group included in a single page
 > <./rys05/nodejs-static-cache.pdf
@@ -2003,106 +2105,105 @@ pdfTeX warning: pdflatex (file ./rys05/nodejs-static-cache.pdf): PDF inclusion: 
 
 pdfTeX warning: pdflatex (file ./rys05/nodejs-freq-cache.pdf): PDF inclusion: multiple pdfs with page group included in a single page
 >]
-<rys05/dotnet-get-azure.pdf, id=4468, 2170.35844pt x 1026.08344pt>
+Overfull \vbox (0.89998pt too high) has occurred while \output is active []
+
+ [94]
+<rys05/dotnet-get-azure.pdf, id=4420, 2170.35844pt x 1026.08344pt>
 File: rys05/dotnet-get-azure.pdf Graphic file (type pdf)
 <use rys05/dotnet-get-azure.pdf>
-Package pdftex.def Info: rys05/dotnet-get-azure.pdf  used on input line 835.
-(pdftex.def)             Requested size: 222.9525pt x 105.40125pt.
-<rys05/dotnet-get-digitalocean.pdf, id=4469, 2132.71782pt x 1026.08344pt>
+Package pdftex.def Info: rys05/dotnet-get-azure.pdf  used on input line 849.
+(pdftex.def)             Requested size: 273.00278pt x 129.05861pt.
+<rys05/dotnet-get-digitalocean.pdf, id=4421, 2132.71782pt x 1026.08344pt>
 File: rys05/dotnet-get-digitalocean.pdf Graphic file (type pdf)
 <use rys05/dotnet-get-digitalocean.pdf>
-Package pdftex.def Info: rys05/dotnet-get-digitalocean.pdf  used on input line 835.
-(pdftex.def)             Requested size: 222.9525pt x 107.2644pt.
-<rys05/dotnet-post-azure.pdf, id=4470, 2170.35844pt x 1026.08344pt>
+Package pdftex.def Info: rys05/dotnet-get-digitalocean.pdf  used on input line 849.
+(pdftex.def)             Requested size: 273.00278pt x 131.34448pt.
+<rys05/dotnet-post-azure.pdf, id=4422, 2170.35844pt x 1026.08344pt>
 File: rys05/dotnet-post-azure.pdf Graphic file (type pdf)
 <use rys05/dotnet-post-azure.pdf>
-Package pdftex.def Info: rys05/dotnet-post-azure.pdf  used on input line 837.
-(pdftex.def)             Requested size: 222.9525pt x 105.40125pt.
-<rys05/dotnet-post-digitalocean.pdf, id=4471, 2132.71782pt x 1026.08344pt>
+Package pdftex.def Info: rys05/dotnet-post-azure.pdf  used on input line 851.
+(pdftex.def)             Requested size: 273.00278pt x 129.05861pt.
+<rys05/dotnet-post-digitalocean.pdf, id=4423, 2132.71782pt x 1026.08344pt>
 File: rys05/dotnet-post-digitalocean.pdf Graphic file (type pdf)
 <use rys05/dotnet-post-digitalocean.pdf>
-Package pdftex.def Info: rys05/dotnet-post-digitalocean.pdf  used on input line 837.
-(pdftex.def)             Requested size: 222.9525pt x 107.2644pt.
-<rys05/dotnet-put-azure.pdf, id=4472, 2170.35844pt x 1026.08344pt>
+Package pdftex.def Info: rys05/dotnet-post-digitalocean.pdf  used on input line 851.
+(pdftex.def)             Requested size: 273.00278pt x 131.34448pt.
+<rys05/dotnet-put-azure.pdf, id=4424, 2170.35844pt x 1026.08344pt>
 File: rys05/dotnet-put-azure.pdf Graphic file (type pdf)
 <use rys05/dotnet-put-azure.pdf>
-Package pdftex.def Info: rys05/dotnet-put-azure.pdf  used on input line 839.
-(pdftex.def)             Requested size: 222.9525pt x 105.40125pt.
-<rys05/dotnet-put-digitalocean.pdf, id=4473, 2132.71782pt x 1026.08344pt>
+Package pdftex.def Info: rys05/dotnet-put-azure.pdf  used on input line 853.
+(pdftex.def)             Requested size: 273.00278pt x 129.05861pt.
+<rys05/dotnet-put-digitalocean.pdf, id=4425, 2132.71782pt x 1026.08344pt>
 File: rys05/dotnet-put-digitalocean.pdf Graphic file (type pdf)
 <use rys05/dotnet-put-digitalocean.pdf>
-Package pdftex.def Info: rys05/dotnet-put-digitalocean.pdf  used on input line 839.
-(pdftex.def)             Requested size: 222.9525pt x 107.2644pt.
-<rys05/dotnet-delete-azure.pdf, id=4474, 2169.60562pt x 1025.33063pt>
+Package pdftex.def Info: rys05/dotnet-put-digitalocean.pdf  used on input line 853.
+(pdftex.def)             Requested size: 273.00278pt x 131.34448pt.
+<rys05/dotnet-delete-azure.pdf, id=4426, 2169.60562pt x 1025.33063pt>
 File: rys05/dotnet-delete-azure.pdf Graphic file (type pdf)
 <use rys05/dotnet-delete-azure.pdf>
-Package pdftex.def Info: rys05/dotnet-delete-azure.pdf  used on input line 841.
-(pdftex.def)             Requested size: 222.9525pt x 105.35521pt.
-<rys05/dotnet-delete-digitalocean.pdf, id=4475, 2132.71782pt x 1025.33063pt>
+Package pdftex.def Info: rys05/dotnet-delete-azure.pdf  used on input line 855.
+(pdftex.def)             Requested size: 273.00278pt x 129.01085pt.
+<rys05/dotnet-delete-digitalocean.pdf, id=4427, 2132.71782pt x 1025.33063pt>
 File: rys05/dotnet-delete-digitalocean.pdf Graphic file (type pdf)
 <use rys05/dotnet-delete-digitalocean.pdf>
-Package pdftex.def Info: rys05/dotnet-delete-digitalocean.pdf  used on input line 841.
-(pdftex.def)             Requested size: 222.9525pt x 107.1857pt.
+Package pdftex.def Info: rys05/dotnet-delete-digitalocean.pdf  used on input line 855.
+(pdftex.def)             Requested size: 273.00278pt x 131.24812pt.
 
-Overfull \hbox (2.90503pt too wide) in paragraph at lines 833--846
+Overfull \hbox (54.636pt too wide) in paragraph at lines 847--860
  [][] 
  []
 
-<rys05/nodejs-get-heroku.pdf, id=4476, 2132.71782pt x 1026.08344pt>
+<rys05/nodejs-get-heroku.pdf, id=4428, 2132.71782pt x 1026.08344pt>
 File: rys05/nodejs-get-heroku.pdf Graphic file (type pdf)
 <use rys05/nodejs-get-heroku.pdf>
-Package pdftex.def Info: rys05/nodejs-get-heroku.pdf  used on input line 856.
-(pdftex.def)             Requested size: 222.9525pt x 107.2644pt.
-<rys05/nodejs-get-digitalocean.pdf, id=4477, 2132.71782pt x 1026.08344pt>
+Package pdftex.def Info: rys05/nodejs-get-heroku.pdf  used on input line 868.
+(pdftex.def)             Requested size: 273.00278pt x 131.34448pt.
+<rys05/nodejs-get-digitalocean.pdf, id=4429, 2132.71782pt x 1026.08344pt>
 File: rys05/nodejs-get-digitalocean.pdf Graphic file (type pdf)
 <use rys05/nodejs-get-digitalocean.pdf>
-Package pdftex.def Info: rys05/nodejs-get-digitalocean.pdf  used on input line 856.
-(pdftex.def)             Requested size: 222.9525pt x 107.2644pt.
-<rys05/nodejs-post-heroku.pdf, id=4478, 2132.71782pt x 1026.08344pt>
+Package pdftex.def Info: rys05/nodejs-get-digitalocean.pdf  used on input line 868.
+(pdftex.def)             Requested size: 273.00278pt x 131.34448pt.
+<rys05/nodejs-post-heroku.pdf, id=4430, 2132.71782pt x 1026.08344pt>
 File: rys05/nodejs-post-heroku.pdf Graphic file (type pdf)
 <use rys05/nodejs-post-heroku.pdf>
-Package pdftex.def Info: rys05/nodejs-post-heroku.pdf  used on input line 858.
-(pdftex.def)             Requested size: 222.9525pt x 107.2644pt.
-<rys05/nodejs-post-digitalocean.pdf, id=4479, 2132.71782pt x 1026.08344pt>
+Package pdftex.def Info: rys05/nodejs-post-heroku.pdf  used on input line 870.
+(pdftex.def)             Requested size: 273.00278pt x 131.34448pt.
+<rys05/nodejs-post-digitalocean.pdf, id=4431, 2132.71782pt x 1026.08344pt>
 File: rys05/nodejs-post-digitalocean.pdf Graphic file (type pdf)
 <use rys05/nodejs-post-digitalocean.pdf>
-Package pdftex.def Info: rys05/nodejs-post-digitalocean.pdf  used on input line 858.
-(pdftex.def)             Requested size: 222.9525pt x 107.2644pt.
-<rys05/nodejs-put-heroku.pdf, id=4480, 2132.71782pt x 1026.08344pt>
+Package pdftex.def Info: rys05/nodejs-post-digitalocean.pdf  used on input line 870.
+(pdftex.def)             Requested size: 273.00278pt x 131.34448pt.
+<rys05/nodejs-put-heroku.pdf, id=4432, 2132.71782pt x 1026.08344pt>
 File: rys05/nodejs-put-heroku.pdf Graphic file (type pdf)
 <use rys05/nodejs-put-heroku.pdf>
-Package pdftex.def Info: rys05/nodejs-put-heroku.pdf  used on input line 860.
-(pdftex.def)             Requested size: 222.9525pt x 107.2644pt.
-<rys05/nodejs-put-digitalocean.pdf, id=4481, 2132.71782pt x 1026.08344pt>
+Package pdftex.def Info: rys05/nodejs-put-heroku.pdf  used on input line 872.
+(pdftex.def)             Requested size: 273.00278pt x 131.34448pt.
+<rys05/nodejs-put-digitalocean.pdf, id=4433, 2132.71782pt x 1026.08344pt>
 File: rys05/nodejs-put-digitalocean.pdf Graphic file (type pdf)
 <use rys05/nodejs-put-digitalocean.pdf>
-Package pdftex.def Info: rys05/nodejs-put-digitalocean.pdf  used on input line 860.
-(pdftex.def)             Requested size: 222.9525pt x 107.2644pt.
-<rys05/nodejs-delete-heroku.pdf, id=4482, 2132.71782pt x 1025.33063pt>
+Package pdftex.def Info: rys05/nodejs-put-digitalocean.pdf  used on input line 872.
+(pdftex.def)             Requested size: 273.00278pt x 131.34448pt.
+<rys05/nodejs-delete-heroku.pdf, id=4434, 2132.71782pt x 1025.33063pt>
 File: rys05/nodejs-delete-heroku.pdf Graphic file (type pdf)
 <use rys05/nodejs-delete-heroku.pdf>
-Package pdftex.def Info: rys05/nodejs-delete-heroku.pdf  used on input line 862.
-(pdftex.def)             Requested size: 222.9525pt x 107.1857pt.
-<rys05/nodejs-delete-digitalocean.pdf, id=4483, 2132.71782pt x 1025.33063pt>
+Package pdftex.def Info: rys05/nodejs-delete-heroku.pdf  used on input line 874.
+(pdftex.def)             Requested size: 273.00278pt x 131.24812pt.
+<rys05/nodejs-delete-digitalocean.pdf, id=4435, 2132.71782pt x 1025.33063pt>
 File: rys05/nodejs-delete-digitalocean.pdf Graphic file (type pdf)
 <use rys05/nodejs-delete-digitalocean.pdf>
-Package pdftex.def Info: rys05/nodejs-delete-digitalocean.pdf  used on input line 862.
-(pdftex.def)             Requested size: 222.9525pt x 107.1857pt.
+Package pdftex.def Info: rys05/nodejs-delete-digitalocean.pdf  used on input line 874.
+(pdftex.def)             Requested size: 273.00278pt x 131.24812pt.
 
-Overfull \hbox (2.90503pt too wide) in paragraph at lines 854--867
+Overfull \hbox (54.636pt too wide) in paragraph at lines 866--879
  [][] 
  []
 
 
 Overfull \vbox (0.89998pt too high) has occurred while \output is active []
 
- [93]
-Overfull \vbox (375.8216pt too high) has occurred while \output is active []
+ [95
 
-
-Overfull \vbox (0.89998pt too high) has occurred while \output is active []
-
- [94 <./rys05/dotnet-get-azure.pdf> <./rys05/dotnet-get-digitalocean.pdf
+ <./rys05/dotnet-get-azure.pdf> <./rys05/dotnet-get-digitalocean.pdf
 
 pdfTeX warning: pdflatex (file ./rys05/dotnet-get-digitalocean.pdf): PDF inclusion: multiple pdfs with page group included in a single page
 > <./rys05/dotnet-post-azure.pdf
@@ -2123,10 +2224,10 @@ pdfTeX warning: pdflatex (file ./rys05/dotnet-delete-azure.pdf): PDF inclusion: 
 > <./rys05/dotnet-delete-digitalocean.pdf
 
 pdfTeX warning: pdflatex (file ./rys05/dotnet-delete-digitalocean.pdf): PDF inclusion: multiple pdfs with page group included in a single page
-> <./rys05/nodejs-get-heroku.pdf
+>]
+Overfull \vbox (0.89998pt too high) has occurred while \output is active []
 
-pdfTeX warning: pdflatex (file ./rys05/nodejs-get-heroku.pdf): PDF inclusion: multiple pdfs with page group included in a single page
-> <./rys05/nodejs-get-digitalocean.pdf
+ [96 <./rys05/nodejs-get-heroku.pdf> <./rys05/nodejs-get-digitalocean.pdf
 
 pdfTeX warning: pdflatex (file ./rys05/nodejs-get-digitalocean.pdf): PDF inclusion: multiple pdfs with page group included in a single page
 > <./rys05/nodejs-post-heroku.pdf
@@ -2148,52 +2249,47 @@ pdfTeX warning: pdflatex (file ./rys05/nodejs-delete-heroku.pdf): PDF inclusion:
 
 pdfTeX warning: pdflatex (file ./rys05/nodejs-delete-digitalocean.pdf): PDF inclusion: multiple pdfs with page group included in a single page
 >]
-<rys05/nodejs-errors.pdf, id=6753, 2872.7325pt x 1068.24094pt>
-File: rys05/nodejs-errors.pdf Graphic file (type pdf)
-<use rys05/nodejs-errors.pdf>
-Package pdftex.def Info: rys05/nodejs-errors.pdf  used on input line 881.
-(pdftex.def)             Requested size: 222.9525pt x 82.90192pt.
-<rys05/dotnet-errors.pdf, id=6754, 2872.7325pt x 1068.99374pt>
+<rys05/dotnet-errors.pdf, id=6706, 2872.7325pt x 1068.99374pt>
 File: rys05/dotnet-errors.pdf Graphic file (type pdf)
 <use rys05/dotnet-errors.pdf>
-Package pdftex.def Info: rys05/dotnet-errors.pdf  used on input line 881.
-(pdftex.def)             Requested size: 222.9525pt x 82.96033pt.
+Package pdftex.def Info: rys05/dotnet-errors.pdf  used on input line 891.
+(pdftex.def)             Requested size: 455.0pt x 169.31346pt.
+<rys05/nodejs-errors.pdf, id=6707, 2872.7325pt x 1068.24094pt>
+File: rys05/nodejs-errors.pdf Graphic file (type pdf)
+<use rys05/nodejs-errors.pdf>
+Package pdftex.def Info: rys05/nodejs-errors.pdf  used on input line 898.
+(pdftex.def)             Requested size: 455.0pt x 169.19423pt.
 
-Overfull \hbox (2.90503pt too wide) in paragraph at lines 879--886
- [][] 
- []
-
-)
 Overfull \vbox (0.89998pt too high) has occurred while \output is active []
 
- [95 <./rys05/nodejs-errors.pdf> <./rys05/dotnet-errors.pdf
+ [97 <./rys05/dotnet-errors.pdf> <./rys05/nodejs-errors.pdf
 
-pdfTeX warning: pdflatex (file ./rys05/dotnet-errors.pdf): PDF inclusion: multiple pdfs with page group included in a single page
->]
+pdfTeX warning: pdflatex (file ./rys05/nodejs-errors.pdf): PDF inclusion: multiple pdfs with page group included in a single page
+>])
 Overfull \vbox (0.89998pt too high) has occurred while \output is active []
 
- [96]
+ [98]
 \openout2 = `rozdzial06.aux'.
 
  (rozdzial06.tex
 Overfull \vbox (0.89998pt too high) has occurred while \output is active []
 
- [97
+ [99
 
 
 
 ]
 Overfull \vbox (0.89998pt too high) has occurred while \output is active []
 
- [98])
+ [100])
 Overfull \vbox (0.89998pt too high) has occurred while \output is active []
 
- [99] (Dyplom.bbl
+ [101] (Dyplom.bbl
 bibitemlist
 
 Overfull \vbox (0.89998pt too high) has occurred while \output is active []
 
- [100
+ [102
 
 
 ]
@@ -2203,31 +2299,31 @@ File: ts1qtm.fd 2009/09/25 v1.2 font definition file for TS1/qtm
 )
 Overfull \vbox (0.89998pt too high) has occurred while \output is active []
 
- [101])
+ [103])
 
 Class memoir Warning: The material used in the headers is too large
 (14.49998pt) for the given head height (13.6pt), it is recommended to
 either increase the head height or redesign the header
-(in both cases you will find help in the memoir manual). on input line 890.
+(in both cases you will find help in the memoir manual). on input line 894.
 
 
 Overfull \vbox (0.89998pt too high) has occurred while \output is active []
 
- [102]
-\tf@toc=\write5
-\openout5 = `Dyplom.toc'.
+ [104]
+\tf@toc=\write6
+\openout6 = `Dyplom.toc'.
 
-\tf@lof=\write6
-\openout6 = `Dyplom.lof'.
+\tf@lof=\write7
+\openout7 = `Dyplom.lof'.
 
-\tf@lot=\write7
-\openout7 = `Dyplom.lot'.
+\tf@lot=\write8
+\openout8 = `Dyplom.lot'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 890.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 890.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 894.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 894.
  (Dyplom.aux (streszczenie.aux) (rozdzial01.aux) (rozdzial02.aux) (rozdzial03.aux) (rozdzial04.aux) (rozdzial05.aux) (rozdzial06.aux))
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 890.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 890.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 894.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 894.
 Package rerunfilecheck Info: File `Dyplom.out' has not changed.
 (rerunfilecheck)             Checksum: B3F80A2A79C0A0847DDBD19988DCA31F;7917.
 
@@ -2236,17 +2332,17 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 21303 strings out of 480790
- 349353 string characters out of 2898707
- 708130 words of memory out of 3000000
- 36545 multiletter control sequences out of 15000+200000
+ 23714 strings out of 480790
+ 398890 string characters out of 2898707
+ 786169 words of memory out of 3000000
+ 38859 multiletter control sequences out of 15000+200000
  696553 words of font info for 94 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 37i,17n,42p,2200b,1194s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 51i,17n,62p,2200b,1200s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Program Files/MiKTeX/fonts/enc/dvips/tex-gyre/q-ts1.enc}{C:/Users/HP/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-rm.enc}{C:/Users/HP/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathit.enc}{C:/Users/HP/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathsy.enc}{C:/Program Files/MiKTeX/fonts/enc/dvips/tex-gyre/q-ec.enc}{C:/Program Files/MiKTeX/fonts/enc/dvips/ebgaramond/ebgm_tcdnmr.enc}<C:/Program Files/MiKTeX/fonts/type1/public/ebgaramond/EBGaramond-Bold.pfb><C:/Program Files/MiKTeX/fonts/type1/public/ebgaramond/EBGaramond-Regular.pfb><C:/Users/HP/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi12.pfb><C:/Users/HP/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr12.pfb><C:/Users/HP/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/tex-gyre/qtmb.pfb><C:/Program Files/MiKTeX/fonts/type1/public/tex-gyre/qtmbi.pfb><C:/Program Files/MiKTeX/fonts/type1/public/tex-gyre/qtmr.pfb><C:/Program Files/MiKTeX/fonts/type1/public/tex-gyre/qtmri.pfb><C:/Program Files/MiKTeX/fonts/type1/public/txfonts/t1xtt.pfb>
-Output written on Dyplom.pdf (102 pages, 10364985 bytes).
+Output written on Dyplom.pdf (104 pages, 10298428 bytes).
 PDF statistics:
- 7095 PDF objects out of 7423 (max. 8388607)
- 318 named destinations out of 1000 (max. 500000)
- 568 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 7050 PDF objects out of 7423 (max. 8388607)
+ 322 named destinations out of 1000 (max. 500000)
+ 580 words of extra memory for PDF output out of 10000 (max. 10000000)
 
