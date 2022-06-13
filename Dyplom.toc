@@ -41,7 +41,7 @@
 \contentsline {section}{\numberline {4.2}Budowa interfejsów programowania aplikacji}{60}{section.4.2}%
 \contentsline {section}{\numberline {4.3}Konfiguracja generycznych oraz dedykowanych platform chmurowych}{71}{section.4.3}%
 \contentsline {section}{\numberline {4.4}Konfiguracja narzędzia do realizacji badań}{72}{section.4.4}%
-\contentsline {chapter}{\chapternumberline {5}Przeprowadzone badania}{76}{chapter.5}%
+\contentsline {chapter}{\chapternumberline {5}Badania eksperymentalne}{76}{chapter.5}%
 \contentsline {section}{\numberline {5.1}Wpływ zastosowanego systemu bazodanowego na efektywność działania interfejsu API}{76}{section.5.1}%
 \contentsline {section}{\numberline {5.2}Wpływ zastosowanej technologii na wydajność realizacji operacji współbieżnych}{84}{section.5.2}%
 \contentsline {section}{\numberline {5.3}Wpływ zastosowanej technologii na efektywność obsługi operacji asynchronicznych}{87}{section.5.3}%
